@@ -1,4 +1,35 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/04/lets-blog/</guid><link>http://gsferreira.com/archive/2014/04/lets-blog/</link><title>Let's blog</title><description>&lt;p&gt;Hi! My name is Guilherme Ferreira. I'm a &lt;a href="http://www.pinterest.com/igori/portugal/"&gt;Portuguese&lt;/a&gt; software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of &lt;a href="http://www.pinterest.com/turismportugal/porto-portugal/"&gt;Porto&lt;/a&gt;. Go check the pictures, I will be right here waiting for you.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/05/move-database-new-sql-azure-service-tiers/</guid><link>http://gsferreira.com/archive/2014/05/move-database-new-sql-azure-service-tiers/</link><title>Move your database to new SQL Azure Service Tiers</title><description>&lt;p&gt;In the last Build conference Scott Guthrie announced the new Basic and Standard tier option to the SQL Databases on Azure. Those tiers bring amazing features and you can find more about them in the &lt;a href="http://weblogs.asp.net/scottgu/archive/2014/04/29/azure-99-95-sql-database-sla-500-gb-db-size-improved-performance-self-service-restore-and-business-continuity.aspx"&gt;Scott's post&lt;/a&gt;. If you want to try it, as I did, go ahead and take advantage of the 50% discount during the preview period. &lt;/p&gt;
+
+&lt;p&gt;You can find here how to move your SQL Database currently in the Web or Business edition using the following tips.&lt;/p&gt;
+
+</description><pubDate>Fri, 02 May 2014 23:00:00 Z</pubDate><a10:updated>2014-05-02T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;In the last Build conference Scott Guthrie announced the new Basic and Standard tier option to the SQL Databases on Azure. Those tiers bring amazing features and you can find more about them in the &lt;a href="http://weblogs.asp.net/scottgu/archive/2014/04/29/azure-99-95-sql-database-sla-500-gb-db-size-improved-performance-self-service-restore-and-business-continuity.aspx"&gt;Scott's post&lt;/a&gt;. If you want to try it, as I did, go ahead and take advantage of the 50% discount during the preview period. &lt;/p&gt;
+
+&lt;p&gt;You can find here how to move your SQL Database currently in the Web or Business edition using the following tips.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;Before you start, make sure that you have a Windows Azure Storage Account and a container in it.&lt;/p&gt;
+
+&lt;p&gt;First of all you should take your web site or any client of your database offline, just to ensure that no one updates the database during this operation.&lt;/p&gt;
+
+&lt;p&gt;Open a connection to your SQL Server using SQL Management Studio. Right click on your database. Choose &lt;em&gt;"Tasks &gt; Export Data-tier Application"&lt;/em&gt;. Make sure that you store the bacpac file in your Windows Azure Storage. You can find a good example &lt;a href="http://blogs.msdn.com/b/brunoterkaly/archive/2013/09/26/how-to-export-an-on-premises-sql-server-database-to-windows-azure-storage.aspx?Redirected=true"&gt;here&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Now you need to create a SQL Server before create the database&lt;/strong&gt;, by some reason (probably a "preview version bug") if you try to import the database before create the server you will get an &lt;a href="http://social.technet.microsoft.com/Forums/en-US/54a073aa-b554-403b-87ca-53196a897c9c/cant-create-a-new-sql-azure-standard-tier-db?forum=ssdsgetstarted"&gt;error&lt;/a&gt;. So, go to &lt;a href="http://manage.windowsazure.com"&gt;Azure Manage web site&lt;/a&gt; and create a new SQL Server. Make sure that you set the "Supported Database Editions" to "Basic, Standard, Premium".&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/move-database-new-sql-azure-service-tiers-create-server.png" alt="alt text" title="Create a new server" /&gt;&lt;/p&gt;
+
+&lt;p&gt;After that, add a new SQL Database (imported from the previous backup) to the server created in the last step. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/move-database-new-sql-azure-service-tiers-import-database.png" alt="alt text" title="Create a new database menu" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Select the Backup that you made, choose one of the Preview Editions and the server created before.&lt;/p&gt;
+
+&lt;p&gt;When the create database operation is completed, just update your connection string and you are ready to go.&lt;/p&gt;
+
+&lt;p&gt;Just remember to delete the backup from storage and the old server if you want.&lt;/p&gt;
+
+&lt;p&gt;Enjoy it!&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/04/lets-blog/</guid><link>http://gsferreira.com/archive/2014/04/lets-blog/</link><title>Let's blog</title><description>&lt;p&gt;Hi! My name is Guilherme Ferreira. I'm a &lt;a href="http://www.pinterest.com/igori/portugal/"&gt;Portuguese&lt;/a&gt; software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of &lt;a href="http://www.pinterest.com/turismportugal/porto-portugal/"&gt;Porto&lt;/a&gt;. Go check the pictures, I will be right here waiting for you.&lt;/p&gt;
 
 &lt;p&gt;I'm starting this blog with the intent to share the lessons that I learn, 
 write news about my work and to improve my English writing skills. 
