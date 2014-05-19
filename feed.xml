@@ -1,12 +1,47 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-05-16T17:48:04+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/05/the-dark-side-of-dynamic-typing/</id><title type="text">The dark side of dynamic typing</title><summary type="html">&lt;p&gt;&lt;a href="http://msdn.microsoft.com/en-us/library/dd264736.aspx"&gt;Dynamic typing&lt;/a&gt; isn't anything new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it may avoid some complicated reflection code, for example. I've used it a lot, but recently I've discovered his dark side... &lt;strong&gt;the performance side&lt;/strong&gt;. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-05-19T18:37:26+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/05/pomodoro-technique-the-productivity-sauce/</id><title type="text">Pomodoro Technique, the productivity sauce</title><summary type="html">&lt;p&gt;You've probably heard about the &lt;a href="http://pomodorotechnique.com/"&gt;Pomodoro Technique&lt;/a&gt;. This is one of the most popular time management tools nowadays. This technique has been developed by &lt;em&gt;&lt;a href="http://francescocirillo.com/"&gt;Francesco Cirillo&lt;/a&gt;&lt;/em&gt; in the late 1980s. &lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://www.quickmeme.com/img/e8/e8e8d6ebfd29823854295376337528dc9853a26b27f43c85dd8eb0ed0ab666dc.jpg" alt="alt text" /&gt;&lt;/p&gt;
+&lt;p&gt;In the modern days we keep fighting against the clock, trying to accomplish all the assignments. But in the other hand we have a lot of distractions, as the Facebook messages, new tweets or our phones. The Pomodoro Technique wants to teach you to use the time as your friend, being productive, eliminating the procrastination, the pressure and get free time for yourself. Pomodoro Technique also can be a great complement for other methodology's. I used it in my &lt;a href="http://gettingthingsdone.com/"&gt;GTD (Getting Things Done)&lt;/a&gt; workflow for example.&lt;/p&gt;
+
+</summary><published>2014-05-18T23:00:00Z</published><updated>2014-05-18T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/pomodoro-technique-the-productivity-sauce/" /><content type="html">&lt;p&gt;You've probably heard about the &lt;a href="http://pomodorotechnique.com/"&gt;Pomodoro Technique&lt;/a&gt;. This is one of the most popular time management tools nowadays. This technique has been developed by &lt;em&gt;&lt;a href="http://francescocirillo.com/"&gt;Francesco Cirillo&lt;/a&gt;&lt;/em&gt; in the late 1980s. &lt;/p&gt;
+
+&lt;p&gt;In the modern days we keep fighting against the clock, trying to accomplish all the assignments. But in the other hand we have a lot of distractions, as the Facebook messages, new tweets or our phones. The Pomodoro Technique wants to teach you to use the time as your friend, being productive, eliminating the procrastination, the pressure and get free time for yourself. Pomodoro Technique also can be a great complement for other methodology's. I used it in my &lt;a href="http://gettingthingsdone.com/"&gt;GTD (Getting Things Done)&lt;/a&gt; workflow for example.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/pomodoro-technique-the-productivity-sauce-modern-family-decisions-under-pressure.jpg" alt="Modern Family - Decisions under pressure" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pomodoro is the Italian word for tomato, and Francesco named it as pomodoro because he used a kitchen timer with a tomato shape as his personal timer.
+The technique consists in for each 25 minute work period (this period is called a "Pomodoro") take a five minutes break. In this break &lt;strong&gt;you shouldn't go to your social networks&lt;/strong&gt;... beware of shiny objects. Instead, you should rest your eyes, grab a cup of coffee or go take a walk. Every four pomodoros you should take a longer break of 20 minutes. Frequent breaks keep your mind fresh and focused. Your brain will retrieve you the favor.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.flickr.com/photos/33593406@N03/7738254354/"&gt;&lt;img src="http://gsferreira.com/images/pomodoro-technique-the-productivity-sauce-pomodoro-timer.jpg" alt="Pomodoro timer" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;!---*"Photo by [Kate Bunker](http://www.flickr.com/photos/33593406@N03/7738254354/) licensed under [Creative Commons Attribution-NonCommercial License](http://creativecommons.org/licenses/by-nc/2.0/)."*
+--&gt;
+
+&lt;p&gt;You should be asking &lt;strong&gt;why the 25 minutes&lt;/strong&gt;? I really don't know, and that is a question that I have made to myself. After some research, I believe that the 25 minutes is the "ideal" period to keep the focus on a single task, if you have longer periods your brain will get tired, but this is a personal conclusion.&lt;/p&gt;
+
+&lt;p&gt;This isn't applicable for anyone, but if you usually seat down at a desk and you need to get things done, I believe that you can use it. I use it while I'm programming because it helps me stay focused and "force" me to break large tasks into short steps. I also like to use it in teamwork, for example, in pair programming or in a &lt;a href="http://en.wikipedia.org/wiki/Stand-up_meeting"&gt;Scrum stand-up meeting&lt;/a&gt;. The ticking clock will teach your team that time is running out and the task should completed. If you are questioning yourself if this is a good tool for you, go check this &lt;a href="http://pomodorotechnique.com/get-started/"&gt;page&lt;/a&gt;, probably you will find your case.&lt;/p&gt;
+
+&lt;p&gt;You could find some problems to apply it, for example:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to concentrate without interruptions, specially if you are inside a team. &lt;/li&gt;
+&lt;li&gt;The open-plan offices can be an enemy, so pick the perfect music and put your headphones.&lt;/li&gt;
+&lt;li&gt;It's possible don't answer your phone during a pomodoro in your position?&lt;/li&gt;
+&lt;li&gt;Keep the flow while dealing with interaction with the co-workers.&lt;/li&gt;
+&lt;li&gt;Meetings... a necessary evil.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pomodoro Technique is free, you can spend some money to get a kitchen timer if you want… or you can use any timer program on your computer or phone (I'm using the &lt;a href="https://chrome.google.com/webstore/detail/simple-pomodoro%C2%AE/blidjjfbdbkcmegfnidmgndgdamhhelp"&gt;&lt;em&gt;Simple Pomodoro&lt;/em&gt; extension for Chrome&lt;/a&gt;). The process isn't ideal for every person, but if you want to boost your productivity you can try it and let me know the results in the comments below.&lt;/p&gt;
+
+&lt;p&gt;By the way, this post has been written in 4 pomodoros.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/05/the-dark-side-of-dynamic-typing/</id><title type="text">The dark side of dynamic typing</title><summary type="html">&lt;p&gt;&lt;a href="http://msdn.microsoft.com/en-us/library/dd264736.aspx"&gt;Dynamic typing&lt;/a&gt; isn't anything new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it may avoid some complicated reflection code, for example. I've used it a lot, but recently I've discovered his dark side... &lt;strong&gt;the performance side&lt;/strong&gt;. &lt;/p&gt;
 
 </summary><published>2014-05-07T23:00:00Z</published><updated>2014-05-07T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/the-dark-side-of-dynamic-typing/" /><content type="html">&lt;p&gt;&lt;a href="http://msdn.microsoft.com/en-us/library/dd264736.aspx"&gt;Dynamic typing&lt;/a&gt; isn't anything new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it may avoid some complicated reflection code, for example. I've used it a lot, but recently I've discovered his dark side... &lt;strong&gt;the performance side&lt;/strong&gt;. &lt;/p&gt;
 
-&lt;p&gt;&lt;img src="http://www.quickmeme.com/img/e8/e8e8d6ebfd29823854295376337528dc9853a26b27f43c85dd8eb0ed0ab666dc.jpg" alt="alt text" /&gt;&lt;/p&gt;
-
 &lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://www.quickmeme.com/img/e8/e8e8d6ebfd29823854295376337528dc9853a26b27f43c85dd8eb0ed0ab666dc.jpg" alt="alt text" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Why do I say it? If you measure the performance cost of a simple "Set" or "Get" operation you will see a great improvement simply changing it to typed code. You can use the following code to test it.&lt;/p&gt;
 
