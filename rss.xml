@@ -1,4 +1,61 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/</guid><link>http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/</link><title>AngularJS - Smart Float Directive</title><description>&lt;p&gt;Recently I started looking for an AngluarJS directive to validate numbers and I found the "smart-float" directive &lt;a href="https://docs.angularjs.org/guide/forms"&gt;here&lt;/a&gt;, in the AngularJS documentation. This amazing example solves the problem of convert my numbers that use a comma as decimal mark to a Javascript number.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/</guid><link>http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/</link><title>Reasons to blogging with GitHub Pages and Sandra.Snow</title><description>&lt;p&gt;This is my second try to create a personal blog and the third blog where I'm writing. The first two experiences were in WordPress. &lt;/p&gt;
+
+&lt;p&gt;In the past, my attempts failed by my fault, lack of commitment... But during the process, I learned how hard is to maintain a self hosted blog. &lt;/p&gt;
+
+&lt;p&gt;Create content to a blog is really time-consuming, so I don't need more work to maintain it. Maybe this is my Developer side telling me to stay away from maintenance tasks, like update packages and be sure that I'm not hacked. &lt;/p&gt;
+
+&lt;p&gt;let's be realistic, when we're a blogger &lt;strong&gt;the focus should be the content&lt;/strong&gt;, the other tasks are just a black hole for the precious free time.&lt;/p&gt;
+
+</description><pubDate>Fri, 30 May 2014 23:00:00 Z</pubDate><a10:updated>2014-05-30T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;This is my second try to create a personal blog and the third blog where I'm writing. The first two experiences were in WordPress. &lt;/p&gt;
+
+&lt;p&gt;In the past, my attempts failed by my fault, lack of commitment... But during the process, I learned how hard is to maintain a self hosted blog. &lt;/p&gt;
+
+&lt;p&gt;Create content to a blog is really time-consuming, so I don't need more work to maintain it. Maybe this is my Developer side telling me to stay away from maintenance tasks, like update packages and be sure that I'm not hacked. &lt;/p&gt;
+
+&lt;p&gt;let's be realistic, when we're a blogger &lt;strong&gt;the focus should be the content&lt;/strong&gt;, the other tasks are just a black hole for the precious free time.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/reasons-to-blogging-using-github-pages-and-sandra-snow-my-precious-time.jpg" alt="Gollum - My Precious Time" /&gt;&lt;/p&gt;
+
+&lt;p&gt;So, what I was looking for when I started this page?!&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Write using markdown&lt;/li&gt;
+&lt;li&gt;Comments using Disqus&lt;/li&gt;
+&lt;li&gt;Easy customization&lt;/li&gt;
+&lt;li&gt;Reduce the infrastructure costs&lt;/li&gt;
+&lt;li&gt;A lightweight blog&lt;/li&gt;
+&lt;li&gt;No database&lt;/li&gt;
+&lt;li&gt;Version control/Hitory&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Based on these requirements, I found &lt;a href="http://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; hosted over &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;. It fits perfectly and the number of users active can attest it. The downside?! I need ruby to use it. Since I'm a Windows guy and in my professional life I'm mostly connected to .NET Developement I don't want to install ruby on my machines. &lt;/p&gt;
+
+&lt;p&gt;A friend of mine (&lt;a href="https://twitter.com/NelsonReis"&gt;@NelsonReis&lt;/a&gt;) suggested I look at &lt;a href="https://github.com/Sandra/Sandra.Snow"&gt;Sandra.Snow&lt;/a&gt;, a system inspired by Jekyll, which is &lt;strong&gt;written in .NET and &lt;a href="http://nancyfx.org/"&gt;Nancy&lt;/a&gt;&lt;/strong&gt;, by &lt;a href="https://twitter.com/philliphaydon"&gt;Phillip Haydon&lt;/a&gt; and &lt;a href="https://twitter.com/jchannon"&gt;Jonathan Channon&lt;/a&gt;. So, I picked it! Now my website is generated using Sandra.Snow and hosted on GitHub pages.&lt;/p&gt;
+
+&lt;p&gt;During the process, I created &lt;a href="https://github.com/gsferreira/letsnow"&gt;&lt;em&gt;letsnow&lt;/em&gt;&lt;/a&gt;, a simple theme based on snowbyte theme. You can use it, fork it and contribute. I would love to hear your opinion.&lt;/p&gt;
+
+&lt;p&gt;Well, I could describe here how I did it, but since there's already a lot of good articles of it, I leave you here some to guide you. You will see that it's a piece of cake.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://www.philliphaydon.com/2013/10/introducing-sandra-snow/"&gt;"Introducing Sandra.Snow"&lt;/a&gt; by Phillip Haydon&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.macsdickinson.com/SandraSnow/hello-sandra-snow/#.U4j33_ldXN1"&gt;"Hello Sandra Snow"&lt;/a&gt; by Macs Dickinson&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://blog.jonathanchannon.com/2013/10/01/blogging-with-markdown-and-git/"&gt;"Blogging with Markdown &amp;amp; Deploying via Git - Introducing Sandra.Snow"&lt;/a&gt; by Jonathan Channon&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/reasons-to-blogging-using-github-pages-and-sandra-snow-feel-like-superhero.png" alt="Feel like a superhero" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What I hope to see in Sandra.Snow in a near future?!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Generate RSS feeds for any category&lt;/li&gt;
+&lt;li&gt;More configuration options, like Google Analytics ID or Disqus ID&lt;/li&gt;
+&lt;li&gt;A "marketplace" for Sandra.Snow blog templates&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;It's too early to say that Sandra.Snow is perfect for me, but I hope that it was a wise decision!&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/</guid><link>http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/</link><title>AngularJS - Smart Float Directive</title><description>&lt;p&gt;Recently I started looking for an AngluarJS directive to validate numbers and I found the "smart-float" directive &lt;a href="https://docs.angularjs.org/guide/forms"&gt;here&lt;/a&gt;, in the AngularJS documentation. This amazing example solves the problem of convert my numbers that use a comma as decimal mark to a Javascript number.&lt;/p&gt;
 
 &lt;p&gt;My problem is that this directive doesn't solve my two problems:&lt;/p&gt;
 
