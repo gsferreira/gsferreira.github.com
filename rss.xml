@@ -1,4 +1,56 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/</guid><link>http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/</link><title>Bringing Grunt and Bower to metro-bootstrap</title><description>&lt;p&gt;Since we publish &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; we saw an incredible acceptance to the project and we are really happy to have decided to delivery it as an open source project. &lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/</guid><link>http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/</link><title>Geeks can cook: Tuna Empanadas</title><description>&lt;p&gt;This blog post is about one of my other passions, cook! I'm a foodie, not just about the eating part of it, but I also love to cook. So, I want to do some tasty posts and share with you some simple recipes.&lt;/p&gt;
+
+&lt;p&gt;Being a programmer is not a healthy profession. We spend long hours sitting in front of a computer and this isn't helping our body. But we can change it by making some sport and putting the fast food aside and start cooking healthy and tasty food!&lt;/p&gt;
+
+&lt;p&gt;You can start right now, so I wrote down a recipe that you can make in 15 minutes. I hope you like!&lt;/p&gt;
+
+</description><pubDate>Thu, 12 Jun 2014 23:00:00 Z</pubDate><a10:updated>2014-06-12T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;This blog post is about one of my other passions, cook! I'm a foodie, not just about the eating part of it, but I also love to cook. So, I want to do some tasty posts and share with you some simple recipes.&lt;/p&gt;
+
+&lt;p&gt;Being a programmer is not a healthy profession. We spend long hours sitting in front of a computer and this isn't helping our body. But we can change it by making some sport and putting the fast food aside and start cooking healthy and tasty food!&lt;/p&gt;
+
+&lt;p&gt;You can start right now, so I wrote down a recipe that you can make in 15 minutes. I hope you like!&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;h1&gt;Tuna Empanadas&lt;/h1&gt;
+
+&lt;p&gt;Preparation time: 15 minutes&lt;/p&gt;
+
+&lt;p&gt;Serves: 4&lt;/p&gt;
+
+&lt;h2&gt;Ingredients:&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;2 Shortcrust pastry packs&lt;/li&gt;
+&lt;li&gt;3 Tuna cans&lt;/li&gt;
+&lt;li&gt;1 Corn can&lt;/li&gt;
+&lt;li&gt;2 Onions&lt;/li&gt;
+&lt;li&gt;2 Garlic cloves&lt;/li&gt;
+&lt;li&gt;1 Sugar spoon&lt;/li&gt;
+&lt;li&gt;Oregano&lt;/li&gt;
+&lt;li&gt;Salt and pepper&lt;/li&gt;
+&lt;li&gt;Olive oil&lt;/li&gt;
+&lt;li&gt;1 Egg&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/geeks-can-cook-tuna-empanadas-ingredients.jpg" alt="Tuna Empanada - Ingredients" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Method:&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Heat a little oil in a frying pan. &lt;/li&gt;
+&lt;li&gt;Saute onions and garlic minced for 5 minutes. &lt;/li&gt;
+&lt;li&gt;Add the drained tuna and corn.&lt;/li&gt;
+&lt;li&gt;Season it with sugar, salt, oregano and pepper.&lt;/li&gt;
+&lt;li&gt;Open the 2 shortcrust pastry packs and make 4 rectangles. Add the tuna and corn filling to two of them. Cover it with the other 2 rectangles and close them with the help of a fork.&lt;/li&gt;
+&lt;li&gt;Brush with the beaten egg.&lt;/li&gt;
+&lt;li&gt;Place in the oven preheated to 200ºC for 7 minutes. &lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The final result.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/geeks-can-cook-tuna-empanadas-final-result.jpg" alt="Tuna Empanada" /&gt;&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/</guid><link>http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/</link><title>Bringing Grunt and Bower to metro-bootstrap</title><description>&lt;p&gt;Since we publish &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; we saw an incredible acceptance to the project and we are really happy to have decided to delivery it as an open source project. &lt;/p&gt;
 
 &lt;p&gt;This project has grown up with a lack of structure in my opinion, so, this week I've been working to add Grunt and Bower to metro-bootstrap. To accomplish this task, I have the valuable help of &lt;a href="http://yeoman.io/"&gt;Yeoman&lt;/a&gt;. If you're like me, and &lt;a href="http://gruntjs.com/"&gt;Grunt&lt;/a&gt; or &lt;a href="http://bower.io/"&gt;Bower&lt;/a&gt; are crazy talk, you will find in Yeoman a great way to start.&lt;/p&gt;
 
