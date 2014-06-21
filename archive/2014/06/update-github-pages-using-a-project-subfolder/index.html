@@ -12,13 +12,13 @@
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Reasons to blogging with GitHub Pages and Sandra.Snow - 
+            Update GitHub Pages using a project subfolder - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2014/06/update-github-pages-using-a-project-subfolder/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -38,9 +38,9 @@
 
 
 <div class="post">
-    <h1>Reasons to blogging with GitHub Pages and Sandra.Snow</h1> 
+    <h1>Update GitHub Pages using a project subfolder</h1> 
       <div class="meta">
-        <p class="posted">31 mai 2014</p>
+        <p class="posted">21 jun 2014</p>
         <ul class="categories">
         </ul>
       </div>
@@ -48,55 +48,51 @@
     
     
         
-    <p>This is my second try to create a personal blog and the third blog where I'm writing. The first two experiences were in WordPress. </p>
+    <p>Do you have a project in GitHub and you are tired of manage the <em>gh-pages</em> branch manually?! If so, stay tuned because that can be pretty simple.</p>
 
-<p>In the past, my attempts failed by my fault, lack of commitment... But during the process, I learned how hard is to maintain a self hosted blog. </p>
-
-<p>Create content to a blog is really time-consuming, so I don't need more work to maintain it. Maybe this is my Developer side telling me to stay away from maintenance tasks, like update packages and be sure that I'm not hacked. </p>
-
-<p>let's be realistic, when we're a blogger <strong>the focus should be the content</strong>, the other tasks are just a black hole for the precious free time.</p>
+<p>I used to make a full copy of the master repository into the <em>gh-pages</em> using the <em>rebase</em> command, but this brings a lack of organization because it's difficult don't mix the source  code and the web pages files.</p>
 
 <!--excerpt-->
 
-<p><img src="/images/reasons-to-blogging-using-github-pages-and-sandra-snow-my-precious-time.jpg" alt="Gollum - My Precious Time" /></p>
+<iframe src="//giphy.com/embed/upvM3uYBjh6ww/mp4" width="500" height="378" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
 
-<p>So, what I was looking for when I started this page?!</p>
+<p>This is the process that I used to update the full branch:</p>
 
-<ol>
-<li>Write using markdown</li>
-<li>Comments using Disqus</li>
-<li>Easy customization</li>
-<li>Reduce the infrastructure costs</li>
-<li>A lightweight blog</li>
-<li>No database</li>
-<li>Version control/Hitory</li>
-</ol>
+<pre><code>git checkout gh-pages // go to the gh-pages branch
+git rebase master // bring gh-pages up to date with master
+git push origin gh-pages // commit the changes
+git checkout master // return to the master branch
+</code></pre>
 
-<p>Based on these requirements, I found <a href="http://jekyllrb.com/">Jekyll</a> hosted over <a href="https://pages.github.com/">GitHub Pages</a>. It fits perfectly and the number of users active can attest it. The downside?! I need ruby to use it. Since I'm a Windows guy and in my professional life I'm mostly connected to .NET Developement I don't want to install ruby on my machines. </p>
+<p>Recently I re-organize my repository to have a <em>docs</em> subdirectory, on the master branch, where I put the files required for web pages and with the following command I did some magic:</p>
 
-<p>A friend of mine (<a href="https://twitter.com/NelsonReis">@NelsonReis</a>) suggested I look at <a href="https://github.com/Sandra/Sandra.Snow">Sandra.Snow</a>, a system inspired by Jekyll, which is <strong>written in .NET and <a href="http://nancyfx.org/">Nancy</a></strong>, by <a href="https://twitter.com/philliphaydon">Phillip Haydon</a> and <a href="https://twitter.com/jchannon">Jonathan Channon</a>. So, I picked it! Now my website is generated using Sandra.Snow and hosted on GitHub pages.</p>
+<pre><code>git subtree push --prefix docs origin gh-pages // Replace 'docs' by your folder name
+</code></pre>
 
-<p>During the process, I created <a href="https://github.com/gsferreira/letsnow"><em>letsnow</em></a>, a simple theme based on snowbyte theme. You can use it, fork it and contribute. I would love to hear your opinion.</p>
+<p>Now, the <em>docs</em> folder is the root directory of gh-pages branch.</p>
 
-<p>Well, I could describe here how I did it, but since there's already a lot of good articles of it, I leave you here some to guide you. You will see that it's a piece of cake.</p>
+<p>This seems pretty simple, but in the process I found some troubled waters. So, I leave the details here, in case you get the same problem.</p>
 
-<ul>
-<li><a href="http://www.philliphaydon.com/2013/10/introducing-sandra-snow/">"Introducing Sandra.Snow"</a> by Phillip Haydon</li>
-<li><a href="http://www.macsdickinson.com/SandraSnow/hello-sandra-snow/#.U4j33_ldXN1">"Hello Sandra Snow"</a> by Macs Dickinson</li>
-<li><a href="http://blog.jonathanchannon.com/2013/10/01/blogging-with-markdown-and-git/">"Blogging with Markdown &amp; Deploying via Git - Introducing Sandra.Snow"</a> by Jonathan Channon</li>
-</ul>
+<p>In my first tries I got the following error:</p>
 
-<p><img src="/images/reasons-to-blogging-using-github-pages-and-sandra-snow-feel-like-superhero.png" alt="Feel like a superhero" /></p>
+<pre><code>! [rejected]        1835ac01fe63c030216c22d3d834366d5e2a854r -&gt; gh-pages (non-f
+ast-forward)
+error: failed to push some refs to 'https://github.com/gsferreira/myrepository.
+git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+</code></pre>
 
-<p><strong>What I hope to see in Sandra.Snow in a near future?!</strong></p>
+<p>If you want to get rid of this error, I suggest that you delete your gh-pages branch and then recreate it before execute the <em>git subtree</em> command.</p>
 
-<ul>
-<li>Generate RSS feeds for any category</li>
-<li>More configuration options, like Google Analytics ID or Disqus ID</li>
-<li>A "marketplace" for Sandra.Snow blog templates</li>
-</ul>
+<p>How to delete a branch? </p>
 
-<p>It's too early to say that Sandra.Snow is perfect for me, but I hope that it was a wise decision!</p>
+<pre><code>git push origin :gh-pages
+</code></pre>
+
+<p>I hope this helps you.</p>
 
 
 	
@@ -115,14 +111,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/';
+                this.page.url = 'http://gsferreira.com/archive/2014/06/update-github-pages-using-a-project-subfolder/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/';
+    var disqus_url = 'http://gsferreira.com/archive/2014/06/update-github-pages-using-a-project-subfolder/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

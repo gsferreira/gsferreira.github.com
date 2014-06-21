@@ -1,4 +1,53 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/</guid><link>http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/</link><title>Geeks can cook: Tuna Empanadas</title><description>&lt;p&gt;This blog post is about one of my other passions, cook! I'm a foodie, not just about the eating part of it, but I also love to cook. So, I want to do some tasty posts and share with you some simple recipes.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/06/update-github-pages-using-a-project-subfolder/</guid><link>http://gsferreira.com/archive/2014/06/update-github-pages-using-a-project-subfolder/</link><title>Update GitHub Pages using a project subfolder</title><description>&lt;p&gt;Do you have a project in GitHub and you are tired of manage the &lt;em&gt;gh-pages&lt;/em&gt; branch manually?! If so, stay tuned because that can be pretty simple.&lt;/p&gt;
+
+&lt;p&gt;I used to make a full copy of the master repository into the &lt;em&gt;gh-pages&lt;/em&gt; using the &lt;em&gt;rebase&lt;/em&gt; command, but this brings a lack of organization because it's difficult don't mix the source  code and the web pages files.&lt;/p&gt;
+
+</description><pubDate>Fri, 20 Jun 2014 23:00:00 Z</pubDate><a10:updated>2014-06-20T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Do you have a project in GitHub and you are tired of manage the &lt;em&gt;gh-pages&lt;/em&gt; branch manually?! If so, stay tuned because that can be pretty simple.&lt;/p&gt;
+
+&lt;p&gt;I used to make a full copy of the master repository into the &lt;em&gt;gh-pages&lt;/em&gt; using the &lt;em&gt;rebase&lt;/em&gt; command, but this brings a lack of organization because it's difficult don't mix the source  code and the web pages files.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;iframe src="//giphy.com/embed/upvM3uYBjh6ww/mp4" width="500" height="378" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;This is the process that I used to update the full branch:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git checkout gh-pages // go to the gh-pages branch
+git rebase master // bring gh-pages up to date with master
+git push origin gh-pages // commit the changes
+git checkout master // return to the master branch
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Recently I re-organize my repository to have a &lt;em&gt;docs&lt;/em&gt; subdirectory, on the master branch, where I put the files required for web pages and with the following command I did some magic:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git subtree push --prefix docs origin gh-pages // Replace 'docs' by your folder name
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, the &lt;em&gt;docs&lt;/em&gt; folder is the root directory of gh-pages branch.&lt;/p&gt;
+
+&lt;p&gt;This seems pretty simple, but in the process I found some troubled waters. So, I leave the details here, in case you get the same problem.&lt;/p&gt;
+
+&lt;p&gt;In my first tries I got the following error:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;! [rejected]        1835ac01fe63c030216c22d3d834366d5e2a854r -&amp;gt; gh-pages (non-f
+ast-forward)
+error: failed to push some refs to 'https://github.com/gsferreira/myrepository.
+git'
+hint: Updates were rejected because a pushed branch tip is behind its remote
+hint: counterpart. Check out this branch and integrate the remote changes
+hint: (e.g. 'git pull ...') before pushing again.
+hint: See the 'Note about fast-forwards' in 'git push --help' for details.
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you want to get rid of this error, I suggest that you delete your gh-pages branch and then recreate it before execute the &lt;em&gt;git subtree&lt;/em&gt; command.&lt;/p&gt;
+
+&lt;p&gt;How to delete a branch? &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;git push origin :gh-pages
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I hope this helps you.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/</guid><link>http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/</link><title>Geeks can cook: Tuna Empanadas</title><description>&lt;p&gt;This blog post is about one of my other passions, cook! I'm a foodie, not just about the eating part of it, but I also love to cook. So, I want to do some tasty posts and share with you some simple recipes.&lt;/p&gt;
 
 &lt;p&gt;Being a programmer is not a healthy profession. We spend long hours sitting in front of a computer and this isn't helping our body. But we can change it by making some sport and putting the fast food aside and start cooking healthy and tasty food!&lt;/p&gt;
 
