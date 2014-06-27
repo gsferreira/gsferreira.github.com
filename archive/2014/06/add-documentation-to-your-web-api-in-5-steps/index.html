@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="last-modified" content="2014-06-27T21:48:47.7278978+01:00" />
-    <meta name="keywords" content="" />
+    <meta name="keywords" content=".NET,ASP.NET" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Reasons to blogging with GitHub Pages and Sandra.Snow - 
+            Add documentation to your Web API in 5 steps - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -38,65 +38,57 @@
 
 
 <div class="post">
-    <h1>Reasons to blogging with GitHub Pages and Sandra.Snow</h1> 
+    <h1>Add documentation to your Web API in 5 steps</h1> 
       <div class="meta">
-        <p class="posted">31 mai 2014</p>
+        <p class="posted">27 jun 2014</p>
         <ul class="categories">
+          <li><a href="/category/.net" title="Snow.Models.Category">.NET</a></li>
+          <li><a href="/category/asp.net" title="Snow.Models.Category">ASP.NET</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>This is my second try to create a personal blog and the third blog where I'm writing. The first two experiences were in WordPress. </p>
+    <p>APIs are created to expose the system to other developers, so we need to provide documentation that explain how to use our API.</p>
 
-<p>In the past, my attempts failed by my fault, lack of commitment... But during the process, I learned how hard is to maintain a self hosted blog. </p>
+<p>So far, so good, but maintain documents manually is a kind of boring. What about auto-generate it?</p>
 
-<p>Create content to a blog is really time-consuming, so I don't need more work to maintain it. Maybe this is my Developer side telling me to stay away from maintenance tasks, like update packages and be sure that I'm not hacked. </p>
-
-<p>let's be realistic, when we're a blogger <strong>the focus should be the content</strong>, the other tasks are just a black hole for the precious free time.</p>
+<p>Well, if you are using ASP.NET Web API this is a piece of cake.</p>
 
 <!--excerpt-->
 
-<p><img src="/images/reasons-to-blogging-using-github-pages-and-sandra-snow-my-precious-time.jpg" alt="Gollum - My Precious Time" /></p>
-
-<p>So, what I was looking for when I started this page?!</p>
+<p>How to add documentation to your ASP.NET Web API?</p>
 
 <ol>
-<li>Write using markdown</li>
-<li>Comments using Disqus</li>
-<li>Easy customization</li>
-<li>Reduce the infrastructure costs</li>
-<li>A lightweight blog</li>
-<li>No database</li>
-<li>Version control/Hitory</li>
+<li>Install "<em>Microsoft.AspNet.WebApi.HelpPage</em>" package from nuget. (If you are using VB.NET install "<em>Microsoft.AspNet.WebApi.HelpPage.VB</em>"). This package will create an Area called "Help" in the API project.</li>
+<li>Make sure that you have the following code in the "<em>Application_Start</em>" method at your Global.asax file: <em>AreaRegistration.RegisterAllAreas();</em></li>
+<li>Documentation will be available in the <em>/Help</em> URI. So, just add a link to it in your application.</li>
+<li>To enable the XML Documentation comments, open the file <em>Areas/HelpPage/App_Start/HelpPageConfig.cs</em> and uncomment the line "<em>config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));</em>"</li>
+<li>In Solution Explorer, right-click the project, select Properties, then go to the <em>Build</em> page. In the <em>Output</em> section check the <em>XML documentation file</em> property and set the text box with the value "App_Data/XmlDocument.xml".</li>
 </ol>
 
-<p>Based on these requirements, I found <a href="http://jekyllrb.com/">Jekyll</a> hosted over <a href="https://pages.github.com/">GitHub Pages</a>. It fits perfectly and the number of users active can attest it. The downside?! I need ruby to use it. Since I'm a Windows guy and in my professional life I'm mostly connected to .NET Developement I don't want to install ruby on my machines. </p>
+<p>Now you are able to start adding comments to your Web API methods, as you can see in the following example:</p>
 
-<p>A friend of mine (<a href="https://twitter.com/NelsonReis">@NelsonReis</a>) suggested I look at <a href="https://github.com/Sandra/Sandra.Snow">Sandra.Snow</a>, a system inspired by Jekyll, which is <strong>written in .NET and <a href="http://nancyfx.org/">Nancy</a></strong>, by <a href="https://twitter.com/philliphaydon">Phillip Haydon</a> and <a href="https://twitter.com/jchannon">Jonathan Channon</a>. So, I picked it! Now my website is generated using Sandra.Snow and hosted on GitHub pages.</p>
+<pre><code>/// &lt;summary&gt;
+/// Get text by ID
+/// &lt;/summary&gt;
+/// &lt;param name="id"&gt;ID used to get the result text.&lt;/param&gt;
+public string Get(int id)
+{
+    return "value";
+}
+</code></pre>
 
-<p>During the process, I created <a href="https://github.com/gsferreira/letsnow"><em>letsnow</em></a>, a simple theme based on snowbyte theme. You can use it, fork it and contribute. I would love to hear your opinion.</p>
-
-<p>Well, I could describe here how I did it, but since there's already a lot of good articles of it, I leave you here some to guide you. You will see that it's a piece of cake.</p>
-
-<ul>
-<li><a href="http://www.philliphaydon.com/2013/10/introducing-sandra-snow/">"Introducing Sandra.Snow"</a> by Phillip Haydon</li>
-<li><a href="http://www.macsdickinson.com/SandraSnow/hello-sandra-snow/#.U4j33_ldXN1">"Hello Sandra Snow"</a> by Macs Dickinson</li>
-<li><a href="http://blog.jonathanchannon.com/2013/10/01/blogging-with-markdown-and-git/">"Blogging with Markdown &amp; Deploying via Git - Introducing Sandra.Snow"</a> by Jonathan Channon</li>
-</ul>
-
-<p><img src="/images/reasons-to-blogging-using-github-pages-and-sandra-snow-feel-like-superhero.png" alt="Feel like a superhero" /></p>
-
-<p><strong>What I hope to see in Sandra.Snow in a near future?!</strong></p>
+<p>Build your application and you are done! Now, if you want to do some advanced stuff, I recommend that you take a look into the following posts:</p>
 
 <ul>
-<li>Generate RSS feeds for any category</li>
-<li>More configuration options, like Google Analytics ID or Disqus ID</li>
-<li>A "marketplace" for Sandra.Snow blog templates</li>
+<li><a href="http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages">Creating Help Pages for ASP.NET Web API</a></li>
+<li><a href="http://blogs.msdn.com/b/yaohuang1/archive/2012/12/10/asp-net-web-api-help-page-part-3-advanced-help-page-customizations.aspx">Advanced Help Page customizations</a></li>
+<li><a href="http://blogs.msdn.com/b/yaohuang1/archive/2012/08/15/introducing-the-asp-net-web-api-help-page-preview.aspx">Introducing the ASP.NET Web API Help Page</a></li>
 </ul>
 
-<p>It's too early to say that Sandra.Snow is perfect for me, but I hope that it was a wise decision!</p>
+<p>I hope this helps you.</p>
 
 
 	
@@ -115,14 +107,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/';
+                this.page.url = 'http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/';
+    var disqus_url = 'http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
