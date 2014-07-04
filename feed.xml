@@ -1,4 +1,70 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-06-27T21:48:51+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/</id><title type="text">Add documentation to your Web API in 5 steps</title><summary type="html">&lt;p&gt;APIs are created to expose the system to other developers, so we need to provide documentation that explain how to use our API.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-07-04T22:51:00+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/07/metro-bootstrap-with-improved-tiles/</id><title type="text">metro-bootstrap with improved tiles</title><summary type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.1.1.2. The highlights of this release are based on improvements to tiles. We have been working to give you the flexibility to implement tiles where you want and as you want.&lt;/p&gt;
+
+&lt;p&gt;In the previous version metro-bootstrap tiles were based on the Thumbnail component of bootstrap that will let you place them side by side easily. Now you will be able to place a tile in a "div" tag, for example, and set the positioning as you want.&lt;/p&gt;
+
+</summary><published>2014-07-03T23:00:00Z</published><updated>2014-07-03T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/07/metro-bootstrap-with-improved-tiles/" /><content type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.1.1.2. The highlights of this release are based on improvements to tiles. We have been working to give you the flexibility to implement tiles where you want and as you want.&lt;/p&gt;
+
+&lt;p&gt;In the previous version metro-bootstrap tiles were based on the Thumbnail component of bootstrap that will let you place them side by side easily. Now you will be able to place a tile in a "div" tag, for example, and set the positioning as you want.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;h1&gt;What's new&lt;/h1&gt;
+
+&lt;p&gt;Here's a look at tiles news.&lt;/p&gt;
+
+&lt;h2&gt;New positioning - Remove Thumbnail dependency&lt;/h2&gt;
+
+&lt;p&gt;In the last version was mandatory to use thumbnails, now don't. If you want, you can use them, but you aren't obligated anymore. For example, if you want to create a Tile board taking part of the Bootstrap grid system you can (&lt;a href="http://talkslab.github.io/metro-bootstrap/dashboardtemplate.html"&gt;you can find here an example of how you can accomplish this&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h2&gt;New template&lt;/h2&gt;
+
+&lt;p&gt;You can find &lt;a href="http://talkslab.github.io/metro-bootstrap/dashboardtemplate.html"&gt;here&lt;/a&gt; a template of a responsive dashboard based on tiles.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/metro-bootstrap-with-improved-tiles-dashboard-template.png" alt="metro-bootstrap dashboard template" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;New colors&lt;/h2&gt;
+
+&lt;p&gt;Using the info, danger, warning and success colors already defined in bootstrap, you can add the following classes to your tiles:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;tile-info&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;tile-danger&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;tile-warning&lt;/em&gt;&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;tile-success&lt;/em&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;New default variables&lt;/h2&gt;
+
+&lt;p&gt;In the &lt;em&gt;variables.less&lt;/em&gt; file you can find the following variables:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;@tile-bg&lt;/em&gt; to define the default color for tiles&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;@tile-border&lt;/em&gt; to define the border size&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;@tile-border-bg&lt;/em&gt; to define the border color&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;New sizes&lt;/h2&gt;
+
+&lt;p&gt;Following the &lt;a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh465403.aspx"&gt;Microsoft Guidelines&lt;/a&gt; were implemented new classes and now it's possible define the following sizes:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Small (70x70). Add the css class &lt;em&gt;tile-small&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Medium (150x150). Add the css class &lt;em&gt;tile-medium&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Wide (310x150). Add the css class &lt;em&gt;tile-wide&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;Large (310x310). Add the css class &lt;em&gt;tile-large&lt;/em&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Tile title&lt;/h2&gt;
+
+&lt;p&gt;Place a tile title on the lower left corner.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;span class="tile-label"&amp;gt;Tile 5&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;What's next&lt;/h2&gt;
+
+&lt;p&gt;Well, since Bootstrap v3.2.0 has been released we'll be updating metro-bootstrap to be compatible with it soon.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/</id><title type="text">Add documentation to your Web API in 5 steps</title><summary type="html">&lt;p&gt;APIs are created to expose the system to other developers, so we need to provide documentation that explain how to use our API.&lt;/p&gt;
 
 &lt;p&gt;So far, so good, but maintain documents manually is a kind of boring. What about auto-generate it?&lt;/p&gt;
 
@@ -475,20 +541,4 @@ Console.WriteLine("Dynamic Object - GET - Elapsed={0}", sw.Elapsed);
 &lt;p&gt;Just remember to delete the backup from storage and the old server if you want.&lt;/p&gt;
 
 &lt;p&gt;Enjoy it!&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/04/lets-blog/</id><title type="text">Let's blog</title><summary type="html">&lt;p&gt;Hi! My name is Guilherme Ferreira. I'm a &lt;a href="http://www.pinterest.com/igori/portugal/"&gt;Portuguese&lt;/a&gt; software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of &lt;a href="http://www.pinterest.com/turismportugal/porto-portugal/"&gt;Porto&lt;/a&gt;. Go check the pictures, I will be right here waiting for you.&lt;/p&gt;
-
-&lt;p&gt;I'm starting this blog with the intent to share the lessons that I learn, 
-write news about my work and to improve my English writing skills. 
-</summary><published>2014-04-27T23:00:00Z</published><updated>2014-04-27T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/04/lets-blog/" /><content type="html">&lt;p&gt;Hi! My name is Guilherme Ferreira. I'm a &lt;a href="http://www.pinterest.com/igori/portugal/"&gt;Portuguese&lt;/a&gt; software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of &lt;a href="http://www.pinterest.com/turismportugal/porto-portugal/"&gt;Porto&lt;/a&gt;. Go check the pictures, I will be right here waiting for you.&lt;/p&gt;
-
-&lt;p&gt;I'm starting this blog with the intent to share the lessons that I learn, 
-write news about my work and to improve my English writing skills. 
-&lt;!--excerpt--&gt;
-Following this page you can expect to read cool stuff about software development, entrepreneurship, productivity tips and other living stuff.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://www.gravatar.com/avatar/93c1c26212f9eb3673538e6ad6ca7eb4.png?s=200" alt="alt text" title="This is me" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Go subscribe the &lt;a href="http://gsferreira.com/rss.xml"&gt;RSS feed&lt;/a&gt;, visit the &lt;a href="http://gsferreira.com/about/"&gt;about page&lt;/a&gt; to find my contacts and feel free to contact me.&lt;/p&gt;
-
-&lt;p&gt;I'll see you soon... and now let's blog!&lt;/p&gt;
 </content></entry></feed>
