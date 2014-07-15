@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="last-modified" content="2014-07-15T21:56:48.5390707+01:00" />
-    <meta name="keywords" content="metro-bootstrap" />
+    <meta name="keywords" content="Azure" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Bringing Grunt and Bower to metro-bootstrap - 
+            Analyse Azure Log Tables using SQL Queries - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2014/07/analyse-azure-log-tables-using-sql-queries/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -38,79 +38,39 @@
 
 
 <div class="post">
-    <h1>Bringing Grunt and Bower to metro-bootstrap</h1> 
+    <h1>Analyse Azure Log Tables using SQL Queries</h1> 
       <div class="meta">
-        <p class="posted">05 jun 2014</p>
+        <p class="posted">15 jul 2014</p>
         <ul class="categories">
-          <li><a href="/category/metro-bootstrap" title="Snow.Models.Category">metro-bootstrap</a></li>
+          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Since we publish <a href="https://github.com/TalksLab/metro-bootstrap">metro-bootstrap</a> we saw an incredible acceptance to the project and we are really happy to have decided to delivery it as an open source project. </p>
-
-<p>This project has grown up with a lack of structure in my opinion, so, this week I've been working to add Grunt and Bower to metro-bootstrap. To accomplish this task, I have the valuable help of <a href="http://yeoman.io/">Yeoman</a>. If you're like me, and <a href="http://gruntjs.com/">Grunt</a> or <a href="http://bower.io/">Bower</a> are crazy talk, you will find in Yeoman a great way to start.</p>
+    <p>If you are using <a href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-dotnet-diagnostics/">Diagnostics</a> in Microsoft Azure, probably you walked through the horrible experience of analyse that data, specially if you are looking for a specific TimeStamp in the middle of tons of records.</p>
 
 <!--excerpt-->
 
-<p><a href="http://yeoman.io/"><img src="/images/bringing-grunt-and-bower-to-metro-bootstrap-yeoman.jpg" alt="Yeoman" /></a></p>
+<p>This is so slow because the TimeStamp column, in Azure Table Storage, isn't indexed, but if you take a closer view, you will see that the partition key of WADLogTable is the date-time in ticks, and querying by the partition key is incredible fast.</p>
 
-<p>We have adopted bower for dependency management, so we can manage the dependencies in a declarative way. Now you can know the current dependencies looking at the bower.json file.</p>
+<p>If you want to query your table manually you will need to convert your date into ticks like this:</p>
 
-<p>Since the metro-bootstrap release, we always work on .less files, but we also release the css file and a minified version of it. To do this, we used some tools like <a href="http://wearekiss.com/simpless">SimpLESS</a> or <a href="http://winless.org/">WinLess</a>. This is over, now we leave this responsibility to Grunt. Grunt is the tool to compile the less files, minify the css files and release our page for GitHub Pages.</p>
-
-<p>What have changed? Take a look.</p>
-
-<h2>Repository structure</h2>
-
-<p>In the repository you will find the following directories:</p>
-
-<pre><code>app/
-├── fonts/
-│   └── (FontAwesome files)
-└── less/
-    └── (metro-bootstrap less files)
-dist/
-├── fonts/
-│   └── font-awesome/
-│   │   └── (FontAwesome files)
-└── css/
-    ├── metro-bootstrap.css
-    └── metro-bootstrap.min.css
-docs/
-└── (metro-bootstrap GitHub Pages)
+<pre><code>DateTime dt = new DateTime(2014, 07, 15, 0,0,0);
+long tks = dt.Ticks;
+Console.WriteLine(tks); 
 </code></pre>
 
-<p>We provide compiled CSS (<code>metro-bootstrap.css</code>) in the dist folder, as well as compiled and minified CSS (<code>metro-bootstrap.min.css</code>). </p>
+<p>This can be useful, but in some cases you will need to query over the "Message" column and that can be hard.</p>
 
-<h2>Instaling Dependencies</h2>
+<p>To overtake this difficulty, recently I was looking for a way to run SQL queries over the WADLogsTable since the Azure Storage Explorer isn't a good help. So, I have found this great tool <a href="https://github.com/SageLukeDean/AzureLogSpelunker">AzureLogSpelunker</a> by <a href="https://github.com/SageLukeDean">Luke Dean</a>.</p>
 
-<p>We manage dependencies using Bower.
-Run <code>bower install</code> to download the required dependencies.</p>
+<p><img src="/images/analyse-azure-log-tables-using-sql-queries-azurelogspelunker.png" alt="AzureLogSpelunker" /></p>
 
-<p>If don't have Grunt installed, execute the following steps from the command line:</p>
+<p>AzureLogSpelunker can be used to request the logs for a specific period, then the tool will cache them locally in a SQLite database where you may run SQL queries. This tool is a must have if you are using the Microsoft Azure Platform.</p>
 
-<ol>
-<li>Make sure you have node.js installed.</li>
-<li>Install bower with <code>npm install -g bower</code>.</li>
-</ol>
-
-<h2>Compiling CSS</h2>
-
-<p>We compile metro-bootstrap using <a href="http://gruntjs.com/">Grunt</a>. 
-Run <code>grunt build</code> to compile the CSS into <code>/dist</code>. </p>
-
-<p>If don't have Grunt installed, execute the following steps from the command line:</p>
-
-<ol>
-<li>Make sure you have node.js installed.</li>
-<li>Install <code>grunt-cli</code> globally with <code>npm install -g grunt-cli</code>.</li>
-<li>Go to the <code>metro-bootstrap</code> directory, then run <code>npm install</code>. npm will look at package.json and automatically install the necessary dependencies.</li>
-</ol>
-
-<p>Now, go fork it!</p>
+<p>I hope this helps you.</p>
 
 
 	
@@ -129,14 +89,14 @@ Run <code>grunt build</code> to compile the CSS into <code>/dist</code>. </p>
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/';
+                this.page.url = 'http://gsferreira.com/archive/2014/07/analyse-azure-log-tables-using-sql-queries/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/';
+    var disqus_url = 'http://gsferreira.com/archive/2014/07/analyse-azure-log-tables-using-sql-queries/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

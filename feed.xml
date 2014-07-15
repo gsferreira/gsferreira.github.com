@@ -1,4 +1,28 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-07-04T22:51:00+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/07/metro-bootstrap-with-improved-tiles/</id><title type="text">metro-bootstrap with improved tiles</title><summary type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.1.1.2. The highlights of this release are based on improvements to tiles. We have been working to give you the flexibility to implement tiles where you want and as you want.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-07-15T21:56:52+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/07/analyse-azure-log-tables-using-sql-queries/</id><title type="text">Analyse Azure Log Tables using SQL Queries</title><summary type="html">&lt;p&gt;If you are using &lt;a href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-dotnet-diagnostics/"&gt;Diagnostics&lt;/a&gt; in Microsoft Azure, probably you walked through the horrible experience of analyse that data, specially if you are looking for a specific TimeStamp in the middle of tons of records.&lt;/p&gt;
+
+</summary><published>2014-07-14T23:00:00Z</published><updated>2014-07-14T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/07/analyse-azure-log-tables-using-sql-queries/" /><content type="html">&lt;p&gt;If you are using &lt;a href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-dotnet-diagnostics/"&gt;Diagnostics&lt;/a&gt; in Microsoft Azure, probably you walked through the horrible experience of analyse that data, specially if you are looking for a specific TimeStamp in the middle of tons of records.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;This is so slow because the TimeStamp column, in Azure Table Storage, isn't indexed, but if you take a closer view, you will see that the partition key of WADLogTable is the date-time in ticks, and querying by the partition key is incredible fast.&lt;/p&gt;
+
+&lt;p&gt;If you want to query your table manually you will need to convert your date into ticks like this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;DateTime dt = new DateTime(2014, 07, 15, 0,0,0);
+long tks = dt.Ticks;
+Console.WriteLine(tks); 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This can be useful, but in some cases you will need to query over the "Message" column and that can be hard.&lt;/p&gt;
+
+&lt;p&gt;To overtake this difficulty, recently I was looking for a way to run SQL queries over the WADLogsTable since the Azure Storage Explorer isn't a good help. So, I have found this great tool &lt;a href="https://github.com/SageLukeDean/AzureLogSpelunker"&gt;AzureLogSpelunker&lt;/a&gt; by &lt;a href="https://github.com/SageLukeDean"&gt;Luke Dean&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/analyse-azure-log-tables-using-sql-queries-azurelogspelunker.png" alt="AzureLogSpelunker" /&gt;&lt;/p&gt;
+
+&lt;p&gt;AzureLogSpelunker can be used to request the logs for a specific period, then the tool will cache them locally in a SQLite database where you may run SQL queries. This tool is a must have if you are using the Microsoft Azure Platform.&lt;/p&gt;
+
+&lt;p&gt;I hope this helps you.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/07/metro-bootstrap-with-improved-tiles/</id><title type="text">metro-bootstrap with improved tiles</title><summary type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.1.1.2. The highlights of this release are based on improvements to tiles. We have been working to give you the flexibility to implement tiles where you want and as you want.&lt;/p&gt;
 
 &lt;p&gt;In the previous version metro-bootstrap tiles were based on the Thumbnail component of bootstrap that will let you place them side by side easily. Now you will be able to place a tile in a "div" tag, for example, and set the positioning as you want.&lt;/p&gt;
 
@@ -510,35 +534,4 @@ Console.WriteLine("Dynamic Object - GET - Elapsed={0}", sw.Elapsed);
 &lt;/ul&gt;
 
 &lt;p&gt;I'm not trying to tell you to keep a safety distance from dynamic typing, I'm just saying that if you're building an application where the performance is a key factor, where you don't need dynamic typing and you really need to pay attention to any fraction of second... so you should keep an eye on it. &lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/05/move-database-new-sql-azure-service-tiers/</id><title type="text">Move your database to new SQL Azure Service Tiers</title><summary type="html">&lt;p&gt;In the last Build conference Scott Guthrie announced the new Basic and Standard tier option to the SQL Databases on Azure. Those tiers bring amazing features and you can find more about them in the &lt;a href="http://weblogs.asp.net/scottgu/archive/2014/04/29/azure-99-95-sql-database-sla-500-gb-db-size-improved-performance-self-service-restore-and-business-continuity.aspx"&gt;Scott's post&lt;/a&gt;. If you want to try it, as I did, go ahead and take advantage of the 50% discount during the preview period. &lt;/p&gt;
-
-&lt;p&gt;You can find here how to move your SQL Database currently in the Web or Business edition using the following tips.&lt;/p&gt;
-
-</summary><published>2014-05-02T23:00:00Z</published><updated>2014-05-02T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/move-database-new-sql-azure-service-tiers/" /><content type="html">&lt;p&gt;In the last Build conference Scott Guthrie announced the new Basic and Standard tier option to the SQL Databases on Azure. Those tiers bring amazing features and you can find more about them in the &lt;a href="http://weblogs.asp.net/scottgu/archive/2014/04/29/azure-99-95-sql-database-sla-500-gb-db-size-improved-performance-self-service-restore-and-business-continuity.aspx"&gt;Scott's post&lt;/a&gt;. If you want to try it, as I did, go ahead and take advantage of the 50% discount during the preview period. &lt;/p&gt;
-
-&lt;p&gt;You can find here how to move your SQL Database currently in the Web or Business edition using the following tips.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Before you start, make sure that you have a Windows Azure Storage Account and a container in it.&lt;/p&gt;
-
-&lt;p&gt;First of all you should take your web site or any client of your database offline, just to ensure that no one updates the database during this operation.&lt;/p&gt;
-
-&lt;p&gt;Open a connection to your SQL Server using SQL Management Studio. Right click on your database. Choose &lt;em&gt;"Tasks &gt; Export Data-tier Application"&lt;/em&gt;. Make sure that you store the bacpac file in your Windows Azure Storage. You can find a good example &lt;a href="http://blogs.msdn.com/b/brunoterkaly/archive/2013/09/26/how-to-export-an-on-premises-sql-server-database-to-windows-azure-storage.aspx?Redirected=true"&gt;here&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Now you need to create a SQL Server before create the database&lt;/strong&gt;, by some reason (probably a "preview version bug") if you try to import the database before create the server you will get an &lt;a href="http://social.technet.microsoft.com/Forums/en-US/54a073aa-b554-403b-87ca-53196a897c9c/cant-create-a-new-sql-azure-standard-tier-db?forum=ssdsgetstarted"&gt;error&lt;/a&gt;. So, go to &lt;a href="http://manage.windowsazure.com"&gt;Azure Manage web site&lt;/a&gt; and create a new SQL Server. Make sure that you set the "Supported Database Editions" to "Basic, Standard, Premium".&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/move-database-new-sql-azure-service-tiers-create-server.png" alt="alt text" title="Create a new server" /&gt;&lt;/p&gt;
-
-&lt;p&gt;After that, add a new SQL Database (imported from the previous backup) to the server created in the last step. &lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/move-database-new-sql-azure-service-tiers-import-database.png" alt="alt text" title="Create a new database menu" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Select the Backup that you made, choose one of the Preview Editions and the server created before.&lt;/p&gt;
-
-&lt;p&gt;When the create database operation is completed, just update your connection string and you are ready to go.&lt;/p&gt;
-
-&lt;p&gt;Just remember to delete the backup from storage and the old server if you want.&lt;/p&gt;
-
-&lt;p&gt;Enjoy it!&lt;/p&gt;
 </content></entry></feed>
