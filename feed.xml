@@ -1,4 +1,4 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-07-31T21:45:26+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/07/have-fun-with-cortana/</id><title type="text">Have fun with Cortana</title><summary type="html">&lt;p&gt;Have you heard about Cortana? If you are a proud owner of a Windows Phone,  I bet you did. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-08-01T11:41:49+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/07/have-fun-with-cortana/</id><title type="text">Have fun with Cortana</title><summary type="html">&lt;p&gt;Have you heard about Cortana? If you are a proud owner of a Windows Phone,  I bet you did. &lt;/p&gt;
 
 &lt;p&gt;To the others, Cortana is like Siri, but for Windows Phone. One of the few things where iPhone was the first, since Windows Phone release (if you are an Apple fan, I bet that you want to leave your opinion, scroll down and leave a comment, but remember that this is just my humble opinion &amp;#9786; ).&lt;/p&gt;
 
@@ -536,4 +536,153 @@ placeholder="Amount" ng-model="amount" smart-float /&amp;gt;
 &lt;p&gt;You can see the working demo on &lt;a href="http://jsfiddle.net/gsferreira/SCr6X/8/"&gt;JSFiddle&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;I hope that this helps you.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/05/pomodoro-technique-the-productivity-sauce/</id><title type="text">Pomodoro Technique, the productivity sauce</title><summary type="html">&lt;p&gt;You've probably heard about the &lt;a href="http://pomodorotechnique.com/"&gt;Pomodoro Technique&lt;/a&gt;. This is one of the most popular time management tools nowadays. This technique has been developed by &lt;em&gt;&lt;a href="http://francescocirillo.com/"&gt;Francesco Cirillo&lt;/a&gt;&lt;/em&gt; in the late 1980s. &lt;/p&gt;
+
+&lt;p&gt;In the modern days we keep fighting against the clock, trying to accomplish all the assignments. But in the other hand we have a lot of distractions, as the Facebook messages, new tweets or our phones. The Pomodoro Technique wants to teach you to use the time as your friend, being productive, eliminating the procrastination, the pressure and get free time for yourself. Pomodoro Technique also can be a great complement for other methodology's. I used it in my &lt;a href="http://gettingthingsdone.com/"&gt;GTD (Getting Things Done)&lt;/a&gt; workflow for example.&lt;/p&gt;
+
+</summary><published>2014-05-18T23:00:00Z</published><updated>2014-05-18T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/pomodoro-technique-the-productivity-sauce/" /><content type="html">&lt;p&gt;You've probably heard about the &lt;a href="http://pomodorotechnique.com/"&gt;Pomodoro Technique&lt;/a&gt;. This is one of the most popular time management tools nowadays. This technique has been developed by &lt;em&gt;&lt;a href="http://francescocirillo.com/"&gt;Francesco Cirillo&lt;/a&gt;&lt;/em&gt; in the late 1980s. &lt;/p&gt;
+
+&lt;p&gt;In the modern days we keep fighting against the clock, trying to accomplish all the assignments. But in the other hand we have a lot of distractions, as the Facebook messages, new tweets or our phones. The Pomodoro Technique wants to teach you to use the time as your friend, being productive, eliminating the procrastination, the pressure and get free time for yourself. Pomodoro Technique also can be a great complement for other methodology's. I used it in my &lt;a href="http://gettingthingsdone.com/"&gt;GTD (Getting Things Done)&lt;/a&gt; workflow for example.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/pomodoro-technique-the-productivity-sauce-modern-family-decisions-under-pressure.jpg" alt="Modern Family - Decisions under pressure" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Pomodoro is the Italian word for tomato, and Francesco named it as pomodoro because he used a kitchen timer with a tomato shape as his personal timer.
+The technique consists in for each 25 minute work period (this period is called a "Pomodoro") take a five minutes break. In this break &lt;strong&gt;you shouldn't go to your social networks&lt;/strong&gt;... beware of shiny objects. Instead, you should rest your eyes, grab a cup of coffee or go take a walk. Every four pomodoros you should take a longer break of 20 minutes. Frequent breaks keep your mind fresh and focused. Your brain will retrieve you the favor.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.flickr.com/photos/33593406@N03/7738254354/"&gt;&lt;img src="http://gsferreira.com/images/pomodoro-technique-the-productivity-sauce-pomodoro-timer.jpg" alt="Pomodoro timer" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;!---*"Photo by [Kate Bunker](http://www.flickr.com/photos/33593406@N03/7738254354/) licensed under [Creative Commons Attribution-NonCommercial License](http://creativecommons.org/licenses/by-nc/2.0/)."*
+--&gt;
+
+&lt;p&gt;You should be asking &lt;strong&gt;why the 25 minutes&lt;/strong&gt;? I really don't know, and that is a question that I have made to myself. After some research, I believe that the 25 minutes is the "ideal" period to keep the focus on a single task, if you have longer periods your brain will get tired, but this is a personal conclusion.&lt;/p&gt;
+
+&lt;p&gt;This isn't applicable for anyone, but if you usually seat down at a desk and you need to get things done, I believe that you can use it. I use it while I'm programming because it helps me stay focused and "force" me to break large tasks into short steps. I also like to use it in teamwork, for example, in pair programming or in a &lt;a href="http://en.wikipedia.org/wiki/Stand-up_meeting"&gt;Scrum stand-up meeting&lt;/a&gt;. The ticking clock will teach your team that time is running out and the task should completed. If you are questioning yourself if this is a good tool for you, go check this &lt;a href="http://pomodorotechnique.com/get-started/"&gt;page&lt;/a&gt;, probably you will find your case.&lt;/p&gt;
+
+&lt;p&gt;You could find some problems to apply it, for example:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;How to concentrate without interruptions, specially if you are inside a team. &lt;/li&gt;
+&lt;li&gt;The open-plan offices can be an enemy, so pick the perfect music and put your headphones.&lt;/li&gt;
+&lt;li&gt;It's possible don't answer your phone during a pomodoro in your position?&lt;/li&gt;
+&lt;li&gt;Keep the flow while dealing with interaction with the co-workers.&lt;/li&gt;
+&lt;li&gt;Meetings... a necessary evil.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Pomodoro Technique is free, you can spend some money to get a kitchen timer if you want… or you can use any timer program on your computer or phone (I'm using the &lt;a href="https://chrome.google.com/webstore/detail/simple-pomodoro%C2%AE/blidjjfbdbkcmegfnidmgndgdamhhelp"&gt;&lt;em&gt;Simple Pomodoro&lt;/em&gt; extension for Chrome&lt;/a&gt;). The process isn't ideal for every person, but if you want to boost your productivity you can try it and let me know the results in the comments below.&lt;/p&gt;
+
+&lt;p&gt;By the way, this post has been written in 4 pomodoros.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/05/the-dark-side-of-dynamic-typing/</id><title type="text">The dark side of dynamic typing</title><summary type="html">&lt;p&gt;&lt;a href="http://msdn.microsoft.com/en-us/library/dd264736.aspx"&gt;Dynamic typing&lt;/a&gt; isn't anything new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it may avoid some complicated reflection code, for example. I've used it a lot, but recently I've discovered his dark side... &lt;strong&gt;the performance side&lt;/strong&gt;. &lt;/p&gt;
+
+</summary><published>2014-05-07T23:00:00Z</published><updated>2014-05-07T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/the-dark-side-of-dynamic-typing/" /><content type="html">&lt;p&gt;&lt;a href="http://msdn.microsoft.com/en-us/library/dd264736.aspx"&gt;Dynamic typing&lt;/a&gt; isn't anything new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it may avoid some complicated reflection code, for example. I've used it a lot, but recently I've discovered his dark side... &lt;strong&gt;the performance side&lt;/strong&gt;. &lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://www.quickmeme.com/img/e8/e8e8d6ebfd29823854295376337528dc9853a26b27f43c85dd8eb0ed0ab666dc.jpg" alt="alt text" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Why do I say it? If you measure the performance cost of a simple "Set" or "Get" operation you will see a great improvement simply changing it to typed code. You can use the following code to test it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;//Typed Object performance - SET PERFORMANCE
+MyClass myObject = new MyClass();
+sw.Reset();
+sw.Start();
+myObject.Str = "Hello World!";
+sw.Stop();
+Console.WriteLine("Typed Object - SET - Elapsed={0}", sw.Elapsed);
+
+
+//Typed Object performance - GET PERFORMANCE
+sw.Reset();
+sw.Start();
+result = myObject.Str;
+sw.Stop();
+Console.WriteLine("Typed Object - GET - Elapsed={0}", sw.Elapsed);
+
+
+//Dynamic Object performance - SET PERFORMANCE
+dynamic myDynamicObject = new MyClass();
+sw.Reset();
+sw.Start();
+myDynamicObject.Str = "Hello World!";
+sw.Stop();
+Console.WriteLine("Dynamic Object - SET - Elapsed={0}", sw.Elapsed);
+
+//Dynamic Object performance - GET PERFORMANCE
+sw.Reset();
+sw.Start();
+result = myDynamicObject.Str;
+sw.Stop();
+Console.WriteLine("Dynamic Object - GET - Elapsed={0}", sw.Elapsed);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;With this piece of code inside a loop I got the following results. You can see the time differences.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Typed Object - GET - Elapsed=00:00:00.0000022&lt;/li&gt;
+&lt;li&gt;Typed Object - SET - Elapsed=00:00:00.0000008&lt;/li&gt;
+&lt;li&gt;Dynamic Object - GET - Elapsed=00:00:00.0330937&lt;/li&gt;
+&lt;li&gt;Dynamic Object - SET - Elapsed=00:00:00.0027800&lt;/li&gt;
+&lt;li&gt;Typed Object - GET - Elapsed=00:00:00&lt;/li&gt;
+&lt;li&gt;Typed Object - SET - Elapsed=00:00:00.0000004&lt;/li&gt;
+&lt;li&gt;Dynamic Object - GET - Elapsed=00:00:00.0000031&lt;/li&gt;
+&lt;li&gt;Dynamic Object - SET - Elapsed=00:00:00.0000026&lt;/li&gt;
+&lt;li&gt;Typed Object - GET - Elapsed=00:00:00.0000004&lt;/li&gt;
+&lt;li&gt;Typed Object - SET - Elapsed=00:00:00.0000004&lt;/li&gt;
+&lt;li&gt;Dynamic Object - GET - Elapsed=00:00:00.0000022&lt;/li&gt;
+&lt;li&gt;Dynamic Object - SET - Elapsed=00:00:00.0000026&lt;/li&gt;
+&lt;li&gt;Typed Object - GET - Elapsed=00:00:00.0000004&lt;/li&gt;
+&lt;li&gt;Typed Object - SET - Elapsed=00:00:00.0000004&lt;/li&gt;
+&lt;li&gt;Dynamic Object - GET - Elapsed=00:00:00.0000022&lt;/li&gt;
+&lt;li&gt;Dynamic Object - SET - Elapsed=00:00:00.0000022&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I'm not trying to tell you to keep a safety distance from dynamic typing, I'm just saying that if you're building an application where the performance is a key factor, where you don't need dynamic typing and you really need to pay attention to any fraction of second... so you should keep an eye on it. &lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/05/move-database-new-sql-azure-service-tiers/</id><title type="text">Move your database to new SQL Azure Service Tiers</title><summary type="html">&lt;p&gt;In the last Build conference Scott Guthrie announced the new Basic and Standard tier option to the SQL Databases on Azure. Those tiers bring amazing features and you can find more about them in the &lt;a href="http://weblogs.asp.net/scottgu/archive/2014/04/29/azure-99-95-sql-database-sla-500-gb-db-size-improved-performance-self-service-restore-and-business-continuity.aspx"&gt;Scott's post&lt;/a&gt;. If you want to try it, as I did, go ahead and take advantage of the 50% discount during the preview period. &lt;/p&gt;
+
+&lt;p&gt;You can find here how to move your SQL Database currently in the Web or Business edition using the following tips.&lt;/p&gt;
+
+</summary><published>2014-05-02T23:00:00Z</published><updated>2014-05-02T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/move-database-new-sql-azure-service-tiers/" /><content type="html">&lt;p&gt;In the last Build conference Scott Guthrie announced the new Basic and Standard tier option to the SQL Databases on Azure. Those tiers bring amazing features and you can find more about them in the &lt;a href="http://weblogs.asp.net/scottgu/archive/2014/04/29/azure-99-95-sql-database-sla-500-gb-db-size-improved-performance-self-service-restore-and-business-continuity.aspx"&gt;Scott's post&lt;/a&gt;. If you want to try it, as I did, go ahead and take advantage of the 50% discount during the preview period. &lt;/p&gt;
+
+&lt;p&gt;You can find here how to move your SQL Database currently in the Web or Business edition using the following tips.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;Before you start, make sure that you have a Windows Azure Storage Account and a container in it.&lt;/p&gt;
+
+&lt;p&gt;First of all you should take your web site or any client of your database offline, just to ensure that no one updates the database during this operation.&lt;/p&gt;
+
+&lt;p&gt;Open a connection to your SQL Server using SQL Management Studio. Right click on your database. Choose &lt;em&gt;"Tasks &gt; Export Data-tier Application"&lt;/em&gt;. Make sure that you store the bacpac file in your Windows Azure Storage. You can find a good example &lt;a href="http://blogs.msdn.com/b/brunoterkaly/archive/2013/09/26/how-to-export-an-on-premises-sql-server-database-to-windows-azure-storage.aspx?Redirected=true"&gt;here&lt;/a&gt;. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Now you need to create a SQL Server before create the database&lt;/strong&gt;, by some reason (probably a "preview version bug") if you try to import the database before create the server you will get an &lt;a href="http://social.technet.microsoft.com/Forums/en-US/54a073aa-b554-403b-87ca-53196a897c9c/cant-create-a-new-sql-azure-standard-tier-db?forum=ssdsgetstarted"&gt;error&lt;/a&gt;. So, go to &lt;a href="http://manage.windowsazure.com"&gt;Azure Manage web site&lt;/a&gt; and create a new SQL Server. Make sure that you set the "Supported Database Editions" to "Basic, Standard, Premium".&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/move-database-new-sql-azure-service-tiers-create-server.png" alt="alt text" title="Create a new server" /&gt;&lt;/p&gt;
+
+&lt;p&gt;After that, add a new SQL Database (imported from the previous backup) to the server created in the last step. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/move-database-new-sql-azure-service-tiers-import-database.png" alt="alt text" title="Create a new database menu" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Select the Backup that you made, choose one of the Preview Editions and the server created before.&lt;/p&gt;
+
+&lt;p&gt;When the create database operation is completed, just update your connection string and you are ready to go.&lt;/p&gt;
+
+&lt;p&gt;Just remember to delete the backup from storage and the old server if you want.&lt;/p&gt;
+
+&lt;p&gt;Enjoy it!&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/04/lets-blog/</id><title type="text">Let's blog</title><summary type="html">&lt;p&gt;Hi! My name is Guilherme Ferreira. I'm a &lt;a href="http://www.pinterest.com/igori/portugal/"&gt;Portuguese&lt;/a&gt; software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of &lt;a href="http://www.pinterest.com/turismportugal/porto-portugal/"&gt;Porto&lt;/a&gt;. Go check the pictures, I will be right here waiting for you.&lt;/p&gt;
+
+&lt;p&gt;I'm starting this blog with the intent to share the lessons that I learn, 
+write news about my work and to improve my English writing skills. 
+</summary><published>2014-04-27T23:00:00Z</published><updated>2014-04-27T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/04/lets-blog/" /><content type="html">&lt;p&gt;Hi! My name is Guilherme Ferreira. I'm a &lt;a href="http://www.pinterest.com/igori/portugal/"&gt;Portuguese&lt;/a&gt; software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of &lt;a href="http://www.pinterest.com/turismportugal/porto-portugal/"&gt;Porto&lt;/a&gt;. Go check the pictures, I will be right here waiting for you.&lt;/p&gt;
+
+&lt;p&gt;I'm starting this blog with the intent to share the lessons that I learn, 
+write news about my work and to improve my English writing skills. 
+&lt;!--excerpt--&gt;
+Following this page you can expect to read cool stuff about software development, entrepreneurship, productivity tips and other living stuff.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://www.gravatar.com/avatar/93c1c26212f9eb3673538e6ad6ca7eb4.png?s=200" alt="alt text" title="This is me" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Go subscribe the &lt;a href="http://gsferreira.com/rss.xml"&gt;RSS feed&lt;/a&gt;, visit the &lt;a href="http://gsferreira.com/about/"&gt;about page&lt;/a&gt; to find my contacts and feel free to contact me.&lt;/p&gt;
+
+&lt;p&gt;I'll see you soon... and now let's blog!&lt;/p&gt;
 </content></entry></feed>
