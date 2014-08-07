@@ -1385,3 +1385,17 @@ p.previous
 {
 	text-align: center;
 }
+
+
+/* CUSTOM */
+.post-social-links
+{
+    text-align: center;
+    margin-top:5px;
+    margin-bottom: 15px;
+}
+.post-social-links a
+{
+    margin-left: 2px;
+    margin-right: 2px;
+}

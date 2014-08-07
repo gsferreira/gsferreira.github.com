@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="last-modified" content="2014-08-07T22:46:26.7075860+01:00" />
-    <meta name="keywords" content="Azure" />
+    <meta name="keywords" content="metro-bootstrap" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Analyse Azure Log Tables using SQL Queries - 
+            metro-bootstrap 3.2.0.1 released - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/07/analyse-azure-log-tables-using-sql-queries/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -38,39 +38,42 @@
 
 
 <div class="post">
-    <h1>Analyse Azure Log Tables using SQL Queries</h1> 
+    <h1>metro-bootstrap 3.2.0.1 released</h1> 
       <div class="meta">
-        <p class="posted">15 Jul 2014</p>
+        <p class="posted">07 Aug 2014</p>
         <ul class="categories">
-          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
+          <li><a href="/category/metro-bootstrap" title="Snow.Models.Category">metro-bootstrap</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>If you are using <a href="http://azure.microsoft.com/en-us/documentation/articles/cloud-services-dotnet-diagnostics/">Diagnostics</a> in Microsoft Azure, probably you walked through the horrible experience of analyse that data, specially if you are looking for a specific TimeStamp in the middle of tons of records.</p>
+    <p>Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.</p>
 
 <!--excerpt-->
 
-<p>This is so slow because the TimeStamp column, in Azure Table Storage, isn't indexed, but if you take a closer view, you will see that the partition key of WADLogTable is the date-time in ticks, and querying by the partition key is incredible fast.</p>
+<h1>What's new</h1>
 
-<p>If you want to query your table manually you will need to convert your date into ticks like this:</p>
+<h2>Dependencies</h2>
 
-<pre><code>DateTime dt = new DateTime(2014, 07, 15, 0,0,0);
-long tks = dt.Ticks;
-Console.WriteLine(tks); 
-</code></pre>
+<ul>
+<li>bootstrap 3.2.0</li>
+</ul>
 
-<p>This can be useful, but in some cases you will need to query over the "Message" column and that can be hard.</p>
+<h2>Bower configuration - Add "main"</h2>
 
-<p>To overtake this difficulty, recently I was looking for a way to run SQL queries over the WADLogsTable since the Azure Storage Explorer isn't a good help. So, I have found this great tool <a href="https://github.com/SageLukeDean/AzureLogSpelunker">AzureLogSpelunker</a> by <a href="https://github.com/SageLukeDean">Luke Dean</a>.</p>
+<p>Has been added the "main" option to the bower.json file. Thanks to <a href="https://github.com/fumitoito">@fumito_ito</a>.</p>
 
-<p><img src="/images/analyse-azure-log-tables-using-sql-queries-azurelogspelunker.png" alt="AzureLogSpelunker" /></p>
+<h2>New variables</h2>
 
-<p>AzureLogSpelunker can be used to request the logs for a specific period, then the tool will cache them locally in a SQLite database where you may run SQL queries. This tool is a must have if you are using the Microsoft Azure Platform.</p>
-
-<p>I hope this helps you.</p>
+<ul>
+<li><em>@tile-light-text-color</em>: Set the default color for <em>tile-clouds</em>.</li>
+<li><em>@tile-font-size-h1</em>: Set the default font size in h1 tags inside tiles.</li>
+<li><em>@tile-font-size-h2</em>: Set the default font size in h2 tags inside tiles.</li>
+<li><em>@tile-font-size-h3</em>: Set the default font size in h3 tags inside tiles.</li>
+<li><em>@tile-font-size-h4</em>: Set the default font size in h4 tags inside tiles.</li>
+</ul>
 
 
 
@@ -93,14 +96,14 @@ Console.WriteLine(tks);
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/07/analyse-azure-log-tables-using-sql-queries/';
+                this.page.url = 'http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/07/analyse-azure-log-tables-using-sql-queries/';
+    var disqus_url = 'http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

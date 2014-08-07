@@ -1,4 +1,31 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-08-01T14:15:40+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/07/have-fun-with-cortana/</id><title type="text">Have fun with Cortana</title><summary type="html">&lt;p&gt;Have you heard about Cortana? If you are a proud owner of a Windows Phone,  I bet you did. &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-08-07T22:46:29+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/</id><title type="text">metro-bootstrap 3.2.0.1 released</title><summary type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.&lt;/p&gt;
+
+</summary><published>2014-08-06T23:00:00Z</published><updated>2014-08-06T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/" /><content type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;h1&gt;What's new&lt;/h1&gt;
+
+&lt;h2&gt;Dependencies&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;bootstrap 3.2.0&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h2&gt;Bower configuration - Add "main"&lt;/h2&gt;
+
+&lt;p&gt;Has been added the "main" option to the bower.json file. Thanks to &lt;a href="https://github.com/fumitoito"&gt;@fumito_ito&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h2&gt;New variables&lt;/h2&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;em&gt;@tile-light-text-color&lt;/em&gt;: Set the default color for &lt;em&gt;tile-clouds&lt;/em&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;@tile-font-size-h1&lt;/em&gt;: Set the default font size in h1 tags inside tiles.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;@tile-font-size-h2&lt;/em&gt;: Set the default font size in h2 tags inside tiles.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;@tile-font-size-h3&lt;/em&gt;: Set the default font size in h3 tags inside tiles.&lt;/li&gt;
+&lt;li&gt;&lt;em&gt;@tile-font-size-h4&lt;/em&gt;: Set the default font size in h4 tags inside tiles.&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/07/have-fun-with-cortana/</id><title type="text">Have fun with Cortana</title><summary type="html">&lt;p&gt;Have you heard about Cortana? If you are a proud owner of a Windows Phone,  I bet you did. &lt;/p&gt;
 
 &lt;p&gt;To the others, Cortana is like Siri, but for Windows Phone. One of the few things where iPhone was the first, since Windows Phone release (if you are an Apple fan, I bet that you want to leave your opinion, scroll down and leave a comment, but remember that this is just my humble opinion &amp;#9786; ).&lt;/p&gt;
 
