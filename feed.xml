@@ -1,4 +1,126 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-08-07T22:46:29+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/</id><title type="text">metro-bootstrap 3.2.0.1 released</title><summary type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-08-29T22:47:09+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/08/automate-nuget-package-creation-using-grunt/</id><title type="text">Automate NuGet package creation using Grunt</title><summary type="html">&lt;p&gt;Probably you are already using Grunt, to automate the tasks to build your application or library. In  &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; we are using Grunt to automate the build process, but until now there's a last step that we are doing manually: &lt;strong&gt;create the NuGet package&lt;/strong&gt; for new releases, until today.&lt;/p&gt;
+
+&lt;p&gt;How we automate the package build?&lt;/p&gt;
+
+</summary><published>2014-08-28T23:00:00Z</published><updated>2014-08-28T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/08/automate-nuget-package-creation-using-grunt/" /><content type="html">&lt;p&gt;Probably you are already using Grunt, to automate the tasks to build your application or library. In  &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; we are using Grunt to automate the build process, but until now there's a last step that we are doing manually: &lt;strong&gt;create the NuGet package&lt;/strong&gt; for new releases, until today.&lt;/p&gt;
+
+&lt;p&gt;How we automate the package build?&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;It's simpler than it seems.&lt;/p&gt;
+
+&lt;h3&gt;1. Install nuget&lt;/h3&gt;
+
+&lt;p&gt;First make sure that you have nuget.exe in your machine. &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Is NuGet.exe in your PATH?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open a command prompt.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Type &lt;em&gt;nuget&lt;/em&gt; and hit enter.&lt;/p&gt;
+
+&lt;p&gt;2.1. If the nuget help documentation is displayed, then nuget.exe is already in your PATH.&lt;/p&gt;
+
+&lt;p&gt;2.2. If you received the message, "'nuget' is not recognized as an internal or external command, operable program or batch file." then nuget.exe is not in your PATH.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&lt;strong&gt;How to add NuGet.exe to your PATH?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Open a command prompt.&lt;/li&gt;
+&lt;li&gt;Enter the following command: &lt;em&gt;set PATH=%PATH%;C:\nuget&lt;/em&gt; where "c:\nuget" is the path to the nuget.exe (&lt;a href="http://docs.nuget.org/docs/start-here/installing-nuget#Installing_a_CI_build"&gt;available here&lt;/a&gt;).&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;h3&gt;2. Create the NuGet definition file&lt;/h3&gt;
+
+&lt;p&gt;Create the following XML file with the definition for the package with the &lt;em&gt;".nuspec"&lt;/em&gt; extension.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;?xml version="1.0"?&amp;gt;
+&amp;lt;package xmlns="http://schemas.microsoft.com/packaging/2010/07/nuspec.xsd"&amp;gt;
+    &amp;lt;metadata&amp;gt;
+        &amp;lt;!--
+        ID used to identify the nuget package
+        --&amp;gt;
+        &amp;lt;id&amp;gt;metro-bootstrap&amp;lt;/id&amp;gt;
+
+        &amp;lt;!--
+        Package version - leave this blank
+        --&amp;gt;
+        &amp;lt;version&amp;gt;0.0.0&amp;lt;/version&amp;gt;
+
+        &amp;lt;!-- Author, Owner and Licensing details --&amp;gt;
+        &amp;lt;authors&amp;gt;TalksLab&amp;lt;/authors&amp;gt;
+        &amp;lt;owners&amp;gt;TalksLab&amp;lt;/owners&amp;gt;
+        &amp;lt;requireLicenseAcceptance&amp;gt;false&amp;lt;/requireLicenseAcceptance&amp;gt;
+        &amp;lt;copyright&amp;gt;Copyright 2014&amp;lt;/copyright&amp;gt;
+
+        &amp;lt;!-- General Information --&amp;gt;
+        &amp;lt;description&amp;gt;metro-bootstrap: Twitter Bootstrap with Metro style&amp;lt;/description&amp;gt;
+        &amp;lt;releaseNotes&amp;gt;-&amp;lt;/releaseNotes&amp;gt;
+        &amp;lt;tags&amp;gt;twitter bootstrap css metro responsive html5 talkslab&amp;lt;/tags&amp;gt;
+
+        &amp;lt;!-- 
+        Packages (incl. minimum version) on which this package
+        depends 
+        --&amp;gt;
+        &amp;lt;dependencies&amp;gt;
+          &amp;lt;dependency id="Twitter.Bootstrap.Less" version="3.2.0.1" /&amp;gt;
+        &amp;lt;/dependencies&amp;gt;
+    &amp;lt;/metadata&amp;gt;
+    &amp;lt;files&amp;gt;
+        &amp;lt;file src="app\less\*" target="content\Content\metro-bootstrap" /&amp;gt;
+        &amp;lt;file src="dist\css\metro-bootstrap.css" target="content\Content" /&amp;gt;
+        &amp;lt;file src="dist\css\metro-bootstrap.min.css" target="content\Content" /&amp;gt;
+    &amp;lt;/files&amp;gt;
+&amp;lt;/package&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Define in the files element the files to copy to the package.
+If you want to test the nuspec file, just type the following command in the command line (where mypackage.nuspec is the name of the nuspec file).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;nuget pack mypackage.nuspec
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;3. Create grunt task to build the NuGet package&lt;/h3&gt;
+
+&lt;p&gt;In order to create the file, go to the grunt script and add the following task (just rename the definition file name):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;grunt.registerTask('nuget', 'Create a nuget package', function() {
+    var done = this.async();
+    //invoke nuget.exe
+    grunt.util.spawn({
+        cmd: "nuget.exe",
+        args: [
+            //definition file
+            "pack",
+            "metro-bootstrap.nuspec",
+
+            //path where the package should be created
+            "-OutputDirectory",
+            "nuget",
+
+            //override the version using the version in package.json
+            "-Version",
+            grunt.config.get("pkg").version
+        ]
+    }, function (error, result) {
+        if (error) {
+            grunt.log.error(error);
+        } else {
+            grunt.log.write(result);
+        }
+        done();
+    });
+  });
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, just open the command line and run the &lt;em&gt;"grunt nuget"&lt;/em&gt; command, and a nuget package will be created.&lt;/p&gt;
+
+&lt;p&gt;The configuration used in this post is running on &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; library. Fill free to fork it and try.&lt;/p&gt;
+
+&lt;p&gt;I hope this helps you.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/</id><title type="text">metro-bootstrap 3.2.0.1 released</title><summary type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.&lt;/p&gt;
 
 </summary><published>2014-08-06T23:00:00Z</published><updated>2014-08-06T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/" /><content type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.&lt;/p&gt;
 
@@ -431,285 +553,4 @@ Run &lt;code&gt;grunt build&lt;/code&gt; to compile the CSS into &lt;code&gt;/di
 &lt;/ol&gt;
 
 &lt;p&gt;Now, go fork it!&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/</id><title type="text">Reasons to blogging with GitHub Pages and Sandra.Snow</title><summary type="html">&lt;p&gt;This is my second try to create a personal blog and the third blog where I'm writing. The first two experiences were in WordPress. &lt;/p&gt;
-
-&lt;p&gt;In the past, my attempts failed by my fault, lack of commitment... But during the process, I learned how hard is to maintain a self hosted blog. &lt;/p&gt;
-
-&lt;p&gt;Create content to a blog is really time-consuming, so I don't need more work to maintain it. Maybe this is my Developer side telling me to stay away from maintenance tasks, like update packages and be sure that I'm not hacked. &lt;/p&gt;
-
-&lt;p&gt;let's be realistic, when we're a blogger &lt;strong&gt;the focus should be the content&lt;/strong&gt;, the other tasks are just a black hole for the precious free time.&lt;/p&gt;
-
-</summary><published>2014-05-30T23:00:00Z</published><updated>2014-05-30T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/" /><content type="html">&lt;p&gt;This is my second try to create a personal blog and the third blog where I'm writing. The first two experiences were in WordPress. &lt;/p&gt;
-
-&lt;p&gt;In the past, my attempts failed by my fault, lack of commitment... But during the process, I learned how hard is to maintain a self hosted blog. &lt;/p&gt;
-
-&lt;p&gt;Create content to a blog is really time-consuming, so I don't need more work to maintain it. Maybe this is my Developer side telling me to stay away from maintenance tasks, like update packages and be sure that I'm not hacked. &lt;/p&gt;
-
-&lt;p&gt;let's be realistic, when we're a blogger &lt;strong&gt;the focus should be the content&lt;/strong&gt;, the other tasks are just a black hole for the precious free time.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/reasons-to-blogging-using-github-pages-and-sandra-snow-my-precious-time.jpg" alt="Gollum - My Precious Time" /&gt;&lt;/p&gt;
-
-&lt;p&gt;So, what I was looking for when I started this page?!&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Write using markdown&lt;/li&gt;
-&lt;li&gt;Comments using Disqus&lt;/li&gt;
-&lt;li&gt;Easy customization&lt;/li&gt;
-&lt;li&gt;Reduce the infrastructure costs&lt;/li&gt;
-&lt;li&gt;A lightweight blog&lt;/li&gt;
-&lt;li&gt;No database&lt;/li&gt;
-&lt;li&gt;Version control/Hitory&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Based on these requirements, I found &lt;a href="http://jekyllrb.com/"&gt;Jekyll&lt;/a&gt; hosted over &lt;a href="https://pages.github.com/"&gt;GitHub Pages&lt;/a&gt;. It fits perfectly and the number of users active can attest it. The downside?! I need ruby to use it. Since I'm a Windows guy and in my professional life I'm mostly connected to .NET Developement I don't want to install ruby on my machines. &lt;/p&gt;
-
-&lt;p&gt;A friend of mine (&lt;a href="https://twitter.com/NelsonReis"&gt;@NelsonReis&lt;/a&gt;) suggested I look at &lt;a href="https://github.com/Sandra/Sandra.Snow"&gt;Sandra.Snow&lt;/a&gt;, a system inspired by Jekyll, which is &lt;strong&gt;written in .NET and &lt;a href="http://nancyfx.org/"&gt;Nancy&lt;/a&gt;&lt;/strong&gt;, by &lt;a href="https://twitter.com/philliphaydon"&gt;Phillip Haydon&lt;/a&gt; and &lt;a href="https://twitter.com/jchannon"&gt;Jonathan Channon&lt;/a&gt;. So, I picked it! Now my website is generated using Sandra.Snow and hosted on GitHub pages.&lt;/p&gt;
-
-&lt;p&gt;During the process, I created &lt;a href="https://github.com/gsferreira/letsnow"&gt;&lt;em&gt;letsnow&lt;/em&gt;&lt;/a&gt;, a simple theme based on snowbyte theme. You can use it, fork it and contribute. I would love to hear your opinion.&lt;/p&gt;
-
-&lt;p&gt;Well, I could describe here how I did it, but since there's already a lot of good articles of it, I leave you here some to guide you. You will see that it's a piece of cake.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.philliphaydon.com/2013/10/introducing-sandra-snow/"&gt;"Introducing Sandra.Snow"&lt;/a&gt; by Phillip Haydon&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.macsdickinson.com/SandraSnow/hello-sandra-snow/#.U4j33_ldXN1"&gt;"Hello Sandra Snow"&lt;/a&gt; by Macs Dickinson&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://blog.jonathanchannon.com/2013/10/01/blogging-with-markdown-and-git/"&gt;"Blogging with Markdown &amp;amp; Deploying via Git - Introducing Sandra.Snow"&lt;/a&gt; by Jonathan Channon&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/reasons-to-blogging-using-github-pages-and-sandra-snow-feel-like-superhero.png" alt="Feel like a superhero" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;What I hope to see in Sandra.Snow in a near future?!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Generate RSS feeds for any category&lt;/li&gt;
-&lt;li&gt;More configuration options, like Google Analytics ID or Disqus ID&lt;/li&gt;
-&lt;li&gt;A "marketplace" for Sandra.Snow blog templates&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;It's too early to say that Sandra.Snow is perfect for me, but I hope that it was a wise decision!&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/</id><title type="text">AngularJS - Smart Float Directive</title><summary type="html">&lt;p&gt;Recently I started looking for an AngluarJS directive to validate numbers and I found the "smart-float" directive &lt;a href="https://docs.angularjs.org/guide/forms"&gt;here&lt;/a&gt;, in the AngularJS documentation. This amazing example solves the problem of convert my numbers that use a comma as decimal mark to a Javascript number.&lt;/p&gt;
-
-&lt;p&gt;My problem is that this directive doesn't solve my two problems:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Display numbers with 2 fractional digits by default.&lt;/li&gt;
-&lt;li&gt;Validate numbers with thousands separator.&lt;/li&gt;
-&lt;/ol&gt;
-
-</summary><published>2014-05-23T23:00:00Z</published><updated>2014-05-23T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/" /><content type="html">&lt;p&gt;Recently I started looking for an AngluarJS directive to validate numbers and I found the "smart-float" directive &lt;a href="https://docs.angularjs.org/guide/forms"&gt;here&lt;/a&gt;, in the AngularJS documentation. This amazing example solves the problem of convert my numbers that use a comma as decimal mark to a Javascript number.&lt;/p&gt;
-
-&lt;p&gt;My problem is that this directive doesn't solve my two problems:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Display numbers with 2 fractional digits by default.&lt;/li&gt;
-&lt;li&gt;Validate numbers with thousands separator.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;So, this is an improved directive based on Angular's &lt;em&gt;smart-float&lt;/em&gt; directive.
-First, add the following directive to your application:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;directive('smartFloat', function ($filter) {
-    var FLOAT_REGEXP_1 = /^\$?\d+(.\d{3})*(\,\d*)?$/; //Numbers like: 1.123,56
-    var FLOAT_REGEXP_2 = /^\$?\d+(,\d{3})*(\.\d*)?$/; //Numbers like: 1,123.56
-    return {
-        require: 'ngModel',
-        link: function (scope, elm, attrs, ctrl) {
-            ctrl.$parsers.unshift(function (viewValue) {
-                if (FLOAT_REGEXP_1.test(viewValue)) {
-                    ctrl.$setValidity('float', true);
-                    return parseFloat(viewValue.replace('.', '').replace(',', '.'));
-                } else if (FLOAT_REGEXP_2.test(viewValue)) {
-                        ctrl.$setValidity('float', true);
-                        return parseFloat(viewValue.replace(',', ''));
-                } else {
-                    ctrl.$setValidity('float', false);
-                    return undefined;
-                }
-            });
-            ctrl.$formatters.unshift(
-               function (modelValue) {
-                   return $filter('number')(parseFloat(modelValue) , 2);
-               }
-           );
-        }
-    };
-});
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, add the &lt;em&gt;smart-float&lt;/em&gt; directive to your input:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;input type="text" id="inputAmount" name="inputAmount" 
-placeholder="Amount" ng-model="amount" smart-float /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;This gives you what you need. Now, you can improve it showing to your users that the value in the input is invalid. In the following example I used &lt;a href="http://getbootstrap.com/"&gt;Bootstrap&lt;/a&gt; to demonstrate it:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;form name="myForm" class="form-horizontal" role="form" novalidate&amp;gt;
-    &amp;lt;div class="form-group" ng-class="{'has-error': myForm.inputAmount.$invalid}"&amp;gt;
-        &amp;lt;label for="inputText3" class="col-sm-2 control-label"&amp;gt;Amount&amp;lt;/label&amp;gt;
-        &amp;lt;div class="col-sm-10"&amp;gt;
-            &amp;lt;input type="text" class="form-control" id="inputAmount" name="inputAmount" placeholder="Amount" ng-model="amount" smart-float /&amp;gt;
-            &amp;lt;span class="help-block" ng-show="myForm.inputAmount.$error.float"&amp;gt;
-                Invalid Amount!
-            &amp;lt;/span&amp;gt;
-        &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-&amp;lt;/form&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;You can see the working demo on &lt;a href="http://jsfiddle.net/gsferreira/SCr6X/8/"&gt;JSFiddle&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I hope that this helps you.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/05/pomodoro-technique-the-productivity-sauce/</id><title type="text">Pomodoro Technique, the productivity sauce</title><summary type="html">&lt;p&gt;You've probably heard about the &lt;a href="http://pomodorotechnique.com/"&gt;Pomodoro Technique&lt;/a&gt;. This is one of the most popular time management tools nowadays. This technique has been developed by &lt;em&gt;&lt;a href="http://francescocirillo.com/"&gt;Francesco Cirillo&lt;/a&gt;&lt;/em&gt; in the late 1980s. &lt;/p&gt;
-
-&lt;p&gt;In the modern days we keep fighting against the clock, trying to accomplish all the assignments. But in the other hand we have a lot of distractions, as the Facebook messages, new tweets or our phones. The Pomodoro Technique wants to teach you to use the time as your friend, being productive, eliminating the procrastination, the pressure and get free time for yourself. Pomodoro Technique also can be a great complement for other methodology's. I used it in my &lt;a href="http://gettingthingsdone.com/"&gt;GTD (Getting Things Done)&lt;/a&gt; workflow for example.&lt;/p&gt;
-
-</summary><published>2014-05-18T23:00:00Z</published><updated>2014-05-18T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/pomodoro-technique-the-productivity-sauce/" /><content type="html">&lt;p&gt;You've probably heard about the &lt;a href="http://pomodorotechnique.com/"&gt;Pomodoro Technique&lt;/a&gt;. This is one of the most popular time management tools nowadays. This technique has been developed by &lt;em&gt;&lt;a href="http://francescocirillo.com/"&gt;Francesco Cirillo&lt;/a&gt;&lt;/em&gt; in the late 1980s. &lt;/p&gt;
-
-&lt;p&gt;In the modern days we keep fighting against the clock, trying to accomplish all the assignments. But in the other hand we have a lot of distractions, as the Facebook messages, new tweets or our phones. The Pomodoro Technique wants to teach you to use the time as your friend, being productive, eliminating the procrastination, the pressure and get free time for yourself. Pomodoro Technique also can be a great complement for other methodology's. I used it in my &lt;a href="http://gettingthingsdone.com/"&gt;GTD (Getting Things Done)&lt;/a&gt; workflow for example.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/pomodoro-technique-the-productivity-sauce-modern-family-decisions-under-pressure.jpg" alt="Modern Family - Decisions under pressure" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Pomodoro is the Italian word for tomato, and Francesco named it as pomodoro because he used a kitchen timer with a tomato shape as his personal timer.
-The technique consists in for each 25 minute work period (this period is called a "Pomodoro") take a five minutes break. In this break &lt;strong&gt;you shouldn't go to your social networks&lt;/strong&gt;... beware of shiny objects. Instead, you should rest your eyes, grab a cup of coffee or go take a walk. Every four pomodoros you should take a longer break of 20 minutes. Frequent breaks keep your mind fresh and focused. Your brain will retrieve you the favor.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://www.flickr.com/photos/33593406@N03/7738254354/"&gt;&lt;img src="http://gsferreira.com/images/pomodoro-technique-the-productivity-sauce-pomodoro-timer.jpg" alt="Pomodoro timer" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;!---*"Photo by [Kate Bunker](http://www.flickr.com/photos/33593406@N03/7738254354/) licensed under [Creative Commons Attribution-NonCommercial License](http://creativecommons.org/licenses/by-nc/2.0/)."*
---&gt;
-
-&lt;p&gt;You should be asking &lt;strong&gt;why the 25 minutes&lt;/strong&gt;? I really don't know, and that is a question that I have made to myself. After some research, I believe that the 25 minutes is the "ideal" period to keep the focus on a single task, if you have longer periods your brain will get tired, but this is a personal conclusion.&lt;/p&gt;
-
-&lt;p&gt;This isn't applicable for anyone, but if you usually seat down at a desk and you need to get things done, I believe that you can use it. I use it while I'm programming because it helps me stay focused and "force" me to break large tasks into short steps. I also like to use it in teamwork, for example, in pair programming or in a &lt;a href="http://en.wikipedia.org/wiki/Stand-up_meeting"&gt;Scrum stand-up meeting&lt;/a&gt;. The ticking clock will teach your team that time is running out and the task should completed. If you are questioning yourself if this is a good tool for you, go check this &lt;a href="http://pomodorotechnique.com/get-started/"&gt;page&lt;/a&gt;, probably you will find your case.&lt;/p&gt;
-
-&lt;p&gt;You could find some problems to apply it, for example:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;How to concentrate without interruptions, specially if you are inside a team. &lt;/li&gt;
-&lt;li&gt;The open-plan offices can be an enemy, so pick the perfect music and put your headphones.&lt;/li&gt;
-&lt;li&gt;It's possible don't answer your phone during a pomodoro in your position?&lt;/li&gt;
-&lt;li&gt;Keep the flow while dealing with interaction with the co-workers.&lt;/li&gt;
-&lt;li&gt;Meetings... a necessary evil.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Pomodoro Technique is free, you can spend some money to get a kitchen timer if you want… or you can use any timer program on your computer or phone (I'm using the &lt;a href="https://chrome.google.com/webstore/detail/simple-pomodoro%C2%AE/blidjjfbdbkcmegfnidmgndgdamhhelp"&gt;&lt;em&gt;Simple Pomodoro&lt;/em&gt; extension for Chrome&lt;/a&gt;). The process isn't ideal for every person, but if you want to boost your productivity you can try it and let me know the results in the comments below.&lt;/p&gt;
-
-&lt;p&gt;By the way, this post has been written in 4 pomodoros.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/05/the-dark-side-of-dynamic-typing/</id><title type="text">The dark side of dynamic typing</title><summary type="html">&lt;p&gt;&lt;a href="http://msdn.microsoft.com/en-us/library/dd264736.aspx"&gt;Dynamic typing&lt;/a&gt; isn't anything new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it may avoid some complicated reflection code, for example. I've used it a lot, but recently I've discovered his dark side... &lt;strong&gt;the performance side&lt;/strong&gt;. &lt;/p&gt;
-
-</summary><published>2014-05-07T23:00:00Z</published><updated>2014-05-07T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/the-dark-side-of-dynamic-typing/" /><content type="html">&lt;p&gt;&lt;a href="http://msdn.microsoft.com/en-us/library/dd264736.aspx"&gt;Dynamic typing&lt;/a&gt; isn't anything new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it may avoid some complicated reflection code, for example. I've used it a lot, but recently I've discovered his dark side... &lt;strong&gt;the performance side&lt;/strong&gt;. &lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;img src="http://www.quickmeme.com/img/e8/e8e8d6ebfd29823854295376337528dc9853a26b27f43c85dd8eb0ed0ab666dc.jpg" alt="alt text" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Why do I say it? If you measure the performance cost of a simple "Set" or "Get" operation you will see a great improvement simply changing it to typed code. You can use the following code to test it.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;//Typed Object performance - SET PERFORMANCE
-MyClass myObject = new MyClass();
-sw.Reset();
-sw.Start();
-myObject.Str = "Hello World!";
-sw.Stop();
-Console.WriteLine("Typed Object - SET - Elapsed={0}", sw.Elapsed);
-
-
-//Typed Object performance - GET PERFORMANCE
-sw.Reset();
-sw.Start();
-result = myObject.Str;
-sw.Stop();
-Console.WriteLine("Typed Object - GET - Elapsed={0}", sw.Elapsed);
-
-
-//Dynamic Object performance - SET PERFORMANCE
-dynamic myDynamicObject = new MyClass();
-sw.Reset();
-sw.Start();
-myDynamicObject.Str = "Hello World!";
-sw.Stop();
-Console.WriteLine("Dynamic Object - SET - Elapsed={0}", sw.Elapsed);
-
-//Dynamic Object performance - GET PERFORMANCE
-sw.Reset();
-sw.Start();
-result = myDynamicObject.Str;
-sw.Stop();
-Console.WriteLine("Dynamic Object - GET - Elapsed={0}", sw.Elapsed);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;With this piece of code inside a loop I got the following results. You can see the time differences.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Typed Object - GET - Elapsed=00:00:00.0000022&lt;/li&gt;
-&lt;li&gt;Typed Object - SET - Elapsed=00:00:00.0000008&lt;/li&gt;
-&lt;li&gt;Dynamic Object - GET - Elapsed=00:00:00.0330937&lt;/li&gt;
-&lt;li&gt;Dynamic Object - SET - Elapsed=00:00:00.0027800&lt;/li&gt;
-&lt;li&gt;Typed Object - GET - Elapsed=00:00:00&lt;/li&gt;
-&lt;li&gt;Typed Object - SET - Elapsed=00:00:00.0000004&lt;/li&gt;
-&lt;li&gt;Dynamic Object - GET - Elapsed=00:00:00.0000031&lt;/li&gt;
-&lt;li&gt;Dynamic Object - SET - Elapsed=00:00:00.0000026&lt;/li&gt;
-&lt;li&gt;Typed Object - GET - Elapsed=00:00:00.0000004&lt;/li&gt;
-&lt;li&gt;Typed Object - SET - Elapsed=00:00:00.0000004&lt;/li&gt;
-&lt;li&gt;Dynamic Object - GET - Elapsed=00:00:00.0000022&lt;/li&gt;
-&lt;li&gt;Dynamic Object - SET - Elapsed=00:00:00.0000026&lt;/li&gt;
-&lt;li&gt;Typed Object - GET - Elapsed=00:00:00.0000004&lt;/li&gt;
-&lt;li&gt;Typed Object - SET - Elapsed=00:00:00.0000004&lt;/li&gt;
-&lt;li&gt;Dynamic Object - GET - Elapsed=00:00:00.0000022&lt;/li&gt;
-&lt;li&gt;Dynamic Object - SET - Elapsed=00:00:00.0000022&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I'm not trying to tell you to keep a safety distance from dynamic typing, I'm just saying that if you're building an application where the performance is a key factor, where you don't need dynamic typing and you really need to pay attention to any fraction of second... so you should keep an eye on it. &lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/05/move-database-new-sql-azure-service-tiers/</id><title type="text">Move your database to new SQL Azure Service Tiers</title><summary type="html">&lt;p&gt;In the last Build conference Scott Guthrie announced the new Basic and Standard tier option to the SQL Databases on Azure. Those tiers bring amazing features and you can find more about them in the &lt;a href="http://weblogs.asp.net/scottgu/archive/2014/04/29/azure-99-95-sql-database-sla-500-gb-db-size-improved-performance-self-service-restore-and-business-continuity.aspx"&gt;Scott's post&lt;/a&gt;. If you want to try it, as I did, go ahead and take advantage of the 50% discount during the preview period. &lt;/p&gt;
-
-&lt;p&gt;You can find here how to move your SQL Database currently in the Web or Business edition using the following tips.&lt;/p&gt;
-
-</summary><published>2014-05-02T23:00:00Z</published><updated>2014-05-02T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/05/move-database-new-sql-azure-service-tiers/" /><content type="html">&lt;p&gt;In the last Build conference Scott Guthrie announced the new Basic and Standard tier option to the SQL Databases on Azure. Those tiers bring amazing features and you can find more about them in the &lt;a href="http://weblogs.asp.net/scottgu/archive/2014/04/29/azure-99-95-sql-database-sla-500-gb-db-size-improved-performance-self-service-restore-and-business-continuity.aspx"&gt;Scott's post&lt;/a&gt;. If you want to try it, as I did, go ahead and take advantage of the 50% discount during the preview period. &lt;/p&gt;
-
-&lt;p&gt;You can find here how to move your SQL Database currently in the Web or Business edition using the following tips.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Before you start, make sure that you have a Windows Azure Storage Account and a container in it.&lt;/p&gt;
-
-&lt;p&gt;First of all you should take your web site or any client of your database offline, just to ensure that no one updates the database during this operation.&lt;/p&gt;
-
-&lt;p&gt;Open a connection to your SQL Server using SQL Management Studio. Right click on your database. Choose &lt;em&gt;"Tasks &gt; Export Data-tier Application"&lt;/em&gt;. Make sure that you store the bacpac file in your Windows Azure Storage. You can find a good example &lt;a href="http://blogs.msdn.com/b/brunoterkaly/archive/2013/09/26/how-to-export-an-on-premises-sql-server-database-to-windows-azure-storage.aspx?Redirected=true"&gt;here&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Now you need to create a SQL Server before create the database&lt;/strong&gt;, by some reason (probably a "preview version bug") if you try to import the database before create the server you will get an &lt;a href="http://social.technet.microsoft.com/Forums/en-US/54a073aa-b554-403b-87ca-53196a897c9c/cant-create-a-new-sql-azure-standard-tier-db?forum=ssdsgetstarted"&gt;error&lt;/a&gt;. So, go to &lt;a href="http://manage.windowsazure.com"&gt;Azure Manage web site&lt;/a&gt; and create a new SQL Server. Make sure that you set the "Supported Database Editions" to "Basic, Standard, Premium".&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/move-database-new-sql-azure-service-tiers-create-server.png" alt="alt text" title="Create a new server" /&gt;&lt;/p&gt;
-
-&lt;p&gt;After that, add a new SQL Database (imported from the previous backup) to the server created in the last step. &lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/move-database-new-sql-azure-service-tiers-import-database.png" alt="alt text" title="Create a new database menu" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Select the Backup that you made, choose one of the Preview Editions and the server created before.&lt;/p&gt;
-
-&lt;p&gt;When the create database operation is completed, just update your connection string and you are ready to go.&lt;/p&gt;
-
-&lt;p&gt;Just remember to delete the backup from storage and the old server if you want.&lt;/p&gt;
-
-&lt;p&gt;Enjoy it!&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/04/lets-blog/</id><title type="text">Let's blog</title><summary type="html">&lt;p&gt;Hi! My name is Guilherme Ferreira. I'm a &lt;a href="http://www.pinterest.com/igori/portugal/"&gt;Portuguese&lt;/a&gt; software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of &lt;a href="http://www.pinterest.com/turismportugal/porto-portugal/"&gt;Porto&lt;/a&gt;. Go check the pictures, I will be right here waiting for you.&lt;/p&gt;
-
-&lt;p&gt;I'm starting this blog with the intent to share the lessons that I learn, 
-write news about my work and to improve my English writing skills. 
-</summary><published>2014-04-27T23:00:00Z</published><updated>2014-04-27T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/04/lets-blog/" /><content type="html">&lt;p&gt;Hi! My name is Guilherme Ferreira. I'm a &lt;a href="http://www.pinterest.com/igori/portugal/"&gt;Portuguese&lt;/a&gt; software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of &lt;a href="http://www.pinterest.com/turismportugal/porto-portugal/"&gt;Porto&lt;/a&gt;. Go check the pictures, I will be right here waiting for you.&lt;/p&gt;
-
-&lt;p&gt;I'm starting this blog with the intent to share the lessons that I learn, 
-write news about my work and to improve my English writing skills. 
-&lt;!--excerpt--&gt;
-Following this page you can expect to read cool stuff about software development, entrepreneurship, productivity tips and other living stuff.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://www.gravatar.com/avatar/93c1c26212f9eb3673538e6ad6ca7eb4.png?s=200" alt="alt text" title="This is me" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Go subscribe the &lt;a href="http://gsferreira.com/rss.xml"&gt;RSS feed&lt;/a&gt;, visit the &lt;a href="http://gsferreira.com/about/"&gt;about page&lt;/a&gt; to find my contacts and feel free to contact me.&lt;/p&gt;
-
-&lt;p&gt;I'll see you soon... and now let's blog!&lt;/p&gt;
 </content></entry></feed>
