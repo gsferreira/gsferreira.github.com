@@ -6,19 +6,19 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
     <meta http-equiv="last-modified" content="2014-09-08T23:08:00.5261689+01:00" />
-    <meta name="keywords" content="metro-bootstrap" />
+    <meta name="keywords" content="" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Bringing Grunt and Bower to metro-bootstrap - 
+            How to implement Getting Things Done with Trello - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2014/09/how-to-implement-getting-things-done-with-trello/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -38,79 +38,88 @@
 
 
 <div class="post">
-    <h1>Bringing Grunt and Bower to metro-bootstrap</h1> 
+    <h1>How to implement Getting Things Done with Trello</h1> 
       <div class="meta">
-        <p class="posted">05 jun 2014</p>
+        <p class="posted">08 set 2014</p>
         <ul class="categories">
-          <li><a href="/category/metro-bootstrap" title="Snow.Models.Category">metro-bootstrap</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Since we publish <a href="https://github.com/TalksLab/metro-bootstrap">metro-bootstrap</a> we saw an incredible acceptance to the project and we are really happy to have decided to delivery it as an open source project. </p>
+    <p>Today I want to tell you about one of my favorites productivity methodologies and about one of my favorite tools. Why both? Because they can work perfectly side by side.</p>
 
-<p>This project has grown up with a lack of structure in my opinion, so, this week I've been working to add Grunt and Bower to metro-bootstrap. To accomplish this task, I have the valuable help of <a href="http://yeoman.io/">Yeoman</a>. If you're like me, and <a href="http://gruntjs.com/">Grunt</a> or <a href="http://bower.io/">Bower</a> are crazy talk, you will find in Yeoman a great way to start.</p>
+<p>The methodology? <a href="http://gettingthingsdone.com/">Getting Things Done (GTD) by David Allen</a>. GTD is about clearing your mind and put everything you need to do in one place first. Collect, process, doing and keep track of it, are the key of GTD.</p>
+
+<p>The tool? <a href="https://trello.com/">Trello.com</a>. Do you love Trello? If you don't, probably you didn't give him a try. What is Trello?</p>
+
+<blockquote>
+  <p><em>"Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a proces"</em></p>
+</blockquote>
+
+<p>I bet that you can find on the web a ton of good articles that explain the beauty of Trello and how GTD can boost your productivity, but that isn't the purpose of this post.
+The objective here is to explain you how Trello and GTD can work beautifully side by side.</p>
 
 <!--excerpt-->
 
-<p><a href="http://yeoman.io/"><img src="/images/bringing-grunt-and-bower-to-metro-bootstrap-yeoman.jpg" alt="Yeoman" /></a></p>
+<p><img src="/images/how-to-implement-getting-things-done-with-trello-funny-productivity.jpg" alt="Productivity funny" /></p>
 
-<p>We have adopted bower for dependency management, so we can manage the dependencies in a declarative way. Now you can know the current dependencies looking at the bower.json file.</p>
+<h3>Why Trello?</h3>
 
-<p>Since the metro-bootstrap release, we always work on .less files, but we also release the css file and a minified version of it. To do this, we used some tools like <a href="http://wearekiss.com/simpless">SimpLESS</a> or <a href="http://winless.org/">WinLess</a>. This is over, now we leave this responsibility to Grunt. Grunt is the tool to compile the less files, minify the css files and release our page for GitHub Pages.</p>
+<p>I've been a Trello user since 2012 so I think that I'm a kind of Trello Ninja. Besides that, I follow the David Allen methodology and I've struggled to put the system rolling until I use Trello to support it.</p>
 
-<p>What have changed? Take a look.</p>
+<p>Trello is based on the <a href="http://en.wikipedia.org/wiki/Kanban">Kanban</a> method. Kanban it's a way to visualize workflow. Usually a <a href="http://en.wikipedia.org/wiki/Kanban_board">kanban board</a> consists in several columns for different phases for a task. Trello also offers you multiple forms of organization like: boards, lists, cards and checklists.</p>
 
-<h2>Repository structure</h2>
+<h3>System setup</h3>
 
-<p>In the repository you will find the following directories:</p>
+<p>So, how do I take advantage of it to manage my workflow? I've created a Board only for GTD management. </p>
 
-<pre><code>app/
-├── fonts/
-│   └── (FontAwesome files)
-└── less/
-    └── (metro-bootstrap less files)
-dist/
-├── fonts/
-│   └── font-awesome/
-│   │   └── (FontAwesome files)
-└── css/
-    ├── metro-bootstrap.css
-    └── metro-bootstrap.min.css
-docs/
-└── (metro-bootstrap GitHub Pages)
-</code></pre>
+<p>Lists:</p>
 
-<p>We provide compiled CSS (<code>metro-bootstrap.css</code>) in the dist folder, as well as compiled and minified CSS (<code>metro-bootstrap.min.css</code>). </p>
+<ul>
+<li>Inbox</li>
+<li>Later</li>
+<li>Waiting On</li>
+<li>This Week</li>
+<li>Today</li>
+<li>Done</li>
+</ul>
 
-<h2>Instaling Dependencies</h2>
+<p><img src="/images/how-to-implement-getting-things-done-with-trello-board.png" alt="Trello board" /></p>
 
-<p>We manage dependencies using Bower.
-Run <code>bower install</code> to download the required dependencies.</p>
+<p>I also have used labels to setup contexts like:</p>
 
-<p>If don't have Grunt installed, execute the following steps from the command line:</p>
+<ul>
+<li>home</li>
+<li>blog</li>
+<li>work</li>
+<li>High Priority (Use the red label for it)</li>
+</ul>
 
-<ol>
-<li>Make sure you have node.js installed.</li>
-<li>Install bower with <code>npm install -g bower</code>.</li>
-</ol>
+<p>Appling labels to cards, related to contexts, help me to see only the cards from my current context. You can also use labels only for priority management.</p>
 
-<h2>Compiling CSS</h2>
+<h3>Weekly review</h3>
 
-<p>We compile metro-bootstrap using <a href="http://gruntjs.com/">Grunt</a>. 
-Run <code>grunt build</code> to compile the CSS into <code>/dist</code>. </p>
+<p>On Mondays morning I look at my Trello "Later" list and move all the tasks into the "This week" or "Today" list. </p>
 
-<p>If don't have Grunt installed, execute the following steps from the command line:</p>
+<h3>Daily review</h3>
 
-<ol>
-<li>Make sure you have node.js installed.</li>
-<li>Install <code>grunt-cli</code> globally with <code>npm install -g grunt-cli</code>.</li>
-<li>Go to the <code>metro-bootstrap</code> directory, then run <code>npm install</code>. npm will look at package.json and automatically install the necessary dependencies.</li>
-</ol>
+<p>Use the "Inbox" list as capture repository. Process the items in the "Inbox" list daily and move them to the list that you want.
+When a task is complete, archive the card.</p>
 
-<p>Now, go fork it!</p>
+<p>Move the cards where I'm expecting someone else to do a task, to the "Waiting On" list so I can keep on top of everything.</p>
+
+<p>If I have a complex project, I create a specific board for that project. Then, I can create some lists to control the status of each task, like: To Do, Doing, Testing, Done.</p>
+
+<p>Before implementing your own system, read also these great examples:</p>
+
+<ul>
+<li><a href="http://joshuaearl.com/rocking-gtd-with-trello/">Rocking GTD with Trello</a></li>
+<li><a href="http://schurpf.com/getting-things-done-trello-google-calendar-evernote-zapier-project-task-management/">Getting Things Done with Trello, Google Calendar, Evernote and Zapier – Project and Task Management</a></li>
+</ul>
+
+<p>I hope this helps you.</p>
 
 
 
@@ -133,14 +142,14 @@ Run <code>grunt build</code> to compile the CSS into <code>/dist</code>. </p>
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/';
+                this.page.url = 'http://gsferreira.com/archive/2014/09/how-to-implement-getting-things-done-with-trello/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/';
+    var disqus_url = 'http://gsferreira.com/archive/2014/09/how-to-implement-getting-things-done-with-trello/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

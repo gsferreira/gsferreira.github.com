@@ -1,4 +1,89 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/08/automate-nuget-package-creation-using-grunt/</guid><link>http://gsferreira.com/archive/2014/08/automate-nuget-package-creation-using-grunt/</link><title>Automate NuGet package creation using Grunt</title><description>&lt;p&gt;Probably you are already using Grunt, to automate the tasks to build your application or library. In  &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; we are using Grunt to automate the build process, but until now there's a last step that we are doing manually: &lt;strong&gt;create the NuGet package&lt;/strong&gt; for new releases, until today.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/09/how-to-implement-getting-things-done-with-trello/</guid><link>http://gsferreira.com/archive/2014/09/how-to-implement-getting-things-done-with-trello/</link><title>How to implement Getting Things Done with Trello</title><description>&lt;p&gt;Today I want to tell you about one of my favorites productivity methodologies and about one of my favorite tools. Why both? Because they can work perfectly side by side.&lt;/p&gt;
+
+&lt;p&gt;The methodology? &lt;a href="http://gettingthingsdone.com/"&gt;Getting Things Done (GTD) by David Allen&lt;/a&gt;. GTD is about clearing your mind and put everything you need to do in one place first. Collect, process, doing and keep track of it, are the key of GTD.&lt;/p&gt;
+
+&lt;p&gt;The tool? &lt;a href="https://trello.com/"&gt;Trello.com&lt;/a&gt;. Do you love Trello? If you don't, probably you didn't give him a try. What is Trello?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;"Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a proces"&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I bet that you can find on the web a ton of good articles that explain the beauty of Trello and how GTD can boost your productivity, but that isn't the purpose of this post.
+The objective here is to explain you how Trello and GTD can work beautifully side by side.&lt;/p&gt;
+
+</description><pubDate>Sun, 07 Sep 2014 23:00:00 Z</pubDate><a10:updated>2014-09-07T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Today I want to tell you about one of my favorites productivity methodologies and about one of my favorite tools. Why both? Because they can work perfectly side by side.&lt;/p&gt;
+
+&lt;p&gt;The methodology? &lt;a href="http://gettingthingsdone.com/"&gt;Getting Things Done (GTD) by David Allen&lt;/a&gt;. GTD is about clearing your mind and put everything you need to do in one place first. Collect, process, doing and keep track of it, are the key of GTD.&lt;/p&gt;
+
+&lt;p&gt;The tool? &lt;a href="https://trello.com/"&gt;Trello.com&lt;/a&gt;. Do you love Trello? If you don't, probably you didn't give him a try. What is Trello?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;"Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a proces"&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I bet that you can find on the web a ton of good articles that explain the beauty of Trello and how GTD can boost your productivity, but that isn't the purpose of this post.
+The objective here is to explain you how Trello and GTD can work beautifully side by side.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/how-to-implement-getting-things-done-with-trello-funny-productivity.jpg" alt="Productivity funny" /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Why Trello?&lt;/h3&gt;
+
+&lt;p&gt;I've been a Trello user since 2012 so I think that I'm a kind of Trello Ninja. Besides that, I follow the David Allen methodology and I've struggled to put the system rolling until I use Trello to support it.&lt;/p&gt;
+
+&lt;p&gt;Trello is based on the &lt;a href="http://en.wikipedia.org/wiki/Kanban"&gt;Kanban&lt;/a&gt; method. Kanban it's a way to visualize workflow. Usually a &lt;a href="http://en.wikipedia.org/wiki/Kanban_board"&gt;kanban board&lt;/a&gt; consists in several columns for different phases for a task. Trello also offers you multiple forms of organization like: boards, lists, cards and checklists.&lt;/p&gt;
+
+&lt;h3&gt;System setup&lt;/h3&gt;
+
+&lt;p&gt;So, how do I take advantage of it to manage my workflow? I've created a Board only for GTD management. &lt;/p&gt;
+
+&lt;p&gt;Lists:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Inbox&lt;/li&gt;
+&lt;li&gt;Later&lt;/li&gt;
+&lt;li&gt;Waiting On&lt;/li&gt;
+&lt;li&gt;This Week&lt;/li&gt;
+&lt;li&gt;Today&lt;/li&gt;
+&lt;li&gt;Done&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/how-to-implement-getting-things-done-with-trello-board.png" alt="Trello board" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I also have used labels to setup contexts like:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;home&lt;/li&gt;
+&lt;li&gt;blog&lt;/li&gt;
+&lt;li&gt;work&lt;/li&gt;
+&lt;li&gt;High Priority (Use the red label for it)&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Appling labels to cards, related to contexts, help me to see only the cards from my current context. You can also use labels only for priority management.&lt;/p&gt;
+
+&lt;h3&gt;Weekly review&lt;/h3&gt;
+
+&lt;p&gt;On Mondays morning I look at my Trello "Later" list and move all the tasks into the "This week" or "Today" list. &lt;/p&gt;
+
+&lt;h3&gt;Daily review&lt;/h3&gt;
+
+&lt;p&gt;Use the "Inbox" list as capture repository. Process the items in the "Inbox" list daily and move them to the list that you want.
+When a task is complete, archive the card.&lt;/p&gt;
+
+&lt;p&gt;Move the cards where I'm expecting someone else to do a task, to the "Waiting On" list so I can keep on top of everything.&lt;/p&gt;
+
+&lt;p&gt;If I have a complex project, I create a specific board for that project. Then, I can create some lists to control the status of each task, like: To Do, Doing, Testing, Done.&lt;/p&gt;
+
+&lt;p&gt;Before implementing your own system, read also these great examples:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://joshuaearl.com/rocking-gtd-with-trello/"&gt;Rocking GTD with Trello&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://schurpf.com/getting-things-done-trello-google-calendar-evernote-zapier-project-task-management/"&gt;Getting Things Done with Trello, Google Calendar, Evernote and Zapier – Project and Task Management&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;I hope this helps you.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/08/automate-nuget-package-creation-using-grunt/</guid><link>http://gsferreira.com/archive/2014/08/automate-nuget-package-creation-using-grunt/</link><title>Automate NuGet package creation using Grunt</title><description>&lt;p&gt;Probably you are already using Grunt, to automate the tasks to build your application or library. In  &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; we are using Grunt to automate the build process, but until now there's a last step that we are doing manually: &lt;strong&gt;create the NuGet package&lt;/strong&gt; for new releases, until today.&lt;/p&gt;
 
 &lt;p&gt;How we automate the package build?&lt;/p&gt;
 
@@ -487,70 +572,4 @@ hint: See the 'Note about fast-forwards' in 'git push --help' for details.
 &lt;p&gt;The final result.&lt;/p&gt;
 
 &lt;p&gt;&lt;img src="http://gsferreira.com/images/geeks-can-cook-tuna-empanadas-final-result.jpg" alt="Tuna Empanada" /&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/</guid><link>http://gsferreira.com/archive/2014/06/bringing-grunt-and-bower-to-metro-bootstrap/</link><title>Bringing Grunt and Bower to metro-bootstrap</title><description>&lt;p&gt;Since we publish &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; we saw an incredible acceptance to the project and we are really happy to have decided to delivery it as an open source project. &lt;/p&gt;
-
-&lt;p&gt;This project has grown up with a lack of structure in my opinion, so, this week I've been working to add Grunt and Bower to metro-bootstrap. To accomplish this task, I have the valuable help of &lt;a href="http://yeoman.io/"&gt;Yeoman&lt;/a&gt;. If you're like me, and &lt;a href="http://gruntjs.com/"&gt;Grunt&lt;/a&gt; or &lt;a href="http://bower.io/"&gt;Bower&lt;/a&gt; are crazy talk, you will find in Yeoman a great way to start.&lt;/p&gt;
-
-</description><pubDate>Wed, 04 Jun 2014 23:00:00 Z</pubDate><a10:updated>2014-06-04T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Since we publish &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; we saw an incredible acceptance to the project and we are really happy to have decided to delivery it as an open source project. &lt;/p&gt;
-
-&lt;p&gt;This project has grown up with a lack of structure in my opinion, so, this week I've been working to add Grunt and Bower to metro-bootstrap. To accomplish this task, I have the valuable help of &lt;a href="http://yeoman.io/"&gt;Yeoman&lt;/a&gt;. If you're like me, and &lt;a href="http://gruntjs.com/"&gt;Grunt&lt;/a&gt; or &lt;a href="http://bower.io/"&gt;Bower&lt;/a&gt; are crazy talk, you will find in Yeoman a great way to start.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;a href="http://yeoman.io/"&gt;&lt;img src="http://gsferreira.com/images/bringing-grunt-and-bower-to-metro-bootstrap-yeoman.jpg" alt="Yeoman" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;We have adopted bower for dependency management, so we can manage the dependencies in a declarative way. Now you can know the current dependencies looking at the bower.json file.&lt;/p&gt;
-
-&lt;p&gt;Since the metro-bootstrap release, we always work on .less files, but we also release the css file and a minified version of it. To do this, we used some tools like &lt;a href="http://wearekiss.com/simpless"&gt;SimpLESS&lt;/a&gt; or &lt;a href="http://winless.org/"&gt;WinLess&lt;/a&gt;. This is over, now we leave this responsibility to Grunt. Grunt is the tool to compile the less files, minify the css files and release our page for GitHub Pages.&lt;/p&gt;
-
-&lt;p&gt;What have changed? Take a look.&lt;/p&gt;
-
-&lt;h2&gt;Repository structure&lt;/h2&gt;
-
-&lt;p&gt;In the repository you will find the following directories:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;app/
-├── fonts/
-│   └── (FontAwesome files)
-└── less/
-    └── (metro-bootstrap less files)
-dist/
-├── fonts/
-│   └── font-awesome/
-│   │   └── (FontAwesome files)
-└── css/
-    ├── metro-bootstrap.css
-    └── metro-bootstrap.min.css
-docs/
-└── (metro-bootstrap GitHub Pages)
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;We provide compiled CSS (&lt;code&gt;metro-bootstrap.css&lt;/code&gt;) in the dist folder, as well as compiled and minified CSS (&lt;code&gt;metro-bootstrap.min.css&lt;/code&gt;). &lt;/p&gt;
-
-&lt;h2&gt;Instaling Dependencies&lt;/h2&gt;
-
-&lt;p&gt;We manage dependencies using Bower.
-Run &lt;code&gt;bower install&lt;/code&gt; to download the required dependencies.&lt;/p&gt;
-
-&lt;p&gt;If don't have Grunt installed, execute the following steps from the command line:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Make sure you have node.js installed.&lt;/li&gt;
-&lt;li&gt;Install bower with &lt;code&gt;npm install -g bower&lt;/code&gt;.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2&gt;Compiling CSS&lt;/h2&gt;
-
-&lt;p&gt;We compile metro-bootstrap using &lt;a href="http://gruntjs.com/"&gt;Grunt&lt;/a&gt;. 
-Run &lt;code&gt;grunt build&lt;/code&gt; to compile the CSS into &lt;code&gt;/dist&lt;/code&gt;. &lt;/p&gt;
-
-&lt;p&gt;If don't have Grunt installed, execute the following steps from the command line:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Make sure you have node.js installed.&lt;/li&gt;
-&lt;li&gt;Install &lt;code&gt;grunt-cli&lt;/code&gt; globally with &lt;code&gt;npm install -g grunt-cli&lt;/code&gt;.&lt;/li&gt;
-&lt;li&gt;Go to the &lt;code&gt;metro-bootstrap&lt;/code&gt; directory, then run &lt;code&gt;npm install&lt;/code&gt;. npm will look at package.json and automatically install the necessary dependencies.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Now, go fork it!&lt;/p&gt;
 </a10:content></item></channel></rss>
