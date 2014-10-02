@@ -1,4 +1,35 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-09-29T22:16:34+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics-recognize-the-name/</id><title type="text">Dog training for Developers - The basics: Recognize the name</title><summary type="html">&lt;p&gt;The name of your dog will be the most useful command that you will have. Your dog will need some training until recognize it, so I will leave here a method (coded in c#) of how to help him to accomplish that.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-10-02T21:29:51+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/</id><title type="text">Azure SQL Database: Automatic Backups</title><summary type="html">&lt;p&gt;This week, I've found a new feature in Azure Management Portal that I wished at so many times.&lt;/p&gt;
+
+&lt;p&gt;In July, &lt;a href="http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines"&gt;Scott Guthrie announced the support for Automated SQL Database Exports.&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;This is awesome because now we can forget the complex powershell scripts to achieve it. Now we can easily configure fully automated exports to a Storage account and, the best part of it, this is a built-in feature of Windows Azure Management Portal.&lt;/p&gt;
+
+</summary><published>2014-10-01T23:00:00Z</published><updated>2014-10-01T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/" /><content type="html">&lt;p&gt;This week, I've found a new feature in Azure Management Portal that I wished at so many times.&lt;/p&gt;
+
+&lt;p&gt;In July, &lt;a href="http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines"&gt;Scott Guthrie announced the support for Automated SQL Database Exports.&lt;/a&gt; &lt;/p&gt;
+
+&lt;p&gt;This is awesome because now we can forget the complex powershell scripts to achieve it. Now we can easily configure fully automated exports to a Storage account and, the best part of it, this is a built-in feature of Windows Azure Management Portal.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;If you want to automate the backup of your database, just go your database and jump to the Configuration Section. In this section, you will see the settings available.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/azure-sql-database-automatic-backups-configure-screen.jpg" alt="Azure SQL Database: Automatic Backups - Configure screen" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here you can configure:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;The storage account where you want to keep the backup files;&lt;/li&gt;
+&lt;li&gt;The backup frequency;&lt;/li&gt;
+&lt;li&gt;The retention period;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Lastly, you'll need to enter the SQL Database login name and password.&lt;/p&gt;
+
+&lt;p&gt;So far as I know, you just pay the storage space.&lt;/p&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics-recognize-the-name/</id><title type="text">Dog training for Developers - The basics: Recognize the name</title><summary type="html">&lt;p&gt;The name of your dog will be the most useful command that you will have. Your dog will need some training until recognize it, so I will leave here a method (coded in c#) of how to help him to accomplish that.&lt;/p&gt;
 
 </summary><published>2014-09-28T23:00:00Z</published><updated>2014-09-28T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics-recognize-the-name/" /><content type="html">&lt;p&gt;The name of your dog will be the most useful command that you will have. Your dog will need some training until recognize it, so I will leave here a method (coded in c#) of how to help him to accomplish that.&lt;/p&gt;
 
@@ -539,49 +570,4 @@ Console.WriteLine(tks);
 &lt;h2&gt;What's next&lt;/h2&gt;
 
 &lt;p&gt;Well, since Bootstrap v3.2.0 has been released we'll be updating metro-bootstrap to be compatible with it soon.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/</id><title type="text">Add documentation to your Web API in 5 steps</title><summary type="html">&lt;p&gt;APIs are created to expose the system to other developers, so we need to provide documentation that explain how to use our API.&lt;/p&gt;
-
-&lt;p&gt;So far, so good, but maintain documents manually is a kind of boring. What about auto-generate it?&lt;/p&gt;
-
-&lt;p&gt;Well, if you are using ASP.NET Web API this is a piece of cake.&lt;/p&gt;
-
-</summary><published>2014-06-26T23:00:00Z</published><updated>2014-06-26T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/" /><content type="html">&lt;p&gt;APIs are created to expose the system to other developers, so we need to provide documentation that explain how to use our API.&lt;/p&gt;
-
-&lt;p&gt;So far, so good, but maintain documents manually is a kind of boring. What about auto-generate it?&lt;/p&gt;
-
-&lt;p&gt;Well, if you are using ASP.NET Web API this is a piece of cake.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;How to add documentation to your ASP.NET Web API?&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Install "&lt;em&gt;Microsoft.AspNet.WebApi.HelpPage&lt;/em&gt;" package from nuget. (If you are using VB.NET install "&lt;em&gt;Microsoft.AspNet.WebApi.HelpPage.VB&lt;/em&gt;"). This package will create an Area called "Help" in the API project.&lt;/li&gt;
-&lt;li&gt;Make sure that you have the following code in the "&lt;em&gt;Application_Start&lt;/em&gt;" method at your Global.asax file: &lt;em&gt;AreaRegistration.RegisterAllAreas();&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Documentation will be available in the &lt;em&gt;/Help&lt;/em&gt; URI. So, just add a link to it in your application.&lt;/li&gt;
-&lt;li&gt;To enable the XML Documentation comments, open the file &lt;em&gt;Areas/HelpPage/App_Start/HelpPageConfig.cs&lt;/em&gt; and uncomment the line "&lt;em&gt;config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));&lt;/em&gt;"&lt;/li&gt;
-&lt;li&gt;In Solution Explorer, right-click the project, select Properties, then go to the &lt;em&gt;Build&lt;/em&gt; page. In the &lt;em&gt;Output&lt;/em&gt; section check the &lt;em&gt;XML documentation file&lt;/em&gt; property and set the text box with the value "App_Data/XmlDocument.xml".&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Now you are able to start adding comments to your Web API methods, as you can see in the following example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;/// &amp;lt;summary&amp;gt;
-/// Get text by ID
-/// &amp;lt;/summary&amp;gt;
-/// &amp;lt;param name="id"&amp;gt;ID used to get the result text.&amp;lt;/param&amp;gt;
-public string Get(int id)
-{
-    return "value";
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Build your application and you are done! Now, if you want to do some advanced stuff, I recommend that you take a look into the following posts:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages"&gt;Creating Help Pages for ASP.NET Web API&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://blogs.msdn.com/b/yaohuang1/archive/2012/12/10/asp-net-web-api-help-page-part-3-advanced-help-page-customizations.aspx"&gt;Advanced Help Page customizations&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://blogs.msdn.com/b/yaohuang1/archive/2012/08/15/introducing-the-asp-net-web-api-help-page-preview.aspx"&gt;Introducing the ASP.NET Web API Help Page&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I hope this helps you.&lt;/p&gt;
 </content></entry></feed>

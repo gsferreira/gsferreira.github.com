@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2014-10-02T21:29:47.8426830+01:00" />
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Azure" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Let's blog - 
+            Azure SQL Database: Automatic Backups - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/04/lets-blog/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,28 +39,42 @@
 
 
 <div class="post">
-    <h1>Let's blog</h1> 
+    <h1>Azure SQL Database: Automatic Backups</h1> 
       <div class="meta">
-        <p class="posted">28 abr 2014</p>
+        <p class="posted">02 out 2014</p>
         <ul class="categories">
+          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Hi! My name is Guilherme Ferreira. I'm a <a href="http://www.pinterest.com/igori/portugal/">Portuguese</a> software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of <a href="http://www.pinterest.com/turismportugal/porto-portugal/">Porto</a>. Go check the pictures, I will be right here waiting for you.</p>
+    <p>This week, I've found a new feature in Azure Management Portal that I wished at so many times.</p>
 
-<p>I'm starting this blog with the intent to share the lessons that I learn, 
-write news about my work and to improve my English writing skills. 
+<p>In July, <a href="http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines">Scott Guthrie announced the support for Automated SQL Database Exports.</a> </p>
+
+<p>This is awesome because now we can forget the complex powershell scripts to achieve it. Now we can easily configure fully automated exports to a Storage account and, the best part of it, this is a built-in feature of Windows Azure Management Portal.</p>
+
 <!--excerpt-->
-Following this page you can expect to read cool stuff about software development, entrepreneurship, productivity tips and other living stuff.</p>
 
-<p><img src="http://www.gravatar.com/avatar/93c1c26212f9eb3673538e6ad6ca7eb4.png?s=200" alt="alt text" title="This is me" /></p>
+<p>If you want to automate the backup of your database, just go your database and jump to the Configuration Section. In this section, you will see the settings available.</p>
 
-<p>Go subscribe the <a href="http://gsferreira.com/rss.xml">RSS feed</a>, visit the <a href="http://gsferreira.com/about/">about page</a> to find my contacts and feel free to contact me.</p>
+<p><img src="/images/azure-sql-database-automatic-backups-configure-screen.jpg" alt="Azure SQL Database: Automatic Backups - Configure screen" /></p>
 
-<p>I'll see you soon... and now let's blog!</p>
+<p>Here you can configure:</p>
+
+<ul>
+<li>The storage account where you want to keep the backup files;</li>
+<li>The backup frequency;</li>
+<li>The retention period;</li>
+</ul>
+
+<p>Lastly, you'll need to enter the SQL Database login name and password.</p>
+
+<p>So far as I know, you just pay the storage space.</p>
+
+<p>Hope this helps.</p>
 
 
 
@@ -83,14 +97,14 @@ Following this page you can expect to read cool stuff about software development
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/04/lets-blog/';
+                this.page.url = 'http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/04/lets-blog/';
+    var disqus_url = 'http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
