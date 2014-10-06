@@ -1,4 +1,47 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/</guid><link>http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/</link><title>Azure SQL Database: Automatic Backups</title><description>&lt;p&gt;This week, I've found a new feature in Azure Management Portal that I wished at so many times.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/</guid><link>http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/</link><title>Dog training for Developers - The basics: Come when called</title><description>&lt;p&gt;Your dog ignores when you call him? Well, you can help him understand that you would be glad if he came to you when you want.&lt;/p&gt;
+
+</description><pubDate>Sun, 05 Oct 2014 23:00:00 Z</pubDate><a10:updated>2014-10-05T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Your dog ignores when you call him? Well, you can help him understand that you would be glad if he came to you when you want.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;Run the following method during a few days, but don't run it more than once a day.&lt;/p&gt;
+
+&lt;p&gt;Remember, be patient :)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public void ComeWhenCalled()
+{
+    for (int i = 0; i &amp;lt; 10; i++)
+    {
+        var snack = _teacher.GrabNewSnack();
+
+        //Request dog attention
+        do
+        {
+            _teacher.ShowToDog(snack);
+
+        } while (!_dog.IsLooking);
+
+        _teacher.GoAway(meters: 2);
+
+        //Open arms to invite the dog
+        _teacher.OpenArms();
+
+        while (_dog.IsComming || !_dog.IsNearTeacher)
+        {
+            _teacher.Say("Here!");
+
+            _teacher.ShowToDog(snack);
+
+        }
+
+        _teacher.GrabDogCollar(_dog);
+        //To receive the snack the dog should stay near you
+        _teacher.GiveToDog(snack);
+
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/</guid><link>http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/</link><title>Azure SQL Database: Automatic Backups</title><description>&lt;p&gt;This week, I've found a new feature in Azure Management Portal that I wished at so many times.&lt;/p&gt;
 
 &lt;p&gt;In July, &lt;a href="http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines"&gt;Scott Guthrie announced the support for Automated SQL Database Exports.&lt;/a&gt; &lt;/p&gt;
 
@@ -504,70 +547,4 @@ Console.WriteLine(tks);
 &lt;p&gt;AzureLogSpelunker can be used to request the logs for a specific period, then the tool will cache them locally in a SQLite database where you may run SQL queries. This tool is a must have if you are using the Microsoft Azure Platform.&lt;/p&gt;
 
 &lt;p&gt;I hope this helps you.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/07/metro-bootstrap-with-improved-tiles/</guid><link>http://gsferreira.com/archive/2014/07/metro-bootstrap-with-improved-tiles/</link><title>metro-bootstrap with improved tiles</title><description>&lt;p&gt;Yesterday we released metro-bootstrap 3.1.1.2. The highlights of this release are based on improvements to tiles. We have been working to give you the flexibility to implement tiles where you want and as you want.&lt;/p&gt;
-
-&lt;p&gt;In the previous version metro-bootstrap tiles were based on the Thumbnail component of bootstrap that will let you place them side by side easily. Now you will be able to place a tile in a "div" tag, for example, and set the positioning as you want.&lt;/p&gt;
-
-</description><pubDate>Thu, 03 Jul 2014 23:00:00 Z</pubDate><a10:updated>2014-07-03T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.1.1.2. The highlights of this release are based on improvements to tiles. We have been working to give you the flexibility to implement tiles where you want and as you want.&lt;/p&gt;
-
-&lt;p&gt;In the previous version metro-bootstrap tiles were based on the Thumbnail component of bootstrap that will let you place them side by side easily. Now you will be able to place a tile in a "div" tag, for example, and set the positioning as you want.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h1&gt;What's new&lt;/h1&gt;
-
-&lt;p&gt;Here's a look at tiles news.&lt;/p&gt;
-
-&lt;h2&gt;New positioning - Remove Thumbnail dependency&lt;/h2&gt;
-
-&lt;p&gt;In the last version was mandatory to use thumbnails, now don't. If you want, you can use them, but you aren't obligated anymore. For example, if you want to create a Tile board taking part of the Bootstrap grid system you can (&lt;a href="http://talkslab.github.io/metro-bootstrap/dashboardtemplate.html"&gt;you can find here an example of how you can accomplish this&lt;/a&gt;).&lt;/p&gt;
-
-&lt;h2&gt;New template&lt;/h2&gt;
-
-&lt;p&gt;You can find &lt;a href="http://talkslab.github.io/metro-bootstrap/dashboardtemplate.html"&gt;here&lt;/a&gt; a template of a responsive dashboard based on tiles.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/metro-bootstrap-with-improved-tiles-dashboard-template.png" alt="metro-bootstrap dashboard template" /&gt;&lt;/p&gt;
-
-&lt;h2&gt;New colors&lt;/h2&gt;
-
-&lt;p&gt;Using the info, danger, warning and success colors already defined in bootstrap, you can add the following classes to your tiles:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;tile-info&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;tile-danger&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;tile-warning&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;tile-success&lt;/em&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;New default variables&lt;/h2&gt;
-
-&lt;p&gt;In the &lt;em&gt;variables.less&lt;/em&gt; file you can find the following variables:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;@tile-bg&lt;/em&gt; to define the default color for tiles&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;@tile-border&lt;/em&gt; to define the border size&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;@tile-border-bg&lt;/em&gt; to define the border color&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;New sizes&lt;/h2&gt;
-
-&lt;p&gt;Following the &lt;a href="http://msdn.microsoft.com/en-us/library/windows/apps/hh465403.aspx"&gt;Microsoft Guidelines&lt;/a&gt; were implemented new classes and now it's possible define the following sizes:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Small (70x70). Add the css class &lt;em&gt;tile-small&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Medium (150x150). Add the css class &lt;em&gt;tile-medium&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Wide (310x150). Add the css class &lt;em&gt;tile-wide&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;Large (310x310). Add the css class &lt;em&gt;tile-large&lt;/em&gt;.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Tile title&lt;/h2&gt;
-
-&lt;p&gt;Place a tile title on the lower left corner.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;span class="tile-label"&amp;gt;Tile 5&amp;lt;/span&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;What's next&lt;/h2&gt;
-
-&lt;p&gt;Well, since Bootstrap v3.2.0 has been released we'll be updating metro-bootstrap to be compatible with it soon.&lt;/p&gt;
 </a10:content></item></channel></rss>
