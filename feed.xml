@@ -1,4 +1,58 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-10-14T23:20:39+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit/</id><title type="text">Dog training for Developers - The basics: Sit</title><summary type="html">&lt;p&gt;"Sit" is probably one of the easiest commands to teach your dog.
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-10-24T22:39:55+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/</id><title type="text">Dog training for Developers - The basics: Stay</title><summary type="html">&lt;p&gt;Training a dog to stay can be a tough task, because your dog is used to following you. After you and your dog have mastered the sit command, train him to stay.&lt;/p&gt;
+
+</summary><published>2014-10-23T23:00:00Z</published><updated>2014-10-23T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/" /><content type="html">&lt;p&gt;Training a dog to stay can be a tough task, because your dog is used to following you. After you and your dog have mastered the sit command, train him to stay.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;And remember, be patient :)&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/dog-trainig-for-developers-the-basics-sit-stay.jpg" alt="Dog insane" /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public void Stay()
+{
+    _teacher.Say("Sit!");
+    _teacher.ShowHandInStayCommand();
+    _teacher.Say("Stay!");
+
+    System.Threading.Thread.Sleep(2000); //Wait 2 seconds
+
+    _teacher.Say("Go play!");
+
+    _teacher.PlayWithDog(_dog);
+
+
+
+    _teacher.Say("Sit!");
+    _teacher.ShowHandInStayCommand();
+
+    _teacher.Say("Stay!");
+    _teacher.MoveAway(numberOfSteps: 1);
+
+    System.Threading.Thread.Sleep(2000); //Wait 2 seconds
+
+    _teacher.Say("Go play!");
+
+    _teacher.PlayWithDog(_dog);
+
+
+    for (int i = 0; i &amp;lt; 5; i++)
+    {
+        _teacher.Say("Sit!");
+        _teacher.ShowHandInStayCommand();
+
+        _teacher.Say("Stay!");
+        _teacher.MoveAway(numberOfSteps: 3);
+
+        System.Threading.Thread.Sleep(2000 + (1000 * i)); //Wait 2 seconds
+
+        _teacher.Say("Go play!");
+
+        _teacher.PlayWithDog(_dog);
+
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit/</id><title type="text">Dog training for Developers - The basics: Sit</title><summary type="html">&lt;p&gt;"Sit" is probably one of the easiest commands to teach your dog.
 But, how to accomplish it? Run the following method during a few days, twice a day.&lt;/p&gt;
 
 </summary><published>2014-10-10T23:00:00Z</published><updated>2014-10-10T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit/" /><content type="html">&lt;p&gt;"Sit" is probably one of the easiest commands to teach your dog.
@@ -550,47 +604,4 @@ If you want to test the nuspec file, just type the following command in the comm
 &lt;/ul&gt;
 
 &lt;p&gt;Enjoy and have fun!&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/07/your-product-needs-an-identity/</id><title type="text">Your product needs an identity</title><summary type="html">&lt;p&gt;Have you ever asked yourself why people fall in love with products? Recently I listen &lt;a href="http://sethgodin.typepad.com/"&gt;Seth Godin&lt;/a&gt; saying that &lt;em&gt;"if you are making a product for everyone, you are making a product for no one"&lt;/em&gt;. I believe that this incredible sentence reveals the answer to the question.&lt;/p&gt;
-
-&lt;p&gt;This post will tell you why it's so important to create a strong identity for your product.&lt;/p&gt;
-
-</summary><published>2014-07-22T23:00:00Z</published><updated>2014-07-22T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/07/your-product-needs-an-identity/" /><content type="html">&lt;p&gt;Have you ever asked yourself why people fall in love with products? Recently I listen &lt;a href="http://sethgodin.typepad.com/"&gt;Seth Godin&lt;/a&gt; saying that &lt;em&gt;"if you are making a product for everyone, you are making a product for no one"&lt;/em&gt;. I believe that this incredible sentence reveals the answer to the question.&lt;/p&gt;
-
-&lt;p&gt;This post will tell you why it's so important to create a strong identity for your product.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/your-product-needs-an-identity-homer-simpson-donut-dream.gif" alt="product-love" /&gt;&lt;/p&gt;
-
-&lt;p&gt;The philosophy behind Seth's words isn't something new. You probably heard about this on product development methodologies or about the &lt;a href="http://bowden2bowden.co/2012/10/25/horizontal-marketing-versus-vertical-marketing/"&gt;&lt;em&gt;horizontal marketing&lt;/em&gt; vs &lt;em&gt;vertical marketing&lt;/em&gt;&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I'm a defensor that we should read Seth's advise as "a product should have a mission, a vision, an identity, as if we were describing a person, a friend", because when we are creating something for everyone, a "horizontal product", we usually add complexity and a lack of "identity" to our product.&lt;/p&gt;
-
-&lt;p&gt;So, &lt;strong&gt;what makes up an identity?&lt;/strong&gt; It’s what you stand for, it's your passions, values and beliefs.&lt;/p&gt;
-
-&lt;p&gt;The world around us has a lot of good examples of this, for example:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Apple&lt;/strong&gt;: Has an identity of innovation and design.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;McDonald's&lt;/strong&gt;: Provide the best quick service restaurant experience. Let's be honest, isn't McDonald's one of the first options that came to your mind when you need a quick meal?&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Basecamp&lt;/strong&gt;: Has started with a mission to create an awesome project management tool for design companies.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Personas&lt;/strong&gt;: UX and Design teams, usually start by creating a persona that represents a hypothetical customer.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Google&lt;/strong&gt;: Simplicity and information side by side.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Gourmet restaurants&lt;/strong&gt;: They create a clear identity based on quality, trying to reach a concrete market.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;strong&gt;Why an identity is so important?&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;People feel attracted to strong identities and tend to create a relation with a brand or a product that has some characteristics that they like. As &lt;a href="http://unicornfree.com/2014/how-do-you-market-a-product-thats-for-everyone"&gt;Amy Hoy&lt;/a&gt; said &lt;em&gt;"Nobody wants to be everybody"&lt;/em&gt;.
-Your friends are amazing because of their unique personality or because they are likable people?! I bet that you like them because they are awesome.&lt;/p&gt;
-
-&lt;iframe src="//giphy.com/embed/ly12YiQjsvupi" width="500" height="233" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;So, if you are creating a product, you should try to find your identity and remember that, your target market should see in your identity a personality that they love. Then, just keep in mind "who you are" and you will see people falling in love with your product. &lt;/p&gt;
-
-&lt;!--[![shut-up-and-take-my-money](/images/00-global-shut-up-and-take-my-money.gif)](http://knowyourmeme.com/photos/264241-shut-up-and-take-my-money)--&gt;
-
-&lt;p&gt;An identity isn't just something to be written on a wall. It’s something that you believe and that you live it everyday.&lt;/p&gt;
-
-&lt;p&gt;Just remember, "it’s for everybody!" probably isn't the best answer.&lt;/p&gt;
 </content></entry></feed>
