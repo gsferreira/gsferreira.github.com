@@ -1,4 +1,45 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/</guid><link>http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/</link><title>Dog training for Developers - The basics: Stay</title><description>&lt;p&gt;Training a dog to stay can be a tough task, because your dog is used to following you. After you and your dog have mastered the sit command, train him to stay.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/</guid><link>http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/</link><title>Dog training for Developers - The basics: Lie down</title><description>&lt;p&gt;This is the last post of this series and I hope now you and your dog are an awesome team!&lt;/p&gt;
+
+&lt;p&gt;Today I will give you the tips to the lie down command, a nice complement to the Sit command.&lt;/p&gt;
+
+&lt;p&gt;</description><pubDate>Mon, 24 Nov 2014 00:00:00 Z</pubDate><a10:updated>2014-11-24T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;This is the last post of this series and I hope now you and your dog are an awesome team!&lt;/p&gt;
+
+&lt;p&gt;Today I will give you the tips to the lie down command, a nice complement to the Sit command.&lt;/p&gt;
+
+&lt;p&gt;&lt;!--excerpt--&gt;
+&lt;img src="http://gsferreira.com/images/dog-trainig-for-developers-the-basics-lie-down.jpg" alt="Dog lie down" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I hope you have liked this series. If you want to have some more tips please let me know, I would be glad to know.&lt;/p&gt;
+
+&lt;p&gt;And remember, be patient as always :)&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public void LieDown()
+{
+    var snack = _teacher.GrabNewSnack();
+    _teacher.Sit();
+
+    Sit();
+    do
+    {
+        //Wait until dog is sitting
+    } while (!_dog.IsSitting);
+
+    for (int i = 0; i &amp;lt; 5; i++)
+    {
+        do
+        {
+            //your hand to the middle of his legs
+            //move your hand slowly
+            _teacher.MoveHandDown();
+        } while (!_dog.IsLying);
+
+        _teacher.Say("Lie down!");
+        _teacher.GiveToDog(snack);
+
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/</guid><link>http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/</link><title>Dog training for Developers - The basics: Stay</title><description>&lt;p&gt;Training a dog to stay can be a tough task, because your dog is used to following you. After you and your dog have mastered the sit command, train him to stay.&lt;/p&gt;
 
 </description><pubDate>Thu, 23 Oct 2014 23:00:00 Z</pubDate><a10:updated>2014-10-23T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Training a dog to stay can be a tough task, because your dog is used to following you. After you and your dog have mastered the sit command, train him to stay.&lt;/p&gt;
 
@@ -543,65 +584,4 @@ If you want to test the nuspec file, just type the following command in the comm
 &lt;li&gt;&lt;em&gt;@tile-font-size-h3&lt;/em&gt;: Set the default font size in h3 tags inside tiles.&lt;/li&gt;
 &lt;li&gt;&lt;em&gt;@tile-font-size-h4&lt;/em&gt;: Set the default font size in h4 tags inside tiles.&lt;/li&gt;
 &lt;/ul&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/07/have-fun-with-cortana/</guid><link>http://gsferreira.com/archive/2014/07/have-fun-with-cortana/</link><title>Have fun with Cortana</title><description>&lt;p&gt;Have you heard about Cortana? If you are a proud owner of a Windows Phone,  I bet you did. &lt;/p&gt;
-
-&lt;p&gt;To the others, Cortana is like Siri, but for Windows Phone. One of the few things where iPhone was the first, since Windows Phone release (if you are an Apple fan, I bet that you want to leave your opinion, scroll down and leave a comment, but remember that this is just my humble opinion &amp;#9786; ).&lt;/p&gt;
-
-&lt;p&gt;If you have a Windows Phone with 8.1 installed you can start using Cortana. I have been testing and I found some funny questions and another more useful.&lt;/p&gt;
-
-&lt;p&gt;I leave a cool list below.&lt;/p&gt;
-
-</description><pubDate>Wed, 30 Jul 2014 23:00:00 Z</pubDate><a10:updated>2014-07-30T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Have you heard about Cortana? If you are a proud owner of a Windows Phone,  I bet you did. &lt;/p&gt;
-
-&lt;p&gt;To the others, Cortana is like Siri, but for Windows Phone. One of the few things where iPhone was the first, since Windows Phone release (if you are an Apple fan, I bet that you want to leave your opinion, scroll down and leave a comment, but remember that this is just my humble opinion &amp;#9786; ).&lt;/p&gt;
-
-&lt;p&gt;If you have a Windows Phone with 8.1 installed you can start using Cortana. I have been testing and I found some funny questions and another more useful.&lt;/p&gt;
-
-&lt;p&gt;I leave a cool list below.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h2&gt;Funny commands&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Tell me a joke.&lt;/li&gt;
-&lt;li&gt;Sing me a song.&lt;/li&gt;
-&lt;li&gt;Tell me a story.&lt;/li&gt;
-&lt;li&gt;What does the fox say?&lt;/li&gt;
-&lt;li&gt;Knock knock.&lt;/li&gt;
-&lt;li&gt;Why did the chicken cross the road?&lt;/li&gt;
-&lt;li&gt;Say something funny.&lt;/li&gt;
-&lt;li&gt;Where do babies come from?&lt;/li&gt;
-&lt;li&gt;What is the meaning of life?&lt;/li&gt;
-&lt;li&gt;Guess what?&lt;/li&gt;
-&lt;li&gt;Do you like Siri? &lt;/li&gt;
-&lt;li&gt;What are you wearing?&lt;/li&gt;
-&lt;li&gt;May the force be with you.&lt;/li&gt;
-&lt;li&gt;Cortana, I'm your father.&lt;/li&gt;
-&lt;li&gt;Which is better: Linux or Windows?&lt;/li&gt;
-&lt;li&gt;Are you drunk?&lt;/li&gt;
-&lt;li&gt;Can you cook?&lt;/li&gt;
-&lt;li&gt;Fu*k you.&lt;/li&gt;
-&lt;li&gt;Cortana.&lt;/li&gt;
-&lt;li&gt;Talk dirty.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Useful commands&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Call Peter.&lt;/li&gt;
-&lt;li&gt;Text Peter.&lt;/li&gt;
-&lt;li&gt;Add appointment to calendar tomorrow.&lt;/li&gt;
-&lt;li&gt;What do I have next?&lt;/li&gt;
-&lt;li&gt;Remind me to call Peter tomorrow.&lt;/li&gt;
-&lt;li&gt;Note: Get eggs.&lt;/li&gt;
-&lt;li&gt;Wake me up at 8 AM.&lt;/li&gt;
-&lt;li&gt;What song is playing.&lt;/li&gt;
-&lt;li&gt;Pause playing.&lt;/li&gt;
-&lt;li&gt;Forecast for tomorrow.&lt;/li&gt;
-&lt;li&gt;Forecast for tomorrow in celsius degrees.&lt;/li&gt;
-&lt;li&gt;Change in Celsius.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Enjoy and have fun!&lt;/p&gt;
 </a10:content></item></channel></rss>

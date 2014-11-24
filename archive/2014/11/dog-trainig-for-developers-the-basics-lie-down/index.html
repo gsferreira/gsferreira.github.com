@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2014-11-24T22:28:39.4753178+00:00" />
-    <meta name="keywords" content="AngularJS" />
+    <meta name="keywords" content="" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            AngularJS - Smart Float Directive - 
+            Dog training for Developers - The basics: Lie down - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,83 +39,53 @@
 
 
 <div class="post">
-    <h1>AngularJS - Smart Float Directive</h1> 
+    <h1>Dog training for Developers - The basics: Lie down</h1> 
       <div class="meta">
-        <p class="posted">24 mai 2014</p>
+        <p class="posted">24 nov 2014</p>
         <ul class="categories">
-          <li><a href="/category/angularjs" title="Snow.Models.Category">AngularJS</a></li>
         </ul>
       </div>
     </div>
     
-    
+    <ul class="snow-series"><li><a href="/archive/2014/09/dog-trainig-for-developers-the-basics/">Dog training for Developers - The basics</a></li><li><a href="/archive/2014/09/dog-trainig-for-developers-the-basics-recognize-the-name/">Dog training for Developers - The basics: Recognize the name</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/">Dog training for Developers - The basics: Come when called</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-sit/">Dog training for Developers - The basics: Sit</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/">Dog training for Developers - The basics: Stay</a></li><li>Dog training for Developers - The basics: Lie down</li></ul>
         
-    <p>Recently I started looking for an AngluarJS directive to validate numbers and I found the "smart-float" directive <a href="https://docs.angularjs.org/guide/forms">here</a>, in the AngularJS documentation. This amazing example solves the problem of convert my numbers that use a comma as decimal mark to a Javascript number.</p>
+    <p>This is the last post of this series and I hope now you and your dog are an awesome team!</p>
 
-<p>My problem is that this directive doesn't solve my two problems:</p>
+<p>Today I will give you the tips to the lie down command, a nice complement to the Sit command.</p>
 
-<ol>
-<li>Display numbers with 2 fractional digits by default.</li>
-<li>Validate numbers with thousands separator.</li>
-</ol>
+<p><!--excerpt-->
+<img src="/images/dog-trainig-for-developers-the-basics-lie-down.jpg" alt="Dog lie down" /></p>
 
-<!--excerpt-->
+<p>I hope you have liked this series. If you want to have some more tips please let me know, I would be glad to know.</p>
 
-<p>So, this is an improved directive based on Angular's <em>smart-float</em> directive.
-First, add the following directive to your application:</p>
+<p>And remember, be patient as always :)</p>
 
-<pre><code>directive('smartFloat', function ($filter) {
-    var FLOAT_REGEXP_1 = /^\$?\d+(.\d{3})*(\,\d*)?$/; //Numbers like: 1.123,56
-    var FLOAT_REGEXP_2 = /^\$?\d+(,\d{3})*(\.\d*)?$/; //Numbers like: 1,123.56
-    return {
-        require: 'ngModel',
-        link: function (scope, elm, attrs, ctrl) {
-            ctrl.$parsers.unshift(function (viewValue) {
-                if (FLOAT_REGEXP_1.test(viewValue)) {
-                    ctrl.$setValidity('float', true);
-                    return parseFloat(viewValue.replace('.', '').replace(',', '.'));
-                } else if (FLOAT_REGEXP_2.test(viewValue)) {
-                        ctrl.$setValidity('float', true);
-                        return parseFloat(viewValue.replace(',', ''));
-                } else {
-                    ctrl.$setValidity('float', false);
-                    return undefined;
-                }
-            });
-            ctrl.$formatters.unshift(
-               function (modelValue) {
-                   return $filter('number')(parseFloat(modelValue) , 2);
-               }
-           );
-        }
-    };
-});
+<pre><code>public void LieDown()
+{
+    var snack = _teacher.GrabNewSnack();
+    _teacher.Sit();
+
+    Sit();
+    do
+    {
+        //Wait until dog is sitting
+    } while (!_dog.IsSitting);
+
+    for (int i = 0; i &lt; 5; i++)
+    {
+        do
+        {
+            //your hand to the middle of his legs
+            //move your hand slowly
+            _teacher.MoveHandDown();
+        } while (!_dog.IsLying);
+
+        _teacher.Say("Lie down!");
+        _teacher.GiveToDog(snack);
+
+    }
+}
 </code></pre>
-
-<p>Now, add the <em>smart-float</em> directive to your input:</p>
-
-<pre><code>&lt;input type="text" id="inputAmount" name="inputAmount" 
-placeholder="Amount" ng-model="amount" smart-float /&gt;
-</code></pre>
-
-<p>This gives you what you need. Now, you can improve it showing to your users that the value in the input is invalid. In the following example I used <a href="http://getbootstrap.com/">Bootstrap</a> to demonstrate it:</p>
-
-<pre><code>&lt;form name="myForm" class="form-horizontal" role="form" novalidate&gt;
-    &lt;div class="form-group" ng-class="{'has-error': myForm.inputAmount.$invalid}"&gt;
-        &lt;label for="inputText3" class="col-sm-2 control-label"&gt;Amount&lt;/label&gt;
-        &lt;div class="col-sm-10"&gt;
-            &lt;input type="text" class="form-control" id="inputAmount" name="inputAmount" placeholder="Amount" ng-model="amount" smart-float /&gt;
-            &lt;span class="help-block" ng-show="myForm.inputAmount.$error.float"&gt;
-                Invalid Amount!
-            &lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/form&gt;
-</code></pre>
-
-<p>You can see the working demo on <a href="http://jsfiddle.net/gsferreira/SCr6X/8/">JSFiddle</a>.</p>
-
-<p>I hope that this helps you.</p>
 
 
 
@@ -138,14 +108,14 @@ placeholder="Amount" ng-model="amount" smart-float /&gt;
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/';
+                this.page.url = 'http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/';
+    var disqus_url = 'http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
