@@ -1,4 +1,43 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/</guid><link>http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/</link><title>Dog training for Developers - The basics: Lie down</title><description>&lt;p&gt;This is the last post of this series and I hope now you and your dog are an awesome team!&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/</guid><link>http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/</link><title>Azure deploy and the path length limitation</title><description>&lt;p&gt;Windows has that boring thing, the "Maximum Path Length Limitation". That can be a terrible headache when you are dealing with Azure Cloud Service deploy.&lt;/p&gt;
+
+&lt;p&gt;If you create your projects in the Visual Studio default folder (&lt;em&gt;C:\Users\USER\Documents\Visual Studio 2013\Projects&lt;/em&gt;) or in a longer path, probably you already have faced the error:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+</description><pubDate>Thu, 27 Nov 2014 00:00:00 Z</pubDate><a10:updated>2014-11-27T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Windows has that boring thing, the "Maximum Path Length Limitation". That can be a terrible headache when you are dealing with Azure Cloud Service deploy.&lt;/p&gt;
+
+&lt;p&gt;If you create your projects in the Visual Studio default folder (&lt;em&gt;C:\Users\USER\Documents\Visual Studio 2013\Projects&lt;/em&gt;) or in a longer path, probably you already have faced the error:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;To fix this:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Go to the Cloud Service project folder.&lt;/li&gt;
+&lt;li&gt;Edit the user cloud service options file (&lt;em&gt;*.ccproj&lt;/em&gt; file) in notepad.&lt;/li&gt;
+&lt;li&gt;Add the ServiceOutputDirectory element with the value &lt;em&gt;"c:\azure"&lt;/em&gt; for example.&lt;/li&gt;
+&lt;li&gt;Open the solution in Visual Studio again and the error has gone.&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Example:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;﻿&amp;lt;?xml version="1.0" encoding="utf-8"?&amp;gt;
+&amp;lt;Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"&amp;gt;
+  &amp;lt;PropertyGroup&amp;gt;
+    &amp;lt;Name&amp;gt;WorkerRole&amp;lt;/Name&amp;gt;
+    &amp;lt;ServiceOutputDirectory&amp;gt;c:\azure\&amp;lt;/ServiceOutputDirectory&amp;gt;
+  &amp;lt;/PropertyGroup&amp;gt;
+&amp;lt;/Project&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/</guid><link>http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/</link><title>Dog training for Developers - The basics: Lie down</title><description>&lt;p&gt;This is the last post of this series and I hope now you and your dog are an awesome team!&lt;/p&gt;
 
 &lt;p&gt;Today I will give you the tips to the lie down command, a nice complement to the Sit command.&lt;/p&gt;
 
@@ -557,31 +596,4 @@ If you want to test the nuspec file, just type the following command in the comm
 &lt;p&gt;The configuration used in this post is running on &lt;a href="https://github.com/TalksLab/metro-bootstrap"&gt;metro-bootstrap&lt;/a&gt; library. Fill free to fork it and try.&lt;/p&gt;
 
 &lt;p&gt;I hope this helps you.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/</guid><link>http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/</link><title>metro-bootstrap 3.2.0.1 released</title><description>&lt;p&gt;Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.&lt;/p&gt;
-
-</description><pubDate>Wed, 06 Aug 2014 23:00:00 Z</pubDate><a10:updated>2014-08-06T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h1&gt;What's new&lt;/h1&gt;
-
-&lt;h2&gt;Dependencies&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;bootstrap 3.2.0&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h2&gt;Bower configuration - Add "main"&lt;/h2&gt;
-
-&lt;p&gt;Has been added the "main" option to the bower.json file. Thanks to &lt;a href="https://github.com/fumitoito"&gt;@fumito_ito&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h2&gt;New variables&lt;/h2&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;em&gt;@tile-light-text-color&lt;/em&gt;: Set the default color for &lt;em&gt;tile-clouds&lt;/em&gt;.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;@tile-font-size-h1&lt;/em&gt;: Set the default font size in h1 tags inside tiles.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;@tile-font-size-h2&lt;/em&gt;: Set the default font size in h2 tags inside tiles.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;@tile-font-size-h3&lt;/em&gt;: Set the default font size in h3 tags inside tiles.&lt;/li&gt;
-&lt;li&gt;&lt;em&gt;@tile-font-size-h4&lt;/em&gt;: Set the default font size in h4 tags inside tiles.&lt;/li&gt;
-&lt;/ul&gt;
 </a10:content></item></channel></rss>
