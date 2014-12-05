@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2014-12-05T19:11:49.6825060+00:00" />
-    <meta name="keywords" content="Food" />
+    <meta name="keywords" content="ASP.NET MVC" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Geeks can cook: Tuna Empanadas - 
+            Disable your html cache - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2014/12/disable-your-html-cache/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,63 +39,57 @@
 
 
 <div class="post">
-    <h1>Geeks can cook: Tuna Empanadas</h1> 
+    <h1>Disable your html cache</h1> 
       <div class="meta">
-        <p class="posted">13 Jun 2014</p>
+        <p class="posted">05 Dec 2014</p>
         <ul class="categories">
-          <li><a href="/category/food" title="Snow.Models.Category">Food</a></li>
+          <li><a href="/category/asp.net-mvc" title="Snow.Models.Category">ASP.NET MVC</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>This blog post is about one of my other passions, cook! I'm a foodie, not just about the eating part of it, but I also love to cook. So, I want to do some tasty posts and share with you some simple recipes.</p>
+    <p>Do you know that usually when you use the back button of your browser, your page won't be requested to the server again? By default this is the behaviour that you can expect.</p>
 
-<p>Being a programmer is not a healthy profession. We spend long hours sitting in front of a computer and this isn't helping our body. But we can change it by making some sport and putting the fast food aside and start cooking healthy and tasty food!</p>
-
-<p>You can start right now, so I wrote down a recipe that you can make in 15 minutes. I hope you like!</p>
+<p>But, you can control it!</p>
 
 <!--excerpt-->
 
-<h1>Tuna Empanadas</h1>
+<p>Go to your web.config and place the following code into the <system.web> element.</p>
 
-<p>Preparation time: 15 minutes</p>
+<pre><code>&lt;caching&gt;
+  &lt;outputCache enableOutputCache="false"&gt;&lt;/outputCache&gt;
+&lt;/caching&gt;
+</code></pre>
 
-<p>Serves: 4</p>
+<p>In your web.config place the following code into the <system.webserver> element to enable the caching for resource files, as images or stylesheets.</p>
 
-<h2>Ingredients:</h2>
+<pre><code>&lt;caching&gt;
+  &lt;profiles&gt;
+    &lt;add extension=".gif" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:30:00" location="Any" /&gt;
+    &lt;add extension=".png" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&gt;
+    &lt;add extension=".js" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&gt;
+    &lt;add extension=".css" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&gt;
+    &lt;add extension=".jpg" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&gt;
+    &lt;add extension=".jpeg" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&gt;
+    &lt;add extension=".txt" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&gt;
+  &lt;/profiles&gt;
+&lt;/caching&gt;
+</code></pre>
 
-<ul>
-<li>2 Shortcrust pastry packs</li>
-<li>3 Tuna cans</li>
-<li>1 Corn can</li>
-<li>2 Onions</li>
-<li>2 Garlic cloves</li>
-<li>1 Sugar spoon</li>
-<li>Oregano</li>
-<li>Salt and pepper</li>
-<li>Olive oil</li>
-<li>1 Egg</li>
-</ul>
+<p>Last but not least, create a Base Controller and copy the code below to your base controller.</p>
 
-<p><img src="/images/geeks-can-cook-tuna-empanadas-ingredients.jpg" alt="Tuna Empanada - Ingredients" /></p>
+<pre><code>    protected override void OnActionExecuting(ActionExecutingContext filterContext)
+    {
+            // Code disables caching by browser.
+            Response.Cache.SetCacheability(HttpCacheability.NoCache);
+            Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
+            Response.Cache.SetNoStore();
+    }
+</code></pre>
 
-<h2>Method:</h2>
-
-<ol>
-<li>Heat a little oil in a frying pan. </li>
-<li>Saute onions and garlic minced for 5 minutes. </li>
-<li>Add the drained tuna and corn.</li>
-<li>Season it with sugar, salt, oregano and pepper.</li>
-<li>Open the 2 shortcrust pastry packs and make 4 rectangles. Add the tuna and corn filling to two of them. Cover it with the other 2 rectangles and close them with the help of a fork.</li>
-<li>Brush with the beaten egg.</li>
-<li>Place in the oven preheated to 200ºC for 7 minutes. </li>
-</ol>
-
-<p>The final result.</p>
-
-<p><img src="/images/geeks-can-cook-tuna-empanadas-final-result.jpg" alt="Tuna Empanada" /></p>
+<p>Hope this helps.</p>
 
 
 
@@ -118,14 +112,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/';
+                this.page.url = 'http://gsferreira.com/archive/2014/12/disable-your-html-cache/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/';
+    var disqus_url = 'http://gsferreira.com/archive/2014/12/disable-your-html-cache/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
