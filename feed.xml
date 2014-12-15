@@ -1,4 +1,41 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-12-05T19:11:52Z</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/12/disable-your-html-cache/</id><title type="text">Disable your html cache</title><summary type="html">&lt;p&gt;Do you know that usually when you use the back button of your browser, your page won't be requested to the server again? By default this is the behaviour that you can expect.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2014-12-15T21:39:55Z</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2014/12/overcome-the-depth_zero_self_signed_cert-on-nodejs/</id><title type="text">Overcome the DEPTH_ZERO_SELF_SIGNED_CERT on Node.js</title><summary type="html">&lt;p&gt;If you are making requests to a server that uses self-signed certificates in Node.js probably you already have seen the error DEPTH_ZERO_SELF_SIGNED_CERT.
+That's an usual error, for instance, if you are working in a test environment.&lt;/p&gt;
+
+&lt;p&gt;I faced this error in my test environment and after google it, I got a lot of answers telling me to set the option "rejectUnhauthorized" as false on my request to the server.&lt;/p&gt;
+
+&lt;p&gt;But, that doesn't make me happy. Why?&lt;/p&gt;
+
+</summary><published>2014-12-15T00:00:00Z</published><updated>2014-12-15T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/12/overcome-the-depth_zero_self_signed_cert-on-nodejs/" /><content type="html">&lt;p&gt;If you are making requests to a server that uses self-signed certificates in Node.js probably you already have seen the error DEPTH_ZERO_SELF_SIGNED_CERT.
+That's an usual error, for instance, if you are working in a test environment.&lt;/p&gt;
+
+&lt;p&gt;I faced this error in my test environment and after google it, I got a lot of answers telling me to set the option "rejectUnhauthorized" as false on my request to the server.&lt;/p&gt;
+
+&lt;p&gt;But, that doesn't make me happy. Why?&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;Because I'm using other node modules that do requests to the same server and I will need to "hack" those modules to inject the rejectUnhauthorized attribute. Seems boring isn't it?!&lt;/p&gt;
+
+&lt;p&gt;So, what I've done?&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/overcome-the-depth_zero_self_signed_cert-on-nodejs-one-row-to-rule-them-all.jpg" alt="One row to rule them all!" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I opened my node start file and I put there the following line of code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you, like me, want to apply this rule only to a test/development environment, you can do this:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if ('development' == app.get('env')) {
+    process.env.NODE_TLS_REJECT_UNAUTHORIZED = "0";
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now you are conditioning it to the environment that you want.&lt;/p&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2014/12/disable-your-html-cache/</id><title type="text">Disable your html cache</title><summary type="html">&lt;p&gt;Do you know that usually when you use the back button of your browser, your page won't be requested to the server again? By default this is the behaviour that you can expect.&lt;/p&gt;
 
 &lt;p&gt;But, you can control it!&lt;/p&gt;
 
@@ -433,89 +470,4 @@ The tips of this series:&lt;/p&gt;
 &lt;p&gt;If you like the idea, feel free to leave a comment or ask for some more tips.&lt;/p&gt;
 
 &lt;p&gt;Stay tuned!&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/09/how-to-implement-getting-things-done-with-trello/</id><title type="text">How to implement Getting Things Done with Trello</title><summary type="html">&lt;p&gt;Today I want to tell you about one of my favorites productivity methodologies and about one of my favorite tools. Why both? Because they can work perfectly side by side.&lt;/p&gt;
-
-&lt;p&gt;The methodology? &lt;a href="http://gettingthingsdone.com/"&gt;Getting Things Done (GTD) by David Allen&lt;/a&gt;. GTD is about clearing your mind and put everything you need to do in one place first. Collect, process, doing and keep track of it, are the key of GTD.&lt;/p&gt;
-
-&lt;p&gt;The tool? &lt;a href="https://trello.com/"&gt;Trello.com&lt;/a&gt;. Do you love Trello? If you don't, probably you didn't give him a try. What is Trello?&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;"Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a proces"&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I bet that you can find on the web a ton of good articles that explain the beauty of Trello and how GTD can boost your productivity, but that isn't the purpose of this post.
-The objective here is to explain you how Trello and GTD can work beautifully side by side.&lt;/p&gt;
-
-</summary><published>2014-09-07T23:00:00Z</published><updated>2014-09-07T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/09/how-to-implement-getting-things-done-with-trello/" /><content type="html">&lt;p&gt;Today I want to tell you about one of my favorites productivity methodologies and about one of my favorite tools. Why both? Because they can work perfectly side by side.&lt;/p&gt;
-
-&lt;p&gt;The methodology? &lt;a href="http://gettingthingsdone.com/"&gt;Getting Things Done (GTD) by David Allen&lt;/a&gt;. GTD is about clearing your mind and put everything you need to do in one place first. Collect, process, doing and keep track of it, are the key of GTD.&lt;/p&gt;
-
-&lt;p&gt;The tool? &lt;a href="https://trello.com/"&gt;Trello.com&lt;/a&gt;. Do you love Trello? If you don't, probably you didn't give him a try. What is Trello?&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;"Trello is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a proces"&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I bet that you can find on the web a ton of good articles that explain the beauty of Trello and how GTD can boost your productivity, but that isn't the purpose of this post.
-The objective here is to explain you how Trello and GTD can work beautifully side by side.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/how-to-implement-getting-things-done-with-trello-funny-productivity.jpg" alt="Productivity funny" /&gt;&lt;/p&gt;
-
-&lt;h3&gt;Why Trello?&lt;/h3&gt;
-
-&lt;p&gt;I've been a Trello user since 2012 so I think that I'm a kind of Trello Ninja. Besides that, I follow the David Allen methodology and I've struggled to put the system rolling until I use Trello to support it.&lt;/p&gt;
-
-&lt;p&gt;Trello is based on the &lt;a href="http://en.wikipedia.org/wiki/Kanban"&gt;Kanban&lt;/a&gt; method. Kanban it's a way to visualize workflow. Usually a &lt;a href="http://en.wikipedia.org/wiki/Kanban_board"&gt;kanban board&lt;/a&gt; consists in several columns for different phases for a task. Trello also offers you multiple forms of organization like: boards, lists, cards and checklists.&lt;/p&gt;
-
-&lt;h3&gt;System setup&lt;/h3&gt;
-
-&lt;p&gt;So, how do I take advantage of it to manage my workflow? I've created a Board only for GTD management. &lt;/p&gt;
-
-&lt;p&gt;Lists:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Inbox&lt;/li&gt;
-&lt;li&gt;Later&lt;/li&gt;
-&lt;li&gt;Waiting On&lt;/li&gt;
-&lt;li&gt;This Week&lt;/li&gt;
-&lt;li&gt;Today&lt;/li&gt;
-&lt;li&gt;Done&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/how-to-implement-getting-things-done-with-trello-board.png" alt="Trello board" /&gt;&lt;/p&gt;
-
-&lt;p&gt;I also have used labels to setup contexts like:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;home&lt;/li&gt;
-&lt;li&gt;blog&lt;/li&gt;
-&lt;li&gt;work&lt;/li&gt;
-&lt;li&gt;High Priority (Use the red label for it)&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Appling labels to cards, related to contexts, help me to see only the cards from my current context. You can also use labels only for priority management.&lt;/p&gt;
-
-&lt;h3&gt;Weekly review&lt;/h3&gt;
-
-&lt;p&gt;On Mondays morning I look at my Trello "Later" list and move all the tasks into the "This week" or "Today" list. &lt;/p&gt;
-
-&lt;h3&gt;Daily review&lt;/h3&gt;
-
-&lt;p&gt;Use the "Inbox" list as capture repository. Process the items in the "Inbox" list daily and move them to the list that you want.
-When a task is complete, archive the card.&lt;/p&gt;
-
-&lt;p&gt;Move the cards where I'm expecting someone else to do a task, to the "Waiting On" list so I can keep on top of everything.&lt;/p&gt;
-
-&lt;p&gt;If I have a complex project, I create a specific board for that project. Then, I can create some lists to control the status of each task, like: To Do, Doing, Testing, Done.&lt;/p&gt;
-
-&lt;p&gt;Before implementing your own system, read also these great examples:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="http://joshuaearl.com/rocking-gtd-with-trello/"&gt;Rocking GTD with Trello&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://schurpf.com/getting-things-done-trello-google-calendar-evernote-zapier-project-task-management/"&gt;Getting Things Done with Trello, Google Calendar, Evernote and Zapier – Project and Task Management&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I hope this helps you.&lt;/p&gt;
 </content></entry></feed>
