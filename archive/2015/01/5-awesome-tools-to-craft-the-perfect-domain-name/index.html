@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2015-01-14T22:00:31.9866472+00:00" />
-    <meta name="keywords" content="Azure" />
+    <meta name="keywords" content="" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Azure deploy and the path length limitation - 
+            5 awesome tools to craft the perfect Domain Name - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/01/5-awesome-tools-to-craft-the-perfect-domain-name/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,46 +39,51 @@
 
 
 <div class="post">
-    <h1>Azure deploy and the path length limitation</h1> 
+    <h1>5 awesome tools to craft the perfect Domain Name</h1> 
       <div class="meta">
-        <p class="posted">27 nov 2014</p>
+        <p class="posted">14 jan 2015</p>
         <ul class="categories">
-          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Windows has that boring thing, the "Maximum Path Length Limitation". That can be a terrible headache when you are dealing with Azure Cloud Service deploy.</p>
+    <p>One of the common tips to pick the perfect domain name is to choose one dot-com domain, but a good domain name is a needle in a haystack.</p>
 
-<p>If you create your projects in the Visual Studio default folder (<em>C:\Users\USER\Documents\Visual Studio 2013\Projects</em>) or in a longer path, probably you already have faced the error:</p>
-
-<blockquote>
-  <p><em>"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."</em></p>
-</blockquote>
+<p>Here, you will find five awesome tools to help you craft an incredible (and available) domain name.</p>
 
 <!--excerpt-->
 
-<p>To fix this:</p>
+<h2>1. <a href="http://wordoid.com/">WORDOID</a></h2>
 
-<ol>
-<li>Go to the Cloud Service project folder.</li>
-<li>Edit the user cloud service options file (<em>*.ccproj</em> file) in notepad.</li>
-<li>Add the ServiceOutputDirectory element with the value <em>"c:\azure"</em> for example.</li>
-<li>Open the solution in Visual Studio again and the error has gone.</li>
-</ol>
+<p><a href="http://wordoid.com/"><img src="/images/5-awesome-tools-to-craft-the-perfect-domain-name-wordoid.jpg" alt="WORDOID" /></a></p>
 
-<p>Example:</p>
+<p>WORDOID generates words and show the availability in .com and .net domains. You can search using parameters like length or language.</p>
 
-<pre><code>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"&gt;
-  &lt;PropertyGroup&gt;
-    &lt;Name&gt;WorkerRole&lt;/Name&gt;
-    &lt;ServiceOutputDirectory&gt;c:\azure\&lt;/ServiceOutputDirectory&gt;
-  &lt;/PropertyGroup&gt;
-&lt;/Project&gt;
-</code></pre>
+<h2>2. <a href="http://www.namemesh.com/">Name Mesh</a></h2>
+
+<p><a href="http://www.namemesh.com/"><img src="/images/5-awesome-tools-to-craft-the-perfect-domain-name-namemesh.jpg" alt="Name Mesh" /></a></p>
+
+<p>Name Mesh searches for synonyms and similar words. Use wisely the search box and you will receive useful results.</p>
+
+<h2>3. <a href="http://www.panabee.com/">Panabee</a></h2>
+
+<p><a href="http://www.panabee.com/"><img src="/images/5-awesome-tools-to-craft-the-perfect-domain-name-panabee.jpg" alt="Panabee" /></a></p>
+
+<p>Panabee gives you suggestions inspired by your original idea, using prefixes, suffixes, abbreviations and popular trends. He also suggests words related to the idea.</p>
+
+<h2>4. <a href="http://impossibility.org/">Impossibility</a></h2>
+
+<p><a href="http://impossibility.org/"><img src="/images/5-awesome-tools-to-craft-the-perfect-domain-name-impossibility.jpg" alt="Impossibility" /></a></p>
+
+<p>Impossibility combines your idea with a list of nouns, verbs, and adjectives.</p>
+
+<h2>5. <a href="http://www.domainsbot.com/">DomainsBot</a></h2>
+
+<p><a href="http://www.domainsbot.com/"><img src="/images/5-awesome-tools-to-craft-the-perfect-domain-name-domainsbot.jpg" alt="DomainsBot" /></a></p>
+
+<p>DomainsBot offers you the possibility of search by synonyms, prefixes and suffixes, mixing them with your idea.</p>
 
 <p>Hope this helps.</p>
 
@@ -103,14 +108,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/';
+                this.page.url = 'http://gsferreira.com/archive/2015/01/5-awesome-tools-to-craft-the-perfect-domain-name/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/';
+    var disqus_url = 'http://gsferreira.com/archive/2015/01/5-awesome-tools-to-craft-the-perfect-domain-name/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

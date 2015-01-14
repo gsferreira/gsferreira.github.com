@@ -1,4 +1,45 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/12/overcome-the-depth_zero_self_signed_cert-on-nodejs/</guid><link>http://gsferreira.com/archive/2014/12/overcome-the-depth_zero_self_signed_cert-on-nodejs/</link><title>Overcome the DEPTH_ZERO_SELF_SIGNED_CERT on Node.js</title><description>&lt;p&gt;If you are making requests to a server that uses self-signed certificates in Node.js probably you already have seen the error DEPTH_ZERO_SELF_SIGNED_CERT.
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/01/5-awesome-tools-to-craft-the-perfect-domain-name/</guid><link>http://gsferreira.com/archive/2015/01/5-awesome-tools-to-craft-the-perfect-domain-name/</link><title>5 awesome tools to craft the perfect Domain Name</title><description>&lt;p&gt;One of the common tips to pick the perfect domain name is to choose one dot-com domain, but a good domain name is a needle in a haystack.&lt;/p&gt;
+
+&lt;p&gt;Here, you will find five awesome tools to help you craft an incredible (and available) domain name.&lt;/p&gt;
+
+</description><pubDate>Wed, 14 Jan 2015 00:00:00 Z</pubDate><a10:updated>2015-01-14T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;One of the common tips to pick the perfect domain name is to choose one dot-com domain, but a good domain name is a needle in a haystack.&lt;/p&gt;
+
+&lt;p&gt;Here, you will find five awesome tools to help you craft an incredible (and available) domain name.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;h2&gt;1. &lt;a href="http://wordoid.com/"&gt;WORDOID&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://wordoid.com/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-wordoid.jpg" alt="WORDOID" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;WORDOID generates words and show the availability in .com and .net domains. You can search using parameters like length or language.&lt;/p&gt;
+
+&lt;h2&gt;2. &lt;a href="http://www.namemesh.com/"&gt;Name Mesh&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://www.namemesh.com/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-namemesh.jpg" alt="Name Mesh" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Name Mesh searches for synonyms and similar words. Use wisely the search box and you will receive useful results.&lt;/p&gt;
+
+&lt;h2&gt;3. &lt;a href="http://www.panabee.com/"&gt;Panabee&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://www.panabee.com/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-panabee.jpg" alt="Panabee" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Panabee gives you suggestions inspired by your original idea, using prefixes, suffixes, abbreviations and popular trends. He also suggests words related to the idea.&lt;/p&gt;
+
+&lt;h2&gt;4. &lt;a href="http://impossibility.org/"&gt;Impossibility&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://impossibility.org/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-impossibility.jpg" alt="Impossibility" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Impossibility combines your idea with a list of nouns, verbs, and adjectives.&lt;/p&gt;
+
+&lt;h2&gt;5. &lt;a href="http://www.domainsbot.com/"&gt;DomainsBot&lt;/a&gt;&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href="http://www.domainsbot.com/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-domainsbot.jpg" alt="DomainsBot" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;DomainsBot offers you the possibility of search by synonyms, prefixes and suffixes, mixing them with your idea.&lt;/p&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/12/overcome-the-depth_zero_self_signed_cert-on-nodejs/</guid><link>http://gsferreira.com/archive/2014/12/overcome-the-depth_zero_self_signed_cert-on-nodejs/</link><title>Overcome the DEPTH_ZERO_SELF_SIGNED_CERT on Node.js</title><description>&lt;p&gt;If you are making requests to a server that uses self-signed certificates in Node.js probably you already have seen the error DEPTH_ZERO_SELF_SIGNED_CERT.
 That's an usual error, for instance, if you are working in a test environment.&lt;/p&gt;
 
 &lt;p&gt;I faced this error in my test environment and after google it, I got a lot of answers telling me to set the option "rejectUnhauthorized" as false on my request to the server.&lt;/p&gt;
@@ -444,30 +485,4 @@ But, how to accomplish it? Run the following method during a few days, twice a d
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics/</guid><link>http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics/</link><title>Dog training for Developers - The basics</title><description>&lt;p&gt;Recently I've brought home a new puppy, named Feijão (the portuguese word for "bean"). Since then I've been reading to learn how to teach him some stuff.&lt;/p&gt;
-
-&lt;p&gt;From this experience I've seen that the dog training technique has a kind of flow, like a software routine. So, I have decided to translate some of that tips into code and share with you. I think that this can be a funny way for a developer understand how to teach his dog.&lt;/p&gt;
-
-</description><pubDate>Sat, 20 Sep 2014 23:00:00 Z</pubDate><a10:updated>2014-09-20T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Recently I've brought home a new puppy, named Feijão (the portuguese word for "bean"). Since then I've been reading to learn how to teach him some stuff.&lt;/p&gt;
-
-&lt;p&gt;From this experience I've seen that the dog training technique has a kind of flow, like a software routine. So, I have decided to translate some of that tips into code and share with you. I think that this can be a funny way for a developer understand how to teach his dog.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/dog-trainig-for-developers-the-basics-feijao.jpg" alt="Feijão" /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the following weeks I will write some tips based on positive reinforcement training technique. 
-The tips of this series:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Recognize the name&lt;/li&gt;
-&lt;li&gt;Come when called&lt;/li&gt;
-&lt;li&gt;Sit&lt;/li&gt;
-&lt;li&gt;Stay&lt;/li&gt;
-&lt;li&gt;Lie&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;If you like the idea, feel free to leave a comment or ask for some more tips.&lt;/p&gt;
-
-&lt;p&gt;Stay tuned!&lt;/p&gt;
 </a10:content></item></channel></rss>
