@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2015-02-07T10:42:05.9210941+00:00" />
-    <meta name="keywords" content="metro-bootstrap" />
+    <meta name="keywords" content="Azure,Node.js" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            metro-bootstrap 3.2.0.1 released - 
+            How to access Azure storage emulator using Node.js SDK - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/02/how-to-access-azure-storage-emulator-using-nodejs-sdk/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,42 +39,38 @@
 
 
 <div class="post">
-    <h1>metro-bootstrap 3.2.0.1 released</h1> 
+    <h1>How to access Azure storage emulator using Node.js SDK</h1> 
       <div class="meta">
-        <p class="posted">07 ago 2014</p>
+        <p class="posted">06 fev 2015</p>
         <ul class="categories">
-          <li><a href="/category/metro-bootstrap" title="Snow.Models.Category">metro-bootstrap</a></li>
+          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
+          <li><a href="/category/node.js" title="Snow.Models.Category">Node.js</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.</p>
+    <p>Today I have a quick tip that I want to share with you because it took me some time to figure this out.</p>
+
+<p>I'm using Azure SDK for Node.js to interact with Azure Storage and I want to access my development environment with it.</p>
 
 <!--excerpt-->
 
-<h1>What's new</h1>
+<p>To access the blob storage, for instance, you just need to create a blob service using the resource name and the access key. Too easy! </p>
 
-<h2>Dependencies</h2>
+<pre><code>var azure = require('azure-storage');
+var blobService = azure.createBlobService('mystorage', 'my-access-key');
+</code></pre>
 
-<ul>
-<li>bootstrap 3.2.0</li>
-</ul>
+<p>Now I want to access the Azure Storage Emulator running in my machine. How to do it? Just replace the previous code with the following piece of code.</p>
 
-<h2>Bower configuration - Add "main"</h2>
+<pre><code>var azure = require('azure-storage');
+var devStoreCreds = azure.generateDevelopmentStorageCredendentials();
+var blobService = azure.createBlobService(devStoreCreds);
+</code></pre>
 
-<p>Has been added the "main" option to the bower.json file. Thanks to <a href="https://github.com/fumitoito">@fumito_ito</a>.</p>
-
-<h2>New variables</h2>
-
-<ul>
-<li><em>@tile-light-text-color</em>: Set the default color for <em>tile-clouds</em>.</li>
-<li><em>@tile-font-size-h1</em>: Set the default font size in h1 tags inside tiles.</li>
-<li><em>@tile-font-size-h2</em>: Set the default font size in h2 tags inside tiles.</li>
-<li><em>@tile-font-size-h3</em>: Set the default font size in h3 tags inside tiles.</li>
-<li><em>@tile-font-size-h4</em>: Set the default font size in h4 tags inside tiles.</li>
-</ul>
+<p>Hope this helps.</p>
 
 
 
@@ -97,14 +93,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/';
+                this.page.url = 'http://gsferreira.com/archive/2015/02/how-to-access-azure-storage-emulator-using-nodejs-sdk/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/08/metro-bootstrap-3-2-0-1-released/';
+    var disqus_url = 'http://gsferreira.com/archive/2015/02/how-to-access-azure-storage-emulator-using-nodejs-sdk/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

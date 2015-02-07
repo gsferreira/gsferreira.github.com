@@ -1,4 +1,28 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/01/t-sql-which-schema-is-consuming-more-space/</guid><link>http://gsferreira.com/archive/2015/01/t-sql-which-schema-is-consuming-more-space/</link><title>T-SQL: Which schema is consuming more space?</title><description>&lt;p&gt;Imagine that you have separate schemas in your multi-tenant data architecture and you want to know who is consuming more space. How can you do it?&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/02/how-to-access-azure-storage-emulator-using-nodejs-sdk/</guid><link>http://gsferreira.com/archive/2015/02/how-to-access-azure-storage-emulator-using-nodejs-sdk/</link><title>How to access Azure storage emulator using Node.js SDK</title><description>&lt;p&gt;Today I have a quick tip that I want to share with you because it took me some time to figure this out.&lt;/p&gt;
+
+&lt;p&gt;I'm using Azure SDK for Node.js to interact with Azure Storage and I want to access my development environment with it.&lt;/p&gt;
+
+</description><pubDate>Fri, 06 Feb 2015 00:00:00 Z</pubDate><a10:updated>2015-02-06T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Today I have a quick tip that I want to share with you because it took me some time to figure this out.&lt;/p&gt;
+
+&lt;p&gt;I'm using Azure SDK for Node.js to interact with Azure Storage and I want to access my development environment with it.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;To access the blob storage, for instance, you just need to create a blob service using the resource name and the access key. Too easy! &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var azure = require('azure-storage');
+var blobService = azure.createBlobService('mystorage', 'my-access-key');
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now I want to access the Azure Storage Emulator running in my machine. How to do it? Just replace the previous code with the following piece of code.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var azure = require('azure-storage');
+var devStoreCreds = azure.generateDevelopmentStorageCredendentials();
+var blobService = azure.createBlobService(devStoreCreds);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/01/t-sql-which-schema-is-consuming-more-space/</guid><link>http://gsferreira.com/archive/2015/01/t-sql-which-schema-is-consuming-more-space/</link><title>T-SQL: Which schema is consuming more space?</title><description>&lt;p&gt;Imagine that you have separate schemas in your multi-tenant data architecture and you want to know who is consuming more space. How can you do it?&lt;/p&gt;
 
 </description><pubDate>Thu, 29 Jan 2015 00:00:00 Z</pubDate><a10:updated>2015-01-29T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Imagine that you have separate schemas in your multi-tenant data architecture and you want to know who is consuming more space. How can you do it?&lt;/p&gt;
 
@@ -386,35 +410,4 @@ But, how to accomplish it? Run the following method during a few days, twice a d
     }
 }
 &lt;/code&gt;&lt;/pre&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/</guid><link>http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/</link><title>Azure SQL Database: Automatic Backups</title><description>&lt;p&gt;This week, I've found a new feature in Azure Management Portal that I wished at so many times.&lt;/p&gt;
-
-&lt;p&gt;In July, &lt;a href="http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines"&gt;Scott Guthrie announced the support for Automated SQL Database Exports.&lt;/a&gt; &lt;/p&gt;
-
-&lt;p&gt;This is awesome because now we can forget the complex powershell scripts to achieve it. Now we can easily configure fully automated exports to a Storage account and, the best part of it, this is a built-in feature of Windows Azure Management Portal.&lt;/p&gt;
-
-</description><pubDate>Wed, 01 Oct 2014 23:00:00 Z</pubDate><a10:updated>2014-10-01T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;This week, I've found a new feature in Azure Management Portal that I wished at so many times.&lt;/p&gt;
-
-&lt;p&gt;In July, &lt;a href="http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines"&gt;Scott Guthrie announced the support for Automated SQL Database Exports.&lt;/a&gt; &lt;/p&gt;
-
-&lt;p&gt;This is awesome because now we can forget the complex powershell scripts to achieve it. Now we can easily configure fully automated exports to a Storage account and, the best part of it, this is a built-in feature of Windows Azure Management Portal.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;If you want to automate the backup of your database, just go your database and jump to the Configuration Section. In this section, you will see the settings available.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/azure-sql-database-automatic-backups-configure-screen.jpg" alt="Azure SQL Database: Automatic Backups - Configure screen" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Here you can configure:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The storage account where you want to keep the backup files;&lt;/li&gt;
-&lt;li&gt;The backup frequency;&lt;/li&gt;
-&lt;li&gt;The retention period;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Lastly, you'll need to enter the SQL Database login name and password.&lt;/p&gt;
-
-&lt;p&gt;So far as I know, you just pay the storage space.&lt;/p&gt;
-
-&lt;p&gt;Hope this helps.&lt;/p&gt;
 </a10:content></item></channel></rss>
