@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2015-02-16T12:30:15.6925985+00:00" />
-    <meta name="keywords" content="Azure" />
+    <meta name="keywords" content="Node.js,.NET" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Azure deploy and the path length limitation - 
+            How to Encrypt in Node.js and Decrypt in C# - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,45 +39,58 @@
 
 
 <div class="post">
-    <h1>Azure deploy and the path length limitation</h1> 
+    <h1>How to Encrypt in Node.js and Decrypt in C#</h1> 
       <div class="meta">
-        <p class="posted">27 nov 2014</p>
+        <p class="posted">16 fev 2015</p>
         <ul class="categories">
-          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
+          <li><a href="/category/node.js" title="Snow.Models.Category">Node.js</a></li>
+          <li><a href="/category/.net" title="Snow.Models.Category">.NET</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Windows has that boring thing, the "Maximum Path Length Limitation". That can be a terrible headache when you are dealing with Azure Cloud Service deploy.</p>
+    <p>Are you trying to send messages to a .NET application from node.js and you want to encrypt them?</p>
 
-<p>If you create your projects in the Visual Studio default folder (<em>C:\Users\USER\Documents\Visual Studio 2013\Projects</em>) or in a longer path, probably you already have faced the error:</p>
-
-<blockquote>
-  <p><em>"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."</em></p>
-</blockquote>
+<p>You can find here a simple example to accomplish it.</p>
 
 <!--excerpt-->
 
-<p>To fix this:</p>
+<p>Encrypt in node.js:</p>
 
-<ol>
-<li>Go to the Cloud Service project folder.</li>
-<li>Edit the user cloud service options file (<em>*.ccproj</em> file) in notepad.</li>
-<li>Add the ServiceOutputDirectory element with the value <em>"c:\azure"</em> for example.</li>
-<li>Open the solution in Visual Studio again and the error has gone.</li>
-</ol>
+<pre><code>var crypto = require('crypto');
+var key = '00000000000000000000000000000000'; //replace with your key
+var iv = '0000000000000000'; //replace with your IV
+var cipher = crypto.createCipheriv('aes256', key, iv)
+var crypted = cipher.update(authorizationKey, 'utf8', 'base64')
+crypted += cipher.final('base64');
+console.log(crypted);
+</code></pre>
 
-<p>Example:</p>
+<p>Decrypt with C#:</p>
 
-<pre><code>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"&gt;
-  &lt;PropertyGroup&gt;
-    &lt;Name&gt;WorkerRole&lt;/Name&gt;
-    &lt;ServiceOutputDirectory&gt;c:\azure\&lt;/ServiceOutputDirectory&gt;
-  &lt;/PropertyGroup&gt;
-&lt;/Project&gt;
+<pre><code>string keyString = "00000000000000000000000000000000"; //replace with your key
+string ivString = "0000000000000000"; //replace with your iv
+
+byte[] key = Encoding.ASCII.GetBytes(keyString);
+byte[] iv = Encoding.ASCII.GetBytes(ivString);
+
+using (var rijndaelManaged =
+        new RijndaelManaged { Key = key, IV = iv, Mode = CipherMode.CBC })
+        {
+            rijndaelManaged.BlockSize = 128;
+            rijndaelManaged.KeySize = 256;
+            using (var memoryStream =
+                   new MemoryStream(Convert.FromBase64String(AuthorizationCode)))
+            using (var cryptoStream =
+                   new CryptoStream(memoryStream,
+                       rijndaelManaged.CreateDecryptor(key, iv),
+                       CryptoStreamMode.Read))
+            {
+                return new StreamReader(cryptoStream).ReadToEnd();
+            }
+        }
 </code></pre>
 
 <p>Hope this helps.</p>
@@ -103,14 +116,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/';
+                this.page.url = 'http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/';
+    var disqus_url = 'http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

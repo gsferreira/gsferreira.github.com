@@ -1,4 +1,51 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2015-02-07T10:42:10Z</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2015/02/how-to-access-azure-storage-emulator-using-nodejs-sdk/</id><title type="text">How to access Azure storage emulator using Node.js SDK</title><summary type="html">&lt;p&gt;Today I have a quick tip that I want to share with you because it took me some time to figure this out.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2015-02-16T12:30:20Z</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/</id><title type="text">How to Encrypt in Node.js and Decrypt in C#</title><summary type="html">&lt;p&gt;Are you trying to send messages to a .NET application from node.js and you want to encrypt them?&lt;/p&gt;
+
+&lt;p&gt;You can find here a simple example to accomplish it.&lt;/p&gt;
+
+</summary><published>2015-02-16T00:00:00Z</published><updated>2015-02-16T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/" /><content type="html">&lt;p&gt;Are you trying to send messages to a .NET application from node.js and you want to encrypt them?&lt;/p&gt;
+
+&lt;p&gt;You can find here a simple example to accomplish it.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;Encrypt in node.js:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var crypto = require('crypto');
+var key = '00000000000000000000000000000000'; //replace with your key
+var iv = '0000000000000000'; //replace with your IV
+var cipher = crypto.createCipheriv('aes256', key, iv)
+var crypted = cipher.update(authorizationKey, 'utf8', 'base64')
+crypted += cipher.final('base64');
+console.log(crypted);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Decrypt with C#:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;string keyString = "00000000000000000000000000000000"; //replace with your key
+string ivString = "0000000000000000"; //replace with your iv
+
+byte[] key = Encoding.ASCII.GetBytes(keyString);
+byte[] iv = Encoding.ASCII.GetBytes(ivString);
+
+using (var rijndaelManaged =
+        new RijndaelManaged { Key = key, IV = iv, Mode = CipherMode.CBC })
+        {
+            rijndaelManaged.BlockSize = 128;
+            rijndaelManaged.KeySize = 256;
+            using (var memoryStream =
+                   new MemoryStream(Convert.FromBase64String(AuthorizationCode)))
+            using (var cryptoStream =
+                   new CryptoStream(memoryStream,
+                       rijndaelManaged.CreateDecryptor(key, iv),
+                       CryptoStreamMode.Read))
+            {
+                return new StreamReader(cryptoStream).ReadToEnd();
+            }
+        }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2015/02/how-to-access-azure-storage-emulator-using-nodejs-sdk/</id><title type="text">How to access Azure storage emulator using Node.js SDK</title><summary type="html">&lt;p&gt;Today I have a quick tip that I want to share with you because it took me some time to figure this out.&lt;/p&gt;
 
 &lt;p&gt;I'm using Azure SDK for Node.js to interact with Azure Storage and I want to access my development environment with it.&lt;/p&gt;
 
@@ -365,49 +412,6 @@ But, how to accomplish it? Run the following method during a few days, twice a d
 
     }
 
-}
-&lt;/code&gt;&lt;/pre&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/</id><title type="text">Dog training for Developers - The basics: Come when called</title><summary type="html">&lt;p&gt;Your dog ignores when you call him? Well, you can help him understand that you would be glad if he came to you when you want.&lt;/p&gt;
-
-</summary><published>2014-10-05T23:00:00Z</published><updated>2014-10-05T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/" /><content type="html">&lt;p&gt;Your dog ignores when you call him? Well, you can help him understand that you would be glad if he came to you when you want.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Run the following method during a few days, but don't run it more than once a day.&lt;/p&gt;
-
-&lt;p&gt;Remember, be patient :)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public void ComeWhenCalled()
-{
-    for (int i = 0; i &amp;lt; 10; i++)
-    {
-        var snack = _teacher.GrabNewSnack();
-
-        //Request dog attention
-        do
-        {
-            _teacher.ShowToDog(snack);
-
-        } while (!_dog.IsLooking);
-
-        _teacher.GoAway(meters: 2);
-
-        //Open arms to invite the dog
-        _teacher.OpenArms();
-
-        while (_dog.IsComming || !_dog.IsNearTeacher)
-        {
-            _teacher.Say("Here!");
-
-            _teacher.ShowToDog(snack);
-
-        }
-
-        _teacher.GrabDogCollar(_dog);
-        //To receive the snack the dog should stay near you
-        _teacher.GiveToDog(snack);
-
-    }
 }
 &lt;/code&gt;&lt;/pre&gt;
 </content></entry></feed>
