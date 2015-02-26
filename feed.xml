@@ -1,4 +1,77 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2015-02-16T12:30:20Z</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/</id><title type="text">How to Encrypt in Node.js and Decrypt in C#</title><summary type="html">&lt;p&gt;Are you trying to send messages to a .NET application from node.js and you want to encrypt them?&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2015-02-26T22:11:42Z</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</id><title type="text">AngularJS - Input number with 2 decimal places</title><summary type="html">&lt;p&gt;My &lt;a href=""&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
+
+&lt;p&gt;This a kind of simple tip, but I believe that it can be really useful.&lt;/p&gt;
+
+&lt;p&gt;My smart-float directive works really fine in a desktop or laptop browser, but in a smartphone I want to take advantage of HTML5 number inputs and show to my users when they enter in the input, the "mini calculator keyboard".&lt;/p&gt;
+
+&lt;p&gt;How to accomplish it using angular?&lt;/p&gt;
+
+</summary><published>2015-02-25T00:00:00Z</published><updated>2015-02-25T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/" /><content type="html">&lt;p&gt;My &lt;a href=""&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
+
+&lt;p&gt;This a kind of simple tip, but I believe that it can be really useful.&lt;/p&gt;
+
+&lt;p&gt;My smart-float directive works really fine in a desktop or laptop browser, but in a smartphone I want to take advantage of HTML5 number inputs and show to my users when they enter in the input, the "mini calculator keyboard".&lt;/p&gt;
+
+&lt;p&gt;How to accomplish it using angular?&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;That's easy.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="http://www.deque.com/blog/accessible-client-side-form-validation-html5/"&gt;&lt;img src="http://gsferreira.com/images/angularjs-input-number-with-two-decimal-places-meme.jpg" alt="meme" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;1. Create the number input with the number type.&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;2. Define the step interval.&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" *step="0.01"* /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;3. Set the regular expression to validate the input using ng-pattern. Here I want to accept only numbers with a maximum of 2 decimal places and with a dot separator.&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" /&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;4. Inform your user if the input has a valid value.&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" /&amp;gt;
+&amp;lt;span&amp;gt;Is a valid decimal? {{myForm.myDecimal.$valid}}&amp;lt;/span&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;A full example using bootstrap (&lt;a href="http://jsfiddle.net/gsferreira/Lsv9f0b0/"&gt;demo here&lt;/a&gt;):&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div ng-app&amp;gt;
+&amp;lt;h2&amp;gt;Todo&amp;lt;/h2&amp;gt;
+&amp;lt;div ng-controller="myCtrl"&amp;gt;
+
+  &amp;lt;form name="myForm" class="form-horizontal" &amp;gt;
+       &amp;lt;div class="form-group" ng-class="{'has-error': myForm.myDecimal.$invalid}"&amp;gt;
+            &amp;lt;label for="inputText3" class="col-sm-2 control-label"&amp;gt;Decimal&amp;lt;/label&amp;gt;
+            &amp;lt;div class="col-sm-10"&amp;gt;
+                &amp;lt;input type="number" class="form-control" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required /&amp;gt;
+
+                &amp;lt;span class="help-block" ng-show="!myForm.myDecimal.$valid"&amp;gt;
+                    Invalid!
+                &amp;lt;/span&amp;gt;
+            &amp;lt;/div&amp;gt;
+        &amp;lt;/div&amp;gt;
+
+        &amp;lt;div class="form-group" &amp;gt;
+            &amp;lt;label for="inputText3" class="col-sm-2 control-label"&amp;gt;The value:&amp;lt;/label&amp;gt;
+            &amp;lt;div class="col-sm-10"&amp;gt;
+                &amp;lt;input type="text" class="form-control" ng-model="myDecimal" disabled /&amp;gt;
+        &amp;lt;/div&amp;gt;
+    &amp;lt;/div&amp;gt;
+&amp;lt;/form&amp;gt;
+&amp;lt;/div&amp;gt;
+&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/</id><title type="text">How to Encrypt in Node.js and Decrypt in C#</title><summary type="html">&lt;p&gt;Are you trying to send messages to a .NET application from node.js and you want to encrypt them?&lt;/p&gt;
 
 &lt;p&gt;You can find here a simple example to accomplish it.&lt;/p&gt;
 
@@ -342,76 +415,6 @@ That's an usual error, for instance, if you are working in a test environment.&l
         _teacher.PlayWithDog(_dog);
 
     }
-}
-&lt;/code&gt;&lt;/pre&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit/</id><title type="text">Dog training for Developers - The basics: Sit</title><summary type="html">&lt;p&gt;"Sit" is probably one of the easiest commands to teach your dog.
-But, how to accomplish it? Run the following method during a few days, twice a day.&lt;/p&gt;
-
-</summary><published>2014-10-10T23:00:00Z</published><updated>2014-10-10T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit/" /><content type="html">&lt;p&gt;"Sit" is probably one of the easiest commands to teach your dog.
-But, how to accomplish it? Run the following method during a few days, twice a day.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Remember, be patient :)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/dog-trainig-for-developers-the-basics-sit-feijao.jpg" alt="Feijão" /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public void Sit()
-{
-
-    //Prepare yourself
-    _teacher.Sit();
-
-    for (int i = 0; i &amp;lt; 4; i++)
-    {
-        var snack = _teacher.GrabNewSnack();
-
-        _teacher.LetDogSniff(snack);
-
-        //Dog should follow your hand
-        do
-        {
-            //Dog will try to reach the food
-            _teacher.MoveHandUp();
-
-        } while (!_dog.IsSeated);
-
-        _teacher.Say("Sit!");
-
-        _teacher.GiveToDog(snack);
-    }
-
-    for (int i = 0; i &amp;lt; 5; i++)
-    {
-        var snack = _teacher.GrabNewSnack();
-
-        _teacher.Say("Sit!");
-
-        do
-        {
-            _teacher.MoveHandUp();
-
-        } while (!_dog.IsSeated);
-
-        _teacher.GiveToDog(snack);
-    }
-
-    _teacher.GetUp();
-
-    for(int i=0;i&amp;lt;3;i++)
-    {
-        //Leave 
-        _teacher.Say("Sit!");
-
-        do
-        {
-            _teacher.MoveHandUp(); //With empty hand
-        } while (!_dog.IsSeated);
-
-        _teacher.PlayWithDog(_dog);
-
-    }
-
 }
 &lt;/code&gt;&lt;/pre&gt;
 </content></entry></feed>
