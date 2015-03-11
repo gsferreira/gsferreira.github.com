@@ -1,4 +1,4 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</guid><link>http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</link><title>AngularJS - Input number with 2 decimal places</title><description>&lt;p&gt;My &lt;a href=""&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</guid><link>http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</link><title>AngularJS - Input number with 2 decimal places</title><description>&lt;p&gt;My &lt;a href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/"&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
 
 &lt;p&gt;This a kind of simple tip, but I believe that it can be really useful.&lt;/p&gt;
 
@@ -6,7 +6,7 @@
 
 &lt;p&gt;How to accomplish it using angular?&lt;/p&gt;
 
-</description><pubDate>Wed, 25 Feb 2015 00:00:00 Z</pubDate><a10:updated>2015-02-25T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;My &lt;a href=""&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
+</description><pubDate>Wed, 25 Feb 2015 00:00:00 Z</pubDate><a10:updated>2015-02-25T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;My &lt;a href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/"&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
 
 &lt;p&gt;This a kind of simple tip, but I believe that it can be really useful.&lt;/p&gt;
 

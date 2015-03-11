@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
-    <meta http-equiv="last-modified" content="2015-02-26T22:11:38.0583830+00:00" />
+    <meta http-equiv="last-modified" content="2015-03-11T22:07:20.1303140+00:00" />
     <meta name="keywords" content="AngularJS" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
@@ -64,9 +64,12 @@
 <p>So, this is an improved directive based on Angular's <em>smart-float</em> directive.
 First, add the following directive to your application:</p>
 
-<pre><code>directive('smartFloat', function ($filter) {
-    var FLOAT_REGEXP_1 = /^\$?\d+(.\d{3})*(\,\d*)?$/; //Numbers like: 1.123,56
-    var FLOAT_REGEXP_2 = /^\$?\d+(,\d{3})*(\.\d*)?$/; //Numbers like: 1,123.56
+<pre><code>myApp.directive('smartFloat', function ($filter) {
+    var FLOAT_REGEXP_1 = /^\$?\d+.(\d{3})*(\,\d*)$/; //Numbers like: 1.123,56
+    var FLOAT_REGEXP_2 = /^\$?\d+,(\d{3})*(\.\d*)$/; //Numbers like: 1,123.56
+    var FLOAT_REGEXP_3 = /^\$?\d+(\.\d*)?$/; //Numbers like: 1123.56
+    var FLOAT_REGEXP_4 = /^\$?\d+(\,\d*)?$/; //Numbers like: 1123,56
+
     return {
         require: 'ngModel',
         link: function (scope, elm, attrs, ctrl) {
@@ -77,11 +80,18 @@ First, add the following directive to your application:</p>
                 } else if (FLOAT_REGEXP_2.test(viewValue)) {
                         ctrl.$setValidity('float', true);
                         return parseFloat(viewValue.replace(',', ''));
-                } else {
+                } else if (FLOAT_REGEXP_3.test(viewValue)) {
+                        ctrl.$setValidity('float', true);
+                        return parseFloat(viewValue);
+                } else if (FLOAT_REGEXP_4.test(viewValue)) {
+                        ctrl.$setValidity('float', true);
+                        return parseFloat(viewValue.replace(',', '.'));
+                }else {
                     ctrl.$setValidity('float', false);
                     return undefined;
                 }
             });
+
             ctrl.$formatters.unshift(
                function (modelValue) {
                    return $filter('number')(parseFloat(modelValue) , 2);
@@ -113,9 +123,13 @@ placeholder="Amount" ng-model="amount" smart-float /&gt;
 &lt;/form&gt;
 </code></pre>
 
-<p>You can see the working demo on <a href="http://jsfiddle.net/gsferreira/SCr6X/8/">JSFiddle</a>.</p>
+<p>You can see the working demo on <a href="http://jsfiddle.net/gsferreira/SCr6X/">JSFiddle</a>.</p>
 
 <p>I hope that this helps you.</p>
+
+<h2>UPDATE 2015-03-11</h2>
+
+<p>Post has been updated with a fix to a bug that <a href="https://disqus.com/by/coopersellers/">Cooper Sellers</a> found (you can see the details at the comment feed below).</p>
 
 
 
