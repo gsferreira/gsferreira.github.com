@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2015-03-14T13:24:52.0036441+00:00" />
-    <meta name="keywords" content="AngularJS" />
+    <meta name="keywords" content="Azure" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            AngularJS - Smart Float Directive - 
+            A developer's thoughts on Azure SQL Database performance levels - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,97 +39,64 @@
 
 
 <div class="post">
-    <h1>AngularJS - Smart Float Directive</h1> 
+    <h1>A developer's thoughts on Azure SQL Database performance levels</h1> 
       <div class="meta">
-        <p class="posted">24 mai 2014</p>
+        <p class="posted">14 mar 2015</p>
         <ul class="categories">
-          <li><a href="/category/angularjs" title="Snow.Models.Category">AngularJS</a></li>
+          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Recently I started looking for an AngluarJS directive to validate numbers and I found the "smart-float" directive <a href="https://docs.angularjs.org/guide/forms">here</a>, in the AngularJS documentation. This amazing example solves the problem of convert my numbers that use a comma as decimal mark to a Javascript number.</p>
+    <p>I recently started moving some databases that I have in the old Azure SQL Database Web/Business model. I started it with a good feeling. Let's face it, a guaranteed performance level is excellent. Nobody wants a noisy neighbor boring our database.</p>
 
-<p>My problem is that this directive doesn't solve my two problems:</p>
-
-<ol>
-<li>Display numbers with 2 fractional digits by default.</li>
-<li>Validate numbers with thousands separator.</li>
-</ol>
+<p>The downside, is that this shift brings new challenges and possible big troubles to the ones that already have systems in place. Everything has a price and in this case we call it <strong>Performance</strong>. </p>
 
 <!--excerpt-->
 
-<p>So, this is an improved directive based on Angular's <em>smart-float</em> directive.
-First, add the following directive to your application:</p>
+<p>In this new model, SQL Azure Databases are paid by performance instead of space. Now we have service tiers with transaction rates per hour (Basic Tier), per minute (Standard Tier) or per second (Premium Tier).</p>
 
-<pre><code>myApp.directive('smartFloat', function ($filter) {
-    var FLOAT_REGEXP_1 = /^\$?\d+.(\d{3})*(\,\d*)$/; //Numbers like: 1.123,56
-    var FLOAT_REGEXP_2 = /^\$?\d+,(\d{3})*(\.\d*)$/; //Numbers like: 1,123.56
-    var FLOAT_REGEXP_3 = /^\$?\d+(\.\d*)?$/; //Numbers like: 1123.56
-    var FLOAT_REGEXP_4 = /^\$?\d+(\,\d*)?$/; //Numbers like: 1123,56
+<p>So, what's wrong with this? The prices! In my opinion, there's no equality between the old models and the new ones. Chris Bailiss has some awesome posts that shows that. Take a look:</p>
 
-    return {
-        require: 'ngModel',
-        link: function (scope, elm, attrs, ctrl) {
-            ctrl.$parsers.unshift(function (viewValue) {
-                if (FLOAT_REGEXP_1.test(viewValue)) {
-                    ctrl.$setValidity('float', true);
-                    return parseFloat(viewValue.replace('.', '').replace(',', '.'));
-                } else if (FLOAT_REGEXP_2.test(viewValue)) {
-                        ctrl.$setValidity('float', true);
-                        return parseFloat(viewValue.replace(',', ''));
-                } else if (FLOAT_REGEXP_3.test(viewValue)) {
-                        ctrl.$setValidity('float', true);
-                        return parseFloat(viewValue);
-                } else if (FLOAT_REGEXP_4.test(viewValue)) {
-                        ctrl.$setValidity('float', true);
-                        return parseFloat(viewValue.replace(',', '.'));
-                }else {
-                    ctrl.$setValidity('float', false);
-                    return undefined;
-                }
-            });
+<ul>
+<li><a href="https://cbailiss.wordpress.com/2015/01/31/azure-sql-database-v12-ga-performance-inc-cpu-benchmaring/">Azure SQL Database: v12 GA Performance inc. CPU Benchmaring</a></li>
+<li><a href="https://cbailiss.wordpress.com/2014/09/16/performance-in-new-azure-sql-database-performance-tiers/">GA Performance in New Azure SQL Database Performance Tiers</a></li>
+</ul>
 
-            ctrl.$formatters.unshift(
-               function (modelValue) {
-                   return $filter('number')(parseFloat(modelValue) , 2);
-               }
-           );
-        }
-    };
-});
-</code></pre>
+<h3>Show me the numbers</h3>
 
-<p>Now, add the <em>smart-float</em> directive to your input:</p>
+<p>If you have an Azure SQL Database on the Web model with 1.5GB you will pay 10.42€/month.
+By a few more cents (11.18€/month) you can use an SQL Database in the Standard Tier with the S0 Performance Level.</p>
 
-<pre><code>&lt;input type="text" id="inputAmount" name="inputAmount" 
-placeholder="Amount" ng-model="amount" smart-float /&gt;
-</code></pre>
+<p>If you have read the Chris Bailiss post, you have seen that the performance between those two can't be compared. S0 is slower than Web.</p>
 
-<p>This gives you what you need. Now, you can improve it showing to your users that the value in the input is invalid. In the following example I used <a href="http://getbootstrap.com/">Bootstrap</a> to demonstrate it:</p>
+<h3>So, what can I do?</h3>
 
-<pre><code>&lt;form name="myForm" class="form-horizontal" role="form" novalidate&gt;
-    &lt;div class="form-group" ng-class="{'has-error': myForm.inputAmount.$invalid}"&gt;
-        &lt;label for="inputText3" class="col-sm-2 control-label"&gt;Amount&lt;/label&gt;
-        &lt;div class="col-sm-10"&gt;
-            &lt;input type="text" class="form-control" id="inputAmount" name="inputAmount" placeholder="Amount" ng-model="amount" smart-float /&gt;
-            &lt;span class="help-block" ng-show="myForm.inputAmount.$error.float"&gt;
-                Invalid Amount!
-            &lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/form&gt;
-</code></pre>
+<p>With this post <strong>I don't want to say that you should run away from SQL Azure Database</strong>. What I mean, is that the game has changed. </p>
 
-<p>You can see the working demo on <a href="http://jsfiddle.net/gsferreira/SCr6X/">JSFiddle</a>.</p>
+<p>In this Cloud era the costs are a variable that Software Developers and Architects need to take in account. Now our code has a visible and measurable impact in the financial health of our products and companies. </p>
 
-<p>I hope that this helps you.</p>
+<p>So, how to start facing the dragon?
+You can find here a list of things that you should have in mind:</p>
 
-<h2>UPDATE 2015-03-11</h2>
+<ul>
+<li><strong>Question yourself: Do I really need a SQL database?</strong> There's many options in Azure to store your data, probably they can do the task.</li>
+<li><strong>Performance is more important than ever!</strong> Don't wait until a query takes a few minutes running to start doing SQL Tuning.</li>
+<li><strong>Database design has a significant importance!</strong> Be careful designing your database data model.</li>
+<li><strong>Test in Azure since the first day.</strong> Probably your development machine has an SQL Server with more power than the production database.</li>
+</ul>
 
-<p>Post has been updated with a fix to a bug that <a href="https://disqus.com/by/coopersellers/">Cooper Sellers</a> found (you can see the details at the comment feed below).</p>
+<p><img src="/images/a-developers-thoughts-on-azure-sql-database-performance-levels-works-fine-in-dev.jpg" alt="Works fine in Dev" /></p>
+
+<ul>
+<li><strong>Reduce the "chatty"</strong> operations in your application.</li>
+<li><strong>Be careful using Entity Framework.</strong> Make sure that your code isn't triggering multiple queries that can be done at once. EF can make your life easier, but the database can suffer from that. </li>
+<li><strong>Start using cache.</strong> This will reduce the workload at your database and you will consume less DTUs.</li>
+</ul>
+
+<p>Hope this helps.</p>
 
 
 
@@ -152,14 +119,14 @@ placeholder="Amount" ng-model="amount" smart-float /&gt;
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/';
+                this.page.url = 'http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/';
+    var disqus_url = 'http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

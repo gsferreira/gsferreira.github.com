@@ -1,4 +1,55 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</guid><link>http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</link><title>AngularJS - Input number with 2 decimal places</title><description>&lt;p&gt;My &lt;a href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/"&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/</guid><link>http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/</link><title>A developer's thoughts on Azure SQL Database performance levels</title><description>&lt;p&gt;I recently started moving some databases that I have in the old Azure SQL Database Web/Business model. I started it with a good feeling. Let's face it, a guaranteed performance level is excellent. Nobody wants a noisy neighbor boring our database.&lt;/p&gt;
+
+&lt;p&gt;The downside, is that this shift brings new challenges and possible big troubles to the ones that already have systems in place. Everything has a price and in this case we call it &lt;strong&gt;Performance&lt;/strong&gt;. &lt;/p&gt;
+
+</description><pubDate>Sat, 14 Mar 2015 00:00:00 Z</pubDate><a10:updated>2015-03-14T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;I recently started moving some databases that I have in the old Azure SQL Database Web/Business model. I started it with a good feeling. Let's face it, a guaranteed performance level is excellent. Nobody wants a noisy neighbor boring our database.&lt;/p&gt;
+
+&lt;p&gt;The downside, is that this shift brings new challenges and possible big troubles to the ones that already have systems in place. Everything has a price and in this case we call it &lt;strong&gt;Performance&lt;/strong&gt;. &lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;In this new model, SQL Azure Databases are paid by performance instead of space. Now we have service tiers with transaction rates per hour (Basic Tier), per minute (Standard Tier) or per second (Premium Tier).&lt;/p&gt;
+
+&lt;p&gt;So, what's wrong with this? The prices! In my opinion, there's no equality between the old models and the new ones. Chris Bailiss has some awesome posts that shows that. Take a look:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://cbailiss.wordpress.com/2015/01/31/azure-sql-database-v12-ga-performance-inc-cpu-benchmaring/"&gt;Azure SQL Database: v12 GA Performance inc. CPU Benchmaring&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cbailiss.wordpress.com/2014/09/16/performance-in-new-azure-sql-database-performance-tiers/"&gt;GA Performance in New Azure SQL Database Performance Tiers&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;Show me the numbers&lt;/h3&gt;
+
+&lt;p&gt;If you have an Azure SQL Database on the Web model with 1.5GB you will pay 10.42€/month.
+By a few more cents (11.18€/month) you can use an SQL Database in the Standard Tier with the S0 Performance Level.&lt;/p&gt;
+
+&lt;p&gt;If you have read the Chris Bailiss post, you have seen that the performance between those two can't be compared. S0 is slower than Web.&lt;/p&gt;
+
+&lt;h3&gt;So, what can I do?&lt;/h3&gt;
+
+&lt;p&gt;With this post &lt;strong&gt;I don't want to say that you should run away from SQL Azure Database&lt;/strong&gt;. What I mean, is that the game has changed. &lt;/p&gt;
+
+&lt;p&gt;In this Cloud era the costs are a variable that Software Developers and Architects need to take in account. Now our code has a visible and measurable impact in the financial health of our products and companies. &lt;/p&gt;
+
+&lt;p&gt;So, how to start facing the dragon?
+You can find here a list of things that you should have in mind:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Question yourself: Do I really need a SQL database?&lt;/strong&gt; There's many options in Azure to store your data, probably they can do the task.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Performance is more important than ever!&lt;/strong&gt; Don't wait until a query takes a few minutes running to start doing SQL Tuning.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Database design has a significant importance!&lt;/strong&gt; Be careful designing your database data model.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Test in Azure since the first day.&lt;/strong&gt; Probably your development machine has an SQL Server with more power than the production database.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/a-developers-thoughts-on-azure-sql-database-performance-levels-works-fine-in-dev.jpg" alt="Works fine in Dev" /&gt;&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;Reduce the "chatty"&lt;/strong&gt; operations in your application.&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Be careful using Entity Framework.&lt;/strong&gt; Make sure that your code isn't triggering multiple queries that can be done at once. EF can make your life easier, but the database can suffer from that. &lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Start using cache.&lt;/strong&gt; This will reduce the workload at your database and you will consume less DTUs.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</guid><link>http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</link><title>AngularJS - Input number with 2 decimal places</title><description>&lt;p&gt;My &lt;a href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/"&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
 
 &lt;p&gt;This a kind of simple tip, but I believe that it can be really useful.&lt;/p&gt;
 
@@ -359,60 +410,6 @@ That's an usual error, for instance, if you are working in a test environment.&l
 
         _teacher.Say("Lie down!");
         _teacher.GiveToDog(snack);
-
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/</guid><link>http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/</link><title>Dog training for Developers - The basics: Stay</title><description>&lt;p&gt;Training a dog to stay can be a tough task, because your dog is used to following you. After you and your dog have mastered the sit command, train him to stay.&lt;/p&gt;
-
-</description><pubDate>Thu, 23 Oct 2014 23:00:00 Z</pubDate><a10:updated>2014-10-23T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Training a dog to stay can be a tough task, because your dog is used to following you. After you and your dog have mastered the sit command, train him to stay.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;And remember, be patient :)&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/dog-trainig-for-developers-the-basics-sit-stay.jpg" alt="Dog insane" /&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public void Stay()
-{
-    _teacher.Say("Sit!");
-    _teacher.ShowHandInStayCommand();
-    _teacher.Say("Stay!");
-
-    System.Threading.Thread.Sleep(2000); //Wait 2 seconds
-
-    _teacher.Say("Go play!");
-
-    _teacher.PlayWithDog(_dog);
-
-
-
-    _teacher.Say("Sit!");
-    _teacher.ShowHandInStayCommand();
-
-    _teacher.Say("Stay!");
-    _teacher.MoveAway(numberOfSteps: 1);
-
-    System.Threading.Thread.Sleep(2000); //Wait 2 seconds
-
-    _teacher.Say("Go play!");
-
-    _teacher.PlayWithDog(_dog);
-
-
-    for (int i = 0; i &amp;lt; 5; i++)
-    {
-        _teacher.Say("Sit!");
-        _teacher.ShowHandInStayCommand();
-
-        _teacher.Say("Stay!");
-        _teacher.MoveAway(numberOfSteps: 3);
-
-        System.Threading.Thread.Sleep(2000 + (1000 * i)); //Wait 2 seconds
-
-        _teacher.Say("Go play!");
-
-        _teacher.PlayWithDog(_dog);
 
     }
 }
