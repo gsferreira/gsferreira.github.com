@@ -1,4 +1,43 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/</guid><link>http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/</link><title>A developer's thoughts on Azure SQL Database performance levels</title><description>&lt;p&gt;I recently started moving some databases that I have in the old Azure SQL Database Web/Business model. I started it with a good feeling. Let's face it, a guaranteed performance level is excellent. Nobody wants a noisy neighbor boring our database.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/05/angularjs-after-render-directive/</guid><link>http://gsferreira.com/archive/2015/05/angularjs-after-render-directive/</link><title>AngularJS - After Render Directive</title><description>&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
+
+&lt;p&gt;This post is the answer of how you can accomplish that.&lt;/p&gt;
+
+&lt;p&gt;This a simple tip, but I believe that can be really useful.&lt;/p&gt;
+
+</description><pubDate>Wed, 27 May 2015 23:00:00 Z</pubDate><a10:updated>2015-05-27T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
+
+&lt;p&gt;This post is the answer of how you can accomplish that.&lt;/p&gt;
+
+&lt;p&gt;This a simple tip, but I believe that can be really useful.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;Add the following directive to your application.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;myApp.directive('afterRender', ['$timeout', function ($timeout) {
+    var def = {
+        restrict: 'A',
+        terminal: true,
+        transclude: false,
+        link: function (scope, element, attrs) {
+            $timeout(scope.$eval(attrs.afterRender), 0);  //Calling a scoped method
+        }
+    };
+    return def;
+}]);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now, add the &lt;em&gt;after-render&lt;/em&gt; directive to an element in your template:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;div after-render="missionCompled"&amp;gt;&amp;lt;/div&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;At this point, your application will run the &lt;em&gt;missionCompled&lt;/em&gt; function (or other that you want) in your controller, after the div is rendered.&lt;/p&gt;
+
+&lt;p&gt;You can see the working demo on &lt;a href="https://jsfiddle.net/gsferreira/h53okjtu/"&gt;JSFiddle&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;I hope that this helps you.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/</guid><link>http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/</link><title>A developer's thoughts on Azure SQL Database performance levels</title><description>&lt;p&gt;I recently started moving some databases that I have in the old Azure SQL Database Web/Business model. I started it with a good feeling. Let's face it, a guaranteed performance level is excellent. Nobody wants a noisy neighbor boring our database.&lt;/p&gt;
 
 &lt;p&gt;The downside, is that this shift brings new challenges and possible big troubles to the ones that already have systems in place. Everything has a price and in this case we call it &lt;strong&gt;Performance&lt;/strong&gt;. &lt;/p&gt;
 
@@ -373,45 +412,4 @@ That's an usual error, for instance, if you are working in a test environment.&l
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/</guid><link>http://gsferreira.com/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/</link><title>Dog training for Developers - The basics: Lie down</title><description>&lt;p&gt;This is the last post of this series and I hope now you and your dog are an awesome team!&lt;/p&gt;
-
-&lt;p&gt;Today I will give you the tips to the lie down command, a nice complement to the Sit command.&lt;/p&gt;
-
-&lt;p&gt;</description><pubDate>Mon, 24 Nov 2014 00:00:00 Z</pubDate><a10:updated>2014-11-24T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;This is the last post of this series and I hope now you and your dog are an awesome team!&lt;/p&gt;
-
-&lt;p&gt;Today I will give you the tips to the lie down command, a nice complement to the Sit command.&lt;/p&gt;
-
-&lt;p&gt;&lt;!--excerpt--&gt;
-&lt;img src="http://gsferreira.com/images/dog-trainig-for-developers-the-basics-lie-down.jpg" alt="Dog lie down" /&gt;&lt;/p&gt;
-
-&lt;p&gt;I hope you have liked this series. If you want to have some more tips please let me know, I would be glad to know.&lt;/p&gt;
-
-&lt;p&gt;And remember, be patient as always :)&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public void LieDown()
-{
-    var snack = _teacher.GrabNewSnack();
-    _teacher.Sit();
-
-    Sit();
-    do
-    {
-        //Wait until dog is sitting
-    } while (!_dog.IsSitting);
-
-    for (int i = 0; i &amp;lt; 5; i++)
-    {
-        do
-        {
-            //your hand to the middle of his legs
-            //move your hand slowly
-            _teacher.MoveHandDown();
-        } while (!_dog.IsLying);
-
-        _teacher.Say("Lie down!");
-        _teacher.GiveToDog(snack);
-
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
 </a10:content></item></channel></rss>

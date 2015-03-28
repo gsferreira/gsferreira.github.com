@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2015-03-28T12:08:54.8880783+00:00" />
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="AngularJS" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Dog training for Developers - The basics - 
+            AngularJS - After Render Directive - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/05/angularjs-after-render-directive/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,38 +39,50 @@
 
 
 <div class="post">
-    <h1>Dog training for Developers - The basics</h1> 
+    <h1>AngularJS - After Render Directive</h1> 
       <div class="meta">
-        <p class="posted">21 set 2014</p>
+        <p class="posted">28 mai 2015</p>
         <ul class="categories">
+          <li><a href="/category/angularjs" title="Snow.Models.Category">AngularJS</a></li>
         </ul>
       </div>
     </div>
     
-    <ul class="snow-series"><li>Dog training for Developers - The basics</li><li><a href="/archive/2014/09/dog-trainig-for-developers-the-basics-recognize-the-name/">Dog training for Developers - The basics: Recognize the name</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/">Dog training for Developers - The basics: Come when called</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-sit/">Dog training for Developers - The basics: Sit</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/">Dog training for Developers - The basics: Stay</a></li><li><a href="/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/">Dog training for Developers - The basics: Lie down</a></li></ul>
+    
         
-    <p>Recently I've brought home a new puppy, named Feijão (the portuguese word for "bean"). Since then I've been reading to learn how to teach him some stuff.</p>
+    <p>Do you ever wanted to execute code after your Angular template is completely rendered?</p>
 
-<p>From this experience I've seen that the dog training technique has a kind of flow, like a software routine. So, I have decided to translate some of that tips into code and share with you. I think that this can be a funny way for a developer understand how to teach his dog.</p>
+<p>This post is the answer of how you can accomplish that.</p>
+
+<p>This a simple tip, but I believe that can be really useful.</p>
 
 <!--excerpt-->
 
-<p><img src="/images/dog-trainig-for-developers-the-basics-feijao.jpg" alt="Feijão" /></p>
+<p>Add the following directive to your application.</p>
 
-<p>In the following weeks I will write some tips based on positive reinforcement training technique. 
-The tips of this series:</p>
+<pre><code>myApp.directive('afterRender', ['$timeout', function ($timeout) {
+    var def = {
+        restrict: 'A',
+        terminal: true,
+        transclude: false,
+        link: function (scope, element, attrs) {
+            $timeout(scope.$eval(attrs.afterRender), 0);  //Calling a scoped method
+        }
+    };
+    return def;
+}]);
+</code></pre>
 
-<ol>
-<li>Recognize the name</li>
-<li>Come when called</li>
-<li>Sit</li>
-<li>Stay</li>
-<li>Lie</li>
-</ol>
+<p>Now, add the <em>after-render</em> directive to an element in your template:</p>
 
-<p>If you like the idea, feel free to leave a comment or ask for some more tips.</p>
+<pre><code>&lt;div after-render="missionCompled"&gt;&lt;/div&gt;
+</code></pre>
 
-<p>Stay tuned!</p>
+<p>At this point, your application will run the <em>missionCompled</em> function (or other that you want) in your controller, after the div is rendered.</p>
+
+<p>You can see the working demo on <a href="https://jsfiddle.net/gsferreira/h53okjtu/">JSFiddle</a>.</p>
+
+<p>I hope that this helps you.</p>
 
 
 
@@ -93,14 +105,14 @@ The tips of this series:</p>
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics/';
+                this.page.url = 'http://gsferreira.com/archive/2015/05/angularjs-after-render-directive/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics/';
+    var disqus_url = 'http://gsferreira.com/archive/2015/05/angularjs-after-render-directive/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
