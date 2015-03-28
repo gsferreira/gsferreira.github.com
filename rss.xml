@@ -1,10 +1,10 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/05/angularjs-after-render-directive/</guid><link>http://gsferreira.com/archive/2015/05/angularjs-after-render-directive/</link><title>AngularJS - After Render Directive</title><description>&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</guid><link>http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</link><title>AngularJS - After Render Directive</title><description>&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
 
 &lt;p&gt;This post is the answer of how you can accomplish that.&lt;/p&gt;
 
 &lt;p&gt;This a simple tip, but I believe that can be really useful.&lt;/p&gt;
 
-</description><pubDate>Wed, 27 May 2015 23:00:00 Z</pubDate><a10:updated>2015-05-27T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
+</description><pubDate>Sat, 28 Mar 2015 00:00:00 Z</pubDate><a10:updated>2015-03-28T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
 
 &lt;p&gt;This post is the answer of how you can accomplish that.&lt;/p&gt;
 
