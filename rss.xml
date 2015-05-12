@@ -1,4 +1,66 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</guid><link>http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</link><title>AngularJS - After Render Directive</title><description>&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/</guid><link>http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/</link><title>Azure App Service API Apps - Microsoft.Rest.HttpOperationException</title><description>&lt;p&gt;Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:&lt;/p&gt;
+
+</description><pubDate>Mon, 11 May 2015 23:00:00 Z</pubDate><a10:updated>2015-05-11T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;pre&gt;
+    Microsoft.Rest.HttpOperationException`1 was unhandled
+  HResult=-2146233088
+  Message=Exception of type 'Microsoft.Rest.HttpOperationException`1[System.Object]' was thrown.
+  Source=MyMailSenderClient2
+  StackTrace:
+       at MyMailSenderClient2.Mail.&lt;PostWithOperationResponseAsync&gt;d__0.MoveNext() in c:\DEV\MyTestApi\MyMailSenderClient2\TestMailApi\Mail.cs:line 129
+    --- End of stack trace from previous location where exception was thrown ---
+       at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+       at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+       at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+       at MyMailSenderClient2.MailExtensions.&lt;PostAsync&gt;d__3.MoveNext() in c:\DEV\MyTestApi\MyMailSenderClient2\TestMailApi\MailExtensions.cs:line 42
+    --- End of stack trace from previous location where exception was thrown ---
+       at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+       at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+       at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+       at MyMailSenderClient2.MailExtensions.Post(IMail operations, MailModel data) in c:\DEV\MyTestApi\MyMailSenderClient2\TestMailApi\MailExtensions.cs:line 24
+       at MyMailSenderClient2.Program.Main(String[] args) in c:\DEV\MyTestApi\MyMailSenderClient2\Program.cs:line 16
+       at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)
+       at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+       at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+       at System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+       at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+       at System.Threading.ThreadHelper.ThreadStart()
+  InnerException: 
+
+&lt;/pre&gt;
+
+&lt;p&gt;I struggled a bit until I figured why. &lt;/p&gt;
+
+&lt;p&gt;Well, let me explain you how I got there and what I have done to solve it.&lt;/p&gt;
+
+&lt;p&gt;I access to the new &lt;a href="http://portal.azure.com"&gt;Portal&lt;/a&gt; and I created a new API App, then I've followed the Microsoft tutorial of how to &lt;a href="http://azure.microsoft.com/en-us/documentation/articles/app-service-dotnet-create-api-app/"&gt;Create an ASP.NET API app in Azure App Service&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Everything was going fine and in a few minutes I published the API. Quick and easy.&lt;/p&gt;
+
+&lt;p&gt;Then, I generated my Client SDK and when I tried to invoke it, I got the error.&lt;/p&gt;
+
+&lt;p&gt;As you can see, the exception message and the stack trace don't provide much information.&lt;/p&gt;
+
+&lt;p&gt;I had to struggle a bit to figure it out. &lt;/p&gt;
+
+&lt;p&gt;The reason was really simple, my API service had the Access Level defined as &lt;strong&gt;Internal&lt;/strong&gt;. &lt;/p&gt;
+
+&lt;p&gt;After changing it to &lt;strong&gt;Public (anonymous)&lt;/strong&gt; everything works fine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/azure-app-service-api-apps-microsoft-rest-httpoperationexception-access-level.png" alt="Azure API App - Access Level" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Why this happened? If you follow the tutorial you will create the API App using Visual Studio and you will see that the Visual Studio has the access level &lt;strong&gt;Available to Anyone&lt;/strong&gt; as default.&lt;/p&gt;
+
+&lt;p&gt;When you create the API App using the portal, you will see that the Access Level is defined as &lt;strong&gt;Internal&lt;/strong&gt; by default.&lt;/p&gt;
+
+&lt;p&gt;I believe that Microsoft will fix these small problems and make it more clear.
+Until then, I hope that this helps you.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</guid><link>http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</link><title>AngularJS - After Render Directive</title><description>&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
 
 &lt;p&gt;This post is the answer of how you can accomplish that.&lt;/p&gt;
 
@@ -370,45 +432,6 @@ That's an usual error, for instance, if you are working in a test environment.&l
             Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
             Response.Cache.SetNoStore();
     }
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hope this helps.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/</guid><link>http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/</link><title>Azure deploy and the path length limitation</title><description>&lt;p&gt;Windows has that boring thing, the "Maximum Path Length Limitation". That can be a terrible headache when you are dealing with Azure Cloud Service deploy.&lt;/p&gt;
-
-&lt;p&gt;If you create your projects in the Visual Studio default folder (&lt;em&gt;C:\Users\USER\Documents\Visual Studio 2013\Projects&lt;/em&gt;) or in a longer path, probably you already have faced the error:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-</description><pubDate>Thu, 27 Nov 2014 00:00:00 Z</pubDate><a10:updated>2014-11-27T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Windows has that boring thing, the "Maximum Path Length Limitation". That can be a terrible headache when you are dealing with Azure Cloud Service deploy.&lt;/p&gt;
-
-&lt;p&gt;If you create your projects in the Visual Studio default folder (&lt;em&gt;C:\Users\USER\Documents\Visual Studio 2013\Projects&lt;/em&gt;) or in a longer path, probably you already have faced the error:&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;To fix this:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Go to the Cloud Service project folder.&lt;/li&gt;
-&lt;li&gt;Edit the user cloud service options file (&lt;em&gt;*.ccproj&lt;/em&gt; file) in notepad.&lt;/li&gt;
-&lt;li&gt;Add the ServiceOutputDirectory element with the value &lt;em&gt;"c:\azure"&lt;/em&gt; for example.&lt;/li&gt;
-&lt;li&gt;Open the solution in Visual Studio again and the error has gone.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Example:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;﻿&amp;lt;?xml version="1.0" encoding="utf-8"?&amp;gt;
-&amp;lt;Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"&amp;gt;
-  &amp;lt;PropertyGroup&amp;gt;
-    &amp;lt;Name&amp;gt;WorkerRole&amp;lt;/Name&amp;gt;
-    &amp;lt;ServiceOutputDirectory&amp;gt;c:\azure\&amp;lt;/ServiceOutputDirectory&amp;gt;
-  &amp;lt;/PropertyGroup&amp;gt;
-&amp;lt;/Project&amp;gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;

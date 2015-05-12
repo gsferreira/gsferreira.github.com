@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2015-05-12T23:02:48.5258107+01:00" />
-    <meta name="keywords" content="AngularJS" />
+    <meta name="keywords" content="Azure" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            AngularJS - Input number with 2 decimal places - 
+            Azure App Service API Apps - Microsoft.Rest.HttpOperationException - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,82 +39,77 @@
 
 
 <div class="post">
-    <h1>AngularJS - Input number with 2 decimal places</h1> 
+    <h1>Azure App Service API Apps - Microsoft.Rest.HttpOperationException</h1> 
       <div class="meta">
-        <p class="posted">25 fev 2015</p>
+        <p class="posted">12 mai 2015</p>
         <ul class="categories">
-          <li><a href="/category/angularjs" title="Snow.Models.Category">AngularJS</a></li>
+          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>My <a href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/">AngularJS - Smart Float Directive</a> post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.</p>
-
-<p>This a kind of simple tip, but I believe that it can be really useful.</p>
-
-<p>My smart-float directive works really fine in a desktop or laptop browser, but in a smartphone I want to take advantage of HTML5 number inputs and show to my users when they enter in the input, the "mini calculator keyboard".</p>
-
-<p>How to accomplish it using angular?</p>
+    <p>Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:</p>
 
 <!--excerpt-->
 
-<p>That's easy.</p>
+<pre>
+    Microsoft.Rest.HttpOperationException`1 was unhandled
+  HResult=-2146233088
+  Message=Exception of type 'Microsoft.Rest.HttpOperationException`1[System.Object]' was thrown.
+  Source=MyMailSenderClient2
+  StackTrace:
+       at MyMailSenderClient2.Mail.<PostWithOperationResponseAsync>d__0.MoveNext() in c:\DEV\MyTestApi\MyMailSenderClient2\TestMailApi\Mail.cs:line 129
+    --- End of stack trace from previous location where exception was thrown ---
+       at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+       at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+       at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
+       at MyMailSenderClient2.MailExtensions.<PostAsync>d__3.MoveNext() in c:\DEV\MyTestApi\MyMailSenderClient2\TestMailApi\MailExtensions.cs:line 42
+    --- End of stack trace from previous location where exception was thrown ---
+       at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
+       at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
+       at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
+       at MyMailSenderClient2.MailExtensions.Post(IMail operations, MailModel data) in c:\DEV\MyTestApi\MyMailSenderClient2\TestMailApi\MailExtensions.cs:line 24
+       at MyMailSenderClient2.Program.Main(String[] args) in c:\DEV\MyTestApi\MyMailSenderClient2\Program.cs:line 16
+       at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)
+       at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
+       at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
+       at System.Threading.ThreadHelper.ThreadStart_Context(Object state)
+       at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
+       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
+       at System.Threading.ThreadHelper.ThreadStart()
+  InnerException: 
 
-<p><a href="http://www.deque.com/blog/accessible-client-side-form-validation-html5/"><img src="/images/angularjs-input-number-with-two-decimal-places-meme.jpg" alt="meme" /></a></p>
+</pre>
 
-<h2>1. Create the number input with the number type.</h2>
+<p>I struggled a bit until I figured why. </p>
 
-<pre><code>&lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" /&gt;
-</code></pre>
+<p>Well, let me explain you how I got there and what I have done to solve it.</p>
 
-<h2>2. Define the step interval.</h2>
+<p>I access to the new <a href="http://portal.azure.com">Portal</a> and I created a new API App, then I've followed the Microsoft tutorial of how to <a href="http://azure.microsoft.com/en-us/documentation/articles/app-service-dotnet-create-api-app/">Create an ASP.NET API app in Azure App Service</a>.</p>
 
-<pre><code>&lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" *step="0.01"* /&gt;
-</code></pre>
+<p>Everything was going fine and in a few minutes I published the API. Quick and easy.</p>
 
-<h2>3. Set the regular expression to validate the input using ng-pattern. Here I want to accept only numbers with a maximum of 2 decimal places and with a dot separator.</h2>
+<p>Then, I generated my Client SDK and when I tried to invoke it, I got the error.</p>
 
-<pre><code>&lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" /&gt;
-</code></pre>
+<p>As you can see, the exception message and the stack trace don't provide much information.</p>
 
-<h2>4. Inform your user if the input has a valid value.</h2>
+<p>I had to struggle a bit to figure it out. </p>
 
-<pre><code>&lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" /&gt;
-&lt;span&gt;Is a valid decimal? {{myForm.myDecimal.$valid}}&lt;/span&gt;
-</code></pre>
+<p>The reason was really simple, my API service had the Access Level defined as <strong>Internal</strong>. </p>
 
-<p>A full example using bootstrap (<a href="http://jsfiddle.net/gsferreira/Lsv9f0b0/">demo here</a>):</p>
+<p>After changing it to <strong>Public (anonymous)</strong> everything works fine.</p>
 
-<pre><code>&lt;div ng-app&gt;
-&lt;h2&gt;Todo&lt;/h2&gt;
-&lt;div ng-controller="myCtrl"&gt;
+<p><img src="/images/azure-app-service-api-apps-microsoft-rest-httpoperationexception-access-level.png" alt="Azure API App - Access Level" /></p>
 
-  &lt;form name="myForm" class="form-horizontal" &gt;
-       &lt;div class="form-group" ng-class="{'has-error': myForm.myDecimal.$invalid}"&gt;
-            &lt;label for="inputText3" class="col-sm-2 control-label"&gt;Decimal&lt;/label&gt;
-            &lt;div class="col-sm-10"&gt;
-                &lt;input type="number" class="form-control" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required /&gt;
+<p>Why this happened? If you follow the tutorial you will create the API App using Visual Studio and you will see that the Visual Studio has the access level <strong>Available to Anyone</strong> as default.</p>
 
-                &lt;span class="help-block" ng-show="!myForm.myDecimal.$valid"&gt;
-                    Invalid!
-                &lt;/span&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
+<p>When you create the API App using the portal, you will see that the Access Level is defined as <strong>Internal</strong> by default.</p>
 
-        &lt;div class="form-group" &gt;
-            &lt;label for="inputText3" class="col-sm-2 control-label"&gt;The value:&lt;/label&gt;
-            &lt;div class="col-sm-10"&gt;
-                &lt;input type="text" class="form-control" ng-model="myDecimal" disabled /&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/form&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>Hope this helps.</p>
+<p>I believe that Microsoft will fix these small problems and make it more clear.
+Until then, I hope that this helps you.</p>
 
 
 
@@ -137,14 +132,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/';
+                this.page.url = 'http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/';
+    var disqus_url = 'http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
