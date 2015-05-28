@@ -1,4 +1,69 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2015-05-12T23:02:53+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/</id><title type="text">Azure App Service API Apps - Microsoft.Rest.HttpOperationException</title><summary type="html">&lt;p&gt;Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2015-05-28T22:59:07+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2015/05/lessons-learned-from-agilept-2015/</id><title type="text">Lessons learned from Agile Portugal 2015</title><summary type="html">&lt;p&gt;In the last week I attended to the &lt;a href="http://2015.agilept.org/"&gt;Agile Portugal 2015&lt;/a&gt;, an amazing event that gathers the agile community.
+I had the opportunity to listen excellent speakers as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://au.linkedin.com/pub/lachlan-heasman/1/920/777"&gt;Lachlan Heasman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/haradakiro"&gt;Kiro Harada&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/_pedro_torres"&gt;Pedro Gustavo Torres&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.uvu.edu/profpages/profiles/show/user_id/1923"&gt;Neil Harrison&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/theplastictoy"&gt;Ricardo Fiel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/carlton858"&gt;Carlton Nettleton&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The event was amazing, and I want to share with you the main lessons that I learned. &lt;/p&gt;
+
+</summary><published>2015-05-27T23:00:00Z</published><updated>2015-05-27T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/05/lessons-learned-from-agilept-2015/" /><content type="html">&lt;p&gt;In the last week I attended to the &lt;a href="http://2015.agilept.org/"&gt;Agile Portugal 2015&lt;/a&gt;, an amazing event that gathers the agile community.
+I had the opportunity to listen excellent speakers as:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://au.linkedin.com/pub/lachlan-heasman/1/920/777"&gt;Lachlan Heasman&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/haradakiro"&gt;Kiro Harada&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/_pedro_torres"&gt;Pedro Gustavo Torres&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.uvu.edu/profpages/profiles/show/user_id/1923"&gt;Neil Harrison&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/theplastictoy"&gt;Ricardo Fiel&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://twitter.com/carlton858"&gt;Carlton Nettleton&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;The event was amazing, and I want to share with you the main lessons that I learned. &lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;The importance of Visuals&lt;/h2&gt;
+
+&lt;p&gt;Lachlan Heasman has made an amazing talk. He reinforces that the Visual Management is really important to succeed.&lt;br /&gt;
+That thought made a lot of sense to me. Nowadays, we have a ton of excellent applications to do kanban boards and that's OK, especially if you have remote workers. But I believe that, if you have your team in a single place you should have a physical kanban board.
+Why? Because your team will look into it every day... every single day. Even if they don't want, they will! You will see that your team will be positively influenced, building a culture of transparency and trust.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/lessons-learned-from-agilept-2015-kanban-style.jpg" alt="Kanban style" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;User stories&lt;/h2&gt;
+
+&lt;p&gt;Why we are writing User Stories in the form of "As a... I want to... so that..."? Will the customer realize the language? Or will they think that we are crazy nerds?
+As the &lt;a href="http://en.wikipedia.org/wiki/User_story"&gt;wikipedia&lt;/a&gt; (that eternal font of true) refers, an "user story is a description consisting of one or more sentences in the everyday or business language of the end user or user of a system".
+Have you ever listened a business person talking like that?&lt;/p&gt;
+
+&lt;p&gt;Carlton Nettleton, presented a simpler and much objective way to write user stories. How? Answering the following questions: Who? What? And Why?
+I'm a fan of the &lt;a href="http://en.wikipedia.org/wiki/Five_Ws"&gt;Six W's method&lt;/a&gt; to describe and understand complex problems, and Carlton made me correlate that with user stories.&lt;/p&gt;
+
+&lt;h2&gt;The true essence of agile&lt;/h2&gt;
+
+&lt;p&gt;The industry sells us the idea that Agile (or Scrum), is a magic formula that we should apply to have good results. You just need to have some meetings, do sprints of "X" weeks and you will be fine. 
+That's not true.&lt;/p&gt;
+
+&lt;p&gt;Companies are made from people, so they are different. Each one has a different culture and a different identity. This uniqueness will make them agile.&lt;/p&gt;
+
+&lt;p&gt;Agile, isn't a process, a system or a mathematical formula. Agile is a culture. 
+It's different be agile than have a certificate that says that you are agile.
+The process is the less important part. You should have the focus on the outcome. 
+Always think on where you want to go, not on what you need to do to go there.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Was an amazing day, with incredible people, in an awesome place. 
+Hope to be there next year.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/</id><title type="text">Azure App Service API Apps - Microsoft.Rest.HttpOperationException</title><summary type="html">&lt;p&gt;Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:&lt;/p&gt;
 
 </summary><published>2015-05-11T23:00:00Z</published><updated>2015-05-11T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/" /><content type="html">&lt;p&gt;Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:&lt;/p&gt;
 
@@ -389,50 +454,6 @@ That's an usual error, for instance, if you are working in a test environment.&l
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Now you are conditioning it to the environment that you want.&lt;/p&gt;
-
-&lt;p&gt;Hope this helps.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2014/12/disable-your-html-cache/</id><title type="text">Disable your html cache</title><summary type="html">&lt;p&gt;Do you know that usually when you use the back button of your browser, your page won't be requested to the server again? By default this is the behaviour that you can expect.&lt;/p&gt;
-
-&lt;p&gt;But, you can control it!&lt;/p&gt;
-
-</summary><published>2014-12-05T00:00:00Z</published><updated>2014-12-05T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2014/12/disable-your-html-cache/" /><content type="html">&lt;p&gt;Do you know that usually when you use the back button of your browser, your page won't be requested to the server again? By default this is the behaviour that you can expect.&lt;/p&gt;
-
-&lt;p&gt;But, you can control it!&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Go to your web.config and place the following code into the &lt;system.web&gt; element.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;caching&amp;gt;
-  &amp;lt;outputCache enableOutputCache="false"&amp;gt;&amp;lt;/outputCache&amp;gt;
-&amp;lt;/caching&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;In your web.config place the following code into the &lt;system.webserver&gt; element to enable the caching for resource files, as images or stylesheets.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;caching&amp;gt;
-  &amp;lt;profiles&amp;gt;
-    &amp;lt;add extension=".gif" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:30:00" location="Any" /&amp;gt;
-    &amp;lt;add extension=".png" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&amp;gt;
-    &amp;lt;add extension=".js" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&amp;gt;
-    &amp;lt;add extension=".css" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&amp;gt;
-    &amp;lt;add extension=".jpg" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&amp;gt;
-    &amp;lt;add extension=".jpeg" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&amp;gt;
-    &amp;lt;add extension=".txt" policy="CacheUntilChange" kernelCachePolicy="CacheUntilChange" duration="0.00:01:00" location="Any" /&amp;gt;
-  &amp;lt;/profiles&amp;gt;
-&amp;lt;/caching&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Last but not least, create a Base Controller and copy the code below to your base controller.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    protected override void OnActionExecuting(ActionExecutingContext filterContext)
-    {
-            // Code disables caching by browser.
-            Response.Cache.SetCacheability(HttpCacheability.NoCache);
-            Response.Cache.SetExpires(DateTime.UtcNow.AddHours(-1));
-            Response.Cache.SetNoStore();
-    }
-&lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;
 </content></entry></feed>
