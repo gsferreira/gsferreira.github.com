@@ -1,0 +1,346 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width" />
+     <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta http-equiv="last-modified" content="2015-06-19T10:14:20.4363450+01:00" />
+    <meta name="keywords" content="Azure,Revista PROGRAMAR" />
+	
+    <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
+	
+    <title>
+            Create an API in Azure App Service - Revista PROGRAMAR N&#186; 49 - 
+        Guilherme Ferreira
+    </title>
+    <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/06/create-an-api-in-azure-app-service-revista-programar-n49/" />
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        
+	<header id="masthead" class="simple-header" role="banner">
+	<hgroup>
+		<a href="/" title="Home"><img width="40" height="40" src="http://www.gravatar.com/avatar/93c1c26212f9eb3673538e6ad6ca7eb4.png" title="logo"  alt="logo"></a>
+		<h1 class="site-title"><a href="/" title="Snow Byte" rel="home">Guilherme Ferreira</a>
+	</hgroup>
+</header>
+        
+
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+
+<div class="post">
+    <h1>Create an API in Azure App Service - Revista PROGRAMAR N&#186; 49</h1> 
+      <div class="meta">
+        <p class="posted">18 Jun 2015</p>
+        <ul class="categories">
+          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
+          <li><a href="/category/revista-programar" title="Snow.Models.Category">Revista PROGRAMAR</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    
+        
+    <p><em>I had the pleasure of write an <a href="http://www.revista-programar.info/artigos/criar-uma-api-no-azure-app-sevice/">article</a> to the <a href="http://www.revista-programar.info/anuncios/revista-programar-no-49-junho-2015/">Revista PROGRAMAR</a>, a Portuguese collaborative magazine about programming. I’m glad with my first article for a magazine and especially because, I'm side by side with people that I admire like <a href="https://twitter.com/PauloMorgado">Paulo Morgado</a> or <a href="https://twitter.com/saramgsilva">Sara Silva</a>, for instance. This was an amazing experience and I want to share with you the result of it.</em></p>
+
+<h2>Introduction</h2>
+
+<p>In March, Microsoft announced an improvement in his services by introducing the new Azure App Service. This service covers the “oldest” Websites, now named as Web Apps, the Azure Mobile Services, now, Mobile Apps, and introduce new capabilities as Logic Apps and the API Apps. This article talks about the last one.
+The question is: What’s the reason to create an API App, and not a Web API in a Website? This question can be easily answered, analysing the feature list, for example:</p>
+
+<ul>
+<li>Access Control using Azure Active Directory or OAuth services, as Facebook or Twitter;</li>
+<li>Fast integration with the Swagger Framework;</li>
+<li>Easy integration with Logic Apps;</li>
+<li>Private gallery of APIs, enabling us to provide APIs to the other members of the organization;</li>
+<li>Automatic generation of an SDK for our API.</li>
+</ul>
+
+<p>In this article we will see, how to create an API, publish in our subscription and create an SDK to consume it.</p>
+
+<!--excerpt-->
+
+<h2>Description</h2>
+
+<p>There are many services, inside the organizations, that are necessary to multiple applications. A good example of that is the send email notifications.
+Let imagine that we pretend to provide an API, so that all applications of our organization, can easily send emails, without need to know the logic of using the email server.
+Before we start, we need to be sure that <a href="http://go.microsoft.com/fwlink/?linkid=324322&amp;clcid=0x409">Microsoft Azure SDK for .NET 2.6</a> is installed.</p>
+
+<h3>Create an API App project</h3>
+
+<p>Let’s start to see how to create a project for our API App.</p>
+
+<ol>
+<li>Open Visual Studio 2013;</li>
+<li>Create a new project using <strong>File > New Project</strong>;</li>
+<li>Choose the template <strong>ASP.NET Web Application</strong>;</li>
+<li><p>Give a name to the project, in this case we will use MailApi;</p>
+
+<p><img src="/images/create-an-api-in-azure-app-service-revista-programar-n49-1.png" alt="New Project" /></p></li>
+<li><p>Click <strong>OK</strong>;</p></li>
+<li><p>Select the template <strong>Azure API App</strong>;</p>
+
+<p><img src="/images/create-an-api-in-azure-app-service-revista-programar-n49-2.png" alt="Template" /></p></li>
+<li><p>Click <strong>OK</strong> and to create the project.</p></li>
+</ol>
+
+<h3>Create the service to send emails</h3>
+
+<p>Let’s see how to expose a method for sending emails in our API. For that, we will create a class that represents the data model to receive the request, and a controller to provide the sending method. </p>
+
+<ol>
+<li>In the folder Models, add a new class with the name MailModel. Mouse right click in the folder Models, and select the option <strong>Add > Class</strong>.</li>
+<li>In the created file, MailModel.cs, add the following code:</li>
+</ol>
+
+ <pre>
+   <code>
+    using System.ComponentModel.DataAnnotations;
+    public class MailModel
+    {
+       [Required]
+       [EmailAddress]
+       public string To { get; set; }
+
+       [Required]
+       public string Subject { get; set; }
+
+       [Required]
+       public string Body { get; set; }
+    }
+    </code>
+ </pre>
+
+<ol>
+<li><p>Add a controller to the project (controllers file) with the name MailController, using the template, <strong>Web API 2 Controller – Empty</strong>.</p>
+
+<p><img src="/images/create-an-api-in-azure-app-service-revista-programar-n49-3.png" alt="Scaffold" /></p></li>
+<li><p>In the created file, <strong>MailController.cs</strong>, add the following method:</p></li>
+</ol>
+
+ <pre>
+   <code>
+    using MailApi.Models;
+    [HttpPost]
+    public HttpResponseMessage Post([FromBody]MailModel data)
+    {
+       using (var client = new System.Net.Mail.SmtpClient())
+       {
+         // create the message
+         var mailFrom = new System.Net.Mail.MailAddress("noreply@deathstar.com", "Death Star");
+         var mailTo = new System.Net.Mail.MailAddress(data.To);
+         var mail = new System.Net.Mail.MailMessage(mailFrom, mailTo);
+
+         mail.Subject = data.Subject;
+         mail.Body = data.Body;
+         mail.IsBodyHtml = true;
+
+         // send email
+         client.Send(mail);
+       }
+       return Request.CreateResponse(HttpStatusCode.OK);
+    }
+    </code>
+</pre>
+
+<h3>Configure the service</h3>
+
+<p>Since in this example we will send the e-mail via SMTP, we will need to configure the e-mail server data.</p>
+
+<ol>
+<li>Access the <strong>Web.config</strong> file of our application;</li>
+<li>Add the following configuration (before the line &lt;/configuration&gt;):</li>
+</ol>
+
+ <pre>
+    <code> 
+       &lt;system.net&gt;
+         &lt;mailSettings&gt;
+           &lt;smtp from=&quot;noreply@deathstar.com&quot;&gt;
+            &lt;network host=&quot;mail.deathstar.com&quot; port=&quot;587&quot; userName=&quot;noreply@deathstar.com&quot; password=&quot;#MayTheForceBeWithThisPassword!&quot; enableSsl=&quot;true&quot; /&gt;
+           &lt;/smtp&gt;
+         &lt;/mailSettings&gt;
+       &lt;/system.net&gt;
+     </code>
+ </pre>
+
+<ol>
+<li>Fill in with the data from our server.</li>
+</ol>
+
+<h3>Publish the application to the Azure App Service</h3>
+
+<p>The publication can be made to an App Service, previously created using the portal, but in the next step we will see how to create the same without leaving Visual Studio. </p>
+
+<p>To do this, it’s required to have an Azure subscription. If you don’t have it, you can create one test subscription of a month, in http://azure.microsoft.com/en-us/pricing/free-trial/.
+If you already have it, follow the next steps:</p>
+
+<ol>
+<li>In Solution Explorer, right click in project and click <strong>Publish</strong>;</li>
+<li><p>In the publish dialog, access the <strong>Profile</strong> panel and choose the option <strong>Microsoft Azure API Apps</strong>;</p>
+
+<p><img src="/images/create-an-api-in-azure-app-service-revista-programar-n49-4.png" alt="Publish" /></p></li>
+<li><p>Click <strong>New</strong> to create a new API App in the subscription;</p>
+
+<p><img src="/images/create-an-api-in-azure-app-service-revista-programar-n49-5.png" alt="Azure API Apps" /></p></li>
+<li><p>In the Create dialog, add:</p>
+
+<ul>
+<li>The API App name. Here we will use <strong>MailApiService</strong>;</li>
+<li>Select the disired subscription;</li>
+<li>Pick a name to the App Service;</li>
+<li>Pick a name to the Resource Group;</li>
+<li>Choose the access level Available to Anyone;</li>
+<li>Pick the region where you what to host the App Service.</li>
+</ul>
+
+<p><img src="/images/create-an-api-in-azure-app-service-revista-programar-n49-6.png" alt="Create API App dialog" /></p></li>
+<li><p>Click <strong>OK</strong> and wait a few minutes while the service is being created. The creation request can be followed in the Azure App Service Activity panel;</p></li>
+<li><p>Once the App Service is created, we go back to the step number 1, access the publish dialog, and we click in the <strong>Publish</strong> option;</p>
+
+<p><img src="/images/create-an-api-in-azure-app-service-revista-programar-n49-7.png" alt="Publish" /></p></li>
+<li><p>The service will be published.</p></li>
+</ol>
+
+<h3>Consume na API from a .NET client.</h3>
+
+<p>Let’s see how to create an SDK to our API and use it.</p>
+
+<ol>
+<li><p>Add a Console Application to our solution;</p>
+
+<p><img src="/images/create-an-api-in-azure-app-service-revista-programar-n49-8.png" alt="Add console app" /></p></li>
+<li><p>In the Solution Explorer, right click in the Console Application and select the option <strong>Add > Azure API App Client</strong>;</p></li>
+<li><p>In the presented dialog, pick the option <strong>Download from Microsoft Azure API App</strong> and select the MailApiService, create previously;</p>
+
+<p><img src="/images/create-an-api-in-azure-app-service-revista-programar-n49-7.png" alt="Add Azure API App Client" /></p></li>
+<li><p>Click <strong>OK</strong> and wait until the SDK is created;</p></li>
+<li>When the last step is completed, we are ready to invoke our API, as the following code shows. </li>
+</ol>
+
+<pre>
+  <code>
+  class Program
+  {
+    static void Main(string[] args)
+    {
+      var client = new MailApiService();
+      var data = new Models.MailModel { To = "darth.vader@deathstar.com", Subject = "War Report", Body = "The Force awakens" };
+
+      var response = client.Mail.Post(data);
+
+      Console.WriteLine("Done!");
+      Console.ReadKey();
+    }
+  }
+</code>
+</pre>
+
+<h2>Summary</h2>
+
+<p>With this new service created by Microsoft, we are able to provide features that in the past had a huge development cost, in an easy and quick way. 
+The private gallery in conjunction with the easy way to consume APIs, provides the required capabilities to create an API ecosystem. </p>
+
+
+
+	<div class="post-social-links">
+        <a href="http://twitter.com/gsferreira"><img src="/images/000-twitter-bird-48.png" title="gsferreira"/></a>
+        <a href="http://gsferreira.com/rss.xml"><img src="/images/000-rss-feeds-48.png" title="gsferreira.com feed" onClick="_gaq.push(['_trackEvent', 'Post', 'RssSubscribe', 'Rss Subscribe on Post']);"/></a>
+    </div>
+	<div class="addthis_toolbox addthis_default_style" style="float:right;">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_linkedin_counter"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+    </div>
+	
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://gsferreira.com/archive/2015/06/create-an-api-in-azure-app-service-revista-programar-n49/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'gsferreira';
+    var disqus_url = 'http://gsferreira.com/archive/2015/06/create-an-api-in-azure-app-service-revista-programar-n49/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-****"></script>
+
+
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+        </div>
+        <!-- #main -->
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="site-info">
+                Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a> using <a href="https://github.com/gsferreira/letsnow" rel="generator">letsnow theme</a>.	
+            </div>
+            <!-- .site-info -->
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-33436813-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+    
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+</body>
+</html>
