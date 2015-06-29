@@ -1,4 +1,49 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2015-06-19T10:14:23+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2015/06/create-an-api-in-azure-app-service-revista-programar-n49/</id><title type="text">Create an API in Azure App Service - Revista PROGRAMAR Nº 49</title><summary type="html">&lt;p&gt;&lt;em&gt;I had the pleasure of write an &lt;a href="http://www.revista-programar.info/artigos/criar-uma-api-no-azure-app-sevice/"&gt;article&lt;/a&gt; to the &lt;a href="http://www.revista-programar.info/anuncios/revista-programar-no-49-junho-2015/"&gt;Revista PROGRAMAR&lt;/a&gt;, a Portuguese collaborative magazine about programming. I’m glad with my first article for a magazine and especially because, I'm side by side with people that I admire like &lt;a href="https://twitter.com/PauloMorgado"&gt;Paulo Morgado&lt;/a&gt; or &lt;a href="https://twitter.com/saramgsilva"&gt;Sara Silva&lt;/a&gt;, for instance. This was an amazing experience and I want to share with you the result of it.&lt;/em&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2015-06-29T21:31:45+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/</id><title type="text">6th Meeting of NetPonto Community in Oporto</title><summary type="html">&lt;p&gt;We are bringing to Oporto the 6th Meeting of NetPonto Community.
+The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 11 July 2015. &lt;/p&gt;
+
+&lt;h2&gt;Program&lt;/h2&gt;
+
+&lt;p&gt;09:45    -  Check-in&lt;/p&gt;
+
+&lt;p&gt;10:00    -  ASP.NET VNext, now in Mac! - Bruno Lopes&lt;/p&gt;
+
+&lt;p&gt;12:00    -  Building applications with Xamarin Forms - Rui Marinho&lt;/p&gt;
+
+&lt;p&gt;13:30    -  Closing Panel&lt;/p&gt;
+
+</summary><published>2015-06-28T23:00:00Z</published><updated>2015-06-28T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/" /><content type="html">&lt;p&gt;We are bringing to Oporto the 6th Meeting of NetPonto Community.
+The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 11 July 2015. &lt;/p&gt;
+
+&lt;h2&gt;Program&lt;/h2&gt;
+
+&lt;p&gt;09:45    -  Check-in&lt;/p&gt;
+
+&lt;p&gt;10:00    -  ASP.NET VNext, now in Mac! - Bruno Lopes&lt;/p&gt;
+
+&lt;p&gt;12:00    -  Building applications with Xamarin Forms - Rui Marinho&lt;/p&gt;
+
+&lt;p&gt;13:30    -  Closing Panel&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;h2&gt;Venue&lt;/h2&gt;
+
+&lt;p&gt;Instituto Superior de Engenharia do Porto (ISEP) - Room H202 &lt;/p&gt;
+
+&lt;p&gt;Rua Dr. António Bernardino de Almeida, 431&lt;/p&gt;
+
+&lt;p&gt;4200-072 Porto&lt;/p&gt;
+
+&lt;p&gt;Portugal&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.google.pt/maps/place/ISEP,+4200-072+Porto/@41.1778457,-8.6081006,17z/data=!4m2!3m1!1s0xd246449b419e1c1:0x16a6fd2fcace4efe"&gt;Map&lt;/a&gt;&lt;/p&gt;
+
+&lt;h2&gt;Registration&lt;/h2&gt;
+
+&lt;p&gt;Free!&lt;/p&gt;
+
+&lt;p&gt;Registration: &lt;a href="https://netponto-porto-julho-2015.eventbrite.co.uk/"&gt;https://netponto-porto-julho-2015.eventbrite.co.uk/&lt;/a&gt;&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2015/06/create-an-api-in-azure-app-service-revista-programar-n49/</id><title type="text">Create an API in Azure App Service - Revista PROGRAMAR Nº 49</title><summary type="html">&lt;p&gt;&lt;em&gt;I had the pleasure of write an &lt;a href="http://www.revista-programar.info/artigos/criar-uma-api-no-azure-app-sevice/"&gt;article&lt;/a&gt; to the &lt;a href="http://www.revista-programar.info/anuncios/revista-programar-no-49-junho-2015/"&gt;Revista PROGRAMAR&lt;/a&gt;, a Portuguese collaborative magazine about programming. I’m glad with my first article for a magazine and especially because, I'm side by side with people that I admire like &lt;a href="https://twitter.com/PauloMorgado"&gt;Paulo Morgado&lt;/a&gt; or &lt;a href="https://twitter.com/saramgsilva"&gt;Sara Silva&lt;/a&gt;, for instance. This was an amazing experience and I want to share with you the result of it.&lt;/em&gt;&lt;/p&gt;
 
 &lt;h2&gt;Introduction&lt;/h2&gt;
 
@@ -592,47 +637,6 @@ WHERE   obj.Type = 'U'
 GROUP BY    obj.schema_id
 ORDER BY    SizeInMB DESC 
 &lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hope this helps.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2015/01/5-awesome-tools-to-craft-the-perfect-domain-name/</id><title type="text">5 awesome tools to craft the perfect Domain Name</title><summary type="html">&lt;p&gt;One of the common tips to pick the perfect domain name is to choose one dot-com domain, but a good domain name is a needle in a haystack.&lt;/p&gt;
-
-&lt;p&gt;Here, you will find five awesome tools to help you craft an incredible (and available) domain name.&lt;/p&gt;
-
-</summary><published>2015-01-14T00:00:00Z</published><updated>2015-01-14T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/01/5-awesome-tools-to-craft-the-perfect-domain-name/" /><content type="html">&lt;p&gt;One of the common tips to pick the perfect domain name is to choose one dot-com domain, but a good domain name is a needle in a haystack.&lt;/p&gt;
-
-&lt;p&gt;Here, you will find five awesome tools to help you craft an incredible (and available) domain name.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h2&gt;1. &lt;a href="http://wordoid.com/"&gt;WORDOID&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="http://wordoid.com/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-wordoid.jpg" alt="WORDOID" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;WORDOID generates words and show the availability in .com and .net domains. You can search using parameters like length or language.&lt;/p&gt;
-
-&lt;h2&gt;2. &lt;a href="http://www.namemesh.com/"&gt;Name Mesh&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="http://www.namemesh.com/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-namemesh.jpg" alt="Name Mesh" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Name Mesh searches for synonyms and similar words. Use wisely the search box and you will receive useful results.&lt;/p&gt;
-
-&lt;h2&gt;3. &lt;a href="http://www.panabee.com/"&gt;Panabee&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="http://www.panabee.com/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-panabee.jpg" alt="Panabee" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Panabee gives you suggestions inspired by your original idea, using prefixes, suffixes, abbreviations and popular trends. He also suggests words related to the idea.&lt;/p&gt;
-
-&lt;h2&gt;4. &lt;a href="http://impossibility.org/"&gt;Impossibility&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="http://impossibility.org/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-impossibility.jpg" alt="Impossibility" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Impossibility combines your idea with a list of nouns, verbs, and adjectives.&lt;/p&gt;
-
-&lt;h2&gt;5. &lt;a href="http://www.domainsbot.com/"&gt;DomainsBot&lt;/a&gt;&lt;/h2&gt;
-
-&lt;p&gt;&lt;a href="http://www.domainsbot.com/"&gt;&lt;img src="http://gsferreira.com/images/5-awesome-tools-to-craft-the-perfect-domain-name-domainsbot.jpg" alt="DomainsBot" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;DomainsBot offers you the possibility of search by synonyms, prefixes and suffixes, mixing them with your idea.&lt;/p&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;
 </content></entry></feed>
