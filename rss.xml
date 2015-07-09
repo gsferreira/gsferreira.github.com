@@ -1,4 +1,65 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/</guid><link>http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/</link><title>6th Meeting of NetPonto Community in Oporto</title><description>&lt;p&gt;We are bringing to Oporto the 6th Meeting of NetPonto Community.
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/07/reduce-the-path-length-of-a-node-js-project/</guid><link>http://gsferreira.com/archive/2015/07/reduce-the-path-length-of-a-node-js-project/</link><title>Reduce the path length of a Node.js project</title><description>&lt;p&gt;Are you fighting with the path length of your Node.js projects? &lt;/p&gt;
+
+&lt;p&gt;If you are using Microsoft Visual Studio to development, I bet you do. If you don't, you will (this isn't any curse that I'm throwing at you)!&lt;/p&gt;
+
+&lt;p&gt;Windows has the "Maximum Path Length Limitation" that is terrible for Node.JS projects.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As you know, when you install a package in Node.js, the npm will place the dependencies under the package folder. This process is recursive for each package, so you can easily overcome the path length.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, there's no silver bullet to fix it (I'm not a Node.js guru, so please let me know if I'm wrong), but we can follow some tips to deal with it.&lt;/p&gt;
+
+</description><pubDate>Wed, 08 Jul 2015 23:00:00 Z</pubDate><a10:updated>2015-07-08T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Are you fighting with the path length of your Node.js projects? &lt;/p&gt;
+
+&lt;p&gt;If you are using Microsoft Visual Studio to development, I bet you do. If you don't, you will (this isn't any curse that I'm throwing at you)!&lt;/p&gt;
+
+&lt;p&gt;Windows has the "Maximum Path Length Limitation" that is terrible for Node.JS projects.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;As you know, when you install a package in Node.js, the npm will place the dependencies under the package folder. This process is recursive for each package, so you can easily overcome the path length.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, there's no silver bullet to fix it (I'm not a Node.js guru, so please let me know if I'm wrong), but we can follow some tips to deal with it.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/reduce-the-path-length-of-your-node-js-project-dependencies-dependencies-everywhere.jpg" alt="dependencies everywhere" /&gt;&lt;/p&gt;
+
+&lt;h3&gt;1. Azure Cloud Services - Change the output directory&lt;/h3&gt;
+
+&lt;p&gt;If you are getting an error when you publish your cloud service to azure, it's probably because the deployment will place the output into a subfolder.
+I've already had &lt;a href="http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/"&gt;blogged how to deal with it and you can find it here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;2. Find the packages that are leading you into the limit and install them&lt;/h3&gt;
+
+&lt;p&gt;Imagine that you install a package that has a dependency from &lt;em&gt;request&lt;/em&gt; and that dependency made you overcome the path limit.
+Go to the npm and install the package explicitly. Now, Node.js will not install the request in a subfolder of your first package.   &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install request --save
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;3. Remove dev packages&lt;/h3&gt;
+
+&lt;p&gt;Install the packages with the &lt;em&gt;"--production"&lt;/em&gt; flag to remove all development only packages.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm install --production
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h3&gt;4. Remove duplicated packages&lt;/h3&gt;
+
+&lt;p&gt;Npm has a command that will find for you the duplicated dependencies and install them as top dependencies.
+With a simple command you can simplify your dependency tree and reduce your project size.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;npm dedupe 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps. Feel free to leave comments and ask questions.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/</guid><link>http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/</link><title>6th Meeting of NetPonto Community in Oporto</title><description>&lt;p&gt;We are bringing to Oporto the 6th Meeting of NetPonto Community.
 The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 11 July 2015. &lt;/p&gt;
 
 &lt;h2&gt;Program&lt;/h2&gt;
@@ -617,25 +678,6 @@ var blobService = azure.createBlobService('mystorage', 'my-access-key');
 &lt;pre&gt;&lt;code&gt;var azure = require('azure-storage');
 var devStoreCreds = azure.generateDevelopmentStorageCredendentials();
 var blobService = azure.createBlobService(devStoreCreds);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hope this helps.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/01/t-sql-which-schema-is-consuming-more-space/</guid><link>http://gsferreira.com/archive/2015/01/t-sql-which-schema-is-consuming-more-space/</link><title>T-SQL: Which schema is consuming more space?</title><description>&lt;p&gt;Imagine that you have separate schemas in your multi-tenant data architecture and you want to know who is consuming more space. How can you do it?&lt;/p&gt;
-
-</description><pubDate>Thu, 29 Jan 2015 00:00:00 Z</pubDate><a10:updated>2015-01-29T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Imagine that you have separate schemas in your multi-tenant data architecture and you want to know who is consuming more space. How can you do it?&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Just run the following query:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;SELECT  SCHEMA_NAME(obj.schema_id) AS 'Schema',
-        SUM(stats.reserved_page_count) * 8.0 / 1024 AS SizeInMB
-FROM    sys.dm_db_partition_stats stats
-    JOIN    sys.indexes idx ON idx.object_id = stats.object_id AND idx.index_id = stats.index_id
-    JOIN    sys.objects obj ON idx.object_id = obj.object_id
-WHERE   obj.Type = 'U'
-GROUP BY    obj.schema_id
-ORDER BY    SizeInMB DESC 
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;

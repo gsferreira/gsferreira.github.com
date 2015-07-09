@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2015-07-09T22:28:22.2287896+01:00" />
-    <meta name="keywords" content="Food" />
+    <meta name="keywords" content="Node.js" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Geeks can cook: Tuna Empanadas - 
+            Reduce the path length of a Node.js project - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/07/reduce-the-path-length-of-a-node-js-project/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,63 +39,64 @@
 
 
 <div class="post">
-    <h1>Geeks can cook: Tuna Empanadas</h1> 
+    <h1>Reduce the path length of a Node.js project</h1> 
       <div class="meta">
-        <p class="posted">13 jun 2014</p>
+        <p class="posted">09 jul 2015</p>
         <ul class="categories">
-          <li><a href="/category/food" title="Snow.Models.Category">Food</a></li>
+          <li><a href="/category/node.js" title="Snow.Models.Category">Node.js</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>This blog post is about one of my other passions, cook! I'm a foodie, not just about the eating part of it, but I also love to cook. So, I want to do some tasty posts and share with you some simple recipes.</p>
+    <p>Are you fighting with the path length of your Node.js projects? </p>
 
-<p>Being a programmer is not a healthy profession. We spend long hours sitting in front of a computer and this isn't helping our body. But we can change it by making some sport and putting the fast food aside and start cooking healthy and tasty food!</p>
+<p>If you are using Microsoft Visual Studio to development, I bet you do. If you don't, you will (this isn't any curse that I'm throwing at you)!</p>
 
-<p>You can start right now, so I wrote down a recipe that you can make in 15 minutes. I hope you like!</p>
+<p>Windows has the "Maximum Path Length Limitation" that is terrible for Node.JS projects.</p>
+
+<blockquote>
+  <p><em>"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."</em></p>
+</blockquote>
+
+<p>As you know, when you install a package in Node.js, the npm will place the dependencies under the package folder. This process is recursive for each package, so you can easily overcome the path length.</p>
+
+<p>Unfortunately, there's no silver bullet to fix it (I'm not a Node.js guru, so please let me know if I'm wrong), but we can follow some tips to deal with it.</p>
 
 <!--excerpt-->
 
-<h1>Tuna Empanadas</h1>
+<p><img src="/images/reduce-the-path-length-of-your-node-js-project-dependencies-dependencies-everywhere.jpg" alt="dependencies everywhere" /></p>
 
-<p>Preparation time: 15 minutes</p>
+<h3>1. Azure Cloud Services - Change the output directory</h3>
 
-<p>Serves: 4</p>
+<p>If you are getting an error when you publish your cloud service to azure, it's probably because the deployment will place the output into a subfolder.
+I've already had <a href="http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/">blogged how to deal with it and you can find it here</a>.</p>
 
-<h2>Ingredients:</h2>
+<h3>2. Find the packages that are leading you into the limit and install them</h3>
 
-<ul>
-<li>2 Shortcrust pastry packs</li>
-<li>3 Tuna cans</li>
-<li>1 Corn can</li>
-<li>2 Onions</li>
-<li>2 Garlic cloves</li>
-<li>1 Sugar spoon</li>
-<li>Oregano</li>
-<li>Salt and pepper</li>
-<li>Olive oil</li>
-<li>1 Egg</li>
-</ul>
+<p>Imagine that you install a package that has a dependency from <em>request</em> and that dependency made you overcome the path limit.
+Go to the npm and install the package explicitly. Now, Node.js will not install the request in a subfolder of your first package.   </p>
 
-<p><img src="/images/geeks-can-cook-tuna-empanadas-ingredients.jpg" alt="Tuna Empanada - Ingredients" /></p>
+<pre><code>npm install request --save
+</code></pre>
 
-<h2>Method:</h2>
+<h3>3. Remove dev packages</h3>
 
-<ol>
-<li>Heat a little oil in a frying pan. </li>
-<li>Saute onions and garlic minced for 5 minutes. </li>
-<li>Add the drained tuna and corn.</li>
-<li>Season it with sugar, salt, oregano and pepper.</li>
-<li>Open the 2 shortcrust pastry packs and make 4 rectangles. Add the tuna and corn filling to two of them. Cover it with the other 2 rectangles and close them with the help of a fork.</li>
-<li>Brush with the beaten egg.</li>
-<li>Place in the oven preheated to 200ºC for 7 minutes. </li>
-</ol>
+<p>Install the packages with the <em>"--production"</em> flag to remove all development only packages.</p>
 
-<p>The final result.</p>
+<pre><code>npm install --production
+</code></pre>
 
-<p><img src="/images/geeks-can-cook-tuna-empanadas-final-result.jpg" alt="Tuna Empanada" /></p>
+<h3>4. Remove duplicated packages</h3>
+
+<p>Npm has a command that will find for you the duplicated dependencies and install them as top dependencies.
+With a simple command you can simplify your dependency tree and reduce your project size.</p>
+
+<pre><code>npm dedupe 
+</code></pre>
+
+<p>Hope this helps. Feel free to leave comments and ask questions.</p>
 
 
 
@@ -118,14 +119,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/';
+                this.page.url = 'http://gsferreira.com/archive/2015/07/reduce-the-path-length-of-a-node-js-project/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/06/geeks-can-cook-tuna-empanadas/';
+    var disqus_url = 'http://gsferreira.com/archive/2015/07/reduce-the-path-length-of-a-node-js-project/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
