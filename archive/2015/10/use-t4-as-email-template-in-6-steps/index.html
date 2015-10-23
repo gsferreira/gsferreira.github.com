@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2015-10-23T22:02:50.9773547+01:00" />
-    <meta name="keywords" content="AngularJS" />
+    <meta name="keywords" content="" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            AngularJS - After Render Directive - 
+            Use T4 as email template in 6 steps - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,48 +39,129 @@
 
 
 <div class="post">
-    <h1>AngularJS - After Render Directive</h1> 
+    <h1>Use T4 as email template in 6 steps</h1> 
       <div class="meta">
-        <p class="posted">28 mar 2015</p>
+        <p class="posted">23 out 2015</p>
         <ul class="categories">
-          <li><a href="/category/angularjs" title="Snow.Models.Category">AngularJS</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Do you ever wanted to execute code after your Angular template is completely rendered?</p>
+    <p>When you want to send emails from .net applications how do you do it?</p>
 
-<p>This post is the answer of how you can accomplish that.</p>
+<p>Do you create an instance of StringBuilder and start adding texts?!</p>
 
-<p>This a simple tip, but I believe that can be really useful.</p>
+<p>And when you want to format the body as HTML? How do you do it?! A bigger string?!  </p>
+
+<p>And if you could write your templates as plain text and still be capable to inject values like names, dates or other values?</p>
+
+<p>The good news is that you can and you have a good old friend to help you: <strong>T4 Templates</strong>.  </p>
+
+<p>Let's see how to do it.</p>
 
 <!--excerpt-->
 
-<p>Add the following directive to your application.</p>
+<p><strong>1. Open your project and add a template</strong></p>
 
-<pre><code>myApp.directive('afterRender', ['$timeout', function ($timeout) {
-    var def = {
-        restrict: 'A',
-        terminal: true,
-        transclude: false,
-        link: function (scope, element, attrs) {
-            $timeout(scope.$eval(attrs.afterRender), 0);  //Calling a scoped method
+<p>Right click in your project and go to the option  "Add > New Item", select the "Runtime Text Template" and name it <strong>("WelcomeMail.tt" for example)</strong>.</p>
+
+<p><img src="/images/use-t4-as-email-template-in-6-steps-create-t4-template.png" alt="Create T4 Templates" /> </p>
+
+<p><strong>2. Create your text template</strong></p>
+
+<p>Open the template (<strong>.tt file</strong>) and write your email with all the HTML formatting that you want.
+<em>Find an Html Mail template example <a href="https://github.com/leemunroe/responsive-html-email-template">here</a></em></p>
+
+<pre><code>&lt;#@ template language="C#" #&gt;
+&lt;#@ assembly name="System.Core" #&gt;
+&lt;#@ import namespace="System.Linq" #&gt;
+&lt;#@ import namespace="System.Text" #&gt;
+&lt;#@ import namespace="System.Collections.Generic" #&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt; 
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+&lt;/head&gt;
+&lt;body style="width:100%; margin:0; padding:0; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;"&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Hello!&lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet, congue appareat cum ne. Sit postea mediocrem an, erat dissentiet est an. Eu est eius veri assum, et nam sonet molestiae urbanitas. Cu minim cetero nam, utamur accumsan ius in. Est et sint quaestio, cu his primis invenire rationibus.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Cibo senserit mnesarchum qui te, sonet ceteros evertitur ad ius, an eam autem mediocrem scribentur. In esse vero sapientem eos, modus consequuntur sit ei, ius et sale fabulas. Te populo commodo gubergren sed, pri autem discere in, accumsan antiopam an usu. Per viris veniam prompta et. In est quas virtute, mea accumsan invidunt id, usu ad cibo justo imperdiet.
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><strong>3. Create variables to use into the template</strong></p>
+
+<p>First you need to create a partial class for the T4 template that you created in the step 2.</p>
+
+<p>In your partial add a property for each value that you want to inject into the template (destination email or signature for example).</p>
+
+<p>Create a constructor to initialize the properties that you have created.</p>
+
+<pre><code>using System.Net.Mail;
+
+namespace MailT4Template
+{
+    public partial class WelcomeMail
+    {
+        public MailAddress To { get; set; }
+        public WelcomeMail(MailAddress to)
+        {
+            this.To = to;   
         }
-    };
-    return def;
-}]);
+    }
+}
 </code></pre>
 
-<p>Now, add the <em>after-render</em> directive to an element in your template:</p>
+<p><strong>4. Adapt the template to use the injected values</strong></p>
 
-<pre><code>&lt;div after-render="missionCompled"&gt;&lt;/div&gt;
+<p>Just open a C# block code with the tags <strong>&lt;#</strong> and <strong>#></strong> and use the equal operator to get the variable value.</p>
+
+<pre><code>&lt;strong&gt;Hello &lt;#= To.DisplayName #&gt;!&lt;/strong&gt;
 </code></pre>
 
-<p>At this point, your application will run the <em>missionCompled</em> function (or other that you want) in your controller, after the div is rendered.</p>
+<p><strong>5. Transform the text template</strong></p>
 
-<p>You can see the working demo on <a href="https://jsfiddle.net/gsferreira/h53okjtu/">JSFiddle</a>.</p>
+<p>Invoke the template with the parameters to get the transformed text.</p>
+
+<pre><code>var to = new MailAddress("luke@starwars.com", "Luke");
+WelcomeMail mailTemplate = new WelcomeMail(to);
+mailTemplate.TransformText();
+</code></pre>
+
+<p><strong>6. Compose your email</strong></p>
+
+<p>Use the transformed text and send the email.</p>
+
+<pre><code>var from = new MailAddress("mail@mail.com");
+var to = new MailAddress("luke@starwars.com", "Luke");
+
+WelcomeMail mailTemplate = new WelcomeMail(to);
+
+var mail = new MailMessage(from, to);
+var client = new SmtpClient();
+client.Port = 587;
+client.DeliveryMethod = SmtpDeliveryMethod.Network;
+client.UseDefaultCredentials = false;
+client.EnableSsl = true;
+client.Credentials = new NetworkCredential("admin@mail.com","UseTheForce#");
+client.Host = "mail.mail.com";
+
+mail.Subject = "This is a welcom email.";
+mail.IsBodyHtml = true;
+mail.Body = mailTemplate.TransformText();
+client.Send(mail);
+</code></pre>
 
 <p>I hope that this helps you.</p>
 
@@ -105,14 +186,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/';
+                this.page.url = 'http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/';
+    var disqus_url = 'http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
