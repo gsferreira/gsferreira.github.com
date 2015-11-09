@@ -1,4 +1,104 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/</guid><link>http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/</link><title>Use T4 as email template in 6 steps</title><description>&lt;p&gt;When you want to send emails from .net applications how do you do it?&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/11/is-cqrs-too-complicated-no/</guid><link>http://gsferreira.com/archive/2015/11/is-cqrs-too-complicated-no/</link><title>Is CQRS too complicated? No!</title><description>&lt;p&gt;How do you feel after reading a few articles about CQRS (Command Query Responsibility Segregation)? Confused?! &lt;/p&gt;
+
+&lt;p&gt;The good news is that's not your problem.&lt;/p&gt;
+
+&lt;p&gt;CQRS is a simple concept, but usually is presented side by side with other patterns creating the perception that CQRS requires a ton of elements to work. &lt;/p&gt;
+
+&lt;p&gt;This post pretends to demonstrate that CQRS can be a simple concept that can evolve according to your needs.&lt;/p&gt;
+
+</description><pubDate>Mon, 09 Nov 2015 00:00:00 Z</pubDate><a10:updated>2015-11-09T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;How do you feel after reading a few articles about CQRS (Command Query Responsibility Segregation)? Confused?! &lt;/p&gt;
+
+&lt;p&gt;The good news is that's not your problem.&lt;/p&gt;
+
+&lt;p&gt;CQRS is a simple concept, but usually is presented side by side with other patterns creating the perception that CQRS requires a ton of elements to work. &lt;/p&gt;
+
+&lt;p&gt;This post pretends to demonstrate that CQRS can be a simple concept that can evolve according to your needs.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;h1&gt;So, what is CQRS?&lt;/h1&gt;
+
+&lt;p&gt;The roots of CQRS are based on &lt;a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation"&gt;Command-query separation (CQS)&lt;/a&gt; a principle created by &lt;a href="https://en.wikipedia.org/wiki/Bertrand_Meyer"&gt;Bertrand Meyer&lt;/a&gt; during the development of Eiffel programming language.&lt;/p&gt;
+
+&lt;p&gt;Meyer states that &lt;em&gt;"Asking a question should not change the answer"&lt;/em&gt; and that's the foundation of CQRS.&lt;/p&gt;
+
+&lt;p&gt;We can conclude from that statement that a command is any method that creates, update or delete data, and a query is any method that returns data.&lt;/p&gt;
+
+&lt;p&gt;CQRS is an evolution of CQS, going further with the initial concept and stating that Read and Write models should be distinct.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CQRS is simply that&lt;/strong&gt;, is the segregation of two main responsibilities, the responsibility of read data and the responsibility of mutate data.&lt;/p&gt;
+
+&lt;p&gt;Don't you recognize this principles? "Denormalization", cache systems, read-optimized databases and others, are proof that the industry is already thinking in the problems CQRS want's to solve. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/is-cqrs-too-complicated-no-diagram.png" alt="Diagram CQRS" /&gt;&lt;/p&gt;
+
+&lt;p&gt;It's important to say that there's nothing in CQRS saying that we should use Event Sourcing, Service Bus or another element to implement CQRS. 
+Those patterns or technologies are usually presented with CQRS, adding a new layer of complexity to CQRS.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nothing about CQRS says “you shalt use NServiceBus”. It’s just not there. You’re merely separating infrastructure between handling commands and queries, but the how is quite varied.&lt;/p&gt;
+  
+  &lt;p&gt;&lt;em&gt;&lt;a href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/"&gt;Jimmy Bogard&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1&gt;CQRS Benefits&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;All the following benefits are capabilities that CQRS gives you, but &lt;strong&gt;they aren't required to implement CQRS&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Simple Queries&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Because the Read model is different from the Write model, it's possible to create simpler queries and with better performance. If the Read and the Write model are shared, you will constrain the Queries to the Write structure.&lt;/p&gt;
+
+&lt;p&gt;The system will also benefit of a thinner Read layer.  &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Simple code is fast code&lt;/p&gt;
+  
+  &lt;p&gt;&lt;em&gt;&lt;a href="http://udidahan.com/2009/12/09/clarified-cqrs/"&gt;Udi Dahan&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Separate data store&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since the Read model is separate, you are able to segregate the database, querying a non relational database optimized for queries.&lt;/p&gt;
+
+&lt;p&gt;That will lead us to concepts like Eventual Consistency or Event Sourcing, but it's important to say that CQRS doesn't require this, he just enables the capability.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;It's perfectly possible to implement CQRS using the same data store.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Event sourcing is a completely orthogonal concept to CQRS. While they fit well together, doing CQRS does not require event sourcing, and doing event sourcing does not automatically mean we’re doing CQRS.&lt;/p&gt;
+  
+  &lt;p&gt;&lt;em&gt;&lt;a href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/"&gt;Jimmy Bogard&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Queued workload&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Commands can be processed using a queue, enabling an asynchronous command processing, what can be useful to deal with complex processing or manage the system load.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Segregate load&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Typically the number of queries in a system is much higher than the number of commands. So, why should both be based on the same technologies? &lt;/p&gt;
+
+&lt;p&gt;CQRS enables the segregation of the Load, with the possibility of use a different host for each part of system.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The largest possible benefit though is that it recognizes that their are different architectural properties when dealing with commands and queries … for example it allows us to host the two services differently eg: we can host the read service on 25 servers and the write service on two&lt;/p&gt;
+  
+  &lt;p&gt;&lt;em&gt;&lt;a href="http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/"&gt;Greg Young&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1&gt;Challenges&lt;/h1&gt;
+
+&lt;p&gt;CQRS isn't just benefits. CQRS implies complexity and a new mindset when using it.&lt;/p&gt;
+
+&lt;p&gt;Usually we are formatted to think in CRUD operations, but with CQRS we're led to a Task-based system. We need to rethink the UI to be based on tasks and to deal with the eventual consistency (if we need it).&lt;/p&gt;
+
+&lt;p&gt;I can't say that CQRS fits all the cases or is a tool that you should use always. What I can say is that's an important tool to have in mind when dealing with some complex problems.&lt;/p&gt;
+
+&lt;p&gt;It's important to remember that you should start simple and CQRS enables you to adjust and evolve if you need it. &lt;/p&gt;
+
+&lt;p&gt;Don't try to do all upfront.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/</guid><link>http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/</link><title>Use T4 as email template in 6 steps</title><description>&lt;p&gt;When you want to send emails from .net applications how do you do it?&lt;/p&gt;
 
 &lt;p&gt;Do you create an instance of StringBuilder and start adding texts?!&lt;/p&gt;
 
@@ -837,43 +937,4 @@ Hope to be there next year.&lt;/p&gt;
 
 &lt;p&gt;I believe that Microsoft will fix these small problems and make it more clear.
 Until then, I hope that this helps you.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</guid><link>http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</link><title>AngularJS - After Render Directive</title><description>&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
-
-&lt;p&gt;This post is the answer of how you can accomplish that.&lt;/p&gt;
-
-&lt;p&gt;This a simple tip, but I believe that can be really useful.&lt;/p&gt;
-
-</description><pubDate>Sat, 28 Mar 2015 00:00:00 Z</pubDate><a10:updated>2015-03-28T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
-
-&lt;p&gt;This post is the answer of how you can accomplish that.&lt;/p&gt;
-
-&lt;p&gt;This a simple tip, but I believe that can be really useful.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Add the following directive to your application.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;myApp.directive('afterRender', ['$timeout', function ($timeout) {
-    var def = {
-        restrict: 'A',
-        terminal: true,
-        transclude: false,
-        link: function (scope, element, attrs) {
-            $timeout(scope.$eval(attrs.afterRender), 0);  //Calling a scoped method
-        }
-    };
-    return def;
-}]);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, add the &lt;em&gt;after-render&lt;/em&gt; directive to an element in your template:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div after-render="missionCompled"&amp;gt;&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;At this point, your application will run the &lt;em&gt;missionCompled&lt;/em&gt; function (or other that you want) in your controller, after the div is rendered.&lt;/p&gt;
-
-&lt;p&gt;You can see the working demo on &lt;a href="https://jsfiddle.net/gsferreira/h53okjtu/"&gt;JSFiddle&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I hope that this helps you.&lt;/p&gt;
 </a10:content></item></channel></rss>
