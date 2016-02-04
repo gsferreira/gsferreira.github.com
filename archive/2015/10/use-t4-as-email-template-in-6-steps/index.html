@@ -1,0 +1,260 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width" />
+     <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta http-equiv="last-modified" content="2016-02-04T22:06:10.1404045+00:00" />
+    <meta name="keywords" content="" />
+	
+    <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
+	
+    <title>
+            Use T4 as email template in 6 steps - 
+        Guilherme Ferreira
+    </title>
+    <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/" />
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        
+	<header id="masthead" class="simple-header" role="banner">
+	<hgroup>
+		<a href="/" title="Home"><img width="40" height="40" src="http://www.gravatar.com/avatar/93c1c26212f9eb3673538e6ad6ca7eb4.png" title="logo"  alt="logo"></a>
+		<h1 class="site-title"><a href="/" title="Snow Byte" rel="home">Guilherme Ferreira</a>
+	</hgroup>
+</header>
+        
+
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+
+<div class="post">
+    <h1>Use T4 as email template in 6 steps</h1> 
+      <div class="meta">
+        <p class="posted">23 out 2015</p>
+        <ul class="categories">
+        </ul>
+      </div>
+    </div>
+    
+    
+        
+    <p>When you want to send emails from .net applications how do you do it?</p>
+
+<p>Do you create an instance of StringBuilder and start adding texts?!</p>
+
+<p>And when you want to format the body as HTML? How do you do it?! A bigger string?!  </p>
+
+<p>And if you could write your templates as plain text and still be capable to inject values like names, dates or other values?</p>
+
+<p>The good news is that you can and you have a good old friend to help you: <strong>T4 Templates</strong>.  </p>
+
+<p>Let's see how to do it.</p>
+
+<!--excerpt-->
+
+<p><strong>1. Open your project and add a template</strong></p>
+
+<p>Right click in your project and go to the option  "Add > New Item", select the "Runtime Text Template" and name it <strong>("WelcomeMail.tt" for example)</strong>.</p>
+
+<p><img src="/images/use-t4-as-email-template-in-6-steps-create-t4-template.png" alt="Create T4 Templates" /> </p>
+
+<p><strong>2. Create your text template</strong></p>
+
+<p>Open the template (<strong>.tt file</strong>) and write your email with all the HTML formatting that you want.
+<em>Find an Html Mail template example <a href="https://github.com/leemunroe/responsive-html-email-template">here</a></em></p>
+
+<pre><code>&lt;#@ template language="C#" #&gt;
+&lt;#@ assembly name="System.Core" #&gt;
+&lt;#@ import namespace="System.Linq" #&gt;
+&lt;#@ import namespace="System.Text" #&gt;
+&lt;#@ import namespace="System.Collections.Generic" #&gt;
+
+&lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&gt; 
+&lt;html xmlns="http://www.w3.org/1999/xhtml"&gt;
+&lt;head&gt;
+&lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;
+&lt;/head&gt;
+&lt;body style="width:100%; margin:0; padding:0; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;"&gt;
+    &lt;p&gt;
+        &lt;strong&gt;Hello!&lt;/strong&gt;
+    &lt;/p&gt;
+    &lt;p&gt;
+        Lorem ipsum dolor sit amet, congue appareat cum ne. Sit postea mediocrem an, erat dissentiet est an. Eu est eius veri assum, et nam sonet molestiae urbanitas. Cu minim cetero nam, utamur accumsan ius in. Est et sint quaestio, cu his primis invenire rationibus.
+    &lt;/p&gt;
+    &lt;p&gt;
+        Cibo senserit mnesarchum qui te, sonet ceteros evertitur ad ius, an eam autem mediocrem scribentur. In esse vero sapientem eos, modus consequuntur sit ei, ius et sale fabulas. Te populo commodo gubergren sed, pri autem discere in, accumsan antiopam an usu. Per viris veniam prompta et. In est quas virtute, mea accumsan invidunt id, usu ad cibo justo imperdiet.
+    &lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;
+</code></pre>
+
+<p><strong>3. Create variables to use into the template</strong></p>
+
+<p>First you need to create a partial class for the T4 template that you created in the step 2.</p>
+
+<p>In your partial add a property for each value that you want to inject into the template (destination email or signature for example).</p>
+
+<p>Create a constructor to initialize the properties that you have created.</p>
+
+<pre><code>using System.Net.Mail;
+
+namespace MailT4Template
+{
+    public partial class WelcomeMail
+    {
+        public MailAddress To { get; set; }
+        public WelcomeMail(MailAddress to)
+        {
+            this.To = to;   
+        }
+    }
+}
+</code></pre>
+
+<p><strong>4. Adapt the template to use the injected values</strong></p>
+
+<p>Just open a C# block code with the tags <strong>&lt;#</strong> and <strong>#></strong> and use the equal operator to get the variable value.</p>
+
+<pre><code>&lt;strong&gt;Hello &lt;#= To.DisplayName #&gt;!&lt;/strong&gt;
+</code></pre>
+
+<p><strong>5. Transform the text template</strong></p>
+
+<p>Invoke the template with the parameters to get the transformed text.</p>
+
+<pre><code>var to = new MailAddress("luke@starwars.com", "Luke");
+WelcomeMail mailTemplate = new WelcomeMail(to);
+mailTemplate.TransformText();
+</code></pre>
+
+<p><strong>6. Compose your email</strong></p>
+
+<p>Use the transformed text and send the email.</p>
+
+<pre><code>var from = new MailAddress("mail@mail.com");
+var to = new MailAddress("luke@starwars.com", "Luke");
+
+WelcomeMail mailTemplate = new WelcomeMail(to);
+
+var mail = new MailMessage(from, to);
+var client = new SmtpClient();
+client.Port = 587;
+client.DeliveryMethod = SmtpDeliveryMethod.Network;
+client.UseDefaultCredentials = false;
+client.EnableSsl = true;
+client.Credentials = new NetworkCredential("admin@mail.com","UseTheForce#");
+client.Host = "mail.mail.com";
+
+mail.Subject = "This is a welcom email.";
+mail.IsBodyHtml = true;
+mail.Body = mailTemplate.TransformText();
+client.Send(mail);
+</code></pre>
+
+<p>I hope that this helps you.</p>
+
+
+
+	<div class="post-social-links">
+        <a href="http://twitter.com/gsferreira"><img src="/images/000-twitter-bird-48.png" title="gsferreira"/></a>
+        <a href="http://gsferreira.com/rss.xml"><img src="/images/000-rss-feeds-48.png" title="gsferreira.com feed" onClick="_gaq.push(['_trackEvent', 'Post', 'RssSubscribe', 'Rss Subscribe on Post']);"/></a>
+    </div>
+	<div class="addthis_toolbox addthis_default_style" style="float:right;">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_linkedin_counter"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+    </div>
+	
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'gsferreira';
+    var disqus_url = 'http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-****"></script>
+
+
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+        </div>
+        <!-- #main -->
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="site-info">
+                Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a> using <a href="https://github.com/gsferreira/letsnow" rel="generator">letsnow theme</a>.	
+            </div>
+            <!-- .site-info -->
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-33436813-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+    
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+</body>
+</html>

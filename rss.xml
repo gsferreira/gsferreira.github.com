@@ -1,4 +1,458 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/09/7th-meeting-of-netponto-community-in-oporto/</guid><link>http://gsferreira.com/archive/2015/09/7th-meeting-of-netponto-community-in-oporto/</link><title>7th Meeting of NetPonto Community in Oporto</title><description>&lt;p&gt;We are bringing to Oporto the 7th Meeting of NetPonto Community.
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/02/the-shining-new-csharp-scripting-api/</guid><link>http://gsferreira.com/archive/2016/02/the-shining-new-csharp-scripting-api/</link><title>The shining new C# Scripting API</title><description>&lt;p&gt;&lt;strong&gt;Say hello to the new Scripting Language: C#!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since the first days the .NET platform lacks scripting capabilities compared to dynamic languages like JavaScript or Ruby, but those days are over.&lt;/p&gt;
+
+&lt;p&gt;Why this is awesome?! If you are familiar with the capabilities that VBA brings the Office users and how many "Excel VBA Programming" books were sold to non developers, you will understand why.
+And it's &lt;a href="https://github.com/dotnet/roslyn/tree/master/src/Scripting"&gt;open source&lt;/a&gt;!!!&lt;/p&gt;
+
+</description><pubDate>Wed, 03 Feb 2016 00:00:00 Z</pubDate><a10:updated>2016-02-03T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;&lt;strong&gt;Say hello to the new Scripting Language: C#!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since the first days the .NET platform lacks scripting capabilities compared to dynamic languages like JavaScript or Ruby, but those days are over.&lt;/p&gt;
+
+&lt;p&gt;Why this is awesome?! If you are familiar with the capabilities that VBA brings the Office users and how many "Excel VBA Programming" books were sold to non developers, you will understand why.
+And it's &lt;a href="https://github.com/dotnet/roslyn/tree/master/src/Scripting"&gt;open source&lt;/a&gt;!!!&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;In the past few years we have been following the growing of the new .NET Compiler, commonly known as Roslyn. &lt;/p&gt;
+
+&lt;p&gt;One of the great features of Roslyn is the Scripting API. The scripting API can enable applications to evaluate code at runtime providing the API to implement an excellent scripting experience.&lt;/p&gt;
+
+&lt;p&gt;In December Microsoft finally released the Roslyn version 1.1.1 (stable version) in nuget that includes the Scripting API (that has been removed from Roslyn 1.0 release by the team). &lt;/p&gt;
+
+&lt;p&gt;Here you can find some examples of how to use the scripting API and what you can do with it.&lt;/p&gt;
+
+&lt;h2&gt;How to start&lt;/h2&gt;
+
+&lt;p&gt;Install the nuget Scripting package (&lt;a href="http://www.nuget.org/packages/Microsoft.CodeAnalysis.CSharp.Scripting/"&gt;Microsoft.CodeAnalysis.CSharp.Scripting&lt;/a&gt;) in your project.&lt;/p&gt;
+
+&lt;p&gt;In the following example I used the version 1.1.1.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Install-Package Microsoft.CodeAnalysis.CSharp.Scripting -Version 1.1.1
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Expression evaluation&lt;/h2&gt;
+
+&lt;p&gt;Evaluate the result of an C# expression.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;object result = null;
+
+CSharpScript.EvaluateAsync("System.DateTime.Today.Year")
+    .ContinueWith(s =&amp;gt; result = s.Result).Wait();
+
+Assert.AreEqual(DateTime.Today.Year, result);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Expression evaluation with strong type&lt;/h2&gt;
+
+&lt;p&gt;Evaluate an expression with an expected result type. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int result = 0;
+
+CSharpScript.EvaluateAsync&amp;lt;int&amp;gt;("100 * 2")
+    .ContinueWith(s =&amp;gt; result = s.Result).Wait();
+
+Assert.AreEqual(200, result);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Evaluation with parameters&lt;/h2&gt;
+
+&lt;p&gt;Send parameters to the expression and use them in the script logic. &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class Globals
+{
+    public int NumberOfStudents;
+    public int StudentsPerClass;
+}
+
+var globals = new Globals { NumberOfStudents = 80, StudentsPerClass = 15 };
+
+int result = 0;
+CSharpScript.EvaluateAsync&amp;lt;int&amp;gt;("NumberOfStudents/StudentsPerClass", globals: globals)
+    .ContinueWith(s =&amp;gt; result = s.Result).Wait();
+
+Assert.AreEqual(globals.NumberOfStudents / globals.StudentsPerClass, result);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Build a script and run it multiple times&lt;/h2&gt;
+
+&lt;p&gt;The scripting API enables you to create an expression and then use it multiple times, removing the compile time of the remaining evaluations.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var script = CSharpScript.Create&amp;lt;decimal&amp;gt;("NumberOfStudents/StudentsPerClass", globalsType: typeof(Globals));
+
+script.Compile();
+
+for (int i = 1; i &amp;lt; 10; i++)
+{
+    script.RunAsync(new Globals { NumberOfStudents = i, StudentsPerClass = 5 })
+        .ContinueWith(s =&amp;gt; 
+            Assert.AreEqual(i / 5, s.Result.ReturnValue))
+        .Wait();
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;References&lt;/h2&gt;
+
+&lt;p&gt;The script can use references to other assemblies with a simple instruction.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;string result = string.Empty;
+
+CSharpScript.EvaluateAsync&amp;lt;string&amp;gt;("System.Configuration.ConfigurationManager.AppSettings[\"MyValue\"].ToString()", 
+ScriptOptions.Default.WithReferences(typeof(System.Configuration.ConfigurationManager).Assembly))
+    .ContinueWith(s =&amp;gt; result = s.Result).Wait();
+
+Assert.AreEqual(ConfigurationManager.AppSettings["MyValue"].ToString(), result);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Imports&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;int result = 0;
+CSharpScript.EvaluateAsync&amp;lt;int&amp;gt;("DateTime.Today.Year",
+ScriptOptions.Default.WithImports("System"))
+    .ContinueWith(s =&amp;gt; result = s.Result).Wait();
+
+Assert.AreEqual(DateTime.Today.Year, result);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Dynamic Support&lt;/h2&gt;
+
+&lt;p&gt;To use dynamic objects in scripts we need to add a reference to the &lt;em&gt;System.Code&lt;/em&gt;, &lt;em&gt;Microsoft.CSharp&lt;/em&gt; and &lt;em&gt;System.Dynamic&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;int result = 0;
+
+CSharpScript.EvaluateAsync&amp;lt;int&amp;gt;(@"
+    dynamic value = 30;
+    return value;",
+ScriptOptions.Default.WithImports("System.Dynamic")
+    .AddReferences(
+        Assembly.GetAssembly(typeof(System.Dynamic.DynamicObject)),  // System.Code
+        Assembly.GetAssembly(typeof(Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo)),  // Microsoft.CSharp
+        Assembly.GetAssembly(typeof(System.Dynamic.ExpandoObject))  // System.Dynamic
+    ))
+    .ContinueWith(s =&amp;gt; result = s.Result).Wait();
+
+Assert.AreEqual(30, result);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Access to script variables&lt;/h2&gt;
+
+&lt;pre&gt;&lt;code&gt;var globals = new Globals { NumberOfStudents = 80, StudentsPerClass = 10 };
+
+ScriptState state = null;
+
+CSharpScript.RunAsync(@"
+    bool shouldOpenClass = NumberOfStudents &amp;gt;= StudentsPerClass;
+    int numberOfClasses = NumberOfStudents/StudentsPerClass;
+", globals: globals)
+.ContinueWith(s =&amp;gt; state = s.Result).Wait();
+
+Assert.AreEqual(true, state.GetVariable("shouldOpenClass").Value);
+Assert.AreEqual(8, state.GetVariable("numberOfClasses").Value);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Those are just a few examples and I recommend you check out the &lt;a href="https://github.com/dotnet/roslyn"&gt;Roslyn Github Repository&lt;/a&gt;.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/11/is-cqrs-too-complicated-no/</guid><link>http://gsferreira.com/archive/2015/11/is-cqrs-too-complicated-no/</link><title>Is CQRS too complicated? No!</title><description>&lt;p&gt;How do you feel after reading a few articles about CQRS (Command Query Responsibility Segregation)? Confused?! &lt;/p&gt;
+
+&lt;p&gt;The good news is that's not your problem.&lt;/p&gt;
+
+&lt;p&gt;CQRS is a simple concept, but usually is presented side by side with other patterns creating the perception that CQRS requires a ton of elements to work. &lt;/p&gt;
+
+&lt;p&gt;This post pretends to demonstrate that CQRS can be a simple concept that can evolve according to your needs.&lt;/p&gt;
+
+</description><pubDate>Mon, 09 Nov 2015 00:00:00 Z</pubDate><a10:updated>2015-11-09T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;How do you feel after reading a few articles about CQRS (Command Query Responsibility Segregation)? Confused?! &lt;/p&gt;
+
+&lt;p&gt;The good news is that's not your problem.&lt;/p&gt;
+
+&lt;p&gt;CQRS is a simple concept, but usually is presented side by side with other patterns creating the perception that CQRS requires a ton of elements to work. &lt;/p&gt;
+
+&lt;p&gt;This post pretends to demonstrate that CQRS can be a simple concept that can evolve according to your needs.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;h1&gt;So, what is CQRS?&lt;/h1&gt;
+
+&lt;p&gt;The roots of CQRS are based on &lt;a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation"&gt;Command-query separation (CQS)&lt;/a&gt; a principle created by &lt;a href="https://en.wikipedia.org/wiki/Bertrand_Meyer"&gt;Bertrand Meyer&lt;/a&gt; during the development of Eiffel programming language.&lt;/p&gt;
+
+&lt;p&gt;Meyer states that &lt;em&gt;"Asking a question should not change the answer"&lt;/em&gt; and that's the foundation of CQRS.&lt;/p&gt;
+
+&lt;p&gt;We can conclude from that statement that a command is any method that creates, update or delete data, and a query is any method that returns data.&lt;/p&gt;
+
+&lt;p&gt;CQRS is an evolution of CQS, going further with the initial concept and stating that Read and Write models should be distinct.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;CQRS is simply that&lt;/strong&gt;, is the segregation of two main responsibilities, the responsibility of read data and the responsibility of mutate data.&lt;/p&gt;
+
+&lt;p&gt;Don't you recognize this principles? "Denormalization", cache systems, read-optimized databases and others, are proof that the industry is already thinking in the problems CQRS want's to solve. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/is-cqrs-too-complicated-no-diagram.png" alt="Diagram CQRS" /&gt;&lt;/p&gt;
+
+&lt;p&gt;It's important to say that there's nothing in CQRS saying that we should use Event Sourcing, Service Bus or another element to implement CQRS. 
+Those patterns or technologies are usually presented with CQRS, adding a new layer of complexity to CQRS.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Nothing about CQRS says “you shalt use NServiceBus”. It’s just not there. You’re merely separating infrastructure between handling commands and queries, but the how is quite varied.&lt;/p&gt;
+  
+  &lt;p&gt;&lt;em&gt;&lt;a href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/"&gt;Jimmy Bogard&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1&gt;CQRS Benefits&lt;/h1&gt;
+
+&lt;p&gt;&lt;em&gt;All the following benefits are capabilities that CQRS gives you, but &lt;strong&gt;they aren't required to implement CQRS&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Simple Queries&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Because the Read model is different from the Write model, it's possible to create simpler queries and with better performance. If the Read and the Write model are shared, you will constrain the Queries to the Write structure.&lt;/p&gt;
+
+&lt;p&gt;The system will also benefit of a thinner Read layer.  &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Simple code is fast code&lt;/p&gt;
+  
+  &lt;p&gt;&lt;em&gt;&lt;a href="http://udidahan.com/2009/12/09/clarified-cqrs/"&gt;Udi Dahan&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Separate data store&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Since the Read model is separate, you are able to segregate the database, querying a non relational database optimized for queries.&lt;/p&gt;
+
+&lt;p&gt;That will lead us to concepts like Eventual Consistency or Event Sourcing, but it's important to say that CQRS doesn't require this, he just enables the capability.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;It's perfectly possible to implement CQRS using the same data store.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;Event sourcing is a completely orthogonal concept to CQRS. While they fit well together, doing CQRS does not require event sourcing, and doing event sourcing does not automatically mean we’re doing CQRS.&lt;/p&gt;
+  
+  &lt;p&gt;&lt;em&gt;&lt;a href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/"&gt;Jimmy Bogard&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;Queued workload&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Commands can be processed using a queue, enabling an asynchronous command processing, what can be useful to deal with complex processing or manage the system load.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Segregate load&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Typically the number of queries in a system is much higher than the number of commands. So, why should both be based on the same technologies? &lt;/p&gt;
+
+&lt;p&gt;CQRS enables the segregation of the Load, with the possibility of use a different host for each part of system.&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The largest possible benefit though is that it recognizes that their are different architectural properties when dealing with commands and queries … for example it allows us to host the two services differently eg: we can host the read service on 25 servers and the write service on two&lt;/p&gt;
+  
+  &lt;p&gt;&lt;em&gt;&lt;a href="http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/"&gt;Greg Young&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h1&gt;Challenges&lt;/h1&gt;
+
+&lt;p&gt;CQRS isn't just benefits. CQRS implies complexity and a new mindset when using it.&lt;/p&gt;
+
+&lt;p&gt;Usually we are formatted to think in CRUD operations, but with CQRS we're led to a Task-based system. We need to rethink the UI to be based on tasks and to deal with the eventual consistency (if we need it).&lt;/p&gt;
+
+&lt;p&gt;I can't say that CQRS fits all the cases or is a tool that you should use always. What I can say is that's an important tool to have in mind when dealing with some complex problems.&lt;/p&gt;
+
+&lt;p&gt;It's important to remember that you should start simple and CQRS enables you to adjust and evolve if you need it. &lt;/p&gt;
+
+&lt;p&gt;Don't try to do all upfront.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/</guid><link>http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/</link><title>Use T4 as email template in 6 steps</title><description>&lt;p&gt;When you want to send emails from .net applications how do you do it?&lt;/p&gt;
+
+&lt;p&gt;Do you create an instance of StringBuilder and start adding texts?!&lt;/p&gt;
+
+&lt;p&gt;And when you want to format the body as HTML? How do you do it?! A bigger string?!  &lt;/p&gt;
+
+&lt;p&gt;And if you could write your templates as plain text and still be capable to inject values like names, dates or other values?&lt;/p&gt;
+
+&lt;p&gt;The good news is that you can and you have a good old friend to help you: &lt;strong&gt;T4 Templates&lt;/strong&gt;.  &lt;/p&gt;
+
+&lt;p&gt;Let's see how to do it.&lt;/p&gt;
+
+</description><pubDate>Thu, 22 Oct 2015 23:00:00 Z</pubDate><a10:updated>2015-10-22T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;When you want to send emails from .net applications how do you do it?&lt;/p&gt;
+
+&lt;p&gt;Do you create an instance of StringBuilder and start adding texts?!&lt;/p&gt;
+
+&lt;p&gt;And when you want to format the body as HTML? How do you do it?! A bigger string?!  &lt;/p&gt;
+
+&lt;p&gt;And if you could write your templates as plain text and still be capable to inject values like names, dates or other values?&lt;/p&gt;
+
+&lt;p&gt;The good news is that you can and you have a good old friend to help you: &lt;strong&gt;T4 Templates&lt;/strong&gt;.  &lt;/p&gt;
+
+&lt;p&gt;Let's see how to do it.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;strong&gt;1. Open your project and add a template&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Right click in your project and go to the option  "Add &gt; New Item", select the "Runtime Text Template" and name it &lt;strong&gt;("WelcomeMail.tt" for example)&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/use-t4-as-email-template-in-6-steps-create-t4-template.png" alt="Create T4 Templates" /&gt; &lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;2. Create your text template&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Open the template (&lt;strong&gt;.tt file&lt;/strong&gt;) and write your email with all the HTML formatting that you want.
+&lt;em&gt;Find an Html Mail template example &lt;a href="https://github.com/leemunroe/responsive-html-email-template"&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;#@ template language="C#" #&amp;gt;
+&amp;lt;#@ assembly name="System.Core" #&amp;gt;
+&amp;lt;#@ import namespace="System.Linq" #&amp;gt;
+&amp;lt;#@ import namespace="System.Text" #&amp;gt;
+&amp;lt;#@ import namespace="System.Collections.Generic" #&amp;gt;
+
+&amp;lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&amp;gt; 
+&amp;lt;html xmlns="http://www.w3.org/1999/xhtml"&amp;gt;
+&amp;lt;head&amp;gt;
+&amp;lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&amp;gt;
+&amp;lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&amp;gt;
+&amp;lt;/head&amp;gt;
+&amp;lt;body style="width:100%; margin:0; padding:0; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;"&amp;gt;
+    &amp;lt;p&amp;gt;
+        &amp;lt;strong&amp;gt;Hello!&amp;lt;/strong&amp;gt;
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;
+        Lorem ipsum dolor sit amet, congue appareat cum ne. Sit postea mediocrem an, erat dissentiet est an. Eu est eius veri assum, et nam sonet molestiae urbanitas. Cu minim cetero nam, utamur accumsan ius in. Est et sint quaestio, cu his primis invenire rationibus.
+    &amp;lt;/p&amp;gt;
+    &amp;lt;p&amp;gt;
+        Cibo senserit mnesarchum qui te, sonet ceteros evertitur ad ius, an eam autem mediocrem scribentur. In esse vero sapientem eos, modus consequuntur sit ei, ius et sale fabulas. Te populo commodo gubergren sed, pri autem discere in, accumsan antiopam an usu. Per viris veniam prompta et. In est quas virtute, mea accumsan invidunt id, usu ad cibo justo imperdiet.
+    &amp;lt;/p&amp;gt;
+&amp;lt;/body&amp;gt;
+&amp;lt;/html&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;3. Create variables to use into the template&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;First you need to create a partial class for the T4 template that you created in the step 2.&lt;/p&gt;
+
+&lt;p&gt;In your partial add a property for each value that you want to inject into the template (destination email or signature for example).&lt;/p&gt;
+
+&lt;p&gt;Create a constructor to initialize the properties that you have created.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;using System.Net.Mail;
+
+namespace MailT4Template
+{
+    public partial class WelcomeMail
+    {
+        public MailAddress To { get; set; }
+        public WelcomeMail(MailAddress to)
+        {
+            this.To = to;   
+        }
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;4. Adapt the template to use the injected values&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Just open a C# block code with the tags &lt;strong&gt;&amp;lt;#&lt;/strong&gt; and &lt;strong&gt;#&gt;&lt;/strong&gt; and use the equal operator to get the variable value.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;strong&amp;gt;Hello &amp;lt;#= To.DisplayName #&amp;gt;!&amp;lt;/strong&amp;gt;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;5. Transform the text template&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Invoke the template with the parameters to get the transformed text.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var to = new MailAddress("luke@starwars.com", "Luke");
+WelcomeMail mailTemplate = new WelcomeMail(to);
+mailTemplate.TransformText();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;strong&gt;6. Compose your email&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Use the transformed text and send the email.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var from = new MailAddress("mail@mail.com");
+var to = new MailAddress("luke@starwars.com", "Luke");
+
+WelcomeMail mailTemplate = new WelcomeMail(to);
+
+var mail = new MailMessage(from, to);
+var client = new SmtpClient();
+client.Port = 587;
+client.DeliveryMethod = SmtpDeliveryMethod.Network;
+client.UseDefaultCredentials = false;
+client.EnableSsl = true;
+client.Credentials = new NetworkCredential("admin@mail.com","UseTheForce#");
+client.Host = "mail.mail.com";
+
+mail.Subject = "This is a welcom email.";
+mail.IsBodyHtml = true;
+mail.Body = mailTemplate.TransformText();
+client.Send(mail);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I hope that this helps you.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/10/using-trello-to-manage-your-wine-cellar/</guid><link>http://gsferreira.com/archive/2015/10/using-trello-to-manage-your-wine-cellar/</link><title>Using Trello to manage your Wine Cellar</title><description>&lt;p&gt;Do you have a wine cellar at home?! &lt;/p&gt;
+
+&lt;p&gt;Nothing too big, but the sufficient number of bottles to lose control?! &lt;/p&gt;
+
+&lt;p&gt;Do you really know what you have in your cellar?&lt;/p&gt;
+
+&lt;p&gt;This post wants to help you solve those problems, and manage your home cellar with an amazing and free tool.&lt;/p&gt;
+
+</description><pubDate>Thu, 08 Oct 2015 23:00:00 Z</pubDate><a10:updated>2015-10-08T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Do you have a wine cellar at home?! &lt;/p&gt;
+
+&lt;p&gt;Nothing too big, but the sufficient number of bottles to lose control?! &lt;/p&gt;
+
+&lt;p&gt;Do you really know what you have in your cellar?&lt;/p&gt;
+
+&lt;p&gt;This post wants to help you solve those problems, and manage your home cellar with an amazing and free tool.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;As a good Portuguese, I have a small wine cellar at home, where I store the excellent wines that we produce at Portugal.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/using-trello-to-manage-your-wine-cellar-cellar1.jpg" alt="Wine botle" /&gt;&lt;/p&gt;
+
+&lt;p&gt;I don't have many wine bottles, but I struggled with some questions that I can't answer:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;When I go to the supermarket, how do I know if I need to buy white or red wine?&lt;/li&gt;
+&lt;li&gt;How to remember to buy a specific wine?&lt;/li&gt;
+&lt;li&gt;Which are the oldest bottles?&lt;/li&gt;
+&lt;li&gt;How to choose a bottle?&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The conclusion was simple, &lt;strong&gt;I need a system to manage it&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;As you probably know, I'm a huge fan of Trello and I trusted him to do the job.
+If you don't know &lt;a href="https://trello.com/"&gt;Trello.com&lt;/a&gt; you have here a description:&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;&lt;em&gt;"&lt;a href="https://trello.com/"&gt;Trello.com&lt;/a&gt; is a collaboration tool that organizes your projects into boards. In one glance, Trello tells you what's being worked on, who's working on what, and where something is in a proces"&lt;/em&gt;&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;&lt;strong&gt;How I did it?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I brought some &lt;strong&gt;stickers, where I wrote letters&lt;/strong&gt; to name the columns &lt;strong&gt;and numbers&lt;/strong&gt; to stick in the rows. &lt;/p&gt;
+
+&lt;p&gt;Now I can organize the bottles with the combination, for instance A1, C6, etc.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/using-trello-to-manage-your-wine-cellar-cellar2.jpg" alt="Wine cellar" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Then I created a &lt;strong&gt;Trello board&lt;/strong&gt; for my wine cellar where I added &lt;strong&gt;4 lists&lt;/strong&gt;:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;strong&gt;To Buy:&lt;/strong&gt; Where I add a card for each bottle that I want/need to buy;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;White Wine:&lt;/strong&gt; The bottles of White Wine;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Red Wine:&lt;/strong&gt; The bottles of Red Wine;&lt;/li&gt;
+&lt;li&gt;&lt;strong&gt;Port Wine:&lt;/strong&gt; As a good Portuguese and as a Douro and Oporto lover, I have some bottles of Port Wine.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You can add more columns according to the Wine or another alcoholic drinks that you have.&lt;/p&gt;
+
+&lt;p&gt;Then I created a &lt;strong&gt;card for each bottle&lt;/strong&gt;. I named the card &lt;strong&gt;with the bottle name and the slot&lt;/strong&gt; where I stored the wine. 
+For example: "Kopke, Douro 2012 - E9" where "Kopke, Douro 2012" stands for the name and the region of the wine and "E9" stands for the slot where the bottle is.;&lt;/p&gt;
+
+&lt;p&gt;In each card you can also place a photo to identify the bottle if you want.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/using-trello-to-manage-your-wine-cellar-trello-1.png" alt="Board" /&gt;   &lt;/p&gt;
+
+&lt;p&gt;I also like to categorize the wines with labels to add some metadata to help me choose a bottle when I need. 
+For instance, you can create labels with price groups or a rating that you use to categorize the wine.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/using-trello-to-manage-your-wine-cellar-trello-2.png" alt="Final result" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/using-trello-to-manage-your-wine-cellar-cellar3.jpg" alt="Final result" /&gt;   &lt;/p&gt;
+
+&lt;p&gt;I hope that this helps you.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/09/7th-meeting-of-netponto-community-in-oporto/</guid><link>http://gsferreira.com/archive/2015/09/7th-meeting-of-netponto-community-in-oporto/</link><title>7th Meeting of NetPonto Community in Oporto</title><description>&lt;p&gt;We are bringing to Oporto the 7th Meeting of NetPonto Community.
 The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 26 September 2015. &lt;/p&gt;
 
 &lt;h2&gt;Program&lt;/h2&gt;
@@ -574,229 +1028,4 @@ Always think on where you want to go, not on what you need to do to go there.&lt
 
 &lt;p&gt;Was an amazing day, with incredible people, in an awesome place. 
 Hope to be there next year.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/</guid><link>http://gsferreira.com/archive/2015/05/azure-app-service-api-apps-microsoft-rest-httpoperationexception/</link><title>Azure App Service API Apps - Microsoft.Rest.HttpOperationException</title><description>&lt;p&gt;Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:&lt;/p&gt;
-
-</description><pubDate>Mon, 11 May 2015 23:00:00 Z</pubDate><a10:updated>2015-05-11T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;pre&gt;
-    Microsoft.Rest.HttpOperationException`1 was unhandled
-  HResult=-2146233088
-  Message=Exception of type 'Microsoft.Rest.HttpOperationException`1[System.Object]' was thrown.
-  Source=MyMailSenderClient2
-  StackTrace:
-       at MyMailSenderClient2.Mail.&lt;PostWithOperationResponseAsync&gt;d__0.MoveNext() in c:\DEV\MyTestApi\MyMailSenderClient2\TestMailApi\Mail.cs:line 129
-    --- End of stack trace from previous location where exception was thrown ---
-       at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-       at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-       at System.Runtime.CompilerServices.ConfiguredTaskAwaitable`1.ConfiguredTaskAwaiter.GetResult()
-       at MyMailSenderClient2.MailExtensions.&lt;PostAsync&gt;d__3.MoveNext() in c:\DEV\MyTestApi\MyMailSenderClient2\TestMailApi\MailExtensions.cs:line 42
-    --- End of stack trace from previous location where exception was thrown ---
-       at System.Runtime.CompilerServices.TaskAwaiter.ThrowForNonSuccess(Task task)
-       at System.Runtime.CompilerServices.TaskAwaiter.HandleNonSuccessAndDebuggerNotification(Task task)
-       at System.Runtime.CompilerServices.TaskAwaiter`1.GetResult()
-       at MyMailSenderClient2.MailExtensions.Post(IMail operations, MailModel data) in c:\DEV\MyTestApi\MyMailSenderClient2\TestMailApi\MailExtensions.cs:line 24
-       at MyMailSenderClient2.Program.Main(String[] args) in c:\DEV\MyTestApi\MyMailSenderClient2\Program.cs:line 16
-       at System.AppDomain._nExecuteAssembly(RuntimeAssembly assembly, String[] args)
-       at System.AppDomain.ExecuteAssembly(String assemblyFile, Evidence assemblySecurity, String[] args)
-       at Microsoft.VisualStudio.HostingProcess.HostProc.RunUsersAssembly()
-       at System.Threading.ThreadHelper.ThreadStart_Context(Object state)
-       at System.Threading.ExecutionContext.RunInternal(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
-       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
-       at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
-       at System.Threading.ThreadHelper.ThreadStart()
-  InnerException: 
-
-&lt;/pre&gt;
-
-&lt;p&gt;I struggled a bit until I figured why. &lt;/p&gt;
-
-&lt;p&gt;Well, let me explain you how I got there and what I have done to solve it.&lt;/p&gt;
-
-&lt;p&gt;I access to the new &lt;a href="http://portal.azure.com"&gt;Portal&lt;/a&gt; and I created a new API App, then I've followed the Microsoft tutorial of how to &lt;a href="http://azure.microsoft.com/en-us/documentation/articles/app-service-dotnet-create-api-app/"&gt;Create an ASP.NET API app in Azure App Service&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Everything was going fine and in a few minutes I published the API. Quick and easy.&lt;/p&gt;
-
-&lt;p&gt;Then, I generated my Client SDK and when I tried to invoke it, I got the error.&lt;/p&gt;
-
-&lt;p&gt;As you can see, the exception message and the stack trace don't provide much information.&lt;/p&gt;
-
-&lt;p&gt;I had to struggle a bit to figure it out. &lt;/p&gt;
-
-&lt;p&gt;The reason was really simple, my API service had the Access Level defined as &lt;strong&gt;Internal&lt;/strong&gt;. &lt;/p&gt;
-
-&lt;p&gt;After changing it to &lt;strong&gt;Public (anonymous)&lt;/strong&gt; everything works fine.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/azure-app-service-api-apps-microsoft-rest-httpoperationexception-access-level.png" alt="Azure API App - Access Level" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Why this happened? If you follow the tutorial you will create the API App using Visual Studio and you will see that the Visual Studio has the access level &lt;strong&gt;Available to Anyone&lt;/strong&gt; as default.&lt;/p&gt;
-
-&lt;p&gt;When you create the API App using the portal, you will see that the Access Level is defined as &lt;strong&gt;Internal&lt;/strong&gt; by default.&lt;/p&gt;
-
-&lt;p&gt;I believe that Microsoft will fix these small problems and make it more clear.
-Until then, I hope that this helps you.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</guid><link>http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/</link><title>AngularJS - After Render Directive</title><description>&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
-
-&lt;p&gt;This post is the answer of how you can accomplish that.&lt;/p&gt;
-
-&lt;p&gt;This a simple tip, but I believe that can be really useful.&lt;/p&gt;
-
-</description><pubDate>Sat, 28 Mar 2015 00:00:00 Z</pubDate><a10:updated>2015-03-28T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Do you ever wanted to execute code after your Angular template is completely rendered?&lt;/p&gt;
-
-&lt;p&gt;This post is the answer of how you can accomplish that.&lt;/p&gt;
-
-&lt;p&gt;This a simple tip, but I believe that can be really useful.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Add the following directive to your application.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;myApp.directive('afterRender', ['$timeout', function ($timeout) {
-    var def = {
-        restrict: 'A',
-        terminal: true,
-        transclude: false,
-        link: function (scope, element, attrs) {
-            $timeout(scope.$eval(attrs.afterRender), 0);  //Calling a scoped method
-        }
-    };
-    return def;
-}]);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Now, add the &lt;em&gt;after-render&lt;/em&gt; directive to an element in your template:&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div after-render="missionCompled"&amp;gt;&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;At this point, your application will run the &lt;em&gt;missionCompled&lt;/em&gt; function (or other that you want) in your controller, after the div is rendered.&lt;/p&gt;
-
-&lt;p&gt;You can see the working demo on &lt;a href="https://jsfiddle.net/gsferreira/h53okjtu/"&gt;JSFiddle&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;I hope that this helps you.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/</guid><link>http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/</link><title>A developer's thoughts on Azure SQL Database performance levels</title><description>&lt;p&gt;I recently started moving some databases that I have in the old Azure SQL Database Web/Business model. I started it with a good feeling. Let's face it, a guaranteed performance level is excellent. Nobody wants a noisy neighbor boring our database.&lt;/p&gt;
-
-&lt;p&gt;The downside, is that this shift brings new challenges and possible big troubles to the ones that already have systems in place. Everything has a price and in this case we call it &lt;strong&gt;Performance&lt;/strong&gt;. &lt;/p&gt;
-
-</description><pubDate>Sat, 14 Mar 2015 00:00:00 Z</pubDate><a10:updated>2015-03-14T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;I recently started moving some databases that I have in the old Azure SQL Database Web/Business model. I started it with a good feeling. Let's face it, a guaranteed performance level is excellent. Nobody wants a noisy neighbor boring our database.&lt;/p&gt;
-
-&lt;p&gt;The downside, is that this shift brings new challenges and possible big troubles to the ones that already have systems in place. Everything has a price and in this case we call it &lt;strong&gt;Performance&lt;/strong&gt;. &lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;In this new model, SQL Azure Databases are paid by performance instead of space. Now we have service tiers with transaction rates per hour (Basic Tier), per minute (Standard Tier) or per second (Premium Tier).&lt;/p&gt;
-
-&lt;p&gt;So, what's wrong with this? The prices! In my opinion, there's no equality between the old models and the new ones. Chris Bailiss has some awesome posts that shows that. Take a look:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://cbailiss.wordpress.com/2015/01/31/azure-sql-database-v12-ga-performance-inc-cpu-benchmaring/"&gt;Azure SQL Database: v12 GA Performance inc. CPU Benchmaring&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://cbailiss.wordpress.com/2014/09/16/performance-in-new-azure-sql-database-performance-tiers/"&gt;GA Performance in New Azure SQL Database Performance Tiers&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;h3&gt;Show me the numbers&lt;/h3&gt;
-
-&lt;p&gt;If you have an Azure SQL Database on the Web model with 1.5GB you will pay 10.42€/month.
-By a few more cents (11.18€/month) you can use an SQL Database in the Standard Tier with the S0 Performance Level.&lt;/p&gt;
-
-&lt;p&gt;If you have read the Chris Bailiss post, you have seen that the performance between those two can't be compared. S0 is slower than Web.&lt;/p&gt;
-
-&lt;h3&gt;So, what can I do?&lt;/h3&gt;
-
-&lt;p&gt;With this post &lt;strong&gt;I don't want to say that you should run away from SQL Azure Database&lt;/strong&gt;. What I mean, is that the game has changed. &lt;/p&gt;
-
-&lt;p&gt;In this Cloud era the costs are a variable that Software Developers and Architects need to take in account. Now our code has a visible and measurable impact in the financial health of our products and companies. &lt;/p&gt;
-
-&lt;p&gt;So, how to start facing the dragon?
-You can find here a list of things that you should have in mind:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Question yourself: Do I really need a SQL database?&lt;/strong&gt; There's many options in Azure to store your data, probably they can do the task.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Performance is more important than ever!&lt;/strong&gt; Don't wait until a query takes a few minutes running to start doing SQL Tuning.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Database design has a significant importance!&lt;/strong&gt; Be careful designing your database data model.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Test in Azure since the first day.&lt;/strong&gt; Probably your development machine has an SQL Server with more power than the production database.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/a-developers-thoughts-on-azure-sql-database-performance-levels-works-fine-in-dev.jpg" alt="Works fine in Dev" /&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Reduce the "chatty"&lt;/strong&gt; operations in your application.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Be careful using Entity Framework.&lt;/strong&gt; Make sure that your code isn't triggering multiple queries that can be done at once. EF can make your life easier, but the database can suffer from that. &lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Start using cache.&lt;/strong&gt; This will reduce the workload at your database and you will consume less DTUs.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Hope this helps.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</guid><link>http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/</link><title>AngularJS - Input number with 2 decimal places</title><description>&lt;p&gt;My &lt;a href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/"&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
-
-&lt;p&gt;This a kind of simple tip, but I believe that it can be really useful.&lt;/p&gt;
-
-&lt;p&gt;My smart-float directive works really fine in a desktop or laptop browser, but in a smartphone I want to take advantage of HTML5 number inputs and show to my users when they enter in the input, the "mini calculator keyboard".&lt;/p&gt;
-
-&lt;p&gt;How to accomplish it using angular?&lt;/p&gt;
-
-</description><pubDate>Wed, 25 Feb 2015 00:00:00 Z</pubDate><a10:updated>2015-02-25T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;My &lt;a href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/"&gt;AngularJS - Smart Float Directive&lt;/a&gt; post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.&lt;/p&gt;
-
-&lt;p&gt;This a kind of simple tip, but I believe that it can be really useful.&lt;/p&gt;
-
-&lt;p&gt;My smart-float directive works really fine in a desktop or laptop browser, but in a smartphone I want to take advantage of HTML5 number inputs and show to my users when they enter in the input, the "mini calculator keyboard".&lt;/p&gt;
-
-&lt;p&gt;How to accomplish it using angular?&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;That's easy.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="http://www.deque.com/blog/accessible-client-side-form-validation-html5/"&gt;&lt;img src="http://gsferreira.com/images/angularjs-input-number-with-two-decimal-places-meme.jpg" alt="meme" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;1. Create the number input with the number type.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;2. Define the step interval.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" *step="0.01"* /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;3. Set the regular expression to validate the input using ng-pattern. Here I want to accept only numbers with a maximum of 2 decimal places and with a dot separator.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" /&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h2&gt;4. Inform your user if the input has a valid value.&lt;/h2&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" /&amp;gt;
-&amp;lt;span&amp;gt;Is a valid decimal? {{myForm.myDecimal.$valid}}&amp;lt;/span&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;A full example using bootstrap (&lt;a href="http://jsfiddle.net/gsferreira/Lsv9f0b0/"&gt;demo here&lt;/a&gt;):&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;div ng-app&amp;gt;
-&amp;lt;h2&amp;gt;Todo&amp;lt;/h2&amp;gt;
-&amp;lt;div ng-controller="myCtrl"&amp;gt;
-
-  &amp;lt;form name="myForm" class="form-horizontal" &amp;gt;
-       &amp;lt;div class="form-group" ng-class="{'has-error': myForm.myDecimal.$invalid}"&amp;gt;
-            &amp;lt;label for="inputText3" class="col-sm-2 control-label"&amp;gt;Decimal&amp;lt;/label&amp;gt;
-            &amp;lt;div class="col-sm-10"&amp;gt;
-                &amp;lt;input type="number" class="form-control" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required /&amp;gt;
-
-                &amp;lt;span class="help-block" ng-show="!myForm.myDecimal.$valid"&amp;gt;
-                    Invalid!
-                &amp;lt;/span&amp;gt;
-            &amp;lt;/div&amp;gt;
-        &amp;lt;/div&amp;gt;
-
-        &amp;lt;div class="form-group" &amp;gt;
-            &amp;lt;label for="inputText3" class="col-sm-2 control-label"&amp;gt;The value:&amp;lt;/label&amp;gt;
-            &amp;lt;div class="col-sm-10"&amp;gt;
-                &amp;lt;input type="text" class="form-control" ng-model="myDecimal" disabled /&amp;gt;
-        &amp;lt;/div&amp;gt;
-    &amp;lt;/div&amp;gt;
-&amp;lt;/form&amp;gt;
-&amp;lt;/div&amp;gt;
-&amp;lt;/div&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hope this helps.&lt;/p&gt;
 </a10:content></item></channel></rss>

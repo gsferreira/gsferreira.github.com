@@ -1,0 +1,237 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width" />
+     <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta http-equiv="last-modified" content="2016-02-04T22:06:10.1404045+00:00" />
+    <meta name="keywords" content="" />
+	
+    <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
+	
+    <title>
+            Is CQRS too complicated? No! - 
+        Guilherme Ferreira
+    </title>
+    <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2015/11/is-cqrs-too-complicated-no/" />
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        
+	<header id="masthead" class="simple-header" role="banner">
+	<hgroup>
+		<a href="/" title="Home"><img width="40" height="40" src="http://www.gravatar.com/avatar/93c1c26212f9eb3673538e6ad6ca7eb4.png" title="logo"  alt="logo"></a>
+		<h1 class="site-title"><a href="/" title="Snow Byte" rel="home">Guilherme Ferreira</a>
+	</hgroup>
+</header>
+        
+
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+
+<div class="post">
+    <h1>Is CQRS too complicated? No!</h1> 
+      <div class="meta">
+        <p class="posted">09 nov 2015</p>
+        <ul class="categories">
+        </ul>
+      </div>
+    </div>
+    
+    
+        
+    <p>How do you feel after reading a few articles about CQRS (Command Query Responsibility Segregation)? Confused?! </p>
+
+<p>The good news is that's not your problem.</p>
+
+<p>CQRS is a simple concept, but usually is presented side by side with other patterns creating the perception that CQRS requires a ton of elements to work. </p>
+
+<p>This post pretends to demonstrate that CQRS can be a simple concept that can evolve according to your needs.</p>
+
+<!--excerpt-->
+
+<h1>So, what is CQRS?</h1>
+
+<p>The roots of CQRS are based on <a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation">Command-query separation (CQS)</a> a principle created by <a href="https://en.wikipedia.org/wiki/Bertrand_Meyer">Bertrand Meyer</a> during the development of Eiffel programming language.</p>
+
+<p>Meyer states that <em>"Asking a question should not change the answer"</em> and that's the foundation of CQRS.</p>
+
+<p>We can conclude from that statement that a command is any method that creates, update or delete data, and a query is any method that returns data.</p>
+
+<p>CQRS is an evolution of CQS, going further with the initial concept and stating that Read and Write models should be distinct.</p>
+
+<p><strong>CQRS is simply that</strong>, is the segregation of two main responsibilities, the responsibility of read data and the responsibility of mutate data.</p>
+
+<p>Don't you recognize this principles? "Denormalization", cache systems, read-optimized databases and others, are proof that the industry is already thinking in the problems CQRS want's to solve. </p>
+
+<p><img src="/images/is-cqrs-too-complicated-no-diagram.png" alt="Diagram CQRS" /></p>
+
+<p>It's important to say that there's nothing in CQRS saying that we should use Event Sourcing, Service Bus or another element to implement CQRS. 
+Those patterns or technologies are usually presented with CQRS, adding a new layer of complexity to CQRS.</p>
+
+<blockquote>
+  <p>Nothing about CQRS says “you shalt use NServiceBus”. It’s just not there. You’re merely separating infrastructure between handling commands and queries, but the how is quite varied.</p>
+  
+  <p><em><a href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/">Jimmy Bogard</a></em> </p>
+</blockquote>
+
+<h1>CQRS Benefits</h1>
+
+<p><em>All the following benefits are capabilities that CQRS gives you, but <strong>they aren't required to implement CQRS</em></strong></p>
+
+<p><strong>Simple Queries</strong></p>
+
+<p>Because the Read model is different from the Write model, it's possible to create simpler queries and with better performance. If the Read and the Write model are shared, you will constrain the Queries to the Write structure.</p>
+
+<p>The system will also benefit of a thinner Read layer.  </p>
+
+<blockquote>
+  <p>Simple code is fast code</p>
+  
+  <p><em><a href="http://udidahan.com/2009/12/09/clarified-cqrs/">Udi Dahan</a></em></p>
+</blockquote>
+
+<p><strong>Separate data store</strong></p>
+
+<p>Since the Read model is separate, you are able to segregate the database, querying a non relational database optimized for queries.</p>
+
+<p>That will lead us to concepts like Eventual Consistency or Event Sourcing, but it's important to say that CQRS doesn't require this, he just enables the capability.</p>
+
+<p><strong>It's perfectly possible to implement CQRS using the same data store.</strong></p>
+
+<blockquote>
+  <p>Event sourcing is a completely orthogonal concept to CQRS. While they fit well together, doing CQRS does not require event sourcing, and doing event sourcing does not automatically mean we’re doing CQRS.</p>
+  
+  <p><em><a href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/">Jimmy Bogard</a></em> </p>
+</blockquote>
+
+<p><strong>Queued workload</strong></p>
+
+<p>Commands can be processed using a queue, enabling an asynchronous command processing, what can be useful to deal with complex processing or manage the system load.</p>
+
+<p><strong>Segregate load</strong></p>
+
+<p>Typically the number of queries in a system is much higher than the number of commands. So, why should both be based on the same technologies? </p>
+
+<p>CQRS enables the segregation of the Load, with the possibility of use a different host for each part of system.</p>
+
+<blockquote>
+  <p>The largest possible benefit though is that it recognizes that their are different architectural properties when dealing with commands and queries … for example it allows us to host the two services differently eg: we can host the read service on 25 servers and the write service on two</p>
+  
+  <p><em><a href="http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/">Greg Young</a></em></p>
+</blockquote>
+
+<h1>Challenges</h1>
+
+<p>CQRS isn't just benefits. CQRS implies complexity and a new mindset when using it.</p>
+
+<p>Usually we are formatted to think in CRUD operations, but with CQRS we're led to a Task-based system. We need to rethink the UI to be based on tasks and to deal with the eventual consistency (if we need it).</p>
+
+<p>I can't say that CQRS fits all the cases or is a tool that you should use always. What I can say is that's an important tool to have in mind when dealing with some complex problems.</p>
+
+<p>It's important to remember that you should start simple and CQRS enables you to adjust and evolve if you need it. </p>
+
+<p>Don't try to do all upfront.</p>
+
+
+
+	<div class="post-social-links">
+        <a href="http://twitter.com/gsferreira"><img src="/images/000-twitter-bird-48.png" title="gsferreira"/></a>
+        <a href="http://gsferreira.com/rss.xml"><img src="/images/000-rss-feeds-48.png" title="gsferreira.com feed" onClick="_gaq.push(['_trackEvent', 'Post', 'RssSubscribe', 'Rss Subscribe on Post']);"/></a>
+    </div>
+	<div class="addthis_toolbox addthis_default_style" style="float:right;">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_linkedin_counter"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+    </div>
+	
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://gsferreira.com/archive/2015/11/is-cqrs-too-complicated-no/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'gsferreira';
+    var disqus_url = 'http://gsferreira.com/archive/2015/11/is-cqrs-too-complicated-no/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-****"></script>
+
+
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+        </div>
+        <!-- #main -->
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="site-info">
+                Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a> using <a href="https://github.com/gsferreira/letsnow" rel="generator">letsnow theme</a>.	
+            </div>
+            <!-- .site-info -->
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-33436813-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+    
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+</body>
+</html>
