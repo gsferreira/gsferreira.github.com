@@ -1,4 +1,100 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/02/the-shining-new-csharp-scripting-api/</guid><link>http://gsferreira.com/archive/2016/02/the-shining-new-csharp-scripting-api/</link><title>The shining new C# Scripting API</title><description>&lt;p&gt;&lt;strong&gt;Say hello to the new Scripting Language: C#!&lt;/strong&gt;&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/</guid><link>http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/</link><title>Azure WebJobs dependency injection with Unity</title><description>&lt;p&gt;In the early days of &lt;strong&gt;Azure WebJobs&lt;/strong&gt; use &lt;strong&gt;Dependency Injection&lt;/strong&gt; was a little bit tricky because the Triggered methods were only static methods.&lt;/p&gt;
+
+&lt;p&gt;Since the WebJobs SDK 1.0.1 you are no longer limited to static methods and that can change how you approach Dependency Injection on WebJobs.&lt;/p&gt;
+
+&lt;p&gt;In this blog post I will show how you can use &lt;strong&gt;&lt;a href="https://github.com/unitycontainer/unity"&gt;Unity&lt;/a&gt;&lt;/strong&gt; to inject dependencies into your WebJobs.&lt;/p&gt;
+
+</description><pubDate>Sun, 07 Aug 2016 23:00:00 Z</pubDate><a10:updated>2016-08-07T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;In the early days of &lt;strong&gt;Azure WebJobs&lt;/strong&gt; use &lt;strong&gt;Dependency Injection&lt;/strong&gt; was a little bit tricky because the Triggered methods were only static methods.&lt;/p&gt;
+
+&lt;p&gt;Since the WebJobs SDK 1.0.1 you are no longer limited to static methods and that can change how you approach Dependency Injection on WebJobs.&lt;/p&gt;
+
+&lt;p&gt;In this blog post I will show how you can use &lt;strong&gt;&lt;a href="https://github.com/unitycontainer/unity"&gt;Unity&lt;/a&gt;&lt;/strong&gt; to inject dependencies into your WebJobs.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;h2&gt;Setup dependency injection&lt;/h2&gt;
+
+&lt;p&gt;&lt;em&gt;In this post I'm assuming you already know how to set up a &lt;a href="https://azure.microsoft.com/en-gb/documentation/articles/websites-dotnet-webjobs-sdk-get-started/"&gt;WebJob&lt;/a&gt;.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;The first step is to install the Unity Package in your project.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Install-Package Unity
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Then, we will need to implement the &lt;strong&gt;IJobActivator&lt;/strong&gt; Interface, that accepts a Unity container. Here, we will provide the capabilitie of resolve the Instances using the Unity container.&lt;/p&gt;
+
+&lt;p&gt;Let's name the class as &lt;strong&gt;"UnityJobActivator"&lt;/strong&gt; and fill it with the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class UnityJobActivator : IJobActivator
+{
+    private readonly IUnityContainer _container;
+    public UnityJobActivator(IUnityContainer container)
+    {
+        _container = container;
+    }
+    public T CreateInstance&amp;lt;T&amp;gt;()
+    {
+        return _container.Resolve&amp;lt;T&amp;gt;();
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, the &lt;strong&gt;UnityJobActivator&lt;/strong&gt; receives in the constructor the Unity Container. Now let's setup the container.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;I like to use a Unity Configuration Class to organize my Unity configurations.&lt;/em&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class UnityConfig
+{
+    private static Lazy&amp;lt;IUnityContainer&amp;gt; container = new Lazy&amp;lt;IUnityContainer&amp;gt;(() =&amp;gt;
+    {
+        var container = new UnityContainer();
+        RegisterTypes(container);
+        return container;
+    });
+    public static IUnityContainer GetConfiguredContainer()
+    {
+        return container.Value;
+    }
+    public static void RegisterTypes(IUnityContainer container)
+    {
+        container.RegisterType&amp;lt;IMailService, MailService&amp;gt;(new HierarchicalLifetimeManager());
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Now that we have the container defined, we can specify the &lt;strong&gt;JobActivator&lt;/strong&gt; that the WebJob should use. &lt;/p&gt;
+
+&lt;p&gt;It can be accomplished using the Job Host Configuration (this is done in &lt;em&gt;Program.cs&lt;/em&gt; in the main method), as you can see in the following code:&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;JobHostConfiguration config = new JobHostConfiguration()
+{
+    JobActivator = new UnityJobActivator(UnityConfig.GetConfiguredContainer())
+};
+var host = new JobHost(config);
+host.RunAndBlock();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Finally, open your functions, transform them in non static methods and receive the parameter of the type you want in the constructor.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public class Functions
+{
+    private readonly IMailService _mailService;
+    public Functions(IMailService mailService)
+    {
+        _mailService = mailService;
+    }
+
+    public void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log)
+    {
+        _mailService.Send(message);
+
+        log.WriteLine(message);
+    }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;I hope that this helps you. &lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/02/the-shining-new-csharp-scripting-api/</guid><link>http://gsferreira.com/archive/2016/02/the-shining-new-csharp-scripting-api/</link><title>The shining new C# Scripting API</title><description>&lt;p&gt;&lt;strong&gt;Say hello to the new Scripting Language: C#!&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Since the first days the .NET platform lacks scripting capabilities compared to dynamic languages like JavaScript or Ruby, but those days are over.&lt;/p&gt;
 
@@ -963,69 +1059,4 @@ If you already have it, follow the next steps:&lt;/p&gt;
 
 &lt;p&gt;With this new service created by Microsoft, we are able to provide features that in the past had a huge development cost, in an easy and quick way. 
 The private gallery in conjunction with the easy way to consume APIs, provides the required capabilities to create an API ecosystem. &lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/05/lessons-learned-from-agilept-2015/</guid><link>http://gsferreira.com/archive/2015/05/lessons-learned-from-agilept-2015/</link><title>Lessons learned from Agile Portugal 2015</title><description>&lt;p&gt;In the last week I attended to the &lt;a href="http://2015.agilept.org/"&gt;Agile Portugal 2015&lt;/a&gt;, an amazing event that gathers the agile community.
-I had the opportunity to listen excellent speakers as:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://au.linkedin.com/pub/lachlan-heasman/1/920/777"&gt;Lachlan Heasman&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/haradakiro"&gt;Kiro Harada&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/_pedro_torres"&gt;Pedro Gustavo Torres&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.uvu.edu/profpages/profiles/show/user_id/1923"&gt;Neil Harrison&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/theplastictoy"&gt;Ricardo Fiel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/carlton858"&gt;Carlton Nettleton&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The event was amazing, and I want to share with you the main lessons that I learned. &lt;/p&gt;
-
-</description><pubDate>Wed, 27 May 2015 23:00:00 Z</pubDate><a10:updated>2015-05-27T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;In the last week I attended to the &lt;a href="http://2015.agilept.org/"&gt;Agile Portugal 2015&lt;/a&gt;, an amazing event that gathers the agile community.
-I had the opportunity to listen excellent speakers as:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://au.linkedin.com/pub/lachlan-heasman/1/920/777"&gt;Lachlan Heasman&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/haradakiro"&gt;Kiro Harada&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/_pedro_torres"&gt;Pedro Gustavo Torres&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.uvu.edu/profpages/profiles/show/user_id/1923"&gt;Neil Harrison&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/theplastictoy"&gt;Ricardo Fiel&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://twitter.com/carlton858"&gt;Carlton Nettleton&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;The event was amazing, and I want to share with you the main lessons that I learned. &lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;hr /&gt;
-
-&lt;h2&gt;The importance of Visuals&lt;/h2&gt;
-
-&lt;p&gt;Lachlan Heasman has made an amazing talk. He reinforces that the Visual Management is really important to succeed.&lt;br /&gt;
-That thought made a lot of sense to me. Nowadays, we have a ton of excellent applications to do kanban boards and that's OK, especially if you have remote workers. But I believe that, if you have your team in a single place you should have a physical kanban board.
-Why? Because your team will look into it every day... every single day. Even if they don't want, they will! You will see that your team will be positively influenced, building a culture of transparency and trust.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/lessons-learned-from-agilept-2015-kanban-style.jpg" alt="Kanban style" /&gt;&lt;/p&gt;
-
-&lt;h2&gt;User stories&lt;/h2&gt;
-
-&lt;p&gt;Why we are writing User Stories in the form of "As a... I want to... so that..."? Will the customer realize the language? Or will they think that we are crazy nerds?
-As the &lt;a href="http://en.wikipedia.org/wiki/User_story"&gt;wikipedia&lt;/a&gt; (that eternal font of true) refers, an "user story is a description consisting of one or more sentences in the everyday or business language of the end user or user of a system".
-Have you ever listened a business person talking like that?&lt;/p&gt;
-
-&lt;p&gt;Carlton Nettleton, presented a simpler and much objective way to write user stories. How? Answering the following questions: Who? What? And Why?
-I'm a fan of the &lt;a href="http://en.wikipedia.org/wiki/Five_Ws"&gt;Six W's method&lt;/a&gt; to describe and understand complex problems, and Carlton made me correlate that with user stories.&lt;/p&gt;
-
-&lt;h2&gt;The true essence of agile&lt;/h2&gt;
-
-&lt;p&gt;The industry sells us the idea that Agile (or Scrum), is a magic formula that we should apply to have good results. You just need to have some meetings, do sprints of "X" weeks and you will be fine. 
-That's not true.&lt;/p&gt;
-
-&lt;p&gt;Companies are made from people, so they are different. Each one has a different culture and a different identity. This uniqueness will make them agile.&lt;/p&gt;
-
-&lt;p&gt;Agile, isn't a process, a system or a mathematical formula. Agile is a culture. 
-It's different be agile than have a certificate that says that you are agile.
-The process is the less important part. You should have the focus on the outcome. 
-Always think on where you want to go, not on what you need to do to go there.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;Was an amazing day, with incredible people, in an awesome place. 
-Hope to be there next year.&lt;/p&gt;
 </a10:content></item></channel></rss>

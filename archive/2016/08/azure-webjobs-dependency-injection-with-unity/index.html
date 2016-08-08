@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2016-08-08T18:56:30.6925646+01:00" />
-    <meta name="keywords" content="Azure" />
+    <meta name="keywords" content="" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Azure SQL Database: Automatic Backups - 
+            Azure WebJobs dependency injection with Unity - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,42 +39,106 @@
 
 
 <div class="post">
-    <h1>Azure SQL Database: Automatic Backups</h1> 
+    <h1>Azure WebJobs dependency injection with Unity</h1> 
       <div class="meta">
-        <p class="posted">02 out 2014</p>
+        <p class="posted">08 ago 2016</p>
         <ul class="categories">
-          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>This week, I've found a new feature in Azure Management Portal that I wished at so many times.</p>
+    <p>In the early days of <strong>Azure WebJobs</strong> use <strong>Dependency Injection</strong> was a little bit tricky because the Triggered methods were only static methods.</p>
 
-<p>In July, <a href="http://weblogs.asp.net/scottgu/windows-azure-july-updates-sql-database-traffic-manager-autoscale-virtual-machines">Scott Guthrie announced the support for Automated SQL Database Exports.</a> </p>
+<p>Since the WebJobs SDK 1.0.1 you are no longer limited to static methods and that can change how you approach Dependency Injection on WebJobs.</p>
 
-<p>This is awesome because now we can forget the complex powershell scripts to achieve it. Now we can easily configure fully automated exports to a Storage account and, the best part of it, this is a built-in feature of Windows Azure Management Portal.</p>
+<p>In this blog post I will show how you can use <strong><a href="https://github.com/unitycontainer/unity">Unity</a></strong> to inject dependencies into your WebJobs.</p>
 
 <!--excerpt-->
 
-<p>If you want to automate the backup of your database, just go your database and jump to the Configuration Section. In this section, you will see the settings available.</p>
+<h2>Setup dependency injection</h2>
 
-<p><img src="/images/azure-sql-database-automatic-backups-configure-screen.jpg" alt="Azure SQL Database: Automatic Backups - Configure screen" /></p>
+<p><em>In this post I'm assuming you already know how to set up a <a href="https://azure.microsoft.com/en-gb/documentation/articles/websites-dotnet-webjobs-sdk-get-started/">WebJob</a>.</em></p>
 
-<p>Here you can configure:</p>
+<p>The first step is to install the Unity Package in your project.</p>
 
-<ul>
-<li>The storage account where you want to keep the backup files;</li>
-<li>The backup frequency;</li>
-<li>The retention period;</li>
-</ul>
+<pre><code>Install-Package Unity
+</code></pre>
 
-<p>Lastly, you'll need to enter the SQL Database login name and password.</p>
+<p>Then, we will need to implement the <strong>IJobActivator</strong> Interface, that accepts a Unity container. Here, we will provide the capabilitie of resolve the Instances using the Unity container.</p>
 
-<p>So far as I know, you just pay the storage space.</p>
+<p>Let's name the class as <strong>"UnityJobActivator"</strong> and fill it with the following code:</p>
 
-<p>Hope this helps.</p>
+<pre><code>public class UnityJobActivator : IJobActivator
+{
+    private readonly IUnityContainer _container;
+    public UnityJobActivator(IUnityContainer container)
+    {
+        _container = container;
+    }
+    public T CreateInstance&lt;T&gt;()
+    {
+        return _container.Resolve&lt;T&gt;();
+    }
+}
+</code></pre>
+
+<p>As you can see, the <strong>UnityJobActivator</strong> receives in the constructor the Unity Container. Now let's setup the container.</p>
+
+<p><em>I like to use a Unity Configuration Class to organize my Unity configurations.</em></p>
+
+<pre><code>public class UnityConfig
+{
+    private static Lazy&lt;IUnityContainer&gt; container = new Lazy&lt;IUnityContainer&gt;(() =&gt;
+    {
+        var container = new UnityContainer();
+        RegisterTypes(container);
+        return container;
+    });
+    public static IUnityContainer GetConfiguredContainer()
+    {
+        return container.Value;
+    }
+    public static void RegisterTypes(IUnityContainer container)
+    {
+        container.RegisterType&lt;IMailService, MailService&gt;(new HierarchicalLifetimeManager());
+    }
+}
+</code></pre>
+
+<p>Now that we have the container defined, we can specify the <strong>JobActivator</strong> that the WebJob should use. </p>
+
+<p>It can be accomplished using the Job Host Configuration (this is done in <em>Program.cs</em> in the main method), as you can see in the following code:</p>
+
+<pre><code>JobHostConfiguration config = new JobHostConfiguration()
+{
+    JobActivator = new UnityJobActivator(UnityConfig.GetConfiguredContainer())
+};
+var host = new JobHost(config);
+host.RunAndBlock();
+</code></pre>
+
+<p>Finally, open your functions, transform them in non static methods and receive the parameter of the type you want in the constructor.</p>
+
+<pre><code>public class Functions
+{
+    private readonly IMailService _mailService;
+    public Functions(IMailService mailService)
+    {
+        _mailService = mailService;
+    }
+
+    public void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log)
+    {
+        _mailService.Send(message);
+
+        log.WriteLine(message);
+    }
+}
+</code></pre>
+
+<p>I hope that this helps you. </p>
 
 
 
@@ -97,14 +161,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/';
+                this.page.url = 'http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/10/azure-sql-database-automatic-backups/';
+    var disqus_url = 'http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
