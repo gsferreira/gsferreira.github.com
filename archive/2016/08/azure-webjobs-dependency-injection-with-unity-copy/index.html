@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2016-09-19T22:52:29.8789108+01:00" />
-    <meta name="keywords" content="Node.js,.NET" />
+    <meta name="keywords" content="" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            How to Encrypt in Node.js and Decrypt in C# - 
+            Azure WebJobs dependency injection with Unity - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity-copy/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,61 +39,106 @@
 
 
 <div class="post">
-    <h1>How to Encrypt in Node.js and Decrypt in C#</h1> 
+    <h1>Azure WebJobs dependency injection with Unity</h1> 
       <div class="meta">
-        <p class="posted">16 fev 2015</p>
+        <p class="posted">08 ago 2016</p>
         <ul class="categories">
-          <li><a href="/category/node.js" title="Snow.Models.Category">Node.js</a></li>
-          <li><a href="/category/.net" title="Snow.Models.Category">.NET</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Are you trying to send messages to a .NET application from node.js and you want to encrypt them?</p>
+    <p>In the early days of <strong>Azure WebJobs</strong> use <strong>Dependency Injection</strong> was a little bit tricky because the Triggered methods were only static methods.</p>
 
-<p>You can find here a simple example to accomplish it.</p>
+<p>Since the WebJobs SDK 1.0.1 you are no longer limited to static methods and that can change how you approach Dependency Injection on WebJobs.</p>
+
+<p>In this blog post I will show how you can use <strong><a href="https://github.com/unitycontainer/unity">Unity</a></strong> to inject dependencies into your WebJobs.</p>
 
 <!--excerpt-->
 
-<p>Encrypt in node.js:</p>
+<h2>Setup dependency injection</h2>
 
-<pre><code>var crypto = require('crypto');
-var key = '00000000000000000000000000000000'; //replace with your key
-var iv = '0000000000000000'; //replace with your IV
-var cipher = crypto.createCipheriv('aes256', key, iv)
-var crypted = cipher.update(authorizationKey, 'utf8', 'base64')
-crypted += cipher.final('base64');
-console.log(crypted);
+<p><em>In this post I'm assuming you already know how to set up a <a href="https://azure.microsoft.com/en-gb/documentation/articles/websites-dotnet-webjobs-sdk-get-started/">WebJob</a>.</em></p>
+
+<p>The first step is to install the Unity Package in your project.</p>
+
+<pre><code>Install-Package Unity
 </code></pre>
 
-<p>Decrypt with C#:</p>
+<p>Then, we will need to implement the <strong>IJobActivator</strong> Interface, that accepts a Unity container. Here, we will provide the capabilitie of resolve the Instances using the Unity container.</p>
 
-<pre><code>string keyString = "00000000000000000000000000000000"; //replace with your key
-string ivString = "0000000000000000"; //replace with your iv
+<p>Let's name the class as <strong>"UnityJobActivator"</strong> and fill it with the following code:</p>
 
-byte[] key = Encoding.ASCII.GetBytes(keyString);
-byte[] iv = Encoding.ASCII.GetBytes(ivString);
-
-using (var rijndaelManaged =
-        new RijndaelManaged { Key = key, IV = iv, Mode = CipherMode.CBC })
-        {
-            rijndaelManaged.BlockSize = 128;
-            rijndaelManaged.KeySize = 256;
-            using (var memoryStream =
-                   new MemoryStream(Convert.FromBase64String(AuthorizationCode)))
-            using (var cryptoStream =
-                   new CryptoStream(memoryStream,
-                       rijndaelManaged.CreateDecryptor(key, iv),
-                       CryptoStreamMode.Read))
-            {
-                return new StreamReader(cryptoStream).ReadToEnd();
-            }
-        }
+<pre><code>public class UnityJobActivator : IJobActivator
+{
+    private readonly IUnityContainer _container;
+    public UnityJobActivator(IUnityContainer container)
+    {
+        _container = container;
+    }
+    public T CreateInstance&lt;T&gt;()
+    {
+        return _container.Resolve&lt;T&gt;();
+    }
+}
 </code></pre>
 
-<p>Hope this helps.</p>
+<p>As you can see, the <strong>UnityJobActivator</strong> receives in the constructor the Unity Container. Now let's setup the container.</p>
+
+<p><em>I like to use a Unity Configuration Class to organize my Unity configurations.</em></p>
+
+<pre><code>public class UnityConfig
+{
+    private static Lazy&lt;IUnityContainer&gt; container = new Lazy&lt;IUnityContainer&gt;(() =&gt;
+    {
+        var container = new UnityContainer();
+        RegisterTypes(container);
+        return container;
+    });
+    public static IUnityContainer GetConfiguredContainer()
+    {
+        return container.Value;
+    }
+    public static void RegisterTypes(IUnityContainer container)
+    {
+        container.RegisterType&lt;IMailService, MailService&gt;(new HierarchicalLifetimeManager());
+    }
+}
+</code></pre>
+
+<p>Now that we have the container defined, we can specify the <strong>JobActivator</strong> that the WebJob should use. </p>
+
+<p>It can be accomplished using the Job Host Configuration (this is done in <em>Program.cs</em> in the main method), as you can see in the following code:</p>
+
+<pre><code>JobHostConfiguration config = new JobHostConfiguration()
+{
+    JobActivator = new UnityJobActivator(UnityConfig.GetConfiguredContainer())
+};
+var host = new JobHost(config);
+host.RunAndBlock();
+</code></pre>
+
+<p>Finally, open your functions, transform them in non static methods and receive the parameter of the type you want in the constructor.</p>
+
+<pre><code>public class Functions
+{
+    private readonly IMailService _mailService;
+    public Functions(IMailService mailService)
+    {
+        _mailService = mailService;
+    }
+
+    public void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log)
+    {
+        _mailService.Send(message);
+
+        log.WriteLine(message);
+    }
+}
+</code></pre>
+
+<p>I hope that this helps you. </p>
 
 
 
@@ -116,14 +161,14 @@ using (var rijndaelManaged =
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/';
+                this.page.url = 'http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity-copy/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2015/02/how-to-encrypt-in-nodejs-and-decrypt-in-c-sharp/';
+    var disqus_url = 'http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity-copy/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

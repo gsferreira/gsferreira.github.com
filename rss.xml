@@ -1,4 +1,35 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/</guid><link>http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/</link><title>Azure WebJobs dependency injection with Unity</title><description>&lt;p&gt;In the early days of &lt;strong&gt;Azure WebJobs&lt;/strong&gt; use &lt;strong&gt;Dependency Injection&lt;/strong&gt; was a little bit tricky because the Triggered methods were only static methods.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</guid><link>http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</link><title>NetPonto - Como construir software altamente eficiente com CQRS</title><description>&lt;p&gt;Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.&lt;/p&gt;
+
+&lt;p&gt;Se não tiveste a oportunidade de assistir, coloco aqui os slides, o vídeo da sessão, bem como algumas referências sobre o tema.&lt;/p&gt;
+
+</description><pubDate>Sun, 18 Sep 2016 23:00:00 Z</pubDate><a10:updated>2016-09-18T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.&lt;/p&gt;
+
+&lt;p&gt;Se não tiveste a oportunidade de assistir, coloco aqui os slides, o vídeo da sessão, bem como algumas referências sobre o tema.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;Alguma dúvida que tenhas, deixa um comentário.&lt;/p&gt;
+
+&lt;p&gt;Video: &lt;a href="https://youtu.be/pM8GycDZji4?t=5614"&gt;Youtube&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/GuilhermeFerreira114/como-construir-software-altamente-eficiente-com-cqrs"&gt;SlideShare&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;Referências:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="https://msdn.microsoft.com/en-us/library/jj554200.aspx"&gt;CQRS Journey&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=JHGkaShoyNs"&gt;Greg Young - CQRS and Event Sourcing - Code on the Beach 2014&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.dotnetrocks.com/?show=639"&gt;.NET Rocks - Udi Dahan Clarifies CQRS&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.dotnetrocks.com/?show=1044"&gt;.NET Rocks - CQRS Update with Udi Dahan&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://www.dotnetrocks.com/?show=820"&gt;.NET Rocks - Udi Dahan Talks CQRS, Agile and More&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lostechies.com/jimmybogard/2012/06/26/eventual-consistency-cqrs-and-interaction-design/"&gt;Eventual consistency, CQRS and interaction design - LosTechies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match"&gt;CQRS and REST: the perfect match - LosTechies&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://martinfowler.com/bliki/CQRS.html"&gt;CQRS - Martin Fowler&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf"&gt;CQRS Documents by Greg Young&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs.jpg" alt="netponto 20160919" /&gt;&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity-copy/</guid><link>http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity-copy/</link><title>Azure WebJobs dependency injection with Unity</title><description>&lt;p&gt;In the early days of &lt;strong&gt;Azure WebJobs&lt;/strong&gt; use &lt;strong&gt;Dependency Injection&lt;/strong&gt; was a little bit tricky because the Triggered methods were only static methods.&lt;/p&gt;
 
 &lt;p&gt;Since the WebJobs SDK 1.0.1 you are no longer limited to static methods and that can change how you approach Dependency Injection on WebJobs.&lt;/p&gt;
 
@@ -843,220 +874,4 @@ The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) 
 &lt;p&gt;Free!&lt;/p&gt;
 
 &lt;p&gt;Registration: &lt;a href="https://netponto-porto-julho-2015.eventbrite.co.uk/"&gt;https://netponto-porto-julho-2015.eventbrite.co.uk/&lt;/a&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/06/create-an-api-in-azure-app-service-revista-programar-n49/</guid><link>http://gsferreira.com/archive/2015/06/create-an-api-in-azure-app-service-revista-programar-n49/</link><title>Create an API in Azure App Service - Revista PROGRAMAR Nº 49</title><description>&lt;p&gt;&lt;em&gt;I had the pleasure of write an &lt;a href="http://www.revista-programar.info/artigos/criar-uma-api-no-azure-app-sevice/"&gt;article&lt;/a&gt; to the &lt;a href="http://www.revista-programar.info/anuncios/revista-programar-no-49-junho-2015/"&gt;Revista PROGRAMAR&lt;/a&gt;, a Portuguese collaborative magazine about programming. I’m glad with my first article for a magazine and especially because, I'm side by side with people that I admire like &lt;a href="https://twitter.com/PauloMorgado"&gt;Paulo Morgado&lt;/a&gt; or &lt;a href="https://twitter.com/saramgsilva"&gt;Sara Silva&lt;/a&gt;, for instance. This was an amazing experience and I want to share with you the result of it.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;In March, Microsoft announced an improvement in his services by introducing the new Azure App Service. This service covers the “oldest” Websites, now named as Web Apps, the Azure Mobile Services, now, Mobile Apps, and introduce new capabilities as Logic Apps and the API Apps. This article talks about the last one.
-The question is: What’s the reason to create an API App, and not a Web API in a Website? This question can be easily answered, analysing the feature list, for example:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Access Control using Azure Active Directory or OAuth services, as Facebook or Twitter;&lt;/li&gt;
-&lt;li&gt;Fast integration with the Swagger Framework;&lt;/li&gt;
-&lt;li&gt;Easy integration with Logic Apps;&lt;/li&gt;
-&lt;li&gt;Private gallery of APIs, enabling us to provide APIs to the other members of the organization;&lt;/li&gt;
-&lt;li&gt;Automatic generation of an SDK for our API.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this article we will see, how to create an API, publish in our subscription and create an SDK to consume it.&lt;/p&gt;
-
-</description><pubDate>Wed, 17 Jun 2015 23:00:00 Z</pubDate><a10:updated>2015-06-17T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;&lt;em&gt;I had the pleasure of write an &lt;a href="http://www.revista-programar.info/artigos/criar-uma-api-no-azure-app-sevice/"&gt;article&lt;/a&gt; to the &lt;a href="http://www.revista-programar.info/anuncios/revista-programar-no-49-junho-2015/"&gt;Revista PROGRAMAR&lt;/a&gt;, a Portuguese collaborative magazine about programming. I’m glad with my first article for a magazine and especially because, I'm side by side with people that I admire like &lt;a href="https://twitter.com/PauloMorgado"&gt;Paulo Morgado&lt;/a&gt; or &lt;a href="https://twitter.com/saramgsilva"&gt;Sara Silva&lt;/a&gt;, for instance. This was an amazing experience and I want to share with you the result of it.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2&gt;Introduction&lt;/h2&gt;
-
-&lt;p&gt;In March, Microsoft announced an improvement in his services by introducing the new Azure App Service. This service covers the “oldest” Websites, now named as Web Apps, the Azure Mobile Services, now, Mobile Apps, and introduce new capabilities as Logic Apps and the API Apps. This article talks about the last one.
-The question is: What’s the reason to create an API App, and not a Web API in a Website? This question can be easily answered, analysing the feature list, for example:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Access Control using Azure Active Directory or OAuth services, as Facebook or Twitter;&lt;/li&gt;
-&lt;li&gt;Fast integration with the Swagger Framework;&lt;/li&gt;
-&lt;li&gt;Easy integration with Logic Apps;&lt;/li&gt;
-&lt;li&gt;Private gallery of APIs, enabling us to provide APIs to the other members of the organization;&lt;/li&gt;
-&lt;li&gt;Automatic generation of an SDK for our API.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;In this article we will see, how to create an API, publish in our subscription and create an SDK to consume it.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h2&gt;Description&lt;/h2&gt;
-
-&lt;p&gt;There are many services, inside the organizations, that are necessary to multiple applications. A good example of that is the send email notifications.
-Let imagine that we pretend to provide an API, so that all applications of our organization, can easily send emails, without need to know the logic of using the email server.
-Before we start, we need to be sure that &lt;a href="http://go.microsoft.com/fwlink/?linkid=324322&amp;amp;clcid=0x409"&gt;Microsoft Azure SDK for .NET 2.6&lt;/a&gt; is installed.&lt;/p&gt;
-
-&lt;h3&gt;Create an API App project&lt;/h3&gt;
-
-&lt;p&gt;Let’s start to see how to create a project for our API App.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Open Visual Studio 2013;&lt;/li&gt;
-&lt;li&gt;Create a new project using &lt;strong&gt;File &gt; New Project&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;Choose the template &lt;strong&gt;ASP.NET Web Application&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Give a name to the project, in this case we will use MailApi;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/create-an-api-in-azure-app-service-revista-programar-n49-1.png" alt="New Project" /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Click &lt;strong&gt;OK&lt;/strong&gt;;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Select the template &lt;strong&gt;Azure API App&lt;/strong&gt;;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/create-an-api-in-azure-app-service-revista-programar-n49-2.png" alt="Template" /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Click &lt;strong&gt;OK&lt;/strong&gt; and to create the project.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;Create the service to send emails&lt;/h3&gt;
-
-&lt;p&gt;Let’s see how to expose a method for sending emails in our API. For that, we will create a class that represents the data model to receive the request, and a controller to provide the sending method. &lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;In the folder Models, add a new class with the name MailModel. Mouse right click in the folder Models, and select the option &lt;strong&gt;Add &gt; Class&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;In the created file, MailModel.cs, add the following code:&lt;/li&gt;
-&lt;/ol&gt;
-
- &lt;pre&gt;
-   &lt;code&gt;
-    using System.ComponentModel.DataAnnotations;
-    public class MailModel
-    {
-       [Required]
-       [EmailAddress]
-       public string To { get; set; }
-
-       [Required]
-       public string Subject { get; set; }
-
-       [Required]
-       public string Body { get; set; }
-    }
-    &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Add a controller to the project (controllers file) with the name MailController, using the template, &lt;strong&gt;Web API 2 Controller – Empty&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/create-an-api-in-azure-app-service-revista-programar-n49-3.png" alt="Scaffold" /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In the created file, &lt;strong&gt;MailController.cs&lt;/strong&gt;, add the following method:&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
- &lt;pre&gt;
-   &lt;code&gt;
-    using MailApi.Models;
-    [HttpPost]
-    public HttpResponseMessage Post([FromBody]MailModel data)
-    {
-       using (var client = new System.Net.Mail.SmtpClient())
-       {
-         // create the message
-         var mailFrom = new System.Net.Mail.MailAddress("noreply@deathstar.com", "Death Star");
-         var mailTo = new System.Net.Mail.MailAddress(data.To);
-         var mail = new System.Net.Mail.MailMessage(mailFrom, mailTo);
-
-         mail.Subject = data.Subject;
-         mail.Body = data.Body;
-         mail.IsBodyHtml = true;
-
-         // send email
-         client.Send(mail);
-       }
-       return Request.CreateResponse(HttpStatusCode.OK);
-    }
-    &lt;/code&gt;
-&lt;/pre&gt;
-
-&lt;h3&gt;Configure the service&lt;/h3&gt;
-
-&lt;p&gt;Since in this example we will send the e-mail via SMTP, we will need to configure the e-mail server data.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Access the &lt;strong&gt;Web.config&lt;/strong&gt; file of our application;&lt;/li&gt;
-&lt;li&gt;Add the following configuration (before the line &amp;lt;/configuration&amp;gt;):&lt;/li&gt;
-&lt;/ol&gt;
-
- &lt;pre&gt;
-    &lt;code&gt; 
-       &amp;lt;system.net&amp;gt;
-         &amp;lt;mailSettings&amp;gt;
-           &amp;lt;smtp from=&amp;quot;noreply@deathstar.com&amp;quot;&amp;gt;
-            &amp;lt;network host=&amp;quot;mail.deathstar.com&amp;quot; port=&amp;quot;587&amp;quot; userName=&amp;quot;noreply@deathstar.com&amp;quot; password=&amp;quot;#MayTheForceBeWithThisPassword!&amp;quot; enableSsl=&amp;quot;true&amp;quot; /&amp;gt;
-           &amp;lt;/smtp&amp;gt;
-         &amp;lt;/mailSettings&amp;gt;
-       &amp;lt;/system.net&amp;gt;
-     &lt;/code&gt;
- &lt;/pre&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Fill in with the data from our server.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;Publish the application to the Azure App Service&lt;/h3&gt;
-
-&lt;p&gt;The publication can be made to an App Service, previously created using the portal, but in the next step we will see how to create the same without leaving Visual Studio. &lt;/p&gt;
-
-&lt;p&gt;To do this, it’s required to have an Azure subscription. If you don’t have it, you can create one test subscription of a month, in http://azure.microsoft.com/en-us/pricing/free-trial/.
-If you already have it, follow the next steps:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;In Solution Explorer, right click in project and click &lt;strong&gt;Publish&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In the publish dialog, access the &lt;strong&gt;Profile&lt;/strong&gt; panel and choose the option &lt;strong&gt;Microsoft Azure API Apps&lt;/strong&gt;;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/create-an-api-in-azure-app-service-revista-programar-n49-4.png" alt="Publish" /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Click &lt;strong&gt;New&lt;/strong&gt; to create a new API App in the subscription;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/create-an-api-in-azure-app-service-revista-programar-n49-5.png" alt="Azure API Apps" /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In the Create dialog, add:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;The API App name. Here we will use &lt;strong&gt;MailApiService&lt;/strong&gt;;&lt;/li&gt;
-&lt;li&gt;Select the disired subscription;&lt;/li&gt;
-&lt;li&gt;Pick a name to the App Service;&lt;/li&gt;
-&lt;li&gt;Pick a name to the Resource Group;&lt;/li&gt;
-&lt;li&gt;Choose the access level Available to Anyone;&lt;/li&gt;
-&lt;li&gt;Pick the region where you what to host the App Service.&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/create-an-api-in-azure-app-service-revista-programar-n49-6.png" alt="Create API App dialog" /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Click &lt;strong&gt;OK&lt;/strong&gt; and wait a few minutes while the service is being created. The creation request can be followed in the Azure App Service Activity panel;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Once the App Service is created, we go back to the step number 1, access the publish dialog, and we click in the &lt;strong&gt;Publish&lt;/strong&gt; option;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/create-an-api-in-azure-app-service-revista-programar-n49-7.png" alt="Publish" /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;The service will be published.&lt;/p&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h3&gt;Consume na API from a .NET client.&lt;/h3&gt;
-
-&lt;p&gt;Let’s see how to create an SDK to our API and use it.&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;p&gt;Add a Console Application to our solution;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/create-an-api-in-azure-app-service-revista-programar-n49-8.png" alt="Add console app" /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In the Solution Explorer, right click in the Console Application and select the option &lt;strong&gt;Add &gt; Azure API App Client&lt;/strong&gt;;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;In the presented dialog, pick the option &lt;strong&gt;Download from Microsoft Azure API App&lt;/strong&gt; and select the MailApiService, create previously;&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/create-an-api-in-azure-app-service-revista-programar-n49-7.png" alt="Add Azure API App Client" /&gt;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;&lt;p&gt;Click &lt;strong&gt;OK&lt;/strong&gt; and wait until the SDK is created;&lt;/p&gt;&lt;/li&gt;
-&lt;li&gt;When the last step is completed, we are ready to invoke our API, as the following code shows. &lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;pre&gt;
-  &lt;code&gt;
-  class Program
-  {
-    static void Main(string[] args)
-    {
-      var client = new MailApiService();
-      var data = new Models.MailModel { To = "darth.vader@deathstar.com", Subject = "War Report", Body = "The Force awakens" };
-
-      var response = client.Mail.Post(data);
-
-      Console.WriteLine("Done!");
-      Console.ReadKey();
-    }
-  }
-&lt;/code&gt;
-&lt;/pre&gt;
-
-&lt;h2&gt;Summary&lt;/h2&gt;
-
-&lt;p&gt;With this new service created by Microsoft, we are able to provide features that in the past had a huge development cost, in an easy and quick way. 
-The private gallery in conjunction with the easy way to consume APIs, provides the required capabilities to create an API ecosystem. &lt;/p&gt;
 </a10:content></item></channel></rss>

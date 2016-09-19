@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
-    <meta http-equiv="last-modified" content="2016-08-08T18:56:30.6925646+01:00" />
+    <meta http-equiv="last-modified" content="2016-09-19T22:52:29.8789108+01:00" />
     <meta name="keywords" content="" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Azure WebJobs dependency injection with Unity - 
+            NetPonto - Como construir software altamente eficiente com CQRS - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,9 +39,9 @@
 
 
 <div class="post">
-    <h1>Azure WebJobs dependency injection with Unity</h1> 
+    <h1>NetPonto - Como construir software altamente eficiente com CQRS</h1> 
       <div class="meta">
-        <p class="posted">08 ago 2016</p>
+        <p class="posted">19 set 2016</p>
         <ul class="categories">
         </ul>
       </div>
@@ -49,96 +49,33 @@
     
     
         
-    <p>In the early days of <strong>Azure WebJobs</strong> use <strong>Dependency Injection</strong> was a little bit tricky because the Triggered methods were only static methods.</p>
+    <p>Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.</p>
 
-<p>Since the WebJobs SDK 1.0.1 you are no longer limited to static methods and that can change how you approach Dependency Injection on WebJobs.</p>
-
-<p>In this blog post I will show how you can use <strong><a href="https://github.com/unitycontainer/unity">Unity</a></strong> to inject dependencies into your WebJobs.</p>
+<p>Se não tiveste a oportunidade de assistir, coloco aqui os slides, o vídeo da sessão, bem como algumas referências sobre o tema.</p>
 
 <!--excerpt-->
 
-<h2>Setup dependency injection</h2>
+<p>Alguma dúvida que tenhas, deixa um comentário.</p>
 
-<p><em>In this post I'm assuming you already know how to set up a <a href="https://azure.microsoft.com/en-gb/documentation/articles/websites-dotnet-webjobs-sdk-get-started/">WebJob</a>.</em></p>
+<p>Video: <a href="https://youtu.be/pM8GycDZji4?t=5614">Youtube</a></p>
 
-<p>The first step is to install the Unity Package in your project.</p>
+<p>Slides: <a href="http://www.slideshare.net/GuilhermeFerreira114/como-construir-software-altamente-eficiente-com-cqrs">SlideShare</a></p>
 
-<pre><code>Install-Package Unity
-</code></pre>
+<p>Referências:</p>
 
-<p>Then, we will need to implement the <strong>IJobActivator</strong> Interface, that accepts a Unity container. Here, we will provide the capabilitie of resolve the Instances using the Unity container.</p>
+<ul>
+<li><a href="https://msdn.microsoft.com/en-us/library/jj554200.aspx">CQRS Journey</a></li>
+<li><a href="https://www.youtube.com/watch?v=JHGkaShoyNs">Greg Young - CQRS and Event Sourcing - Code on the Beach 2014</a></li>
+<li><a href="http://www.dotnetrocks.com/?show=639">.NET Rocks - Udi Dahan Clarifies CQRS</a></li>
+<li><a href="http://www.dotnetrocks.com/?show=1044">.NET Rocks - CQRS Update with Udi Dahan</a></li>
+<li><a href="http://www.dotnetrocks.com/?show=820">.NET Rocks - Udi Dahan Talks CQRS, Agile and More</a></li>
+<li><a href="https://lostechies.com/jimmybogard/2012/06/26/eventual-consistency-cqrs-and-interaction-design/">Eventual consistency, CQRS and interaction design - LosTechies</a></li>
+<li><a href="https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match">CQRS and REST: the perfect match - LosTechies</a></li>
+<li><a href="http://martinfowler.com/bliki/CQRS.html">CQRS - Martin Fowler</a></li>
+<li><a href="https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young</a></li>
+</ul>
 
-<p>Let's name the class as <strong>"UnityJobActivator"</strong> and fill it with the following code:</p>
-
-<pre><code>public class UnityJobActivator : IJobActivator
-{
-    private readonly IUnityContainer _container;
-    public UnityJobActivator(IUnityContainer container)
-    {
-        _container = container;
-    }
-    public T CreateInstance&lt;T&gt;()
-    {
-        return _container.Resolve&lt;T&gt;();
-    }
-}
-</code></pre>
-
-<p>As you can see, the <strong>UnityJobActivator</strong> receives in the constructor the Unity Container. Now let's setup the container.</p>
-
-<p><em>I like to use a Unity Configuration Class to organize my Unity configurations.</em></p>
-
-<pre><code>public class UnityConfig
-{
-    private static Lazy&lt;IUnityContainer&gt; container = new Lazy&lt;IUnityContainer&gt;(() =&gt;
-    {
-        var container = new UnityContainer();
-        RegisterTypes(container);
-        return container;
-    });
-    public static IUnityContainer GetConfiguredContainer()
-    {
-        return container.Value;
-    }
-    public static void RegisterTypes(IUnityContainer container)
-    {
-        container.RegisterType&lt;IMailService, MailService&gt;(new HierarchicalLifetimeManager());
-    }
-}
-</code></pre>
-
-<p>Now that we have the container defined, we can specify the <strong>JobActivator</strong> that the WebJob should use. </p>
-
-<p>It can be accomplished using the Job Host Configuration (this is done in <em>Program.cs</em> in the main method), as you can see in the following code:</p>
-
-<pre><code>JobHostConfiguration config = new JobHostConfiguration()
-{
-    JobActivator = new UnityJobActivator(UnityConfig.GetConfiguredContainer())
-};
-var host = new JobHost(config);
-host.RunAndBlock();
-</code></pre>
-
-<p>Finally, open your functions, transform them in non static methods and receive the parameter of the type you want in the constructor.</p>
-
-<pre><code>public class Functions
-{
-    private readonly IMailService _mailService;
-    public Functions(IMailService mailService)
-    {
-        _mailService = mailService;
-    }
-
-    public void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log)
-    {
-        _mailService.Send(message);
-
-        log.WriteLine(message);
-    }
-}
-</code></pre>
-
-<p>I hope that this helps you. </p>
+<p><img src="/images/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs.jpg" alt="netponto 20160919" /></p>
 
 
 
@@ -161,14 +98,14 @@ host.RunAndBlock();
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/';
+                this.page.url = 'http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/';
+    var disqus_url = 'http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
