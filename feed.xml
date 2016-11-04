@@ -1,4 +1,52 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2016-09-19T22:52:33+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</id><title type="text">NetPonto - Como construir software altamente eficiente com CQRS</title><summary type="html">&lt;p&gt;Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2016-11-04T15:33:31Z</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/</id><title type="text">Create a Web Deployment Package with Cake Build</title><summary type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
+
+</summary><published>2016-11-04T00:00:00Z</published><updated>2016-11-04T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/" /><content type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;If you have a ASP.NET project and you want to create a Web Deployment package using Cake, you just need to use the MSBUILD Command with the right arguments.&lt;/p&gt;
+
+&lt;p&gt;Feel free to copy the following command and paste it in a Task from your Cake file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    MSBuild("PROJECT_NAME.csproj", settings =&amp;gt;
+        settings.SetConfiguration(configuration)
+        .UseToolVersion(MSBuildToolVersion.VS2015)
+        .WithTarget("Package")
+        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
+        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+        .WithProperty("PackageTempRootDir", new string[]{"root"})
+        );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here an example of a complete script (&lt;em&gt;build.cake&lt;/em&gt;). &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var target = Argument("target", "Default");
+var configuration = Argument("configuration", "Release");
+var packageDir = MakeAbsolute(Directory("./package"));
+
+Information("BUILD DIR:" + packageDir);
+
+Task("Default")
+.Does(() =&amp;gt;
+{
+
+    MSBuild("PROJECT_NAME.csproj", settings =&amp;gt;
+        settings.SetConfiguration(configuration)
+        .UseToolVersion(MSBuildToolVersion.VS2015)
+        .WithTarget("Package")
+        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
+        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+        .WithProperty("PackageTempRootDir", new string[]{"root"})
+        );
+
+
+});
+
+RunTarget(target);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</id><title type="text">NetPonto - Como construir software altamente eficiente com CQRS</title><summary type="html">&lt;p&gt;Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.&lt;/p&gt;
 
 &lt;p&gt;Se não tiveste a oportunidade de assistir, coloco aqui os slides, o vídeo da sessão, bem como algumas referências sobre o tema.&lt;/p&gt;
 
@@ -829,49 +877,4 @@ With a simple command you can simplify your dependency tree and reduce your proj
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps. Feel free to leave comments and ask questions.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/</id><title type="text">6th Meeting of NetPonto Community in Oporto</title><summary type="html">&lt;p&gt;We are bringing to Oporto the 6th Meeting of NetPonto Community.
-The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 11 July 2015. &lt;/p&gt;
-
-&lt;h2&gt;Program&lt;/h2&gt;
-
-&lt;p&gt;09:45    -  Check-in&lt;/p&gt;
-
-&lt;p&gt;10:00    -  ASP.NET VNext, now in Mac! - Bruno Lopes&lt;/p&gt;
-
-&lt;p&gt;12:00    -  Building applications with Xamarin Forms - Rui Marinho&lt;/p&gt;
-
-&lt;p&gt;13:30    -  Closing Panel&lt;/p&gt;
-
-</summary><published>2015-06-28T23:00:00Z</published><updated>2015-06-28T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/" /><content type="html">&lt;p&gt;We are bringing to Oporto the 6th Meeting of NetPonto Community.
-The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 11 July 2015. &lt;/p&gt;
-
-&lt;h2&gt;Program&lt;/h2&gt;
-
-&lt;p&gt;09:45    -  Check-in&lt;/p&gt;
-
-&lt;p&gt;10:00    -  ASP.NET VNext, now in Mac! - Bruno Lopes&lt;/p&gt;
-
-&lt;p&gt;12:00    -  Building applications with Xamarin Forms - Rui Marinho&lt;/p&gt;
-
-&lt;p&gt;13:30    -  Closing Panel&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h2&gt;Venue&lt;/h2&gt;
-
-&lt;p&gt;Instituto Superior de Engenharia do Porto (ISEP) - Room H202 &lt;/p&gt;
-
-&lt;p&gt;Rua Dr. António Bernardino de Almeida, 431&lt;/p&gt;
-
-&lt;p&gt;4200-072 Porto&lt;/p&gt;
-
-&lt;p&gt;Portugal&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://www.google.pt/maps/place/ISEP,+4200-072+Porto/@41.1778457,-8.6081006,17z/data=!4m2!3m1!1s0xd246449b419e1c1:0x16a6fd2fcace4efe"&gt;Map&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Registration&lt;/h2&gt;
-
-&lt;p&gt;Free!&lt;/p&gt;
-
-&lt;p&gt;Registration: &lt;a href="https://netponto-porto-julho-2015.eventbrite.co.uk/"&gt;https://netponto-porto-julho-2015.eventbrite.co.uk/&lt;/a&gt;&lt;/p&gt;
 </content></entry></feed>

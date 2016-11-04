@@ -1,4 +1,52 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</guid><link>http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</link><title>NetPonto - Como construir software altamente eficiente com CQRS</title><description>&lt;p&gt;Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/</guid><link>http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/</link><title>Create a Web Deployment Package with Cake Build</title><description>&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
+
+</description><pubDate>Fri, 04 Nov 2016 00:00:00 Z</pubDate><a10:updated>2016-11-04T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;If you have a ASP.NET project and you want to create a Web Deployment package using Cake, you just need to use the MSBUILD Command with the right arguments.&lt;/p&gt;
+
+&lt;p&gt;Feel free to copy the following command and paste it in a Task from your Cake file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;    MSBuild("PROJECT_NAME.csproj", settings =&amp;gt;
+        settings.SetConfiguration(configuration)
+        .UseToolVersion(MSBuildToolVersion.VS2015)
+        .WithTarget("Package")
+        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
+        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+        .WithProperty("PackageTempRootDir", new string[]{"root"})
+        );
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Here an example of a complete script (&lt;em&gt;build.cake&lt;/em&gt;). &lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var target = Argument("target", "Default");
+var configuration = Argument("configuration", "Release");
+var packageDir = MakeAbsolute(Directory("./package"));
+
+Information("BUILD DIR:" + packageDir);
+
+Task("Default")
+.Does(() =&amp;gt;
+{
+
+    MSBuild("PROJECT_NAME.csproj", settings =&amp;gt;
+        settings.SetConfiguration(configuration)
+        .UseToolVersion(MSBuildToolVersion.VS2015)
+        .WithTarget("Package")
+        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
+        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+        .WithProperty("PackageTempRootDir", new string[]{"root"})
+        );
+
+
+});
+
+RunTarget(target);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</guid><link>http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</link><title>NetPonto - Como construir software altamente eficiente com CQRS</title><description>&lt;p&gt;Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.&lt;/p&gt;
 
 &lt;p&gt;Se não tiveste a oportunidade de assistir, coloco aqui os slides, o vídeo da sessão, bem como algumas referências sobre o tema.&lt;/p&gt;
 
@@ -829,49 +877,4 @@ With a simple command you can simplify your dependency tree and reduce your proj
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps. Feel free to leave comments and ask questions.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/</guid><link>http://gsferreira.com/archive/2015/06/6th-meeting-of-netponto-community-in-oporto/</link><title>6th Meeting of NetPonto Community in Oporto</title><description>&lt;p&gt;We are bringing to Oporto the 6th Meeting of NetPonto Community.
-The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 11 July 2015. &lt;/p&gt;
-
-&lt;h2&gt;Program&lt;/h2&gt;
-
-&lt;p&gt;09:45    -  Check-in&lt;/p&gt;
-
-&lt;p&gt;10:00    -  ASP.NET VNext, now in Mac! - Bruno Lopes&lt;/p&gt;
-
-&lt;p&gt;12:00    -  Building applications with Xamarin Forms - Rui Marinho&lt;/p&gt;
-
-&lt;p&gt;13:30    -  Closing Panel&lt;/p&gt;
-
-</description><pubDate>Sun, 28 Jun 2015 23:00:00 Z</pubDate><a10:updated>2015-06-28T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;We are bringing to Oporto the 6th Meeting of NetPonto Community.
-The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 11 July 2015. &lt;/p&gt;
-
-&lt;h2&gt;Program&lt;/h2&gt;
-
-&lt;p&gt;09:45    -  Check-in&lt;/p&gt;
-
-&lt;p&gt;10:00    -  ASP.NET VNext, now in Mac! - Bruno Lopes&lt;/p&gt;
-
-&lt;p&gt;12:00    -  Building applications with Xamarin Forms - Rui Marinho&lt;/p&gt;
-
-&lt;p&gt;13:30    -  Closing Panel&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h2&gt;Venue&lt;/h2&gt;
-
-&lt;p&gt;Instituto Superior de Engenharia do Porto (ISEP) - Room H202 &lt;/p&gt;
-
-&lt;p&gt;Rua Dr. António Bernardino de Almeida, 431&lt;/p&gt;
-
-&lt;p&gt;4200-072 Porto&lt;/p&gt;
-
-&lt;p&gt;Portugal&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://www.google.pt/maps/place/ISEP,+4200-072+Porto/@41.1778457,-8.6081006,17z/data=!4m2!3m1!1s0xd246449b419e1c1:0x16a6fd2fcace4efe"&gt;Map&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Registration&lt;/h2&gt;
-
-&lt;p&gt;Free!&lt;/p&gt;
-
-&lt;p&gt;Registration: &lt;a href="https://netponto-porto-julho-2015.eventbrite.co.uk/"&gt;https://netponto-porto-julho-2015.eventbrite.co.uk/&lt;/a&gt;&lt;/p&gt;
 </a10:content></item></channel></rss>

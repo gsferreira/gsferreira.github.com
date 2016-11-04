@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2016-11-04T15:33:27.6670513+00:00" />
-    <meta name="keywords" content="Azure" />
+    <meta name="keywords" content="Node.js" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            A developer's thoughts on Azure SQL Database performance levels - 
+            Create a Web Deployment Package with Cake Build - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,62 +39,61 @@
 
 
 <div class="post">
-    <h1>A developer's thoughts on Azure SQL Database performance levels</h1> 
+    <h1>Create a Web Deployment Package with Cake Build</h1> 
       <div class="meta">
-        <p class="posted">14 mar 2015</p>
+        <p class="posted">04 nov 2016</p>
         <ul class="categories">
-          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
+          <li><a href="/category/node.js" title="Snow.Models.Category">Node.js</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>I recently started moving some databases that I have in the old Azure SQL Database Web/Business model. I started it with a good feeling. Let's face it, a guaranteed performance level is excellent. Nobody wants a noisy neighbor boring our database.</p>
-
-<p>The downside, is that this shift brings new challenges and possible big troubles to the ones that already have systems in place. Everything has a price and in this case we call it <strong>Performance</strong>. </p>
+    <p>This is simple tip to help you create Web Deployment Packages with <a href="http://cakebuild.net/">Cake</a>.</p>
 
 <!--excerpt-->
 
-<p>In this new model, SQL Azure Databases are paid by performance instead of space. Now we have service tiers with transaction rates per hour (Basic Tier), per minute (Standard Tier) or per second (Premium Tier).</p>
+<p>If you have a ASP.NET project and you want to create a Web Deployment package using Cake, you just need to use the MSBUILD Command with the right arguments.</p>
 
-<p>So, what's wrong with this? The prices! In my opinion, there's no equality between the old models and the new ones. Chris Bailiss has some awesome posts that shows that. Take a look:</p>
+<p>Feel free to copy the following command and paste it in a Task from your Cake file.</p>
 
-<ul>
-<li><a href="https://cbailiss.wordpress.com/2015/01/31/azure-sql-database-v12-ga-performance-inc-cpu-benchmaring/">Azure SQL Database: v12 GA Performance inc. CPU Benchmaring</a></li>
-<li><a href="https://cbailiss.wordpress.com/2014/09/16/performance-in-new-azure-sql-database-performance-tiers/">GA Performance in New Azure SQL Database Performance Tiers</a></li>
-</ul>
+<pre><code>    MSBuild("PROJECT_NAME.csproj", settings =&gt;
+        settings.SetConfiguration(configuration)
+        .UseToolVersion(MSBuildToolVersion.VS2015)
+        .WithTarget("Package")
+        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
+        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+        .WithProperty("PackageTempRootDir", new string[]{"root"})
+        );
+</code></pre>
 
-<h3>Show me the numbers</h3>
+<p>Here an example of a complete script (<em>build.cake</em>). </p>
 
-<p>If you have an Azure SQL Database on the Web model with 1.5GB you will pay 10.42€/month.
-By a few more cents (11.18€/month) you can use an SQL Database in the Standard Tier with the S0 Performance Level.</p>
+<pre><code>var target = Argument("target", "Default");
+var configuration = Argument("configuration", "Release");
+var packageDir = MakeAbsolute(Directory("./package"));
 
-<p>If you have read the Chris Bailiss post, you have seen that the performance between those two can't be compared. S0 is slower than Web.</p>
+Information("BUILD DIR:" + packageDir);
 
-<h3>So, what can I do?</h3>
+Task("Default")
+.Does(() =&gt;
+{
 
-<p>With this post <strong>I don't want to say that you should run away from SQL Azure Database</strong>. What I mean, is that the game has changed. </p>
+    MSBuild("PROJECT_NAME.csproj", settings =&gt;
+        settings.SetConfiguration(configuration)
+        .UseToolVersion(MSBuildToolVersion.VS2015)
+        .WithTarget("Package")
+        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
+        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+        .WithProperty("PackageTempRootDir", new string[]{"root"})
+        );
 
-<p>In this Cloud era the costs are a variable that Software Developers and Architects need to take in account. Now our code has a visible and measurable impact in the financial health of our products and companies. </p>
 
-<p>So, how to start facing the dragon?
-You can find here a list of things that you should have in mind:</p>
+});
 
-<ul>
-<li><strong>Question yourself: Do I really need a SQL database?</strong> There's many options in Azure to store your data, probably they can do the task.</li>
-<li><strong>Performance is more important than ever!</strong> Don't wait until a query takes a few minutes running to start doing SQL Tuning.</li>
-<li><strong>Database design has a significant importance!</strong> Be careful designing your database data model.</li>
-<li><strong>Test in Azure since the first day.</strong> Probably your development machine has an SQL Server with more power than the production database.</li>
-</ul>
-
-<p><img src="/images/a-developers-thoughts-on-azure-sql-database-performance-levels-works-fine-in-dev.jpg" alt="Works fine in Dev" /></p>
-
-<ul>
-<li><strong>Reduce the "chatty"</strong> operations in your application.</li>
-<li><strong>Be careful using Entity Framework.</strong> Make sure that your code isn't triggering multiple queries that can be done at once. EF can make your life easier, but the database can suffer from that. </li>
-<li><strong>Start using cache.</strong> This will reduce the workload at your database and you will consume less DTUs.</li>
-</ul>
+RunTarget(target);
+</code></pre>
 
 <p>Hope this helps.</p>
 
@@ -119,14 +118,14 @@ You can find here a list of things that you should have in mind:</p>
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/';
+                this.page.url = 'http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2015/03/a-developers-thoughts-on-azure-sql-database-performance-levels/';
+    var disqus_url = 'http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
