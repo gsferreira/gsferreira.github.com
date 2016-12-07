@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
-    <meta http-equiv="last-modified" content="2016-11-04T15:33:27.6670513+00:00" />
-    <meta name="keywords" content="Node.js" />
+    <meta http-equiv="last-modified" content="2016-12-07T12:44:30.4055467+00:00" />
+    <meta name="keywords" content=".NET" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Create a Web Deployment Package with Cake Build - 
+            Adding Custom Arguments to Topshelf - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2016/12/adding-custom-arguments-to-topshelf/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,60 +39,36 @@
 
 
 <div class="post">
-    <h1>Create a Web Deployment Package with Cake Build</h1> 
+    <h1>Adding Custom Arguments to Topshelf</h1> 
       <div class="meta">
-        <p class="posted">04 nov 2016</p>
+        <p class="posted">07 dez 2016</p>
         <ul class="categories">
-          <li><a href="/category/node.js" title="Snow.Models.Category">Node.js</a></li>
+          <li><a href="/category/.net" title="Snow.Models.Category">.NET</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>This is simple tip to help you create Web Deployment Packages with <a href="http://cakebuild.net/">Cake</a>.</p>
+    <p><a href="http://topshelf-project.com/">Topshelf</a> is an amazing framework that let you easily host and build Windows services.</p>
+
+<p>Topshelf is really extensible, but recently I struggled to find how to configure a custom argument to the service.</p>
+
+<p>This post is simple tip to help you create custom arguments to a <a href="http://topshelf-project.com/">Topshelf</a> service and use it in the command line. </p>
 
 <!--excerpt-->
 
-<p>If you have a ASP.NET project and you want to create a Web Deployment package using Cake, you just need to use the MSBUILD Command with the right arguments.</p>
+<p>This can be accomplished simply using the Host Configurations.</p>
 
-<p>Feel free to copy the following command and paste it in a Task from your Cake file.</p>
+<p>If you use the method <em>"AddCommandLineDefinition"</em> you will be able to specify the name of your argument (case sensitive) and how you want to use it.</p>
 
-<pre><code>    MSBuild("PROJECT_NAME.csproj", settings =&gt;
-        settings.SetConfiguration(configuration)
-        .UseToolVersion(MSBuildToolVersion.VS2015)
-        .WithTarget("Package")
-        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
-        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
-        .WithProperty("PackageTempRootDir", new string[]{"root"})
-        );
-</code></pre>
+<p>You can find here a simple example.</p>
 
-<p>Here an example of a complete script (<em>build.cake</em>). </p>
+<script src="https://gist.github.com/gsferreira/615526c3b10fbefcc49caaa4dafed57e.js"></script>
 
-<pre><code>var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Release");
-var packageDir = MakeAbsolute(Directory("./package"));
+<p>Then you can execute your service sending your argument as you can see in the following example (command line invoke).</p>
 
-Information("BUILD DIR:" + packageDir);
-
-Task("Default")
-.Does(() =&gt;
-{
-
-    MSBuild("PROJECT_NAME.csproj", settings =&gt;
-        settings.SetConfiguration(configuration)
-        .UseToolVersion(MSBuildToolVersion.VS2015)
-        .WithTarget("Package")
-        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
-        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
-        .WithProperty("PackageTempRootDir", new string[]{"root"})
-        );
-
-
-});
-
-RunTarget(target);
+<pre><code>.\TopShelfCustomArgs.exe run -path:"c:\temp" -frequency:2 
 </code></pre>
 
 <p>Hope this helps.</p>
@@ -118,14 +94,14 @@ RunTarget(target);
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/';
+                this.page.url = 'http://gsferreira.com/archive/2016/12/adding-custom-arguments-to-topshelf/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/';
+    var disqus_url = 'http://gsferreira.com/archive/2016/12/adding-custom-arguments-to-topshelf/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

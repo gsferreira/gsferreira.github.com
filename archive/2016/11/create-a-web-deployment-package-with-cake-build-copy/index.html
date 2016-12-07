@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2016-12-07T12:44:30.4055467+00:00" />
-    <meta name="keywords" content="" />
+    <meta name="keywords" content="Node.js" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Dog training for Developers - The basics: Come when called - 
+            Create a Web Deployment Package with Cake Build - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,57 +39,63 @@
 
 
 <div class="post">
-    <h1>Dog training for Developers - The basics: Come when called</h1> 
+    <h1>Create a Web Deployment Package with Cake Build</h1> 
       <div class="meta">
-        <p class="posted">06 out 2014</p>
+        <p class="posted">04 nov 2016</p>
         <ul class="categories">
+          <li><a href="/category/node.js" title="Snow.Models.Category">Node.js</a></li>
         </ul>
       </div>
     </div>
     
-    <ul class="snow-series"><li><a href="/archive/2014/09/dog-trainig-for-developers-the-basics/">Dog training for Developers - The basics</a></li><li><a href="/archive/2014/09/dog-trainig-for-developers-the-basics-recognize-the-name/">Dog training for Developers - The basics: Recognize the name</a></li><li>Dog training for Developers - The basics: Come when called</li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-sit/">Dog training for Developers - The basics: Sit</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/">Dog training for Developers - The basics: Stay</a></li><li><a href="/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/">Dog training for Developers - The basics: Lie down</a></li></ul>
+    
         
-    <p>Your dog ignores when you call him? Well, you can help him understand that you would be glad if he came to you when you want.</p>
+    <p>This is simple tip to help you create Web Deployment Packages with <a href="http://cakebuild.net/">Cake</a>.</p>
 
 <!--excerpt-->
 
-<p>Run the following method during a few days, but don't run it more than once a day.</p>
+<p>If you have a ASP.NET project and you want to create a Web Deployment package using Cake, you just need to use the MSBUILD Command with the right arguments.</p>
 
-<p>Remember, be patient :)</p>
+<p>Feel free to copy the following command and paste it in a Task from your Cake file.</p>
 
-<pre><code>public void ComeWhenCalled()
-{
-    for (int i = 0; i &lt; 10; i++)
-    {
-        var snack = _teacher.GrabNewSnack();
-
-        //Request dog attention
-        do
-        {
-            _teacher.ShowToDog(snack);
-
-        } while (!_dog.IsLooking);
-
-        _teacher.GoAway(meters: 2);
-
-        //Open arms to invite the dog
-        _teacher.OpenArms();
-
-        while (_dog.IsComming || !_dog.IsNearTeacher)
-        {
-            _teacher.Say("Here!");
-
-            _teacher.ShowToDog(snack);
-
-        }
-
-        _teacher.GrabDogCollar(_dog);
-        //To receive the snack the dog should stay near you
-        _teacher.GiveToDog(snack);
-
-    }
-}
+<pre><code>    MSBuild("PROJECT_NAME.csproj", settings =&gt;
+        settings.SetConfiguration(configuration)
+        .UseToolVersion(MSBuildToolVersion.VS2015)
+        .WithTarget("Package")
+        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
+        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+        .WithProperty("PackageTempRootDir", new string[]{"root"})
+        );
 </code></pre>
+
+<p>Here an example of a complete script (<em>build.cake</em>). </p>
+
+<pre><code>var target = Argument("target", "Default");
+var configuration = Argument("configuration", "Release");
+var packageDir = MakeAbsolute(Directory("./package"));
+
+Information("BUILD DIR:" + packageDir);
+
+Task("Default")
+.Does(() =&gt;
+{
+
+    MSBuild("PROJECT_NAME.csproj", settings =&gt;
+        settings.SetConfiguration(configuration)
+        .UseToolVersion(MSBuildToolVersion.VS2015)
+        .WithTarget("Package")
+        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
+        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+        .WithProperty("PackageTempRootDir", new string[]{"root"})
+        );
+
+
+});
+
+RunTarget(target);
+</code></pre>
+
+<p>Hope this helps.</p>
 
 
 
@@ -112,14 +118,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/';
+                this.page.url = 'http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/';
+    var disqus_url = 'http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -1,4 +1,32 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/</guid><link>http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/</link><title>Create a Web Deployment Package with Cake Build</title><description>&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/12/adding-custom-arguments-to-topshelf/</guid><link>http://gsferreira.com/archive/2016/12/adding-custom-arguments-to-topshelf/</link><title>Adding Custom Arguments to Topshelf</title><description>&lt;p&gt;&lt;a href="http://topshelf-project.com/"&gt;Topshelf&lt;/a&gt; is an amazing framework that let you easily host and build Windows services.&lt;/p&gt;
+
+&lt;p&gt;Topshelf is really extensible, but recently I struggled to find how to configure a custom argument to the service.&lt;/p&gt;
+
+&lt;p&gt;This post is simple tip to help you create custom arguments to a &lt;a href="http://topshelf-project.com/"&gt;Topshelf&lt;/a&gt; service and use it in the command line. &lt;/p&gt;
+
+</description><pubDate>Wed, 07 Dec 2016 00:00:00 Z</pubDate><a10:updated>2016-12-07T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;&lt;a href="http://topshelf-project.com/"&gt;Topshelf&lt;/a&gt; is an amazing framework that let you easily host and build Windows services.&lt;/p&gt;
+
+&lt;p&gt;Topshelf is really extensible, but recently I struggled to find how to configure a custom argument to the service.&lt;/p&gt;
+
+&lt;p&gt;This post is simple tip to help you create custom arguments to a &lt;a href="http://topshelf-project.com/"&gt;Topshelf&lt;/a&gt; service and use it in the command line. &lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;This can be accomplished simply using the Host Configurations.&lt;/p&gt;
+
+&lt;p&gt;If you use the method &lt;em&gt;"AddCommandLineDefinition"&lt;/em&gt; you will be able to specify the name of your argument (case sensitive) and how you want to use it.&lt;/p&gt;
+
+&lt;p&gt;You can find here a simple example.&lt;/p&gt;
+
+&lt;script src="https://gist.github.com/gsferreira/615526c3b10fbefcc49caaa4dafed57e.js"&gt;&lt;/script&gt;
+
+&lt;p&gt;Then you can execute your service sending your argument as you can see in the following example (command line invoke).&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;.\TopShelfCustomArgs.exe run -path:"c:\temp" -frequency:2 
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/</guid><link>http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/</link><title>Create a Web Deployment Package with Cake Build</title><description>&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
 
 </description><pubDate>Fri, 04 Nov 2016 00:00:00 Z</pubDate><a10:updated>2016-11-04T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
 
@@ -816,65 +844,4 @@ Windows Phone users know what I mean. Android users will probably say "There's a
 &lt;p&gt;In the near future, I will keep my Windows Phone. I know that there are rumors about the platform that aren't cheerful for WP users, but I really believe in the platform and I hope that Microsoft too.  &lt;/p&gt;
 
 &lt;p&gt;Feel free to leave comments.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2015/07/reduce-the-path-length-of-a-node-js-project/</guid><link>http://gsferreira.com/archive/2015/07/reduce-the-path-length-of-a-node-js-project/</link><title>Reduce the path length of a Node.js project</title><description>&lt;p&gt;Are you fighting with the path length of your Node.js projects? &lt;/p&gt;
-
-&lt;p&gt;If you are using Microsoft Visual Studio to development, I bet you do. If you don't, you will (this isn't any curse that I'm throwing at you)!&lt;/p&gt;
-
-&lt;p&gt;Windows has the "Maximum Path Length Limitation" that is terrible for Node.JS projects.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;As you know, when you install a package in Node.js, the npm will place the dependencies under the package folder. This process is recursive for each package, so you can easily overcome the path length.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, there's no silver bullet to fix it (I'm not a Node.js guru, so please let me know if I'm wrong), but we can follow some tips to deal with it.&lt;/p&gt;
-
-</description><pubDate>Wed, 08 Jul 2015 23:00:00 Z</pubDate><a10:updated>2015-07-08T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Are you fighting with the path length of your Node.js projects? &lt;/p&gt;
-
-&lt;p&gt;If you are using Microsoft Visual Studio to development, I bet you do. If you don't, you will (this isn't any curse that I'm throwing at you)!&lt;/p&gt;
-
-&lt;p&gt;Windows has the "Maximum Path Length Limitation" that is terrible for Node.JS projects.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;&lt;em&gt;"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;As you know, when you install a package in Node.js, the npm will place the dependencies under the package folder. This process is recursive for each package, so you can easily overcome the path length.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, there's no silver bullet to fix it (I'm not a Node.js guru, so please let me know if I'm wrong), but we can follow some tips to deal with it.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/reduce-the-path-length-of-your-node-js-project-dependencies-dependencies-everywhere.jpg" alt="dependencies everywhere" /&gt;&lt;/p&gt;
-
-&lt;h3&gt;1. Azure Cloud Services - Change the output directory&lt;/h3&gt;
-
-&lt;p&gt;If you are getting an error when you publish your cloud service to azure, it's probably because the deployment will place the output into a subfolder.
-I've already had &lt;a href="http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/"&gt;blogged how to deal with it and you can find it here&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3&gt;2. Find the packages that are leading you into the limit and install them&lt;/h3&gt;
-
-&lt;p&gt;Imagine that you install a package that has a dependency from &lt;em&gt;request&lt;/em&gt; and that dependency made you overcome the path limit.
-Go to the npm and install the package explicitly. Now, Node.js will not install the request in a subfolder of your first package.   &lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install request --save
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;3. Remove dev packages&lt;/h3&gt;
-
-&lt;p&gt;Install the packages with the &lt;em&gt;"--production"&lt;/em&gt; flag to remove all development only packages.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm install --production
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;h3&gt;4. Remove duplicated packages&lt;/h3&gt;
-
-&lt;p&gt;Npm has a command that will find for you the duplicated dependencies and install them as top dependencies.
-With a simple command you can simplify your dependency tree and reduce your project size.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;npm dedupe 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hope this helps. Feel free to leave comments and ask questions.&lt;/p&gt;
 </a10:content></item></channel></rss>
