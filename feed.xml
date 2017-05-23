@@ -1,4 +1,32 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2016-12-07T12:44:36Z</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2016/12/adding-custom-arguments-to-topshelf/</id><title type="text">Adding Custom Arguments to Topshelf</title><summary type="html">&lt;p&gt;&lt;a href="http://topshelf-project.com/"&gt;Topshelf&lt;/a&gt; is an amazing framework that let you easily host and build Windows services.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2017-05-23T12:04:34+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2017/05/tugait-build-automation-its-a-piece-of-cake/</id><title type="text">Tuga IT - Build Automation? It's a piece of Cake</title><summary type="html">&lt;p&gt;It was a huge privilege to share my experience with &lt;a href="http://cakebuild.net"&gt;Cake Build&lt;/a&gt; at &lt;a href="http://tugait.pt/2017/"&gt;Tuga IT&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can find here the slides and demos that have been used, as well as some references related to the theme.&lt;/p&gt;
+
+</summary><published>2017-05-22T23:00:00Z</published><updated>2017-05-22T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2017/05/tugait-build-automation-its-a-piece-of-cake/" /><content type="html">&lt;p&gt;It was a huge privilege to share my experience with &lt;a href="http://cakebuild.net"&gt;Cake Build&lt;/a&gt; at &lt;a href="http://tugait.pt/2017/"&gt;Tuga IT&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;You can find here the slides and demos that have been used, as well as some references related to the theme.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;If you have any doubt please leave a comment below.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Slides: &lt;a href="https://docs.com/gsferreira/7912/build-automation-its-a-piece-of-cake"&gt;docs.com&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;Demos: &lt;a href="https://github.com/gsferreira/cakedemo"&gt;GitHub - CakeDemo&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;References:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;a href="http://tugait.pt/2017/sessions/build-automation-its-a-piece-of-cake/"&gt;Session description&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://cakebuild.net/"&gt;Cake Build website&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-build/cake"&gt;Cake Build Github Repository&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://hanselminutes.com/548/cake-build-a-c-make-cross-platform-build-automation-system-with-patrik-svensson"&gt;Hanselminutes Poadcast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="http://radiotfs.com/Show/126/CakeByDevsForDevs"&gt;Radio TFS Poadcast&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.dotnetrocks.com/?show=1321"&gt;.NET Rocks Poadcast - Understanding Cake with Gary Ewan Park&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://github.com/cake-build/frosting"&gt;Cake Frosting Github Repository&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2016/12/adding-custom-arguments-to-topshelf/</id><title type="text">Adding Custom Arguments to Topshelf</title><summary type="html">&lt;p&gt;&lt;a href="http://topshelf-project.com/"&gt;Topshelf&lt;/a&gt; is an amazing framework that let you easily host and build Windows services.&lt;/p&gt;
 
 &lt;p&gt;Topshelf is really extensible, but recently I struggled to find how to configure a custom argument to the service.&lt;/p&gt;
 
@@ -700,148 +728,4 @@ The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) 
 &lt;p&gt;Free!&lt;/p&gt;
 
 &lt;p&gt;Registration: &lt;a href="https://netponto-porto-setembro-2015.eventbrite.co.uk/"&gt;https://netponto-porto-setembro-2015.eventbrite.co.uk/&lt;/a&gt;&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2015/07/are-you-sure-that-android-is-better-than-windows-phone/</id><title type="text">Are you sure that Android is better than Windows Phone?</title><summary type="html">&lt;p&gt;&lt;strong&gt;SPOILER ALERT&lt;/strong&gt;: This text contains &lt;strong&gt;opinions&lt;/strong&gt; from the author about smartphones.&lt;/p&gt;
-
-&lt;h2&gt;Confession&lt;/h2&gt;
-
-&lt;p&gt;I'm a huge fan of Windows Phone since the early days and I have been using it since 2011. 
-I followed the growing and I struggled with all the limitations in past years.&lt;/p&gt;
-
-&lt;p&gt;Until the last month I'd never used an Android Phone or an iPhone as my personal phones. 
-I've been playing with them in work or with family phones, and I have to honestly say that I never fall in love for them. 
-But I need to refer that I'm not a hater of them, I respect both Operating Systems.&lt;/p&gt;
-
-&lt;p&gt;I can see their pros and cons and I try to stay away from those fanboy discussions &lt;em&gt;(usually I'm the guy that they will make fun because for my friends I'm the only person in the country with a Windows Phone)&lt;/em&gt;.  &lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/are-you-sure-that-android-is-better-than-windows-phone-fun.jpg" alt="fun" /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the last month, I noticed that the camera button of my Nokia Lumia was a little loose and I decided that was time to send it to repair. 
-I needed a substitution phone and I decided to give a try to Android because &lt;strong&gt;I'm a kind of disappointed with the Nokia hardware quality&lt;/strong&gt; and I was really &lt;strong&gt;curious to try a different operating system&lt;/strong&gt;. 
-I've faced the experience with an open heart and really expecting to be surprised.&lt;/p&gt;
-
-&lt;h2&gt;Context&lt;/h2&gt;
-
-&lt;p&gt;I managed to get a Vodafone Prime 6, it's not a flagship product but it's a cool phone and I used it during a month.
-Here I will explain &lt;strong&gt;what I loved in Android and what I missed from my Windows Phone&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;*I want to point out that I won't compare hardware features.  *&lt;/p&gt;
-
-</summary><published>2015-07-22T23:00:00Z</published><updated>2015-07-22T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/07/are-you-sure-that-android-is-better-than-windows-phone/" /><content type="html">&lt;p&gt;&lt;strong&gt;SPOILER ALERT&lt;/strong&gt;: This text contains &lt;strong&gt;opinions&lt;/strong&gt; from the author about smartphones.&lt;/p&gt;
-
-&lt;h2&gt;Confession&lt;/h2&gt;
-
-&lt;p&gt;I'm a huge fan of Windows Phone since the early days and I have been using it since 2011. 
-I followed the growing and I struggled with all the limitations in past years.&lt;/p&gt;
-
-&lt;p&gt;Until the last month I'd never used an Android Phone or an iPhone as my personal phones. 
-I've been playing with them in work or with family phones, and I have to honestly say that I never fall in love for them. 
-But I need to refer that I'm not a hater of them, I respect both Operating Systems.&lt;/p&gt;
-
-&lt;p&gt;I can see their pros and cons and I try to stay away from those fanboy discussions &lt;em&gt;(usually I'm the guy that they will make fun because for my friends I'm the only person in the country with a Windows Phone)&lt;/em&gt;.  &lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/are-you-sure-that-android-is-better-than-windows-phone-fun.jpg" alt="fun" /&gt;&lt;/p&gt;
-
-&lt;p&gt;In the last month, I noticed that the camera button of my Nokia Lumia was a little loose and I decided that was time to send it to repair. 
-I needed a substitution phone and I decided to give a try to Android because &lt;strong&gt;I'm a kind of disappointed with the Nokia hardware quality&lt;/strong&gt; and I was really &lt;strong&gt;curious to try a different operating system&lt;/strong&gt;. 
-I've faced the experience with an open heart and really expecting to be surprised.&lt;/p&gt;
-
-&lt;h2&gt;Context&lt;/h2&gt;
-
-&lt;p&gt;I managed to get a Vodafone Prime 6, it's not a flagship product but it's a cool phone and I used it during a month.
-Here I will explain &lt;strong&gt;what I loved in Android and what I missed from my Windows Phone&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;*I want to point out that I won't compare hardware features.  *&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/are-you-sure-that-android-is-better-than-windows-phone-oh-you-have-an-android-phone-tell-me-again-how-much-better-than-an-iphone-it-is.jpg" alt="better phone" /&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2&gt;What I loved&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;1. Meterial Design&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I love minimalist design and all the flat design stuff. I really like the work done by google. All the simplicity, the amazing use of the depth and animations made me like Material Design.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. Apps... Tons of Apps...&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;If you ask an Android fan how to do something he will reply to you "There's an App to do that!". This is a great resume of the main advantage of the platform comparing to Windows Phone.
-I don't say that I like to 500 versions of angry birds or another useless apps in the Play Store, but I appreciate have the official version of some apps that I use every day like Trello, Pocket or Buffer.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2&gt;What I really don't like&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;1. User Experience&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;As I said before, I'm a huge fan of Material Design and I think that he can be an important tool to improve the &lt;strong&gt;experience&lt;/strong&gt;, but design isn't everything.
-The applications have a lack of rules and patterns, even in the most popular apps.&lt;/p&gt;
-
-&lt;p&gt;For more than once I had to think &lt;strong&gt;"Where should I touch?"&lt;/strong&gt; or &lt;strong&gt;"What should I do?"&lt;/strong&gt; and those should be prohibited questions for a phone user.&lt;/p&gt;
-
-&lt;p&gt;Example: The following example shows three different cases where the main action button is in different places.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/are-you-sure-that-android-is-better-than-windows-phone-ux.png" alt="Compair UX" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. Opening notifications&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Push notifications are amazing and I can't live without them anymore but in Android I got a little confused.&lt;/p&gt;
-
-&lt;p&gt;The most annoying thing in Android notification system is open a notification... double touch doesn't seems natural, at least for me.    &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3. Performance&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I installed more a less 8 applications, all them popular (Trello, Sunrise, Pocket, Feedly...) and the phone is constantly blocking.
-The system simply doesn't react in a fashion time. 
-When a user touch to go to the main screen and nothing happens during 1 or 2 seconds the expirience is ruined.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;NOTE&lt;/strong&gt;: I know that my Android phone isn't a powerfull machine, so I'm &lt;a href="http://smartphones.specout.com/compare/968-3120/Nokia-Lumia-630-vs-Vodafone-Smart-Prime-6"&gt;comparing him with the humble Nokia Lumia 630&lt;/a&gt;. &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4. Updates&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I simply can't get it. I'm not able to figure out the updates that are available and how can I run them. 
-Sometimes I got a notification to update the app "X", another times I need to go to Play Store to do it...
-The most annoying thing was one day that I saw that he was installing updates using my 3G data connection without asking for a confirmation. :O&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2&gt;What I missed from my Windows Phone&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;1. Tiles&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Isn't amazing to know your next appointment, see the twitter/facebook updates or read part of e-mail without a single gesture?
-Windows Phone users know what I mean. Android users will probably say "There's an app to do that". :) &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. People hub&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I really like the people hub and I missed so much the contact list navigation by the first letter.  &lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/are-you-sure-that-android-is-better-than-windows-phone-wp-filter-contacts.png" alt="Navigation by letter" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;3. Account management&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;In android the accounts configuration is distributed and I'm a fan of that Windows Phone &lt;strong&gt;experience&lt;/strong&gt; where you buy a phone, go to the Email and Accounts settings, add your accounts and your phone is ready to go.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;4. Vertical scroll at the applications list&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;I'm not comfortable with the menu style of Android. Scroll horizontally between pages to get an application is not so productive as the Windows Phone vertical list.&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;h2&gt;Summary&lt;/h2&gt;
-
-&lt;p&gt;As I use to say, Android is a "hackable" (customizable if you prefer the word) version of IOS. With Android we can have a phone that give us &lt;strong&gt;freedom to do what we want&lt;/strong&gt; and much cheaper than iPhone.&lt;/p&gt;
-
-&lt;p&gt;I &lt;strong&gt;won't say that Android is better or worst than Windows Phone&lt;/strong&gt;, because they both have a role to play in this game. &lt;/p&gt;
-
-&lt;p&gt;If to you the most important thing are Apps and be able to play the new Candy Crush or Flappy Birds since the first day, I recommend you to go to Android. &lt;/p&gt;
-
-&lt;p&gt;If to you, like to me, the most important thing is the &lt;strong&gt;experience&lt;/strong&gt;, so you should give a try to Windows Phone.&lt;/p&gt;
-
-&lt;p&gt;Users want apps and without apps you can't have users, but without users you will not have so many apps.  &lt;/p&gt;
-
-&lt;p&gt;In the near future, I will keep my Windows Phone. I know that there are rumors about the platform that aren't cheerful for WP users, but I really believe in the platform and I hope that Microsoft too.  &lt;/p&gt;
-
-&lt;p&gt;Feel free to leave comments.&lt;/p&gt;
 </content></entry></feed>
