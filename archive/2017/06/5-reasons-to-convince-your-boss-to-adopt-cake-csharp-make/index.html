@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
-    <meta http-equiv="last-modified" content="2017-05-23T12:04:30.3968503+01:00" />
-    <meta name="keywords" content="Node.js" />
+    <meta http-equiv="last-modified" content="2017-06-26T22:24:54.1116543+01:00" />
+    <meta name="keywords" content="Cake" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Create a Web Deployment Package with Cake Build - 
+            5 reasons to convince your boss to adopt Cake (C# Make) - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2017/06/5-reasons-to-convince-your-boss-to-adopt-cake-csharp-make/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,63 +39,70 @@
 
 
 <div class="post">
-    <h1>Create a Web Deployment Package with Cake Build</h1> 
+    <h1>5 reasons to convince your boss to adopt Cake (C# Make)</h1> 
       <div class="meta">
-        <p class="posted">04 nov 2016</p>
+        <p class="posted">26 jun 2017</p>
         <ul class="categories">
-          <li><a href="/category/node.js" title="Snow.Models.Category">Node.js</a></li>
+          <li><a href="/category/cake" title="Snow.Models.Category">Cake</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>This is simple tip to help you create Web Deployment Packages with <a href="http://cakebuild.net/">Cake</a>.</p>
+    <p>Have you taken a look into <a href="http://cakebuild.net/">Cake Build</a>?! It's awesome, isn't it?</p>
+
+<p>Probably you are already convinced, but you are having trouble convincing your boss that it's worth to give him a chance.</p>
+
+<p>To help you I give you here five compelling reasons they can't argue with.</p>
 
 <!--excerpt-->
 
-<p>If you have a ASP.NET project and you want to create a Web Deployment package using Cake, you just need to use the MSBUILD Command with the right arguments.</p>
+<p><img src="/images/cake-build-logo.png" alt="Cake Build" /></p>
 
-<p>Feel free to copy the following command and paste it in a Task from your Cake file.</p>
+<h1>1. It's C# &#10084;</h1>
 
-<pre><code>    MSBuild("PROJECT_NAME.csproj", settings =&gt;
-        settings.SetConfiguration(configuration)
-        .UseToolVersion(MSBuildToolVersion.VS2015)
-        .WithTarget("Package")
-        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
-        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
-        .WithProperty("PackageTempRootDir", new string[]{"root"})
-        );
-</code></pre>
+<p>If you are working in a .NET shop where C# is the common language, you already have the tools to do the Job and probably isn't a good idea to adopt a new language. </p>
 
-<p>Here an example of a complete script (<em>build.cake</em>). </p>
+<p>The <strong><a href="https://en.wikipedia.org/wiki/Bus_factor">BUS Factor</a></strong> is a good metric to illustrate the risk of adopting a new language for a build system.</p>
 
-<pre><code>var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Release");
-var packageDir = MakeAbsolute(Directory("./package"));
+<p>Cake scripts are written in C# and you can use all the knowledge that you already have.</p>
 
-Information("BUILD DIR:" + packageDir);
+<h1>2. Living form of documentation</h1>
 
-Task("Default")
-.Does(() =&gt;
-{
+<p>What is the best way to describe your system? With coded tests. So <strong>what is the best way to describe your build? With code</strong> for sure!</p>
 
-    MSBuild("PROJECT_NAME.csproj", settings =&gt;
-        settings.SetConfiguration(configuration)
-        .UseToolVersion(MSBuildToolVersion.VS2015)
-        .WithTarget("Package")
-        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
-        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
-        .WithProperty("PackageTempRootDir", new string[]{"root"})
-        );
+<p>As we all know, keeping a word document up-to-date is a painful task that one day someone will forget to update it. So, if you know how to read C#, you can read a script that documents it.</p>
 
+<p>You also have the bonus of having a <strong>versioned build script</strong> if you add it to your source control.</p>
 
-});
+<p>Isn't powerful to know that in the future you can go back and see how your software was built in the past week?</p>
 
-RunTarget(target);
-</code></pre>
+<p>Nevertheless, doing this kind of tasks manually shouldn't be a manual process. <strong>“For loops” are for computers</strong> and as programmers we know how to teach them to do it.</p>
 
-<p>Hope this helps.</p>
+<h1>3. Cross platform</h1>
+
+<p>With Cake, you can start <strong>building</strong> your software <strong>in multiple platforms</strong>.</p>
+
+<p>If in your team, there are elements working with different operating systems, with Cake <strong>everyone can be working in the same build script</strong>.</p>
+
+<h1>4. Agnostic from Build Server</h1>
+
+<p>With Cake you can easily <strong>move your scripts from one Build system to another</strong>, without need to completely reconfigure the complete Build.</p>
+
+<p>The best proof of this: Cake is building Cake with Cake in multiple build servers (<a href="https://github.com/cake-build/cake">see it in the Continuous integration section</a>).</p>
+
+<h1>5. Healthy community</h1>
+
+<p>The Cake community is really active.</p>
+
+<p>Cake has a huge list of Addins delivered and maintained by the community.</p>
+
+<p>Also, since 2016 Cake is part of the .NET Foundation.</p>
+
+<hr />
+
+<p><em>I hope that this helps you (and convinced your boss).</em></p>
 
 
 
@@ -118,14 +125,14 @@ RunTarget(target);
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/';
+                this.page.url = 'http://gsferreira.com/archive/2017/06/5-reasons-to-convince-your-boss-to-adopt-cake-csharp-make/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/';
+    var disqus_url = 'http://gsferreira.com/archive/2017/06/5-reasons-to-convince-your-boss-to-adopt-cake-csharp-make/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

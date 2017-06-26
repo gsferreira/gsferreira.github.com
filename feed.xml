@@ -1,4 +1,63 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2017-05-23T12:04:34+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2017/05/tugait-build-automation-its-a-piece-of-cake/</id><title type="text">Tuga IT - Build Automation? It's a piece of Cake</title><summary type="html">&lt;p&gt;It was a huge privilege to share my experience with &lt;a href="http://cakebuild.net"&gt;Cake Build&lt;/a&gt; at &lt;a href="http://tugait.pt/2017/"&gt;Tuga IT&lt;/a&gt;.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2017-06-26T22:24:58+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2017/06/5-reasons-to-convince-your-boss-to-adopt-cake-csharp-make/</id><title type="text">5 reasons to convince your boss to adopt Cake (C# Make)</title><summary type="html">&lt;p&gt;Have you taken a look into &lt;a href="http://cakebuild.net/"&gt;Cake Build&lt;/a&gt;?! It's awesome, isn't it?&lt;/p&gt;
+
+&lt;p&gt;Probably you are already convinced, but you are having trouble convincing your boss that it's worth to give him a chance.&lt;/p&gt;
+
+&lt;p&gt;To help you I give you here five compelling reasons they can't argue with.&lt;/p&gt;
+
+</summary><published>2017-06-25T23:00:00Z</published><updated>2017-06-25T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2017/06/5-reasons-to-convince-your-boss-to-adopt-cake-csharp-make/" /><content type="html">&lt;p&gt;Have you taken a look into &lt;a href="http://cakebuild.net/"&gt;Cake Build&lt;/a&gt;?! It's awesome, isn't it?&lt;/p&gt;
+
+&lt;p&gt;Probably you are already convinced, but you are having trouble convincing your boss that it's worth to give him a chance.&lt;/p&gt;
+
+&lt;p&gt;To help you I give you here five compelling reasons they can't argue with.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/cake-build-logo.png" alt="Cake Build" /&gt;&lt;/p&gt;
+
+&lt;h1&gt;1. It's C# &amp;#10084;&lt;/h1&gt;
+
+&lt;p&gt;If you are working in a .NET shop where C# is the common language, you already have the tools to do the Job and probably isn't a good idea to adopt a new language. &lt;/p&gt;
+
+&lt;p&gt;The &lt;strong&gt;&lt;a href="https://en.wikipedia.org/wiki/Bus_factor"&gt;BUS Factor&lt;/a&gt;&lt;/strong&gt; is a good metric to illustrate the risk of adopting a new language for a build system.&lt;/p&gt;
+
+&lt;p&gt;Cake scripts are written in C# and you can use all the knowledge that you already have.&lt;/p&gt;
+
+&lt;h1&gt;2. Living form of documentation&lt;/h1&gt;
+
+&lt;p&gt;What is the best way to describe your system? With coded tests. So &lt;strong&gt;what is the best way to describe your build? With code&lt;/strong&gt; for sure!&lt;/p&gt;
+
+&lt;p&gt;As we all know, keeping a word document up-to-date is a painful task that one day someone will forget to update it. So, if you know how to read C#, you can read a script that documents it.&lt;/p&gt;
+
+&lt;p&gt;You also have the bonus of having a &lt;strong&gt;versioned build script&lt;/strong&gt; if you add it to your source control.&lt;/p&gt;
+
+&lt;p&gt;Isn't powerful to know that in the future you can go back and see how your software was built in the past week?&lt;/p&gt;
+
+&lt;p&gt;Nevertheless, doing this kind of tasks manually shouldn't be a manual process. &lt;strong&gt;“For loops” are for computers&lt;/strong&gt; and as programmers we know how to teach them to do it.&lt;/p&gt;
+
+&lt;h1&gt;3. Cross platform&lt;/h1&gt;
+
+&lt;p&gt;With Cake, you can start &lt;strong&gt;building&lt;/strong&gt; your software &lt;strong&gt;in multiple platforms&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;If in your team, there are elements working with different operating systems, with Cake &lt;strong&gt;everyone can be working in the same build script&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h1&gt;4. Agnostic from Build Server&lt;/h1&gt;
+
+&lt;p&gt;With Cake you can easily &lt;strong&gt;move your scripts from one Build system to another&lt;/strong&gt;, without need to completely reconfigure the complete Build.&lt;/p&gt;
+
+&lt;p&gt;The best proof of this: Cake is building Cake with Cake in multiple build servers (&lt;a href="https://github.com/cake-build/cake"&gt;see it in the Continuous integration section&lt;/a&gt;).&lt;/p&gt;
+
+&lt;h1&gt;5. Healthy community&lt;/h1&gt;
+
+&lt;p&gt;The Cake community is really active.&lt;/p&gt;
+
+&lt;p&gt;Cake has a huge list of Addins delivered and maintained by the community.&lt;/p&gt;
+
+&lt;p&gt;Also, since 2016 Cake is part of the .NET Foundation.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;&lt;em&gt;I hope that this helps you (and convinced your boss).&lt;/em&gt;&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2017/05/tugait-build-automation-its-a-piece-of-cake/</id><title type="text">Tuga IT - Build Automation? It's a piece of Cake</title><summary type="html">&lt;p&gt;It was a huge privilege to share my experience with &lt;a href="http://cakebuild.net"&gt;Cake Build&lt;/a&gt; at &lt;a href="http://tugait.pt/2017/"&gt;Tuga IT&lt;/a&gt;.&lt;/p&gt;
 
 &lt;p&gt;You can find here the slides and demos that have been used, as well as some references related to the theme.&lt;/p&gt;
 
@@ -54,9 +113,9 @@
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/</id><title type="text">Create a Web Deployment Package with Cake Build</title><summary type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/</id><title type="text">Create a Web Deployment Package with Cake Build</title><summary type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
 
-</summary><published>2016-11-04T00:00:00Z</published><updated>2016-11-04T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/" /><content type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
+</summary><published>2016-11-04T00:00:00Z</published><updated>2016-11-04T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/" /><content type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
 
 &lt;!--excerpt--&gt;
 
@@ -133,13 +192,13 @@ RunTarget(target);
 &lt;/ul&gt;
 
 &lt;p&gt;&lt;img src="http://gsferreira.com/images/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs.jpg" alt="netponto 20160919" /&gt;&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity-copy/</id><title type="text">Azure WebJobs dependency injection with Unity</title><summary type="html">&lt;p&gt;In the early days of &lt;strong&gt;Azure WebJobs&lt;/strong&gt; use &lt;strong&gt;Dependency Injection&lt;/strong&gt; was a little bit tricky because the Triggered methods were only static methods.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/</id><title type="text">Azure WebJobs dependency injection with Unity</title><summary type="html">&lt;p&gt;In the early days of &lt;strong&gt;Azure WebJobs&lt;/strong&gt; use &lt;strong&gt;Dependency Injection&lt;/strong&gt; was a little bit tricky because the Triggered methods were only static methods.&lt;/p&gt;
 
 &lt;p&gt;Since the WebJobs SDK 1.0.1 you are no longer limited to static methods and that can change how you approach Dependency Injection on WebJobs.&lt;/p&gt;
 
 &lt;p&gt;In this blog post I will show how you can use &lt;strong&gt;&lt;a href="https://github.com/unitycontainer/unity"&gt;Unity&lt;/a&gt;&lt;/strong&gt; to inject dependencies into your WebJobs.&lt;/p&gt;
 
-</summary><published>2016-08-07T23:00:00Z</published><updated>2016-08-07T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity-copy/" /><content type="html">&lt;p&gt;In the early days of &lt;strong&gt;Azure WebJobs&lt;/strong&gt; use &lt;strong&gt;Dependency Injection&lt;/strong&gt; was a little bit tricky because the Triggered methods were only static methods.&lt;/p&gt;
+</summary><published>2016-08-07T23:00:00Z</published><updated>2016-08-07T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/" /><content type="html">&lt;p&gt;In the early days of &lt;strong&gt;Azure WebJobs&lt;/strong&gt; use &lt;strong&gt;Dependency Injection&lt;/strong&gt; was a little bit tricky because the Triggered methods were only static methods.&lt;/p&gt;
 
 &lt;p&gt;Since the WebJobs SDK 1.0.1 you are no longer limited to static methods and that can change how you approach Dependency Injection on WebJobs.&lt;/p&gt;
 
@@ -683,49 +742,4 @@ For instance, you can create labels with price groups or a rating that you use t
 &lt;p&gt;&lt;img src="http://gsferreira.com/images/using-trello-to-manage-your-wine-cellar-cellar3.jpg" alt="Final result" /&gt;   &lt;/p&gt;
 
 &lt;p&gt;I hope that this helps you.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2015/09/7th-meeting-of-netponto-community-in-oporto/</id><title type="text">7th Meeting of NetPonto Community in Oporto</title><summary type="html">&lt;p&gt;We are bringing to Oporto the 7th Meeting of NetPonto Community.
-The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 26 September 2015. &lt;/p&gt;
-
-&lt;h2&gt;Program&lt;/h2&gt;
-
-&lt;p&gt;09:45    -  Check-in&lt;/p&gt;
-
-&lt;p&gt;10:00    -  SOLR in .NET - Super Solid solution for a Super Fast Search - Pedro Neves Rosa &lt;/p&gt;
-
-&lt;p&gt;12:00    -  The Future of Web Applications - ECMAScript vNext and others - Ricardo Brandão&lt;/p&gt;
-
-&lt;p&gt;13:30    -  Closing Panel&lt;/p&gt;
-
-</summary><published>2015-09-17T23:00:00Z</published><updated>2015-09-17T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/09/7th-meeting-of-netponto-community-in-oporto/" /><content type="html">&lt;p&gt;We are bringing to Oporto the 7th Meeting of NetPonto Community.
-The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 26 September 2015. &lt;/p&gt;
-
-&lt;h2&gt;Program&lt;/h2&gt;
-
-&lt;p&gt;09:45    -  Check-in&lt;/p&gt;
-
-&lt;p&gt;10:00    -  SOLR in .NET - Super Solid solution for a Super Fast Search - Pedro Neves Rosa &lt;/p&gt;
-
-&lt;p&gt;12:00    -  The Future of Web Applications - ECMAScript vNext and others - Ricardo Brandão&lt;/p&gt;
-
-&lt;p&gt;13:30    -  Closing Panel&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h2&gt;Venue&lt;/h2&gt;
-
-&lt;p&gt;Instituto Superior de Engenharia do Porto (ISEP) - Room H202 &lt;/p&gt;
-
-&lt;p&gt;Rua Dr. António Bernardino de Almeida, 431&lt;/p&gt;
-
-&lt;p&gt;4200-072 Porto&lt;/p&gt;
-
-&lt;p&gt;Portugal&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://www.google.pt/maps/place/ISEP,+4200-072+Porto/@41.1778457,-8.6081006,17z/data=!4m2!3m1!1s0xd246449b419e1c1:0x16a6fd2fcace4efe"&gt;Map&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Registration&lt;/h2&gt;
-
-&lt;p&gt;Free!&lt;/p&gt;
-
-&lt;p&gt;Registration: &lt;a href="https://netponto-porto-setembro-2015.eventbrite.co.uk/"&gt;https://netponto-porto-setembro-2015.eventbrite.co.uk/&lt;/a&gt;&lt;/p&gt;
 </content></entry></feed>

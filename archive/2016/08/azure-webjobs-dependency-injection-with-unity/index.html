@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2017-06-26T22:24:54.1116543+01:00" />
-    <meta name="keywords" content=".NET,ASP.NET" />
+    <meta name="keywords" content="Azure" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Add documentation to your Web API in 5 steps - 
+            Azure WebJobs dependency injection with Unity - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,57 +39,107 @@
 
 
 <div class="post">
-    <h1>Add documentation to your Web API in 5 steps</h1> 
+    <h1>Azure WebJobs dependency injection with Unity</h1> 
       <div class="meta">
-        <p class="posted">27 jun 2014</p>
+        <p class="posted">08 ago 2016</p>
         <ul class="categories">
-          <li><a href="/category/.net" title="Snow.Models.Category">.NET</a></li>
-          <li><a href="/category/asp.net" title="Snow.Models.Category">ASP.NET</a></li>
+          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>APIs are created to expose the system to other developers, so we need to provide documentation that explain how to use our API.</p>
+    <p>In the early days of <strong>Azure WebJobs</strong> use <strong>Dependency Injection</strong> was a little bit tricky because the Triggered methods were only static methods.</p>
 
-<p>So far, so good, but maintain documents manually is a kind of boring. What about auto-generate it?</p>
+<p>Since the WebJobs SDK 1.0.1 you are no longer limited to static methods and that can change how you approach Dependency Injection on WebJobs.</p>
 
-<p>Well, if you are using ASP.NET Web API this is a piece of cake.</p>
+<p>In this blog post I will show how you can use <strong><a href="https://github.com/unitycontainer/unity">Unity</a></strong> to inject dependencies into your WebJobs.</p>
 
 <!--excerpt-->
 
-<p>How to add documentation to your ASP.NET Web API?</p>
+<h2>Setup dependency injection</h2>
 
-<ol>
-<li>Install "<em>Microsoft.AspNet.WebApi.HelpPage</em>" package from nuget. (If you are using VB.NET install "<em>Microsoft.AspNet.WebApi.HelpPage.VB</em>"). This package will create an Area called "Help" in the API project.</li>
-<li>Make sure that you have the following code in the "<em>Application_Start</em>" method at your Global.asax file: <em>AreaRegistration.RegisterAllAreas();</em></li>
-<li>Documentation will be available in the <em>/Help</em> URI. So, just add a link to it in your application.</li>
-<li>To enable the XML Documentation comments, open the file <em>Areas/HelpPage/App_Start/HelpPageConfig.cs</em> and uncomment the line "<em>config.SetDocumentationProvider(new XmlDocumentationProvider(HttpContext.Current.Server.MapPath("~/App_Data/XmlDocument.xml")));</em>"</li>
-<li>In Solution Explorer, right-click the project, select Properties, then go to the <em>Build</em> page. In the <em>Output</em> section check the <em>XML documentation file</em> property and set the text box with the value "App_Data/XmlDocument.xml".</li>
-</ol>
+<p><em>In this post I'm assuming you already know how to set up a <a href="https://azure.microsoft.com/en-gb/documentation/articles/websites-dotnet-webjobs-sdk-get-started/">WebJob</a>.</em></p>
 
-<p>Now you are able to start adding comments to your Web API methods, as you can see in the following example:</p>
+<p>The first step is to install the Unity Package in your project.</p>
 
-<pre><code>/// &lt;summary&gt;
-/// Get text by ID
-/// &lt;/summary&gt;
-/// &lt;param name="id"&gt;ID used to get the result text.&lt;/param&gt;
-public string Get(int id)
+<pre><code>Install-Package Unity
+</code></pre>
+
+<p>Then, we will need to implement the <strong>IJobActivator</strong> Interface, that accepts a Unity container. Here, we will provide the capabilitie of resolve the Instances using the Unity container.</p>
+
+<p>Let's name the class as <strong>"UnityJobActivator"</strong> and fill it with the following code:</p>
+
+<pre><code>public class UnityJobActivator : IJobActivator
 {
-    return "value";
+    private readonly IUnityContainer _container;
+    public UnityJobActivator(IUnityContainer container)
+    {
+        _container = container;
+    }
+    public T CreateInstance&lt;T&gt;()
+    {
+        return _container.Resolve&lt;T&gt;();
+    }
 }
 </code></pre>
 
-<p>Build your application and you are done! Now, if you want to do some advanced stuff, I recommend that you take a look into the following posts:</p>
+<p>As you can see, the <strong>UnityJobActivator</strong> receives in the constructor the Unity Container. Now let's setup the container.</p>
 
-<ul>
-<li><a href="http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages">Creating Help Pages for ASP.NET Web API</a></li>
-<li><a href="http://blogs.msdn.com/b/yaohuang1/archive/2012/12/10/asp-net-web-api-help-page-part-3-advanced-help-page-customizations.aspx">Advanced Help Page customizations</a></li>
-<li><a href="http://blogs.msdn.com/b/yaohuang1/archive/2012/08/15/introducing-the-asp-net-web-api-help-page-preview.aspx">Introducing the ASP.NET Web API Help Page</a></li>
-</ul>
+<p><em>I like to use a Unity Configuration Class to organize my Unity configurations.</em></p>
 
-<p>I hope this helps you.</p>
+<pre><code>public class UnityConfig
+{
+    private static Lazy&lt;IUnityContainer&gt; container = new Lazy&lt;IUnityContainer&gt;(() =&gt;
+    {
+        var container = new UnityContainer();
+        RegisterTypes(container);
+        return container;
+    });
+    public static IUnityContainer GetConfiguredContainer()
+    {
+        return container.Value;
+    }
+    public static void RegisterTypes(IUnityContainer container)
+    {
+        container.RegisterType&lt;IMailService, MailService&gt;(new HierarchicalLifetimeManager());
+    }
+}
+</code></pre>
+
+<p>Now that we have the container defined, we can specify the <strong>JobActivator</strong> that the WebJob should use. </p>
+
+<p>It can be accomplished using the Job Host Configuration (this is done in <em>Program.cs</em> in the main method), as you can see in the following code:</p>
+
+<pre><code>JobHostConfiguration config = new JobHostConfiguration()
+{
+    JobActivator = new UnityJobActivator(UnityConfig.GetConfiguredContainer())
+};
+var host = new JobHost(config);
+host.RunAndBlock();
+</code></pre>
+
+<p>Finally, open your functions, transform them in non static methods and receive the parameter of the type you want in the constructor.</p>
+
+<pre><code>public class Functions
+{
+    private readonly IMailService _mailService;
+    public Functions(IMailService mailService)
+    {
+        _mailService = mailService;
+    }
+
+    public void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log)
+    {
+        _mailService.Send(message);
+
+        log.WriteLine(message);
+    }
+}
+</code></pre>
+
+<p>I hope that this helps you. </p>
 
 
 
@@ -112,14 +162,14 @@ public string Get(int id)
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/';
+                this.page.url = 'http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/06/add-documentation-to-your-web-api-in-5-steps/';
+    var disqus_url = 'http://gsferreira.com/archive/2016/08/azure-webjobs-dependency-injection-with-unity/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
