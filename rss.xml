@@ -43,10 +43,10 @@
 &lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/&lt;/li&gt;
-&lt;li&gt;https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/&lt;/li&gt;
-&lt;li&gt;https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/&lt;/li&gt;
-&lt;li&gt;https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/"&gt;https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/"&gt;https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/"&gt;https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/"&gt;https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2017/06/5-reasons-to-convince-your-boss-to-adopt-cake-csharp-make/</guid><link>http://gsferreira.com/archive/2017/06/5-reasons-to-convince-your-boss-to-adopt-cake-csharp-make/</link><title>5 reasons to convince your boss to adopt Cake (C# Make)</title><description>&lt;p&gt;Have you taken a look into &lt;a href="http://cakebuild.net/"&gt;Cake Build&lt;/a&gt;?! It's awesome, isn't it?&lt;/p&gt;
 

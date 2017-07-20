@@ -1,4 +1,4 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2017-07-20T22:39:20+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2017/07/rebuilding-sql-database-indexes-using-azure-function/</id><title type="text">Rebuilding SQL Database indexes using Azure Function</title><summary type="html">&lt;p&gt;Do you know that index management is under your responsibility and you need to pay attention to how fragmented they are? If you are reading this post, probably you know that (I hope that you didn't find it in the hard way).&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2017-07-20T22:55:00+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2017/07/rebuilding-sql-database-indexes-using-azure-function/</id><title type="text">Rebuilding SQL Database indexes using Azure Function</title><summary type="html">&lt;p&gt;Do you know that index management is under your responsibility and you need to pay attention to how fragmented they are? If you are reading this post, probably you know that (I hope that you didn't find it in the hard way).&lt;/p&gt;
 
 &lt;p&gt;Azure SQL Database takes care of a lot of maintenance tasks, but keeping your Indexes healthy isn't one of them. &lt;/p&gt;
 
@@ -43,10 +43,10 @@
 &lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
 
 &lt;ul&gt;
-&lt;li&gt;https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/&lt;/li&gt;
-&lt;li&gt;https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/&lt;/li&gt;
-&lt;li&gt;https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/&lt;/li&gt;
-&lt;li&gt;https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/"&gt;https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/"&gt;https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/"&gt;https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/&lt;/a&gt;&lt;/li&gt;
+&lt;li&gt;&lt;a href="https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/"&gt;https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content></entry><entry><id>http://gsferreira.com/archive/2017/06/5-reasons-to-convince-your-boss-to-adopt-cake-csharp-make/</id><title type="text">5 reasons to convince your boss to adopt Cake (C# Make)</title><summary type="html">&lt;p&gt;Have you taken a look into &lt;a href="http://cakebuild.net/"&gt;Cake Build&lt;/a&gt;?! It's awesome, isn't it?&lt;/p&gt;
 
