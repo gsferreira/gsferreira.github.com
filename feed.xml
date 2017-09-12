@@ -1,4 +1,47 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2017-07-20T22:55:00+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2017/07/rebuilding-sql-database-indexes-using-azure-function/</id><title type="text">Rebuilding SQL Database indexes using Azure Function</title><summary type="html">&lt;p&gt;Do you know that index management is under your responsibility and you need to pay attention to how fragmented they are? If you are reading this post, probably you know that (I hope that you didn't find it in the hard way).&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2017-09-12T22:13:14+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2017/09/please-don-t-name-it-utils/</id><title type="text">Please don't name it "Utils"!</title><summary type="html">&lt;p&gt;Imagine that you are working on a code base that you are really proud of. Everything is building up together with great quality and you reach the moment where you need to send a mail. Simple task to you for sure.&lt;/p&gt;
+
+&lt;p&gt;You know that eventually you will need to send emails in other points of your application and because you master the DRY principle you decide to write an &lt;em&gt;"Utils"&lt;/em&gt; class.&lt;/p&gt;
+
+&lt;p&gt;Good idea, isn't it? &lt;strong&gt;NO!!!! Absolutely no!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Why not? What's wrong with an &lt;em&gt;"Utils"&lt;/em&gt; folder or an Utility class?&lt;/p&gt;
+
+</summary><published>2017-09-11T23:00:00Z</published><updated>2017-09-11T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2017/09/please-don-t-name-it-utils/" /><content type="html">&lt;p&gt;Imagine that you are working on a code base that you are really proud of. Everything is building up together with great quality and you reach the moment where you need to send a mail. Simple task to you for sure.&lt;/p&gt;
+
+&lt;p&gt;You know that eventually you will need to send emails in other points of your application and because you master the DRY principle you decide to write an &lt;em&gt;"Utils"&lt;/em&gt; class.&lt;/p&gt;
+
+&lt;p&gt;Good idea, isn't it? &lt;strong&gt;NO!!!! Absolutely no!&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Why not? What's wrong with an &lt;em&gt;"Utils"&lt;/em&gt; folder or an Utility class?&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;Segregate responsibilities is an important thing, but naming is also important. Readability and discoverability are often underrated.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/please-don-t-name-it-utils-code-sample.png" alt="Utils code sample" /&gt;&lt;/p&gt;
+
+&lt;p&gt;When you create an &lt;em&gt;"Utils"&lt;/em&gt; class you are creating a collection of random stuff. A place where anything can fit and that someone who doesn't know your project won't know what can be found inside the &lt;em&gt;"Utils"&lt;/em&gt;. For them, your &lt;em&gt;"Utils"&lt;/em&gt; it's a kind of magical place where treasures and dragons can be hidden.&lt;/p&gt;
+
+&lt;p&gt;Please don't feel ashamed by doing that, I have done it in the past. 
+Phil Karlton once said: &lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;There are only two hard things in Computer Science: cache invalidation and &lt;strong&gt;naming things&lt;/strong&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;I prefer a name that doesn't sounds catchy than a name that doesn't make sense.&lt;/p&gt;
+
+&lt;p&gt;So if you are typing  &lt;em&gt;"Utils"&lt;/em&gt;, please stop and think what the hell will this code do? Then, name it according to that.&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Write to a Log file? Name it &lt;em&gt;"Logger"&lt;/em&gt;. &lt;/li&gt;
+&lt;li&gt;Send a mail? Name it &lt;em&gt;"MailSender"&lt;/em&gt;. &lt;/li&gt;
+&lt;li&gt;Generate a random message? Name it &lt;em&gt;"MessageGenerator"&lt;/em&gt;. &lt;/li&gt;
+&lt;li&gt;Provide string extensions? Name it &lt;em&gt;"StringExtensions"&lt;/em&gt;. &lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;You get it.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2017/07/rebuilding-sql-database-indexes-using-azure-function/</id><title type="text">Rebuilding SQL Database indexes using Azure Function</title><summary type="html">&lt;p&gt;Do you know that index management is under your responsibility and you need to pay attention to how fragmented they are? If you are reading this post, probably you know that (I hope that you didn't find it in the hard way).&lt;/p&gt;
 
 &lt;p&gt;Azure SQL Database takes care of a lot of maintenance tasks, but keeping your Indexes healthy isn't one of them. &lt;/p&gt;
 
@@ -591,131 +634,4 @@ Those patterns or technologies are usually presented with CQRS, adding a new lay
 &lt;p&gt;It's important to remember that you should start simple and CQRS enables you to adjust and evolve if you need it. &lt;/p&gt;
 
 &lt;p&gt;Don't try to do all upfront.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/</id><title type="text">Use T4 as email template in 6 steps</title><summary type="html">&lt;p&gt;When you want to send emails from .net applications how do you do it?&lt;/p&gt;
-
-&lt;p&gt;Do you create an instance of StringBuilder and start adding texts?!&lt;/p&gt;
-
-&lt;p&gt;And when you want to format the body as HTML? How do you do it?! A bigger string?!  &lt;/p&gt;
-
-&lt;p&gt;And if you could write your templates as plain text and still be capable to inject values like names, dates or other values?&lt;/p&gt;
-
-&lt;p&gt;The good news is that you can and you have a good old friend to help you: &lt;strong&gt;T4 Templates&lt;/strong&gt;.  &lt;/p&gt;
-
-&lt;p&gt;Let's see how to do it.&lt;/p&gt;
-
-</summary><published>2015-10-22T23:00:00Z</published><updated>2015-10-22T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/10/use-t4-as-email-template-in-6-steps/" /><content type="html">&lt;p&gt;When you want to send emails from .net applications how do you do it?&lt;/p&gt;
-
-&lt;p&gt;Do you create an instance of StringBuilder and start adding texts?!&lt;/p&gt;
-
-&lt;p&gt;And when you want to format the body as HTML? How do you do it?! A bigger string?!  &lt;/p&gt;
-
-&lt;p&gt;And if you could write your templates as plain text and still be capable to inject values like names, dates or other values?&lt;/p&gt;
-
-&lt;p&gt;The good news is that you can and you have a good old friend to help you: &lt;strong&gt;T4 Templates&lt;/strong&gt;.  &lt;/p&gt;
-
-&lt;p&gt;Let's see how to do it.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;strong&gt;1. Open your project and add a template&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Right click in your project and go to the option  "Add &gt; New Item", select the "Runtime Text Template" and name it &lt;strong&gt;("WelcomeMail.tt" for example)&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/use-t4-as-email-template-in-6-steps-create-t4-template.png" alt="Create T4 Templates" /&gt; &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;2. Create your text template&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Open the template (&lt;strong&gt;.tt file&lt;/strong&gt;) and write your email with all the HTML formatting that you want.
-&lt;em&gt;Find an Html Mail template example &lt;a href="https://github.com/leemunroe/responsive-html-email-template"&gt;here&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;#@ template language="C#" #&amp;gt;
-&amp;lt;#@ assembly name="System.Core" #&amp;gt;
-&amp;lt;#@ import namespace="System.Linq" #&amp;gt;
-&amp;lt;#@ import namespace="System.Text" #&amp;gt;
-&amp;lt;#@ import namespace="System.Collections.Generic" #&amp;gt;
-
-&amp;lt;!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"&amp;gt; 
-&amp;lt;html xmlns="http://www.w3.org/1999/xhtml"&amp;gt;
-&amp;lt;head&amp;gt;
-&amp;lt;meta http-equiv="Content-Type" content="text/html; charset=utf-8" /&amp;gt;
-&amp;lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&amp;gt;
-&amp;lt;/head&amp;gt;
-&amp;lt;body style="width:100%; margin:0; padding:0; -webkit-text-size-adjust:100%; -ms-text-size-adjust:100%;"&amp;gt;
-    &amp;lt;p&amp;gt;
-        &amp;lt;strong&amp;gt;Hello!&amp;lt;/strong&amp;gt;
-    &amp;lt;/p&amp;gt;
-    &amp;lt;p&amp;gt;
-        Lorem ipsum dolor sit amet, congue appareat cum ne. Sit postea mediocrem an, erat dissentiet est an. Eu est eius veri assum, et nam sonet molestiae urbanitas. Cu minim cetero nam, utamur accumsan ius in. Est et sint quaestio, cu his primis invenire rationibus.
-    &amp;lt;/p&amp;gt;
-    &amp;lt;p&amp;gt;
-        Cibo senserit mnesarchum qui te, sonet ceteros evertitur ad ius, an eam autem mediocrem scribentur. In esse vero sapientem eos, modus consequuntur sit ei, ius et sale fabulas. Te populo commodo gubergren sed, pri autem discere in, accumsan antiopam an usu. Per viris veniam prompta et. In est quas virtute, mea accumsan invidunt id, usu ad cibo justo imperdiet.
-    &amp;lt;/p&amp;gt;
-&amp;lt;/body&amp;gt;
-&amp;lt;/html&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;3. Create variables to use into the template&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;First you need to create a partial class for the T4 template that you created in the step 2.&lt;/p&gt;
-
-&lt;p&gt;In your partial add a property for each value that you want to inject into the template (destination email or signature for example).&lt;/p&gt;
-
-&lt;p&gt;Create a constructor to initialize the properties that you have created.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;using System.Net.Mail;
-
-namespace MailT4Template
-{
-    public partial class WelcomeMail
-    {
-        public MailAddress To { get; set; }
-        public WelcomeMail(MailAddress to)
-        {
-            this.To = to;   
-        }
-    }
-}
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;4. Adapt the template to use the injected values&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Just open a C# block code with the tags &lt;strong&gt;&amp;lt;#&lt;/strong&gt; and &lt;strong&gt;#&gt;&lt;/strong&gt; and use the equal operator to get the variable value.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;&amp;lt;strong&amp;gt;Hello &amp;lt;#= To.DisplayName #&amp;gt;!&amp;lt;/strong&amp;gt;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;5. Transform the text template&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Invoke the template with the parameters to get the transformed text.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var to = new MailAddress("luke@starwars.com", "Luke");
-WelcomeMail mailTemplate = new WelcomeMail(to);
-mailTemplate.TransformText();
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;&lt;strong&gt;6. Compose your email&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Use the transformed text and send the email.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var from = new MailAddress("mail@mail.com");
-var to = new MailAddress("luke@starwars.com", "Luke");
-
-WelcomeMail mailTemplate = new WelcomeMail(to);
-
-var mail = new MailMessage(from, to);
-var client = new SmtpClient();
-client.Port = 587;
-client.DeliveryMethod = SmtpDeliveryMethod.Network;
-client.UseDefaultCredentials = false;
-client.EnableSsl = true;
-client.Credentials = new NetworkCredential("admin@mail.com","UseTheForce#");
-client.Host = "mail.mail.com";
-
-mail.Subject = "This is a welcom email.";
-mail.IsBodyHtml = true;
-mail.Body = mailTemplate.TransformText();
-client.Send(mail);
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;I hope that this helps you.&lt;/p&gt;
 </content></entry></feed>

@@ -13,13 +13,13 @@
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            NetPonto - Como construir software altamente eficiente com CQRS - 
+            Please don't name it &quot;Utils&quot;! - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2017/09/please-don-t-name-it-utils/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,9 +39,9 @@
 
 
 <div class="post">
-    <h1>NetPonto - Como construir software altamente eficiente com CQRS</h1> 
+    <h1>Please don't name it &quot;Utils&quot;!</h1> 
       <div class="meta">
-        <p class="posted">19 set 2016</p>
+        <p class="posted">12 set 2017</p>
         <ul class="categories">
         </ul>
       </div>
@@ -49,33 +49,41 @@
     
     
         
-    <p>Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.</p>
+    <p>Imagine that you are working on a code base that you are really proud of. Everything is building up together with great quality and you reach the moment where you need to send a mail. Simple task to you for sure.</p>
 
-<p>Se não tiveste a oportunidade de assistir, coloco aqui os slides, o vídeo da sessão, bem como algumas referências sobre o tema.</p>
+<p>You know that eventually you will need to send emails in other points of your application and because you master the DRY principle you decide to write an <em>"Utils"</em> class.</p>
+
+<p>Good idea, isn't it? <strong>NO!!!! Absolutely no!</strong></p>
+
+<p>Why not? What's wrong with an <em>"Utils"</em> folder or an Utility class?</p>
 
 <!--excerpt-->
 
-<p>Alguma dúvida que tenhas, deixa um comentário.</p>
+<p>Segregate responsibilities is an important thing, but naming is also important. Readability and discoverability are often underrated.</p>
 
-<p>Video: <a href="https://youtu.be/pM8GycDZji4?t=5614">Youtube</a></p>
+<p><img src="/images/please-don-t-name-it-utils-code-sample.png" alt="Utils code sample" /></p>
 
-<p>Slides: <a href="http://www.slideshare.net/GuilhermeFerreira114/como-construir-software-altamente-eficiente-com-cqrs">SlideShare</a></p>
+<p>When you create an <em>"Utils"</em> class you are creating a collection of random stuff. A place where anything can fit and that someone who doesn't know your project won't know what can be found inside the <em>"Utils"</em>. For them, your <em>"Utils"</em> it's a kind of magical place where treasures and dragons can be hidden.</p>
 
-<p>Referências:</p>
+<p>Please don't feel ashamed by doing that, I have done it in the past. 
+Phil Karlton once said: </p>
+
+<blockquote>
+  <p>There are only two hard things in Computer Science: cache invalidation and <strong>naming things</strong>.</p>
+</blockquote>
+
+<p>I prefer a name that doesn't sounds catchy than a name that doesn't make sense.</p>
+
+<p>So if you are typing  <em>"Utils"</em>, please stop and think what the hell will this code do? Then, name it according to that.</p>
 
 <ul>
-<li><a href="https://msdn.microsoft.com/en-us/library/jj554200.aspx">CQRS Journey</a></li>
-<li><a href="https://www.youtube.com/watch?v=JHGkaShoyNs">Greg Young - CQRS and Event Sourcing - Code on the Beach 2014</a></li>
-<li><a href="http://www.dotnetrocks.com/?show=639">.NET Rocks - Udi Dahan Clarifies CQRS</a></li>
-<li><a href="http://www.dotnetrocks.com/?show=1044">.NET Rocks - CQRS Update with Udi Dahan</a></li>
-<li><a href="http://www.dotnetrocks.com/?show=820">.NET Rocks - Udi Dahan Talks CQRS, Agile and More</a></li>
-<li><a href="https://lostechies.com/jimmybogard/2012/06/26/eventual-consistency-cqrs-and-interaction-design/">Eventual consistency, CQRS and interaction design - LosTechies</a></li>
-<li><a href="https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match">CQRS and REST: the perfect match - LosTechies</a></li>
-<li><a href="http://martinfowler.com/bliki/CQRS.html">CQRS - Martin Fowler</a></li>
-<li><a href="https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf">CQRS Documents by Greg Young</a></li>
+<li>Write to a Log file? Name it <em>"Logger"</em>. </li>
+<li>Send a mail? Name it <em>"MailSender"</em>. </li>
+<li>Generate a random message? Name it <em>"MessageGenerator"</em>. </li>
+<li>Provide string extensions? Name it <em>"StringExtensions"</em>. </li>
 </ul>
 
-<p><img src="/images/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs.jpg" alt="netponto 20160919" /></p>
+<p>You get it.</p>
 
 
 
@@ -98,14 +106,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/';
+                this.page.url = 'http://gsferreira.com/archive/2017/09/please-don-t-name-it-utils/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/';
+    var disqus_url = 'http://gsferreira.com/archive/2017/09/please-don-t-name-it-utils/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
