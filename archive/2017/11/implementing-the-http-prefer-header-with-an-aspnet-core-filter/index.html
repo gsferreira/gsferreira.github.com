@@ -1,0 +1,235 @@
+
+<!DOCTYPE html>
+<html dir="ltr" lang="en-US">
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+    <meta name="viewport" content="width=device-width" />
+     <link rel="shortcut icon" href="/images/favicon.ico">
+    <meta http-equiv="last-modified" content="2017-11-15T23:17:59.0185549+00:00" />
+    <meta name="keywords" content="ASP.NET Core" />
+	
+    <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
+    <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
+	
+    <title>
+            Implementing the HTTP Prefer Header with an ASP.NET Core Filter - 
+        Guilherme Ferreira
+    </title>
+    <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
+    <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
+    <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2017/11/implementing-the-http-prefer-header-with-an-aspnet-core-filter/" />
+</head>
+<body class="home blog">
+    <div id="page" class="hfeed site">
+        
+	<header id="masthead" class="simple-header" role="banner">
+	<hgroup>
+		<a href="/" title="Home"><img width="40" height="40" src="http://www.gravatar.com/avatar/93c1c26212f9eb3673538e6ad6ca7eb4.png" title="logo"  alt="logo"></a>
+		<h1 class="site-title"><a href="/" title="Snow Byte" rel="home">Guilherme Ferreira</a>
+	</hgroup>
+</header>
+        
+
+        <div id="main">
+            <div id="primary" class="site-content">
+                <div id="content" role="main">
+                  
+
+
+<div class="post">
+    <h1>Implementing the HTTP Prefer Header with an ASP.NET Core Filter</h1> 
+      <div class="meta">
+        <p class="posted">15 nov 2017</p>
+        <ul class="categories">
+          <li><a href="/category/asp.net-core" title="Snow.Models.Category">ASP.NET Core</a></li>
+        </ul>
+      </div>
+    </div>
+    
+    
+        
+    <p>Have you heard about <strong>Prefer Header for HTTP</strong>? The <a href="https://tools.ietf.org/html/rfc7240">RFC-7240</a> defines how this header can be used by a client, in order to request that certain behaviors be employed by a server while processing a request.</p>
+
+<p>Why does it matter? You probably have consumed API's where you use the HTTP POST or PUT method to modify a resource and the server returns a complete representation of the resource. In other cases the API only returns the Identifier of the resource created, for example.</p>
+
+<p><strong>What if you want to defer to the client to specify which optional behavior is preferred?</strong>
+That's why you need to know about the HTTP Prefer Header.</p>
+
+<!--excerpt-->
+
+<p>The RFC specifies a group of Preference Definitions like a preference to indicate that the client prefers the server to respond asynchronously to a response for example, but this post will be focused on the "return=representation" and "return=minimal" preferences.</p>
+
+<h2>"return=representation"</h2>
+
+<blockquote>
+  <p>The "return=representation" preference indicates that the client
+  prefers that the server include an entity representing the current
+  state of the resource in the response to a successful request.</p>
+</blockquote>
+
+<h2>"return=minimal"</h2>
+
+<blockquote>
+  <p>The "return=minimal" preference, on the other hand, indicates that
+  the client wishes the server to return only a minimal response to a
+  successful request. </p>
+</blockquote>
+
+<p>This preference is really useful when dealing with replies to a POST, PUT or PATCH request.</p>
+
+<p><strong>The selection of which type of response to return to client have impact on what a client must do after receiving the response.</strong> Example: by returning a representation of the resource in the response the client won't need to do an additional GET request.</p>
+
+<h1>How to implement in ASP.NET Core?</h1>
+
+<p>One of the first questions that I faced when trying to implement the prefer header was <em>"how to implement it in ASP.NET Core?"</em>.</p>
+
+<p>The easy answer would be: </p>
+
+<ul>
+<li>Do it in your Controller Action. Easy peasy, right?</li>
+</ul>
+
+<p>Not so sure my friend! </p>
+
+<p>Following that approach will be difficult to manage when you face yourself with dozens of Controllers each one with a POST and a PUT. Now you see it... the beauty of the duplicated code :)</p>
+
+<p>So, what if we write an ASP.NET Core filter?</p>
+
+<blockquote>
+  <p>If you don't know what is a Filter I recommend you to go read <a href="https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs">here</a>.</p>
+  
+  <p>If you find yourself wondering why don't create a Middleware, please see this <a href="https://channel9.msdn.com/Series/aspnetmonsters/ASPNET-Monsters-91-Middleware-vs-Filters">awesome video</a>.</p>
+</blockquote>
+
+<h2>Setup</h2>
+
+<p>In my implementation, I defined that DTOs that can be controlled by the "return=minimal" preference should implement an interface <em>"IIdentifiable"</em>. That interface specifies the properties that I need to return in the "minimal" version (an Id for instance).</p>
+
+<p>So, go ahead and create an <em>IIdentifiable</em> interface and add it to your DTO.</p>
+
+<h2>The filter</h2>
+
+<p>I implemented an Action Filter that will only return the full object when the client sends the <em>"return=representation"</em> preference.</p>
+
+<p>So the flow is something like:</p>
+
+<ol>
+<li>POST a new Resource</li>
+<li>Handle the request</li>
+<li>Return an Action Result with a DTO in it</li>
+<li><p>Catch the response in a filter</p>
+
+<ol>
+<li>The Request doesn't have the Prefer header?</li>
+<li>The Request has the Prefer header without the value "return=representation"?</li>
+<li>If the answer to any of the previous questions is "Yes", I update the result to a new object with the minimal information.</li>
+</ol></li>
+</ol>
+
+<p>The filter:</p>
+
+<script src="https://gist.github.com/gsferreira/80aa93d12633c0df271a08f6dc2e52ca.js?file=HttpPreferReturnHeaderFilterAttribute.cs"></script>
+
+<p><em>As you can see I am creating a new IdentifiableDto. That class is just a simple implementation of the IIdentifiable interface. If you prefer, you can just return a dynamic object.</em></p>
+
+<p>Now you can use it in your Controllers like this:</p>
+
+<script src="https://gist.github.com/gsferreira/80aa93d12633c0df271a08f6dc2e52ca.js?file=Controller.cs"></script>
+
+<p><strong><em>Note:</strong> If you need to do an extra effort to load the resource from the database, probably the Filter approach isn't the best fit for you.</em></p>
+
+
+
+	<div class="post-social-links">
+        <a href="http://twitter.com/gsferreira"><img src="/images/000-twitter-bird-48.png" title="gsferreira"/></a>
+        <a href="http://gsferreira.com/rss.xml"><img src="/images/000-rss-feeds-48.png" title="gsferreira.com feed" onClick="_gaq.push(['_trackEvent', 'Post', 'RssSubscribe', 'Rss Subscribe on Post']);"/></a>
+    </div>
+	<div class="addthis_toolbox addthis_default_style" style="float:right;">
+        <a class="addthis_button_facebook_like" fb:like:layout="button_count"></a>
+        <a class="addthis_button_tweet"></a>
+        <a class="addthis_button_google_plusone" g:plusone:size="medium"></a>
+        <a class="addthis_button_linkedin_counter"></a>
+        <a class="addthis_counter addthis_pill_style"></a>
+    </div>
+	
+    <div id="disqus_thread"></div>
+<script>
+    var reset_disqus = function(){
+        DISQUS.reset({
+            reload: true,
+            config: function () {
+                //this.page.identifier = '';
+                this.page.url = 'http://gsferreira.com/archive/2017/11/implementing-the-http-prefer-header-with-an-aspnet-core-filter/';
+                //this.page.title = '';
+            }
+        });
+    };
+
+    var disqus_shortname = 'gsferreira';
+    var disqus_url = 'http://gsferreira.com/archive/2017/11/implementing-the-http-prefer-header-with-an-aspnet-core-filter/';
+
+    (function() {
+        var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+        dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+        (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+    })();
+
+    window.addEventListener('orientationchange', reset_disqus);
+</script>
+<noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+<a href="http://disqus.com" class="dsq-brlink">comments powered by <span class="logo-disqus">Disqus</span></a>
+    
+    <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-****"></script>
+
+
+                </div>
+                <!-- #content -->
+            </div>
+            <!-- #primary .site-content -->
+        </div>
+        <!-- #main -->
+
+        <footer class="site-footer" role="contentinfo">
+            <div class="site-info">
+                Powered by <a href="https://github.com/Sandra/Sandra.Snow" rel="generator">Sandra.Snow</a> using <a href="https://github.com/gsferreira/letsnow" rel="generator">letsnow theme</a>.	
+            </div>
+            <!-- .site-info -->
+        </footer>
+        <!-- #colophon .site-footer -->
+    </div>
+    <!-- #page .hfeed .site -->
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js"></script>
+    <script src='/javascripts/prettify.js' type='text/javascript'></script>
+    
+    <script type="text/javascript">
+var _gaq = _gaq || [];
+
+_gaq.push(['_setAccount', 'UA-33436813-1']);
+_gaq.push(['_trackPageview']);
+        
+(function () {
+    var ga = document.createElement('script');
+    ga.type = 'text/javascript';
+    ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(ga, s);
+})();
+</script>
+    
+    <script type='text/javascript'>
+      $(function () {
+        $("pre code").parent().each(function () {
+          if (!$(this).hasClass("prettyprint")) {
+            $(this).addClass("prettyprint");
+            a = true
+          }
+        });
+
+        prettyPrint();
+      });
+    </script>
+</body>
+</html>

@@ -1,4 +1,100 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2017-09-12T22:13:14+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2017/09/please-don-t-name-it-utils/</id><title type="text">Please don't name it "Utils"!</title><summary type="html">&lt;p&gt;Imagine that you are working on a code base that you are really proud of. Everything is building up together with great quality and you reach the moment where you need to send a mail. Simple task to you for sure.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2017-11-15T23:18:03Z</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2017/11/implementing-the-http-prefer-header-with-an-aspnet-core-filter/</id><title type="text">Implementing the HTTP Prefer Header with an ASP.NET Core Filter</title><summary type="html">&lt;p&gt;Have you heard about &lt;strong&gt;Prefer Header for HTTP&lt;/strong&gt;? The &lt;a href="https://tools.ietf.org/html/rfc7240"&gt;RFC-7240&lt;/a&gt; defines how this header can be used by a client, in order to request that certain behaviors be employed by a server while processing a request.&lt;/p&gt;
+
+&lt;p&gt;Why does it matter? You probably have consumed API's where you use the HTTP POST or PUT method to modify a resource and the server returns a complete representation of the resource. In other cases the API only returns the Identifier of the resource created, for example.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What if you want to defer to the client to specify which optional behavior is preferred?&lt;/strong&gt;
+That's why you need to know about the HTTP Prefer Header.&lt;/p&gt;
+
+</summary><published>2017-11-15T00:00:00Z</published><updated>2017-11-15T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2017/11/implementing-the-http-prefer-header-with-an-aspnet-core-filter/" /><content type="html">&lt;p&gt;Have you heard about &lt;strong&gt;Prefer Header for HTTP&lt;/strong&gt;? The &lt;a href="https://tools.ietf.org/html/rfc7240"&gt;RFC-7240&lt;/a&gt; defines how this header can be used by a client, in order to request that certain behaviors be employed by a server while processing a request.&lt;/p&gt;
+
+&lt;p&gt;Why does it matter? You probably have consumed API's where you use the HTTP POST or PUT method to modify a resource and the server returns a complete representation of the resource. In other cases the API only returns the Identifier of the resource created, for example.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;What if you want to defer to the client to specify which optional behavior is preferred?&lt;/strong&gt;
+That's why you need to know about the HTTP Prefer Header.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;The RFC specifies a group of Preference Definitions like a preference to indicate that the client prefers the server to respond asynchronously to a response for example, but this post will be focused on the "return=representation" and "return=minimal" preferences.&lt;/p&gt;
+
+&lt;h2&gt;"return=representation"&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The "return=representation" preference indicates that the client
+  prefers that the server include an entity representing the current
+  state of the resource in the response to a successful request.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;"return=minimal"&lt;/h2&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;The "return=minimal" preference, on the other hand, indicates that
+  the client wishes the server to return only a minimal response to a
+  successful request. &lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;p&gt;This preference is really useful when dealing with replies to a POST, PUT or PATCH request.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;The selection of which type of response to return to client have impact on what a client must do after receiving the response.&lt;/strong&gt; Example: by returning a representation of the resource in the response the client won't need to do an additional GET request.&lt;/p&gt;
+
+&lt;h1&gt;How to implement in ASP.NET Core?&lt;/h1&gt;
+
+&lt;p&gt;One of the first questions that I faced when trying to implement the prefer header was &lt;em&gt;"how to implement it in ASP.NET Core?"&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;The easy answer would be: &lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Do it in your Controller Action. Easy peasy, right?&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Not so sure my friend! &lt;/p&gt;
+
+&lt;p&gt;Following that approach will be difficult to manage when you face yourself with dozens of Controllers each one with a POST and a PUT. Now you see it... the beauty of the duplicated code :)&lt;/p&gt;
+
+&lt;p&gt;So, what if we write an ASP.NET Core filter?&lt;/p&gt;
+
+&lt;blockquote&gt;
+  &lt;p&gt;If you don't know what is a Filter I recommend you to go read &lt;a href="https://docs.microsoft.com/en-us/aspnet/mvc/overview/older-versions-1/controllers-and-routing/understanding-action-filters-cs"&gt;here&lt;/a&gt;.&lt;/p&gt;
+  
+  &lt;p&gt;If you find yourself wondering why don't create a Middleware, please see this &lt;a href="https://channel9.msdn.com/Series/aspnetmonsters/ASPNET-Monsters-91-Middleware-vs-Filters"&gt;awesome video&lt;/a&gt;.&lt;/p&gt;
+&lt;/blockquote&gt;
+
+&lt;h2&gt;Setup&lt;/h2&gt;
+
+&lt;p&gt;In my implementation, I defined that DTOs that can be controlled by the "return=minimal" preference should implement an interface &lt;em&gt;"IIdentifiable"&lt;/em&gt;. That interface specifies the properties that I need to return in the "minimal" version (an Id for instance).&lt;/p&gt;
+
+&lt;p&gt;So, go ahead and create an &lt;em&gt;IIdentifiable&lt;/em&gt; interface and add it to your DTO.&lt;/p&gt;
+
+&lt;h2&gt;The filter&lt;/h2&gt;
+
+&lt;p&gt;I implemented an Action Filter that will only return the full object when the client sends the &lt;em&gt;"return=representation"&lt;/em&gt; preference.&lt;/p&gt;
+
+&lt;p&gt;So the flow is something like:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;POST a new Resource&lt;/li&gt;
+&lt;li&gt;Handle the request&lt;/li&gt;
+&lt;li&gt;Return an Action Result with a DTO in it&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Catch the response in a filter&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;The Request doesn't have the Prefer header?&lt;/li&gt;
+&lt;li&gt;The Request has the Prefer header without the value "return=representation"?&lt;/li&gt;
+&lt;li&gt;If the answer to any of the previous questions is "Yes", I update the result to a new object with the minimal information.&lt;/li&gt;
+&lt;/ol&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;The filter:&lt;/p&gt;
+
+&lt;script src="https://gist.github.com/gsferreira/80aa93d12633c0df271a08f6dc2e52ca.js?file=HttpPreferReturnHeaderFilterAttribute.cs"&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;em&gt;As you can see I am creating a new IdentifiableDto. That class is just a simple implementation of the IIdentifiable interface. If you prefer, you can just return a dynamic object.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Now you can use it in your Controllers like this:&lt;/p&gt;
+
+&lt;script src="https://gist.github.com/gsferreira/80aa93d12633c0df271a08f6dc2e52ca.js?file=Controller.cs"&gt;&lt;/script&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/strong&gt; If you need to do an extra effort to load the resource from the database, probably the Filter approach isn't the best fit for you.&lt;/em&gt;&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2017/09/please-don-t-name-it-utils/</id><title type="text">Please don't name it "Utils"!</title><summary type="html">&lt;p&gt;Imagine that you are working on a code base that you are really proud of. Everything is building up together with great quality and you reach the moment where you need to send a mail. Simple task to you for sure.&lt;/p&gt;
 
 &lt;p&gt;You know that eventually you will need to send emails in other points of your application and because you master the DRY principle you decide to write an &lt;em&gt;"Utils"&lt;/em&gt; class.&lt;/p&gt;
 
@@ -206,9 +302,9 @@ Phil Karlton once said: &lt;/p&gt;
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/</id><title type="text">Create a Web Deployment Package with Cake Build</title><summary type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/</id><title type="text">Create a Web Deployment Package with Cake Build</title><summary type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
 
-</summary><published>2016-11-04T00:00:00Z</published><updated>2016-11-04T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build/" /><content type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
+</summary><published>2016-11-04T00:00:00Z</published><updated>2016-11-04T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/" /><content type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
 
 &lt;!--excerpt--&gt;
 
@@ -534,104 +630,4 @@ Assert.AreEqual(8, state.GetVariable("numberOfClasses").Value);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Those are just a few examples and I recommend you check out the &lt;a href="https://github.com/dotnet/roslyn"&gt;Roslyn Github Repository&lt;/a&gt;.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2015/11/is-cqrs-too-complicated-no/</id><title type="text">Is CQRS too complicated? No!</title><summary type="html">&lt;p&gt;How do you feel after reading a few articles about CQRS (Command Query Responsibility Segregation)? Confused?! &lt;/p&gt;
-
-&lt;p&gt;The good news is that's not your problem.&lt;/p&gt;
-
-&lt;p&gt;CQRS is a simple concept, but usually is presented side by side with other patterns creating the perception that CQRS requires a ton of elements to work. &lt;/p&gt;
-
-&lt;p&gt;This post pretends to demonstrate that CQRS can be a simple concept that can evolve according to your needs.&lt;/p&gt;
-
-</summary><published>2015-11-09T00:00:00Z</published><updated>2015-11-09T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2015/11/is-cqrs-too-complicated-no/" /><content type="html">&lt;p&gt;How do you feel after reading a few articles about CQRS (Command Query Responsibility Segregation)? Confused?! &lt;/p&gt;
-
-&lt;p&gt;The good news is that's not your problem.&lt;/p&gt;
-
-&lt;p&gt;CQRS is a simple concept, but usually is presented side by side with other patterns creating the perception that CQRS requires a ton of elements to work. &lt;/p&gt;
-
-&lt;p&gt;This post pretends to demonstrate that CQRS can be a simple concept that can evolve according to your needs.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h1&gt;So, what is CQRS?&lt;/h1&gt;
-
-&lt;p&gt;The roots of CQRS are based on &lt;a href="https://en.wikipedia.org/wiki/Command%E2%80%93query_separation"&gt;Command-query separation (CQS)&lt;/a&gt; a principle created by &lt;a href="https://en.wikipedia.org/wiki/Bertrand_Meyer"&gt;Bertrand Meyer&lt;/a&gt; during the development of Eiffel programming language.&lt;/p&gt;
-
-&lt;p&gt;Meyer states that &lt;em&gt;"Asking a question should not change the answer"&lt;/em&gt; and that's the foundation of CQRS.&lt;/p&gt;
-
-&lt;p&gt;We can conclude from that statement that a command is any method that creates, update or delete data, and a query is any method that returns data.&lt;/p&gt;
-
-&lt;p&gt;CQRS is an evolution of CQS, going further with the initial concept and stating that Read and Write models should be distinct.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;CQRS is simply that&lt;/strong&gt;, is the segregation of two main responsibilities, the responsibility of read data and the responsibility of mutate data.&lt;/p&gt;
-
-&lt;p&gt;Don't you recognize this principles? "Denormalization", cache systems, read-optimized databases and others, are proof that the industry is already thinking in the problems CQRS want's to solve. &lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/is-cqrs-too-complicated-no-diagram.png" alt="Diagram CQRS" /&gt;&lt;/p&gt;
-
-&lt;p&gt;It's important to say that there's nothing in CQRS saying that we should use Event Sourcing, Service Bus or another element to implement CQRS. 
-Those patterns or technologies are usually presented with CQRS, adding a new layer of complexity to CQRS.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Nothing about CQRS says “you shalt use NServiceBus”. It’s just not there. You’re merely separating infrastructure between handling commands and queries, but the how is quite varied.&lt;/p&gt;
-  
-  &lt;p&gt;&lt;em&gt;&lt;a href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/"&gt;Jimmy Bogard&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1&gt;CQRS Benefits&lt;/h1&gt;
-
-&lt;p&gt;&lt;em&gt;All the following benefits are capabilities that CQRS gives you, but &lt;strong&gt;they aren't required to implement CQRS&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Simple Queries&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Because the Read model is different from the Write model, it's possible to create simpler queries and with better performance. If the Read and the Write model are shared, you will constrain the Queries to the Write structure.&lt;/p&gt;
-
-&lt;p&gt;The system will also benefit of a thinner Read layer.  &lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Simple code is fast code&lt;/p&gt;
-  
-  &lt;p&gt;&lt;em&gt;&lt;a href="http://udidahan.com/2009/12/09/clarified-cqrs/"&gt;Udi Dahan&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Separate data store&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Since the Read model is separate, you are able to segregate the database, querying a non relational database optimized for queries.&lt;/p&gt;
-
-&lt;p&gt;That will lead us to concepts like Eventual Consistency or Event Sourcing, but it's important to say that CQRS doesn't require this, he just enables the capability.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;It's perfectly possible to implement CQRS using the same data store.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Event sourcing is a completely orthogonal concept to CQRS. While they fit well together, doing CQRS does not require event sourcing, and doing event sourcing does not automatically mean we’re doing CQRS.&lt;/p&gt;
-  
-  &lt;p&gt;&lt;em&gt;&lt;a href="https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/"&gt;Jimmy Bogard&lt;/a&gt;&lt;/em&gt; &lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;&lt;strong&gt;Queued workload&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Commands can be processed using a queue, enabling an asynchronous command processing, what can be useful to deal with complex processing or manage the system load.&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;Segregate load&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Typically the number of queries in a system is much higher than the number of commands. So, why should both be based on the same technologies? &lt;/p&gt;
-
-&lt;p&gt;CQRS enables the segregation of the Load, with the possibility of use a different host for each part of system.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;The largest possible benefit though is that it recognizes that their are different architectural properties when dealing with commands and queries … for example it allows us to host the two services differently eg: we can host the read service on 25 servers and the write service on two&lt;/p&gt;
-  
-  &lt;p&gt;&lt;em&gt;&lt;a href="http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/"&gt;Greg Young&lt;/a&gt;&lt;/em&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h1&gt;Challenges&lt;/h1&gt;
-
-&lt;p&gt;CQRS isn't just benefits. CQRS implies complexity and a new mindset when using it.&lt;/p&gt;
-
-&lt;p&gt;Usually we are formatted to think in CRUD operations, but with CQRS we're led to a Task-based system. We need to rethink the UI to be based on tasks and to deal with the eventual consistency (if we need it).&lt;/p&gt;
-
-&lt;p&gt;I can't say that CQRS fits all the cases or is a tool that you should use always. What I can say is that's an important tool to have in mind when dealing with some complex problems.&lt;/p&gt;
-
-&lt;p&gt;It's important to remember that you should start simple and CQRS enables you to adjust and evolve if you need it. &lt;/p&gt;
-
-&lt;p&gt;Don't try to do all upfront.&lt;/p&gt;
 </content></entry></feed>
