@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2018-01-08T22:52:31.3166253+00:00" />
-    <meta name="keywords" content="NetPonto" />
+    <meta name="keywords" content="" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            7th Meeting of NetPonto Community in Oporto - 
+            JSON Patch Builder Online - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2015/09/7th-meeting-of-netponto-community-in-oporto/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2018/01/json-patch-builder-online/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,49 +39,41 @@
 
 
 <div class="post">
-    <h1>7th Meeting of NetPonto Community in Oporto</h1> 
+    <h1>JSON Patch Builder Online</h1> 
       <div class="meta">
-        <p class="posted">18 set 2015</p>
+        <p class="posted">08 jan 2018</p>
         <ul class="categories">
-          <li><a href="/category/netponto" title="Snow.Models.Category">NetPonto</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>We are bringing to Oporto the 7th Meeting of NetPonto Community.
-The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 26 September 2015. </p>
+    <p>Do you know the JSON Patch format? The <a href="https://tools.ietf.org/html/rfc6902">RFC6902</a> defines the structure to express a list of operations to apply over a JSON Document.
+This format is designed to be the payload of an HTTP PATCH method.</p>
 
-<h2>Program</h2>
-
-<p>09:45    -  Check-in</p>
-
-<p>10:00    -  SOLR in .NET - Super Solid solution for a Super Fast Search - Pedro Neves Rosa </p>
-
-<p>12:00    -  The Future of Web Applications - ECMAScript vNext and others - Ricardo Brandão</p>
-
-<p>13:30    -  Closing Panel</p>
+<p>The format isn't difficult, you can easily understand the rules and build it manually. But, I confess that sometimes I struggle with it, specially when I'm testing a PATCH to a complex object. 
+So... <strong><a href="https://json-patch-builder-online.github.io/">I built a Tool to help me.</a></strong></p>
 
 <!--excerpt-->
 
-<h2>Venue</h2>
+<p><img src="/images/json-patch-builder-online.png" alt="JSON Patch Builder Online" /></p>
 
-<p>Instituto Superior de Engenharia do Porto (ISEP) - Room H202 </p>
+<p><strong><a href="https://json-patch-builder-online.github.io/">JSON Patch Builder Online</a></strong> is a simple and Open Source tool that you can use to calculate the JSON Patch needed to transform a resource/entity in the resource that you want. </p>
 
-<p>Rua Dr. António Bernardino de Almeida, 431</p>
+<p>To accomplish that, I used <a href="https://github.com/Starcounter-Jack/JSON-Patch">JSON-Patch</a>, a Javascript library, to calculate the Patch and <a href="https://bulma.io/">BULMA CSS</a> to have a good looking tool. 
+I recommend that you go check them.</p>
 
-<p>4200-072 Porto</p>
+<p>If you have something that you want to see in the <strong><a href="https://json-patch-builder-online.github.io/">JSON Patch Builder Online</a></strong>, feel free to open an <a href="https://github.com/json-patch-builder-online/json-patch-builder-online.github.io/issues">Issue</a> or <a href="https://github.com/json-patch-builder-online/json-patch-builder-online.github.io/">Contribute</a>.</p>
 
-<p>Portugal</p>
+<p>Links:</p>
 
-<p><a href="https://www.google.pt/maps/place/ISEP,+4200-072+Porto/@41.1778457,-8.6081006,17z/data=!4m2!3m1!1s0xd246449b419e1c1:0x16a6fd2fcace4efe">Map</a></p>
+<ul>
+<li><a href="https://github.com/json-patch-builder-online/json-patch-builder-online.github.io/">Github</a></li>
+<li><a href="https://json-patch-builder-online.github.io/">JSON Patch Builder Online</a></li>
+</ul>
 
-<h2>Registration</h2>
-
-<p>Free!</p>
-
-<p>Registration: <a href="https://netponto-porto-setembro-2015.eventbrite.co.uk/">https://netponto-porto-setembro-2015.eventbrite.co.uk/</a></p>
+<p>I hope that this helps you.</p>
 
 
 
@@ -104,14 +96,14 @@ The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) 
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2015/09/7th-meeting-of-netponto-community-in-oporto/';
+                this.page.url = 'http://gsferreira.com/archive/2018/01/json-patch-builder-online/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2015/09/7th-meeting-of-netponto-community-in-oporto/';
+    var disqus_url = 'http://gsferreira.com/archive/2018/01/json-patch-builder-online/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
