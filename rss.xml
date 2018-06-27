@@ -1,4 +1,131 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2018/03/exploring-the-docker-container-metaphor/</guid><link>http://gsferreira.com/archive/2018/03/exploring-the-docker-container-metaphor/</link><title>Exploring the Docker Container metaphor</title><description>&lt;p&gt;&lt;em&gt;This post is my interpretation of the Container metaphor and how I use it to understand the concepts and explain containers to others.&lt;/em&gt;&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2018/06/versioning-a-net-core-applications-using-cake/</guid><link>http://gsferreira.com/archive/2018/06/versioning-a-net-core-applications-using-cake/</link><title>Versioning a .net Core applications using Cake</title><description>&lt;p&gt;If you are moving to .net Core and you want to implement a versioning strategy in your application, now you have an awesome alternative to the good old fellow "AssemblyInfo". &lt;/p&gt;
+
+&lt;p&gt;The alternative is the &lt;a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build"&gt;&lt;em&gt;Directory.build.props&lt;/em&gt;&lt;/a&gt; file. If you place these file in the root folder that contains your source code, when MSBuild runs will add to every project the properties defined in the &lt;em&gt;Directory.build.props&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this post, we will see how to quickly setup a solution with multiple projects and use &lt;em&gt;Directory.build.props&lt;/em&gt; with &lt;a href="http://cakebuild.net"&gt;Cake&lt;/a&gt; to build and increment the version number.&lt;/p&gt;
+
+</description><pubDate>Tue, 26 Jun 2018 23:00:00 Z</pubDate><a10:updated>2018-06-26T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;If you are moving to .net Core and you want to implement a versioning strategy in your application, now you have an awesome alternative to the good old fellow "AssemblyInfo". &lt;/p&gt;
+
+&lt;p&gt;The alternative is the &lt;a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build"&gt;&lt;em&gt;Directory.build.props&lt;/em&gt;&lt;/a&gt; file. If you place these file in the root folder that contains your source code, when MSBuild runs will add to every project the properties defined in the &lt;em&gt;Directory.build.props&lt;/em&gt;.&lt;/p&gt;
+
+&lt;p&gt;In this post, we will see how to quickly setup a solution with multiple projects and use &lt;em&gt;Directory.build.props&lt;/em&gt; with &lt;a href="http://cakebuild.net"&gt;Cake&lt;/a&gt; to build and increment the version number.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/versioning-a-net-core-applications-using-cake-directory-build-props.png" alt="Directory.build.props" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Setup your project&lt;/h2&gt;
+
+&lt;p&gt;Let's use the &lt;a href="https://docs.microsoft.com/en-us/dotnet/core/tools/?tabs=netcore2x"&gt;.net Core CLI&lt;/a&gt; to quickly accomplish this task.&lt;/p&gt;
+
+&lt;p&gt;Start by creating a folder in your computer and then open the command line and go to the directory that you just created. Then execute the following commands.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Create a Solution: &lt;code&gt;dotnet new sln --name DotNetCoreVersioning&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a console application and place it in the &lt;em&gt;src&lt;/em&gt; folder: &lt;code&gt;dotnet new console --name Application --output src\Application&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Create a class library and place it in the &lt;em&gt;src&lt;/em&gt; folder: &lt;code&gt;dotnet new classlib --name Library --output src\Library&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add the console application to the solution: &lt;code&gt;dotnet sln add .\src\Application\Application.csproj&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Add the class library to the solution: &lt;code&gt;dotnet sln add .\src\Library\Library.csproj&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;Build it: &lt;code&gt;dotnet build&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;If you go to the folder you will see a solution file that you can open in Visual Studio.&lt;/p&gt;
+
+&lt;h2&gt;Adding the &lt;em&gt;Directory.build.props&lt;/em&gt;&lt;/h2&gt;
+
+&lt;p&gt;Now it's time to add the file that will do the magic. &lt;/p&gt;
+
+&lt;p&gt;You just need to create a file with the name &lt;em&gt;Directory.build.props&lt;/em&gt; inside the &lt;em&gt;src&lt;/em&gt; folder.&lt;/p&gt;
+
+&lt;p&gt;Add it and then copy the following snippet into it.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;&amp;lt;Project&amp;gt;
+&amp;lt;PropertyGroup&amp;gt;
+    &amp;lt;Company&amp;gt;Empire&amp;lt;/Company&amp;gt;
+    &amp;lt;Version&amp;gt;1.0.1&amp;lt;/Version&amp;gt;
+    &amp;lt;AssemblyTitle&amp;gt;Death Star - Superlaser&amp;lt;/AssemblyTitle&amp;gt;
+&amp;lt;/PropertyGroup&amp;gt;
+&amp;lt;/Project&amp;gt;  
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;If you run the &lt;code&gt;dotnet build&lt;/code&gt; command and go to the bin folder, of the console application or the class library, you can see in the DLL details that now the version is 1.0.1.&lt;/p&gt;
+
+&lt;h2&gt;Incrementing the version number.&lt;/h2&gt;
+
+&lt;p&gt;In this example, I will use a simple Cake script to increment the version number. &lt;/p&gt;
+
+&lt;h3&gt;Setup your build script&lt;/h3&gt;
+
+&lt;p&gt;I will explain how to do that manually, but if you are a &lt;a href="https://code.visualstudio.com/"&gt;Visual Studio Code&lt;/a&gt; user I highly recommend that you install the cake extension and use the tools provided by the extension.&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;Install the Cake bootstrapper. You can find &lt;a href="https://cakebuild.net/docs/tutorials/setting-up-a-new-project"&gt;here&lt;/a&gt; how to do that. &lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Create a &lt;em&gt;build.cake&lt;/em&gt; file next to the bootstrapper.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Add the following snippet to the build.cake.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;&amp;nbsp;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;///////////////////////////////////////////////////////////////////////////////
+// ARGUMENTS
+///////////////////////////////////////////////////////////////////////////////
+
+var target = Argument("target", "Default");
+var configuration = Argument("configuration", "Release");
+
+///////////////////////////////////////////////////////////////////////////////
+// TASKS
+///////////////////////////////////////////////////////////////////////////////
+
+Task("Version")
+    .Does(() =&amp;gt; {
+
+});
+
+Task("Build")
+    .IsDependentOn("Version")
+    .Does(() =&amp;gt; {
+        DotNetCoreBuild("./DotNetCoreVersioning.sln");
+});
+
+Task("Default")
+    .IsDependentOn("Build");
+
+RunTarget(target);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Your build has now two steps and is building your solution using &lt;em&gt;DotNetCoreBuild&lt;/em&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Increment the version number&lt;/h3&gt;
+
+&lt;p&gt;To increment the version number we need to update the &lt;em&gt;Directory.build.props&lt;/em&gt; file. &lt;/p&gt;
+
+&lt;p&gt;Since the &lt;em&gt;props&lt;/em&gt; file is an XML we can use the Cake &lt;a href="https://cakebuild.net/dsl/xml/"&gt;XML aliases&lt;/a&gt; like XmlPeek and XmlPoke to read and update the version number.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Note:&lt;/strong&gt; &lt;em&gt;I recommend you to use the Build Number of your build server to calculate the new version number. In this case, we will read the current version from the file content.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;Go ahead and copy the following snippet into the &lt;em&gt;Version&lt;/em&gt; task in your &lt;em&gt;build.cake&lt;/em&gt; file.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var propsFile = "./Directory.build.props";
+var readedVersion = XmlPeek(propsFile, "//Version");
+var currentVersion = new Version(readedVersion);
+
+var semVersion = new Version(currentVersion.Major, currentVersion.Minor, currentVersion.Build + 1);
+var version = semVersion.ToString();
+
+XmlPoke(propsFile, "//Version", version);
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;As you can see, we are reading the version property, incrementing the build number and then updating the &lt;em&gt;props&lt;/em&gt; file again.&lt;/p&gt;
+
+&lt;h3&gt;The result&lt;/h3&gt;
+
+&lt;p&gt;Now that our build script is completed, go ahead and run your Cake bootstrapper (&lt;em&gt;build.ps1&lt;/em&gt; or &lt;em&gt;build.sh&lt;/em&gt;) and you will see that the compiled DLLs from all the projects have the version incremented.&lt;/p&gt;
+
+&lt;p&gt;You can use the &lt;em&gt;Directory.build.props&lt;/em&gt; to customize other project properties, not only for versioning.&lt;/p&gt;
+
+&lt;p&gt;Go ahead and give it a try.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2018/03/exploring-the-docker-container-metaphor/</guid><link>http://gsferreira.com/archive/2018/03/exploring-the-docker-container-metaphor/</link><title>Exploring the Docker Container metaphor</title><description>&lt;p&gt;&lt;em&gt;This post is my interpretation of the Container metaphor and how I use it to understand the concepts and explain containers to others.&lt;/em&gt;&lt;/p&gt;
 
 &lt;p&gt;Containers is one of the hot topics in the Software Development world and Docker is the technology that everyone wants to play with.&lt;/p&gt;
 
@@ -466,35 +593,4 @@ RunTarget(target);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</guid><link>http://gsferreira.com/archive/2016/09/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs/</link><title>NetPonto - Como construir software altamente eficiente com CQRS</title><description>&lt;p&gt;Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.&lt;/p&gt;
-
-&lt;p&gt;Se não tiveste a oportunidade de assistir, coloco aqui os slides, o vídeo da sessão, bem como algumas referências sobre o tema.&lt;/p&gt;
-
-</description><pubDate>Sun, 18 Sep 2016 23:00:00 Z</pubDate><a10:updated>2016-09-18T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.&lt;/p&gt;
-
-&lt;p&gt;Se não tiveste a oportunidade de assistir, coloco aqui os slides, o vídeo da sessão, bem como algumas referências sobre o tema.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Alguma dúvida que tenhas, deixa um comentário.&lt;/p&gt;
-
-&lt;p&gt;Video: &lt;a href="https://youtu.be/pM8GycDZji4?t=5614"&gt;Youtube&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Slides: &lt;a href="http://www.slideshare.net/GuilhermeFerreira114/como-construir-software-altamente-eficiente-com-cqrs"&gt;SlideShare&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Referências:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://msdn.microsoft.com/en-us/library/jj554200.aspx"&gt;CQRS Journey&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.youtube.com/watch?v=JHGkaShoyNs"&gt;Greg Young - CQRS and Event Sourcing - Code on the Beach 2014&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.dotnetrocks.com/?show=639"&gt;.NET Rocks - Udi Dahan Clarifies CQRS&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.dotnetrocks.com/?show=1044"&gt;.NET Rocks - CQRS Update with Udi Dahan&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://www.dotnetrocks.com/?show=820"&gt;.NET Rocks - Udi Dahan Talks CQRS, Agile and More&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lostechies.com/jimmybogard/2012/06/26/eventual-consistency-cqrs-and-interaction-design/"&gt;Eventual consistency, CQRS and interaction design - LosTechies&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://lostechies.com/jimmybogard/2016/06/01/cqrs-and-rest-the-perfect-match"&gt;CQRS and REST: the perfect match - LosTechies&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="http://martinfowler.com/bliki/CQRS.html"&gt;CQRS - Martin Fowler&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://cqrs.files.wordpress.com/2010/11/cqrs_documents.pdf"&gt;CQRS Documents by Greg Young&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/pt-netponto-como-construir-software-altamente-eficiente-com-cqrs.jpg" alt="netponto 20160919" /&gt;&lt;/p&gt;
 </a10:content></item></channel></rss>
