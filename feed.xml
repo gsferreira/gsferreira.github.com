@@ -1,4 +1,191 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2018-06-27T22:01:47+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2018/06/versioning-net-core-applications-using-cake/</id><title type="text">Versioning .net Core applications using Cake</title><summary type="html">&lt;p&gt;If you are moving to .net Core and you want to implement a versioning strategy in your application, now you have an awesome alternative to the good old fellow "AssemblyInfo". &lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2019-04-10T22:31:29+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2019/04/logging-grpc-requests-using-serilog/</id><title type="text">Logging gRPC requests using Serilog</title><summary type="html">&lt;p&gt;Using a Middleware to log Api Requests in ASP.NET Core is a no brainer.&lt;/p&gt;
+
+&lt;p&gt;If you have given a try to &lt;a href="https://grpc.io/"&gt;gRPC&lt;/a&gt;, probably you want to follow the same technique and you will wish that the experience was the same.&lt;/p&gt;
+
+&lt;p&gt;I've faced this challenge, in order to log the requests to my RPC services and I've been looking for a solution where:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I can use &lt;a href="https://serilog.net/"&gt;Serilog&lt;/a&gt; to log the requests&lt;/li&gt;
+&lt;li&gt;I know all the requests made to my services&lt;/li&gt;
+&lt;li&gt;I know how long each request takes to respond&lt;/li&gt;
+&lt;li&gt;I know the response status&lt;/li&gt;
+&lt;li&gt;I can correlate each log entry using a Correlation ID&lt;/li&gt;
+&lt;/ul&gt;
+
+</summary><published>2019-04-09T23:00:00Z</published><updated>2019-04-09T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2019/04/logging-grpc-requests-using-serilog/" /><content type="html">&lt;p&gt;Using a Middleware to log Api Requests in ASP.NET Core is a no brainer.&lt;/p&gt;
+
+&lt;p&gt;If you have given a try to &lt;a href="https://grpc.io/"&gt;gRPC&lt;/a&gt;, probably you want to follow the same technique and you will wish that the experience was the same.&lt;/p&gt;
+
+&lt;p&gt;I've faced this challenge, in order to log the requests to my RPC services and I've been looking for a solution where:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;I can use &lt;a href="https://serilog.net/"&gt;Serilog&lt;/a&gt; to log the requests&lt;/li&gt;
+&lt;li&gt;I know all the requests made to my services&lt;/li&gt;
+&lt;li&gt;I know how long each request takes to respond&lt;/li&gt;
+&lt;li&gt;I know the response status&lt;/li&gt;
+&lt;li&gt;I can correlate each log entry using a Correlation ID&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;To accomplish that in gRPC, I took advantage of an &lt;strong&gt;Interceptor&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;Using an interceptor, you can intercept the invocation of GRPC methods and intercept Unary calls (Request/Response) or Streaming communication. &lt;/p&gt;
+
+&lt;p&gt;In this example, we will be using a &lt;strong&gt;Unary Interceptor&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;This example has been done on top of gRPC HelloWorld sample in version 1.19.0&lt;/em&gt;&lt;/p&gt;
+
+&lt;h2&gt;Step 1: Install Serilog&lt;/h2&gt;
+
+&lt;p&gt;Start by download the Sample code from gRPC. You can find the instructions &lt;a href="https://grpc.io/docs/quickstart/csharp.html"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;p&gt;Install in the GreeterServer the serilog package &lt;code&gt;Install-Package Serilog.Sinks.Console -Version 3.1.1&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;I'm using the Console Sink for demonstration proposes. You can easily find tons of sinks like File, Seq, Application Insights, Datadog, etc.&lt;/p&gt;
+
+&lt;p&gt;To enable Serilog, create the logger at the beginning of the GreeterServer &lt;em&gt;Main&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public static void Main(string[] args)
+    {
+      Log.Logger = new LoggerConfiguration()
+        .WriteTo.Console()
+        .CreateLogger();
+      (...)
+    }
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Step 2: Create the Interceptor&lt;/h2&gt;
+
+&lt;p&gt;In the GreeterServer project create the &lt;em&gt;RequestLoggerInterceptor&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;using Grpc.Core;
+using Grpc.Core.Interceptors;
+using Serilog;
+using System.Diagnostics;
+using System.Threading.Tasks;
+
+namespace GreeterServer
+{
+  public class RequestLoggerInterceptor : Interceptor
+  {
+    private const string MessageTemplate =
+      "{RequestMethod} responded {StatusCode} in {Elapsed:0.0000} ms";
+
+    public override async Task&amp;lt;TResponse&amp;gt; UnaryServerHandler&amp;lt;TRequest, TResponse&amp;gt;(TRequest request, ServerCallContext context, UnaryServerMethod&amp;lt;TRequest, TResponse&amp;gt; continuation)
+    {
+      var sw = Stopwatch.StartNew();
+
+      var response = await base.UnaryServerHandler(request, context, continuation);
+
+      sw.Stop();
+      Log.Logger.Information(MessageTemplate,
+        context.Method,
+        context.Status.StatusCode,
+        sw.Elapsed.TotalMilliseconds);
+
+      return response;
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;This interceptor is just logging the Status Code for each request and the time used to complete the execution.&lt;/p&gt;
+
+&lt;h2&gt;Step 3: Apply interceptor to the service&lt;/h2&gt;
+
+&lt;p&gt;To take effect, you need to bind the interceptor to the Service you want. To do that, go to the &lt;em&gt;Program.cs&lt;/em&gt; and configure the Server service binding to use the interceptor for the Greeter service.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;using Grpc.Core.Interceptors;
+(...)
+Server server = new Server
+{
+  Services = { Greeter.BindService(new GreeterImpl()).Intercept(new RequestLoggerInterceptor()) },
+    Ports = { new ServerPort("localhost", Port, ServerCredentials.Insecure) }
+};
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;The Intercept method is an extension method, so don't forget to use &lt;em&gt;Grpc.Core.Interceptors&lt;/em&gt; namespace.&lt;/p&gt;
+
+&lt;p&gt;If you run the samples now, you will see this as a result.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/logging-grpc-requests-using-serilog-simple-log-line.png" alt="Log entry" /&gt;&lt;/p&gt;
+
+&lt;h2&gt;Step 4: Add Correlation ID&lt;/h2&gt;
+
+&lt;p&gt;If you have multiple services being part of the execution of a particular request, most probably you would take advantage of having a Correlation ID to track the execution of a given request in every service. If you don't have one, I highly recommend you to do it.&lt;/p&gt;
+
+&lt;p&gt;In this example, we will be sending the Correlation ID as an gRPC request header and change the Interceptor to add it to every log line.&lt;/p&gt;
+
+&lt;p&gt;Let's start by add the Correlation ID header to the RPC request done by &lt;em&gt;GreeterClient&lt;/em&gt;.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;var reply = client.SayHello(new HelloRequest { Name = user }, new Metadata()
+{
+  new Metadata.Entry("X-Correlation-Id", Guid.NewGuid().ToString())
+});
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;&lt;em&gt;In this example, I'm generating a Guid just for demo purposes.&lt;/em&gt;&lt;/p&gt;
+
+&lt;p&gt;In the interceptor, access to the Correlation ID and push it to Serilog as a property. In this way, every single log entry on that context will have the Correlation Id property available.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;using Grpc.Core;
+using Grpc.Core.Interceptors;
+using Serilog;
+using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
+
+namespace GreeterServer
+{
+  public class RequestLoggerInterceptor : Interceptor
+  {
+    private const string MessageTemplate =
+      "{RequestMethod} responded {StatusCode} in {Elapsed:0.0000} ms";
+
+    public override async Task&amp;lt;TResponse&amp;gt; UnaryServerHandler&amp;lt;TRequest, TResponse&amp;gt;(TRequest request,
+      ServerCallContext context, UnaryServerMethod&amp;lt;TRequest, TResponse&amp;gt; continuation)
+    {
+      var sw = Stopwatch.StartNew();
+
+      var correlationId = context.RequestHeaders
+        .FirstOrDefault(h =&amp;gt; h.Key.Equals("X-Correlation-Id", StringComparison.OrdinalIgnoreCase))?.Value;
+      using (Serilog.Context.LogContext.PushProperty("CorrelationID", correlationId))
+      {
+        var response = await base.UnaryServerHandler(request, context, continuation);
+
+        sw.Stop();
+        Log.Logger.Information(MessageTemplate,
+          context.Method,
+          context.Status.StatusCode,
+          sw.Elapsed.TotalMilliseconds);
+
+        return response;
+      }
+    }
+  }
+}
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To complete the work, we need to configure Serilog to use the Properties pushed to the context.&lt;/p&gt;
+
+&lt;p&gt;Go back to the &lt;em&gt;GreeterServer Program&lt;/em&gt; and change the logger configuration to have a template where you use the Correlation ID and configure the log enrichment with the context properties.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;Log.Logger = new LoggerConfiguration()
+        .Enrich.FromLogContext()
+        .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] [{CorrelationID}] {Message}{NewLine}{Exception}")
+        .CreateLogger();
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;h2&gt;Step 5: Profit!&lt;/h2&gt;
+
+&lt;p&gt;In this tutorial, we created a simple gRPC interceptor. Now you have a request log with status codes and timings.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/logging-grpc-requests-using-serilog-simple-log-line-with-correlation-id.png" alt="Log entry with Correlation ID" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Go ahead and give it a try.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2018/06/versioning-net-core-applications-using-cake/</id><title type="text">Versioning .net Core applications using Cake</title><summary type="html">&lt;p&gt;If you are moving to .net Core and you want to implement a versioning strategy in your application, now you have an awesome alternative to the good old fellow "AssemblyInfo". &lt;/p&gt;
 
 &lt;p&gt;The alternative is the &lt;a href="https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build"&gt;&lt;em&gt;Directory.build.props&lt;/em&gt;&lt;/a&gt; file. If you place these file in the root folder that contains your source code, when MSBuild runs will add to every project the properties defined in the &lt;em&gt;Directory.build.props&lt;/em&gt;.&lt;/p&gt;
 
@@ -542,54 +729,6 @@ Phil Karlton once said: &lt;/p&gt;
 &lt;p&gt;Then you can execute your service sending your argument as you can see in the following example (command line invoke).&lt;/p&gt;
 
 &lt;pre&gt;&lt;code&gt;.\TopShelfCustomArgs.exe run -path:"c:\temp" -frequency:2 
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Hope this helps.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/</id><title type="text">Create a Web Deployment Package with Cake Build</title><summary type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
-
-</summary><published>2016-11-04T00:00:00Z</published><updated>2016-11-04T00:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/" /><content type="html">&lt;p&gt;This is simple tip to help you create Web Deployment Packages with &lt;a href="http://cakebuild.net/"&gt;Cake&lt;/a&gt;.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;If you have a ASP.NET project and you want to create a Web Deployment package using Cake, you just need to use the MSBUILD Command with the right arguments.&lt;/p&gt;
-
-&lt;p&gt;Feel free to copy the following command and paste it in a Task from your Cake file.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;    MSBuild("PROJECT_NAME.csproj", settings =&amp;gt;
-        settings.SetConfiguration(configuration)
-        .UseToolVersion(MSBuildToolVersion.VS2015)
-        .WithTarget("Package")
-        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
-        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
-        .WithProperty("PackageTempRootDir", new string[]{"root"})
-        );
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;Here an example of a complete script (&lt;em&gt;build.cake&lt;/em&gt;). &lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;var target = Argument("target", "Default");
-var configuration = Argument("configuration", "Release");
-var packageDir = MakeAbsolute(Directory("./package"));
-
-Information("BUILD DIR:" + packageDir);
-
-Task("Default")
-.Does(() =&amp;gt;
-{
-
-    MSBuild("PROJECT_NAME.csproj", settings =&amp;gt;
-        settings.SetConfiguration(configuration)
-        .UseToolVersion(MSBuildToolVersion.VS2015)
-        .WithTarget("Package")
-        .WithProperty("VisualStudioVersion", new string[]{"14.0"})
-        .WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
-        .WithProperty("PackageTempRootDir", new string[]{"root"})
-        );
-
-
-});
-
-RunTarget(target);
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;Hope this helps.&lt;/p&gt;

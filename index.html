@@ -6,8 +6,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
-    <meta http-equiv="last-modified" content="2018-06-27T22:01:42.5096138+01:00" />
-    <meta name="keywords" content=".net,.NET,.net Core,Android,AngularJS,ASP.NET,ASP.NET Core,ASP.NET MVC,Azure,Cake,Docker,Entrepreneurship,Food,metro-bootstrap,NetPonto,Node.js,Productivity,Revista PROGRAMAR,SQL,Windows Phone" />
+    <meta http-equiv="last-modified" content="2019-04-10T22:31:27.2939794+01:00" />
+    <meta name="keywords" content=".net,.NET,.net Core,Android,AngularJS,ASP.NET,ASP.NET Core,ASP.NET MVC,Azure,Cake,Docker,Entrepreneurship,Food,gRPC,metro-bootstrap,NetPonto,Node.js,Productivity,Revista PROGRAMAR,Serilog,SQL,Windows Phone" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
@@ -55,9 +55,32 @@
 
   <ul class="posts">
     <li class="post">
+      <h1><a href="/archive/2019/04/logging-grpc-requests-using-serilog/">Logging gRPC requests using Serilog</a></h1> 
+      <div class="meta">
+        <p class="posted">10 Apr 2019</p>
+      </div>
+      <p>Using a Middleware to log Api Requests in ASP.NET Core is a no brainer.</p>
+
+<p>If you have given a try to <a href="https://grpc.io/">gRPC</a>, probably you want to follow the same technique and you will wish that the experience was the same.</p>
+
+<p>I've faced this challenge, in order to log the requests to my RPC services and I've been looking for a solution where:</p>
+
+<ul>
+<li>I can use <a href="https://serilog.net/">Serilog</a> to log the requests</li>
+<li>I know all the requests made to my services</li>
+<li>I know how long each request takes to respond</li>
+<li>I know the response status</li>
+<li>I can correlate each log entry using a Correlation ID</li>
+</ul>
+
+
+      <p><a href="/archive/2019/04/logging-grpc-requests-using-serilog/">Read more <i class="fa fa-angle-right"></i></a></p>
+    </li>
+    <hr/>
+    <li class="post">
       <h1><a href="/archive/2018/06/versioning-net-core-applications-using-cake/">Versioning .net Core applications using Cake</a></h1> 
       <div class="meta">
-        <p class="posted">27 jun 2018</p>
+        <p class="posted">27 Jun 2018</p>
       </div>
       <p>If you are moving to .net Core and you want to implement a versioning strategy in your application, now you have an awesome alternative to the good old fellow "AssemblyInfo". </p>
 
@@ -72,7 +95,7 @@
     <li class="post">
       <h1><a href="/archive/2018/03/exploring-the-docker-container-metaphor/">Exploring the Docker Container metaphor</a></h1> 
       <div class="meta">
-        <p class="posted">05 mar 2018</p>
+        <p class="posted">05 Mar 2018</p>
       </div>
       <p><em>This post is my interpretation of the Container metaphor and how I use it to understand the concepts and explain containers to others.</em></p>
 
@@ -91,7 +114,7 @@
     <li class="post">
       <h1><a href="/archive/2018/01/json-patch-builder-online/">JSON Patch Builder Online</a></h1> 
       <div class="meta">
-        <p class="posted">08 jan 2018</p>
+        <p class="posted">08 Jan 2018</p>
       </div>
       <p>Do you know the JSON Patch format? The <a href="https://tools.ietf.org/html/rfc6902">RFC6902</a> defines the structure to express a list of operations to apply over a JSON Document.
 This format is designed to be the payload of an HTTP PATCH method.</p>
@@ -106,7 +129,7 @@ So... <strong><a href="https://json-patch-builder-online.github.io/">I built a T
     <li class="post">
       <h1><a href="/archive/2017/11/implementing-the-http-prefer-header-with-an-aspnet-core-filter/">Implementing the HTTP Prefer Header with an ASP.NET Core Filter</a></h1> 
       <div class="meta">
-        <p class="posted">15 nov 2017</p>
+        <p class="posted">15 Nov 2017</p>
       </div>
       <p>Have you heard about <strong>Prefer Header for HTTP</strong>? The <a href="https://tools.ietf.org/html/rfc7240">RFC-7240</a> defines how this header can be used by a client, in order to request that certain behaviors be employed by a server while processing a request.</p>
 
@@ -122,7 +145,7 @@ That's why you need to know about the HTTP Prefer Header.</p>
     <li class="post">
       <h1><a href="/archive/2017/09/please-don-t-name-it-utils/">Please don't name it &quot;Utils&quot;!</a></h1> 
       <div class="meta">
-        <p class="posted">12 set 2017</p>
+        <p class="posted">12 Sep 2017</p>
       </div>
       <p>Imagine that you are working on a code base that you are really proud of. Everything is building up together with great quality and you reach the moment where you need to send a mail. Simple task to you for sure.</p>
 
@@ -139,7 +162,7 @@ That's why you need to know about the HTTP Prefer Header.</p>
     <li class="post">
       <h1><a href="/archive/2017/07/rebuilding-sql-database-indexes-using-azure-function/">Rebuilding SQL Database indexes using Azure Function</a></h1> 
       <div class="meta">
-        <p class="posted">20 jul 2017</p>
+        <p class="posted">20 Jul 2017</p>
       </div>
       <p>Do you know that index management is under your responsibility and you need to pay attention to how fragmented they are? If you are reading this post, probably you know that (I hope that you didn't find it in the hard way).</p>
 
@@ -154,7 +177,7 @@ That's why you need to know about the HTTP Prefer Header.</p>
     <li class="post">
       <h1><a href="/archive/2017/06/5-reasons-to-convince-your-boss-to-adopt-cake-csharp-make/">5 reasons to convince your boss to adopt Cake (C# Make)</a></h1> 
       <div class="meta">
-        <p class="posted">26 jun 2017</p>
+        <p class="posted">26 Jun 2017</p>
       </div>
       <p>Have you taken a look into <a href="http://cakebuild.net/">Cake Build</a>?! It's awesome, isn't it?</p>
 
@@ -169,7 +192,7 @@ That's why you need to know about the HTTP Prefer Header.</p>
     <li class="post">
       <h1><a href="/archive/2017/05/tugait-build-automation-its-a-piece-of-cake/">Tuga IT - Build Automation? It's a piece of Cake</a></h1> 
       <div class="meta">
-        <p class="posted">23 mai 2017</p>
+        <p class="posted">23 May 2017</p>
       </div>
       <p>It was a huge privilege to share my experience with <a href="http://cakebuild.net">Cake Build</a> at <a href="http://tugait.pt/2017/">Tuga IT</a>.</p>
 
@@ -182,7 +205,7 @@ That's why you need to know about the HTTP Prefer Header.</p>
     <li class="post">
       <h1><a href="/archive/2016/12/adding-custom-arguments-to-topshelf/">Adding Custom Arguments to Topshelf</a></h1> 
       <div class="meta">
-        <p class="posted">07 dez 2016</p>
+        <p class="posted">07 Dec 2016</p>
       </div>
       <p><a href="http://topshelf-project.com/">Topshelf</a> is an amazing framework that let you easily host and build Windows services.</p>
 
@@ -192,17 +215,6 @@ That's why you need to know about the HTTP Prefer Header.</p>
 
 
       <p><a href="/archive/2016/12/adding-custom-arguments-to-topshelf/">Read more <i class="fa fa-angle-right"></i></a></p>
-    </li>
-    <hr/>
-    <li class="post">
-      <h1><a href="/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/">Create a Web Deployment Package with Cake Build</a></h1> 
-      <div class="meta">
-        <p class="posted">04 nov 2016</p>
-      </div>
-      <p>This is simple tip to help you create Web Deployment Packages with <a href="http://cakebuild.net/">Cake</a>.</p>
-
-
-      <p><a href="/archive/2016/11/create-a-web-deployment-package-with-cake-build-copy/">Read more <i class="fa fa-angle-right"></i></a></p>
     </li>
     <hr/>
   </ul> 
