@@ -1,4 +1,56 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2019-09-05T20:43:34+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2019/09/you-should-start-working-remotely-once-a-week/</id><title type="text">You should start working remotely once a week</title><summary type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/you-should-start-working-remotely-once-a-week-head.png" alt="Ready to work from home?" /&gt;&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2019-10-24T21:46:17+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/</id><title type="text">A simple tip to improve your code maintainability - Decompose IF statements into methods</title><summary type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods.png" alt="Extract method" /&gt;&lt;/p&gt;
+
+&lt;p&gt;How many times have you been in a situation where you can’t understand a small piece of code?&lt;/p&gt;
+
+&lt;p&gt;Readability has a huge impact on code maintenance because reading other’s people code (and sometimes even our code) can be challenging. &lt;/p&gt;
+
+&lt;p&gt;As developers, &lt;strong&gt;we tend to ignore the UX (user experience) of our code&lt;/strong&gt;. Every single line of code that we do, will eventually be used by others. Is important to be sure that we do the best possible job for our teammates and to future self.&lt;/p&gt;
+
+</summary><published>2019-10-23T23:00:00Z</published><updated>2019-10-23T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/" /><content type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods.png" alt="Extract method" /&gt;&lt;/p&gt;
+
+&lt;p&gt;How many times have you been in a situation where you can’t understand a small piece of code?&lt;/p&gt;
+
+&lt;p&gt;Readability has a huge impact on code maintenance because reading other’s people code (and sometimes even our code) can be challenging. &lt;/p&gt;
+
+&lt;p&gt;As developers, &lt;strong&gt;we tend to ignore the UX (user experience) of our code&lt;/strong&gt;. Every single line of code that we do, will eventually be used by others. Is important to be sure that we do the best possible job for our teammates and to future self.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;strong&gt;The worst code blocks in terms of UX are the ones that require a huge cognitive load.&lt;/strong&gt; It’s our job to ask our selves what we can do to reduce it and improve readability. &lt;/p&gt;
+
+&lt;p&gt;Usually when I’m in a situation that requires high cognitive load to understand a piece of code, is because I face a huge and complex IF statement condition and I need to figure out what the hell it’s supposed to do. Do you know the feeling? Having to sketch a decision tree trying to figure out what is happening?&lt;/p&gt;
+
+&lt;h2&gt;How to avoid it?&lt;/h2&gt;
+
+&lt;p&gt;This is one of the most simple tricks that I do every day and I tend to advise everyone to do.&lt;/p&gt;
+
+&lt;p&gt;My rule of thumb is simple: &lt;strong&gt;In case of a multi-part condition, extract it to a method and name it accordingly.&lt;/strong&gt; &lt;/p&gt;
+
+&lt;p&gt;Let’s see it in practice.&lt;/p&gt;
+
+&lt;p&gt;Imagine that you have the following expression, that wants to validate if the customer can pay the Order with Credit Card. To do that, the customer should have an active Credit Card.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;if (order.PayWithCreditCard &amp;amp;&amp;amp; (order.Customer.CreditCard == null || order.Customer.CreditCard.ExpirationDate &amp;lt; DateTime.Today))
+    throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;To improve it, you can extract the boolean logic related to the credit card validation to a static method, and name it with something easy to understand.&lt;/p&gt;
+
+&lt;pre&gt;&lt;code&gt;public static void ProcessOrder(Order order)
+{
+    if (order.PayWithCreditCard &amp;amp;&amp;amp; IsCustomerCreditCardInvalid(order.Customer))
+        throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
+
+      (...)
+
+}
+
+private static bool IsCustomerCreditCardInvalid(Customer customer)
+    =&amp;gt; customer.CreditCard == null || customer.CreditCard.ExpirationDate &amp;lt; DateTime.Today;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;By doing this you are abstracting the reader’s mind from details. In case the reader needs to know the details, he can drill down to the details.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2019/09/you-should-start-working-remotely-once-a-week/</id><title type="text">You should start working remotely once a week</title><summary type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/you-should-start-working-remotely-once-a-week-head.png" alt="Ready to work from home?" /&gt;&lt;/p&gt;
 
 &lt;p&gt;Do you know the benefits of remote working? Do you doubt that it would work for you? Would you like to give it a try? Don’t know how to convince your boss or even how to start?  &lt;/p&gt;
 
@@ -784,54 +836,4 @@ Phil Karlton once said: &lt;/p&gt;
 &lt;/ul&gt;
 
 &lt;p&gt;You get it.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2017/07/rebuilding-sql-database-indexes-using-azure-function/</id><title type="text">Rebuilding SQL Database indexes using Azure Function</title><summary type="html">&lt;p&gt;Do you know that index management is under your responsibility and you need to pay attention to how fragmented they are? If you are reading this post, probably you know that (I hope that you didn't find it in the hard way).&lt;/p&gt;
-
-&lt;p&gt;Azure SQL Database takes care of a lot of maintenance tasks, but keeping your Indexes healthy isn't one of them. &lt;/p&gt;
-
-&lt;p&gt;Indexes get fragmented and fragmented indexes is a performance killer. The good news is that I can help you dealing with that.&lt;/p&gt;
-
-</summary><published>2017-07-19T23:00:00Z</published><updated>2017-07-19T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2017/07/rebuilding-sql-database-indexes-using-azure-function/" /><content type="html">&lt;p&gt;Do you know that index management is under your responsibility and you need to pay attention to how fragmented they are? If you are reading this post, probably you know that (I hope that you didn't find it in the hard way).&lt;/p&gt;
-
-&lt;p&gt;Azure SQL Database takes care of a lot of maintenance tasks, but keeping your Indexes healthy isn't one of them. &lt;/p&gt;
-
-&lt;p&gt;Indexes get fragmented and fragmented indexes is a performance killer. The good news is that I can help you dealing with that.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h2&gt;Do I have a problem?&lt;/h2&gt;
-
-&lt;p&gt;First let's analyze your database. Read &lt;a href="https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/"&gt;this article&lt;/a&gt; to undestand the fragmentation indexs and then execute the following query in your database.&lt;/p&gt;
-
-&lt;script src="https://gist.github.com/gsferreira/fbb3419a367730f53922f0809991d264.js"&gt;&lt;/script&gt;
-
-&lt;p&gt;Scared with the results? If so, keep reading. &lt;/p&gt;
-
-&lt;h2&gt;Azure Function&lt;/h2&gt;
-
-&lt;p&gt;You can find &lt;a href="https://github.com/gsferreira/AzureFunctionSQLDefrag"&gt;here&lt;/a&gt; the code of an Azure Function to automate the index maintenance of multiple databases.&lt;/p&gt;
-
-&lt;p&gt;The function will run and execute a REBUILD and REORGANIZE for Database Indexs, with a given Threshold.&lt;/p&gt;
-
-&lt;p&gt;By default, the Function is configured to Rebuild indexs with more than 30% of fragmentation and reorganize indexs with more than 3% but you can adjust those limits. &lt;/p&gt;
-
-&lt;p&gt;You can add a Connection String to multiple databases at the Application Settings where the name has the prefix "Defrag.".&lt;/p&gt;
-
-&lt;p&gt;You can find information of how to configure it in the project readme file.&lt;/p&gt;
-
-&lt;h3&gt;Important Note!!!&lt;/h3&gt;
-
-&lt;p&gt;&lt;em&gt;The default timeout for functions on a Consumption plan is 5 minutes. The value can be increased to 10 minutes max.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;If you have a big database, the function can stop running during the index maintenance and don't finish the job.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;In that case, you probably want to move to an App Service plan or decompose the function splitting the work by multiple functions. If you want some tips of how to accomplish that, please leave a comment.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;References:&lt;/strong&gt;&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/"&gt;https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/"&gt;https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/"&gt;https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/"&gt;https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content></entry></feed>

@@ -6,20 +6,20 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
-    <meta http-equiv="last-modified" content="2019-09-05T20:43:30.4893306+01:00" />
-    <meta name="keywords" content="" />
+    <meta http-equiv="last-modified" content="2019-10-24T21:46:14.2254996+01:00" />
+    <meta name="keywords" content="Refactoring,Improvement,C#,.net" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Dog training for Developers - The basics - 
+            A simple tip to improve your code maintainability - Decompose IF statements into methods - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,38 +39,64 @@
 
 
 <div class="post">
-    <h1>Dog training for Developers - The basics</h1> 
+    <h1>A simple tip to improve your code maintainability - Decompose IF statements into methods</h1> 
       <div class="meta">
-        <p class="posted">21 Sep 2014</p>
+        <p class="posted">24 Oct 2019</p>
         <ul class="categories">
+          <li><a href="/category/refactoring" title="Snow.Models.Category">Refactoring</a></li>
+          <li><a href="/category/improvement" title="Snow.Models.Category">Improvement</a></li>
+          <li><a href="/category/c" title="Snow.Models.Category">C#</a></li>
+          <li><a href="/category/.net" title="Snow.Models.Category">.net</a></li>
         </ul>
       </div>
     </div>
     
-    <ul class="snow-series"><li>Dog training for Developers - The basics</li><li><a href="/archive/2014/09/dog-trainig-for-developers-the-basics-recognize-the-name/">Dog training for Developers - The basics: Recognize the name</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-come-when-called/">Dog training for Developers - The basics: Come when called</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-sit/">Dog training for Developers - The basics: Sit</a></li><li><a href="/archive/2014/10/dog-trainig-for-developers-the-basics-sit-stay/">Dog training for Developers - The basics: Stay</a></li><li><a href="/archive/2014/11/dog-trainig-for-developers-the-basics-lie-down/">Dog training for Developers - The basics: Lie down</a></li></ul>
+    
         
-    <p>Recently I've brought home a new puppy, named Feijão (the portuguese word for "bean"). Since then I've been reading to learn how to teach him some stuff.</p>
+    <p><img src="/images/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods.png" alt="Extract method" /></p>
 
-<p>From this experience I've seen that the dog training technique has a kind of flow, like a software routine. So, I have decided to translate some of that tips into code and share with you. I think that this can be a funny way for a developer understand how to teach his dog.</p>
+<p>How many times have you been in a situation where you can’t understand a small piece of code?</p>
+
+<p>Readability has a huge impact on code maintenance because reading other’s people code (and sometimes even our code) can be challenging. </p>
+
+<p>As developers, <strong>we tend to ignore the UX (user experience) of our code</strong>. Every single line of code that we do, will eventually be used by others. Is important to be sure that we do the best possible job for our teammates and to future self.</p>
 
 <!--excerpt-->
 
-<p><img src="/images/dog-trainig-for-developers-the-basics-feijao.jpg" alt="Feijão" /></p>
+<p><strong>The worst code blocks in terms of UX are the ones that require a huge cognitive load.</strong> It’s our job to ask our selves what we can do to reduce it and improve readability. </p>
 
-<p>In the following weeks I will write some tips based on positive reinforcement training technique. 
-The tips of this series:</p>
+<p>Usually when I’m in a situation that requires high cognitive load to understand a piece of code, is because I face a huge and complex IF statement condition and I need to figure out what the hell it’s supposed to do. Do you know the feeling? Having to sketch a decision tree trying to figure out what is happening?</p>
 
-<ol>
-<li>Recognize the name</li>
-<li>Come when called</li>
-<li>Sit</li>
-<li>Stay</li>
-<li>Lie</li>
-</ol>
+<h2>How to avoid it?</h2>
 
-<p>If you like the idea, feel free to leave a comment or ask for some more tips.</p>
+<p>This is one of the most simple tricks that I do every day and I tend to advise everyone to do.</p>
 
-<p>Stay tuned!</p>
+<p>My rule of thumb is simple: <strong>In case of a multi-part condition, extract it to a method and name it accordingly.</strong> </p>
+
+<p>Let’s see it in practice.</p>
+
+<p>Imagine that you have the following expression, that wants to validate if the customer can pay the Order with Credit Card. To do that, the customer should have an active Credit Card.</p>
+
+<pre><code>if (order.PayWithCreditCard &amp;&amp; (order.Customer.CreditCard == null || order.Customer.CreditCard.ExpirationDate &lt; DateTime.Today))
+    throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
+</code></pre>
+
+<p>To improve it, you can extract the boolean logic related to the credit card validation to a static method, and name it with something easy to understand.</p>
+
+<pre><code>public static void ProcessOrder(Order order)
+{
+    if (order.PayWithCreditCard &amp;&amp; IsCustomerCreditCardInvalid(order.Customer))
+        throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
+
+      (...)
+
+}
+
+private static bool IsCustomerCreditCardInvalid(Customer customer)
+    =&gt; customer.CreditCard == null || customer.CreditCard.ExpirationDate &lt; DateTime.Today;
+</code></pre>
+
+<p>By doing this you are abstracting the reader’s mind from details. In case the reader needs to know the details, he can drill down to the details.</p>
 
 
 
@@ -93,14 +119,14 @@ The tips of this series:</p>
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics/';
+                this.page.url = 'http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/09/dog-trainig-for-developers-the-basics/';
+    var disqus_url = 'http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
