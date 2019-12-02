@@ -1,4 +1,43 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/</guid><link>http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/</link><title>A simple tip to improve your code maintainability - Decompose IF statements into methods</title><description>&lt;p&gt;&lt;img src="http://gsferreira.com/images/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods.png" alt="Extract method" /&gt;&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2019/12/start-thinking-inside-the-box/</guid><link>http://gsferreira.com/archive/2019/12/start-thinking-inside-the-box/</link><title>Start thinking inside the box</title><description>&lt;p&gt;&lt;img src="http://gsferreira.com/images/start-thinking-inside-the-box.png" alt="Don't you freeze when you are asked to be creative and think outside the box?" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Don't you freeze when you are asked to be creative and think outside the box?&lt;/p&gt;
+
+&lt;p&gt;If so, you probably have been in the following places. Rumbling through ideas without consequences. Don't know where to start. Being repetitive. Procrastinating. Those are just a few consequences when we are facing a clean slate.&lt;/p&gt;
+
+&lt;p&gt;These leads us to frustration, disappointment and lack of confidence in our creative skills.&lt;/p&gt;
+
+&lt;p&gt;Probably you even think: &lt;em&gt;"How the hell could Steve Jobs be so creative? That guy was a genius! He could think outside the box for sure."&lt;/em&gt; Well... I don't think so. Let's see why.&lt;/p&gt;
+
+</description><pubDate>Mon, 02 Dec 2019 00:00:00 Z</pubDate><a10:updated>2019-12-02T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/start-thinking-inside-the-box.png" alt="Don't you freeze when you are asked to be creative and think outside the box?" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Don't you freeze when you are asked to be creative and think outside the box?&lt;/p&gt;
+
+&lt;p&gt;If so, you probably have been in the following places. Rumbling through ideas without consequences. Don't know where to start. Being repetitive. Procrastinating. Those are just a few consequences when we are facing a clean slate.&lt;/p&gt;
+
+&lt;p&gt;These leads us to frustration, disappointment and lack of confidence in our creative skills.&lt;/p&gt;
+
+&lt;p&gt;Probably you even think: &lt;em&gt;"How the hell could Steve Jobs be so creative? That guy was a genius! He could think outside the box for sure."&lt;/em&gt; Well... I don't think so. Let's see why.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;In 2007, Steve presented to the world the first iPhone. A device that began the revolution of our daily companion: The Smartphone.  Today we can't live without it, but in 2001, we weren't so dependent for sure.&lt;/p&gt;
+
+&lt;p&gt;iPhone wasn't the first pocket computer that we carried. But, the iPhone was the first one to be really usable. A genius move of Steve Jobs was to understand the limitations of the current devices and drive the innovation to create delightful touch experience. Yes, kids, we used to need a keyboard or even a pen to work with our "smartphones".&lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://pt.wikipedia.org/wiki/Stylus"&gt;&lt;img src="https://upload.wikimedia.org/wikipedia/commons/thumb/e/e8/HTC_Touch2_used_with_a_stylus.jpg/1280px-HTC_Touch2_used_with_a_stylus.jpg" alt="Phone Stylus" /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;The constraints were there, since the first day. iPhone was built on the shoulders of giants but the difference was to put together in the same device a plot of technologies, a good touch screen and a whole new experience. &lt;/p&gt;
+
+&lt;p&gt;As you can see, the &lt;strong&gt;constraints applied to the User Experience guided Steve to question what can be done to bring a better experience to life&lt;/strong&gt;. For sure, the fact of Steve being so obsessed with perfection was a constraint that forced the Apple team to find a new path, &lt;strong&gt;testing wild ideas&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;If Apple had to start without constraints, they would need to forget the past, the Phone history.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Everything that has been accomplished in the &lt;strong&gt;past is for sure one of the most important guides in everything that we do.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Embrace the constraints and let them guide your creativity, because sometimes &lt;strong&gt;freedom, can be paralyzing.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;Always remember, that when you were a little kid, you could bring to life an house, a car or even a plane with just two simple ingredients: A cardboard box and your imagination.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/</guid><link>http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/</link><title>A simple tip to improve your code maintainability - Decompose IF statements into methods</title><description>&lt;p&gt;&lt;img src="http://gsferreira.com/images/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods.png" alt="Extract method" /&gt;&lt;/p&gt;
 
 &lt;p&gt;How many times have you been in a situation where you can’t understand a small piece of code?&lt;/p&gt;
 
@@ -793,47 +832,4 @@ That's why you need to know about the HTTP Prefer Header.&lt;/p&gt;
 &lt;script src="https://gist.github.com/gsferreira/80aa93d12633c0df271a08f6dc2e52ca.js?file=Controller.cs"&gt;&lt;/script&gt;
 
 &lt;p&gt;&lt;strong&gt;&lt;em&gt;Note:&lt;/strong&gt; If you need to do an extra effort to load the resource from the database, probably the Filter approach isn't the best fit for you.&lt;/em&gt;&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2017/09/please-don-t-name-it-utils/</guid><link>http://gsferreira.com/archive/2017/09/please-don-t-name-it-utils/</link><title>Please don't name it "Utils"!</title><description>&lt;p&gt;Imagine that you are working on a code base that you are really proud of. Everything is building up together with great quality and you reach the moment where you need to send a mail. Simple task to you for sure.&lt;/p&gt;
-
-&lt;p&gt;You know that eventually you will need to send emails in other points of your application and because you master the DRY principle you decide to write an &lt;em&gt;"Utils"&lt;/em&gt; class.&lt;/p&gt;
-
-&lt;p&gt;Good idea, isn't it? &lt;strong&gt;NO!!!! Absolutely no!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Why not? What's wrong with an &lt;em&gt;"Utils"&lt;/em&gt; folder or an Utility class?&lt;/p&gt;
-
-</description><pubDate>Mon, 11 Sep 2017 23:00:00 Z</pubDate><a10:updated>2017-09-11T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Imagine that you are working on a code base that you are really proud of. Everything is building up together with great quality and you reach the moment where you need to send a mail. Simple task to you for sure.&lt;/p&gt;
-
-&lt;p&gt;You know that eventually you will need to send emails in other points of your application and because you master the DRY principle you decide to write an &lt;em&gt;"Utils"&lt;/em&gt; class.&lt;/p&gt;
-
-&lt;p&gt;Good idea, isn't it? &lt;strong&gt;NO!!!! Absolutely no!&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;Why not? What's wrong with an &lt;em&gt;"Utils"&lt;/em&gt; folder or an Utility class?&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;Segregate responsibilities is an important thing, but naming is also important. Readability and discoverability are often underrated.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/please-don-t-name-it-utils-code-sample.png" alt="Utils code sample" /&gt;&lt;/p&gt;
-
-&lt;p&gt;When you create an &lt;em&gt;"Utils"&lt;/em&gt; class you are creating a collection of random stuff. A place where anything can fit and that someone who doesn't know your project won't know what can be found inside the &lt;em&gt;"Utils"&lt;/em&gt;. For them, your &lt;em&gt;"Utils"&lt;/em&gt; it's a kind of magical place where treasures and dragons can be hidden.&lt;/p&gt;
-
-&lt;p&gt;Please don't feel ashamed by doing that, I have done it in the past. 
-Phil Karlton once said: &lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;There are only two hard things in Computer Science: cache invalidation and &lt;strong&gt;naming things&lt;/strong&gt;.&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;I prefer a name that doesn't sounds catchy than a name that doesn't make sense.&lt;/p&gt;
-
-&lt;p&gt;So if you are typing  &lt;em&gt;"Utils"&lt;/em&gt;, please stop and think what the hell will this code do? Then, name it according to that.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;Write to a Log file? Name it &lt;em&gt;"Logger"&lt;/em&gt;. &lt;/li&gt;
-&lt;li&gt;Send a mail? Name it &lt;em&gt;"MailSender"&lt;/em&gt;. &lt;/li&gt;
-&lt;li&gt;Generate a random message? Name it &lt;em&gt;"MessageGenerator"&lt;/em&gt;. &lt;/li&gt;
-&lt;li&gt;Provide string extensions? Name it &lt;em&gt;"StringExtensions"&lt;/em&gt;. &lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;You get it.&lt;/p&gt;
 </a10:content></item></channel></rss>
