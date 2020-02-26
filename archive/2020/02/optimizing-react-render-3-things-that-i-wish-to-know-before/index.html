@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2020-02-26T21:42:32.0480669+00:00" />
-    <meta name="keywords" content="Remote Work,Improvement,Team" />
+    <meta name="keywords" content="React" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            You should start working remotely once a week - 
+            Optimizing React Render - 3 things that I wish to know before - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2019/09/you-should-start-working-remotely-once-a-week/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2020/02/optimizing-react-render-3-things-that-i-wish-to-know-before/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,70 +39,77 @@
 
 
 <div class="post">
-    <h1>You should start working remotely once a week</h1> 
+    <h1>Optimizing React Render - 3 things that I wish to know before</h1> 
       <div class="meta">
-        <p class="posted">05 Sep 2019</p>
+        <p class="posted">26 Feb 2020</p>
         <ul class="categories">
-          <li><a href="/category/remote-work" title="Snow.Models.Category">Remote Work</a></li>
-          <li><a href="/category/improvement" title="Snow.Models.Category">Improvement</a></li>
-          <li><a href="/category/team" title="Snow.Models.Category">Team</a></li>
+          <li><a href="/category/react" title="Snow.Models.Category">React</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p><img src="/images/you-should-start-working-remotely-once-a-week-head.png" alt="Ready to work from home?" /></p>
+    <p><img src="/images/optimizing-react-render-3-things-that-i-wish-to-know-before.png" alt="Optimizing React Render - 3 things that I wish to know before" /></p>
 
-<p>Do you know the benefits of remote working? Do you doubt that it would work for you? Would you like to give it a try? Don’t know how to convince your boss or even how to start?  </p>
+<p>My experience with <a href="https://reactjs.org/">React</a> has been awesome so far. My feeling is that I just needed to understand the basic concepts to be productive with React. The problem is that there are a few advanced concepts that I was missing.</p>
 
-<p>If so, I have something for you.</p>
+<p>Recently, the lack of knowledge manifested itself as performance issues. To fix them I needed to learn in the hard way. So, I'm sharing this here because if I can prevent you from suffering from it, I would be glad.</p>
+
+<p>I observed that the components of my application were rendering too many times, even when I did not need them to re-render. The following 3 recommendations are the main reasons for that to happen.</p>
 
 <!--excerpt-->
 
 <hr />
 
-<p><em>This article is based on my experience of having the complete</em> <a href="https://omnialowcode.com"><em>company</em></a> <em>working remotely once a week for the past few months.</em></p>
+<h2>💡 1. Don't pass props with an object by reference</h2>
+
+<p><strong>If you invoke a component and set a prop with a given object, the object will be passing by reference.</strong> This can cause all kind of problems. I was facing two distinct problems:</p>
+
+<ul>
+<li>Despite I was lifting the state up, the child components have access to the same instance of the state.</li>
+<li>When passing props by reference, you can receive the same object in the prevProps and nextProps for a componentShouldUpdate event. That will cause you problems. You want to compare those props to know what has been changed, but you are looking at the exact same object.</li>
+</ul>
+
+<h3>✅ What to do?</h3>
+
+<p>Use the spread operator. If you have a complex data structure, with multi-level deepness, use a tool like <a href="https://lodash.com/docs/#cloneDeep">Lodash cloneDeep</a>.</p>
 
 <hr />
 
-<p><strong>Remote working</strong> has been growing in the past few years but for some organizations <strong>can be a change difficult to accept.</strong> </p>
+<h2>2. 💡 Only pass properties needed to the component</h2>
 
-<p>If you are in an environment with resistance to Remote Working, the best way is to <strong>propose a small experiment.</strong> The best way to prove a hypothesis is to test it following the scientific method.</p>
+<p><strong>Make sure that you don't provide information that isn't needed to the child components. Try to only pass simple props with primitive types or functions.</strong> If you pass a complex object and the child object only needs part of it, React will need to re-render the component. React will re-render every time that the props or the state change.</p>
 
-<p>I suggest you present the case to the leadership presenting a few reasons (listed below) and proposing a small experience to prove them.</p>
+<h3>✅ What to do?</h3>
 
-<h2>5 reasons:</h2>
+<p>Review your components and question all those props where the prop type is Object or Any.</p>
 
-<ol>
-<li><a href="https://www.inc.com/scott-mautz/a-2-year-stanford-study-shows-astonishing-productivity-boost-of-working-from-home.html">Studies report</a> that working from home has a <strong>huge impact on productivity</strong>.</li>
-<li>It’s a benefit the company gives which can <strong>help to hire people</strong>.</li>
-<li>It <strong>reduces costs</strong> both for the company and employee.</li>
-<li>Leads to an <strong>improvement of the team communication</strong> skills.</li>
-<li><strong>Happiness</strong>
-<ol>
-<li>Studies report that people who worked remotely were <strong>less likely to leave the company</strong>.</li>
-<li>Health improvements.</li>
-<li>Less time spent commuting.</li>
-</ol></li>
-</ol>
+<hr />
 
-<h2>How to start</h2>
+<h2>💡 3. React Memo or Pure Components</h2>
 
-<p>After presenting a few reasons supporting your case, the best thing to do is to propose an experiment to evaluate the results.</p>
+<p>Memo and Pure Components are an excellent way of improving performance. But, unless you are using them in the correct scenario you will not see the benefits. <strong>If you are providing a complex object</strong> (like explained in recommendation 2) <strong>Memo and Pure Components will not work as you expect.</strong></p>
 
-<ul>
-<li><strong>Start small.</strong> I suggest starting with one day a week.</li>
-<li><strong>Set a period for the experiment.</strong> I suggest to never do it for less than 3 months since in the first weeks everyone is still adapting.</li>
-<li>Try to <strong>block a day in the calendar.</strong> For example, schedule a recurring “Remote Wednesday” meeting.</li>
-<li>Try to <strong>organize the work to leave remote days free of meetings.</strong> If you have a creative job, this is a <strong>good day to focus</strong>.</li>
-<li>Make sure that everyone has a <strong>good pair of headphones</strong>.</li>
-<li>Make sure that the team has the <strong>right tools to facilitate the communication</strong> (<a href="https://slack.com">Slack</a>, <a href="https://teams.microsoft.com/start">Microsoft Teams</a>, <a href="https://www.skype.com/">Skype</a>, <a href="https://zoom.us/">Zoom</a> or other).</li>
-</ul>
+<p>To understand that, you need to know that a Pure Component is different from a Component. Pure Components implement the <em>"shouldComponentUpdate"</em> with a shallow prop and state comparison.</p>
 
-<p>Don’t forget to <strong>define a few success metrics and define how you will evaluate them.</strong></p>
+<p>React documentation (<a href="https://reactjs.org/docs/react-api.html#reactpurecomponent">see here</a>):</p>
 
-<p>If you have other technique to start this journey, please share!</p>
+<p><em>"<code>React.PureComponent’s</code> <code>shouldComponentUpdate()</code> only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences."</em></p>
+
+<h3>✅ What to do?</h3>
+
+<p>Try to follow the recommendation 2. If you need to have a complex data structure, use a Component and implement the <em>"shouldComponentUpdate"</em> instead.</p>
+
+<p>You can also take a look into react-fast-compare to help you out comparing complex data.</p>
+
+<hr />
+
+<p>To conclude, try to use primitive data as Props and use Pure Components or Memo when you can.</p>
+
+<p>If you can't, be sure that you clone the data and implement the <em>"shouldComponentUpdate"</em> by yourself.</p>
+
+<p>I hope that this helps you.</p>
 
 
 
@@ -125,14 +132,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2019/09/you-should-start-working-remotely-once-a-week/';
+                this.page.url = 'http://gsferreira.com/archive/2020/02/optimizing-react-render-3-things-that-i-wish-to-know-before/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2019/09/you-should-start-working-remotely-once-a-week/';
+    var disqus_url = 'http://gsferreira.com/archive/2020/02/optimizing-react-render-3-things-that-i-wish-to-know-before/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

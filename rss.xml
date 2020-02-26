@@ -1,4 +1,72 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2020/02/one-on-ones-using-behavioural-science-to-maximize-the-impact/</guid><link>http://gsferreira.com/archive/2020/02/one-on-ones-using-behavioural-science-to-maximize-the-impact/</link><title>One-on-ones - Using behavioural science to maximize the impact</title><description>&lt;p&gt;&lt;img src="http://gsferreira.com/images/one-on-ones-using-behavioural-science-to-maximize-the-impact.png" alt="One-on-ones - Using behavioural science to maximize the impact." /&gt;&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2020/02/optimizing-react-render-3-things-that-i-wish-to-know-before/</guid><link>http://gsferreira.com/archive/2020/02/optimizing-react-render-3-things-that-i-wish-to-know-before/</link><title>Optimizing React Render - 3 things that I wish to know before</title><description>&lt;p&gt;&lt;img src="http://gsferreira.com/images/optimizing-react-render-3-things-that-i-wish-to-know-before.png" alt="Optimizing React Render - 3 things that I wish to know before" /&gt;&lt;/p&gt;
+
+&lt;p&gt;My experience with &lt;a href="https://reactjs.org/"&gt;React&lt;/a&gt; has been awesome so far. My feeling is that I just needed to understand the basic concepts to be productive with React. The problem is that there are a few advanced concepts that I was missing.&lt;/p&gt;
+
+&lt;p&gt;Recently, the lack of knowledge manifested itself as performance issues. To fix them I needed to learn in the hard way. So, I'm sharing this here because if I can prevent you from suffering from it, I would be glad.&lt;/p&gt;
+
+&lt;p&gt;I observed that the components of my application were rendering too many times, even when I did not need them to re-render. The following 3 recommendations are the main reasons for that to happen.&lt;/p&gt;
+
+</description><pubDate>Wed, 26 Feb 2020 00:00:00 Z</pubDate><a10:updated>2020-02-26T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/optimizing-react-render-3-things-that-i-wish-to-know-before.png" alt="Optimizing React Render - 3 things that I wish to know before" /&gt;&lt;/p&gt;
+
+&lt;p&gt;My experience with &lt;a href="https://reactjs.org/"&gt;React&lt;/a&gt; has been awesome so far. My feeling is that I just needed to understand the basic concepts to be productive with React. The problem is that there are a few advanced concepts that I was missing.&lt;/p&gt;
+
+&lt;p&gt;Recently, the lack of knowledge manifested itself as performance issues. To fix them I needed to learn in the hard way. So, I'm sharing this here because if I can prevent you from suffering from it, I would be glad.&lt;/p&gt;
+
+&lt;p&gt;I observed that the components of my application were rendering too many times, even when I did not need them to re-render. The following 3 recommendations are the main reasons for that to happen.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;💡 1. Don't pass props with an object by reference&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;If you invoke a component and set a prop with a given object, the object will be passing by reference.&lt;/strong&gt; This can cause all kind of problems. I was facing two distinct problems:&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;Despite I was lifting the state up, the child components have access to the same instance of the state.&lt;/li&gt;
+&lt;li&gt;When passing props by reference, you can receive the same object in the prevProps and nextProps for a componentShouldUpdate event. That will cause you problems. You want to compare those props to know what has been changed, but you are looking at the exact same object.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3&gt;✅ What to do?&lt;/h3&gt;
+
+&lt;p&gt;Use the spread operator. If you have a complex data structure, with multi-level deepness, use a tool like &lt;a href="https://lodash.com/docs/#cloneDeep"&gt;Lodash cloneDeep&lt;/a&gt;.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;2. 💡 Only pass properties needed to the component&lt;/h2&gt;
+
+&lt;p&gt;&lt;strong&gt;Make sure that you don't provide information that isn't needed to the child components. Try to only pass simple props with primitive types or functions.&lt;/strong&gt; If you pass a complex object and the child object only needs part of it, React will need to re-render the component. React will re-render every time that the props or the state change.&lt;/p&gt;
+
+&lt;h3&gt;✅ What to do?&lt;/h3&gt;
+
+&lt;p&gt;Review your components and question all those props where the prop type is Object or Any.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;💡 3. React Memo or Pure Components&lt;/h2&gt;
+
+&lt;p&gt;Memo and Pure Components are an excellent way of improving performance. But, unless you are using them in the correct scenario you will not see the benefits. &lt;strong&gt;If you are providing a complex object&lt;/strong&gt; (like explained in recommendation 2) &lt;strong&gt;Memo and Pure Components will not work as you expect.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;To understand that, you need to know that a Pure Component is different from a Component. Pure Components implement the &lt;em&gt;"shouldComponentUpdate"&lt;/em&gt; with a shallow prop and state comparison.&lt;/p&gt;
+
+&lt;p&gt;React documentation (&lt;a href="https://reactjs.org/docs/react-api.html#reactpurecomponent"&gt;see here&lt;/a&gt;):&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;"&lt;code&gt;React.PureComponent’s&lt;/code&gt; &lt;code&gt;shouldComponentUpdate()&lt;/code&gt; only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences."&lt;/em&gt;&lt;/p&gt;
+
+&lt;h3&gt;✅ What to do?&lt;/h3&gt;
+
+&lt;p&gt;Try to follow the recommendation 2. If you need to have a complex data structure, use a Component and implement the &lt;em&gt;"shouldComponentUpdate"&lt;/em&gt; instead.&lt;/p&gt;
+
+&lt;p&gt;You can also take a look into react-fast-compare to help you out comparing complex data.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;To conclude, try to use primitive data as Props and use Pure Components or Memo when you can.&lt;/p&gt;
+
+&lt;p&gt;If you can't, be sure that you clone the data and implement the &lt;em&gt;"shouldComponentUpdate"&lt;/em&gt; by yourself.&lt;/p&gt;
+
+&lt;p&gt;I hope that this helps you.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2020/02/one-on-ones-using-behavioural-science-to-maximize-the-impact/</guid><link>http://gsferreira.com/archive/2020/02/one-on-ones-using-behavioural-science-to-maximize-the-impact/</link><title>One-on-ones - Using behavioural science to maximize the impact</title><description>&lt;p&gt;&lt;img src="http://gsferreira.com/images/one-on-ones-using-behavioural-science-to-maximize-the-impact.png" alt="One-on-ones - Using behavioural science to maximize the impact." /&gt;&lt;/p&gt;
 
 &lt;p&gt;If you manage or mentor people, you should be doing one-on-one meetings. 
 They are one of the most important tools that you have, so, it's important to maximize the result.&lt;/p&gt;
@@ -804,35 +872,4 @@ XmlPoke(propsFile, "//Version", version);
 &lt;/ol&gt;
 
 &lt;p&gt;There's any concept that I'm missing in this interpertation? If so, go ahead and leave a comment!&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2018/01/json-patch-builder-online/</guid><link>http://gsferreira.com/archive/2018/01/json-patch-builder-online/</link><title>JSON Patch Builder Online</title><description>&lt;p&gt;Do you know the JSON Patch format? The &lt;a href="https://tools.ietf.org/html/rfc6902"&gt;RFC6902&lt;/a&gt; defines the structure to express a list of operations to apply over a JSON Document.
-This format is designed to be the payload of an HTTP PATCH method.&lt;/p&gt;
-
-&lt;p&gt;The format isn't difficult, you can easily understand the rules and build it manually. But, I confess that sometimes I struggle with it, specially when I'm testing a PATCH to a complex object. 
-So... &lt;strong&gt;&lt;a href="https://json-patch-builder-online.github.io/"&gt;I built a Tool to help me.&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-</description><pubDate>Mon, 08 Jan 2018 00:00:00 Z</pubDate><a10:updated>2018-01-08T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Do you know the JSON Patch format? The &lt;a href="https://tools.ietf.org/html/rfc6902"&gt;RFC6902&lt;/a&gt; defines the structure to express a list of operations to apply over a JSON Document.
-This format is designed to be the payload of an HTTP PATCH method.&lt;/p&gt;
-
-&lt;p&gt;The format isn't difficult, you can easily understand the rules and build it manually. But, I confess that sometimes I struggle with it, specially when I'm testing a PATCH to a complex object. 
-So... &lt;strong&gt;&lt;a href="https://json-patch-builder-online.github.io/"&gt;I built a Tool to help me.&lt;/a&gt;&lt;/strong&gt;&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/json-patch-builder-online.png" alt="JSON Patch Builder Online" /&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;&lt;a href="https://json-patch-builder-online.github.io/"&gt;JSON Patch Builder Online&lt;/a&gt;&lt;/strong&gt; is a simple and Open Source tool that you can use to calculate the JSON Patch needed to transform a resource/entity in the resource that you want. &lt;/p&gt;
-
-&lt;p&gt;To accomplish that, I used &lt;a href="https://github.com/Starcounter-Jack/JSON-Patch"&gt;JSON-Patch&lt;/a&gt;, a Javascript library, to calculate the Patch and &lt;a href="https://bulma.io/"&gt;BULMA CSS&lt;/a&gt; to have a good looking tool. 
-I recommend that you go check them.&lt;/p&gt;
-
-&lt;p&gt;If you have something that you want to see in the &lt;strong&gt;&lt;a href="https://json-patch-builder-online.github.io/"&gt;JSON Patch Builder Online&lt;/a&gt;&lt;/strong&gt;, feel free to open an &lt;a href="https://github.com/json-patch-builder-online/json-patch-builder-online.github.io/issues"&gt;Issue&lt;/a&gt; or &lt;a href="https://github.com/json-patch-builder-online/json-patch-builder-online.github.io/"&gt;Contribute&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Links:&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;a href="https://github.com/json-patch-builder-online/json-patch-builder-online.github.io/"&gt;Github&lt;/a&gt;&lt;/li&gt;
-&lt;li&gt;&lt;a href="https://json-patch-builder-online.github.io/"&gt;JSON Patch Builder Online&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;I hope that this helps you.&lt;/p&gt;
 </a10:content></item></channel></rss>
