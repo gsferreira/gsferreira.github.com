@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2020-04-15T07:37:16.8246060+01:00" />
-    <meta name="keywords" content="Azure" />
+    <meta name="keywords" content=".NET" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            Azure deploy and the path length limitation - 
+            windbg a .net core 3.1 app memory leak - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2020/04/windbg-a-net-core-31-app-memory-leak/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,46 +39,43 @@
 
 
 <div class="post">
-    <h1>Azure deploy and the path length limitation</h1> 
+    <h1>windbg a .net core 3.1 app memory leak</h1> 
       <div class="meta">
-        <p class="posted">27 Nov 2014</p>
+        <p class="posted">15 Apr 2020</p>
         <ul class="categories">
-          <li><a href="/category/azure" title="Snow.Models.Category">Azure</a></li>
+          <li><a href="/category/.net" title="Snow.Models.Category">.NET</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Windows has that boring thing, the "Maximum Path Length Limitation". That can be a terrible headache when you are dealing with Azure Cloud Service deploy.</p>
+    <p>I've spent the past few days trying to fix a memory leak. I was having problems to figure out what was leaking, so I used windbg wishing that it would help me.</p>
 
-<p>If you create your projects in the Visual Studio default folder (<em>C:\Users\USER\Documents\Visual Studio 2013\Projects</em>) or in a longer path, probably you already have faced the error:</p>
-
-<blockquote>
-  <p><em>"The specified path, file name, or both are too long. The fully qualified file name must be less than 260 characters, and the directory name must be less than 248 characters."</em></p>
-</blockquote>
+<p>I confess that I'm not an experienced user of windbg, so I google how to catch memory issues using windbg. There's a ton of information out there. The problem is that I didn't found a guide on how to do it with a .net core application.</p>
 
 <!--excerpt-->
 
-<p>To fix this:</p>
+<p>So, I'm sharing here how I've done it:</p>
 
 <ol>
-<li>Go to the Cloud Service project folder.</li>
-<li>Edit the user cloud service options file (<em>*.ccproj</em> file) in notepad.</li>
-<li>Add the ServiceOutputDirectory element with the value <em>"c:\azure"</em> for example.</li>
-<li>Open the solution in Visual Studio again and the error has gone.</li>
+<li>Install windbg (<a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools">see here</a>).</li>
+<li>Add windbg.exe (x64 version) to your environment path.</li>
+<li>Install SOS (<a href="https://github.com/dotnet/diagnostics#installing-sos">see here</a>): <code>dotnet tool install -g dotnet-sos</code>.</li>
+<li>Set breakpoint(s) using <code>System.Diagnostics.Debugger.Break()</code> in your source code.</li>
+<li>Update your project (*.csproj file) to Load Symbols: <code>&lt;DebugSymbols&gt;true&lt;/DebugSymbols&gt;&lt;DebugType&gt;pdbonly&lt;/DebugType&gt;</code>.</li>
+<li>Build your project using Release configuration: <code>dotnet build -c Release</code>.</li>
+<li>Launch with WinDbg attached to your project: <code>windbg dotnet [YOUR DLL PATH].dll</code>.</li>
+<li><p><a href="https://bret.codes/net-core-and-windbg/#loadsos">Load SOS</a> using <code>.load C:\Users\[USERNAME]\.dotnet\sos\sos.dll .</code>.</p>
+
+<p><img src="/images/windbg-a-net-core-31-app-memory-leak-load-sos.png" alt="windbg - load sos" /></p></li>
+<li><p>Enter <code>g</code> to go to the first breakpoint.</p></li>
+<li>Enter <code>!gchandles</code> to see garbage collector handles.</li>
+<li><code>!DumpHeap /d -mt [MT]</code> using the memory type id from the result list of the previous command. Example: <code>!DumpHeap /d -mt 00007ffb4c85ca98</code></li>
+<li><code>!gcroot -all [ADDRESS]</code> using the memory address form the result list of the previous command. Example: <code>!gcroot -all 0x0000023cd2e71510</code></li>
 </ol>
 
-<p>Example:</p>
-
-<pre><code>﻿&lt;?xml version="1.0" encoding="utf-8"?&gt;
-&lt;Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003"&gt;
-  &lt;PropertyGroup&gt;
-    &lt;Name&gt;WorkerRole&lt;/Name&gt;
-    &lt;ServiceOutputDirectory&gt;c:\azure\&lt;/ServiceOutputDirectory&gt;
-  &lt;/PropertyGroup&gt;
-&lt;/Project&gt;
-</code></pre>
+<p>Following this guide, you should have a clue of what is still in memory and where the object is in use.</p>
 
 <p>Hope this helps.</p>
 
@@ -103,14 +100,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/';
+                this.page.url = 'http://gsferreira.com/archive/2020/04/windbg-a-net-core-31-app-memory-leak/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/';
+    var disqus_url = 'http://gsferreira.com/archive/2020/04/windbg-a-net-core-31-app-memory-leak/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

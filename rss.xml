@@ -1,4 +1,36 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2020/02/optimizing-react-render-3-things-that-i-wish-to-know-before/</guid><link>http://gsferreira.com/archive/2020/02/optimizing-react-render-3-things-that-i-wish-to-know-before/</link><title>Optimizing React Render - 3 things that I wish to know before</title><description>&lt;p&gt;&lt;img src="http://gsferreira.com/images/optimizing-react-render-3-things-that-i-wish-to-know-before.png" alt="Optimizing React Render - 3 things that I wish to know before" /&gt;&lt;/p&gt;
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2020/04/windbg-a-net-core-31-app-memory-leak/</guid><link>http://gsferreira.com/archive/2020/04/windbg-a-net-core-31-app-memory-leak/</link><title>windbg a .net core 3.1 app memory leak</title><description>&lt;p&gt;I've spent the past few days trying to fix a memory leak. I was having problems to figure out what was leaking, so I used windbg wishing that it would help me.&lt;/p&gt;
+
+&lt;p&gt;I confess that I'm not an experienced user of windbg, so I google how to catch memory issues using windbg. There's a ton of information out there. The problem is that I didn't found a guide on how to do it with a .net core application.&lt;/p&gt;
+
+</description><pubDate>Tue, 14 Apr 2020 23:00:00 Z</pubDate><a10:updated>2020-04-14T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;I've spent the past few days trying to fix a memory leak. I was having problems to figure out what was leaking, so I used windbg wishing that it would help me.&lt;/p&gt;
+
+&lt;p&gt;I confess that I'm not an experienced user of windbg, so I google how to catch memory issues using windbg. There's a ton of information out there. The problem is that I didn't found a guide on how to do it with a .net core application.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;So, I'm sharing here how I've done it:&lt;/p&gt;
+
+&lt;ol&gt;
+&lt;li&gt;Install windbg (&lt;a href="https://docs.microsoft.com/en-us/windows-hardware/drivers/debugger/debugger-download-tools"&gt;see here&lt;/a&gt;).&lt;/li&gt;
+&lt;li&gt;Add windbg.exe (x64 version) to your environment path.&lt;/li&gt;
+&lt;li&gt;Install SOS (&lt;a href="https://github.com/dotnet/diagnostics#installing-sos"&gt;see here&lt;/a&gt;): &lt;code&gt;dotnet tool install -g dotnet-sos&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Set breakpoint(s) using &lt;code&gt;System.Diagnostics.Debugger.Break()&lt;/code&gt; in your source code.&lt;/li&gt;
+&lt;li&gt;Update your project (*.csproj file) to Load Symbols: &lt;code&gt;&amp;lt;DebugSymbols&amp;gt;true&amp;lt;/DebugSymbols&amp;gt;&amp;lt;DebugType&amp;gt;pdbonly&amp;lt;/DebugType&amp;gt;&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Build your project using Release configuration: &lt;code&gt;dotnet build -c Release&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;Launch with WinDbg attached to your project: &lt;code&gt;windbg dotnet [YOUR DLL PATH].dll&lt;/code&gt;.&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;a href="https://bret.codes/net-core-and-windbg/#loadsos"&gt;Load SOS&lt;/a&gt; using &lt;code&gt;.load C:\Users\[USERNAME]\.dotnet\sos\sos.dll .&lt;/code&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/windbg-a-net-core-31-app-memory-leak-load-sos.png" alt="windbg - load sos" /&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Enter &lt;code&gt;g&lt;/code&gt; to go to the first breakpoint.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;Enter &lt;code&gt;!gchandles&lt;/code&gt; to see garbage collector handles.&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;!DumpHeap /d -mt [MT]&lt;/code&gt; using the memory type id from the result list of the previous command. Example: &lt;code&gt;!DumpHeap /d -mt 00007ffb4c85ca98&lt;/code&gt;&lt;/li&gt;
+&lt;li&gt;&lt;code&gt;!gcroot -all [ADDRESS]&lt;/code&gt; using the memory address form the result list of the previous command. Example: &lt;code&gt;!gcroot -all 0x0000023cd2e71510&lt;/code&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;Following this guide, you should have a clue of what is still in memory and where the object is in use.&lt;/p&gt;
+
+&lt;p&gt;Hope this helps.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2020/02/optimizing-react-render-3-things-that-i-wish-to-know-before/</guid><link>http://gsferreira.com/archive/2020/02/optimizing-react-render-3-things-that-i-wish-to-know-before/</link><title>Optimizing React Render - 3 things that I wish to know before</title><description>&lt;p&gt;&lt;img src="http://gsferreira.com/images/optimizing-react-render-3-things-that-i-wish-to-know-before.png" alt="Optimizing React Render - 3 things that I wish to know before" /&gt;&lt;/p&gt;
 
 &lt;p&gt;My experience with &lt;a href="https://reactjs.org/"&gt;React&lt;/a&gt; has been awesome so far. My feeling is that I just needed to understand the basic concepts to be productive with React. The problem is that there are a few advanced concepts that I was missing.&lt;/p&gt;
 
@@ -33,7 +65,7 @@
 
 &lt;hr /&gt;
 
-&lt;h2&gt;2. 💡 Only pass properties needed to the component&lt;/h2&gt;
+&lt;h2&gt;💡 2. Only pass properties needed to the component&lt;/h2&gt;
 
 &lt;p&gt;&lt;strong&gt;Make sure that you don't provide information that isn't needed to the child components. Try to only pass simple props with primitive types or functions.&lt;/strong&gt; If you pass a complex object and the child object only needs part of it, React will need to re-render the component. React will re-render every time that the props or the state change.&lt;/p&gt;
 
@@ -787,89 +819,4 @@ XmlPoke(propsFile, "//Version", version);
 &lt;p&gt;You can use the &lt;em&gt;Directory.build.props&lt;/em&gt; to customize other project properties, not only for versioning.&lt;/p&gt;
 
 &lt;p&gt;Go ahead and give it a try.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2018/03/exploring-the-docker-container-metaphor/</guid><link>http://gsferreira.com/archive/2018/03/exploring-the-docker-container-metaphor/</link><title>Exploring the Docker Container metaphor</title><description>&lt;p&gt;&lt;em&gt;This post is my interpretation of the Container metaphor and how I use it to understand the concepts and explain containers to others.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Containers is one of the hot topics in the Software Development world and Docker is the technology that everyone wants to play with.&lt;/p&gt;
-
-&lt;p&gt;Thanks to this hype, everyone has at least a brief idea of what a container is. The problem is that we can easily be confused about what containers really are and the advantages of it.&lt;/p&gt;
-
-&lt;p&gt;I faced the same problem and, in my case, explore the container metaphor helped me to understand it.&lt;/p&gt;
-
-&lt;h2&gt;So, why containers?&lt;/h2&gt;
-
-</description><pubDate>Mon, 05 Mar 2018 00:00:00 Z</pubDate><a10:updated>2018-03-05T00:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;&lt;em&gt;This post is my interpretation of the Container metaphor and how I use it to understand the concepts and explain containers to others.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Containers is one of the hot topics in the Software Development world and Docker is the technology that everyone wants to play with.&lt;/p&gt;
-
-&lt;p&gt;Thanks to this hype, everyone has at least a brief idea of what a container is. The problem is that we can easily be confused about what containers really are and the advantages of it.&lt;/p&gt;
-
-&lt;p&gt;I faced the same problem and, in my case, explore the container metaphor helped me to understand it.&lt;/p&gt;
-
-&lt;h2&gt;So, why containers?&lt;/h2&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;As you know, the Docker logo is a blue whale fully loaded with shipping containers, remembering us of a ship. The ship is a key part in this story.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://docker.com/"&gt;&lt;img src="http://gsferreira.com/images/exploring-the-docker-container-metaphor-docker.png" alt="Docker" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;p&gt;Imagine that you have a company in Europe and you want to transport your products to China by sea. So, you can find a ship with the adequate size and load the Ship with your cargo.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Metaphor: In the software world, the ship is your Server.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;In a local trading association you find out that other companies are also sending products to China and you all can use a bigger Ship and send your products together to save some money.&lt;/p&gt;
-
-&lt;p&gt;The question is: Should that big Ship carry the smaller boats?&lt;/p&gt;
-
-&lt;p&gt;&lt;img src="http://gsferreira.com/images/exploring-the-docker-container-metaphor-ship-of-ships.png" alt="Ship of Ships" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Obviously not! No one would do that!&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Metaphor: Here, the big Ship is your server and the smaller ships are virtual machines. In this case, we have multiple Ships with all the capabilities to travel to China, but they are all constrained to the capacity and limitations of the big ship.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;If we have a big ship we load the ship with the cargo of every company.&lt;/p&gt;
-
-&lt;p&gt;But, you have to face a few challenges:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;How to be sure that the Cargo of a Port Wine company won't damage or contaminate the Cargo of other company?&lt;/li&gt;
-&lt;li&gt;How to isolate the cargo?&lt;/li&gt;
-&lt;li&gt;How to be sure that the cargo is inviolated?&lt;/li&gt;
-&lt;li&gt;How to make sure that the cargo is being transported in the best conditions (correct temperature for instance)?&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Well, you can put the cargo into containers.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Metaphor: In software, you are now loading the Server with containers. Containers will guarantee you that the software is isolated, protected and that a Container will take care what it needs, not the ship. Other benefit is that Containers are immutable so you can be pretty sure that your container won't be violated.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;Obviously you are now in a better situation then having a big Ship carry over small ships. But, &lt;strong&gt;don't forget that even an empty Container is pretty heavy&lt;/strong&gt;. Heavier then a few boxes.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Metaphor: This is a common misconception. The idea that a container is extremely lightweight is dangerous unless you are comparing it to Virtual Machines. In other case you are taking the risk of the other person think that containers are even lighter then running in the bare metal.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;A cool thing about Shipping Containers is that they are pretty standard and modular. You can assume that when the ship arrives in China, there will be a Truck that can transport it and that the container can return in a different ship. &lt;strong&gt;Shipping containers are ship agnostic.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Metaphor: That's another advantage of a container. Containers are pretty standard and without additional effort they can run in any Cloud or Server and be sure that they are self-sufficient.&lt;/em&gt;&lt;/p&gt;
-
-&lt;p&gt;&lt;a href="https://unsplash.com/photos/uBe2mknURG4"&gt;&lt;img src="http://gsferreira.com/images/exploring-the-docker-container-metaphor-containers.jpg" alt="Containers" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Composing&lt;/h2&gt;
-
-&lt;p&gt;How could you be sure that you have two ships loaded in the same way? How to be able to say that they are "equal" in terms of cargo?&lt;/p&gt;
-
-&lt;p&gt;Well, since we can't 3D print a ship capable of transport this (at least in 2018), you will need to document the process. You need to explain how the ship is setup with all containers, explaining the position of each container, what is the cargo and how the multiple containers are interconnected.&lt;/p&gt;
-
-&lt;p&gt;&lt;em&gt;Metaphor: In Docker you use the Docker Compose to accomplish that. Compose is a command that uses a configuration file to know how to build multiple images and how they relate with each other.&lt;/em&gt;&lt;/p&gt;
-
-&lt;h2&gt;The Economic side&lt;/h2&gt;
-
-&lt;p&gt;What is more expensive?&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Sending a big ship carrying small ships or containers?
-&lt;em&gt;Metaphor: A Server with Virtual Machines or Docker Containers?&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Is it better to load the cargo in a repeatable way, right? &lt;em&gt;Metaphor: Docker file and Docker compose are important tools to remove the uncertainty of new deployments.&lt;/em&gt;&lt;/li&gt;
-&lt;li&gt;Wouldn't be nice to don't contaminate the cargo of one company because of a problem in other company products? &lt;em&gt;Metaphor: Isolation give you the confidence that your containers are protected. Containers are self-sufficient.&lt;/em&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;There's any concept that I'm missing in this interpertation? If so, go ahead and leave a comment!&lt;/p&gt;
 </a10:content></item></channel></rss>
