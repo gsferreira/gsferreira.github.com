@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2020-05-05T21:59:52.6104188+01:00" />
-    <meta name="keywords" content="AngularJS" />
+    <meta name="keywords" content="Refactoring,Improvement,C#,.net" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            AngularJS - Input number with 2 decimal places - 
+            Don't declare your Variables at the top - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2020/05/dont-declare-your-variables-at-the-top/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,82 +39,47 @@
 
 
 <div class="post">
-    <h1>AngularJS - Input number with 2 decimal places</h1> 
+    <h1>Don't declare your Variables at the top</h1> 
       <div class="meta">
-        <p class="posted">25 Feb 2015</p>
+        <p class="posted">05 May 2020</p>
         <ul class="categories">
-          <li><a href="/category/angularjs" title="Snow.Models.Category">AngularJS</a></li>
+          <li><a href="/category/refactoring" title="Snow.Models.Category">Refactoring</a></li>
+          <li><a href="/category/improvement" title="Snow.Models.Category">Improvement</a></li>
+          <li><a href="/category/c" title="Snow.Models.Category">C#</a></li>
+          <li><a href="/category/.net" title="Snow.Models.Category">.net</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>My <a href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/">AngularJS - Smart Float Directive</a> post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.</p>
+    <p>When I start learning to code, I was taught to declare variables at the top of the code. I followed it for a long time before start questioning that absolute truth.</p>
 
-<p>This a kind of simple tip, but I believe that it can be really useful.</p>
-
-<p>My smart-float directive works really fine in a desktop or laptop browser, but in a smartphone I want to take advantage of HTML5 number inputs and show to my users when they enter in the input, the "mini calculator keyboard".</p>
-
-<p>How to accomplish it using angular?</p>
+<p>We are writing code for others to read. So, we shouldn't present our characters too early in the story. <a href="https://www.livescience.com/2493-mind-limit-4.html">Our working memory handle a strict number of things at a given time</a>. </p>
 
 <!--excerpt-->
 
-<p>That's easy.</p>
+<p><img src="/images/dont-declare-your-variables-at-the-top-memory-overflow.png" alt="Working memory overflow" /></p>
 
-<p><a href="http://www.deque.com/blog/accessible-client-side-form-validation-html5/"><img src="/images/angularjs-input-number-with-two-decimal-places-meme.jpg" alt="meme" /></a></p>
+<p>Keeping related concepts closer, we are reducing the cognitive load. This will lead us to clean and simple code.</p>
 
-<h2>1. Create the number input with the number type.</h2>
+<p>You can find evidence of that, in Design Principles. By using the <a href="https://www.interaction-design.org/literature/article/laws-of-proximity-uniform-connectedness-and-continuation-gestalt-principles-2">Proximity principle</a>, we form groups by keeping things closer.</p>
 
-<pre><code>&lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" /&gt;
-</code></pre>
+<p>This is one of the reasons why <strong>I run away from global variables.</strong></p>
 
-<h2>2. Define the step interval.</h2>
+<p>Besides the cognitive load reduction, there's a positive side effect from following this. <strong>I use this as a warning sign to extract a function. Whenever you can't keep the variables close to where they are used and to the top, extract it.</strong></p>
 
-<pre><code>&lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" *step="0.01"* /&gt;
-</code></pre>
+<p>So, instead of doing this:</p>
 
-<h2>3. Set the regular expression to validate the input using ng-pattern. Here I want to accept only numbers with a maximum of 2 decimal places and with a dot separator.</h2>
+<p><img src="/images/dont-declare-your-variables-at-the-top-example1.png" alt="Example 1" /></p>
 
-<pre><code>&lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" /&gt;
-</code></pre>
+<p>You can do this:</p>
 
-<h2>4. Inform your user if the input has a valid value.</h2>
+<p><img src="/images/dont-declare-your-variables-at-the-top-example2.png" alt="Example 2" /></p>
 
-<pre><code>&lt;input type="number" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" /&gt;
-&lt;span&gt;Is a valid decimal? {{myForm.myDecimal.$valid}}&lt;/span&gt;
-</code></pre>
+<p>And then refactor to this:</p>
 
-<p>A full example using bootstrap (<a href="http://jsfiddle.net/gsferreira/Lsv9f0b0/">demo here</a>):</p>
-
-<pre><code>&lt;div ng-app&gt;
-&lt;h2&gt;Todo&lt;/h2&gt;
-&lt;div ng-controller="myCtrl"&gt;
-
-  &lt;form name="myForm" class="form-horizontal" &gt;
-       &lt;div class="form-group" ng-class="{'has-error': myForm.myDecimal.$invalid}"&gt;
-            &lt;label for="inputText3" class="col-sm-2 control-label"&gt;Decimal&lt;/label&gt;
-            &lt;div class="col-sm-10"&gt;
-                &lt;input type="number" class="form-control" name="myDecimal" placeholder="Decimal" ng-model="myDecimal" ng-pattern="/^[0-9]+(\.[0-9]{1,2})?$/" step="0.01" required /&gt;
-
-                &lt;span class="help-block" ng-show="!myForm.myDecimal.$valid"&gt;
-                    Invalid!
-                &lt;/span&gt;
-            &lt;/div&gt;
-        &lt;/div&gt;
-
-        &lt;div class="form-group" &gt;
-            &lt;label for="inputText3" class="col-sm-2 control-label"&gt;The value:&lt;/label&gt;
-            &lt;div class="col-sm-10"&gt;
-                &lt;input type="text" class="form-control" ng-model="myDecimal" disabled /&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/form&gt;
-&lt;/div&gt;
-&lt;/div&gt;
-</code></pre>
-
-<p>Hope this helps.</p>
+<p><img src="/images/dont-declare-your-variables-at-the-top-example3.png" alt="Example 3" /></p>
 
 
 
@@ -137,14 +102,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/';
+                this.page.url = 'http://gsferreira.com/archive/2020/05/dont-declare-your-variables-at-the-top/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2015/02/angularjs-input-number-with-two-decimal-places/';
+    var disqus_url = 'http://gsferreira.com/archive/2020/05/dont-declare-your-variables-at-the-top/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
