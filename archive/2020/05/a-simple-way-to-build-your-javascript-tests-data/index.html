@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2020-05-07T21:11:48.9912439+01:00" />
-    <meta name="keywords" content="Team,Improvement" />
+    <meta name="keywords" content="Refactoring,Improvement,JavaScript" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            One-on-ones - Using behavioural science to maximize the impact - 
+            A simple way to build your JavaScript tests data - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2020/02/one-on-ones-using-behavioural-science-to-maximize-the-impact/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2020/05/a-simple-way-to-build-your-javascript-tests-data/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,98 +39,40 @@
 
 
 <div class="post">
-    <h1>One-on-ones - Using behavioural science to maximize the impact</h1> 
+    <h1>A simple way to build your JavaScript tests data</h1> 
       <div class="meta">
-        <p class="posted">10 Feb 2020</p>
+        <p class="posted">07 May 2020</p>
         <ul class="categories">
-          <li><a href="/category/team" title="Snow.Models.Category">Team</a></li>
+          <li><a href="/category/refactoring" title="Snow.Models.Category">Refactoring</a></li>
           <li><a href="/category/improvement" title="Snow.Models.Category">Improvement</a></li>
+          <li><a href="/category/javascript" title="Snow.Models.Category">JavaScript</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p><img src="/images/one-on-ones-using-behavioural-science-to-maximize-the-impact.png" alt="One-on-ones - Using behavioural science to maximize the impact." /></p>
+    <p>When writing Unit Tests, you will need to create test data objects for sure. Usually, those objects have tiny differences between different test cases.</p>
 
-<p>If you manage or mentor people, you should be doing one-on-one meetings. 
-They are one of the most important tools that you have, so, it's important to maximize the result.</p>
+<p>There's a pattern that I especially like when I'm doing this is C#. <a href="https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data">The Builder Pattern</a>.</p>
 
-<p><strong>One-on-one meetings are an excellent moment for goal setting</strong>. 
-We tend to advise for improvement <strong>and it's a good practice to set a goal</strong>.</p>
-
-<p>The problem is that those goals tend to have the same destiny of new year's eve goals and fail miserably (by the way, if your gym goal has made through January you are doing a good job!).</p>
-
-<p>When we do one-on-one meetings we hope to improve people's lives and the difficult part isn't to identify those goals, those improvement opportunities. 
-<strong>The difficult part is to help the team to achieve those goals.</strong></p>
-
-<p>Usually, the intentions are good, and everyone is genuinely trying to do their best. 
-I don't see these failures as people's fault, because we, as humans, are specialists in failing to achieve goals.</p>
-
-<p>If you have been in this situation, probably you have noticed that goals use to stay in the "To do" state for a long time. 
-So the question is: <strong>What can we do to be more effective?</strong></p>
+<p>The builder pattern is an elegant solution to the problem and I really like it. But, is it the simple solution for JavaScript?</p>
 
 <!--excerpt-->
 
-<p>And the answer is in <strong>Behavioural Science</strong>. </p>
+<p>Let's see how it would look like using the builder pattern in JS:</p>
 
-<p>Multiple studies already present how we should approach Goal Setting and what to do to achieve our goals. So, based on Behavioural Science, what do I recommend:</p>
+<p><img src="/images/a-simple-way-to-build-your-javascript-tests-data-builder.png" alt="Builder pattern" /></p>
 
-<hr />
+<p>As you can see, there's a lot of code needed to implement it. </p>
 
-<h2>Goals</h2>
+<p><strong>How can we do it more simply?</strong></p>
 
-<p><strong>🎯 Specific Goals with a specific deadline.</strong></p>
+<p>The basic idea is to <strong>use the <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax">Spread Operator</a> to customize a default object</strong>.</p>
 
-<p>💡 Suggestion: Propose goals that are specific and easy measure. Assign a deadline. 
-Remember not to impose goals. You are advising, so your role is mentorship.</p>
+<p>Let's see how:</p>
 
-<hr />
-
-<h2>Plan</h2>
-
-<p><strong>🎯 Create a simple plan with small steps.</strong></p>
-
-<p>💡 Suggestion: Elaborate on the simplest plan possible. A complex plan is more likely to fail
-Small steps are easy to measure and to see progress.</p>
-
-<p><strong>🎯 Try to form a new habit.</strong></p>
-
-<p>💡 Suggestion: Goals are an excellent opportunity to form new habits. 
-Make sure that you plan for routine small steps. 
-By associating those steps to routine, the habit will be more likely to stick.</p>
-
-<hr />
-
-<h2>Commit</h2>
-
-<p><strong>🎯 Find someone that will act as a referee to enforce a penalty if he fails. If you don't find anyone, do it yourself.</strong> </p>
-
-<p>💡 Suggestion: Work with your colleague to find a referee and a good career mentor.</p>
-
-<p><strong>🎯 Advice to make the goals public. This will raise the commitment level and help stick to it.</strong></p>
-
-<p>💡 Suggestion: Lead by example. Inform the team of your own goals. Write it down in a shared space (Slack, Whiteboard, Email, etc.). 
-This way, everyone will feel safe to do the same.</p>
-
-<hr />
-
-<h2>Reward and Punish</h2>
-
-<p><strong>🎯 Make commitments that put something meaningful at stake and impose a non-negotiable rule. This way we work harder to achieve our goals.</strong></p>
-
-<p>💡 Suggestion: Recommend to assume a goal and commit to a task that no one likes in case of failure.</p>
-
-<hr />
-
-<h2>Feedback</h2>
-
-<p><strong>🎯 Give feedback. Probably you are the reason for that goal, so you should give feedback on the progress or the lack of it.</strong></p>
-
-<p>💡 Suggestion: Keep frequent one-on-ones and always do a follow-up to the "active" goals.
-Be honest and try to present data and examples to demonstrate your point of view.</p>
-
-<p>In your next one-on-one try to apply these. If you don't have one-on-ones, make that your first Goal.</p>
+<p><img src="/images/a-simple-way-to-build-your-javascript-tests-data-spread.png" alt="Spread Operator" /></p>
 
 
 
@@ -153,14 +95,14 @@ Be honest and try to present data and examples to demonstrate your point of view
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2020/02/one-on-ones-using-behavioural-science-to-maximize-the-impact/';
+                this.page.url = 'http://gsferreira.com/archive/2020/05/a-simple-way-to-build-your-javascript-tests-data/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2020/02/one-on-ones-using-behavioural-science-to-maximize-the-impact/';
+    var disqus_url = 'http://gsferreira.com/archive/2020/05/a-simple-way-to-build-your-javascript-tests-data/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
