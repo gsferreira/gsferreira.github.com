@@ -2,13 +2,13 @@
 
 &lt;p&gt;There's a pattern that I especially like when I'm doing this is C#. &lt;a href="https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data"&gt;The Builder Pattern&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The builder pattern is an elegant solution to the problem and I really like it. But, is it the simple solution for JavaScript?&lt;/p&gt;
+&lt;p&gt;The builder pattern is an elegant solution to the problem and I really like it. But, is it a simple solution for JavaScript?&lt;/p&gt;
 
 </description><pubDate>Wed, 06 May 2020 23:00:00 Z</pubDate><a10:updated>2020-05-06T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;When writing Unit Tests, you will need to create test data objects for sure. Usually, those objects have tiny differences between different test cases.&lt;/p&gt;
 
 &lt;p&gt;There's a pattern that I especially like when I'm doing this is C#. &lt;a href="https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data"&gt;The Builder Pattern&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The builder pattern is an elegant solution to the problem and I really like it. But, is it the simple solution for JavaScript?&lt;/p&gt;
+&lt;p&gt;The builder pattern is an elegant solution to the problem and I really like it. But, is it a simple solution for JavaScript?&lt;/p&gt;
 
 &lt;!--excerpt--&gt;
 

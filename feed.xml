@@ -1,14 +1,14 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2020-05-07T21:11:53+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2020/05/a-simple-way-to-build-your-javascript-tests-data/</id><title type="text">A simple way to build your JavaScript tests data</title><summary type="html">&lt;p&gt;When writing Unit Tests, you will need to create test data objects for sure. Usually, those objects have tiny differences between different test cases.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2020-05-07T21:29:45+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2020/05/a-simple-way-to-build-your-javascript-tests-data/</id><title type="text">A simple way to build your JavaScript tests data</title><summary type="html">&lt;p&gt;When writing Unit Tests, you will need to create test data objects for sure. Usually, those objects have tiny differences between different test cases.&lt;/p&gt;
 
 &lt;p&gt;There's a pattern that I especially like when I'm doing this is C#. &lt;a href="https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data"&gt;The Builder Pattern&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The builder pattern is an elegant solution to the problem and I really like it. But, is it the simple solution for JavaScript?&lt;/p&gt;
+&lt;p&gt;The builder pattern is an elegant solution to the problem and I really like it. But, is it a simple solution for JavaScript?&lt;/p&gt;
 
 </summary><published>2020-05-06T23:00:00Z</published><updated>2020-05-06T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2020/05/a-simple-way-to-build-your-javascript-tests-data/" /><content type="html">&lt;p&gt;When writing Unit Tests, you will need to create test data objects for sure. Usually, those objects have tiny differences between different test cases.&lt;/p&gt;
 
 &lt;p&gt;There's a pattern that I especially like when I'm doing this is C#. &lt;a href="https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data"&gt;The Builder Pattern&lt;/a&gt;.&lt;/p&gt;
 
-&lt;p&gt;The builder pattern is an elegant solution to the problem and I really like it. But, is it the simple solution for JavaScript?&lt;/p&gt;
+&lt;p&gt;The builder pattern is an elegant solution to the problem and I really like it. But, is it a simple solution for JavaScript?&lt;/p&gt;
 
 &lt;!--excerpt--&gt;
 
