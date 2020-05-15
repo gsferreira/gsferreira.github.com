@@ -1,4 +1,41 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2020-05-07T21:29:45+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2020/05/a-simple-way-to-build-your-javascript-tests-data/</id><title type="text">A simple way to build your JavaScript tests data</title><summary type="html">&lt;p&gt;When writing Unit Tests, you will need to create test data objects for sure. Usually, those objects have tiny differences between different test cases.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2020-05-15T06:30:23+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2020/05/manage-your-code-as-a-successful-restaurant/</id><title type="text">Manage your code as a successful restaurant</title><summary type="html">&lt;p&gt;Have you ever noticed that a successful restaurant has a shorter menu? Especially when compared to those who are struggling.&lt;/p&gt;
+
+&lt;p&gt;Why?! &lt;strong&gt;Simplicity!&lt;/strong&gt; &lt;/p&gt;
+
+&lt;p&gt;When you keep things simple, you focus on fewer things. You give your best and you can focus your effort. You can try to improve and perfect all details.&lt;/p&gt;
+
+&lt;p&gt;But, when life doesn't work as we expect, we start throwing new dishes into the menu. Expecting to please everyone. &lt;/p&gt;
+
+</summary><published>2020-05-14T23:00:00Z</published><updated>2020-05-14T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2020/05/manage-your-code-as-a-successful-restaurant/" /><content type="html">&lt;p&gt;Have you ever noticed that a successful restaurant has a shorter menu? Especially when compared to those who are struggling.&lt;/p&gt;
+
+&lt;p&gt;Why?! &lt;strong&gt;Simplicity!&lt;/strong&gt; &lt;/p&gt;
+
+&lt;p&gt;When you keep things simple, you focus on fewer things. You give your best and you can focus your effort. You can try to improve and perfect all details.&lt;/p&gt;
+
+&lt;p&gt;But, when life doesn't work as we expect, we start throwing new dishes into the menu. Expecting to please everyone. &lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/manage-your-code-as-a-successful-restaurant-complex-menu.jpeg" alt="Complex menu" /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;&lt;em&gt;Spoiler alert: When you build something to everyone, you build it to nobody.&lt;/em&gt;&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;This isn't just the restaurants' reality. We see that in software too. When trying to convince new customers, throwing features into a product is usually the way to go. And it's hard to find a Product Owner who doesn't fight to have the team focused on new features.&lt;/p&gt;
+
+&lt;p&gt;What we should all be doing is to &lt;strong&gt;focus on what we have and what customers love.&lt;/strong&gt; Those features have a margin to improve. &lt;strong&gt;Don't bring a new feature into the product just because a customer needs it. Bring it because is inevitable.&lt;/strong&gt; Because it's obvious that your software will be so much better. Because you believe that you are in an especial condition and nobody can do it better than you. And don't forget to throw away stuff that doesn't "spark joy". &lt;/p&gt;
+
+&lt;iframe src="https://giphy.com/embed/hvRoo3YcAPUheF3MxY" width="480" height="480" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;
+
+&lt;p&gt;We can expand this concept to multiple software parts. High level, to a low level. Decompose the code in smaller objects or functions. Create focused "restaurants" specialized in one task. If you want Mexican food, you don't look for an Italian restaurant.&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Treat your code as a garden, which deserves care and dedication.&lt;/strong&gt; Don't write it and ignore it until a bug arises. &lt;/p&gt;
+
+&lt;p&gt;A chef who creates new dishes every single night will create a few stunning dishes for sure. But also, a vast number of massive failures.&lt;/p&gt;
+
+&lt;p&gt;Having a continuous improvement mindset is what makes us better than the rest.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2020/05/a-simple-way-to-build-your-javascript-tests-data/</id><title type="text">A simple way to build your JavaScript tests data</title><summary type="html">&lt;p&gt;When writing Unit Tests, you will need to create test data objects for sure. Usually, those objects have tiny differences between different test cases.&lt;/p&gt;
 
 &lt;p&gt;There's a pattern that I especially like when I'm doing this is C#. &lt;a href="https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data"&gt;The Builder Pattern&lt;/a&gt;.&lt;/p&gt;
 
@@ -466,101 +503,4 @@ private static bool IsCustomerCreditCardInvalid(Customer customer)
 &lt;p&gt;If you learn something new about yourself, please share!&lt;/p&gt;
 
 &lt;p&gt;Next time you are in a one-on-one meeting, in an interview or in another context where you can have valuable feedback, don't forget to ask for feedback.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2019/07/leading-improvement-through-honest-feedback/</id><title type="text">Leading Improvement through Honest Feedback</title><summary type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/leading-improvement-through-honest-feedback-head.png" alt="if it hurts, do it more often" /&gt;&lt;/p&gt;
-
-&lt;p&gt;When was the last time that a waitress asked about your meal and you were really honest?&lt;/p&gt;
-
-&lt;p&gt;Don’t feel ashamed. I’ve definitively been there. Saying that the meal was good when It was dry or too salty for your taste, is more common than we can think.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, being honest when something is wrong isn’t something that we humans tend to feel comfortable about.&lt;/p&gt;
-
-&lt;p&gt;Probably you are asking: why the hell should I be honest and risk to advancing into a difficult conversion?! &lt;/p&gt;
-
-&lt;p&gt;Because &lt;strong&gt;the worst kind of feedback is fake feedback&lt;/strong&gt;.&lt;/p&gt;
-
-</summary><published>2019-07-15T23:00:00Z</published><updated>2019-07-15T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2019/07/leading-improvement-through-honest-feedback/" /><content type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/leading-improvement-through-honest-feedback-head.png" alt="if it hurts, do it more often" /&gt;&lt;/p&gt;
-
-&lt;p&gt;When was the last time that a waitress asked about your meal and you were really honest?&lt;/p&gt;
-
-&lt;p&gt;Don’t feel ashamed. I’ve definitively been there. Saying that the meal was good when It was dry or too salty for your taste, is more common than we can think.&lt;/p&gt;
-
-&lt;p&gt;Unfortunately, being honest when something is wrong isn’t something that we humans tend to feel comfortable about.&lt;/p&gt;
-
-&lt;p&gt;Probably you are asking: why the hell should I be honest and risk to advancing into a difficult conversion?! &lt;/p&gt;
-
-&lt;p&gt;Because &lt;strong&gt;the worst kind of feedback is fake feedback&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;h2&gt;Leading improvement&lt;/h2&gt;
-
-&lt;p&gt;Have you ever thought that the restaurant could have done something to improve if you have been sincere? Wouldn’t you love to have customers telling you what you should do, to delight them?&lt;/p&gt;
-
-&lt;p&gt;The reality is that &lt;strong&gt;without the truth, we can’t improve.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Empty criticism and snark does no one any good. But genuine, useful, insightful feedback is a priceless gift.&lt;/p&gt;
-  
-  &lt;p&gt;Seth Godin&lt;/p&gt;
-  
-  &lt;p&gt;&lt;a href="https://seths.blog/2014/01/the-feedback-youve-been-waiting-for/"&gt;https://seths.blog/2014/01/the-feedback-youve-been-waiting-for/&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;h2&gt;Promote feedback&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;When you give good feedback, you are showing kindness&lt;/strong&gt;, even when it’s not positive feedback. They should see you as a Consultant that doesn’t send a bill. Next time that you aren’t sure if you should speak up, remember that in the end, they should thank you for the consideration.&lt;/p&gt;
-
-&lt;p&gt;Obviously that in a few cases you will find fences. Some people prefer to ignore and to resist, but in those cases, just move on. They won’t be in the business for too long for sure.&lt;/p&gt;
-
-&lt;p&gt;To empower mutual constructive feedback, make sure you &lt;strong&gt;respond to honest feedback with a “Thank you”&lt;/strong&gt;.&lt;br /&gt;
-If you don’t assume a defensive posture and you really look grateful, you will be encouraging the behavior.&lt;/p&gt;
-
-&lt;h2&gt;It can be difficult&lt;/h2&gt;
-
-&lt;p&gt;The DevOps community has a mantra with which I agree: “if it hurts, do it more often”. I believe that this applies to feedback also. 
-It may be uncomfortable to start asking for honest feedback or even more to start giving feedback, especially when isn’t that good. But, if you do it over and over again, you will see that it will become natural and you will stop overthinking about it.&lt;/p&gt;
-
-&lt;p&gt;It’s really important not to be ashamed for pointing out negative things, because when you always give “OK answers”, your honest positive comments will not have an impact.
-If you are known as the guy who speaks honestly, you will be taken into consideration.&lt;/p&gt;
-
-&lt;h2&gt;Make it easy&lt;/h2&gt;
-
-&lt;p&gt;Since feedback is so valuable, why do we tend to make so difficult for others to give us feedback?&lt;/p&gt;
-
-&lt;p&gt;Probably I want to tell you how I feel when I’m using your product, but at the moment when I understand that I need to create a user in a website and fill a 20 field long bug report, you can be sure that I will move on the next time I have an improvement idea.&lt;/p&gt;
-
-&lt;p&gt;So, &lt;strong&gt;please bring to your systems a simple way to collect feedback&lt;/strong&gt;. Anyone should be able to leave you a note in 40 seconds and feel selfless, instead of 5 minutes of swearing and disappointment. 
-If you are concerned that 40 seconds won’t be enough to capture all you need to know from the user, I bet that the user will be happier to answer an email with your questions afterward than upfront. At least they know that you have listened. No one wants to speak with a database, specially if nobody cares about it.&lt;/p&gt;
-
-&lt;p&gt;Remember that &lt;strong&gt;a good idea can arise anywhere at any time&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;h2&gt;How to give honest feedback&lt;/h2&gt;
-
-&lt;p&gt;&lt;strong&gt;Being honest doesn’t mean being rudely honest.&lt;/strong&gt; No one wants to feel like being part of a Kitchen Nightmares episode, with Chef Gordon Ramsay yelling how incompetent we must be. That’s not fun. &lt;/p&gt;
-
-&lt;p&gt;There are better ways to deliver feedback. I’ve 5 tips that you can start with:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Be humble.&lt;/li&gt;
-&lt;li&gt;Express your feedback as an opinion. For example, saying that the food is “Full of salt” is different than saying “Is too salty for my taste”.&lt;/li&gt;
-&lt;li&gt;Expose only your top 3 ideas. Don’t be too nitpicking. Having a “shopping list” of stuff won’t help.&lt;/li&gt;
-&lt;li&gt;Balance positive feedback with negative feedback. When we have something bad to say, we can easily forget to say good things.&lt;/li&gt;
-&lt;li&gt;If you have an idea on how to improve, say it!&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;&lt;a href="https://randomcrab.com/valuable-feedback/"&gt;&lt;img src="http://gsferreira.com/images/leading-improvement-through-honest-feedback-valuable-feedback.jpg" alt="Valuable Feedback" /&gt;&lt;/a&gt;&lt;/p&gt;
-
-&lt;h2&gt;Wrapping up&lt;/h2&gt;
-
-&lt;p&gt;We live in a society that seeks approval in social networks, and that thinks that a “Like” is a good kind of feedback. This causes an illusion about the impact we have on society. So, next time you see that a given person, service or product has a positive impact on you, don’t limit yourself to follow them on Facebook or Instagram. Go ahead and send them a message telling how was your experience.&lt;/p&gt;
-
-&lt;p&gt;And if you are providing a service or selling a product, make sure you make it easy to receive feedback and encourage your customer to do it.&lt;/p&gt;
-
-&lt;p&gt;Are you ready to give it a try? I have a challenge for you. In the next 24 hours, make sure you:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Send a message to one of your favorite services, telling them one thing that they can do that would improve your experience. Don’t forget to tell them to keep up with the good work. 😉&lt;/li&gt;
-&lt;li&gt;Say thanks to someone that positively impacted your life and you know that you never told them.&lt;/li&gt;
-&lt;li&gt;Leave your honest feedback to this post bellow 😊&lt;/li&gt;
-&lt;/ol&gt;
 </content></entry></feed>
