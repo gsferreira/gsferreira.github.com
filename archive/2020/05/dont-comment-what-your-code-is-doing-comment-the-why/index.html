@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2020-05-22T07:21:48.9868097+01:00" />
-    <meta name="keywords" content="AngularJS" />
+    <meta name="keywords" content="Refactoring,Improvement" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            AngularJS - After Render Directive - 
+            Don't comment what your code is doing, comment the Why - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2020/05/dont-comment-what-your-code-is-doing-comment-the-why/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,50 +39,49 @@
 
 
 <div class="post">
-    <h1>AngularJS - After Render Directive</h1> 
+    <h1>Don't comment what your code is doing, comment the Why</h1> 
       <div class="meta">
-        <p class="posted">28 Mar 2015</p>
+        <p class="posted">22 May 2020</p>
         <ul class="categories">
-          <li><a href="/category/angularjs" title="Snow.Models.Category">AngularJS</a></li>
+          <li><a href="/category/refactoring" title="Snow.Models.Category">Refactoring</a></li>
+          <li><a href="/category/improvement" title="Snow.Models.Category">Improvement</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Do you ever wanted to execute code after your Angular template is completely rendered?</p>
+    <p>Code comments are a common topic of love/hate discussions. 
+It's particularly interesting to see developers shifting opinion while experience grows.</p>
 
-<p>This post is the answer of how you can accomplish that.</p>
+<p>Code Comments are a good idea because we are writing them down to help others. Even to help the future self.
+But we use a lot of comments that don't help. This explains the Comments bad reputation nowadays.</p>
 
-<p>This a simple tip, but I believe that can be really useful.</p>
+<p>So, what can we do to improve our comments?</p>
 
 <!--excerpt-->
 
-<p>Add the following directive to your application.</p>
+<p>I use a simple rule: <strong>Explain the Why, not the What.</strong></p>
 
-<pre><code>myApp.directive('afterRender', ['$timeout', function ($timeout) {
-    var def = {
-        restrict: 'A',
-        terminal: true,
-        transclude: false,
-        link: function (scope, element, attrs) {
-            $timeout(scope.$eval(attrs.afterRender), 0);  //Calling a scoped method
-        }
-    };
-    return def;
-}]);
-</code></pre>
+<p>I see a lot of Comments that are explaining what the code is doing. That doesn't help. 
+The effort that we put to write a Comment must be invested refactoring the code (<a href="https://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods">this is a good starting point</a>). 
+<strong>When we need to describe the What is because the code isn't readable at all.</strong></p>
 
-<p>Now, add the <em>after-render</em> directive to an element in your template:</p>
+<p>It's also pretty common to have obvious Comments. All we have seen that <em>"// Get a Customer"</em> comment in a <em>"GetCustomer"</em> method.</p>
 
-<pre><code>&lt;div after-render="missionCompled"&gt;&lt;/div&gt;
-</code></pre>
+<p><div style="width:100%;height:0;padding-bottom:100%;position:relative;"><iframe src="https://giphy.com/embed/gF8vDz0XAUfIWx9jUW" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen></iframe></div><p><a href="https://giphy.com/gifs/memecandy-gF8vDz0XAUfIWx9jUW">via GIPHY</a></p></p>
 
-<p>At this point, your application will run the <em>missionCompled</em> function (or other that you want) in your controller, after the div is rendered.</p>
+<p>Those comments don't bring value. They raise the cognitive load required to read and maintain the code.</p>
 
-<p>You can see the working demo on <a href="https://jsfiddle.net/gsferreira/h53okjtu/">JSFiddle</a>.</p>
+<p>So, the idea is to <strong>let the code speak for himself</strong>. We only write comments, when we need to explain Why we have done something.</p>
 
-<p>I hope that this helps you.</p>
+<p>It's useful to understand why a piece of code was written in a certain way. 
+Those Why comments can help us out to understand that there's a particular corner case, or the reason for the followed approach, or that, because of a bug (Link the bug from the comment), we need to do that. 
+Those are a few examples, but you get the point.</p>
+
+<p>Our code must be self-describing, but sometimes, we need to explain the Why.</p>
+
+<p>And remember: <strong>don't Comment the code that you don't need anymore. Throw it away.</strong> In case you need it, it will be at the source control.</p>
 
 
 
@@ -105,14 +104,14 @@
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/';
+                this.page.url = 'http://gsferreira.com/archive/2020/05/dont-comment-what-your-code-is-doing-comment-the-why/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2015/03/angularjs-after-render-directive/';
+    var disqus_url = 'http://gsferreira.com/archive/2020/05/dont-comment-what-your-code-is-doing-comment-the-why/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;

@@ -1,4 +1,43 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2020-05-15T06:30:23+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2020/05/manage-your-code-as-a-successful-restaurant/</id><title type="text">Manage your code as a successful restaurant</title><summary type="html">&lt;p&gt;Have you ever noticed that a successful restaurant has a shorter menu? Especially when compared to those who are struggling.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2020-05-22T07:21:54+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2020/05/dont-comment-what-your-code-is-doing-comment-the-why/</id><title type="text">Don't comment what your code is doing, comment the Why</title><summary type="html">&lt;p&gt;Code comments are a common topic of love/hate discussions. 
+It's particularly interesting to see developers shifting opinion while experience grows.&lt;/p&gt;
+
+&lt;p&gt;Code Comments are a good idea because we are writing them down to help others. Even to help the future self.
+But we use a lot of comments that don't help. This explains the Comments bad reputation nowadays.&lt;/p&gt;
+
+&lt;p&gt;So, what can we do to improve our comments?&lt;/p&gt;
+
+</summary><published>2020-05-21T23:00:00Z</published><updated>2020-05-21T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2020/05/dont-comment-what-your-code-is-doing-comment-the-why/" /><content type="html">&lt;p&gt;Code comments are a common topic of love/hate discussions. 
+It's particularly interesting to see developers shifting opinion while experience grows.&lt;/p&gt;
+
+&lt;p&gt;Code Comments are a good idea because we are writing them down to help others. Even to help the future self.
+But we use a lot of comments that don't help. This explains the Comments bad reputation nowadays.&lt;/p&gt;
+
+&lt;p&gt;So, what can we do to improve our comments?&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;I use a simple rule: &lt;strong&gt;Explain the Why, not the What.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;I see a lot of Comments that are explaining what the code is doing. That doesn't help. 
+The effort that we put to write a Comment must be invested refactoring the code (&lt;a href="https://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods"&gt;this is a good starting point&lt;/a&gt;). 
+&lt;strong&gt;When we need to describe the What is because the code isn't readable at all.&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;It's also pretty common to have obvious Comments. All we have seen that &lt;em&gt;"// Get a Customer"&lt;/em&gt; comment in a &lt;em&gt;"GetCustomer"&lt;/em&gt; method.&lt;/p&gt;
+
+&lt;p&gt;&lt;div style="width:100%;height:0;padding-bottom:100%;position:relative;"&gt;&lt;iframe src="https://giphy.com/embed/gF8vDz0XAUfIWx9jUW" width="100%" height="100%" style="position:absolute" frameBorder="0" class="giphy-embed" allowFullScreen&gt;&lt;/iframe&gt;&lt;/div&gt;&lt;p&gt;&lt;a href="https://giphy.com/gifs/memecandy-gF8vDz0XAUfIWx9jUW"&gt;via GIPHY&lt;/a&gt;&lt;/p&gt;&lt;/p&gt;
+
+&lt;p&gt;Those comments don't bring value. They raise the cognitive load required to read and maintain the code.&lt;/p&gt;
+
+&lt;p&gt;So, the idea is to &lt;strong&gt;let the code speak for himself&lt;/strong&gt;. We only write comments, when we need to explain Why we have done something.&lt;/p&gt;
+
+&lt;p&gt;It's useful to understand why a piece of code was written in a certain way. 
+Those Why comments can help us out to understand that there's a particular corner case, or the reason for the followed approach, or that, because of a bug (Link the bug from the comment), we need to do that. 
+Those are a few examples, but you get the point.&lt;/p&gt;
+
+&lt;p&gt;Our code must be self-describing, but sometimes, we need to explain the Why.&lt;/p&gt;
+
+&lt;p&gt;And remember: &lt;strong&gt;don't Comment the code that you don't need anymore. Throw it away.&lt;/strong&gt; In case you need it, it will be at the source control.&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2020/05/manage-your-code-as-a-successful-restaurant/</id><title type="text">Manage your code as a successful restaurant</title><summary type="html">&lt;p&gt;Have you ever noticed that a successful restaurant has a shorter menu? Especially when compared to those who are struggling.&lt;/p&gt;
 
 &lt;p&gt;Why?! &lt;strong&gt;Simplicity!&lt;/strong&gt; &lt;/p&gt;
 
@@ -33,8 +72,6 @@
 &lt;p&gt;A chef who creates new dishes every single night will create a few stunning dishes for sure. But also, a vast number of massive failures.&lt;/p&gt;
 
 &lt;p&gt;Having a continuous improvement mindset is what makes us better than the rest.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
 </content></entry><entry><id>http://gsferreira.com/archive/2020/05/a-simple-way-to-build-your-javascript-tests-data/</id><title type="text">A simple way to build your JavaScript tests data</title><summary type="html">&lt;p&gt;When writing Unit Tests, you will need to create test data objects for sure. Usually, those objects have tiny differences between different test cases.&lt;/p&gt;
 
 &lt;p&gt;There's a pattern that I especially like when I'm doing this is C#. &lt;a href="https://ardalis.com/improve-tests-with-the-builder-pattern-for-test-data"&gt;The Builder Pattern&lt;/a&gt;.&lt;/p&gt;
@@ -440,67 +477,4 @@ private static bool IsCustomerCreditCardInvalid(Customer customer)
 &lt;p&gt;Don’t forget to &lt;strong&gt;define a few success metrics and define how you will evaluate them.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;If you have other technique to start this journey, please share!&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2019/08/the-secret-to-know-yourself/</id><title type="text">The secret to know Yourself</title><summary type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/the-secret-to-know-yourself-head.png" alt="Have you ever heard a recording of your voice" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Have you ever heard a recording of your voice? You don’t sound like that, am I right?!&lt;/p&gt;
-
-&lt;p&gt;Everyone has been in that situation, and that is strange, especially because we spend so much time with us. Even so, we sound like a poor imitation.&lt;/p&gt;
-
-</summary><published>2019-08-26T23:00:00Z</published><updated>2019-08-26T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2019/08/the-secret-to-know-yourself/" /><content type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/the-secret-to-know-yourself-head.png" alt="Have you ever heard a recording of your voice" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Have you ever heard a recording of your voice? You don’t sound like that, am I right?!&lt;/p&gt;
-
-&lt;p&gt;Everyone has been in that situation, and that is strange, especially because we spend so much time with us. Even so, we sound like a poor imitation.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;It’s really common to listen to people that seem pretty sure that they know themself. We even find a lot of books about self-knowledge. The world seems to lead us to believe that we need to find ourselfs by meditation and introspection. &lt;/p&gt;
-
-&lt;p&gt;Even if I think that taking the time to reflect is important, I don’t think that is enough. &lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The vision that we have about us tend to be highly influenced by our ideals and our dreams.&lt;/strong&gt; Our brain is a specialist in fooling us and uses our wishes to trick us.&lt;/p&gt;
-
-&lt;p&gt;So, what can we do to escape that illusion? We need to see how we act as if we were in an out-of-body experience.&lt;/p&gt;
-
-&lt;p&gt;We can use professional sports as an example. We see athletes recording their training as a performance analysis tool. This is a good tool that top performances use to perfect their craft. &lt;strong&gt;Seeing yourself performing in a given context, can be enlightening.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;You can follow the example of pro-athletes and record yourself while performing a given task to try to figure out what to improve.&lt;/p&gt;
-
-&lt;p&gt;But, the reality is that when we know that we are &lt;strong&gt;being observed, we start acting differently than we normally do and influence the outcome.&lt;/strong&gt; Similar to the Observer Paradox from quantum mechanics.&lt;/p&gt;
-
-&lt;blockquote&gt;
-  &lt;p&gt;Observer paradox: the observer's paradox refers to a situation in which the phenomenon being observed is unwittingly influenced by the presence of the observer/investigator.&lt;/p&gt;
-  
-  &lt;p&gt;&lt;a href="https://en.wikipedia.org/wiki/Observer%27s_paradox"&gt;wikipedia.org&lt;/a&gt;&lt;/p&gt;
-  
-  &lt;p&gt;&lt;a href="http://factmyth.com/factoids/observing-a-phenomenon-affects-its-outcome/"&gt;factmyth.com&lt;/a&gt;&lt;/p&gt;
-&lt;/blockquote&gt;
-
-&lt;p&gt;If you don’t know this paradox, I highly recommend the following video.&lt;/p&gt;
-
-&lt;iframe width="560" height="315" src="https://www.youtube.com/embed/DfPeprQ7oGc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen&gt;&lt;/iframe&gt;
-
-&lt;p&gt;So, if recording yourself can be a good way to lie to yourself, what can you do!?&lt;/p&gt;
-
-&lt;p&gt;&lt;strong&gt;The secret is Feedback! Ask for feedback!&lt;/strong&gt; I’ve written an &lt;a href="http://gsferreira.com/archive/2019/07/leading-improvement-through-honest-feedback/"&gt;article that you can find here&lt;/a&gt; about the importance of feedback for improvement. Go ahead and read it. I will wait…&lt;/p&gt;
-
-&lt;p&gt;Reaching out trust worth people that spend a lot of time with you is the easy path. When we are in our day-to-day life, lost in routines, we tend to express our true self and that has an impact on the people that surround us. So, if we do something positive or negative, if we have an annoying or peculiar characteristic, people tend to see it and label you with that specific trait.&lt;/p&gt;
-
-&lt;p&gt;It can be uncomfortable, but, &lt;strong&gt;if you want to know who you are, you need to look inside, but you also need to look to the world and discover the impact that you have in others&lt;/strong&gt;.&lt;/p&gt;
-
-&lt;p&gt;Before we end here, I want to challenge you to a quick challenge that can lead you into this self know journey. &lt;/p&gt;
-
-&lt;p&gt;The challenge:&lt;/p&gt;
-
-&lt;ol&gt;
-&lt;li&gt;Write down 5 words that you think that describe yourself. 5 things that you think that reflects yourself and that other recall those words when thinking about you.&lt;/li&gt;
-&lt;li&gt;Find 5 people and ask them to send you 3 words that describe you.&lt;/li&gt;
-&lt;li&gt;Compare the results and see if something that you don’t expect to emerge from their feedback. Sometimes we have bad surprises, but I prefer to know and do something than keep doing the same.&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;p&gt;Go to your email and send a mail to 5 people that you trust them to give honest feedback. If you're looking to know yourself in a given context try to target people that are part of that given context. If you want to know “who am I as a leader?” reach out to your team and old team members. If you want to know “who am I as a friend?” reach out a group of friends important to you. If you want to know you in multiple contexts, just multiply the challenge. &lt;/p&gt;
-
-&lt;p&gt;If you learn something new about yourself, please share!&lt;/p&gt;
-
-&lt;p&gt;Next time you are in a one-on-one meeting, in an interview or in another context where you can have valuable feedback, don't forget to ask for feedback.&lt;/p&gt;
 </content></entry></feed>
