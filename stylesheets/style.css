@@ -1399,3 +1399,7 @@ p.previous
     margin-left: 2px;
     margin-right: 2px;
 }
+
+.formkit-submit span{
+    background-color: #1677be !important;
+}
