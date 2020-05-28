@@ -1,4 +1,25 @@
-<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2020/05/dont-comment-what-your-code-is-doing-comment-the-why/</guid><link>http://gsferreira.com/archive/2020/05/dont-comment-what-your-code-is-doing-comment-the-why/</link><title>Don't comment what your code is doing, comment the Why</title><description>&lt;p&gt;Code comments are a common topic of love/hate discussions. 
+<rss xmlns:a10="http://www.w3.org/2005/Atom" version="2.0"><channel><title>Guilherme Ferreira blog</title><link>http://gsferreira.com/rss.xml</link><description>Guilherme Ferreira blog</description><item><guid isPermaLink="true">http://gsferreira.com/archive/2020/05/that-flag-argument-is-yelling-at-you/</guid><link>http://gsferreira.com/archive/2020/05/that-flag-argument-is-yelling-at-you/</link><title>That flag argument is yelling at you</title><description>&lt;p&gt;Sometimes the code yells at you trying to warn you that something is wrong.&lt;/p&gt;
+
+&lt;p&gt;Flag arguments are one of those cases. Adding a Boolean argument to condition the execution is an easy fix, but we are doing the wrong thing.&lt;/p&gt;
+
+</description><pubDate>Wed, 27 May 2020 23:00:00 Z</pubDate><a10:updated>2020-05-27T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;Sometimes the code yells at you trying to warn you that something is wrong.&lt;/p&gt;
+
+&lt;p&gt;Flag arguments are one of those cases. Adding a Boolean argument to condition the execution is an easy fix, but we are doing the wrong thing.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;p&gt;By adding a flag argument to a function, it's clear that we are ignoring the Single Responsibility Principle. The code is yelling at us, trying to explain that. No doubt.&lt;/p&gt;
+
+&lt;p&gt;Let's take a look. When a function has a flag argument, we will find something like this (or even worse) in the implementation:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/that-flag-argument-is-yelling-at-you-flag-argument.png" alt="Flag Argument" /&gt;&lt;/p&gt;
+
+&lt;p&gt;Wouldn't be better to have something like:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/that-flag-argument-is-yelling-at-you-refactor.png" alt="Flag Argument Refactor" /&gt;&lt;/p&gt;
+
+&lt;p&gt;When writing code, remember that the goal is to simplify our client's life.&lt;/p&gt;
+</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2020/05/dont-comment-what-your-code-is-doing-comment-the-why/</guid><link>http://gsferreira.com/archive/2020/05/dont-comment-what-your-code-is-doing-comment-the-why/</link><title>Don't comment what your code is doing, comment the Why</title><description>&lt;p&gt;Code comments are a common topic of love/hate discussions. 
 It's particularly interesting to see developers shifting opinion while experience grows.&lt;/p&gt;
 
 &lt;p&gt;Code Comments are a good idea because we are writing them down to help others. Even to help the future self.
@@ -420,61 +441,4 @@ private static bool IsCustomerCreditCardInvalid(Customer customer)
 &lt;/code&gt;&lt;/pre&gt;
 
 &lt;p&gt;By doing this you are abstracting the reader’s mind from details. In case the reader needs to know the details, he can drill down to the details.&lt;/p&gt;
-</a10:content></item><item><guid isPermaLink="true">http://gsferreira.com/archive/2019/09/you-should-start-working-remotely-once-a-week/</guid><link>http://gsferreira.com/archive/2019/09/you-should-start-working-remotely-once-a-week/</link><title>You should start working remotely once a week</title><description>&lt;p&gt;&lt;img src="http://gsferreira.com/images/you-should-start-working-remotely-once-a-week-head.png" alt="Ready to work from home?" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Do you know the benefits of remote working? Do you doubt that it would work for you? Would you like to give it a try? Don’t know how to convince your boss or even how to start?  &lt;/p&gt;
-
-&lt;p&gt;If so, I have something for you.&lt;/p&gt;
-
-</description><pubDate>Wed, 04 Sep 2019 23:00:00 Z</pubDate><a10:updated>2019-09-04T23:00:00Z</a10:updated><a10:content type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/you-should-start-working-remotely-once-a-week-head.png" alt="Ready to work from home?" /&gt;&lt;/p&gt;
-
-&lt;p&gt;Do you know the benefits of remote working? Do you doubt that it would work for you? Would you like to give it a try? Don’t know how to convince your boss or even how to start?  &lt;/p&gt;
-
-&lt;p&gt;If so, I have something for you.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;em&gt;This article is based on my experience of having the complete&lt;/em&gt; &lt;a href="https://omnialowcode.com"&gt;&lt;em&gt;company&lt;/em&gt;&lt;/a&gt; &lt;em&gt;working remotely once a week for the past few months.&lt;/em&gt;&lt;/p&gt;
-
-&lt;hr /&gt;
-
-&lt;p&gt;&lt;strong&gt;Remote working&lt;/strong&gt; has been growing in the past few years but for some organizations &lt;strong&gt;can be a change difficult to accept.&lt;/strong&gt; &lt;/p&gt;
-
-&lt;p&gt;If you are in an environment with resistance to Remote Working, the best way is to &lt;strong&gt;propose a small experiment.&lt;/strong&gt; The best way to prove a hypothesis is to test it following the scientific method.&lt;/p&gt;
-
-&lt;p&gt;I suggest you present the case to the leadership presenting a few reasons (listed below) and proposing a small experience to prove them.&lt;/p&gt;
-
-&lt;h2&gt;5 reasons:&lt;/h2&gt;
-
-&lt;ol&gt;
-&lt;li&gt;&lt;a href="https://www.inc.com/scott-mautz/a-2-year-stanford-study-shows-astonishing-productivity-boost-of-working-from-home.html"&gt;Studies report&lt;/a&gt; that working from home has a &lt;strong&gt;huge impact on productivity&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;It’s a benefit the company gives which can &lt;strong&gt;help to hire people&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;It &lt;strong&gt;reduces costs&lt;/strong&gt; both for the company and employee.&lt;/li&gt;
-&lt;li&gt;Leads to an &lt;strong&gt;improvement of the team communication&lt;/strong&gt; skills.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Happiness&lt;/strong&gt;
-&lt;ol&gt;
-&lt;li&gt;Studies report that people who worked remotely were &lt;strong&gt;less likely to leave the company&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Health improvements.&lt;/li&gt;
-&lt;li&gt;Less time spent commuting.&lt;/li&gt;
-&lt;/ol&gt;&lt;/li&gt;
-&lt;/ol&gt;
-
-&lt;h2&gt;How to start&lt;/h2&gt;
-
-&lt;p&gt;After presenting a few reasons supporting your case, the best thing to do is to propose an experiment to evaluate the results.&lt;/p&gt;
-
-&lt;ul&gt;
-&lt;li&gt;&lt;strong&gt;Start small.&lt;/strong&gt; I suggest starting with one day a week.&lt;/li&gt;
-&lt;li&gt;&lt;strong&gt;Set a period for the experiment.&lt;/strong&gt; I suggest to never do it for less than 3 months since in the first weeks everyone is still adapting.&lt;/li&gt;
-&lt;li&gt;Try to &lt;strong&gt;block a day in the calendar.&lt;/strong&gt; For example, schedule a recurring “Remote Wednesday” meeting.&lt;/li&gt;
-&lt;li&gt;Try to &lt;strong&gt;organize the work to leave remote days free of meetings.&lt;/strong&gt; If you have a creative job, this is a &lt;strong&gt;good day to focus&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Make sure that everyone has a &lt;strong&gt;good pair of headphones&lt;/strong&gt;.&lt;/li&gt;
-&lt;li&gt;Make sure that the team has the &lt;strong&gt;right tools to facilitate the communication&lt;/strong&gt; (&lt;a href="https://slack.com"&gt;Slack&lt;/a&gt;, &lt;a href="https://teams.microsoft.com/start"&gt;Microsoft Teams&lt;/a&gt;, &lt;a href="https://www.skype.com/"&gt;Skype&lt;/a&gt;, &lt;a href="https://zoom.us/"&gt;Zoom&lt;/a&gt; or other).&lt;/li&gt;
-&lt;/ul&gt;
-
-&lt;p&gt;Don’t forget to &lt;strong&gt;define a few success metrics and define how you will evaluate them.&lt;/strong&gt;&lt;/p&gt;
-
-&lt;p&gt;If you have other technique to start this journey, please share!&lt;/p&gt;
 </a10:content></item></channel></rss>

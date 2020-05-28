@@ -7,19 +7,19 @@
     <meta name="viewport" content="width=device-width" />
      <link rel="shortcut icon" href="/images/favicon.ico">
     <meta http-equiv="last-modified" content="2020-05-28T21:17:15.3899639+01:00" />
-    <meta name="keywords" content="AngularJS" />
+    <meta name="keywords" content="Refactoring,Improvement" />
 	
     <link rel="alternate" type="application/rss+xml" title="RSS - Guilherme Ferreira Blog" href="/rss.xml" />
     <link rel="alternate" type="application/atom+xml" title="Atom - Guilherme Ferreira Blog" href="/feed.xml" />
 	
     <title>
-            AngularJS - Smart Float Directive - 
+            That flag argument is yelling at you - 
         Guilherme Ferreira
     </title>
     <meta name="description" content="Guilherme Ferreira blog - Developer, Entrepreneur, Foodie, Addicted to coffee">
     <link rel="stylesheet" type="text/css" href="/stylesheets/font-awesome/css/font-awesome.min.css" />
     <link rel="stylesheet" type="text/css" href="/stylesheets/style.css?1" />
-    <link rel="canonical" href="http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/" />
+    <link rel="canonical" href="http://gsferreira.com/archive/2020/05/that-flag-argument-is-yelling-at-you/" />
 </head>
 <body class="home blog">
     <div id="page" class="hfeed site">
@@ -39,97 +39,35 @@
 
 
 <div class="post">
-    <h1>AngularJS - Smart Float Directive</h1> 
+    <h1>That flag argument is yelling at you</h1> 
       <div class="meta">
-        <p class="posted">24 May 2014</p>
+        <p class="posted">28 May 2020</p>
         <ul class="categories">
-          <li><a href="/category/angularjs" title="Snow.Models.Category">AngularJS</a></li>
+          <li><a href="/category/refactoring" title="Snow.Models.Category">Refactoring</a></li>
+          <li><a href="/category/improvement" title="Snow.Models.Category">Improvement</a></li>
         </ul>
       </div>
     </div>
     
     
         
-    <p>Recently I started looking for an AngluarJS directive to validate numbers and I found the "smart-float" directive <a href="https://docs.angularjs.org/guide/forms">here</a>, in the AngularJS documentation. This amazing example solves the problem of convert my numbers that use a comma as decimal mark to a Javascript number.</p>
+    <p>Sometimes the code yells at you trying to warn you that something is wrong.</p>
 
-<p>My problem is that this directive doesn't solve my two problems:</p>
-
-<ol>
-<li>Display numbers with 2 fractional digits by default.</li>
-<li>Validate numbers with thousands separator.</li>
-</ol>
+<p>Flag arguments are one of those cases. Adding a Boolean argument to condition the execution is an easy fix, but we are doing the wrong thing.</p>
 
 <!--excerpt-->
 
-<p>So, this is an improved directive based on Angular's <em>smart-float</em> directive.
-First, add the following directive to your application:</p>
+<p>By adding a flag argument to a function, it's clear that we are ignoring the Single Responsibility Principle. The code is yelling at us, trying to explain that. No doubt.</p>
 
-<pre><code>myApp.directive('smartFloat', function ($filter) {
-    var FLOAT_REGEXP_1 = /^\$?\d+.(\d{3})*(\,\d*)$/; //Numbers like: 1.123,56
-    var FLOAT_REGEXP_2 = /^\$?\d+,(\d{3})*(\.\d*)$/; //Numbers like: 1,123.56
-    var FLOAT_REGEXP_3 = /^\$?\d+(\.\d*)?$/; //Numbers like: 1123.56
-    var FLOAT_REGEXP_4 = /^\$?\d+(\,\d*)?$/; //Numbers like: 1123,56
+<p>Let's take a look. When a function has a flag argument, we will find something like this (or even worse) in the implementation:</p>
 
-    return {
-        require: 'ngModel',
-        link: function (scope, elm, attrs, ctrl) {
-            ctrl.$parsers.unshift(function (viewValue) {
-                if (FLOAT_REGEXP_1.test(viewValue)) {
-                    ctrl.$setValidity('float', true);
-                    return parseFloat(viewValue.replace('.', '').replace(',', '.'));
-                } else if (FLOAT_REGEXP_2.test(viewValue)) {
-                        ctrl.$setValidity('float', true);
-                        return parseFloat(viewValue.replace(',', ''));
-                } else if (FLOAT_REGEXP_3.test(viewValue)) {
-                        ctrl.$setValidity('float', true);
-                        return parseFloat(viewValue);
-                } else if (FLOAT_REGEXP_4.test(viewValue)) {
-                        ctrl.$setValidity('float', true);
-                        return parseFloat(viewValue.replace(',', '.'));
-                }else {
-                    ctrl.$setValidity('float', false);
-                    return undefined;
-                }
-            });
+<p><img src="/images/that-flag-argument-is-yelling-at-you-flag-argument.png" alt="Flag Argument" /></p>
 
-            ctrl.$formatters.unshift(
-               function (modelValue) {
-                   return $filter('number')(parseFloat(modelValue) , 2);
-               }
-           );
-        }
-    };
-});
-</code></pre>
+<p>Wouldn't be better to have something like:</p>
 
-<p>Now, add the <em>smart-float</em> directive to your input:</p>
+<p><img src="/images/that-flag-argument-is-yelling-at-you-refactor.png" alt="Flag Argument Refactor" /></p>
 
-<pre><code>&lt;input type="text" id="inputAmount" name="inputAmount" 
-placeholder="Amount" ng-model="amount" smart-float /&gt;
-</code></pre>
-
-<p>This gives you what you need. Now, you can improve it showing to your users that the value in the input is invalid. In the following example I used <a href="http://getbootstrap.com/">Bootstrap</a> to demonstrate it:</p>
-
-<pre><code>&lt;form name="myForm" class="form-horizontal" role="form" novalidate&gt;
-    &lt;div class="form-group" ng-class="{'has-error': myForm.inputAmount.$invalid}"&gt;
-        &lt;label for="inputText3" class="col-sm-2 control-label"&gt;Amount&lt;/label&gt;
-        &lt;div class="col-sm-10"&gt;
-            &lt;input type="text" class="form-control" id="inputAmount" name="inputAmount" placeholder="Amount" ng-model="amount" smart-float /&gt;
-            &lt;span class="help-block" ng-show="myForm.inputAmount.$error.float"&gt;
-                Invalid Amount!
-            &lt;/span&gt;
-        &lt;/div&gt;
-    &lt;/div&gt;
-&lt;/form&gt;
-</code></pre>
-
-<p>You can see the working demo on <a href="http://jsfiddle.net/gsferreira/SCr6X/">JSFiddle</a>.</p>
-
-<p>I hope that this helps you.</p>
-
-<h2>UPDATE 2015-03-11</h2>
-
-<p>Post has been updated with a fix to a bug that <a href="https://disqus.com/by/coopersellers/">Cooper Sellers</a> found (you can see the details at the comment feed below).</p>
+<p>When writing code, remember that the goal is to simplify our client's life.</p>
 
 
     
@@ -159,14 +97,14 @@ placeholder="Amount" ng-model="amount" smart-float /&gt;
             reload: true,
             config: function () {
                 //this.page.identifier = '';
-                this.page.url = 'http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/';
+                this.page.url = 'http://gsferreira.com/archive/2020/05/that-flag-argument-is-yelling-at-you/';
                 //this.page.title = '';
             }
         });
     };
 
     var disqus_shortname = 'gsferreira';
-    var disqus_url = 'http://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/';
+    var disqus_url = 'http://gsferreira.com/archive/2020/05/that-flag-argument-is-yelling-at-you/';
 
     (function() {
         var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
