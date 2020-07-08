@@ -1,4 +1,127 @@
-<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2020-06-02T22:41:21+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2020/05/that-flag-argument-is-yelling-at-you/</id><title type="text">That flag argument is yelling at you</title><summary type="html">&lt;p&gt;Sometimes the code yells at you trying to warn you that something is wrong.&lt;/p&gt;
+<feed xmlns="http://www.w3.org/2005/Atom"><title type="text">Guilherme Ferreira blog</title><subtitle type="text">Guilherme Ferreira blog</subtitle><id>http://gsferreira.com/</id><updated>2020-07-08T21:36:05+01:00</updated><author><name>Guilherme Ferreira</name><uri>http://gsferreira.com</uri><email>me@gsferreira.com</email></author><generator>Sandra.Snow Atom Generator</generator><link rel="alternate" href="http://gsferreira.com/feed.xml" /><link rel="self" type="text/html" title="Guilherme Ferreira blog" href="http://gsferreira.com/feed.xml" /><entry><id>http://gsferreira.com/archive/2020/07/speaking-at-a-virtual-conference/</id><title type="text">Speaking at a Virtual Conference</title><summary type="html">&lt;p&gt;I had the honour of having one of my talks selected to &lt;a href="https://ndcoslo.com"&gt;NDC Oslo 2020&lt;/a&gt;. I was looking forward to speaking at Oslo Spektrum for the first time. This has been a wish for a long time.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, Coronavirus has destroyed those plans. NDC was converted into an Online Conference. With that, I was facing a new and different challenge: Virtual Conference Speaking.&lt;/p&gt;
+
+&lt;p&gt;If you had the chance of speaking in a virtual conference, you know that it's not the same experience. Even if you are an experienced Speaker, you will find yourself with strange feelings.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, my talk went really well. So, this post serves to share what I have done to prepare myself. If you will be speaking in a virtual conference, this may be useful to you. My goal here is to describe what I've done and what I've learned. Hope it can be helpful to you.&lt;/p&gt;
+
+</summary><published>2020-07-07T23:00:00Z</published><updated>2020-07-07T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2020/07/speaking-at-a-virtual-conference/" /><content type="html">&lt;p&gt;I had the honour of having one of my talks selected to &lt;a href="https://ndcoslo.com"&gt;NDC Oslo 2020&lt;/a&gt;. I was looking forward to speaking at Oslo Spektrum for the first time. This has been a wish for a long time.&lt;/p&gt;
+
+&lt;p&gt;Unfortunately, Coronavirus has destroyed those plans. NDC was converted into an Online Conference. With that, I was facing a new and different challenge: Virtual Conference Speaking.&lt;/p&gt;
+
+&lt;p&gt;If you had the chance of speaking in a virtual conference, you know that it's not the same experience. Even if you are an experienced Speaker, you will find yourself with strange feelings.&lt;/p&gt;
+
+&lt;p&gt;Fortunately, my talk went really well. So, this post serves to share what I have done to prepare myself. If you will be speaking in a virtual conference, this may be useful to you. My goal here is to describe what I've done and what I've learned. Hope it can be helpful to you.&lt;/p&gt;
+
+&lt;!--excerpt--&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;Setup&lt;/h2&gt;
+
+&lt;h3&gt;Video&lt;/h3&gt;
+
+&lt;p&gt;To me, image is an important part, and I didn't want to seem sloppy or unprofessional. Having a good camera is a must, but there are other things to consider.&lt;/p&gt;
+
+&lt;h3&gt;Camera&lt;/h3&gt;
+
+&lt;p&gt;I bought a &lt;a href="https://secure.logitech.com/en-gb/product/hd-pro-webcam-c920?crid=34"&gt;Logitech C920&lt;/a&gt;. The image improved when comparing to the laptop webcam. Besides that fact, I'm able to use a tripod to hold the camera and align it with my eyes.&lt;/p&gt;
+
+&lt;p&gt;Aligning the camera with your eyes is useful. You will be speaking to a camera, so it's good to have it in the correct position. Level it with your eyes. It will feel more natural to you and to those that are watching.&lt;/p&gt;
+
+&lt;h3&gt;Lighting&lt;/h3&gt;
+
+&lt;p&gt;Lighting is a small investment that makes a huge difference in the result. You can always use natural light. In my case, I bought a simple &lt;a href="https://www.aliexpress.com/item/33020816527.html"&gt;light ring from AliExpress&lt;/a&gt;. &lt;/p&gt;
+
+&lt;h3&gt;Background&lt;/h3&gt;
+
+&lt;p&gt;If you don't have a green screen, you need to take care of your background. Having a lot of things happening in the background can be quite distracting. Remember that your goal is to get the attention of the audience. They are at home, on their computer, and they can easily be distracted when compared to a conference room. &lt;/p&gt;
+
+&lt;p&gt;I didn't want to give them another good reason for distraction by having shiny objects on the background.&lt;/p&gt;
+
+&lt;p&gt;So, I tried to create a minimalist background with a small décor to have a better look and feel than a white wall. I also used a led strip that I had at home to have a backlight.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/speaking-at-a-virtual-conference-background.jpg" alt="Background" /&gt;&lt;/p&gt;
+
+&lt;h3&gt;Microphone&lt;/h3&gt;
+
+&lt;p&gt;A decent microphone is a must. Using the laptop microphone is terrible. &lt;a href="https://dylanbeattie.net/2020/05/12/microphones.html"&gt;Dylan Beatie crafted an excellent blog post&lt;/a&gt; that can help. There you can also see the difference between different microphones.&lt;/p&gt;
+
+&lt;p&gt;In my case, the microphone was a concern, especially because I live in a noisy place with a ton of traffic. It's impossible not to listen to background noise in my house. So, I decided to invest in a USB Dynamic Microphone (&lt;a href="http://www.samsontech.com/samson/products/microphones/usb-microphones/q2u/"&gt;SAMSON q2u&lt;/a&gt;).&lt;/p&gt;
+
+&lt;p&gt;So, I recommend you to find the quietest place you can and use a good microphone. At least, something other than your laptop microphone. If you don't have background noise, an inexpensive Condenser Microphone can improve your sound quality a lot.&lt;/p&gt;
+
+&lt;p&gt;I've found really good information about Microphones, Cameras and Lighting &lt;a href="https://mattstauffer.com/blog/setting-up-your-webcam-lights-and-audio-for-remote-work-podcasting-videos-and-streaming"&gt;here&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3&gt;Glare on Glasses&lt;/h3&gt;
+
+&lt;p&gt;If you use glasses like me, Lighting and positioning can be quite difficult. &lt;/p&gt;
+
+&lt;p&gt;Facing direct light or bright screens was reflecting everything on my glasses.&lt;/p&gt;
+
+&lt;p&gt;Light and screen reflexes can be quite distracting and don't feel natural. To overcome it, I position my screens on a diagonal line and the light ring from top to bottom. Besides that, I reduced the brightness of my screens. &lt;/p&gt;
+
+&lt;p&gt;&lt;a href="https://www.youtube.com/watch?v=9NWAcK-wM80"&gt;This video&lt;/a&gt; was really helpful.&lt;/p&gt;
+
+&lt;h3&gt;Stand-up&lt;/h3&gt;
+
+&lt;p&gt;By standing up, you will see that your voice will be clear and you will have a better posture. If not have a standing desk, improvise. I managed the same result by stacking up my kitchen table with my daughter´s playing table. &lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/speaking-at-a-virtual-conference-setup-macro.jpg" alt="Setup - Stand-up" /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;Preparing&lt;/h2&gt;
+
+&lt;ol&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Rehearse&lt;/strong&gt; in the same environment and with the same setup that you will be using.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Record it and share it with your friends and colleagues. Ask for  &lt;a href="https://gsferreira.com/archive/2019/07/leading-improvement-through-honest-feedback/"&gt;honest feedback&lt;/a&gt;. Use the feedback to improve.&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Rehearse&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Make sure that you have a Plan B&lt;/p&gt;
+
+&lt;ul&gt;
+&lt;li&gt;&lt;p&gt;What if your computer fails?&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;Will you use a pointer? Do you have extra batteries?&lt;/p&gt;&lt;/li&gt;
+&lt;/ul&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Rehearse&lt;/strong&gt;&lt;/p&gt;&lt;/li&gt;
+&lt;li&gt;&lt;p&gt;&lt;strong&gt;Rehearse&lt;/strong&gt; with the same software that you will be using in the day. Make yourself comfortable with it.&lt;/p&gt;&lt;/li&gt;
+&lt;/ol&gt;
+
+&lt;p&gt;No. Rehearse written so many times isn't a mistake. Honestly, &lt;strong&gt;the most important thing that you can do is rehearse&lt;/strong&gt;. Rehearse in the same conditions. Over and over again. By doing that you will feel more comfortable speaking to a camera.&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;h2&gt;The day&lt;/h2&gt;
+
+&lt;p&gt;The day has been really pleasant to me. After multiple hours of rehearsing, I have found that my muscle memory kicked in. I didn't have the chance to feel stressed. I was feeling prepared. It was showtime and I was enjoying it. Nevertheless, there are a few things that helped me.&lt;/p&gt;
+
+&lt;h3&gt;Dress-up&lt;/h3&gt;
+
+&lt;p&gt;This will signal to your brain that it's time to do important stuff. &lt;/p&gt;
+
+&lt;h3&gt;Barefoot&lt;/h3&gt;
+
+&lt;p&gt;Barefoot or use socks. You will find yourself more relaxed. You will also make less background noise with your feet.&lt;/p&gt;
+
+&lt;h3&gt;Shutdown your doorbell&lt;/h3&gt;
+
+&lt;p&gt;Make the possible not to be interrupted. Delivery man ringing the doorbell, your partner walking by, your dog barking... Try to find a way to reduce the probability of something like that to happen. But, if it happens, embrace it. Play with it. Prepare a joke if you can.&lt;/p&gt;
+
+&lt;h3&gt;Hydrate&lt;/h3&gt;
+
+&lt;p&gt;Have a glass of water nearby. Do not forget.&lt;/p&gt;
+
+&lt;h3&gt;Connect to the audience&lt;/h3&gt;
+
+&lt;p&gt;You can't move around, so try to make your hands visible and use them to communicate. Use different tones of voice to keep people connected. Ask for feedback in the chat and try to keep an eye on the chat in case you are looking for a more interactive talk.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src="http://gsferreira.com/images/speaking-at-a-virtual-conference-micro.jpg" alt="Setup - closeup" /&gt;&lt;/p&gt;
+
+&lt;hr /&gt;
+
+&lt;p&gt;Always remember that those attending, are there because they want to learn from you. So enjoy!&lt;/p&gt;
+</content></entry><entry><id>http://gsferreira.com/archive/2020/05/that-flag-argument-is-yelling-at-you/</id><title type="text">That flag argument is yelling at you</title><summary type="html">&lt;p&gt;Sometimes the code yells at you trying to warn you that something is wrong.&lt;/p&gt;
 
 &lt;p&gt;Flag arguments are one of those cases. Adding a Boolean argument to condition the execution is an easy fix, but we are doing the wrong thing.&lt;/p&gt;
 
@@ -389,56 +512,4 @@ Be honest and try to present data and examples to demonstrate your point of view
 &lt;p&gt;Embrace the constraints and let them guide your creativity, because sometimes &lt;strong&gt;freedom, can be paralyzing.&lt;/strong&gt;&lt;/p&gt;
 
 &lt;p&gt;Always remember, that when you were a little kid, you could bring to life an house, a car or even a plane with just two simple ingredients: A cardboard box and your imagination.&lt;/p&gt;
-</content></entry><entry><id>http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/</id><title type="text">A simple tip to improve your code maintainability - Decompose IF statements into methods</title><summary type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods.png" alt="Extract method" /&gt;&lt;/p&gt;
-
-&lt;p&gt;How many times have you been in a situation where you can’t understand a small piece of code?&lt;/p&gt;
-
-&lt;p&gt;Readability has a huge impact on code maintenance because reading other’s people code (and sometimes even our code) can be challenging. &lt;/p&gt;
-
-&lt;p&gt;As developers, &lt;strong&gt;we tend to ignore the UX (user experience) of our code&lt;/strong&gt;. Every single line of code that we do, will eventually be used by others. Is important to be sure that we do the best possible job for our teammates and to future self.&lt;/p&gt;
-
-</summary><published>2019-10-23T23:00:00Z</published><updated>2019-10-23T23:00:00Z</updated><link rel="alternate" href="http://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/" /><content type="html">&lt;p&gt;&lt;img src="http://gsferreira.com/images/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods.png" alt="Extract method" /&gt;&lt;/p&gt;
-
-&lt;p&gt;How many times have you been in a situation where you can’t understand a small piece of code?&lt;/p&gt;
-
-&lt;p&gt;Readability has a huge impact on code maintenance because reading other’s people code (and sometimes even our code) can be challenging. &lt;/p&gt;
-
-&lt;p&gt;As developers, &lt;strong&gt;we tend to ignore the UX (user experience) of our code&lt;/strong&gt;. Every single line of code that we do, will eventually be used by others. Is important to be sure that we do the best possible job for our teammates and to future self.&lt;/p&gt;
-
-&lt;!--excerpt--&gt;
-
-&lt;p&gt;&lt;strong&gt;The worst code blocks in terms of UX are the ones that require a huge cognitive load.&lt;/strong&gt; It’s our job to ask our selves what we can do to reduce it and improve readability. &lt;/p&gt;
-
-&lt;p&gt;Usually when I’m in a situation that requires high cognitive load to understand a piece of code, is because I face a huge and complex IF statement condition and I need to figure out what the hell it’s supposed to do. Do you know the feeling? Having to sketch a decision tree trying to figure out what is happening?&lt;/p&gt;
-
-&lt;h2&gt;How to avoid it?&lt;/h2&gt;
-
-&lt;p&gt;This is one of the most simple tricks that I do every day and I tend to advise everyone to do.&lt;/p&gt;
-
-&lt;p&gt;My rule of thumb is simple: &lt;strong&gt;In case of a multi-part condition, extract it to a method and name it accordingly.&lt;/strong&gt; &lt;/p&gt;
-
-&lt;p&gt;Let’s see it in practice.&lt;/p&gt;
-
-&lt;p&gt;Imagine that you have the following expression, that wants to validate if the customer can pay the Order with Credit Card. To do that, the customer should have an active Credit Card.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;if (order.PayWithCreditCard &amp;amp;&amp;amp; (order.Customer.CreditCard == null || order.Customer.CreditCard.ExpirationDate &amp;lt; DateTime.Today))
-    throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;To improve it, you can extract the boolean logic related to the credit card validation to a static method, and name it with something easy to understand.&lt;/p&gt;
-
-&lt;pre&gt;&lt;code&gt;public static void ProcessOrder(Order order)
-{
-    if (order.PayWithCreditCard &amp;amp;&amp;amp; IsCustomerCreditCardInvalid(order.Customer))
-        throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
-
-      (...)
-
-}
-
-private static bool IsCustomerCreditCardInvalid(Customer customer)
-    =&amp;gt; customer.CreditCard == null || customer.CreditCard.ExpirationDate &amp;lt; DateTime.Today;
-&lt;/code&gt;&lt;/pre&gt;
-
-&lt;p&gt;By doing this you are abstracting the reader’s mind from details. In case the reader needs to know the details, he can drill down to the details.&lt;/p&gt;
 </content></entry></feed>
