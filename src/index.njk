@@ -2,6 +2,10 @@
 layout: default
 title: Home
 description: "Software Architect and a minimalist aspirant. passionate by product development and a continuous improvement enthusiast."
+pagination:
+  data: collections.post
+  size: 3
+  reverse: true
 ---
 
 <section class="my-auto">
@@ -15,6 +19,25 @@ description: "Software Architect and a minimalist aspirant. passionate by produc
     <h3>
       Blog
     </h3>
-    {% include "components/posts.njk" %}
+    <ul>
+      {%- for item in pagination.items -%}
+        <li class="mt-6">
+          <time value="{{ item.date }}" class="text-sm text-gray-500">{{ item.date | readableDate }}</time>
+          <h3 class="mt-1 font-semibold">
+            <a class="text-primary hover:text-secondary" href="{{ item.url }}">{{ item.data.title }}</a>
+          </h3>
+          <div class="mt-2">
+            {% if item.data.description %}
+              {{ item.data.description }}
+            {% endif %}
 
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+    <div class="flex flex-row justify-center mt-10">
+      <a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4 rounded-full" href="/blog">View all posts</a>
+    </div>
+
+    {% include "components/newsletter.njk" %}
   </section>

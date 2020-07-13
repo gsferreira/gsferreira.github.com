@@ -5,7 +5,8 @@ layout: default
 <section>
 
   <article class="mx-auto measure markdown">
-    <time value="{{ date }}" class="text-sm text-gray-600">Last updated: {{ date | readableDate }}</time>
+    <time value="{{ date }}" class="text-sm text-gray-600">Last updated:
+      {{ date | readableDate }}</time>
     <h1 class="mt-6">{{ title }}</h1>
     <div class="mt-6 text-2xl text-gray-500 flow">
       {{ teaser | safe }}
@@ -15,6 +16,10 @@ layout: default
     </div>
   </article>
 
-  <nav class="mx-auto mt-16 measure"><a href="{{ '/blog/' | url }}">← Blog index</a></nav>
+  <nav class="mx-auto mt-16 measure">
+    <a href="{{ '/blog/' | url }}">← Blog index</a>
+  </nav>
+
+  {% include "components/newsletter.njk" %}
 
 </section>

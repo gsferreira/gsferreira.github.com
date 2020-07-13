@@ -16,10 +16,11 @@
   --color-bodybg: theme("colors.white");
   --color-bodytext: theme("colors.cool-gray.700");
   --color-muted: theme("colors.gray.50");
-  --color-primary: theme("colors.purple.700");
-  --color-secondary: theme("colors.pink.700");
+  --color-primary: theme("colors.teal.500");
+  --color-secondary: theme("colors.teal.400");
   --color-links: var(--color-primary);
   --color-focus: var(--color-secondary);
+  --form-shadow: 0 2px 15px 0 rgba(210, 214, 220, 0.5);
 }
 
 /* ********************** */
@@ -31,8 +32,9 @@
   --color-bodybg: theme("colors.cool-gray.900");
   --color-bodytext: theme("colors.cool-gray.200");
   --color-muted: theme("colors.cool-gray.800");
-  --color-primary: theme("colors.purple.300");
-  --color-secondary: theme("colors.pink.300");
+  --color-primary: theme("colors.teal.400");
+  --color-secondary: theme("colors.teal.300");
+  --form-shadow: 0 2px 15px 0 rgba(26, 26, 27, 0.637);
 }
 
 /* *********************** */
@@ -349,4 +351,11 @@ pre[class*="language-"] {
 }
 .token.variable {
   color: #ff6666;
+}
+
+/* Convert Kit */
+
+.formkit-form {
+  background-color: var(--color-bodybg) !important;
+  box-shadow: var(--form-shadow) !important;
 }

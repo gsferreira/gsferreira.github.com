@@ -1,13 +1,49 @@
 ---
 layout: default
 title: Blog
-description: "Awesome blog posts"
+description: "Blog posts"
+pagination:
+  data: collections.post
+  size: 30
+  alias: posts
+  reverse: true
 ---
 
 <section class="my-auto">
   <div class="mx-auto flow">
     <h1>{{ title }}</h1>
 
-    {% include "components/posts.njk" %}
+    <ul>
+      {%- for item in posts -%}
+        <li class="mt-6">
+          <time value="{{ item.date }}" class="text-sm text-gray-500">{{ item.date | readableDate }}</time>
+          <h3 class="mt-1 font-semibold">
+            <a class="text-primary hover:text-secondary" href="{{ item.url }}">{{ item.data.title }}</a>
+          </h3>
+          <div class="mt-2">
+            {% if item.data.description %}
+              {{ item.data.description }}
+
+            {% endif %}
+            <a class="text-primary hover:text-secondary" href="{{ item.url }}">Read →</a>
+          </div>
+        </li>
+      {%- endfor -%}
+    </ul>
+    {% if pagination.previousPageHref or pagination.nextPageHref %}
+      <nav class="flex flex-row justify-center" role="pagination">
+        {% if page.permalink != pagination.previousPageHref %}
+          <a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4 rounded-full" href="{{ pagination.previousPageHref }}">&lt; Previous page</a>
+        {% else %}
+          <span class="bg-gray-500 text-white font-bold mx-4 py-2 px-4 rounded-full opacity-50 cursor-not-allowed">&lt; Previous page</span>
+        {% endif %}
+        {% if page.permalink != pagination.nextPageHref %}
+          <a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4 rounded-full" href="{{ pagination.nextPageHref }}">Next page &gt;</a>
+        {% else %}
+          <span class="bg-gray-500 text-white font-bold mx-4 py-2 px-4 rounded-full opacity-50 cursor-not-allowed">Next page &gt;</span>
+        {% endif %}
+      </nav>
+    {% endif %}
+
   </div>
 </section>
