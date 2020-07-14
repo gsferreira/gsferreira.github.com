@@ -9,13 +9,11 @@ category: Cake
 
 This is simple tip to help you create Web Deployment Packages with [Cake](http://cakebuild.net/).
 
-
-<!--excerpt-->
-
 If you have a ASP.NET project and you want to create a Web Deployment package using Cake, you just need to use the MSBUILD Command with the right arguments.
 
 Feel free to copy the following command and paste it in a Task from your Cake file.
 
+```csharp
 		MSBuild("PROJECT_NAME.csproj", settings =>
 			settings.SetConfiguration(configuration)
 			.UseToolVersion(MSBuildToolVersion.VS2015)
@@ -24,9 +22,11 @@ Feel free to copy the following command and paste it in a Task from your Cake fi
 			.WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
 			.WithProperty("PackageTempRootDir", new string[]{"root"})
 			);
+```
 
-Here an example of a complete script (_build.cake_). 
+Here an example of a complete script (_build.cake_).
 
+```csharp
 	var target = Argument("target", "Default");
 	var configuration = Argument("configuration", "Release");
 	var packageDir = MakeAbsolute(Directory("./package"));
@@ -36,7 +36,7 @@ Here an example of a complete script (_build.cake_).
 	Task("Default")
 	.Does(() =>
 	{
-	
+
 		MSBuild("PROJECT_NAME.csproj", settings =>
 			settings.SetConfiguration(configuration)
 			.UseToolVersion(MSBuildToolVersion.VS2015)
@@ -50,6 +50,6 @@ Here an example of a complete script (_build.cake_).
 	});
 
 	RunTarget(target);
-
+```
 
 Hope this helps.

@@ -7,26 +7,22 @@ title: 7th Meeting of NetPonto Community in Oporto
 category: NetPonto
 ---
 
-
-
 We are bringing to Oporto the 7th Meeting of NetPonto Community.
-The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 26 September 2015. 
+The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 26 September 2015.
 
 ##Program
 
-09:45	 - 	Check-in
+09:45 - Check-in
 
-10:00	 - 	SOLR in .NET - Super Solid solution for a Super Fast Search - Pedro Neves Rosa 
+10:00 - SOLR in .NET - Super Solid solution for a Super Fast Search - Pedro Neves Rosa
 
-12:00	 - 	The Future of Web Applications - ECMAScript vNext and others - Ricardo Brandão
+12:00 - The Future of Web Applications - ECMAScript vNext and others - Ricardo Brandão
 
-13:30	 - 	Closing Panel
-
-<!--excerpt-->
+13:30 - Closing Panel
 
 ##Venue
 
-Instituto Superior de Engenharia do Porto (ISEP) - Room H202 
+Instituto Superior de Engenharia do Porto (ISEP) - Room H202
 
 Rua Dr. António Bernardino de Almeida, 431
 
@@ -41,5 +37,3 @@ Portugal
 Free!
 
 Registration: [https://netponto-porto-setembro-2015.eventbrite.co.uk/](https://netponto-porto-setembro-2015.eventbrite.co.uk/)
-
-

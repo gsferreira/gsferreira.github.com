@@ -9,31 +9,24 @@ category: Team, Improvement
 
 ![One-on-ones - Using behavioural science to maximize the impact.](/images/one-on-ones-using-behavioural-science-to-maximize-the-impact.png)
 
-
-If you manage or mentor people, you should be doing one-on-one meetings. 
+If you manage or mentor people, you should be doing one-on-one meetings.
 They are one of the most important tools that you have, so, it's important to maximize the result.
 
-**One-on-one meetings are an excellent moment for goal setting**. 
+**One-on-one meetings are an excellent moment for goal setting**.
 We tend to advise for improvement **and it's a good practice to set a goal**.
 
 The problem is that those goals tend to have the same destiny of new year's eve goals and fail miserably (by the way, if your gym goal has made through January you are doing a good job!).
 
-
-When we do one-on-one meetings we hope to improve people's lives and the difficult part isn't to identify those goals, those improvement opportunities. 
+When we do one-on-one meetings we hope to improve people's lives and the difficult part isn't to identify those goals, those improvement opportunities.
 **The difficult part is to help the team to achieve those goals.**
 
-
-Usually, the intentions are good, and everyone is genuinely trying to do their best. 
+Usually, the intentions are good, and everyone is genuinely trying to do their best.
 I don't see these failures as people's fault, because we, as humans, are specialists in failing to achieve goals.
 
-
-If you have been in this situation, probably you have noticed that goals use to stay in the "To do" state for a long time. 
+If you have been in this situation, probably you have noticed that goals use to stay in the "To do" state for a long time.
 So the question is: **What can we do to be more effective?**
 
-
-<!--excerpt-->
-
-And the answer is in **Behavioural Science**. 
+And the answer is in **Behavioural Science**.
 
 Multiple studies already present how we should approach Goal Setting and what to do to achieve our goals. So, based on Behavioural Science, what do I recommend:
 
@@ -41,10 +34,9 @@ Multiple studies already present how we should approach Goal Setting and what to
 
 ## Goals
 
-
 **🎯 Specific Goals with a specific deadline.**
 
-💡 Suggestion: Propose goals that are specific and easy measure. Assign a deadline. 
+💡 Suggestion: Propose goals that are specific and easy measure. Assign a deadline.
 Remember not to impose goals. You are advising, so your role is mentorship.
 
 ---
@@ -58,21 +50,21 @@ Small steps are easy to measure and to see progress.
 
 **🎯 Try to form a new habit.**
 
-💡 Suggestion: Goals are an excellent opportunity to form new habits. 
-Make sure that you plan for routine small steps. 
+💡 Suggestion: Goals are an excellent opportunity to form new habits.
+Make sure that you plan for routine small steps.
 By associating those steps to routine, the habit will be more likely to stick.
 
 ---
 
 ## Commit
 
-**🎯 Find someone that will act as a referee to enforce a penalty if he fails. If you don't find anyone, do it yourself.** 
+**🎯 Find someone that will act as a referee to enforce a penalty if he fails. If you don't find anyone, do it yourself.**
 
 💡 Suggestion: Work with your colleague to find a referee and a good career mentor.
 
 **🎯 Advice to make the goals public. This will raise the commitment level and help stick to it.**
 
-💡 Suggestion: Lead by example. Inform the team of your own goals. Write it down in a shared space (Slack, Whiteboard, Email, etc.). 
+💡 Suggestion: Lead by example. Inform the team of your own goals. Write it down in a shared space (Slack, Whiteboard, Email, etc.).
 This way, everyone will feel safe to do the same.
 
 ---

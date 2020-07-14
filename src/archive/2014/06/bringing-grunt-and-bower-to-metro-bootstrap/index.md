@@ -7,10 +7,9 @@ title: Bringing Grunt and Bower to metro-bootstrap
 category: metro-bootstrap
 ---
 
-Since we publish [metro-bootstrap](https://github.com/TalksLab/metro-bootstrap) we saw an incredible acceptance to the project and we are really happy to have decided to delivery it as an open source project. 
+Since we publish [metro-bootstrap](https://github.com/TalksLab/metro-bootstrap) we saw an incredible acceptance to the project and we are really happy to have decided to delivery it as an open source project.
 
 This project has grown up with a lack of structure in my opinion, so, this week I've been working to add Grunt and Bower to metro-bootstrap. To accomplish this task, I have the valuable help of [Yeoman](http://yeoman.io/). If you're like me, and [Grunt](http://gruntjs.com/) or [Bower](http://bower.io/) are crazy talk, you will find in Yeoman a great way to start.
-<!--excerpt-->
 
 [![Yeoman](/images/bringing-grunt-and-bower-to-metro-bootstrap-yeoman.jpg)](http://yeoman.io/)
 
@@ -20,31 +19,26 @@ Since the metro-bootstrap release, we always work on .less files, but we also re
 
 What have changed? Take a look.
 
-
-
-
 ## Repository structure
 
 In the repository you will find the following directories:
 
+    app/
+    ├── fonts/
+    │   └── (FontAwesome files)
+    └── less/
+        └── (metro-bootstrap less files)
+    dist/
+    ├── fonts/
+    │   └── font-awesome/
+    │   │   └── (FontAwesome files)
+    └── css/
+        ├── metro-bootstrap.css
+        └── metro-bootstrap.min.css
+    docs/
+    └── (metro-bootstrap GitHub Pages)
 
-	app/
-	├── fonts/
-	│   └── (FontAwesome files)
-	└── less/
-	    └── (metro-bootstrap less files)
-	dist/
-	├── fonts/
-	│   └── font-awesome/
-	│   │   └── (FontAwesome files)
-	└── css/
-	    ├── metro-bootstrap.css
-	    └── metro-bootstrap.min.css
-	docs/
-	└── (metro-bootstrap GitHub Pages)
-
-
-We provide compiled CSS (`metro-bootstrap.css`) in the dist folder, as well as compiled and minified CSS (`metro-bootstrap.min.css`). 
+We provide compiled CSS (`metro-bootstrap.css`) in the dist folder, as well as compiled and minified CSS (`metro-bootstrap.min.css`).
 
 ##Instaling Dependencies
 
@@ -58,17 +52,13 @@ If don't have Grunt installed, execute the following steps from the command line
 
 ## Compiling CSS
 
-We compile metro-bootstrap using [Grunt](http://gruntjs.com/). 
-Run `grunt build` to compile the CSS into `/dist`. 
+We compile metro-bootstrap using [Grunt](http://gruntjs.com/).
+Run `grunt build` to compile the CSS into `/dist`.
 
 If don't have Grunt installed, execute the following steps from the command line:
 
 1. Make sure you have node.js installed.
 2. Install `grunt-cli` globally with `npm install -g grunt-cli`.
 3. Go to the `metro-bootstrap` directory, then run `npm install`. npm will look at package.json and automatically install the necessary dependencies.
-
-
-
-
 
 Now, go fork it!

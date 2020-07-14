@@ -15,13 +15,10 @@ I had the opportunity to listen excellent speakers as:
 - [Neil Harrison](https://www.uvu.edu/profpages/profiles/show/user_id/1923)
 - [Ricardo Fiel](https://twitter.com/theplastictoy)
 - [Carlton Nettleton](https://twitter.com/carlton858)
-	
 
-The event was amazing, and I want to share with you the main lessons that I learned. 
+The event was amazing, and I want to share with you the main lessons that I learned.
 
-<!--excerpt-->
-
-------
+---
 
 ##The importance of Visuals
 
@@ -40,24 +37,19 @@ Have you ever listened a business person talking like that?
 Carlton Nettleton, presented a simpler and much objective way to write user stories. How? Answering the following questions: Who? What? And Why?
 I'm a fan of the [Six W's method](http://en.wikipedia.org/wiki/Five_Ws) to describe and understand complex problems, and Carlton made me correlate that with user stories.
 
- 
-
 ##The true essence of agile
 
-The industry sells us the idea that Agile (or Scrum), is a magic formula that we should apply to have good results. You just need to have some meetings, do sprints of "X" weeks and you will be fine. 
+The industry sells us the idea that Agile (or Scrum), is a magic formula that we should apply to have good results. You just need to have some meetings, do sprints of "X" weeks and you will be fine.
 That's not true.
 
 Companies are made from people, so they are different. Each one has a different culture and a different identity. This uniqueness will make them agile.
 
-Agile, isn't a process, a system or a mathematical formula. Agile is a culture. 
+Agile, isn't a process, a system or a mathematical formula. Agile is a culture.
 It's different be agile than have a certificate that says that you are agile.
-The process is the less important part. You should have the focus on the outcome. 
+The process is the less important part. You should have the focus on the outcome.
 Always think on where you want to go, not on what you need to do to go there.
 
+---
 
-
-------
-
-
-Was an amazing day, with incredible people, in an awesome place. 
+Was an amazing day, with incredible people, in an awesome place.
 Hope to be there next year.

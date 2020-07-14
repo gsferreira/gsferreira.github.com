@@ -15,8 +15,6 @@ Recently, the lack of knowledge manifested itself as performance issues. To fix 
 
 I observed that the components of my application were rendering too many times, even when I did not need them to re-render. The following 3 recommendations are the main reasons for that to happen.
 
-<!--excerpt-->
-
 ---
 
 ## 💡 1. Don't pass props with an object by reference
@@ -46,15 +44,15 @@ Review your components and question all those props where the prop type is Objec
 
 Memo and Pure Components are an excellent way of improving performance. But, unless you are using them in the correct scenario you will not see the benefits. **If you are providing a complex object** (like explained in recommendation 2) **Memo and Pure Components will not work as you expect.**
 
-To understand that, you need to know that a Pure Component is different from a Component. Pure Components implement the *"shouldComponentUpdate"* with a shallow prop and state comparison.
+To understand that, you need to know that a Pure Component is different from a Component. Pure Components implement the _"shouldComponentUpdate"_ with a shallow prop and state comparison.
 
 React documentation ([see here](https://reactjs.org/docs/react-api.html#reactpurecomponent)):
 
-*"`React.PureComponent’s` `shouldComponentUpdate()` only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences."*
+_"`React.PureComponent’s` `shouldComponentUpdate()` only shallowly compares the objects. If these contain complex data structures, it may produce false-negatives for deeper differences."_
 
 ### ✅ What to do?
 
-Try to follow the recommendation 2. If you need to have a complex data structure, use a Component and implement the *"shouldComponentUpdate"* instead.
+Try to follow the recommendation 2. If you need to have a complex data structure, use a Component and implement the _"shouldComponentUpdate"_ instead.
 
 You can also take a look into react-fast-compare to help you out comparing complex data.
 
@@ -62,6 +60,6 @@ You can also take a look into react-fast-compare to help you out comparing compl
 
 To conclude, try to use primitive data as Props and use Pure Components or Memo when you can.
 
-If you can't, be sure that you clone the data and implement the *"shouldComponentUpdate"* by yourself.
+If you can't, be sure that you clone the data and implement the _"shouldComponentUpdate"_ by yourself.
 
 I hope that this helps you.

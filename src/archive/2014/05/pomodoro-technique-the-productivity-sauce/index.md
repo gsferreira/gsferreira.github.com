@@ -7,10 +7,9 @@ title: Pomodoro Technique, the productivity sauce
 category: Productivity
 ---
 
-You've probably heard about the [Pomodoro Technique](http://pomodorotechnique.com/). This is one of the most popular time management tools nowadays. This technique has been developed by *[Francesco Cirillo](http://francescocirillo.com/)* in the late 1980s. 
+You've probably heard about the [Pomodoro Technique](http://pomodorotechnique.com/). This is one of the most popular time management tools nowadays. This technique has been developed by _[Francesco Cirillo](http://francescocirillo.com/)_ in the late 1980s.
 
 In the modern days we keep fighting against the clock, trying to accomplish all the assignments. But in the other hand we have a lot of distractions, as the Facebook messages, new tweets or our phones. The Pomodoro Technique wants to teach you to use the time as your friend, being productive, eliminating the procrastination, the pressure and get free time for yourself. Pomodoro Technique also can be a great complement for other methodology's. I used it in my [GTD (Getting Things Done)](http://gettingthingsdone.com/) workflow for example.
-<!--excerpt-->
 
 ![Modern Family - Decisions under pressure](/images/pomodoro-technique-the-productivity-sauce-modern-family-decisions-under-pressure.jpg)
 
@@ -28,13 +27,12 @@ This isn't applicable for anyone, but if you usually seat down at a desk and you
 
 You could find some problems to apply it, for example:
 
- - How to concentrate without interruptions, specially if you are inside a team. 
- - The open-plan offices can be an enemy, so pick the perfect music and put your headphones.
- - It's possible don't answer your phone during a pomodoro in your position?
- - Keep the flow while dealing with interaction with the co-workers.
- - Meetings... a necessary evil.
+- How to concentrate without interruptions, specially if you are inside a team.
+- The open-plan offices can be an enemy, so pick the perfect music and put your headphones.
+- It's possible don't answer your phone during a pomodoro in your position?
+- Keep the flow while dealing with interaction with the co-workers.
+- Meetings... a necessary evil.
 
-Pomodoro Technique is free, you can spend some money to get a kitchen timer if you want… or you can use any timer program on your computer or phone (I'm using the [*Simple Pomodoro* extension for Chrome](https://chrome.google.com/webstore/detail/simple-pomodoro%C2%AE/blidjjfbdbkcmegfnidmgndgdamhhelp)). The process isn't ideal for every person, but if you want to boost your productivity you can try it and let me know the results in the comments below.
+Pomodoro Technique is free, you can spend some money to get a kitchen timer if you want… or you can use any timer program on your computer or phone (I'm using the [_Simple Pomodoro_ extension for Chrome](https://chrome.google.com/webstore/detail/simple-pomodoro%C2%AE/blidjjfbdbkcmegfnidmgndgdamhhelp)). The process isn't ideal for every person, but if you want to boost your productivity you can try it and let me know the results in the comments below.
 
 By the way, this post has been written in 4 pomodoros.
-

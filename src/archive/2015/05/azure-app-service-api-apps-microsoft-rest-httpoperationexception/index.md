@@ -7,13 +7,9 @@ title: Azure App Service API Apps - Microsoft.Rest.HttpOperationException
 category: Azure
 ---
 
-
-
 Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:
 
-<!--excerpt-->
-
-<pre>
+```csharp
     Microsoft.Rest.HttpOperationException`1 was unhandled
   HResult=-2146233088
   Message=Exception of type 'Microsoft.Rest.HttpOperationException`1[System.Object]' was thrown.
@@ -39,13 +35,11 @@ Recently I was playing with API Apps, from the new Azure App Service when I face
        at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state, Boolean preserveSyncCtx)
        at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
        at System.Threading.ThreadHelper.ThreadStart()
-  InnerException: 
+  InnerException:
 
-</pre>
+```
 
-
-
-I struggled a bit until I figured why. 
+I struggled a bit until I figured why.
 
 Well, let me explain you how I got there and what I have done to solve it.
 
@@ -57,9 +51,9 @@ Then, I generated my Client SDK and when I tried to invoke it, I got the error.
 
 As you can see, the exception message and the stack trace don't provide much information.
 
-I had to struggle a bit to figure it out. 
+I had to struggle a bit to figure it out.
 
-The reason was really simple, my API service had the Access Level defined as **Internal**. 
+The reason was really simple, my API service had the Access Level defined as **Internal**.
 
 After changing it to **Public (anonymous)** everything works fine.
 

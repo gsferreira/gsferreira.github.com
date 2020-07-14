@@ -13,13 +13,11 @@ There's a pattern that I especially like when I'm doing this is C#. [The Builder
 
 The builder pattern is an elegant solution to the problem and I really like it. But, is it a simple solution for JavaScript?
 
-<!--excerpt-->
-
 Let's see how it would look like using the builder pattern in JS:
 
 ![Builder pattern](/images/a-simple-way-to-build-your-javascript-tests-data-builder.png)
 
-As you can see, there's a lot of code needed to implement it. 
+As you can see, there's a lot of code needed to implement it.
 
 **How can we do it more simply?**
 

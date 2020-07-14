@@ -13,18 +13,15 @@ Probably you are already convinced, but you are having trouble convincing your b
 
 To help you I give you here five compelling reasons they can't argue with.
 
-<!--excerpt-->
-
 ![Cake Build](/images/cake-build-logo.png)
 
 # 1. It's C# &#10084;
 
-If you are working in a .NET shop where C# is the common language, you already have the tools to do the Job and probably isn't a good idea to adopt a new language. 
+If you are working in a .NET shop where C# is the common language, you already have the tools to do the Job and probably isn't a good idea to adopt a new language.
 
 The **[BUS Factor](https://en.wikipedia.org/wiki/Bus_factor)** is a good metric to illustrate the risk of adopting a new language for a build system.
 
 Cake scripts are written in C# and you can use all the knowledge that you already have.
-
 
 # 2. Living form of documentation
 
@@ -38,20 +35,17 @@ Isn't powerful to know that in the future you can go back and see how your softw
 
 Nevertheless, doing this kind of tasks manually shouldn't be a manual process. **“For loops” are for computers** and as programmers we know how to teach them to do it.
 
-
 # 3. Cross platform
 
 With Cake, you can start **building** your software **in multiple platforms**.
 
 If in your team, there are elements working with different operating systems, with Cake **everyone can be working in the same build script**.
 
-
 # 4. Agnostic from Build Server
 
 With Cake you can easily **move your scripts from one Build system to another**, without need to completely reconfigure the complete Build.
 
 The best proof of this: Cake is building Cake with Cake in multiple build servers ([see it in the Continuous integration section](https://github.com/cake-build/cake)).
-
 
 # 5. Healthy community
 
@@ -61,8 +55,6 @@ Cake has a huge list of Addins delivered and maintained by the community.
 
 Also, since 2016 Cake is part of the .NET Foundation.
 
+---
 
---------------
-
-
-*I hope that this helps you (and convinced your boss).*
+_I hope that this helps you (and convinced your boss)._

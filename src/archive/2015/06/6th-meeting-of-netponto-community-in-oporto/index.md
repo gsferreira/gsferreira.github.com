@@ -7,26 +7,22 @@ title: 6th Meeting of NetPonto Community in Oporto
 category: NetPonto
 ---
 
-
-
 We are bringing to Oporto the 6th Meeting of NetPonto Community.
-The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 11 July 2015. 
+The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 11 July 2015.
 
 ##Program
 
-09:45	 - 	Check-in
+09:45 - Check-in
 
-10:00	 - 	ASP.NET VNext, now in Mac! - Bruno Lopes
+10:00 - ASP.NET VNext, now in Mac! - Bruno Lopes
 
-12:00	 - 	Building applications with Xamarin Forms - Rui Marinho
+12:00 - Building applications with Xamarin Forms - Rui Marinho
 
-13:30	 - 	Closing Panel
-
-<!--excerpt-->
+13:30 - Closing Panel
 
 ##Venue
 
-Instituto Superior de Engenharia do Porto (ISEP) - Room H202 
+Instituto Superior de Engenharia do Porto (ISEP) - Room H202
 
 Rua Dr. António Bernardino de Almeida, 431
 
@@ -41,5 +37,3 @@ Portugal
 Free!
 
 Registration: [https://netponto-porto-julho-2015.eventbrite.co.uk/](https://netponto-porto-julho-2015.eventbrite.co.uk/)
-
-

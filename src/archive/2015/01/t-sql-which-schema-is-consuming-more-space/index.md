@@ -9,10 +9,9 @@ category: SQL
 
 Imagine that you have separate schemas in your multi-tenant data architecture and you want to know who is consuming more space. How can you do it?
 
-<!--excerpt-->
-
 Just run the following query:
 
+```sql
     SELECT  SCHEMA_NAME(obj.schema_id) AS 'Schema',
             SUM(stats.reserved_page_count) * 8.0 / 1024 AS SizeInMB
     FROM    sys.dm_db_partition_stats stats
@@ -20,8 +19,7 @@ Just run the following query:
         JOIN    sys.objects obj ON idx.object_id = obj.object_id
     WHERE   obj.Type = 'U'
     GROUP BY    obj.schema_id
-    ORDER BY    SizeInMB DESC 
-
-
+    ORDER BY    SizeInMB DESC
+```
 
 Hope this helps.

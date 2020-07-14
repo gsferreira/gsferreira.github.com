@@ -11,24 +11,24 @@ Are you trying to send messages to a .NET application from node.js and you want 
 
 You can find here a simple example to accomplish it.
 
-<!--excerpt-->
-
 Encrypt in node.js:
 
-    var crypto = require('crypto');
-    var key = '00000000000000000000000000000000'; //replace with your key
-    var iv = '0000000000000000'; //replace with your IV
-    var cipher = crypto.createCipheriv('aes256', key, iv)
-    var crypted = cipher.update(authorizationKey, 'utf8', 'base64')
-    crypted += cipher.final('base64');
-    console.log(crypted);
-
+```js
+var crypto = require("crypto");
+var key = "00000000000000000000000000000000"; //replace with your key
+var iv = "0000000000000000"; //replace with your IV
+var cipher = crypto.createCipheriv("aes256", key, iv);
+var crypted = cipher.update(authorizationKey, "utf8", "base64");
+crypted += cipher.final("base64");
+console.log(crypted);
+```
 
 Decrypt with C#:
 
+```csharp
     string keyString = "00000000000000000000000000000000"; //replace with your key
     string ivString = "0000000000000000"; //replace with your iv
-            
+
     byte[] key = Encoding.ASCII.GetBytes(keyString);
     byte[] iv = Encoding.ASCII.GetBytes(ivString);
 
@@ -47,6 +47,6 @@ Decrypt with C#:
                     return new StreamReader(cryptoStream).ReadToEnd();
                 }
             }
-
+```
 
 Hope this helps.

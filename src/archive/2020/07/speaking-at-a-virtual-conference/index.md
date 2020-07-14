@@ -16,8 +16,6 @@ If you had the chance of speaking in a virtual conference, you know that it's no
 
 Fortunately, my talk went really well. So, this post serves to share what I have done to prepare myself. If you will be speaking in a virtual conference, this may be useful to you. My goal here is to describe what I've done and what I've learned. Hope it can be helpful to you.
 
-<!--excerpt-->
-
 ---
 
 ## Setup
@@ -34,12 +32,11 @@ Aligning the camera with your eyes is useful. You will be speaking to a camera, 
 
 ### Lighting
 
-Lighting is a small investment that makes a huge difference in the result. You can always use natural light. In my case, I bought a simple [light ring from AliExpress](https://www.aliexpress.com/item/33020816527.html). 
-
+Lighting is a small investment that makes a huge difference in the result. You can always use natural light. In my case, I bought a simple [light ring from AliExpress](https://www.aliexpress.com/item/33020816527.html).
 
 ### Background
 
-If you don't have a green screen, you need to take care of your background. Having a lot of things happening in the background can be quite distracting. Remember that your goal is to get the attention of the audience. They are at home, on their computer, and they can easily be distracted when compared to a conference room. 
+If you don't have a green screen, you need to take care of your background. Having a lot of things happening in the background can be quite distracting. Remember that your goal is to get the attention of the audience. They are at home, on their computer, and they can easily be distracted when compared to a conference room.
 
 I didn't want to give them another good reason for distraction by having shiny objects on the background.
 
@@ -57,31 +54,29 @@ So, I recommend you to find the quietest place you can and use a good microphone
 
 I've found really good information about Microphones, Cameras and Lighting [here](https://mattstauffer.com/blog/setting-up-your-webcam-lights-and-audio-for-remote-work-podcasting-videos-and-streaming).
 
-
 ### Glare on Glasses
 
-If you use glasses like me, Lighting and positioning can be quite difficult. 
+If you use glasses like me, Lighting and positioning can be quite difficult.
 
 Facing direct light or bright screens was reflecting everything on my glasses.
 
-Light and screen reflexes can be quite distracting and don't feel natural. To overcome it, I position my screens on a diagonal line and the light ring from top to bottom. Besides that, I reduced the brightness of my screens. 
+Light and screen reflexes can be quite distracting and don't feel natural. To overcome it, I position my screens on a diagonal line and the light ring from top to bottom. Besides that, I reduced the brightness of my screens.
 
 [This video](https://www.youtube.com/watch?v=9NWAcK-wM80) was really helpful.
 
 ### Stand-up
 
-By standing up, you will see that your voice will be clear and you will have a better posture. If not have a standing desk, improvise. I managed the same result by stacking up my kitchen table with my daughter´s playing table. 
+By standing up, you will see that your voice will be clear and you will have a better posture. If not have a standing desk, improvise. I managed the same result by stacking up my kitchen table with my daughter´s playing table.
 
 ![Setup - Stand-up](/images/speaking-at-a-virtual-conference-setup-macro.jpg)
 
 ---
 
-
 ## Preparing
 
 1. **Rehearse** in the same environment and with the same setup that you will be using.
 
-2. Record it and share it with your friends and colleagues. Ask for  [honest feedback](https://gsferreira.com/archive/2019/07/leading-improvement-through-honest-feedback/). Use the feedback to improve.
+2. Record it and share it with your friends and colleagues. Ask for [honest feedback](https://gsferreira.com/archive/2019/07/leading-improvement-through-honest-feedback/). Use the feedback to improve.
 
 3. **Rehearse**
 
@@ -97,39 +92,31 @@ By standing up, you will see that your voice will be clear and you will have a b
 
 No. Rehearse written so many times isn't a mistake. Honestly, **the most important thing that you can do is rehearse**. Rehearse in the same conditions. Over and over again. By doing that you will feel more comfortable speaking to a camera.
 
-
 ---
-
 
 ## The day
 
-
 The day has been really pleasant to me. After multiple hours of rehearsing, I have found that my muscle memory kicked in. I didn't have the chance to feel stressed. I was feeling prepared. It was showtime and I was enjoying it. Nevertheless, there are a few things that helped me.
-
 
 ### Dress-up
 
-This will signal to your brain that it's time to do important stuff. 
+This will signal to your brain that it's time to do important stuff.
 
 ### Barefoot
 
 Barefoot or use socks. You will find yourself more relaxed. You will also make less background noise with your feet.
 
-
 ### Shutdown your doorbell
 
 Make the possible not to be interrupted. Delivery man ringing the doorbell, your partner walking by, your dog barking... Try to find a way to reduce the probability of something like that to happen. But, if it happens, embrace it. Play with it. Prepare a joke if you can.
-
 
 ### Hydrate
 
 Have a glass of water nearby. Do not forget.
 
-
 ### Connect to the audience
 
 You can't move around, so try to make your hands visible and use them to communicate. Use different tones of voice to keep people connected. Ask for feedback in the chat and try to keep an eye on the chat in case you are looking for a more interactive talk.
-
 
 ![Setup - closeup](/images/speaking-at-a-virtual-conference-micro.jpg)
 
