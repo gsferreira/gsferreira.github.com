@@ -16,8 +16,8 @@
   --color-bodybg: theme("colors.white");
   --color-bodytext: theme("colors.cool-gray.700");
   --color-muted: theme("colors.gray.50");
-  --color-primary: theme("colors.teal.500");
-  --color-secondary: theme("colors.teal.400");
+  --color-primary: theme("colors.teal.600");
+  --color-secondary: theme("colors.teal.500");
   --color-links: var(--color-primary);
   --color-focus: var(--color-secondary);
   --form-shadow: 0 2px 15px 0 rgba(210, 214, 220, 0.5);
