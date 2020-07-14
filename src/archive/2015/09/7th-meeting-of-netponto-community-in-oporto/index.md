@@ -10,7 +10,7 @@ category: NetPonto
 We are bringing to Oporto the 7th Meeting of NetPonto Community.
 The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) at 26 September 2015.
 
-##Program
+## Program
 
 09:45 - Check-in
 
@@ -20,7 +20,7 @@ The meeting will take place at Instituto Superior de Engenharia do Porto (ISEP) 
 
 13:30 - Closing Panel
 
-##Venue
+## Venue
 
 Instituto Superior de Engenharia do Porto (ISEP) - Room H202
 
@@ -32,7 +32,7 @@ Portugal
 
 [Map](https://www.google.pt/maps/place/ISEP,+4200-072+Porto/@41.1778457,-8.6081006,17z/data=!4m2!3m1!1s0xd246449b419e1c1:0x16a6fd2fcace4efe)
 
-##Registration
+## Registration
 
 Free!
 

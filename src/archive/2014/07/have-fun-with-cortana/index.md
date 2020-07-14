@@ -15,7 +15,7 @@ If you have a Windows Phone with 8.1 installed you can start using Cortana. I ha
 
 I leave a cool list below.
 
-##Funny commands
+## Funny commands
 
 - Tell me a joke.
 - Sing me a song.
@@ -38,7 +38,7 @@ I leave a cool list below.
 - Cortana.
 - Talk dirty.
 
-##Useful commands
+## Useful commands
 
 - Call Peter.
 - Text Peter.

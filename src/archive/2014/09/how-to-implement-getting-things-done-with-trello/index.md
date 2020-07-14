@@ -20,13 +20,13 @@ The objective here is to explain you how Trello and GTD can work beautifully sid
 
 ![Productivity funny](/images/how-to-implement-getting-things-done-with-trello-funny-productivity.jpg)
 
-###Why Trello?
+### Why Trello?
 
 I've been a Trello user since 2012 so I think that I'm a kind of Trello Ninja. Besides that, I follow the David Allen methodology and I've struggled to put the system rolling until I use Trello to support it.
 
 Trello is based on the [Kanban](http://en.wikipedia.org/wiki/Kanban) method. Kanban it's a way to visualize workflow. Usually a [kanban board](http://en.wikipedia.org/wiki/Kanban_board) consists in several columns for different phases for a task. Trello also offers you multiple forms of organization like: boards, lists, cards and checklists.
 
-###System setup
+### System setup
 
 So, how do I take advantage of it to manage my workflow? I've created a Board only for GTD management.
 
@@ -50,11 +50,11 @@ I also have used labels to setup contexts like:
 
 Appling labels to cards, related to contexts, help me to see only the cards from my current context. You can also use labels only for priority management.
 
-###Weekly review
+### Weekly review
 
 On Mondays morning I look at my Trello "Later" list and move all the tasks into the "This week" or "Today" list.
 
-###Daily review
+### Daily review
 
 Use the "Inbox" list as capture repository. Process the items in the "Inbox" list daily and move them to the list that you want.
 When a task is complete, archive the card.

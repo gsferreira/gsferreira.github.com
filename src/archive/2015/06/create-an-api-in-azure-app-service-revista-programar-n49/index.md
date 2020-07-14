@@ -9,7 +9,7 @@ category: Azure, Revista PROGRAMAR
 
 _I had the pleasure of write an [article](http://www.revista-programar.info/artigos/criar-uma-api-no-azure-app-sevice/) to the [Revista PROGRAMAR](http://www.revista-programar.info/anuncios/revista-programar-no-49-junho-2015/), a Portuguese collaborative magazine about programming. I’m glad with my first article for a magazine and especially because, I'm side by side with people that I admire like [Paulo Morgado](https://twitter.com/PauloMorgado) or [Sara Silva](https://twitter.com/saramgsilva), for instance. This was an amazing experience and I want to share with you the result of it._
 
-##Introduction
+## Introduction
 
 In March, Microsoft announced an improvement in his services by introducing the new Azure App Service. This service covers the “oldest” Websites, now named as Web Apps, the Azure Mobile Services, now, Mobile Apps, and introduce new capabilities as Logic Apps and the API Apps. This article talks about the last one.
 The question is: What’s the reason to create an API App, and not a Web API in a Website? This question can be easily answered, analysing the feature list, for example:
@@ -22,13 +22,13 @@ The question is: What’s the reason to create an API App, and not a Web API in 
 
 In this article we will see, how to create an API, publish in our subscription and create an SDK to consume it.
 
-##Description
+## Description
 
 There are many services, inside the organizations, that are necessary to multiple applications. A good example of that is the send email notifications.
 Let imagine that we pretend to provide an API, so that all applications of our organization, can easily send emails, without need to know the logic of using the email server.
 Before we start, we need to be sure that [Microsoft Azure SDK for .NET 2.6](http://go.microsoft.com/fwlink/?linkid=324322&clcid=0x409) is installed.
 
-###Create an API App project
+### Create an API App project
 
 Let’s start to see how to create a project for our API App.
 
@@ -46,7 +46,8 @@ Let’s start to see how to create a project for our API App.
 
 7.  Click **OK** and to create the project.
 
-###Create the service to send emails
+### Create the service to send emails
+
 Let’s see how to expose a method for sending emails in our API. For that, we will create a class that represents the data model to receive the request, and a controller to provide the sending method.
 
 1.  In the folder Models, add a new class with the name MailModel. Mouse right click in the folder Models, and select the option **Add > Class**.
@@ -97,7 +98,7 @@ Let’s see how to expose a method for sending emails in our API. For that, we w
    }
 ```
 
-###Configure the service
+### Configure the service
 
 Since in this example we will send the e-mail via SMTP, we will need to configure the e-mail server data.
 
@@ -116,7 +117,7 @@ Since in this example we will send the e-mail via SMTP, we will need to configur
 
 3.  Fill in with the data from our server.
 
-###Publish the application to the Azure App Service
+### Publish the application to the Azure App Service
 
 The publication can be made to an App Service, previously created using the portal, but in the next step we will see how to create the same without leaving Visual Studio.
 
@@ -150,7 +151,7 @@ If you already have it, follow the next steps:
 
 7.  The service will be published.
 
-###Consume na API from a .NET client.
+### Consume na API from a .NET client.
 
 Let’s see how to create an SDK to our API and use it.
 
@@ -182,7 +183,7 @@ Let’s see how to create an SDK to our API and use it.
   }
 ```
 
-##Summary
+## Summary
 
 With this new service created by Microsoft, we are able to provide features that in the past had a huge development cost, in an easy and quick way.
 The private gallery in conjunction with the easy way to consume APIs, provides the required capabilities to create an API ecosystem.

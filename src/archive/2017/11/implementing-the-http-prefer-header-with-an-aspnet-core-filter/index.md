@@ -66,10 +66,9 @@ So the flow is something like:
 2. Handle the request
 3. Return an Action Result with a DTO in it
 4. Catch the response in a filter
-
-   1. The Request doesn't have the Prefer header?
-   2. The Request has the Prefer header without the value "return=representation"?
-   3. If the answer to any of the previous questions is "Yes", I update the result to a new object with the minimal information.
+   - The Request doesn't have the Prefer header?
+   - The Request has the Prefer header without the value "return=representation"?
+   - If the answer to any of the previous questions is "Yes", I update the result to a new object with the minimal information.
 
 The filter:
 

@@ -59,9 +59,7 @@ In this example, I will use a simple Cake script to increment the version number
 I will explain how to do that manually, but if you are a [Visual Studio Code](https://code.visualstudio.com/) user I highly recommend that you install the cake extension and use the tools provided by the extension.
 
 1. Install the Cake bootstrapper. You can find [here](https://cakebuild.net/docs/tutorials/setting-up-a-new-project) how to do that.
-
 2. Create a _build.cake_ file next to the bootstrapper.
-
 3. Add the following snippet to the build.cake.
 
 &nbsp;

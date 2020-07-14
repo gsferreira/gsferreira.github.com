@@ -95,5 +95,6 @@ You can see the working demo on [JSFiddle](http://jsfiddle.net/gsferreira/SCr6X/
 
 I hope that this helps you.
 
-##UPDATE 2015-03-11
+## UPDATE 2015-03-11
+
 Post has been updated with a fix to a bug that [Cooper Sellers](https://disqus.com/by/coopersellers/) found (you can see the details at the comment feed below).

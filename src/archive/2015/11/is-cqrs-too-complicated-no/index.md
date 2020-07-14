@@ -14,7 +14,7 @@ CQRS is a simple concept, but usually is presented side by side with other patte
 
 This post pretends to demonstrate that CQRS can be a simple concept that can evolve according to your needs.
 
-#So, what is CQRS?
+## So, what is CQRS?
 
 The roots of CQRS are based on [Command-query separation (CQS)](https://en.wikipedia.org/wiki/Command%E2%80%93query_separation) a principle created by [Bertrand Meyer](https://en.wikipedia.org/wiki/Bertrand_Meyer) during the development of Eiffel programming language.
 
@@ -37,7 +37,7 @@ Those patterns or technologies are usually presented with CQRS, adding a new lay
 >
 > _[Jimmy Bogard](https://lostechies.com/jimmybogard/2012/08/22/busting-some-cqrs-myths/)_
 
-#CQRS Benefits
+## CQRS Benefits
 
 \*All the following benefits are capabilities that CQRS gives you, but **they aren't required to implement CQRS\***
 
@@ -77,7 +77,7 @@ CQRS enables the segregation of the Load, with the possibility of use a differen
 >
 > _[Greg Young](http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/)_
 
-#Challenges
+## Challenges
 
 CQRS isn't just benefits. CQRS implies complexity and a new mindset when using it.
 

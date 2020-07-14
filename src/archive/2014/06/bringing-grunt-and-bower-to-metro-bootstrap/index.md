@@ -40,7 +40,7 @@ In the repository you will find the following directories:
 
 We provide compiled CSS (`metro-bootstrap.css`) in the dist folder, as well as compiled and minified CSS (`metro-bootstrap.min.css`).
 
-##Instaling Dependencies
+## Instaling Dependencies
 
 We manage dependencies using Bower.
 Run `bower install` to download the required dependencies.

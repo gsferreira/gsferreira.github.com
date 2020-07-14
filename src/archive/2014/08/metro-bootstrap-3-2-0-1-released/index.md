@@ -9,16 +9,17 @@ category: metro-bootstrap
 
 Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update to bootstrap 3.2.0 and some new configurations related to tiles.
 
-#What's new
+# What's new
 
-##Dependencies
+## Dependencies
 
 - bootstrap 3.2.0
 
-##Bower configuration - Add "main"
+## Bower configuration - Add "main"
+
 Has been added the "main" option to the bower.json file. Thanks to [@fumito_ito](https://github.com/fumitoito).
 
-##New variables
+## New variables
 
 - _@tile-light-text-color_: Set the default color for _tile-clouds_.
 - _@tile-font-size-h1_: Set the default font size in h1 tags inside tiles.

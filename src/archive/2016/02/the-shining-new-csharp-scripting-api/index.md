@@ -22,7 +22,7 @@ In December Microsoft finally released the Roslyn version 1.1.1 (stable version)
 
 Here you can find some examples of how to use the scripting API and what you can do with it.
 
-##How to start
+## How to start
 
 Install the nuget Scripting package ([Microsoft.CodeAnalysis.CSharp.Scripting](http://www.nuget.org/packages/Microsoft.CodeAnalysis.CSharp.Scripting/)) in your project.
 
@@ -32,7 +32,7 @@ In the following example I used the version 1.1.1.
 	Install-Package Microsoft.CodeAnalysis.CSharp.Scripting -Version 1.1.1
 ```
 
-##Expression evaluation
+## Expression evaluation
 
 Evaluate the result of an C# expression.
 
@@ -45,7 +45,7 @@ Evaluate the result of an C# expression.
 	Assert.AreEqual(DateTime.Today.Year, result);
 ```
 
-##Expression evaluation with strong type
+## Expression evaluation with strong type
 
 Evaluate an expression with an expected result type.
 
@@ -58,7 +58,7 @@ Evaluate an expression with an expected result type.
     Assert.AreEqual(200, result);
 ```
 
-##Evaluation with parameters
+## Evaluation with parameters
 
 Send parameters to the expression and use them in the script logic.
 
@@ -78,7 +78,7 @@ Send parameters to the expression and use them in the script logic.
 	Assert.AreEqual(globals.NumberOfStudents / globals.StudentsPerClass, result);
 ```
 
-##Build a script and run it multiple times
+## Build a script and run it multiple times
 
 The scripting API enables you to create an expression and then use it multiple times, removing the compile time of the remaining evaluations.
 
@@ -96,7 +96,7 @@ The scripting API enables you to create an expression and then use it multiple t
 	};
 ```
 
-##References
+## References
 
 The script can use references to other assemblies with a simple instruction.
 
@@ -110,7 +110,7 @@ The script can use references to other assemblies with a simple instruction.
 	Assert.AreEqual(ConfigurationManager.AppSettings["MyValue"].ToString(), result);
 ```
 
-##Imports
+## Imports
 
 ```csharp
 	int result = 0;
@@ -121,7 +121,7 @@ The script can use references to other assemblies with a simple instruction.
 	Assert.AreEqual(DateTime.Today.Year, result);
 ```
 
-##Dynamic Support
+## Dynamic Support
 
 To use dynamic objects in scripts we need to add a reference to the _System.Code_, _Microsoft.CSharp_ and _System.Dynamic_.
 
@@ -142,7 +142,7 @@ To use dynamic objects in scripts we need to add a reference to the _System.Code
 	Assert.AreEqual(30, result);
 ```
 
-##Access to script variables
+## Access to script variables
 
 ```csharp
 	var globals = new Globals { NumberOfStudents = 80, StudentsPerClass = 10 };

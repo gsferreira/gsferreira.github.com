@@ -74,21 +74,14 @@ By standing up, you will see that your voice will be clear and you will have a b
 
 ## Preparing
 
-1. **Rehearse** in the same environment and with the same setup that you will be using.
-
-2. Record it and share it with your friends and colleagues. Ask for [honest feedback](https://gsferreira.com/archive/2019/07/leading-improvement-through-honest-feedback/). Use the feedback to improve.
-
-3. **Rehearse**
-
-4. Make sure that you have a Plan B
-
-   - What if your computer fails?
-
-   - Will you use a pointer? Do you have extra batteries?
-
-5. **Rehearse**
-
-6. **Rehearse** with the same software that you will be using in the day. Make yourself comfortable with it.
+1.  **Rehearse** in the same environment and with the same setup that you will be using.
+2.  Record it and share it with your friends and colleagues. Ask for [honest feedback](https://gsferreira.com/archive/2019/07/leading-improvement-through-honest-feedback/). Use the feedback to improve.
+3.  **Rehearse**
+4.  Make sure that you have a Plan B
+    - What if your computer fails?
+    - Will you use a pointer? Do you have extra batteries?
+5.  **Rehearse**
+6.  **Rehearse** with the same software that you will be using in the day. Make yourself comfortable with it.
 
 No. Rehearse written so many times isn't a mistake. Honestly, **the most important thing that you can do is rehearse**. Rehearse in the same conditions. Over and over again. By doing that you will feel more comfortable speaking to a camera.
 

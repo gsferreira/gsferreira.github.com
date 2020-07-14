@@ -20,7 +20,7 @@ The event was amazing, and I want to share with you the main lessons that I lear
 
 ---
 
-##The importance of Visuals
+## The importance of Visuals
 
 Lachlan Heasman has made an amazing talk. He reinforces that the Visual Management is really important to succeed.  
 That thought made a lot of sense to me. Nowadays, we have a ton of excellent applications to do kanban boards and that's OK, especially if you have remote workers. But I believe that, if you have your team in a single place you should have a physical kanban board.
@@ -28,7 +28,7 @@ Why? Because your team will look into it every day... every single day. Even if 
 
 ![Kanban style](/images/lessons-learned-from-agilept-2015-kanban-style.jpg)
 
-##User stories
+## User stories
 
 Why we are writing User Stories in the form of "As a... I want to... so that..."? Will the customer realize the language? Or will they think that we are crazy nerds?
 As the [wikipedia](http://en.wikipedia.org/wiki/User_story) (that eternal font of true) refers, an "user story is a description consisting of one or more sentences in the everyday or business language of the end user or user of a system".
@@ -37,7 +37,7 @@ Have you ever listened a business person talking like that?
 Carlton Nettleton, presented a simpler and much objective way to write user stories. How? Answering the following questions: Who? What? And Why?
 I'm a fan of the [Six W's method](http://en.wikipedia.org/wiki/Five_Ws) to describe and understand complex problems, and Carlton made me correlate that with user stories.
 
-##The true essence of agile
+## The true essence of agile
 
 The industry sells us the idea that Agile (or Scrum), is a magic formula that we should apply to have good results. You just need to have some meetings, do sprints of "X" weeks and you will be fine.
 That's not true.

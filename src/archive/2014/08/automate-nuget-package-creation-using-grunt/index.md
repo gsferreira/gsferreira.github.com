@@ -12,7 +12,7 @@ How we automate the package build?
 
 It's simpler than it seems.
 
-###1. Install nuget
+### 1. Install nuget
 
 First make sure that you have nuget.exe in your machine.
 
@@ -30,7 +30,7 @@ First make sure that you have nuget.exe in your machine.
 1.  Open a command prompt.
 2.  Enter the following command: _set PATH=%PATH%;C:\nuget_ where "c:\nuget" is the path to the nuget.exe ([available here](http://docs.nuget.org/docs/start-here/installing-nuget#Installing_a_CI_build)).
 
-###2. Create the NuGet definition file
+### 2. Create the NuGet definition file
 
 Create the following XML file with the definition for the package with the _".nuspec"_ extension.
 
@@ -82,7 +82,7 @@ If you want to test the nuspec file, just type the following command in the comm
     nuget pack mypackage.nuspec
 ```
 
-###3. Create grunt task to build the NuGet package
+### 3. Create grunt task to build the NuGet package
 
 In order to create the file, go to the grunt script and add the following task (just rename the definition file name):
 

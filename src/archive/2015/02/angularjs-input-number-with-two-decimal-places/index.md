@@ -19,7 +19,7 @@ That's easy.
 
 [![meme](/images/angularjs-input-number-with-two-decimal-places-meme.jpg)](http://www.deque.com/blog/accessible-client-side-form-validation-html5/)
 
-##1. Create the number input with the number type.
+### 1. Create the number input with the number type.
 
 ```html
 <input
@@ -30,7 +30,7 @@ That's easy.
 />
 ```
 
-##2. Define the step interval.
+### 2. Define the step interval.
 
 ```html
 <input
@@ -43,7 +43,7 @@ That's easy.
 />
 ```
 
-##3. Set the regular expression to validate the input using ng-pattern. Here I want to accept only numbers with a maximum of 2 decimal places and with a dot separator.
+### 3. Set the regular expression to validate the input using ng-pattern. Here I want to accept only numbers with a maximum of 2 decimal places and with a dot separator.
 
 ```html
 <input
@@ -56,7 +56,7 @@ That's easy.
 />
 ```
 
-##4. Inform your user if the input has a valid value.
+### 4. Inform your user if the input has a valid value.
 
 ```html
 <input
