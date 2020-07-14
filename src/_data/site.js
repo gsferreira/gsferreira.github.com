@@ -25,4 +25,6 @@ module.exports = {
     locale: "en_US", // for Open Graph meta
     twitter_username: "@gsferreira", // for Twitter Open Graph meta
   },
+
+  disqus: "gsferreira",
 };

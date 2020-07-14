@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2020-05-07
-
 title: A simple way to build your JavaScript tests data
+description: The builder pattern is an elegant solution to the problem and I really like it. But, is it a simple solution for JavaScript?
 category: Refactoring, Improvement, JavaScript
 ---
 

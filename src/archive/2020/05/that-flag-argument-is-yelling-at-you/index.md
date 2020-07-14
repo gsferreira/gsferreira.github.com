@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2020-05-28
-
 title: That flag argument is yelling at you
+description: Flag arguments are a good indicator that something is wrong. Use them as Refactoring warning.
 category: Refactoring, Improvement
 ---
 

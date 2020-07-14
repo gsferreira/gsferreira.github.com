@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2020-05-22
-
 title: Don't comment what your code is doing, comment the Why
+description: Code Comments are a good idea. But we use a lot of comments that don't help. This explains the Comments bad reputation nowadays.
 category: Refactoring, Improvement
 ---
 

@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2020-02-26
-
 title: Optimizing React Render - 3 things that I wish to know before
+description: Three recommendations to prevent React component re-render and improve performance.
 category: React
 ---
 
