@@ -608,8 +608,8 @@ video {
   --color-bodybg: #ffffff;
   --color-bodytext: #364152;
   --color-muted: #f9fafb;
-  --color-primary: #0694a2;
-  --color-secondary: #16bdca;
+  --color-primary: #047481;
+  --color-secondary: #0694a2;
   --color-links: var(--color-primary);
   --color-focus: var(--color-secondary);
   --form-shadow: 0 2px 15px 0 rgba(210, 214, 220, 0.5);
