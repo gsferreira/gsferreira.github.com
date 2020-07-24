@@ -4,12 +4,37 @@
   <subtitle>Software Architect and a minimalist aspirant. passionate by product development and a continuous improvement enthusiast.</subtitle>
   <link href="https://gsferreira.com/feed.xml" rel="self"/>
   <link href="https://gsferreira.com/"/>
-  <updated>2020-07-08T00:00:00-00:00</updated>
+  <updated>2020-07-24T00:00:00-00:00</updated>
   <id>https://gsferreira.com/</id>
   <author>
     <name>Guilherme Ferreira</name>
     <email>me@gsferreira.com</email>
   </author>
+    
+    <entry>
+      <title>Eleventy - The Simplest Static Site Generator</title>
+      <link href="https://gsferreira.com/archive/2020/07/eleventy-the-simplest-static-site-generator/"/>
+      <updated>2020-07-24T00:00:00-00:00</updated>
+      <id>https://gsferreira.com/archive/2020/07/eleventy-the-simplest-static-site-generator/</id>
+      <content type="html">&lt;p&gt;Eleventy is the simplest Static Site Generator that I know. I know that this is a bold statement and you can prove me wrong. But &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy (11ty)&lt;/a&gt; was the simplest static site generator that I found when I needed to migrate my blog. Eleventy may not be the best or the powerful one but is beautifully simple.&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gsferreira.com/archive/2020/07/eleventy-the-simplest-static-site-generator/eleventy.jpg&quot; alt=&quot;Eleventy&quot;&gt;&lt;/p&gt;
+&lt;h2&gt;The goal&lt;/h2&gt;
+&lt;p&gt;I have been thinking about moving my blog to a different framework. I was using &lt;a href=&quot;https://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/&quot;&gt;Sandra.Snow&lt;/a&gt;, that not have been updated recently.&lt;/p&gt;
+&lt;p&gt;My goal was to keep using a Static Blog, hosting on GitHub Pages. I want to write using markdown. It was also important to be able to keep the same URLs and migrate all the content to the new framework. I also would like the blog not need JavaScript to display the blog posts. Those are the requirements.&lt;/p&gt;
+&lt;h2&gt;The obvious choices&lt;/h2&gt;
+&lt;p&gt;In the top of my mind, I knew that &lt;a href=&quot;https://www.gatsbyjs.org/&quot;&gt;Gatsby&lt;/a&gt; and &lt;a href=&quot;https://nextjs.org/&quot;&gt;NextJS&lt;/a&gt; were able to do the job. I was more inclined to try out Gatsby since there are many starters to create a blog. I don&#39;t have experience with Gatsby or NextJS, so, it was important to me to not need to much time to do the work. So, the learning curve was also an important factor.&lt;/p&gt;
+&lt;p&gt;My first attempt was with Gatsby. I installed the &lt;a href=&quot;https://www.gatsbyjs.org/starters/gatsbyjs/gatsby-starter-blog/&quot;&gt;starter blog&lt;/a&gt; and I tried to migrate my content to Gatsby. I have to confess that after a few hours I was stuck. I couldn&#39;t accomplish my task without investing to much time to learn the framework. After a few problems, I was finding myself searching through the web to have a clue of what should I do.&lt;/p&gt;
+&lt;p&gt;Gatsby was taking so much time that I decided to take a bet on NextJS. I knew beforehand that I didn&#39;t have so many starters/templates as in the Gatsby ecosystem. Even so, I was expecting to have results faster.&lt;/p&gt;
+&lt;p&gt;I picked &lt;a href=&quot;https://telmo.im/writings/open-sourcing-blog&quot;&gt;Telmo blog&lt;/a&gt; as a starting point and I tried to move my content. The results show up faster!&lt;/p&gt;
+&lt;p&gt;But, there was something that I didn&#39;t like and I didn&#39;t find a way to overcome. Even with the &lt;a href=&quot;https://nextjs.org/docs/advanced-features/static-html-export&quot;&gt;static HTML export&lt;/a&gt; build, I needed JavaScript enabled to display the content. Probably was because of my lack of knowledge, but after a few hours, I didn&#39;t have a clue of what should I do.&lt;/p&gt;
+&lt;h2&gt;Eleventy&lt;/h2&gt;
+&lt;p&gt;I was tired of fighting with Gatsby and NextJS. Something simpler was needed. I recall seeing a blog post from &lt;a href=&quot;https://reverentgeek.com/&quot;&gt;David Neal&lt;/a&gt; about moving his blog to a different technology. The technology is Eleventy. You can read his blog post &lt;a href=&quot;https://reverentgeek.com/moving-from-ghost-to-eleventy/&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
+&lt;p&gt;After reading a few things, I start feeling excited. Eleventy seems simple and quick to learn. The learning curve doesn&#39;t seem to steep. It feels natural to create pages with it. I see it as Templating Language on steroids.&lt;/p&gt;
+&lt;p&gt;So, I start working to move my blog into Eleventy. I started with the &lt;a href=&quot;https://github.com/marcfilleul/mf-blogstarter&quot;&gt;MF Blog Starter Template&lt;/a&gt;. After a few hours, I had most of the job done. Without tricks and without needing to search the web to find what I want. The &lt;a href=&quot;https://www.11ty.dev/docs/&quot;&gt;Eleventy documentation&lt;/a&gt; was just enough.&lt;/p&gt;
+&lt;p&gt;I can&#39;t recommend it more. If you are planning to use a Static Site Generator, give Eleventy a try. Probably something simple is enough.&lt;/p&gt;
+&lt;p&gt;You can find &lt;a href=&quot;https://github.com/gsferreira/gsferreira.github.com&quot;&gt;here the source code for my blog&lt;/a&gt;. I hope it can be helpful.&lt;/p&gt;
+</content>
+    </entry>
     
     <entry>
       <title>Speaking at a Virtual Conference</title>
