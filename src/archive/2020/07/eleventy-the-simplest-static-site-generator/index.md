@@ -8,7 +8,7 @@ description: Finding Eleventy, a simple static site generator for a blog, after 
 
 Eleventy is the simplest Static Site Generator that I know. I know that this is a bold statement and you can prove me wrong. But [Eleventy (11ty)](https://www.11ty.dev/) was the simplest static site generator that I found when I needed to migrate my blog. Eleventy may not be the best or the powerful one but is beautifully simple.
 
-![Eleventy](eleventy.jpg)
+![Eleventy](/images/archive/eleventy/logo.jpg)
 
 ## The goal
 
