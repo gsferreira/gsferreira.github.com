@@ -17,7 +17,7 @@
       <updated>2020-07-24T00:00:00-00:00</updated>
       <id>https://gsferreira.com/archive/2020/07/eleventy-the-simplest-static-site-generator/</id>
       <content type="html">&lt;p&gt;Eleventy is the simplest Static Site Generator that I know. I know that this is a bold statement and you can prove me wrong. But &lt;a href=&quot;https://www.11ty.dev/&quot;&gt;Eleventy (11ty)&lt;/a&gt; was the simplest static site generator that I found when I needed to migrate my blog. Eleventy may not be the best or the powerful one but is beautifully simple.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;https://gsferreira.com/archive/2020/07/eleventy-the-simplest-static-site-generator/eleventy.jpg&quot; alt=&quot;Eleventy&quot;&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;https://gsferreira.com/images/archive/eleventy/logo.jpg&quot; alt=&quot;Eleventy&quot;&gt;&lt;/p&gt;
 &lt;h2&gt;The goal&lt;/h2&gt;
 &lt;p&gt;I have been thinking about moving my blog to a different framework. I was using &lt;a href=&quot;https://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/&quot;&gt;Sandra.Snow&lt;/a&gt;, that not have been updated recently.&lt;/p&gt;
 &lt;p&gt;My goal was to keep using a Static Blog, hosting on GitHub Pages. I want to write using markdown. It was also important to be able to keep the same URLs and migrate all the content to the new framework. I also would like the blog not need JavaScript to display the blog posts. Those are the requirements.&lt;/p&gt;
