@@ -26,17 +26,17 @@ So, what I was looking for when I started this page?!
 6. No database
 7. Version control/Hitory
 
-Based on these requirements, I found [Jekyll](http://jekyllrb.com/) hosted over [GitHub Pages](https://pages.github.com/). It fits perfectly and the number of users active can attest it. The downside?! I need ruby to use it. Since I'm a Windows guy and in my professional life I'm mostly connected to .NET Developement I don't want to install ruby on my machines.
+Based on these requirements, I found [Jekyll](https://jekyllrb.com/) hosted over [GitHub Pages](https://pages.github.com/). It fits perfectly and the number of users active can attest it. The downside?! I need ruby to use it. Since I'm a Windows guy and in my professional life I'm mostly connected to .NET Developement I don't want to install ruby on my machines.
 
-A friend of mine ([@NelsonReis](https://twitter.com/NelsonReis)) suggested I look at [Sandra.Snow](https://github.com/Sandra/Sandra.Snow), a system inspired by Jekyll, which is **written in .NET and [Nancy](http://nancyfx.org/)**, by [Phillip Haydon](https://twitter.com/philliphaydon) and [Jonathan Channon](https://twitter.com/jchannon). So, I picked it! Now my website is generated using Sandra.Snow and hosted on GitHub pages.
+A friend of mine ([@NelsonReis](https://twitter.com/NelsonReis)) suggested I look at [Sandra.Snow](https://github.com/Sandra/Sandra.Snow), a system inspired by Jekyll, which is **written in .NET and [Nancy](https://nancyfx.org/)**, by [Phillip Haydon](https://twitter.com/philliphaydon) and [Jonathan Channon](https://twitter.com/jchannon). So, I picked it! Now my website is generated using Sandra.Snow and hosted on GitHub pages.
 
 During the process, I created [_letsnow_](https://github.com/gsferreira/letsnow), a simple theme based on snowbyte theme. You can use it, fork it and contribute. I would love to hear your opinion.
 
 Well, I could describe here how I did it, but since there's already a lot of good articles of it, I leave you here some to guide you. You will see that it's a piece of cake.
 
-- ["Introducing Sandra.Snow"](http://www.philliphaydon.com/2013/10/introducing-sandra-snow/) by Phillip Haydon
-- ["Hello Sandra Snow"](http://www.macsdickinson.com/SandraSnow/hello-sandra-snow/#.U4j33_ldXN1) by Macs Dickinson
-- ["Blogging with Markdown & Deploying via Git - Introducing Sandra.Snow"](http://blog.jonathanchannon.com/2013/10/01/blogging-with-markdown-and-git/) by Jonathan Channon
+- ["Introducing Sandra.Snow"](https://www.philliphaydon.com/2013/10/introducing-sandra-snow/) by Phillip Haydon
+- ["Hello Sandra Snow"](https://www.macsdickinson.com/SandraSnow/hello-sandra-snow/#.U4j33_ldXN1) by Macs Dickinson
+- ["Blogging with Markdown & Deploying via Git - Introducing Sandra.Snow"](https://blog.jonathanchannon.com/2013/10/01/blogging-with-markdown-and-git/) by Jonathan Channon
 
 ![Feel like a superhero](/images/reasons-to-blogging-using-github-pages-and-sandra-snow-feel-like-superhero.png)
 

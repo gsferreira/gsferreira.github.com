@@ -67,7 +67,7 @@ Now, add the _smart-float_ directive to your input:
 />
 ```
 
-This gives you what you need. Now, you can improve it showing to your users that the value in the input is invalid. In the following example I used [Bootstrap](http://getbootstrap.com/) to demonstrate it:
+This gives you what you need. Now, you can improve it showing to your users that the value in the input is invalid. In the following example I used [Bootstrap](https://getbootstrap.com/) to demonstrate it:
 
 ```html
 <form name="myForm" class="form-horizontal" role="form" novalidate>
@@ -91,7 +91,7 @@ This gives you what you need. Now, you can improve it showing to your users that
 </form>
 ```
 
-You can see the working demo on [JSFiddle](http://jsfiddle.net/gsferreira/SCr6X/).
+You can see the working demo on [JSFiddle](https://jsfiddle.net/gsferreira/SCr6X/).
 
 I hope that this helps you.
 
