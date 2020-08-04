@@ -9,8 +9,6 @@ category: .NET
 
 [Dynamic typing](https://msdn.microsoft.com/en-us/library/dd264736.aspx) isn't anything new in the .NET Framework world, he is available since .NET 4.0 and I'm sure that you have used it. If you didn't, you should take a spare of time for it. Dynamic typing is great because it let you get your work done faster and it may avoid some complicated reflection code, for example. I've used it a lot, but recently I've discovered his dark side... **the performance side**.
 
-![alt text](http://www.quickmeme.com/img/e8/e8e8d6ebfd29823854295376337528dc9853a26b27f43c85dd8eb0ed0ab666dc.jpg)
-
 Why do I say it? If you measure the performance cost of a simple "Set" or "Get" operation you will see a great improvement simply changing it to typed code. You can use the following code to test it.
 
 ```csharp
