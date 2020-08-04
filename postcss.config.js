@@ -5,7 +5,7 @@ const purgecss = require("@fullhuman/postcss-purgecss")({
     "./src/**/*.md",
     "./src/**/*.html",
   ],
-  whitelist: ["dark-mode"],
+  whitelist: ["dark-mode", "formkit-form"],
   defaultExtractor: (content) => content.match(/[\w-/:]+(?<!:)/g) || [],
 });
 
