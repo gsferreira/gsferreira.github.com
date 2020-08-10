@@ -49,6 +49,10 @@ module.exports = function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
   eleventyConfig.addPassthroughCopy("src/netlify.toml");
+  eleventyConfig.addPassthroughCopy(
+    "node_modules/dracula-prism/css/dracula-prism.css",
+    "src/_css/dracula-prism.css"
+  );
 
   return {
     dir: {

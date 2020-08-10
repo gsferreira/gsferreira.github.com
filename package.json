@@ -13,7 +13,7 @@
   ],
   "scripts": {
     "build": "del-cli dist && eleventy && npm-run-all build:css build:html",
-    "build:css": "cross-env NODE_ENV=production postcss ./src/_css/app.css -o ./src/_includes/css/style.min.css",
+    "build:css": "cross-env NODE_ENV=production postcss ./src/_css/app.css -o ./src/_includes/css/style.min.css && postcss ./node_modules/dracula-prism/css/dracula-prism.css -o ./src/_includes/css/dracula-prism.min.css",
     "build:html": "cross-env ELEVENTY_ENV=production eleventy",
     "watch": "npm-run-all --parallel watch:css watch:html",
     "watch:css": "postcss src/_css/app.css -o src/assets/style.css --watch",
@@ -28,6 +28,7 @@
     "autoprefixer": "9.7.2",
     "cross-env": "7.0.0",
     "del-cli": "3.0.0",
+    "dracula-prism": "1.2.1",
     "html-minifier": "4.0.0",
     "luxon": "1.21.2",
     "postcss-cli": "6.1.3",

@@ -29,9 +29,11 @@ Open the template (**.tt file**) and write your email with all the HTML formatti
 _Find an Html Mail template example [here](https://github.com/leemunroe/responsive-html-email-template)_
 
 ```html
-<#@ template language="C#" #> <#@ assembly name="System.Core" #> <#@ import
-namespace="System.Linq" #> <#@ import namespace="System.Text" #> <#@ import
-namespace="System.Collections.Generic" #>
+<#@ template language="C#" #> 
+<#@ assembly name="System.Core" #> 
+<#@ import namespace="System.Linq" #> 
+<#@ import namespace="System.Text" #> 
+<#@ import namespace="System.Collections.Generic" #>
 
 <!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
