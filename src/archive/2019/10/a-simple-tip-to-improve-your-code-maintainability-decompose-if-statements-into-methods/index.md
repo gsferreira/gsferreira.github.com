@@ -30,26 +30,23 @@ Let’s see it in practice.
 Imagine that you have the following expression, that wants to validate if the customer can pay the Order with Credit Card. To do that, the customer should have an active Credit Card.
 
 ```csharp
-    if (order.PayWithCreditCard && (order.Customer.CreditCard == null || order.Customer.CreditCard.ExpirationDate < DateTime.Today))
-        throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
+if (order.PayWithCreditCard && (order.Customer.CreditCard == null || order.Customer.CreditCard.ExpirationDate < DateTime.Today))
+    throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
 ```
 
 To improve it, you can extract the boolean logic related to the credit card validation to a static method, and name it with something easy to understand.
 
 ```csharp
+public static void ProcessOrder(Order order)
+{
+    if (order.PayWithCreditCard && IsCustomerCreditCardInvalid(order.Customer))
+        throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
 
-    public static void ProcessOrder(Order order)
-    {
-        if (order.PayWithCreditCard && IsCustomerCreditCardInvalid(order.Customer))
-            throw new CreditCardPaymentException("Customer doesn't have a valid Credit Card");
+    (...)
+}
 
-          (...)
-
-    }
-
-    private static bool IsCustomerCreditCardInvalid(Customer customer)
-        => customer.CreditCard == null || customer.CreditCard.ExpirationDate < DateTime.Today;
-
+private static bool IsCustomerCreditCardInvalid(Customer customer)
+    => customer.CreditCard == null || customer.CreditCard.ExpirationDate < DateTime.Today;
 ```
 
 By doing this you are abstracting the reader’s mind from details. In case the reader needs to know the details, he can drill down to the details.

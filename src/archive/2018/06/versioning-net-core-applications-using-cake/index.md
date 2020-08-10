@@ -39,13 +39,13 @@ You just need to create a file with the name _Directory.build.props_ inside the 
 Add it and then copy the following snippet into it.
 
 ```xml
-    <Project>
-    <PropertyGroup>
-        <Company>Empire</Company>
-        <Version>1.0.1</Version>
-        <AssemblyTitle>Death Star - Superlaser</AssemblyTitle>
-    </PropertyGroup>
-    </Project>
+<Project>
+<PropertyGroup>
+    <Company>Empire</Company>
+    <Version>1.0.1</Version>
+    <AssemblyTitle>Death Star - Superlaser</AssemblyTitle>
+</PropertyGroup>
+</Project>
 ```
 
 If you run the `dotnet build` command and go to the bin folder, of the console application or the class library, you can see in the DLL details that now the version is 1.0.1.
@@ -65,33 +65,31 @@ I will explain how to do that manually, but if you are a [Visual Studio Code](ht
 &nbsp;
 
 ```csharp
+///////////////////////////////////////////////////////////////////////////////
+// ARGUMENTS
+///////////////////////////////////////////////////////////////////////////////
 
-    ///////////////////////////////////////////////////////////////////////////////
-    // ARGUMENTS
-    ///////////////////////////////////////////////////////////////////////////////
+var target = Argument("target", "Default");
+var configuration = Argument("configuration", "Release");
 
-    var target = Argument("target", "Default");
-    var configuration = Argument("configuration", "Release");
+///////////////////////////////////////////////////////////////////////////////
+// TASKS
+///////////////////////////////////////////////////////////////////////////////
 
-    ///////////////////////////////////////////////////////////////////////////////
-    // TASKS
-    ///////////////////////////////////////////////////////////////////////////////
+Task("Version")
+    .Does(() => {
+});
 
-    Task("Version")
-        .Does(() => {
+Task("Build")
+    .IsDependentOn("Version")
+    .Does(() => {
+        DotNetCoreBuild("./DotNetCoreVersioning.sln");
+});
 
-    });
+Task("Default")
+    .IsDependentOn("Build");
 
-    Task("Build")
-        .IsDependentOn("Version")
-        .Does(() => {
-            DotNetCoreBuild("./DotNetCoreVersioning.sln");
-    });
-
-    Task("Default")
-        .IsDependentOn("Build");
-
-    RunTarget(target);
+RunTarget(target);
 ```
 
 Your build has now two steps and is building your solution using _DotNetCoreBuild_.
@@ -107,14 +105,14 @@ Since the _props_ file is an XML we can use the Cake [XML aliases](https://cakeb
 Go ahead and copy the following snippet into the _Version_ task in your _build.cake_ file.
 
 ```csharp
-    var propsFile = "./Directory.build.props";
-    var readedVersion = XmlPeek(propsFile, "//Version");
-    var currentVersion = new Version(readedVersion);
+var propsFile = "./Directory.build.props";
+var readedVersion = XmlPeek(propsFile, "//Version");
+var currentVersion = new Version(readedVersion);
 
-    var semVersion = new Version(currentVersion.Major, currentVersion.Minor, currentVersion.Build + 1);
-    var version = semVersion.ToString();
+var semVersion = new Version(currentVersion.Major, currentVersion.Minor, currentVersion.Build + 1);
+var version = semVersion.ToString();
 
-    XmlPoke(propsFile, "//Version", version);
+XmlPoke(propsFile, "//Version", version);
 ```
 
 As you can see, we are reading the version property, incrementing the build number and then updating the _props_ file again.

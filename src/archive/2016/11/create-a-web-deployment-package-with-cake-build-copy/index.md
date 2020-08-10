@@ -14,42 +14,39 @@ If you have a ASP.NET project and you want to create a Web Deployment package us
 Feel free to copy the following command and paste it in a Task from your Cake file.
 
 ```csharp
-		MSBuild("PROJECT_NAME.csproj", settings =>
-			settings.SetConfiguration(configuration)
-			.UseToolVersion(MSBuildToolVersion.VS2015)
-			.WithTarget("Package")
-			.WithProperty("VisualStudioVersion", new string[]{"14.0"})
-			.WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
-			.WithProperty("PackageTempRootDir", new string[]{"root"})
-			);
+MSBuild("PROJECT_NAME.csproj", settings =>
+	settings.SetConfiguration(configuration)
+	.UseToolVersion(MSBuildToolVersion.VS2015)
+	.WithTarget("Package")
+	.WithProperty("VisualStudioVersion", new string[]{"14.0"})
+	.WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+	.WithProperty("PackageTempRootDir", new string[]{"root"})
+	);
 ```
 
 Here an example of a complete script (_build.cake_).
 
 ```csharp
-	var target = Argument("target", "Default");
-	var configuration = Argument("configuration", "Release");
-	var packageDir = MakeAbsolute(Directory("./package"));
+var target = Argument("target", "Default");
+var configuration = Argument("configuration", "Release");
+var packageDir = MakeAbsolute(Directory("./package"));
 
-	Information("BUILD DIR:" + packageDir);
+Information("BUILD DIR:" + packageDir);
 
-	Task("Default")
-	.Does(() =>
-	{
+Task("Default")
+.Does(() =>
+{
+	MSBuild("PROJECT_NAME.csproj", settings =>
+		settings.SetConfiguration(configuration)
+		.UseToolVersion(MSBuildToolVersion.VS2015)
+		.WithTarget("Package")
+		.WithProperty("VisualStudioVersion", new string[]{"14.0"})
+		.WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
+		.WithProperty("PackageTempRootDir", new string[]{"root"})
+		);
+});
 
-		MSBuild("PROJECT_NAME.csproj", settings =>
-			settings.SetConfiguration(configuration)
-			.UseToolVersion(MSBuildToolVersion.VS2015)
-			.WithTarget("Package")
-			.WithProperty("VisualStudioVersion", new string[]{"14.0"})
-			.WithProperty("PackageLocation", new string[]{ packageDir.ToString()  })
-			.WithProperty("PackageTempRootDir", new string[]{"root"})
-			);
-
-
-	});
-
-	RunTarget(target);
+RunTarget(target);
 ```
 
 Hope this helps.

@@ -38,13 +38,13 @@ I'm using the Console Sink for demonstration proposes. You can easily find tons 
 To enable Serilog, create the logger at the beginning of the GreeterServer _Main_.
 
 ```csharp
-    public static void Main(string[] args)
-        {
-          Log.Logger = new LoggerConfiguration()
-            .WriteTo.Console()
-            .CreateLogger();
-          (...)
-        }
+public static void Main(string[] args)
+{
+  Log.Logger = new LoggerConfiguration()
+    .WriteTo.Console()
+    .CreateLogger();
+  (...)
+}
 ```
 
 ## Step 2: Create the Interceptor
@@ -52,35 +52,35 @@ To enable Serilog, create the logger at the beginning of the GreeterServer _Main
 In the GreeterServer project create the _RequestLoggerInterceptor_.
 
 ```csharp
-    using Grpc.Core;
-    using Grpc.Core.Interceptors;
-    using Serilog;
-    using System.Diagnostics;
-    using System.Threading.Tasks;
+using Grpc.Core;
+using Grpc.Core.Interceptors;
+using Serilog;
+using System.Diagnostics;
+using System.Threading.Tasks;
 
-    namespace GreeterServer
+namespace GreeterServer
+{
+  public class RequestLoggerInterceptor : Interceptor
+  {
+    private const string MessageTemplate =
+      "{RequestMethod} responded {StatusCode} in {Elapsed:0.0000} ms";
+
+    public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request, ServerCallContext context, UnaryServerMethod<TRequest, TResponse> continuation)
     {
-      public class RequestLoggerInterceptor : Interceptor
-      {
-        private const string MessageTemplate =
-          "{RequestMethod} responded {StatusCode} in {Elapsed:0.0000} ms";
+      var sw = Stopwatch.StartNew();
 
-        public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request, ServerCallContext context, UnaryServerMethod<TRequest, TResponse> continuation)
-        {
-          var sw = Stopwatch.StartNew();
+      var response = await base.UnaryServerHandler(request, context, continuation);
 
-          var response = await base.UnaryServerHandler(request, context, continuation);
-
-          sw.Stop();
-          Log.Logger.Information(MessageTemplate,
+      sw.Stop();
+      Log.Logger.Information(MessageTemplate,
             context.Method,
             context.Status.StatusCode,
             sw.Elapsed.TotalMilliseconds);
 
-          return response;
-        }
-      }
+      return response;
     }
+  }
+}
 ```
 
 This interceptor is just logging the Status Code for each request and the time used to complete the execution.
@@ -90,13 +90,13 @@ This interceptor is just logging the Status Code for each request and the time u
 To take effect, you need to bind the interceptor to the Service you want. To do that, go to the _Program.cs_ and configure the Server service binding to use the interceptor for the Greeter service.
 
 ```csharp
-    using Grpc.Core.Interceptors;
-    (...)
-    Server server = new Server
-    {
-      Services = { Greeter.BindService(new GreeterImpl()).Intercept(new RequestLoggerInterceptor()) },
-        Ports = { new ServerPort("localhost", Port, ServerCredentials.Insecure) }
-    };
+using Grpc.Core.Interceptors;
+(...)
+Server server = new Server
+{
+  Services = { Greeter.BindService(new GreeterImpl()).Intercept(new RequestLoggerInterceptor()) },
+    Ports = { new ServerPort("localhost", Port, ServerCredentials.Insecure) }
+};
 ```
 
 The Intercept method is an extension method, so don't forget to use _Grpc.Core.Interceptors_ namespace.
@@ -114,10 +114,10 @@ In this example, we will be sending the Correlation ID as an gRPC request header
 Let's start by add the Correlation ID header to the RPC request done by _GreeterClient_.
 
 ```csharp
-    var reply = client.SayHello(new HelloRequest { Name = user }, new Metadata()
-    {
-      new Metadata.Entry("X-Correlation-Id", Guid.NewGuid().ToString())
-    });
+var reply = client.SayHello(new HelloRequest { Name = user }, new Metadata()
+{
+  new Metadata.Entry("X-Correlation-Id", Guid.NewGuid().ToString())
+});
 ```
 
 _In this example, I'm generating a Guid just for demo purposes._
@@ -125,43 +125,43 @@ _In this example, I'm generating a Guid just for demo purposes._
 In the interceptor, access to the Correlation ID and push it to Serilog as a property. In this way, every single log entry on that context will have the Correlation Id property available.
 
 ```csharp
-    using Grpc.Core;
-    using Grpc.Core.Interceptors;
-    using Serilog;
-    using System;
-    using System.Diagnostics;
-    using System.Linq;
-    using System.Threading.Tasks;
+using Grpc.Core;
+using Grpc.Core.Interceptors;
+using Serilog;
+using System;
+using System.Diagnostics;
+using System.Linq;
+using System.Threading.Tasks;
 
-    namespace GreeterServer
+namespace GreeterServer
+{
+  public class RequestLoggerInterceptor : Interceptor
+  {
+    private const string MessageTemplate =
+      "{RequestMethod} responded {StatusCode} in {Elapsed:0.0000} ms";
+
+    public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request,
+      ServerCallContext context, UnaryServerMethod<TRequest, TResponse> continuation)
     {
-      public class RequestLoggerInterceptor : Interceptor
-      {
-        private const string MessageTemplate =
-          "{RequestMethod} responded {StatusCode} in {Elapsed:0.0000} ms";
+      var sw = Stopwatch.StartNew();
 
-        public override async Task<TResponse> UnaryServerHandler<TRequest, TResponse>(TRequest request,
-          ServerCallContext context, UnaryServerMethod<TRequest, TResponse> continuation)
-        {
-          var sw = Stopwatch.StartNew();
-
-          var correlationId = context.RequestHeaders
+      var correlationId = context.RequestHeaders
             .FirstOrDefault(h => h.Key.Equals("X-Correlation-Id", StringComparison.OrdinalIgnoreCase))?.Value;
-          using (Serilog.Context.LogContext.PushProperty("CorrelationID", correlationId))
-          {
-            var response = await base.UnaryServerHandler(request, context, continuation);
+      using (Serilog.Context.LogContext.PushProperty("CorrelationID", correlationId))
+      {
+        var response = await base.UnaryServerHandler(request, context, continuation);
 
-            sw.Stop();
-            Log.Logger.Information(MessageTemplate,
+        sw.Stop();
+        Log.Logger.Information(MessageTemplate,
               context.Method,
               context.Status.StatusCode,
               sw.Elapsed.TotalMilliseconds);
 
-            return response;
-          }
-        }
+        return response;
       }
     }
+  }
+}
 ```
 
 To complete the work, we need to configure Serilog to use the Properties pushed to the context.
@@ -169,10 +169,10 @@ To complete the work, we need to configure Serilog to use the Properties pushed 
 Go back to the _GreeterServer Program_ and change the logger configuration to have a template where you use the Correlation ID and configure the log enrichment with the context properties.
 
 ```csharp
-    Log.Logger = new LoggerConfiguration()
-            .Enrich.FromLogContext()
-            .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] [{CorrelationID}] {Message}{NewLine}{Exception}")
-            .CreateLogger();
+Log.Logger = new LoggerConfiguration()
+        .Enrich.FromLogContext()
+        .WriteTo.Console(outputTemplate: "{Timestamp:yyyy-MM-dd HH:mm:ss.fff zzz} [{Level}] [{CorrelationID}] {Message}{NewLine}{Exception}")
+        .CreateLogger();
 ```
 
 ## Step 5: Profit!

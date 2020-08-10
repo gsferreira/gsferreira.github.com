@@ -28,8 +28,8 @@ Install the nuget Scripting package ([Microsoft.CodeAnalysis.CSharp.Scripting](h
 
 In the following example I used the version 1.1.1.
 
-```
-	Install-Package Microsoft.CodeAnalysis.CSharp.Scripting -Version 1.1.1
+```text
+Install-Package Microsoft.CodeAnalysis.CSharp.Scripting -Version 1.1.1
 ```
 
 ## Expression evaluation
@@ -37,12 +37,12 @@ In the following example I used the version 1.1.1.
 Evaluate the result of an C# expression.
 
 ```csharp
-	object result = null;
+object result = null;
 
-	CSharpScript.EvaluateAsync("System.DateTime.Today.Year")
-		.ContinueWith(s => result = s.Result).Wait();
+CSharpScript.EvaluateAsync("System.DateTime.Today.Year")
+	.ContinueWith(s => result = s.Result).Wait();
 
-	Assert.AreEqual(DateTime.Today.Year, result);
+Assert.AreEqual(DateTime.Today.Year, result);
 ```
 
 ## Expression evaluation with strong type
@@ -50,12 +50,12 @@ Evaluate the result of an C# expression.
 Evaluate an expression with an expected result type.
 
 ```csharp
-	int result = 0;
+int result = 0;
 
-    CSharpScript.EvaluateAsync<int>("100 * 2")
-		.ContinueWith(s => result = s.Result).Wait();
+CSharpScript.EvaluateAsync<int>("100 * 2")
+	.ContinueWith(s => result = s.Result).Wait();
 
-    Assert.AreEqual(200, result);
+Assert.AreEqual(200, result);
 ```
 
 ## Evaluation with parameters
@@ -63,19 +63,19 @@ Evaluate an expression with an expected result type.
 Send parameters to the expression and use them in the script logic.
 
 ```csharp
-    public class Globals
-	{
-		public int NumberOfStudents;
-    	public int StudentsPerClass;
-	}
+public class Globals
+{
+	public int NumberOfStudents;
+   	public int StudentsPerClass;
+}
 
-	var globals = new Globals { NumberOfStudents = 80, StudentsPerClass = 15 };
+var globals = new Globals { NumberOfStudents = 80, StudentsPerClass = 15 };
 
-	int result = 0;
-    CSharpScript.EvaluateAsync<int>("NumberOfStudents/StudentsPerClass", globals: globals)
-    	.ContinueWith(s => result = s.Result).Wait();
+int result = 0;
+CSharpScript.EvaluateAsync<int>("NumberOfStudents/StudentsPerClass", globals: globals)
+	.ContinueWith(s => result = s.Result).Wait();
 
-	Assert.AreEqual(globals.NumberOfStudents / globals.StudentsPerClass, result);
+Assert.AreEqual(globals.NumberOfStudents / globals.StudentsPerClass, result);
 ```
 
 ## Build a script and run it multiple times
@@ -83,17 +83,17 @@ Send parameters to the expression and use them in the script logic.
 The scripting API enables you to create an expression and then use it multiple times, removing the compile time of the remaining evaluations.
 
 ```csharp
-	var script = CSharpScript.Create<decimal>("NumberOfStudents/StudentsPerClass", globalsType: typeof(Globals));
+var script = CSharpScript.Create<decimal>("NumberOfStudents/StudentsPerClass", globalsType: typeof(Globals));
 
-	script.Compile();
+script.Compile();
 
-	for (int i = 1; i < 10; i++)
-    {
-    	script.RunAsync(new Globals { NumberOfStudents = i, StudentsPerClass = 5 })
-			.ContinueWith(s =>
-				Assert.AreEqual(i / 5, s.Result.ReturnValue))
-			.Wait();
-	};
+for (int i = 1; i < 10; i++)
+{
+	script.RunAsync(new Globals { NumberOfStudents = i, StudentsPerClass = 5 })
+		.ContinueWith(s =>
+			Assert.AreEqual(i / 5, s.Result.ReturnValue))
+		.Wait();
+};
 ```
 
 ## References
@@ -101,24 +101,24 @@ The scripting API enables you to create an expression and then use it multiple t
 The script can use references to other assemblies with a simple instruction.
 
 ```csharp
-    string result = string.Empty;
+string result = string.Empty;
 
-	CSharpScript.EvaluateAsync<string>("System.Configuration.ConfigurationManager.AppSettings[\"MyValue\"].ToString()",
-    ScriptOptions.Default.WithReferences(typeof(System.Configuration.ConfigurationManager).Assembly))
-		.ContinueWith(s => result = s.Result).Wait();
+CSharpScript.EvaluateAsync<string>("System.Configuration.ConfigurationManager.AppSettings[\"MyValue\"].ToString()",
+ScriptOptions.Default.WithReferences(typeof(System.Configuration.ConfigurationManager).Assembly))
+	.ContinueWith(s => result = s.Result).Wait();
 
-	Assert.AreEqual(ConfigurationManager.AppSettings["MyValue"].ToString(), result);
+Assert.AreEqual(ConfigurationManager.AppSettings["MyValue"].ToString(), result);
 ```
 
 ## Imports
 
 ```csharp
-	int result = 0;
-    CSharpScript.EvaluateAsync<int>("DateTime.Today.Year",
-    ScriptOptions.Default.WithImports("System"))
-    	.ContinueWith(s => result = s.Result).Wait();
+int result = 0;
+CSharpScript.EvaluateAsync<int>("DateTime.Today.Year",
+ScriptOptions.Default.WithImports("System"))
+	.ContinueWith(s => result = s.Result).Wait();
 
-	Assert.AreEqual(DateTime.Today.Year, result);
+Assert.AreEqual(DateTime.Today.Year, result);
 ```
 
 ## Dynamic Support
@@ -126,37 +126,37 @@ The script can use references to other assemblies with a simple instruction.
 To use dynamic objects in scripts we need to add a reference to the _System.Code_, _Microsoft.CSharp_ and _System.Dynamic_.
 
 ```csharp
-	int result = 0;
+int result = 0;
 
-	CSharpScript.EvaluateAsync<int>(@"
-		dynamic value = 30;
-    	return value;",
-	ScriptOptions.Default.WithImports("System.Dynamic")
-		.AddReferences(
-			Assembly.GetAssembly(typeof(System.Dynamic.DynamicObject)),  // System.Code
-			Assembly.GetAssembly(typeof(Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo)),  // Microsoft.CSharp
-			Assembly.GetAssembly(typeof(System.Dynamic.ExpandoObject))  // System.Dynamic
-		))
-		.ContinueWith(s => result = s.Result).Wait();
+CSharpScript.EvaluateAsync<int>(@"
+	dynamic value = 30;
+   	return value;",
+ScriptOptions.Default.WithImports("System.Dynamic")
+	.AddReferences(
+		Assembly.GetAssembly(typeof(System.Dynamic.DynamicObject)),  // System.Code
+		Assembly.GetAssembly(typeof(Microsoft.CSharp.RuntimeBinder.CSharpArgumentInfo)),  // Microsoft.CSharp
+		Assembly.GetAssembly(typeof(System.Dynamic.ExpandoObject))  // System.Dynamic
+	))
+	.ContinueWith(s => result = s.Result).Wait();
 
-	Assert.AreEqual(30, result);
+Assert.AreEqual(30, result);
 ```
 
 ## Access to script variables
 
 ```csharp
-	var globals = new Globals { NumberOfStudents = 80, StudentsPerClass = 10 };
+var globals = new Globals { NumberOfStudents = 80, StudentsPerClass = 10 };
 
-	ScriptState state = null;
+ScriptState state = null;
 
-	CSharpScript.RunAsync(@"
-    	bool shouldOpenClass = NumberOfStudents >= StudentsPerClass;
-		int numberOfClasses = NumberOfStudents/StudentsPerClass;
-	", globals: globals)
-	.ContinueWith(s => state = s.Result).Wait();
+CSharpScript.RunAsync(@"
+   	bool shouldOpenClass = NumberOfStudents >= StudentsPerClass;
+	int numberOfClasses = NumberOfStudents/StudentsPerClass;
+", globals: globals)
+.ContinueWith(s => state = s.Result).Wait();
 
-	Assert.AreEqual(true, state.GetVariable("shouldOpenClass").Value);
-    Assert.AreEqual(8, state.GetVariable("numberOfClasses").Value);
+Assert.AreEqual(true, state.GetVariable("shouldOpenClass").Value);
+Assert.AreEqual(8, state.GetVariable("numberOfClasses").Value);
 ```
 
 Those are just a few examples and I recommend you check out the [Roslyn Github Repository](https://github.com/dotnet/roslyn).

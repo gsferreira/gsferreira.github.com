@@ -2,15 +2,14 @@
 layout: post
 tags: post
 date: 2015-05-12
-
-title: Azure App Service API Apps - Microsoft.Rest.HttpOperationException
+title: Azure App Service API Apps - Microsoft Rest HttpOperationException
 category: Azure
 ---
 
 Recently I was playing with API Apps, from the new Azure App Service when I faced the following error:
 
 ```csharp
-    Microsoft.Rest.HttpOperationException`1 was unhandled
+Microsoft.Rest.HttpOperationException`1 was unhandled
   HResult=-2146233088
   Message=Exception of type 'Microsoft.Rest.HttpOperationException`1[System.Object]' was thrown.
   Source=MyMailSenderClient2
@@ -36,7 +35,6 @@ Recently I was playing with API Apps, from the new Azure App Service when I face
        at System.Threading.ExecutionContext.Run(ExecutionContext executionContext, ContextCallback callback, Object state)
        at System.Threading.ThreadHelper.ThreadStart()
   InnerException:
-
 ```
 
 I struggled a bit until I figured why.

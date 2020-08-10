@@ -19,8 +19,8 @@ _In this post I'm assuming you already know how to set up a [WebJob](https://azu
 
 The first step is to install the Unity Package in your project.
 
-```
-	Install-Package Unity
+```text
+Install-Package Unity
 ```
 
 Then, we will need to implement the **IJobActivator** Interface, that accepts a Unity container. Here, we will provide the capabilitie of resolve the Instances using the Unity container.
@@ -28,18 +28,18 @@ Then, we will need to implement the **IJobActivator** Interface, that accepts a 
 Let's name the class as **"UnityJobActivator"** and fill it with the following code:
 
 ```csharp
-	public class UnityJobActivator : IJobActivator
+public class UnityJobActivator : IJobActivator
+{
+	private readonly IUnityContainer _container;
+	public UnityJobActivator(IUnityContainer container)
 	{
-		private readonly IUnityContainer _container;
-		public UnityJobActivator(IUnityContainer container)
-		{
-			_container = container;
-		}
-		public T CreateInstance<T>()
-		{
-			return _container.Resolve<T>();
-		}
+		_container = container;
 	}
+	public T CreateInstance<T>()
+	{
+		return _container.Resolve<T>();
+	}
+}
 ```
 
 As you can see, the **UnityJobActivator** receives in the constructor the Unity Container. Now let's setup the container.
@@ -47,23 +47,23 @@ As you can see, the **UnityJobActivator** receives in the constructor the Unity 
 _I like to use a Unity Configuration Class to organize my Unity configurations._
 
 ```csharp
-	public class UnityConfig
+public class UnityConfig
+{
+	private static Lazy<IUnityContainer> container = new Lazy<IUnityContainer>(() =>
 	{
-		private static Lazy<IUnityContainer> container = new Lazy<IUnityContainer>(() =>
-		{
-			var container = new UnityContainer();
-			RegisterTypes(container);
-			return container;
-		});
-		public static IUnityContainer GetConfiguredContainer()
-		{
-			return container.Value;
-		}
-		public static void RegisterTypes(IUnityContainer container)
-		{
-			container.RegisterType<IMailService, MailService>(new HierarchicalLifetimeManager());
-		}
+		var container = new UnityContainer();
+		RegisterTypes(container);
+		return container;
+	});
+	public static IUnityContainer GetConfiguredContainer()
+	{
+		return container.Value;
 	}
+	public static void RegisterTypes(IUnityContainer container)
+	{
+		container.RegisterType<IMailService, MailService>(new HierarchicalLifetimeManager());
+	}
+}
 ```
 
 Now that we have the container defined, we can specify the **JobActivator** that the WebJob should use.
@@ -71,32 +71,30 @@ Now that we have the container defined, we can specify the **JobActivator** that
 It can be accomplished using the Job Host Configuration (this is done in _Program.cs_ in the main method), as you can see in the following code:
 
 ```csharp
-	JobHostConfiguration config = new JobHostConfiguration()
-	{
-		JobActivator = new UnityJobActivator(UnityConfig.GetConfiguredContainer())
-	};
-	var host = new JobHost(config);
-	host.RunAndBlock();
+JobHostConfiguration config = new JobHostConfiguration()
+{
+	JobActivator = new UnityJobActivator(UnityConfig.GetConfiguredContainer())
+};
+var host = new JobHost(config);
+host.RunAndBlock();
 ```
 
 Finally, open your functions, transform them in non static methods and receive the parameter of the type you want in the constructor.
 
 ```csharp
-	public class Functions
+public class Functions
+{
+	private readonly IMailService _mailService;
+	public Functions(IMailService mailService)
 	{
-		private readonly IMailService _mailService;
-		public Functions(IMailService mailService)
-		{
-			_mailService = mailService;
-		}
-
-		public void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log)
-		{
-			_mailService.Send(message);
-
-			log.WriteLine(message);
-		}
+		_mailService = mailService;
 	}
+	public void ProcessQueueMessage([QueueTrigger("queue")] string message, TextWriter log)
+	{
+		_mailService.Send(message);
+		log.WriteLine(message);
+	}
+}
 ```
 
 I hope that this helps you.

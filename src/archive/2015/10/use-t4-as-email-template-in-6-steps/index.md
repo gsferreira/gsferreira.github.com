@@ -71,19 +71,19 @@ In your partial add a property for each value that you want to inject into the t
 Create a constructor to initialize the properties that you have created.
 
 ```csharp
-	using System.Net.Mail;
+using System.Net.Mail;
 
-	namespace MailT4Template
+namespace MailT4Template
+{
+	public partial class WelcomeMail
 	{
-		public partial class WelcomeMail
+		public MailAddress To { get; set; }
+		public WelcomeMail(MailAddress to)
 		{
-			public MailAddress To { get; set; }
-			public WelcomeMail(MailAddress to)
-			{
-				this.To = to;
-			}
+			this.To = to;
 		}
 	}
+}
 ```
 
 **4. Adapt the template to use the injected values**
@@ -99,9 +99,9 @@ Just open a C# block code with the tags **<#** and **#>** and use the equal oper
 Invoke the template with the parameters to get the transformed text.
 
 ```csharp
-	var to = new MailAddress("luke@starwars.com", "Luke");
-	WelcomeMail mailTemplate = new WelcomeMail(to);
-	mailTemplate.TransformText();
+var to = new MailAddress("luke@starwars.com", "Luke");
+WelcomeMail mailTemplate = new WelcomeMail(to);
+mailTemplate.TransformText();
 ```
 
 **6. Compose your email**
@@ -109,24 +109,24 @@ Invoke the template with the parameters to get the transformed text.
 Use the transformed text and send the email.
 
 ```csharp
-	var from = new MailAddress("mail@mail.com");
-	var to = new MailAddress("luke@starwars.com", "Luke");
+var from = new MailAddress("mail@mail.com");
+var to = new MailAddress("luke@starwars.com", "Luke");
 
-	WelcomeMail mailTemplate = new WelcomeMail(to);
+WelcomeMail mailTemplate = new WelcomeMail(to);
 
-	var mail = new MailMessage(from, to);
-    var client = new SmtpClient();
-    client.Port = 587;
-    client.DeliveryMethod = SmtpDeliveryMethod.Network;
-    client.UseDefaultCredentials = false;
-    client.EnableSsl = true;
-    client.Credentials = new NetworkCredential("admin@mail.com","UseTheForce#");
-    client.Host = "mail.mail.com";
+var mail = new MailMessage(from, to);
+var client = new SmtpClient();
+client.Port = 587;
+client.DeliveryMethod = SmtpDeliveryMethod.Network;
+client.UseDefaultCredentials = false;
+client.EnableSsl = true;
+client.Credentials = new NetworkCredential("admin@mail.com","UseTheForce#");
+client.Host = "mail.mail.com";
 
-    mail.Subject = "This is a welcom email.";
-    mail.IsBodyHtml = true;
-    mail.Body = mailTemplate.TransformText();
-    client.Send(mail);
+mail.Subject = "This is a welcom email.";
+mail.IsBodyHtml = true;
+mail.Body = mailTemplate.TransformText();
+client.Send(mail);
 ```
 
 I hope that this helps you.
