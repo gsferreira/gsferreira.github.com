@@ -74,7 +74,7 @@
 <meta name="twitter:site" content="{{ site.meta_data.twitter_username }}">
 <meta name="twitter:creator" content="{{ site.meta_data.twitter_username }}">
 <meta name="twitter:description" content="{{ site.meta_data.twitter_description }}">
-<meta name="twitter:image" content="{{ site.meta_data.twitter_image }}">
+<meta name="twitter:image" content="{% if featured_image %}{{ site.url + featured_image }}{% else %}{{ site.meta_data.twitter_image }}{% endif %}">
 <meta name="twitter:title" content="{{ site.meta_data.twitter_title }}">
 
 {# disallow Twitter from using your site's info for personalization purposes #}
