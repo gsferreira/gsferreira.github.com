@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2019-07-16
-
 title: Leading Improvement through Honest Feedback
+description: When was the last time that a waitress asked about your meal and you were really honest? Unfortunately, being honest when something is wrong isn’t something that we humans tend to feel comfortable about.
 category: Feedback
 ---
 

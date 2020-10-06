@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2018-03-05
-
 title: Exploring the Docker Container metaphor
+description: Containers is one of the hot topics in the Software Development world and Docker is the technology that everyone wants to play with. Thanks to this hype, everyone has at least a brief idea of what a container is.
 category: Docker
 ---
 

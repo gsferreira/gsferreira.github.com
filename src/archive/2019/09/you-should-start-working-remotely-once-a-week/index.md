@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2019-09-05
-
 title: You should start working remotely once a week
+description: If you are in an environment with resistance to Remote Working, the best way is to propose a small experiment.
 category: Remote Work, Improvement, Team
 ---
 

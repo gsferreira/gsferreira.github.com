@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2019-12-02
-
 title: Start thinking inside the box
+description: Don't you freeze when you are asked to be creative and think outside the box? These leads us to frustration, disappointment and lack of confidence in our creative skills.
 category: Creativity, Improvement
 ---
 

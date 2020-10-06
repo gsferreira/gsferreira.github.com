@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2019-04-10
-
 title: Logging gRPC requests using Serilog
+description: Using an Interceptor to log gRPC requests in .net.
 category: .net, .net Core, gRPC, Serilog
 ---
 
