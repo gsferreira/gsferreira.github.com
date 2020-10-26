@@ -5,6 +5,7 @@ date: 2019-09-05
 title: You should start working remotely once a week
 description: If you are in an environment with resistance to Remote Working, the best way is to propose a small experiment.
 category: Remote Work, Improvement, Team
+featured_image: /images/you-should-start-working-remotely-once-a-week-head.png
 ---
 
 ![Ready to work from home?](/images/you-should-start-working-remotely-once-a-week-head.png)

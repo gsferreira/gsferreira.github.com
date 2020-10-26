@@ -5,6 +5,8 @@ date: 2020-02-10
 title: One-on-ones - Using behavioural science to maximize the impact
 description: How Behavioural Science can help us to have better one-on-ones.
 category: Team, Improvement
+featured_image: /images/one-on-ones-using-behavioural-science-to-maximize-the-impact.png
+
 ---
 
 ![One-on-ones - Using behavioural science to maximize the impact.](/images/one-on-ones-using-behavioural-science-to-maximize-the-impact.png)

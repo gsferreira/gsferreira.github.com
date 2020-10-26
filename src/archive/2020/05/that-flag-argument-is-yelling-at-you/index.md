@@ -5,6 +5,7 @@ date: 2020-05-28
 title: That flag argument is yelling at you
 description: Flag arguments are a good indicator that something is wrong. Use them as Refactoring warning.
 category: Refactoring, Improvement
+featured_image: /images/that-flag-argument-is-yelling-at-you-flag-argument.png
 ---
 
 Sometimes the code yells at you trying to warn you that something is wrong.

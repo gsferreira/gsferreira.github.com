@@ -2,10 +2,10 @@
 layout: post
 tags: post
 date: 2020-07-08
-
 title: Speaking at a Virtual Conference
 description: Lessons learn from preparing and speaking for the first time at a Virtual Conference.
 category: Speaking
+featured_image: /images/speaking-at-a-virtual-conference-setup-macro.jpg
 ---
 
 I had the honour of having one of my talks selected to [NDC Oslo 2020](https://ndcoslo.com). I was looking forward to speaking at Oslo Spektrum for the first time. This has been a wish for a long time.

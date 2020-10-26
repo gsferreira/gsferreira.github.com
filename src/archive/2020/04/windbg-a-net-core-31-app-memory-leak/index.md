@@ -5,6 +5,7 @@ date: 2020-04-15
 title: windbg a .net core 3.1 app memory leak
 description: How to use windbg to figure out the reason for a memory leaking in a .net core 3.1 application.
 category: .NET
+featured_image: /images/windbg-a-net-core-31-app-memory-leak-load-sos.png
 ---
 
 I've spent the past few days trying to fix a memory leak. I was having problems to figure out what was leaking, so I used windbg wishing that it would help me.

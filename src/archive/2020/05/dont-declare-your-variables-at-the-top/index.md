@@ -5,6 +5,7 @@ date: 2020-05-05
 title: Don't declare your Variables at the top
 description: We are writing code for others to read. So, we shouldn't present our characters too early in the story.
 category: Refactoring, Improvement, C#, .net
+featured_image: /images/dont-declare-your-variables-at-the-top-memory-overflow.png
 ---
 
 When I start learning to code, I was taught to declare variables at the top of the code. I followed it for a long time before start questioning that absolute truth.

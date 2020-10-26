@@ -5,6 +5,7 @@ date: 2020-05-15
 title: Manage your code as a successful restaurant
 description: Have you ever noticed that a successful restaurant has a shorter menu? Especially when compared to those who are struggling. Why?! Simplicity!
 category: Refactoring, Improvement
+featured_image: /images/manage-your-code-as-a-successful-restaurant-complex-menu.jpeg
 ---
 
 Have you ever noticed that a successful restaurant has a shorter menu? Especially when compared to those who are struggling.

@@ -5,6 +5,7 @@ date: 2020-02-26
 title: Optimizing React Render - 3 things that I wish to know before
 description: Three recommendations to prevent React component re-render and improve performance.
 category: React
+featured_image: /images/optimizing-react-render-3-things-that-i-wish-to-know-before.png
 ---
 
 ![Optimizing React Render - 3 things that I wish to know before](/images/optimizing-react-render-3-things-that-i-wish-to-know-before.png)
