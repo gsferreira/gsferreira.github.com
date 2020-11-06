@@ -2,7 +2,6 @@
 layout: post
 tags: post
 date: 2016-11-04
-
 title: Create a Web Deployment Package with Cake Build
 category: Cake
 ---

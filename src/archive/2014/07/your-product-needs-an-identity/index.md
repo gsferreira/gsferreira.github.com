@@ -2,7 +2,6 @@
 layout: post
 tags: post
 date: 2014-07-23
-
 title: Your product needs an identity
 category: Entrepreneurship
 ---
@@ -13,7 +12,7 @@ This post will tell you why it's so important to create a strong identity for yo
 
 ![product-love](/images/your-product-needs-an-identity-homer-simpson-donut-dream.gif)
 
-The philosophy behind Seth's words isn't something new. You probably heard about this on product development methodologies or about the [_horizontal marketing_ vs _vertical marketing_](http://bowden2bowden.co/2012/10/25/horizontal-marketing-versus-vertical-marketing/).
+The philosophy behind Seth's words isn't something new. You probably heard about this on product development methodologies or about the _horizontal marketing_ vs _vertical marketing_.
 
 I'm a defensor that we should read Seth's advise as "a product should have a mission, a vision, an identity, as if we were describing a person, a friend", because when we are creating something for everyone, a "horizontal product", we usually add complexity and a lack of "identity" to our product.
 
@@ -30,7 +29,7 @@ The world around us has a lot of good examples of this, for example:
 
 **Why an identity is so important?**
 
-People feel attracted to strong identities and tend to create a relation with a brand or a product that has some characteristics that they like. As [Amy Hoy](http://unicornfree.com/2014/how-do-you-market-a-product-thats-for-everyone) said _"Nobody wants to be everybody"_.
+People feel attracted to strong identities and tend to create a relation with a brand or a product that has some characteristics that they like. As [Amy Hoy](https://stackingthebricks.com/how-do-you-market-a-product-thats-for-everyone/) said _"Nobody wants to be everybody"_.
 Your friends are amazing because of their unique personality or because they are likable people?! I bet that you like them because they are awesome.
 
 <iframe src="//giphy.com/embed/ly12YiQjsvupi" width="500" height="233" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>

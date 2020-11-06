@@ -35,3 +35,8 @@ In this situation, I recommend you to use _".GetAwaiter().GetResult()"_ only onc
 Now, It's time to review your codebase and to spread the word!
 
 Also, I recommend you to install the Threading Analyzer ([_Microsoft.VisualStudio.Threading.Analyzers_](https://github.com/microsoft/vs-threading)). It will help you to spot potential problems.
+
+
+---
+
+If this was useful, follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira) and let's keep in touch!
