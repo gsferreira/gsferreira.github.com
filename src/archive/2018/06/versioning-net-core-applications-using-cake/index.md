@@ -3,17 +3,17 @@ layout: post
 tags: post
 date: 2018-06-27
 title: Versioning .net Core applications using Cake
-description: Versioning .net Core applications using Cake and Directory.build.props file.
+description: Versioning .net Core applications using Cake and Directory.Build.props file.
 category: Cake, .net, .net Core
 ---
 
 If you are moving to .net Core and you want to implement a versioning strategy in your application, now you have an awesome alternative to the good old fellow "AssemblyInfo".
 
-The alternative is the [_Directory.build.props_](https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build) file. If you place these file in the root folder that contains your source code, when MSBuild runs will add to every project the properties defined in the _Directory.build.props_.
+The alternative is the [_Directory.Build.props_](https://docs.microsoft.com/en-us/visualstudio/msbuild/customize-your-build) file. If you place these file in the root folder that contains your source code, when MSBuild runs will add to every project the properties defined in the _Directory.Build.props_.
 
-In this post, we will see how to quickly setup a solution with multiple projects and use _Directory.build.props_ with [Cake](http://cakebuild.net) to build and increment the version number.
+In this post, we will see how to quickly setup a solution with multiple projects and use _Directory.Build.props_ with [Cake](http://cakebuild.net) to build and increment the version number.
 
-![Directory.build.props](/images/versioning-a-net-core-applications-using-cake-directory-build-props.png)
+![Directory.Build.props](/images/versioning-a-net-core-applications-using-cake-directory-build-props.png)
 
 ## Setup your project
 
@@ -30,11 +30,11 @@ Start by creating a folder in your computer and then open the command line and g
 
 If you go to the folder you will see a solution file that you can open in Visual Studio.
 
-## Adding the _Directory.build.props_
+## Adding the _Directory.Build.props_
 
 Now it's time to add the file that will do the magic.
 
-You just need to create a file with the name _Directory.build.props_ inside the _src_ folder.
+You just need to create a file with the name _Directory.Build.props_ inside the _src_ folder.
 
 Add it and then copy the following snippet into it.
 
@@ -49,6 +49,8 @@ Add it and then copy the following snippet into it.
 ```
 
 If you run the `dotnet build` command and go to the bin folder, of the console application or the class library, you can see in the DLL details that now the version is 1.0.1.
+
+**NOTE: The casing is important if you want to use a Linux machine to run your build. Otherwise, the version may be 1.0.0.**
 
 ## Incrementing the version number.
 
@@ -96,7 +98,7 @@ Your build has now two steps and is building your solution using _DotNetCoreBuil
 
 ### Increment the version number
 
-To increment the version number we need to update the _Directory.build.props_ file.
+To increment the version number we need to update the _Directory.Build.props_ file.
 
 Since the _props_ file is an XML we can use the Cake [XML aliases](https://cakebuild.net/dsl/xml/) like XmlPeek and XmlPoke to read and update the version number.
 
@@ -105,7 +107,7 @@ Since the _props_ file is an XML we can use the Cake [XML aliases](https://cakeb
 Go ahead and copy the following snippet into the _Version_ task in your _build.cake_ file.
 
 ```csharp
-var propsFile = "./Directory.build.props";
+var propsFile = "./Directory.Build.props";
 var readedVersion = XmlPeek(propsFile, "//Version");
 var currentVersion = new Version(readedVersion);
 
@@ -121,6 +123,7 @@ As you can see, we are reading the version property, incrementing the build numb
 
 Now that our build script is completed, go ahead and run your Cake bootstrapper (_build.ps1_ or _build.sh_) and you will see that the compiled DLLs from all the projects have the version incremented.
 
-You can use the _Directory.build.props_ to customize other project properties, not only for versioning.
+You can use the _Directory.Build.props_ to customize other project properties, not only for versioning.
 
 Go ahead and give it a try.
+
