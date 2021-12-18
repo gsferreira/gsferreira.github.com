@@ -7,7 +7,7 @@ description: Global Usings are a new possibility and there are no guidelines on 
 featured_image: /images/archive/highlight/where-to-place-c10-global-usings.png
 ---
 
-The new C# 10 is packed with quality of life features. One that I'm definitively using is [Global Usings](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive#global-modifier).
+The new C# 10 is packed with quality-of-life features. One that I'm definitively using is [Global Usings](https://docs.microsoft.com/en-us/dotnet/csharp/language-reference/keywords/using-directive#global-modifier).
 
 In simple terms, Global Usings is a way to declare usings at the project level, so you don't need to declare them in every single file.
 
@@ -36,7 +36,7 @@ One thing was obvious to me. I should have a central place for it. Even [Microso
 But, where? In a Web or Console project, you may use "Program.cs" for it, but rapidly it may become cluttered. And if it is a Class Library?! There are no "Program.cs".
 
 
-### So I asked my Twitter friends what would they do.
+### So, I asked my Twitter friends what would they do.
 
 ![Tweet / Where to add gloabal usings.](/images/archive/tweets/global-usings-where-to-place-question.png)
 
@@ -51,7 +51,7 @@ If you take a look at the comments, you will see many good suggestions around ad
 
 That seems a good approach, but there was a comment by [Martin Costello](https://twitter.com/martin_costello) that made my mind.
 
-## My prefered way
+## My preferred way
 
 Before going into Martin suggestion, it's important to say that you can not only declare `global usings` in a `.cs` file but also at the project file.
 
