@@ -38,7 +38,7 @@ But, where? In a Web or Console project, you may use "Program.cs" for it, but ra
 
 ### So, I asked my Twitter friends what would they do.
 
-![Tweet / Where to add gloabal usings.](/images/archive/tweets/global-usings-where-to-place-question.png)
+![Tweet / Where to add global usings.](/images/archive/tweets/global-usings-where-to-place-question.png)
 
 _[(here)](https://twitter.com/gsferreira/status/1464293275511177217)_
 
