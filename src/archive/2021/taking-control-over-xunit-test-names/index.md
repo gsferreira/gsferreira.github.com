@@ -11,13 +11,13 @@ Unit Testing naming conventions are almost as conflicting as spaces versus tabs.
 
 Often, you even find multiple practices in the same codebase. They go from _Given_When_Then_ to _MethodUnderTest_Scenario_ExpectedResult_ or even variances where one person may use Pascal and another Snake case.
 
-Often we forget that **the most important thing is expressing clearly the test intent**. So, it's the question of how to make the most of those shapes or forms.
+Often, we forget that **the most important thing is expressing clearly the test intent**. So, it's the question of how to make the most of those shapes or forms.
 
 ## xUnit Test name customization
 
 The good news is that you have some ways to control xUnit behaviour in terms of test display names.
 
-The most simple one is defining a custom Display Name through the Fact attribute.
+The simplest one is defining a custom Display Name through the Fact attribute.
 
 ```csharp
 [Fact(DisplayName = "Get the max number of an array")]
@@ -30,7 +30,7 @@ public void GivenAnArray_WhenApplyMax_ThenGetThenBiggerOne()
 }
 ```
 
-That will give you a higher degree of freedom, but it's an extra effort, difficult to keep consistent across the code. We already need to craft a meaningful method name, so having an extra-label may lead to out of sink text. We already know what happens to code comments. We don't need to deal with the same problem in tests.
+That will give you a higher degree of freedom, but it's an extra effort, difficult to keep consistent across the code. We already need to craft a meaningful method name, so having an extra-label may lead to out of sync text. We already know what happens to code comments. We don't need to deal with the same problem in tests.
 
 ## So, what can we do?
 
