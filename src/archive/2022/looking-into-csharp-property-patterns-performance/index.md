@@ -69,23 +69,7 @@ return true;
 
 After running a benchmark, I got the following results.
 
-| Method                         | list      |       Mean |     Error |    StdDev |
-| ------------------------------ | --------- | ---------: | --------: | --------: |
-| OptionA_WithoutPropertyPattern | ?         |  0.4362 ns | 0.0262 ns | 0.0232 ns |
-| OptionB_WithoutPropertyPattern | ?         |  0.2499 ns | 0.0102 ns | 0.0091 ns |
-| OptionC_WithoutPropertyPattern | ?         |  0.2441 ns | 0.0096 ns | 0.0085 ns |
-| OptionD_WithPropertyPattern    | ?         |  0.2360 ns | 0.0129 ns | 0.0114 ns |
-| OptionE_WithPropertyPattern    | ?         |  0.2630 ns | 0.0332 ns | 0.0432 ns |
-| OptionA_WithoutPropertyPattern | String[0] | 15.9249 ns | 0.1260 ns | 0.1117 ns |
-| OptionB_WithoutPropertyPattern | String[0] | 15.8818 ns | 0.0796 ns | 0.0706 ns |
-| OptionC_WithoutPropertyPattern | String[0] |  0.0475 ns | 0.0165 ns | 0.0146 ns |
-| OptionD_WithPropertyPattern    | String[0] |  0.3349 ns | 0.0090 ns | 0.0084 ns |
-| OptionE_WithPropertyPattern    | String[0] |  0.3348 ns | 0.0068 ns | 0.0053 ns |
-| OptionA_WithoutPropertyPattern | String[1] | 16.1922 ns | 0.0814 ns | 0.0680 ns |
-| OptionB_WithoutPropertyPattern | String[1] | 16.2841 ns | 0.1425 ns | 0.1333 ns |
-| OptionC_WithoutPropertyPattern | String[1] |  0.4862 ns | 0.0363 ns | 0.0432 ns |
-| OptionD_WithPropertyPattern    | String[1] |  0.7454 ns | 0.0616 ns | 0.1817 ns |
-| OptionE_WithPropertyPattern    | String[1] |  0.3507 ns | 0.1099 ns | 0.3242 ns |
+![Property Patterns Benchmark Results](/images/archive/csharp/property-patterns-guard-benchmark-results.png)
 
 That was an excellent result.
 
@@ -95,7 +79,7 @@ As you can see, Property Patterns aren't the most performant, but they are close
 
 If you pick option D or E and lower it using [SharpLab](https://sharplab.io/), you will see that the Property Patterns lowered version is quite close to Option C, the most performant option.
 
-![SharpLab / Lowered Property Patterns](/images/archive/dotnet/lowered-property-patterns.png)
+![SharpLab / Lowered Property Patterns](/images/archive/csharp/lowered-property-patterns.png)
 
 ## So what? 🙄
 
