@@ -75,7 +75,7 @@ private void VerifyIsOddNumber(int value, [CallerArgumentExpression("value")] st
 
 ## How to consume it?
 
-As you probably know, with .net 6 we have a [Guard clause for _ArgumentNullExceptions_](https://docs.microsoft.com/en-us/dotnet/api/system.argumentnullexception.throwifnull?view=net-6.0) directly in the exception itself.
+As you probably know, with .NET 6 we have a [Guard clause for _ArgumentNullExceptions_](https://docs.microsoft.com/en-us/dotnet/api/system.argumentnullexception.throwifnull?view=net-6.0) directly in the exception itself.
 You can use it with:
 
 ```csharp
@@ -84,7 +84,7 @@ ArgumentNullException.ThrowIfNull(myObject);
 
 If you have used it, you were using `CallerArgumentExpression` in action.
 
-So, if you drill down into the code, you will see how Microsft is doing it.
+So, if you drill down into the code, you will see how Microsoft is doing it.
 Basically, the `CallerArgumentExpression` attribute is being used to capture the argument.
 
 ```csharp
