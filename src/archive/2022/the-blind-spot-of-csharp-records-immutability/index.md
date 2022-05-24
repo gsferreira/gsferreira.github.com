@@ -21,7 +21,7 @@ So, let me tell you that **you may have some unexpected mutable ones**.
 
 Good news! It’s not your fault.
 
-## The promised imutability in one line
+## The promised immutability in one line
 
 Before you keep reading, let me address the elephant in the room. You may be thinking: _"Guilherme, immutability in .NET is a lie"_.
 
@@ -35,7 +35,7 @@ Besides the people that stop reading two paragraphs above, I only know one perso
 
 ## A simple rule
 
-They told us that Records would be simple. But, **Records require an extra level of attention**. What wouldn’t be a problem if our attention wasn’t devoted to Twitter or Reddit.
+They told us that Records would be simple. But **Records require an extra level of attention**. What wouldn’t be a problem if our attention wasn’t devoted to Twitter or Reddit.
 
 You know that the way you declare them can make them mutable. But, once you master it, it doesn't stop there.
 
@@ -49,7 +49,7 @@ You can do it with a simple rule. 👇
 
 **_Record Properties must be a Primitive, a Record or a Read-only/Immutable collection to preserve immutability._**
 
-Simple! Isn’t it? Not as simple as knowing where to click to Google search. But, simpler than fixing a bug on a Friday afternoon.
+Simple! Isn’t it? Not as simple as knowing where to click to Google search. But simpler than fixing a bug on a Friday afternoon.
 
 Keep an eye on mutable properties, and it will be fine.
 
