@@ -2,8 +2,8 @@
 layout: post
 tags: post
 date: 2022-05-24
-title: The Blindspot of C# Records Immutability
-description: The excitement with Records immutability, has some blindspots. It's easy to fall into a trap and break the desired immutability. Nevertheless, there's a simple rule that can bring a light on potential problems.
+title: The Blind Spot of C# Records Immutability
+description: The excitement with Records immutability, has some blind spots. It's easy to fall into a trap and break the desired immutability. Nevertheless, there's a simple rule that can bring a light on potential problems.
 featured_image: /images/archive/csharp/record-with-mutable-collection.png
 ---
 
