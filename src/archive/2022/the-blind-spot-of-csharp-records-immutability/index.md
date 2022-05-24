@@ -51,6 +51,8 @@ You can do it with a simple rule. 👇
 
 Simple! Isn’t it? Not as simple as knowing where to click to Google search. But, simpler than fixing a bug on a Friday afternoon.
 
+Keep an eye on mutable properties, and it will be fine.
+
 ## A rule in practice
 
 Let’s see this thing in action?
@@ -102,6 +104,8 @@ album.Songs.Length // 1
 ```
 
 ## Putting it in action
+
+It may look like common sense, but it's easy to go undercover.
 
 Now that you know the blind spot, it’s time to take action.
 
