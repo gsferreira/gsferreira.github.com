@@ -29,6 +29,4 @@ module.exports = {
     twitter_description:
       "Software Architect | @netponto Team | Father & Husband 👨‍👩‍👧 | Black Lab Companion 🐶 | Ankylosing Spondylitis 💊 | Minimalism 🌱 | Continuous improvement",
   },
-
-  disqus: "gsferreira",
 };
