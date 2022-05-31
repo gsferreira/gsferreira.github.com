@@ -1,3 +1,5 @@
+const UpgradeHelper = require("@11ty/eleventy-upgrade-help");
+
 const { DateTime } = require("luxon");
 
 // Plugins
@@ -5,6 +7,8 @@ const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
 
 module.exports = function (eleventyConfig) {
+  eleventyConfig.addPlugin(UpgradeHelper);
+
   // OPT-OUT OF USING .gitignore to prevent reload issue when css change
   eleventyConfig.setUseGitIgnore(false);
 
