@@ -112,7 +112,6 @@ public void GivenNumber_ThenCalculateFactorialUsingListPatterns(int input, int o
         {
             [] => 1,
             [.. int[] numbers, int number] => number * Factorial(numbers)
-
         };
     }
 }
