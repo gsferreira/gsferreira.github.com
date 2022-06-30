@@ -9,9 +9,9 @@ featured_image: /images/archive/csharp/generic-attribute.png
 
 Let me be honest. C# 11 is finally bringing [Generic Attributes](https://docs.microsoft.com/en-us/dotnet/csharp/whats-new/csharp-11#generic-attributes), but oh, boy! They are hard to sell.
 
-Unless you are a library developer or into code generators, you may not see the benefit of this one. BUT (there's always a but), please bear with me! I believe that Generic Attributes is the stepping stone to many quality of life improvements across the framework.
+Unless you are a library developer or into code generators, you may not see the benefit of this one. BUT (there's always a but), please bear with me! I believe that Generic Attributes is the stepping stone to many quality-of-life improvements across the framework.
 
-## 1️⃣ First things first: Why should you care?
+## 1️⃣ First thing first: Why should you care?
 
 Do you know when you use a `ServiceFilterAttribute` and have to provide the type? Something like this:
 
@@ -46,7 +46,7 @@ If that is not a good selling point to you, I don't know what to do to amuse you
 
 Let me explain with code. As Abraham Lincoln used to say _"A code snippet is worth a thousand words."_ 🤪
 
-**\*Important:** This is an academic example. The idea is to demonstrate the potential of Generic Attributes in simple terms. I will do it using MVC Filters for the sake of simplicity.\*
+**Important:** _This is an academic example. The idea is to demonstrate the potential of Generic Attributes in simple terms. I will do it using MVC Filters for the sake of simplicity._
 
 Imagine you have an MVC API. You want to support a set of filters to enrich your Response Headers.
 The caveat is that you don't know which headers. You need to keep it extensible.
@@ -127,9 +127,9 @@ But let me share with you where I see this going.
 
 In the short term, developers building code generators will have much to gain from it. If you have some advanced use of MVC ServiceFilters, you may also want to take a deeper look into it.
 
-For the rest of us, I can foresee existing attributes in the framework changing in a couple versions to adopt this more expressive, simple approach. As an example, we may get an improved ServiceFilterAttribute that supports generics.
+For the rest of us, I can foresee existing attributes in the framework changing in a couple of versions to adopt this more expressive, simple approach. As an example, we may get an improved ServiceFilterAttribute that supports generics.
 
-Even then, I'm excited by seeing a long waited feature being released.
+Even then, I'm excited by seeing a long-waited feature being released.
 
 While we wait, if you have any use case for it, let me know. Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 
