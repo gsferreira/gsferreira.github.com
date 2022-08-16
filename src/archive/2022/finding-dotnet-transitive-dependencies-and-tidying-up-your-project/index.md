@@ -13,11 +13,11 @@ If you don't remember, I'm happy for you. No Developer should suffer like that.
 
 Unfortunately, NuGet Packages and References can be (rarely) a new form of Hell. A soft version of Hell, let's be honest. Not the same type of Hell from `node_modules`. 🤪
 
-**When solutions grow in size, it's common to see projects referencing multiple versions of the same package, or duplicated references.**
+**When solutions grow in size, it's common to see projects referencing multiple versions of the same package or duplicated references.**
 
 Today, I want to tell you about [**Snitch**](https://github.com/spectresystems/snitch). Snitch is a simple [.NET tool](https://docs.microsoft.com/en-us/dotnet/core/tools/global-tools) that:
 
-> help you find transitive package references that can be removed.
+> _"help you find transitive package references that can be removed."_
 
 That sounds cool. 👍
 
@@ -89,4 +89,4 @@ Even without that, it's a super helpful tool.
 
 Give it a try. **I bet it will be part of your toolbox.**
 
-Let me know if you have found useful, follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
+Let me know if you have found it useful, follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
