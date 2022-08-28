@@ -80,7 +80,7 @@ var user = new User("me@gsferreira.com");
 ```
 
 - **Records:** One of the benefits of records in C# is not having to write a bunch of boilerplate code. That is particularly true when you use positional parameters. So, I've been heavily using it on my [anemic](https://martinfowler.com/bliki/AnemicDomainModel.html) data structures like [Data Transfer Objects (DTOs)](<https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff649585(v=pandp.10)?redirectedfrom=MSDN>). In those cases, this feature is kind of useless since positional record properties are inherently required. To use it, you need to ignore positional parameters. That's not my standard way of using Records.
-  _Now that I think about it, it's interesting that Required Members wants to address the problem of constructors and positional records properties may suffer from the same issue._
+  _Now that I think about it, it's interesting that Required Members wants to address the problem of constructors and positional records properties that may suffer from the same issue._
 - **Guard Clauses:** One of the Required Members' goals is to avoid, in many cases, using Constructors in favour of property initialization. In many cases, migrating will be hard. Because it's common to see constructors applying Guard clauses. That means applying a Guard clause in a setter. So you will need a backing field (at least while we don't have [Semi-Auto-Properties field keyword](https://github.com/dotnet/csharplang/issues/140)). That's an extra burden that will create resistance to the adoption.
 
 Evolving a language with more than 20 years isn't easy. Each step should be pondered and carefully evaluated. We have seen that in Nullable Reference Types. I believe that it also influenced the design of Required Members.
@@ -89,7 +89,7 @@ Evolving a language with more than 20 years isn't easy. Each step should be pond
 
 Am I excited about this feature? Yes, I am. 🤩 I will be using it for sure.
 
-Unfortunately, not as I first suspected. Nowadays, most of my Data Transfer Objects (DTOs) are records, and in my Domain, you will find more than variables being assigned in the constructor.
+Unfortunately, not as much as I first suspected. Nowadays, most of my Data Transfer Objects (DTOs) are records, and in my Domain, you will find more than variables being assigned in the constructor.
 
 I'm curious to see if this is a stepping stone in the language and see what the community will be developing on top of it.
 
