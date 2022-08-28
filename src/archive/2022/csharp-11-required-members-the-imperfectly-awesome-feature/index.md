@@ -11,7 +11,7 @@ If you skim the [C# 11 feature list](https://docs.microsoft.com/en-us/dotnet/csh
 
 **Is it exciting? Yes! Is it perfect? Not sure.** Stay till the end to see why.
 
-# 🤨 What are we trying to solve here?
+## 🤨 What are we trying to solve here?
 
 **Constructors are super handy but can be painful. They are positional, so brittle to changes.** Adding a new optional member requires not only a new overload but also making sure that members are added at the end of the list. No one wants to break all consumers. Am I right?
 
@@ -26,7 +26,7 @@ What's the weak spot?
 - Have you used `= null!`? It feels like a hack, right?!
 - There's no check in place to ensure that the code instantiating the class initializes the member.
 
-# 👋 Say Hi to Required Members
+## 👋 Say Hi to Required Members
 
 Required Members come to solve that. Since C# 1.0 there's no expressive way to declare a member as Required. We are now getting it.
 
@@ -54,7 +54,7 @@ error CS9035: Required member 'User.Email' must be set in the object initializer
 
 Please keep in mind that Required will not enforce an explicit initialization to a non-null value. Nullable and required are independent concerns. It's up to you as a developer to enforce it.
 
-# ❓ So, what's the problem with it?
+## ❓ So, what's the problem with it?
 
 If you remember, I started this article by saying that Required Members isn't perfect.
 **The success of a feature is highly related to its adoption.** And here, you can find some things that may impact it.
@@ -85,7 +85,7 @@ var user = new User("me@gsferreira.com");
 
 Evolving a language with more than 20 years isn't easy. Each step should be pondered and carefully evaluated. We have seen that in Nullable Reference Types. I believe that it also influenced the design of Required Members.
 
-# ⏩ What's now?
+## ⏩ What's now?
 
 Am I excited about this feature? Yes, I am. 🤩 I will be using it for sure.
 
