@@ -56,7 +56,8 @@ Please keep in mind that Required will not enforce an explicit initialization to
 
 # ❓ So, what's the problem with it?
 
-If you remember, I started this article by saying that Required Members isn't perfect. And here is why.
+If you remember, I started this article by saying that Required Members isn't perfect.
+**The success of a feature is highly related to its adoption.** And here, you can find some things that may impact it.
 
 - **Constructors:** When a Required Member is set on a constructor, you will need to add an attribute _"SetsRequiredMembers"_ to that constructor. This attribute will signal the compiler that the constructor already initializes the required member. This looks sub-optimal. It's this kind of detail that makes features hard to adopt.
 
