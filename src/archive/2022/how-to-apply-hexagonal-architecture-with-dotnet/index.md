@@ -44,9 +44,9 @@ Why? Not because I like to wait for my IDE to load the solution, but because **w
 
 How?
 
-    - You can easily spot new references on a ".csproj" file during code review;
-    - You can write some architecture/structure tests;
-    - Circular dependencies will be denied by default.
+- You can easily spot new references on a ".csproj" file during code review;
+- You can write some architecture/structure tests;
+- Circular dependencies will be denied by default.
 
 You may have noticed that I said "**each** Adapter" above. Yes, I mean one project per technology Adapter.
 
@@ -81,10 +81,10 @@ Make sure you follow a convention when naming Adapters. It's important that when
 If we think about our scenario, we know that we have an **API** that needs to store data on **PostgreSQL** and publish events to **Kafka**, so our adapters will be:
 
 1. Driving Adapters
-   1. API
+   - API
 2. Driven Adapters
-   1. PostgreSQL
-   2. Kafka
+   - PostgreSQL
+   - Kafka
 
 Done ✅
 
@@ -104,17 +104,15 @@ What would that solution look like?
 Something along the following lines:
 
 - src
-  - Core
-  - Adapters
-    - API
-    - Kafka
-    - PostgreSQL
+  - src / Core
+    - src / Adapters / API
+    - src / Adapters / Kafka
+    - src / Adapters / PostgreSQL
 - test
-  - Core Tests
-  - Adapters
-    - Kafka Tests
-    - PostgreSQL Tests
-    - API Tests
+  - test / Core Tests
+    - test / Adapters / Kafka Tests
+    - test / Adapters / PostgreSQL Tests
+    - test / Adapters / API Tests
 
 So, let's run the following script using [dotnet CLI](https://learn.microsoft.com/en-us/dotnet/core/tools/).
 
