@@ -7,7 +7,7 @@ description: A guide on how to apply Hexagonal Architecture (also known as Ports
 featured_image: /images/archive/hexagonal-architecture/project-structure-sample.png
 ---
 
-Hexagons, Ports, Adapters, you know all of that. What you don't know is how to put it into practice? Don't worry.
+Hexagons, Ports, Adapters, you know all of that. What you don't know is how to put it into practice. Don't worry.
 
 That's normal. My hundreds of hours of watching MasterChef don't make me a Chef 🧑‍🍳. But they served me well to know what a Sous Vide is.
 
@@ -27,10 +27,10 @@ Let's start?
 
 If you think about it, Hexagonal Architecture is mostly about the Dependency Rule. Dependencies should point inwards.
 
-Knowing that, I have an important disclaimer to make. Here it goes.
+Knowing that I have an important disclaimer to make. Here it goes.
 
 This post may be about how to structure your solution using Hexagonal Architecture, but **this is not the only way**.
-You can achieve Hexagonal Architecture using Projects, Components, Folders, or only files. As far as you respect the dependency rule. Let me say again. Th**e Folder / Project structure doesn't matter. As far as you respect the dependency rule.**
+You can achieve Hexagonal Architecture using Projects, Components, Folders, or only files. As far as you respect the dependency rule. Let me say again. **The Folder / Project structure doesn't matter. As far as you respect the dependency rule.**
 
 What you find here is my recommended approach. Knowing that Hexagonal Architecture will be most useful on complex projects. But also knowing that mistakes happen. And not every team has a squad of experts or ninjas 🥷 (unless it's a Japanese company). This is a highly opinionated post based on my experience.
 
@@ -48,7 +48,7 @@ How?
 - You can write some architecture/structure tests;
 - Circular dependencies will be denied by default.
 
-You may have noticed that I said "**each** Adapter" above. Yes, I mean one project per technology Adapter.
+You may have noticed that I said: "**each** Adapter" above. Yes, I mean one project per technology Adapter.
 
 In Hexagonal Architecture, **Adapters should not know each other.** Only then it's possible to swap Adapters with confidence. One at a time. So, you don't want your API Adapter calling on your PostgreSQL adapter once a call is received. Your Core Application should always mediate that.
 
