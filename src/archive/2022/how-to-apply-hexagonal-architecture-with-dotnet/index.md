@@ -15,7 +15,7 @@ It's what we are going to cover here. Not Sous Vide. Hexagonal Architecture. Let
 
 If you are not familiar with Hexagonal Architecture, don't worry. I got you covered.
 
-Take a moment to check [this post](../hexagonal-architecture-for-dotnet-developers-beginners/index.md) or [this video](https://youtu.be/5ioLmkgJ_28) where I explain the concepts. Go and make sure you get back here. This party can't continue without you. 🥳
+Take a moment to check [this post](../hexagonal-architecture-for-dotnet-developers-beginners/) or [this video](https://youtu.be/5ioLmkgJ_28) where I explain the concepts. Go and make sure you get back here. This party can't continue without you. 🥳
 
 In this blog post, we will look at the Project Structure for a .NET Solution following Hexagonal Architecture.
 
