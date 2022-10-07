@@ -7,13 +7,13 @@ const year = new Date().getFullYear();
 module.exports = {
   allowDarkMode: true,
   lang: "en", // for html tag
-  title: "Guilherme Ferreira - Minimalist developer",
-  description: "Guilherme Ferreira - Minimalist developer",
+  title: "Gui Ferreira - Minimalist Software Craftsman",
+  description: "Gui Ferreira - Minimalist Software Craftsman",
   url: "https://gsferreira.com", // don't end with a slash /
-  brandName: "Guilherme Ferreira", // for copyright and legal page
+  brandName: "Gui Ferreira", // for copyright and legal page
 
   author: {
-    name: "Guilherme Ferreira", // for posts meta and Open Graph meta (FB and Twitter)
+    name: "Gui Ferreira", // for posts meta and Open Graph meta (FB and Twitter)
     email: "me@gsferreira.com", // used in legal page
     github: "https://github.com/gsferreira", // used in footer
     twitter: "https://twitter.com/gsferreira", // used in footer
@@ -25,8 +25,8 @@ module.exports = {
     locale: "en_GB", // for Open Graph meta
     twitter_username: "@gsferreira", // for Twitter Open Graph meta
     twitter_image: "https://gsferreira.com/images/logo.jpg",
-    twitter_title: "Guilherme Ferreira",
+    twitter_title: "Gui Ferreira",
     twitter_description:
-      "Software Architect | @netponto Team | Father & Husband 👨‍👩‍👧 | Black Lab Companion 🐶 | Ankylosing Spondylitis 💊 | Minimalism 🌱 | Continuous improvement",
+      "Minimalist Software Craftsman",
   },
 };
