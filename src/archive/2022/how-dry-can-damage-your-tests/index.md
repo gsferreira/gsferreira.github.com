@@ -7,7 +7,7 @@ description: How the DRY principle can damage the readability of your C# tests, 
 featured_image: /images/archive/testing/dry-tests-bad-result.png
 ---
 
-Don't Repeat Yourself (DRY) is likely the most famous principle in software development. The first thing you learn to optimize your code is to avoid duplication. As the saying goes, duplication is the root of all evil 😈. **Too many, this is DRY in a nutshell. Exterminate anything that looks like a clone. And that is how you destroy your test readability.** And I will show you how so you can keep an eye on it.
+Don't Repeat Yourself (DRY) is likely the most famous principle in software development. The first thing you learn to optimize your code is to avoid duplication. As the saying goes, duplication is the root of all evil 😈. **To many this is DRY in a nutshell. Exterminate anything that looks like a clone. And that is how you destroy your test readability.** And I will show you how so you can keep an eye on it.
 
 The DRY principle is more nuanced than it looks. It's like wine 🍷. Many drink wine, but only a few can spot Wood flavors there.
 
