@@ -57,7 +57,7 @@ dotnet add package SkiaSharp
 The following code will get the frames, iterate through them, and display them on the Terminal.
 
 ```csharp
-using CliWrap;
+using SkiaSharp;
 using Spectre.Console;
 
 await AnsiConsole.Live(Text.Empty)
