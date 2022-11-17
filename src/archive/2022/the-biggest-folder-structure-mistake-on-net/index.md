@@ -2,7 +2,7 @@
 layout: post
 tags: post
 date: 2022-11-17
-title: The BIGGEST Folder Structure Mistake on .NET
+title: The Biggest Folder Structure Mistake on .NET
 description: This is the most common mistake when organizing Projects and Solutions in .NET. It is a real onboarding nightmare for newcomers. In this post, I will show you how to use Feature Folders towards a Screaming Architecture (Clean Architecture).
 featured_image: /images/archive/architecture/mvc-folder-structure.png
 ---
@@ -38,7 +38,7 @@ It's common to see **projects organized around technical concerns**.
 
 We build buckets like Repositories, Services, Validators, and Mappers and group everything according to that.
 
-The problem is that it **becomes hard to find anything**. Until you are familiar with a code base, it's hard to know where a feature-related code lands. So, **the cognitive load required to perform increments, refactorings, or navigate the code, is high**.
+The problem is that it **becomes hard to find anything**. Until you are familiar with a code base, it's hard to know where a feature-related code lands. So, **the cognitive load required to perform increments, refactoring's, or navigate the code, is high**.
 
 Grouping that way, **objects naturally will have a vast scope.** For example, a Repository or a Service may be the home of code related to multiple features.
 
@@ -98,7 +98,7 @@ If you want to organize your API differently, you have several options:
 - You can use API Endpoints ([see here](https://github.com/ardalis/ApiEndpoints)).
 - You can use Feature Folders ([see here](https://scottsauber.com/2016/04/25/feature-folder-structure-in-asp-net-core/)).
 
-## 🏗 The Structure Besides The Project
+## 🏗 The Structure Besides the Project
 
 It doesn't mean you should keep adapters to the outside world inside the same folder and project.
 
