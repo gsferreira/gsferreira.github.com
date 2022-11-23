@@ -2,7 +2,7 @@
 layout: post
 tags: post
 date: 2022-11-23
-title: How Structure Sensitive Tests Make Refactorings Fail
+title: How Structure Sensitive Tests Make Refactoring's Fail
 description: This is one of the most common mistakes, that cause breaking tests on refactoring. In this post, we will see how to build structure-insensitive tests, one of the key properties of a good test.
 featured_image: /images/archive/testing/structure-sensitive-tests.png
 ---
