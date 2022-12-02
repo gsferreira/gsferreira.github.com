@@ -146,7 +146,7 @@ public class OrderDiscountCalculator
 }
 ```
 
-As you can see, now the test succeed. We don't use mocks. The `PremiumClientDiscountCalculator` is an internal design decision, that has no impact on the behaviour. Now, we can refactor the Calculator as we wish.
+As you can see, now the test succeeds. We don't use mocks. The `PremiumClientDiscountCalculator` is an internal design decision, that has no impact on the behaviour. Now, we can refactor the Calculator as we wish.
 
 **Structure Insensitive is one of the key properties of a good test.**
 
