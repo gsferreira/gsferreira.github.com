@@ -1,7 +1,7 @@
 ---
 layout: post
 tags: post
-date: 2022-11-24
+date: 2022-12-07
 title: 3 Fluent Assertions Features You Should be Using
 description: Fluent Assertions is a must-have tool for .NET Testing. It's so rich and extensive that some features aren't used enough. In this post, I will show you 3 of them.
 featured_image: /images/archive/
@@ -150,7 +150,7 @@ Take a look at [this video](https://youtu.be/e4w2qePKcTE) to see how to apply it
 
 If you want to see them in action, take a look at this video 👇
 
-// TODO
+<iframe width="560" height="315" src="https://www.youtube.com/embed/7ROVlJ1cQWs" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
 
 Let me know what you think about it. Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 
