@@ -7,7 +7,7 @@ description: Fluent Assertions is a must-have tool for .NET Testing. It's so ric
 featured_image: /images/archive/
 ---
 
-I love Fluent Assertions 💖. And you should too.
+I love [Fluent Assertions](https://fluentassertions.com/) 💖. And you should too.
 
 Even if you are using it, maybe you don't know some lesser-known features of it.
 
