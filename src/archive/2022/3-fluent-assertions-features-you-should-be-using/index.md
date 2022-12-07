@@ -9,7 +9,7 @@ featured_image: /images/archive/
 
 I love Fluent Assertions 💖. And you should too.
 
-Even if you are using it, maybe you don't know some lesser known features of it.
+Even if you are using it, maybe you don't know some lesser-known features of it.
 
 But don't worry. I'm here to change that 💪.
 
@@ -72,7 +72,7 @@ When we assert the result of a HTTP call, it's common to check the HTTP Status C
 You may be doing it like this:
 
 ```csharp
- var response = await HttpRequestAsync();
+var response = await HttpRequestAsync();
 
 response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 ```
@@ -80,7 +80,7 @@ response.StatusCode.Should().Be(HttpStatusCode.BadRequest);
 With Fluent Assertions, you can simply convert it into this:
 
 ```csharp
- var response = await HttpRequestAsync();
+var response = await HttpRequestAsync();
 
 response.Should().HaveStatusCode(HttpStatusCode.BadRequest);
 ```
@@ -110,7 +110,7 @@ response.Should().HaveServerError();
 
 ## 3️⃣ DateTime Features
 
-Date and Time assertions is so ellegant.
+Date and Time assertions is so elegant.
 
 Take a look into this little details.
 
@@ -140,7 +140,7 @@ Is the DateTime in Local Time or UTC?
 expectedDate.Should().BeIn(DateTimeKind.Utc);
 ```
 
-This are just a few examples of what you can do with DateTimes in FluentAssertions.
+This are just a few examples of what you can do with DateTimes in Fluent Assertions.
 
 ## ⭐️ Bonus Feature
 
