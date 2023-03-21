@@ -180,9 +180,9 @@ My point is that when you use the `InternalsVisibleTo` for the sake of testing, 
 
 ## 📦 The exception to the rule
 
-**There's one scenario where I believe `InternalsVisibleTo` may be useful**, and let me explain why.
+**There's one scenario that I believe `InternalsVisibleTo` may be useful**, and let me explain why.
 
-Let's look into this open-source project, the [octokit.net](https://github.com/octokit/octokit.net). It's a GitHub API client.
+Let's look into this open-source project, [octokit.net](https://github.com/octokit/octokit.net). It's a GitHub API client.
 Let's take a look at this example.
 
 ```csharp
