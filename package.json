@@ -30,6 +30,7 @@
     "cross-env": "^7.0.0",
     "del-cli": "^4.0.1",
     "dracula-prism": "^1.2.1",
+    "eleventy-plugin-embed-everything": "^1.15.1",
     "html-minifier": "^4.0.0",
     "luxon": "^1.21.2",
     "postcss-cli": "^6.1.3",

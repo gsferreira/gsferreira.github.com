@@ -5,6 +5,7 @@ const { DateTime } = require("luxon");
 // Plugins
 const syntaxHighlight = require("@11ty/eleventy-plugin-syntaxhighlight");
 const pluginRss = require("@11ty/eleventy-plugin-rss");
+const embedEverything = require("eleventy-plugin-embed-everything");
 
 module.exports = function (eleventyConfig) {
   eleventyConfig.addPlugin(UpgradeHelper);
@@ -46,6 +47,9 @@ module.exports = function (eleventyConfig) {
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
+  eleventyConfig.addPlugin(embedEverything, {
+    add: ["youtube"],
+  });
 
   // Static assets to pass through
   eleventyConfig.addPassthroughCopy("src/assets");
