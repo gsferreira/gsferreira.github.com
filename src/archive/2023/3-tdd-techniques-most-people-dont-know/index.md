@@ -282,4 +282,4 @@ If you are familiar with these three techniques, let me know which one you use.
 
 Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 
-Keep it simple 🌱
+Keep it Simple 🌱
