@@ -93,7 +93,7 @@ There's only one open question. What should we call these extension methods? You
 
 If you want to see me refactoring towards this solution, take a look at this video 👇
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/huFpOOtBdvU" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=huFpOOtBdvU
 
 Let me know what you think about it. Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 

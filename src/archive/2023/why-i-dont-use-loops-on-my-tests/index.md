@@ -100,9 +100,9 @@ To demonstrate the difference between using a loop and not using one, I will dup
 
 Before rewriting the test, it's important to understand that when testing collections, we typically only need to test three scenarios:
 
-    - Zero
-    - One
-    - Two (which represents 'many' in the scenarios we're considering)
+- Zero
+- One
+- Two (which represents 'many' in the scenarios we're considering)
 
 **Instead of iterating through 10 items, we can simply test with two.** While it may be tempting to refactor the existing test, it's more effective to simplify it. With only two items, we can easily rewrite the test to include the two lines of code corresponding to the desired values.
 
