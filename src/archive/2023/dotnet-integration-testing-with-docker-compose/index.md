@@ -127,7 +127,7 @@ using Microsoft.Extensions.DependencyInjection;
 
 public class MyTestFixture : DockerComposeTestBase
 {
-    public KafkaTestFixture()
+    public MyTestFixture()
     {
 
     }
