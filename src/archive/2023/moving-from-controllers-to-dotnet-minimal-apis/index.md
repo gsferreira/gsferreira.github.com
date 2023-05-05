@@ -142,7 +142,7 @@ public static class Endpoint
 }
 ```
 
-The difference is that you will find an `Authorization` Attribute on the Controller. To apply that, you to call the `RequireAuthorization` method on the Mapping.
+The difference is that you will find an `Authorization` Attribute on the Controller. To apply that, you call the `RequireAuthorization` method on the Mapping.
 
 ```csharp
 app.MapGet("api/TodoLists", GetAsync)
