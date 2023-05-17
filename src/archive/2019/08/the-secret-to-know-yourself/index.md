@@ -36,7 +36,7 @@ But, the reality is that when we know that we are **being observed, we start act
 
 If you don’t know this paradox, I highly recommend the following video.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/DfPeprQ7oGc" frameborder="0" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/watch?v=Bq69-MI9TA0
 
 So, if recording yourself can be a good way to lie to yourself, what can you do!?
 
