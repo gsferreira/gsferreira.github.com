@@ -120,7 +120,7 @@ public static class OrderExtensions
 }
 ```
 
-You might have noticed that we are returning an `OrderAssertions` type. Now, let's define that type.
+You might have noticed that we are returning a `OrderAssertions` type. Now, let's define that type.
 
 ```csharp
 public class OrderAssertions
@@ -158,7 +158,7 @@ public class OrderAssertions
 ```
 
 By creating this custom method, we have further enhanced the readability and expressiveness of our test assertions, making it easier for developers to understand and maintain the code.
-By using the `AndConstraint` in the return type, we can chain multiple assertions together.
+By using the `AndConstraint` as the return type, we can chain multiple assertions together.
 
 Now, let's write our assertion.
 
