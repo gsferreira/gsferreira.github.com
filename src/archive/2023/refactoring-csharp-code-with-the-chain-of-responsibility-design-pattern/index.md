@@ -2,7 +2,7 @@
 layout: post
 tags: post
 date: 2023-05-26
-title: Refactoring Csharp Code with the Chain of Responsibility Design Pattern
+title: Refactoring C# Code with the Chain of Responsibility Design Pattern
 description: What is the Chain of Responsibility Design Pattern, and how can I apply it in C#.
 featured_image: /images/archive/highlight/refactoring-csharp-code-with-the-chain-of-responsibility-design-pattern.png
 ---
