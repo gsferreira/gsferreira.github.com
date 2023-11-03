@@ -11,7 +11,9 @@ module.exports = {
     extend: {
       fontFamily: {
         // Use Tailwind default serif fonts with font-display
-        display: [...defaultTheme.fontFamily.sans],
+        montserrat: ["Montserrat"],
+        display: ["Montserrat", ...defaultTheme.fontFamily.sans],
+        sans: ["Montserrat", ...defaultTheme.fontFamily.sans],
       },
       colors: {
         bodybg: "var(--color-bodybg)",
