@@ -21,9 +21,9 @@
     "dev": "del-cli dist && npm run watch"
   },
   "dependencies": {
-    "@11ty/eleventy": "^1.0.1",
+    "@11ty/eleventy": "^2.0.1",
     "@11ty/eleventy-plugin-syntaxhighlight": "^3.0.1",
-    "@11ty/eleventy-upgrade-help": "^1.0.1",
+    "@11ty/eleventy-upgrade-help": "^2.0.5",
     "@fullhuman/postcss-purgecss": "^2.3.0",
     "@tailwindcss/ui": "^0.1.2",
     "autoprefixer": "^9.7.2",
