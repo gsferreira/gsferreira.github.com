@@ -37,20 +37,20 @@
   --form-shadow: 0 2px 15px 0 rgba(26, 26, 27, 0.637);
 }
 
-body:not(.dark-mode) .light-logo {
-  display: block!important;
+html:not(.dark-mode) .light-logo {
+  display: block;
 }
 
-body:not(.dark-mode) .dark-logo {
-  display: none!important;
+html:not(.dark-mode) .dark-logo {
+  display: none;
 }
 
-body.dark-mode .light-logo {
-  display: none!important;
+html.dark-mode .light-logo {
+  display: none;
 }
 
-body.dark-mode .dark-logo {
-  display:block!important;
+html.dark-mode .dark-logo {
+  display:block;
 }
 
 
