@@ -36,6 +36,16 @@ module.exports = function (eleventyConfig) {
   // compress and combine js files
   eleventyConfig.addFilter("jsmin", require("./src/_utils/minify-js.js"));
 
+  eleventyConfig.addShortcode("multilineDescription", function (content) {
+    const value = content
+      ? content
+          .split("\n")
+          .flatMap((line, i) => [line])
+          .join("<br/>")
+      : "";
+    return `<p>${value}</p>`;
+  });
+
   // minify the html output when running in prod
   if (process.env.ELEVENTY_ENV == "production") {
     eleventyConfig.addTransform(

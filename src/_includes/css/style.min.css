@@ -297,6 +297,7 @@ h1,
 h2,
 h3,
 h4,
+h5,
 figure,
 p {
   margin: 0;
@@ -417,7 +418,8 @@ table {
 h1,
 h2,
 h3,
-h4 {
+h4,
+h5 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -846,12 +848,20 @@ a:not([class]):hover {
   flex-wrap: wrap;
 }
 
+.items-start {
+  align-items: flex-start;
+}
+
 .items-center {
   align-items: center;
 }
 
 .justify-center {
   justify-content: center;
+}
+
+.flex-1 {
+  flex: 1 1 0%;
 }
 
 .flex-grow {
@@ -884,6 +894,10 @@ a:not([class]):hover {
 
 .h-6 {
   height: 1.5rem;
+}
+
+.h-7 {
+  height: 1.75rem;
 }
 
 .text-sm {
@@ -935,6 +949,14 @@ a:not([class]):hover {
 
 .mb-2 {
   margin-bottom: 0.5rem;
+}
+
+.ml-2 {
+  margin-left: 0.5rem;
+}
+
+.mt-5 {
+  margin-top: 1.25rem;
 }
 
 .mt-6 {
@@ -1121,6 +1143,10 @@ a:not([class]):hover {
 
 .w-6 {
   width: 1.5rem;
+}
+
+.w-7 {
+  width: 1.75rem;
 }
 
 .z-10 {
