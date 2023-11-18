@@ -13,7 +13,7 @@ C# is in love with pattern matching 💘.
 
 And let's face it, they make a cute couple. Definitely better than Anna & Kristoff. Take that, Disney! If you don't get this reference, you can keep reading. I promise you it's not about Olaf or any other Frozen character. It's all about the new [**List Patterns in C# 11**](https://devblogs.microsoft.com/dotnet/early-peek-at-csharp-11-features/#c-11-preview-list-patterns).
 
-We all know that F# has been an inspiration for C# lately. We know that Pattern Matching capabilities have been evolving version upon version. Property patterns deserve attention since they came to life on C# 8. [We have seen improvements on C# 9 and C# 10.](https://gsferreira.com/archive/2021/expressive-c-code-with-property-patterns/) And now is the time for Lists.
+We all know that F# has been an inspiration for C# lately. We know that Pattern Matching capabilities have been evolving version upon version. Property patterns deserve attention since they came to life on C# 8. [We have seen improvements on C# 9 and C# 10.](https://guiferreira.me/archive/2021/expressive-c-code-with-property-patterns/) And now is the time for Lists.
 
 ## 🤔 What are List Patterns?
 

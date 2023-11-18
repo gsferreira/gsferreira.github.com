@@ -17,7 +17,7 @@ So, what can we do to improve our comments?
 I use a simple rule: **Explain the Why, not the What.**
 
 I see a lot of Comments that are explaining what the code is doing. That doesn't help.
-The effort that we put to write a Comment must be invested refactoring the code ([this is a good starting point](https://gsferreira.com/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/)).
+The effort that we put to write a Comment must be invested refactoring the code ([this is a good starting point](https://guiferreira.me/archive/2019/10/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods/)).
 **When we need to describe the What is because the code isn't readable at all.**
 
 It's also pretty common to have obvious Comments. All we have seen that _"// Get a Customer"_ comment in a _"GetCustomer"_ method.

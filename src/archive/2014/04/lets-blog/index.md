@@ -15,6 +15,6 @@ Following this page you can expect to read cool stuff about software development
 
 ![alt text](https://www.gravatar.com/avatar/93c1c26212f9eb3673538e6ad6ca7eb4.png?s=200 "This is me")
 
-Go subscribe the [RSS feed](https://gsferreira.com/rss.xml), visit the [about page](https://gsferreira.com/about/) to find my contacts and feel free to contact me.
+Go subscribe the [RSS feed](https://guiferreira.me/rss.xml), visit the [about page](https://guiferreira.me/about/) to find my contacts and feel free to contact me.
 
 I'll see you soon... and now let's blog!

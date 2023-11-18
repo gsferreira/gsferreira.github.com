@@ -79,7 +79,7 @@ public void GivenValidCustomer_WhenCheckIfIsValid_ReturnTrue()
 {
 	var service = new AddCustomerService();
 
-	var isValid = service.IsValid(new Customer("Guilherme", "me@gsferreira.com", null));
+	var isValid = service.IsValid(new Customer("Guilherme", "gui@guiferreira.me", null));
 
 	isValid.Should().BeTrue();
 }
@@ -89,7 +89,7 @@ public void GivenInvalidCustomer_WhenCheckIfIsValid_ReturnFalse()
 {
 	var service = new AddCustomerService();
 
-	var isValid = service.IsValid(new Customer("", "me@gsferreira.com", null));
+	var isValid = service.IsValid(new Customer("", "gui@guiferreira.me", null));
 
 	isValid.Should().BeFalse();
 }
@@ -154,7 +154,7 @@ public void Alternative_GivenValidCustomer_WhenCheckIfIsValid_ReturnTrue()
 	var service = new AddCustomerService();
 
 	var action =
-		() => service.Add(new Customer("Guilherme", "me@gsferreira.com", null));
+		() => service.Add(new Customer("Guilherme", "gui@guiferreira.me", null));
 
 	action.Should().NotThrow<InvalidDataException>();
 }
@@ -165,7 +165,7 @@ public void Alternative_GivenInvalidCustomer_WhenCheckIfIsValid_ReturnFalse()
 	var service = new AddCustomerService();
 
 	var action =
-		() => service.Add(new Customer("", "me@gsferreira.com", null));
+		() => service.Add(new Customer("", "gui@guiferreira.me", null));
 
 	action.Should().Throw<InvalidDataException>();
 }

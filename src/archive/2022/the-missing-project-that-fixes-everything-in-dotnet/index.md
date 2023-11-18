@@ -22,7 +22,7 @@ But first, let's see what the Main Component/Composition Root/Application Host/S
 
 ## ❓ What is it
 
-When you apply [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), [Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/), [Hexagonal Architecture](https://gsferreira.com/archive/2022/hexagonal-architecture-for-dotnet-developers-beginners/), or any other shape of device-independent architecture, keeping the dependencies independent and respecting the Dependency Rule may be challenging. .NET, you know I'm talking about you. **The Template for an API or Web application is already the host itself.**
+When you apply [Clean Architecture](https://blog.cleancoder.com/uncle-bob/2012/08/13/the-clean-architecture.html), [Onion Architecture](https://jeffreypalermo.com/2008/07/the-onion-architecture-part-1/), [Hexagonal Architecture](https://guiferreira.me/archive/2022/hexagonal-architecture-for-dotnet-developers-beginners/), or any other shape of device-independent architecture, keeping the dependencies independent and respecting the Dependency Rule may be challenging. .NET, you know I'm talking about you. **The Template for an API or Web application is already the host itself.**
 
 You need to define the dependencies and configurations of the involved modules/components/projects, which can be challenging when the DI configuration happens inside the adapter. You may do it through a Dependency Injection Container or by Pure DI. But, **the DI responsible project will need to know all the other projects**. Unless you want to do it dynamically. What I don't recommend in most cases.
 

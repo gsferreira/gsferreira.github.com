@@ -1,39 +1,90 @@
----json
-{
-  "permalink": "feed.xml",
-  "eleventyExcludeFromCollections": true,
-  "metadata": {
+-- -json {
+  "permalink" : "feed.xml",
+  "eleventyExcludeFromCollections" : true,
+  "metadata" : {
     "title": "Gui Ferreira",
     "subtitle": "Software Architect and a minimalist aspirant. passionate by product development and a continuous improvement enthusiast.",
-    "url": "https://gsferreira.com/",
-    "feedUrl": "https://gsferreira.com/feed.xml",
+    "url": "https://guiferreira.me/",
+    "feedUrl": "https://guiferreira.me/feed.xml",
     "author": {
       "name": "Gui Ferreira",
-      "email": "me@gsferreira.com"
+      "email": "gui@guiferreira.me"
     }
   }
 }
----
-<?xml version="1.0" encoding="utf-8"?>
+-- - <?xml version="1.0" encoding="utf-8"?>
 <feed xmlns="http://www.w3.org/2005/Atom">
-  <title>{{ metadata.title }}</title>
-  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <title> {
+    {
+      metadata.title
+    }
+  }</title>
+  <subtitle> {
+    {
+      metadata.subtitle
+    }
+  }</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
   <link href="{{ metadata.url }}"/>
-  <updated>{{ collections.post | rssLastUpdatedDate }}</updated>
-  <id>{{ metadata.url }}</id>
+  <updated> {
+    {
+      collections.post | rssLastUpdatedDate
+    }
+  }</updated>
+  <id> {
+    {
+      metadata.url
+    }
+  }</id>
   <author>
-    <name>{{ metadata.author.name }}</name>
-    <email>{{ metadata.author.email }}</email>
+    <name> {
+      {
+        metadata.author.name
+      }
+    }</name>
+    <email> {
+      {
+        metadata.author.email
+      }
+    }</email>
   </author>
-  {%- for post in collections.post | reverse %}
-    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
-    <entry>
-      <title>{{ post.data.title }}</title>
-      <link href="{{ absolutePostUrl }}"/>
-      <updated>{{ post.date | rssDate }}</updated>
-      <id>{{ absolutePostUrl }}</id>
-      <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
-    </entry>
-  {%- endfor %}
-</feed>
+  {
+  % -for post in collections.post | reverse %
+}
+  {
+  % set absolutePostUrl %
+}
+  {
+  {
+    post.url | url | absoluteUrl(metadata.url)
+  }
+}
+  {
+  % endset %
+}
+  <entry>
+    <title> {
+      {
+        post.data.title
+      }
+    }</title>
+    <link href="{{ absolutePostUrl }}"/>
+    <updated> {
+      {
+        post.date | rssDate
+      }
+    }</updated>
+    <id> {
+      {
+        absolutePostUrl
+      }
+    }</id>
+    <content type="html"> {
+      {
+        post.templateContent | htmlToAbsoluteUrls(absolutePostUrl)
+      }
+    }</content>
+  </entry>
+  {
+  % -endfor %
+} </feed>

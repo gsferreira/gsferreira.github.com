@@ -75,7 +75,7 @@ By standing up, you will see that your voice will be clear and you will have a b
 ## Preparing
 
 1.  **Rehearse** in the same environment and with the same setup that you will be using.
-2.  Record it and share it with your friends and colleagues. Ask for [honest feedback](https://gsferreira.com/archive/2019/07/leading-improvement-through-honest-feedback/). Use the feedback to improve.
+2.  Record it and share it with your friends and colleagues. Ask for [honest feedback](https://guiferreira.me/archive/2019/07/leading-improvement-through-honest-feedback/). Use the feedback to improve.
 3.  **Rehearse**
 4.  Make sure that you have a Plan B
     - What if your computer fails?

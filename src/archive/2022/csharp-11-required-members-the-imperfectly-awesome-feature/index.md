@@ -38,7 +38,7 @@ public class User
 
 var user = new User()
 {
-	Email = "me@gsferreira.com"
+	Email = "gui@guiferreira.me"
 };
 ```
 
@@ -76,7 +76,7 @@ public class User
 	public string? Name { get; init; }
 }
 
-var user = new User("me@gsferreira.com");
+var user = new User("gui@guiferreira.me");
 ```
 
 - **Records:** One of the benefits of records in C# is not having to write a bunch of boilerplate code. That is particularly true when you use positional parameters. So, I've been heavily using it on my [anemic](https://martinfowler.com/bliki/AnemicDomainModel.html) data structures like [Data Transfer Objects (DTOs)](<https://docs.microsoft.com/en-us/previous-versions/msp-n-p/ff649585(v=pandp.10)?redirectedfrom=MSDN>). In those cases, this feature is kind of useless since positional record properties are inherently required. To use it, you need to ignore positional parameters. That's not my standard way of using Records.

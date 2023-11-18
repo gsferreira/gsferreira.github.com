@@ -102,7 +102,7 @@ If you want to organize your API differently, you have several options:
 
 It doesn't mean you should keep adapters to the outside world inside the same folder and project.
 
-Adapters need to be swappable. You can find an in-depth explanation [here](https://gsferreira.com/archive/2022/how-to-apply-hexagonal-architecture-with-dotnet/).
+Adapters need to be swappable. You can find an in-depth explanation [here](https://guiferreira.me/archive/2022/how-to-apply-hexagonal-architecture-with-dotnet/).
 
 If you want to see me performing the refactoring, take a look at this video 👇
 

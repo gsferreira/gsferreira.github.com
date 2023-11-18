@@ -13,7 +13,7 @@ Eleventy is the simplest Static Site Generator that I know. I know that this is 
 
 ## The goal
 
-I have been thinking about moving my blog to a different framework. I was using [Sandra.Snow](https://gsferreira.com/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/), that not have been updated recently.
+I have been thinking about moving my blog to a different framework. I was using [Sandra.Snow](https://guiferreira.me/archive/2014/05/reasons-to-blogging-with-github-pages-and-sandra-snow/), that not have been updated recently.
 
 My goal was to keep using a Static Blog, hosting on GitHub Pages. I want to write using markdown. It was also important to be able to keep the same URLs and migrate all the content to the new framework. I also would like the blog not need JavaScript to display the blog posts. Those are the requirements.
 

@@ -24,7 +24,7 @@ Unfortunately, there's no silver bullet to fix it (I'm not a Node.js guru, so pl
 ### 1. Azure Cloud Services - Change the output directory
 
 If you are getting an error when you publish your cloud service to azure, it's probably because the deployment will place the output into a subfolder.
-I've already had [blogged how to deal with it and you can find it here](https://gsferreira.com/archive/2014/11/azure-deploy-and-the-path-length-limitation/).
+I've already had [blogged how to deal with it and you can find it here](https://guiferreira.me/archive/2014/11/azure-deploy-and-the-path-length-limitation/).
 
 ### 2. Find the packages that are leading you into the limit and install them
 

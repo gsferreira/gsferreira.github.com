@@ -7,7 +7,7 @@ title: AngularJS - Input number with 2 decimal places
 category: AngularJS
 ---
 
-My [AngularJS - Smart Float Directive](https://gsferreira.com/archive/2014/05/angularjs-smart-float-directive/) post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.
+My [AngularJS - Smart Float Directive](https://guiferreira.me/archive/2014/05/angularjs-smart-float-directive/) post has been a post with a lot of traction, so I want to share another tip related to numbers in Angular.
 
 This a kind of simple tip, but I believe that it can be really useful.
 

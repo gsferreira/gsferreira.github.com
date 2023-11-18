@@ -15,7 +15,7 @@ Feature after feature, change after change, components tend to become more compl
 
 That's why **we need to be careful with component contracts**. That contract is expressed through props by the way.
 
-One way to spot eventual problems is to look for boolean props [(they will yell at you as you can read here)](https://gsferreira.com/archive/2020/05/that-flag-argument-is-yelling-at-you/). A usual case is to have boolean props used as a way to condition the render.
+One way to spot eventual problems is to look for boolean props [(they will yell at you as you can read here)](https://guiferreira.me/archive/2020/05/that-flag-argument-is-yelling-at-you/). A usual case is to have boolean props used as a way to condition the render.
 
 ![React component boolean props definition](/images/archive/react/bool-props.png)
 

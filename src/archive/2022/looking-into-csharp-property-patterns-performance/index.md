@@ -7,7 +7,7 @@ description: How performant are C# Property Patterns?
 featured_image: /images/archive/csharp/property-patterns-guard-benchmark.png
 ---
 
-Property Patterns is one of those things that rapidly changed how I write code. I love how the code looks clear and expressive (see what I've written about it [here](https://gsferreira.com/archive/2021/expressive-c-code-with-property-patterns/)).
+Property Patterns is one of those things that rapidly changed how I write code. I love how the code looks clear and expressive (see what I've written about it [here](https://guiferreira.me/archive/2021/expressive-c-code-with-property-patterns/)).
 
 In that spirit, I recently tweeted and posted to LinkedIn how I loved simple things like implementing a Guard Clause on collections. See the tweet below.
 
