@@ -106,7 +106,7 @@ Adapters need to be swappable. You can find an in-depth explanation [here](https
 
 If you want to see me performing the refactoring, take a look at this video 👇
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/rYnbspEcKJw" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/rYnbspEcKJw
 
 Let me know what you think about it. Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 

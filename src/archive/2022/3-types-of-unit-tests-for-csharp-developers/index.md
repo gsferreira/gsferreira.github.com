@@ -72,7 +72,7 @@ public async Task ComponentInteraction()
 But Component Interaction Tests can be dangerous.
 So, I highly recommend checking [this article](../how-structure-sensitive-tests-make-refactorings-fail/).
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/KaW1HNnhOME" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/KaW1HNnhOME
 
 Let me know what you think about it. Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 

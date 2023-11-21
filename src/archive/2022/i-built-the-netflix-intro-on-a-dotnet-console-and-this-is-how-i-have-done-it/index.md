@@ -190,7 +190,7 @@ Now, it's time to run it.
 
 If you are curious about the result, and you want to see it in action, I have a video here 👇
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/fgm2I8aSDNg" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/fgm2I8aSDNg
 
 Let me know what you think about it. Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 

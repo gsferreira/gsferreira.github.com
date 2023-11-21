@@ -161,7 +161,7 @@ Now, your diagram will look like this.
 
 Take a look at [this article](../how-to-apply-hexagonal-architecture-with-dotnet/) if you have any doubts about how to assemble a device-independent solution.
 
-<iframe width="560" height="315" src="https://www.youtube.com/embed/jeUHyGjnTwo" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+https://www.youtube.com/embed/jeUHyGjnTwo
 
 I hope you have found this useful.
 
