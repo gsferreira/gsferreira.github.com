@@ -1,38 +1,45 @@
 <div class="{{ classes.navbar }}">
-  <nav class="flex items-center mx-auto measure" style="overflow: scroll hidden;">
-    <a href="/" class="p-2">
-      <img
-        src="/images/logo-xs-light.svg"
-        alt="Gui Ferreira"
-        class="flex items-center justify-center invisible sm:visible light-logo"/>
-      <img
-        src="/images/logo-xs-dark.svg"
-        alt="Gui Ferreira"
-        class="flex items-center justify-center invisible sm:visible dark-logo"/>
-      <span class="sr-only">Go back to homepage</span>
-    </a>
-    <div class="flex items-center ml-auto -mb-px">
-      {% for item in navigation.main %}
-        <a {% if item.external %} rel="external" {% endif %} href="{{ item.url | safe }}" class="px-1 py-6 leading-5 whitespace-no-wrap border-b-2 border-transparent focus:outline-none hover:border-cool-gray-700 focus:border-cool-gray-700 ml-6 md:ml-12 text-base	 {% if page.url == item.url %}border-primary{% endif %}" {% if page.url == item.url %} aria-current="page" {% endif %}>{{ item.label }}</a>
-      {% endfor %}
-      {% if site.allowDarkMode %}
-        <button id="dark-mode-toggle" class="p-2 ml-6 md:ml-12">
-          <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 moon-icon">
-            <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
-          </svg>
-          <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 sun-icon">
-            <path
-              fill-rule="evenodd"
-              d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0
-                001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0
-                011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465
-                5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414
-                1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
-              clip-rule="evenodd"></path>
-          </svg>
-          <span class="sr-only">Button to switch between dark and light theme</span>
-        </button>
-      {% endif %}
+  <nav class="flex items-center justify-between flex-wrap p-6 ">
+    <div class="flex items-center flex-shrink-0 text-white mr-6">
+      <a href="/" class="font-semibold text-xl tracking-tight">
+        <img src="/images/logo-xs-light.svg" alt="Gui Ferreira" class="flex items-center justify-center light-logo w-60"/>
+        <img src="/images/logo-xs-dark.svg" alt="Gui Ferreira" class="flex items-center justify-center dark-logo w-60"/>
+        <span class="sr-only">Go back to homepage</span>
+      </a>
+    </div>
+    <div class="block lg:hidden">
+      <button id="nav-toggle" class="flex items-center px-3 py-2 border rounded">
+        <svg class="fill-current h-3 w-3" viewBox="0 0 20 20" xmlns="http://www.w3.org/2000/svg">
+          <title>Menu</title><path d="M0 3h20v2H0V3zm0 6h20v2H0V9zm0 6h20v2H0v-2z"/></svg>
+      </button>
+    </div>
+    <div id="nav-content" class="w-full block flex-grow lg:flex lg:items-center lg:w-auto hidden">
+      <div class="text-sm lg:flex-grow">
+        {% for item in navigation.main %}
+          <a href="{{ item.url | safe }}" class="block mt-4 lg:inline-block lg:mt-0 border-b-2 border-transparent focus:outline-none hover:border-cool-gray-700 focus:border-cool-gray-700 mr-4 {% if page.url == item.url %}border-primary{% endif %}" {% if page.url == item.url %} aria-current="page" {% endif %}>{{ item.label }}
+          </a>
+        {% endfor %}
+      </div>
+      <div>
+        {% if site.allowDarkMode %}
+          <button id="dark-mode-toggle" class="inline-block text-sm px-4 py-2 leading-none mt-4 lg:mt-0">
+            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 moon-icon">
+              <path d="M17.293 13.293A8 8 0 016.707 2.707a8.001 8.001 0 1010.586 10.586z"></path>
+            </svg>
+            <svg aria-hidden="true" fill="currentColor" viewBox="0 0 20 20" class="w-6 h-6 sun-icon">
+              <path
+                fill-rule="evenodd"
+                d="M10 2a1 1 0 011 1v1a1 1 0 11-2 0V3a1 1 0 011-1zm4 8a4 4 0 11-8 0 4 4 0 018 0zm-.464 4.95l.707.707a1 1 0
+                  001.414-1.414l-.707-.707a1 1 0 00-1.414 1.414zm2.12-10.607a1 1 0 010 1.414l-.706.707a1 1 0 11-1.414-1.414l.707-.707a1 1 0
+                  011.414 0zM17 11a1 1 0 100-2h-1a1 1 0 100 2h1zm-7 4a1 1 0 011 1v1a1 1 0 11-2 0v-1a1 1 0 011-1zM5.05 6.464A1 1 0 106.465
+                  5.05l-.708-.707a1 1 0 00-1.414 1.414l.707.707zm1.414 8.486l-.707.707a1 1 0 01-1.414-1.414l.707-.707a1 1 0 011.414
+                  1.414zM4 11a1 1 0 100-2H3a1 1 0 000 2h1z"
+                clip-rule="evenodd"></path>
+            </svg>
+            <span class="sr-only">Button to switch between dark and light theme</span>
+          </button>
+        {% endif %}
+      </div>
     </div>
   </nav>
 </div>
