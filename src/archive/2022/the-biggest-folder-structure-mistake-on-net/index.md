@@ -106,7 +106,7 @@ Adapters need to be swappable. You can find an in-depth explanation [here](https
 
 If you want to see me performing the refactoring, take a look at this video 👇
 
-https://www.youtube.com/embed/rYnbspEcKJw
+https://www.youtube.com/watch?v=rYnbspEcKJw
 
 Let me know what you think about it. Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 

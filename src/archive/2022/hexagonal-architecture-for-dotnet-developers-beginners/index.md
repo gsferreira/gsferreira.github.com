@@ -61,7 +61,7 @@ I love Hexagonal Architecture because **it is a simple concept** that can be ext
 
 In short, Hexagonal Architecture leads you to software like Raviolis 🥟 instead of Lasagna. You can dress them with a different sauce, and the filling will always be protected. I have to confess that I only prefer Raviolis over Lasagna in software. What about you?
 
-https://www.youtube.com/embed/5ioLmkgJ_28
+https://www.youtube.com/watch?v=5ioLmkgJ_28
 
 Stay tuned. In this post, we talked about the concepts. Soon I will be posting a new post with a Project Structure recommendation for .NET.
 

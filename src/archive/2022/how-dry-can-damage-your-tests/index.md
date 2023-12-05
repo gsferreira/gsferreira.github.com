@@ -213,7 +213,7 @@ Let me know what you think about it.
 
 I have an in-depth video here 👇
 
-https://www.youtube.com/embed/QUj2dRDEWWs
+https://www.youtube.com/watch?v=QUj2dRDEWWs
 
 If you want more, be sure to follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 

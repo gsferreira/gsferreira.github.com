@@ -190,7 +190,7 @@ Now, it's time to run it.
 
 If you are curious about the result, and you want to see it in action, I have a video here 👇
 
-https://www.youtube.com/embed/fgm2I8aSDNg
+https://www.youtube.com/watch?v=fgm2I8aSDNg
 
 Let me know what you think about it. Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 

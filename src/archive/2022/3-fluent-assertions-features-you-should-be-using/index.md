@@ -149,7 +149,7 @@ Take a look at [this video](https://youtu.be/e4w2qePKcTE) to see how to apply it
 
 If you want to see them in action, take a look at this video 👇
 
-https://www.youtube.com/embed/7ROVlJ1cQWs
+https://www.youtube.com/watch?v=7ROVlJ1cQWs
 
 Let me know what you think about it. Follow me on [Twitter (@gsferreira)](https://twitter.com/gsferreira), and let's keep in touch.
 
