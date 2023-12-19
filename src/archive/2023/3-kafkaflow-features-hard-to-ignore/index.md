@@ -37,7 +37,7 @@ services.AddKafka(kafka => kafka
 );
 ```
 
-This feature offers one more option to scale the consumption and use the infrastructure efficiently.
+This feature offers another option to scale consumption and use the infrastructure efficiently.
 
 ## 2️⃣ Administration API and Dashboard
 
