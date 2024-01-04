@@ -7,6 +7,8 @@ description: Most Clean Architecture implementations have this error. The error 
 featured_image: /images/archive/hexagonal-architecture/after-startup-project.png
 ---
 
+https://www.youtube.com/watch?v=jeUHyGjnTwo
+
 It has many names. [Robert C. Martin (AKA Uncle Bob)](http://cleancoder.com/products) calls it the Main Component, and Mark Seemann calls it the [Composition Root](https://blog.ploeh.dk/2011/07/28/CompositionRoot/). You may also know it as the Application Host or Startup. Not the same as _"Startup.cs"_. I'm still trying to find my preferred name, so you may see me using those terms interchangeably.
 
 Robert C. Martin says **it is the Ultimate Detail**. Even then, most seem to not care about it.
@@ -160,8 +162,6 @@ Now, your diagram will look like this.
 ![After Startup project](/images/archive/hexagonal-architecture/after-startup-project.png)
 
 Take a look at [this article](../how-to-apply-hexagonal-architecture-with-dotnet/) if you have any doubts about how to assemble a device-independent solution.
-
-https://www.youtube.com/watch?v=jeUHyGjnTwo
 
 I hope you have found this useful.
 
