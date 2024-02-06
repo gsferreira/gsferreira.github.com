@@ -1,6 +1,25 @@
 module.exports = {
   all: [
     {
+      title: "How to fall in love with TDD",
+      description: `Have you tried Test-Driven Development (TDD)? Do you think it's not for you? Was it leading to over-testing and unnecessary complexity? Tests became a maintenance burden? Does it slow down the development process? Due to industry misconceptions, all that is normal. 
+
+      I have good news. We can still change that. You can still reach enlightenment and become a TDD lover.
+      
+      This talk tells you the story of what will happen once you decide to learn TDD. It will go through the challenges you will face in your journey and how to avoid being trapped by them. We'll debunk misconceptions and see an effective method of practising TDD.
+      
+      If you are open to becoming TDD addicted, this session is for you. You can expect to go home inspired to master the testing craft.
+      
+      Be prepared to be Test Infected. Beware, there's no cure!`,
+      presentations: [
+        {
+          name: "NDC London 2024",
+          url: "https://ndclondon.com/",
+          date: "2024-02-01",
+        },
+      ],
+    },
+    {
       title: "Apache Kafka in 1 hour for C# Developers",
       description: `Are you a Developer curious about Apache Kafka? Have you never had the time to dig into it?
 
