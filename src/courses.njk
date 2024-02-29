@@ -2,20 +2,25 @@
 layout: default
 title: Time to level up
 description: "Courses | guiferreira.me"
+pagination:
+  data: collections.course
+  size: 10
+  alias: courses
+  reverse: true
 ---
 
 <section class="my-auto">
   <div class="mx-auto flow">
     <h1>{{ title }}</h1>
     <ul>
-      {%- for course in courses.all -%}
+      {%- for course in courses -%}
         <li class="mt-6">
           <h3 class="mt-1 font-semibold">
-            <a class="text-primary hover:text-secondary" href="{{ course.url }}">{{ course.title }}</a>
+            <a class="text-primary hover:text-secondary" href="{{ course.url }}">{{ course.data.title }}</a>
           </h3>
           <div class="mt-2">
-            {% if course.description %}
-              {{ course.description }}
+            {% if course.data.description %}
+              {{ course.data.description }}
             {% endif %}
           </div>
           <div class="mt-2">
