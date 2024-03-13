@@ -41,7 +41,7 @@ Even if you know nothing about it, you can expect to go home with the basics to 
         {
           name: "NetPonto Porto Meetup",
           url: "https://www.meetup.com/netponto-porto/events/291509299/",
-          date: "2023-01-18",
+          date: "2023-02-18",
         },
         {
           name: "Copenhagen Developers Festival 2023",
@@ -53,6 +53,7 @@ Even if you know nothing about it, you can expect to go home with the basics to 
           name: "NDC Porto 2023",
           url: "https://ndcporto.com/",
           date: "2023-10-18",
+          recording: "https://youtu.be/H_dDTMz_x4E?si=pTP61Up1e4jrjxO3",
         },
       ],
     },
