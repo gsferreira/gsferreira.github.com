@@ -20,7 +20,7 @@ module.exports = function (eleventyConfig) {
   // Layout aliases for convenience
   eleventyConfig.addLayoutAlias("default", "layouts/base.njk");
   eleventyConfig.addLayoutAlias("post", "layouts/post.njk");
-  eleventyConfig.addLayoutAlias("course", "layouts/course.njk");
+  eleventyConfig.addLayoutAlias("resource", "layouts/resource.njk");
 
   // Date helpers
   eleventyConfig.addFilter("readableDate", (dateObj) => {

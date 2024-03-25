@@ -1,5 +1,5 @@
 ---
-layout: course
+layout: resource
 tags: course
 title: "From Zero to Hero: Clean Code in C#"
 description: "Learn to write simple, elegant and clean code, in an example-driven way."

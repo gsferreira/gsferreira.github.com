@@ -1,5 +1,5 @@
 ---
-layout: course
+layout: resource
 tags: course
 title: "From Zero to Hero: Test-Driven Development in C#"
 description: "Learn the transformational practice that will lead you to simple code, high quality and peace of mind."

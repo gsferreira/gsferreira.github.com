@@ -4,6 +4,7 @@ module.exports = {
     { label: "About", url: "/about/", external: false },
     { label: "Blog", url: "/blog/", external: false },
     { label: "Courses", url: "/courses/", external: false },
+    { label: "Workshops", url: "/workshops/", external: false },
     { label: "Talks", url: "/talks/", external: false },
   ],
 };
