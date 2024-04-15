@@ -7,7 +7,7 @@ description: "A workshop to learn the transformational practice that will lead y
 
 # _"Test-Driven Development changed the way I write code."_
 
-That's a quote you recognize if you have been around Test-Driven Development (TDD) practitioners.
+Have you been around Test-Driven Development (TDD) practitioners? So, you have heard this before.
 
 They like to brag about TDD benefits such as:
 
@@ -17,48 +17,48 @@ They like to brag about TDD benefits such as:
 - stress-free developer life
 - abnormal level of confidence in code
 
-It sounds too good to be true. However, **few practices have the label "Transformational" used as often as TDD**.
+I know it sounds too good to be true. But, **few practices have the label "Transformational" used as often as TDD**.
 
-If TDD is so good, why is it not widely adopted?
+But let's talk about the question that's on your mind: If TDD is so good, why is it not widely adopted?
 
-**Even though TDD is a simple concept, it is hard to master.**
+**Although TDD is a simple concept, it is hard to master.**
 
-But don't worry about that. This workshop will take you there.
+But don't worry about that. This Workshop will take you there.
 
-**At the end of this workshop you will be able to:**
+**At the end of this Workshop you will be able to:**
 
 - Understand the steps involved during a TDD session.
 - Drive the development using automated tests.
-- Discover improved confidence and increase in development speed by writing tests first!
+- Test-drive code with External Dependencies.
 - Use refactoring techniques to improve code safely.
 - Write long-lasting tests resilient to changes.
-- Address the challenges of applying TDD in the context of a Team.
+- Be successful with TDD in the context of a Team.
 - Confidently evolve and maintain legacy applications using TDD.
 
 All using C# and your favourite tools.
 
-While the course is hands-on and interactive, you will also learn the TDD foundations.
-
-### Target audience
-
-This workshop is for a C# Software Developer who wants to set up his skills.
-If that's you, as far as you have basic knowledge of C# .NET and Testing, you are ready for this workshop.
-
-You can expect two days of hands-on and collaboration moments.
-
 I risk saying that at the end of this, you might become test-addicted.
 
-### Equipment needed
+### Is this Workshop for you?
 
-I'm a strong believer you should learn using your favourite day-to-day tools. So, in this workshop, you only need:
+Do you want to improve your tests and code?
+If so, this Workshop is for you.
 
-- Your favourite IDE
+If you have built C# .NET applications and have written unit tests in the past, you know all that's needed.
+
+I believe in learning through experience. So, you can expect two days of hands-on and collaboration moments. Warning: This is not a lecture-type workshop, so come ready to participate actively.
+
+### What will you need?
+
+I'm a strong believer you should learn using your favourite day-to-day tools. So, in this Workshop, you only need:
+
+- Your favourite IDE (Visual Studio, JetBrains Rider, VS Code)
 - .NET 8
 - Docker (no need for Kubernetes)
 
-## Take the Workshop
+## How can you take the Workshop?
 
-This workshop is scheduled for:
+You can find this Workshop at:
 
 - [NDC Oslo 2024](https://ndcoslo.com/workshops/mastering-test-driven-development-tdd-in-c/32606744664a) (10-14 June 2024).
 
