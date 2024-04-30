@@ -188,12 +188,25 @@ button:-moz-focusring,
  * Correct the padding in Firefox.
  */
 
+fieldset {
+  padding: 0.35em 0.75em 0.625em;
+}
+
 /**
  * 1. Correct the text wrapping in Edge and IE.
  * 2. Correct the color inheritance from `fieldset` elements in IE.
  * 3. Remove the padding so developers are not caught out when they zero out
  *    `fieldset` elements in all browsers.
  */
+
+legend {
+  box-sizing: border-box; /* 1 */
+  color: inherit; /* 2 */
+  display: table; /* 1 */
+  max-width: 100%; /* 1 */
+  padding: 0; /* 3 */
+  white-space: normal; /* 1 */
+}
 
 /**
  * Add the correct vertical alignment in Chrome, Firefox, and Opera.
@@ -211,6 +224,11 @@ progress {
  * 1. Add the correct box sizing in IE 10.
  * 2. Remove the padding in IE 10.
  */
+
+[type="checkbox"] {
+  box-sizing: border-box; /* 1 */
+  padding: 0; /* 2 */
+}
 
 /**
  * Correct the cursor style of increment and decrement buttons in Chrome.
@@ -292,12 +310,13 @@ template {
  * Removes the default spacing and border for appropriate elements.
  */
 
-
+blockquote,
 h1,
 h2,
 h3,
 h4,
 h5,
+h6,
 figure,
 p {
   margin: 0;
@@ -316,6 +335,11 @@ button {
 button:focus {
   outline: 1px dotted;
   outline: 5px auto -webkit-focus-ring-color;
+}
+
+fieldset {
+  margin: 0;
+  padding: 0;
 }
 
 
@@ -419,7 +443,8 @@ h1,
 h2,
 h3,
 h4,
-h5 {
+h5,
+h6 {
   font-size: inherit;
   font-weight: inherit;
 }
@@ -578,8 +603,8 @@ button:focus {
 section {
   padding-left: 1.5rem;
   padding-right: 1.5rem;
-  padding-top: 4rem;
-  padding-bottom: 4rem;
+  padding-top: 1.5rem;
+  padding-bottom: 1.5rem;
 }
 
 /* Typography */
@@ -594,36 +619,36 @@ h4 {
 }
 
 h1 {
-  font-size: 3rem;
-}
-
-h2 {
   font-size: 2.25rem;
 }
 
-h3 {
+h2 {
   font-size: 1.875rem;
 }
 
-h4 {
+h3 {
   font-size: 1.5rem;
+}
+
+h4 {
+  font-size: 1.25rem;
 }
 
 @media (min-width: 768px) {
   h1 {
-    font-size: 4rem;
-  }
-
-  h2 {
     font-size: 3rem;
   }
 
-  h3 {
+  h2 {
     font-size: 2.25rem;
   }
 
-  h4 {
+  h3 {
     font-size: 1.875rem;
+  }
+
+  h4 {
+    font-size: 1.5rem;
   }
 }
 
@@ -792,6 +817,14 @@ a:not([class]):hover {
   border-color: rgba(39, 48, 63, var(--border-opacity));
 }
 
+.rounded {
+  border-radius: 0.25rem;
+}
+
+.rounded-lg {
+  border-radius: 0.5rem;
+}
+
 .rounded-full {
   border-radius: 9999px;
 }
@@ -820,12 +853,24 @@ a:not([class]):hover {
   display: block;
 }
 
+.inline-block {
+  display: inline-block;
+}
+
+.inline {
+  display: inline;
+}
+
 .flex {
   display: flex;
 }
 
 .table {
   display: table;
+}
+
+.table-cell {
+  display: table-cell;
 }
 
 .grid {
@@ -856,8 +901,16 @@ a:not([class]):hover {
   align-items: center;
 }
 
+.content-center {
+  align-content: center;
+}
+
 .justify-center {
   justify-content: center;
+}
+
+.justify-between {
+  justify-content: space-between;
 }
 
 .flex-1 {
@@ -866,6 +919,10 @@ a:not([class]):hover {
 
 .flex-grow {
   flex-grow: 1;
+}
+
+.flex-shrink-0 {
+  flex-shrink: 0;
 }
 
 .font-sans {
@@ -892,6 +949,10 @@ a:not([class]):hover {
   font-weight: 900;
 }
 
+.h-3 {
+  height: 0.75rem;
+}
+
 .h-6 {
   height: 1.5rem;
 }
@@ -912,16 +973,24 @@ a:not([class]):hover {
   font-size: 1.125rem;
 }
 
+.text-xl {
+  font-size: 1.25rem;
+}
+
 .text-2xl {
   font-size: 1.5rem;
 }
 
-.leading-5 {
-  line-height: 1.25rem;
+.leading-none {
+  line-height: 1;
 }
 
 .leading-relaxed {
   line-height: 1.625;
+}
+
+.m-2 {
+  margin: 0.5rem;
 }
 
 .mx-4 {
@@ -955,6 +1024,14 @@ a:not([class]):hover {
   margin-left: 0.5rem;
 }
 
+.mt-4 {
+  margin-top: 1rem;
+}
+
+.mr-4 {
+  margin-right: 1rem;
+}
+
 .mt-5 {
   margin-top: 1.25rem;
 }
@@ -963,8 +1040,8 @@ a:not([class]):hover {
   margin-top: 1.5rem;
 }
 
-.ml-6 {
-  margin-left: 1.5rem;
+.mr-6 {
+  margin-right: 1.5rem;
 }
 
 .mt-8 {
@@ -973,6 +1050,10 @@ a:not([class]):hover {
 
 .mt-10 {
   margin-top: 2.5rem;
+}
+
+.mb-10 {
+  margin-bottom: 2.5rem;
 }
 
 .mt-16 {
@@ -985,14 +1066,6 @@ a:not([class]):hover {
 
 .mb-20 {
   margin-bottom: 5rem;
-}
-
-.ml-auto {
-  margin-left: auto;
-}
-
-.-mb-px {
-  margin-bottom: -1px;
 }
 
 .min-h-screen {
@@ -1024,24 +1097,19 @@ a:not([class]):hover {
   padding: 1.5rem;
 }
 
-.px-1 {
-  padding-left: 0.25rem;
-  padding-right: 0.25rem;
-}
-
 .py-2 {
   padding-top: 0.5rem;
   padding-bottom: 0.5rem;
 }
 
+.px-3 {
+  padding-left: 0.75rem;
+  padding-right: 0.75rem;
+}
+
 .px-4 {
   padding-left: 1rem;
   padding-right: 1rem;
-}
-
-.py-6 {
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
 }
 
 .px-8 {
@@ -1068,6 +1136,10 @@ a:not([class]):hover {
 
 .top-0 {
   top: 0;
+}
+
+.fill-current {
+  fill: currentColor;
 }
 
 .text-center {
@@ -1125,6 +1197,10 @@ a:not([class]):hover {
   -moz-osx-font-smoothing: grayscale;
 }
 
+.tracking-tight {
+  letter-spacing: -0.025em;
+}
+
 .tracking-wider {
   letter-spacing: 0.05em;
 }
@@ -1133,12 +1209,8 @@ a:not([class]):hover {
   visibility: visible;
 }
 
-.invisible {
-  visibility: hidden;
-}
-
-.whitespace-no-wrap {
-  white-space: nowrap;
+.w-3 {
+  width: 0.75rem;
 }
 
 .w-6 {
@@ -1147,6 +1219,22 @@ a:not([class]):hover {
 
 .w-7 {
   width: 1.75rem;
+}
+
+.w-60 {
+  width: 15rem;
+}
+
+.w-1\/3 {
+  width: 33.333333%;
+}
+
+.w-2\/3 {
+  width: 66.666667%;
+}
+
+.w-full {
+  width: 100%;
 }
 
 .z-10 {
@@ -1166,6 +1254,14 @@ a:not([class]):hover {
 
 .transition {
   transition-property: background-color, border-color, color, fill, stroke, opacity, box-shadow, transform;
+}
+
+.ease-out {
+  transition-timing-function: cubic-bezier(0, 0, 0.2, 1);
+}
+
+.ease-in-out {
+  transition-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 @-webkit-keyframes spin {
@@ -1267,20 +1363,40 @@ a[rel~="external"]::after {
   box-shadow: var(--form-shadow) !important;
 }
 
-@media (min-width: 640px) {
-
-  .sm\:visible {
-    visibility: visible;
-  }
-}
-
 @media (min-width: 768px) {
 
   .md\:text-xl {
     font-size: 1.25rem;
   }
+}
 
-  .md\:ml-12 {
-    margin-left: 3rem;
+@media (min-width: 1024px) {
+
+  .lg\:inline-block {
+    display: inline-block;
+  }
+
+  .lg\:flex {
+    display: flex;
+  }
+
+  .lg\:hidden {
+    display: none;
+  }
+
+  .lg\:items-center {
+    align-items: center;
+  }
+
+  .lg\:flex-grow {
+    flex-grow: 1;
+  }
+
+  .lg\:mt-0 {
+    margin-top: 0;
+  }
+
+  .lg\:w-auto {
+    width: auto;
   }
 }

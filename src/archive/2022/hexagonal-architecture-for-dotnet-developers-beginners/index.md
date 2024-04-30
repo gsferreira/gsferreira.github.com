@@ -7,6 +7,8 @@ description: A beginner's introduction to Hexagonal Architecture (AKA Ports & Ad
 featured_image: /images/archive/hexagonal-architecture/hexagonal-architecture-title.png
 ---
 
+https://www.youtube.com/watch?v=5ioLmkgJ_28
+
 91.23% of .NET Developers think about Clean Architecture when creating a new Solution.
 Less than 20% know Hexagonal Architecture.
 Let me tell you that we are failing as a community. Hexagonal Architecture deserves more respect from us.
@@ -60,8 +62,6 @@ It's important to say that you can achieve Hexagonal Architecture using Projects
 I love Hexagonal Architecture because **it is a simple concept** that can be extended as you wish. **It's more a principle than a prescriptive recipe.** The proof of the value is that **many came after and built on top of it.** Yes, I'm talking about Onion Architecture and Clean Architecture.
 
 In short, Hexagonal Architecture leads you to software like Raviolis 🥟 instead of Lasagna. You can dress them with a different sauce, and the filling will always be protected. I have to confess that I only prefer Raviolis over Lasagna in software. What about you?
-
-https://www.youtube.com/watch?v=5ioLmkgJ_28
 
 Stay tuned. In this post, we talked about the concepts. Soon I will be posting a new post with a Project Structure recommendation for .NET.
 
