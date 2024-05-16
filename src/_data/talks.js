@@ -16,6 +16,7 @@ module.exports = {
           name: "NDC London 2024",
           url: "https://ndclondon.com/",
           date: "2024-02-01",
+          recording: "https://youtu.be/UkhZkK6f5Xw?si=mQ_BkVtzeyDFVa8U",
         },
       ],
     },
