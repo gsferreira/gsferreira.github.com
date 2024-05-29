@@ -55,6 +55,8 @@ I'm a strong believer you should learn using your favourite day-to-day tools. So
 - Your favourite IDE (Visual Studio, JetBrains Rider, VS Code)
 - .NET 8
 - Docker (no need for Kubernetes)
+- Git
+- GitHub.com Account
 
 ## How can you take the Workshop?
 

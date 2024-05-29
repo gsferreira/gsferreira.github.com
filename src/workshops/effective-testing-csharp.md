@@ -95,6 +95,8 @@ In this Workshop, you only need:
 - Your favourite IDE (Visual Studio, JetBrains Rider, VS Code)
 - .NET 8
 - Docker (no need for Kubernetes)
+- Git
+- GitHub.com Account
 
 ## How can you take the Workshop?
 
