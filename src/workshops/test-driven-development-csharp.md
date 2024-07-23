@@ -60,8 +60,4 @@ I'm a strong believer you should learn using your favourite day-to-day tools. So
 
 ## How can you take the Workshop?
 
-You can find this Workshop at:
-
-- [NDC Oslo 2024](https://ndcoslo.com/workshops/mastering-test-driven-development-tdd-in-c/32606744664a) (10-14 June 2024).
-
 If you are looking for private training for your team, [contact me](mailto:gui@guiferreira.me) for more information and to schedule training.
