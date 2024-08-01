@@ -13,6 +13,12 @@ module.exports = {
       Be prepared to be Test Infected. Beware, there's no cure!`,
       presentations: [
         {
+          name: "NDC Oslo 2024",
+          url: "https://ndcoslo.com/",
+          date: "2024-06-13",
+          recording: "https://youtu.be/UkhZkK6f5Xw?si=mQ_BkVtzeyDFVa8U",
+        },
+        {
           name: "NDC London 2024",
           url: "https://ndclondon.com/",
           date: "2024-02-01",
