@@ -78,7 +78,7 @@ Even if you know nothing about it, you can expect to go home with the basics to 
           name: "NDC Porto 2022",
           url: "https://ndcporto.com/",
           date: "2022-04-28",
-          recording: "https://www.youtube.com/watch?v=E07CGvGVal8",
+          recording: "https://youtu.be/gHSpj2zM9Nw?si=2VAuRbwi_uZiCSGm",
         },
         {
           name: "NDC Oslo 2022",
