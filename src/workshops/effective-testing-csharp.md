@@ -100,8 +100,4 @@ In this Workshop, you only need:
 
 ## How can you take the Workshop?
 
-You can find this Workshop at:
-
-- [NDC Porto 2024](https://ndcporto.com/workshops/effective-testing-for-c-developers/eb046577fbd7) (14-16 October 2024).
-
 If you are looking for private training for your team, [contact me](mailto:gui@guiferreira.me) for more information and to schedule training.
