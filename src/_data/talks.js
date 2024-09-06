@@ -66,13 +66,17 @@ Even if you know nothing about it, you can expect to go home with the basics to 
     },
     {
       title: "The Grand Unified Theory of Clean Architecture and Test Pyramid",
-      description: `Clean Architecture and Test Pyramid are two important theories of the software world, but how to combine them?
+      description: `Clean Architecture and the Test Pyramid are two important concepts in software development. But how can they be effectively combined?
 
-        If you ever dug deeper into any of them, you know that the number of interpretations is exponential, so there’s no “one way to do it”.
-        
-        This is a highly opinionated talk based on my experience, with an approach to combine them. We will go through an API built with .NET, but the ideas are technology agnostic.
-        
-        If you have faced those challenges, this session is for you. You can expect to go home with a simple and clear way to address them.`,
+If you’ve explored them in depth, you know there are countless interpretations, so there’s no “one way to do it”. It seems impossible to find an effective way to know what types of tests to write.
+As a result, knowing what types of tests and code to write is often overwhelming.
+
+In this highly opinionated talk, based on my experience, I’ll share a practical framework for combining them.
+We’ll go back to Clean Architecture origins.
+We will revisit testing practices, such as unit testing, solitary testing, or integration testing.
+And by the end, we’ll have clear guidelines on when and where to apply different types of tests.
+
+If you have faced those challenges, this session is for you. You can expect to go home with a simple and actionable framework to tackle them.`,
       presentations: [
         {
           name: "NDC Porto 2022",

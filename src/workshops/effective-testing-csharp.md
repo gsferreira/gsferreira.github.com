@@ -7,6 +7,11 @@ description: "Learn the efficient way to test your C# Code"
 
 # Learn the efficient way to test your C# Code
 
+  <div class="p-2 bg-teal-800 items-center text-teal-100 leading-none lg:rounded-full flex lg:inline-flex" role="alert">
+    <span class="flex rounded-full bg-teal-500 uppercase px-2 py-1 text-xs font-bold mr-3">Important</span>
+    <span class="font-semibold mr-2 text-left flex-auto">Available in 2025</span>
+  </div>
+
 But why?
 
 Because you hate bugs.
