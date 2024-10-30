@@ -35,4 +35,4 @@ You'll see many examples, so then you can apply these recipes when facing a code
 
 At the end of this, you'll know what makes Code Clean and how to improve your C# code.
 
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-clean-code-with-csharp/?affcode=1115529_k5a22dj8">Get the Course →</a></div>
+<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-clean-code-with-csharp/?affcode=1115529_k5a22dj8?ref=gui-ferreira">Get the Course →</a></div>

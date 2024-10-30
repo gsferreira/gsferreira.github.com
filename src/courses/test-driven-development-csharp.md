@@ -18,5 +18,5 @@ In this course, we shortcut the path to success.
 You will learn how to write excellent tests and how to use those to design your software, stepping up the quality of your C# code with Test-Driven Development.
 
 <div class="mt-5">
-    <a class="text-primary hover:text-secondary" href="https://dometrain.com/course/from-zero-to-hero-test-driven-development-tdd-csharp?affcode=1115529_k5a22dj8">Get the Course →</a>
+    <a class="text-primary hover:text-secondary" href="https://dometrain.com/course/from-zero-to-hero-test-driven-development-tdd-csharp?affcode=1115529_k5a22dj8&ref=gui-ferreira">Get the Course →</a>
 </div>
