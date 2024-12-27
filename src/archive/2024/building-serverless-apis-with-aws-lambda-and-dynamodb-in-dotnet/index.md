@@ -1,29 +1,33 @@
 ---
 layout: post
 tags: post
-date: 2024-12-20
-title: How to Build Scalable Serverless APIs Using AWS Lambda and DynamoDB in .NET
-description: 
-featured_image: 
+date: 2024-12-31
+title: Building Serverless APIs with AWS Lambda and DynamoDB in .NET
+description: Let's build scalable and cost-effective serverless APIs with AWS Lambda and DynamoDB using .NET. This step-by-step guide covers everything from setting up DynamoDB to deploying a .NET Lambda function, helping you quickly create a production-ready API.
+featured_image: /images/archive/highlight/building-serverless-apis-with-aws-lambda-and-dynamodb-in-dotnet.png
 ---
+
+https://youtu.be/4BkP_jTk56A
 
 How much time do you spend managing your infrastructure?
 Too much, am I right!?
 That's why serverless computing has gained popularity. Serverless eliminate infrastructure management, allowing developers to focus on code and business logic.
 
-This post will guide you through building a serverless API using AWS Lambda and DynamoDB with .NET. We will cover each component, from database to Lambda, and provide a simple example of building a scalable, maintenance-free API.
+In this post we will build a serverless API using AWS Lambda and DynamoDB with .NET. We will cover each component, from database to Lambda, and provide a simple example of building a scalable, maintenance-free API.
 
 But first, let me explain all the necessary concepts before the tutorial.
 
 ## What is Serverless Computing?
 
-Serverless computing is a relief for developers. Why? It allows them to build and run applications without the pain of managing servers. Cloud providers automatically handle the infrastructure, including scaling, server maintenance, and provisioning. They often rely on a 'pay-as-you-go' model, where you only pay for the compute time used. This makes it cost-effective, especially for occasionally used applications.
+Serverless computing is a relief for developers. Why? It empowers developers to create and run applications seamlessly, without the hassle of managing servers. Cloud providers take care of all the infrastructure, ensuring smooth scaling and server maintenance. Plus, with a convenient 'pay-as-you-go' model, you only pay for the compute time you actually use, making it a budget-friendly choice for applications that aren’t used constantly.
+
+
 That's possible because you build functions rather than services in serverless computing. And you know those functions will be triggered when a specific event occurs.
 
 Key benefits of serverless:
 
 - Automatic Scaling: Resources are scaled automatically based on demand.
-- Cost-Effective: Pay only for the compute time your function actually uses.
+- Cost-Effective: Pay only for the compute time your Function actually uses.
 - Reduced Maintenance: Developers don't need to worry about underlying infrastructure.
 
 Imagine you have a friendly genie who lives in a magic lamp. This genie only comes out when you rub the lamp and ask it to do something specific, like fetch you a glass of water, fix a bug, or make your bed.
@@ -33,7 +37,7 @@ That genie is like the serverless API, and rubbing the lamp is like making a req
 
 ## What is AWS Lambda?
 
-AWS Lambda is Amazon's serverless computing service. Lambda allows you to run code responding to triggers (like HTTP requests or DynamoDB changes). Since it's serverless, you throw the code at AWS, and they will manage the server for you. In Lambda, each piece of code is a Function and AWS charges only for the compute time your function uses.
+AWS Lambda is Amazon's serverless computing service. Lambda allows you to run code responding to triggers (like HTTP requests or DynamoDB changes). Since it's serverless, you throw the code at AWS, and they will manage the server for you. In Lambda, each piece of code is a Function and AWS charges only for the compute time your Function uses.
 
 Advantages of using AWS Lambda:
 
@@ -52,11 +56,14 @@ DynamoDB Features:
 - Flexible Data Model: Supports key-value and document data models.
 - Fast and Scalable: Dynamically scales to meet application demand.
 - Integrated with AWS Services: Works seamlessly with Lambda, API Gateway, etc., for event-driven architectures.
-- In this tutorial, we'll use DynamoDB to store data for our API, making building a fully serverless .NET API simple.
 
-## Demo
+In this post, we'll use DynamoDB to store data for our API. With DynamoDB and AWS Lambda, we can build a fully serverless .NET API simple.
 
-First, install the AWS CLI through this link: https://aws.amazon.com/cli/
+## Building the API
+
+### Install the Tools
+
+First, install the AWS CLI. You can find it through [this link](https://aws.amazon.com/cli/).
 
 After installing, you need to run the following command to configure your access key:
 
@@ -64,23 +71,37 @@ After installing, you need to run the following command to configure your access
 aws configure
 ```
 
-To create an access key you need to set it up in the security credentials tab of your account. 
+To create an access key, you need to set it up in your account's security credentials tab. 
 In my case, the URL is: https://us-east-1.console.aws.amazon.com/iam/home?region=us-east-1#/security_credentials
 
 
-If you don't have one, you need to set up an AWS account. After creating your account, you can create a table in DynamoDB.
-In this example, I'll use the eu-central-1 region.
+If you don't have one, you need to set up an AWS account. 
+
+You will also need the AWS Lambda dotnet tool. You can easily install it by running the command:
+`dotnet tool install -g Amazon.Lambda.Tools`
+
+### Creating a Table
+
+After creating your account, you can create a table in DynamoDB.
+In this example, I'll use the `eu-central-1` region.
 https://eu-central-1.console.aws.amazon.com/dynamodbv2/home?region=eu-central-1
 
-Name the table Products (careful, this is case sensitive!)
+Name the table `Products` (careful, this is case sensitive!).
+
+For the Partition Key, let's use the `ProductId`. Keep in mind that picking the Partition Key is an important design decision. I recommend taking a moment to read this [AWS article](https://aws.amazon.com/blogs/database/choosing-the-right-dynamodb-partition-key/) on how to choose the Right DynamoDB Partition Key
+.
+
+### Creating the Lambda with .NET
 
 Create a .NET 8 C# library project and install the following libraries:
+
 ```csharp
-AWSSDK.DynamoDBv2
-Amazon.Lambda.Core
-Amazon.Lambda.APIGatewayEvents
-Amazon.Lambda.Serialization.SystemTextJson
+dotnet add package AWSSDK.DynamoDBv2
+dotnet add package Amazon.Lambda.Core
+dotnet add package Amazon.Lambda.APIGatewayEvents
+dotnet add package Amazon.Lambda.Serialization.SystemTextJson
 ```
+
 In the library, keep only one file named Function.cs, and inside that file, add the following code:
 
 ```csharp
@@ -94,18 +115,20 @@ using System.Threading.Tasks;
 
 [assembly: LambdaSerializer(typeof(Amazon.Lambda.Serialization.SystemTextJson.DefaultLambdaJsonSerializer))]
 
-namespace AWSPlayground;
+namespace ProductApi;
 
 public class Function
 {
-    private static readonly AmazonDynamoDBClient _client =
-        new AmazonDynamoDBClient("AccessKey", "SecretKey",
+    private static readonly AmazonDynamoDBClient Client =
+        new AmazonDynamoDBClient(
+            Environment.GetEnvironmentVariable("AccessKey"),
+            Environment.GetEnvironmentVariable("SecretKey"),
             new AmazonDynamoDBConfig
         {
             RegionEndpoint = Amazon.RegionEndpoint.EUCentral1
         });
 
-    private static readonly Table _table = new TableBuilder(_client, "Products")
+    private static readonly Table Table = new TableBuilder(Client, "Products")
         .AddHashKey("ProductId", DynamoDBEntryType.String)
         .Build();
 
@@ -131,7 +154,7 @@ public class Function
             ["Price"] = product.Price
         };
 
-        await _table.PutItemAsync(document);
+        await Table.PutItemAsync(document);
 
         Console.WriteLine("Product added successfully!");
 
@@ -151,7 +174,14 @@ public class Product
 }
 ```
 
-Let's explain what we did here. First, we specified the serializer to be used from AWS for our Lambdas. Then, we created a client that we will use to connect to AWS using the credentials created before. We connected to the Products table created, and in our Function, we added a new product to the database. To test this, we need to deploy our Lambda to AWS. To do this, you need to run:
+Let's explain what we did here. 
+1. We specified the serializer to be used from AWS for our Lambdas. 
+2. We created a client that we will use to connect to AWS using the credentials created before. 
+3. We connected to the `Products` table created, and in our Function, we added a new product to the database. 
+
+### Deploying the Lambda
+
+To test this, we need to deploy our Lambda to AWS. To do this, you need to run:
 
 ```shell
 dotnet lambda package
@@ -160,12 +190,27 @@ dotnet lambda package
 To prepare our app for the cloud and then run:
 
 ```shell
-dotnet lambda deploy-function MyLambdaFunction
+dotnet lambda deploy-function ProductApiFunction
 ```
 
-For our example, you can use dotnet8 as our runtime; for memory, set the timeout to 20 seconds, select the role that can read and write into DynamoDB and use AWSPlayground::AWSPlayground.Function::FunctionHandler for describing where our Function is.
+For our example, you can use: 
+ - `dotnet8` as runtime; 
+ - `256` for memory; 
+ - set the timeout to `30` seconds;
+ - Select the role that can read and write into DynamoDB 
+ - Use `ProductApi::ProductApi.Function::FunctionHandler` to describe where our Function is.
 
-Now, if we navigate back to AWS, we can test our Function. For me, the link is: https://eu-central-1.console.aws.amazon.com/lambda/home?region=eu-central-1#/functions/MyLambdaFunction?subtab=general&tab=testing
+### Configuring Environment Variables for the Lambda
+
+Since the connection to DynamoDB relies on Environment Variables, we must first configure those.
+
+You can do it by entering the Configuration tab and creating a variable for the `AccessKey` and `SecretKey`.
+
+**Important:** *In a real-world scenario, you should use a proper secret manager like [AWS Secrets Manager](https://aws.amazon.com/secrets-manager/).*
+
+### Testing the Lambda
+
+Now, if we navigate back to AWS, we can test our Function. For me, the link is: https://eu-central-1.console.aws.amazon.com/lambda/home?region=eu-central-1#/functions/ProductApiFunction?subtab=general&tab=testing
 
 In the Test tab, we can send a Test Event with a JSON like the one below and add a new product to our database!
 ```json
@@ -174,7 +219,19 @@ In the Test tab, we can send a Test Event with a JSON like the one below and add
 }
 ```
 
-You should have added a new product if you have now checked your database. Hope this made it simple
+**Note:** *This syntax is specific to the test window. It provides parameters other than the body, such as headers.*
+
+You should have added a new product if you have now checked your database. 
+
+### Exposing the API endpoint
+
+We are one step away from a proper user experience. We need to expose a URL for that Lambda Function.
+
+That's quite simple.
+
+Head to the Configuration tab for your Lambda Function, and then go to the Function URL.
+
+Here, you can create a new Function URL to easily call it from anywhere.
 
 ## Conclusion
 
