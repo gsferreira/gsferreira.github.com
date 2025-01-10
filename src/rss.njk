@@ -15,7 +15,9 @@
 }
 ---
 <?xml version="1.0" encoding="utf-8"?>
-<feed xmlns="http://www.w3.org/2005/Atom">
+<?xml-stylesheet type="text/css" href="/assets/feed.css"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
   <title>{{ metadata.title }}</title>
   <subtitle>{{ metadata.subtitle }}</subtitle>
   <link href="{{ metadata.feedUrl }}" rel="self"/>
@@ -29,11 +31,13 @@
   {%- for post in collections.post | reverse %}
     {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
     <entry>
-      <title>{{ post.data.title }}</title>
+      <title type="xhtml"><xhtml:div><xhtml:a href="{{ absolutePostUrl }}">{{ post.data.title }}</xhtml:a></xhtml:div></title>
       <link href="{{ absolutePostUrl }}"/>
       <updated>{{ post.date | rssDate }}</updated>
       <id>{{ absolutePostUrl }}</id>
-      <content type="html">{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</content>
+      <content type="xhtml">
+        <xhtml:div>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</xhtml:div>
+      </content>
     </entry>
   {%- endfor %}
 </feed>
