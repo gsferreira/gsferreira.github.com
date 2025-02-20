@@ -79,6 +79,12 @@ And by the end, we’ll have clear guidelines on when and where to apply differe
 If you have faced those challenges, this session is for you. You can expect to go home with a simple and actionable framework to tackle them.`,
       presentations: [
         {
+          name: "Copenhagen Developers Festival 2024",
+          url: "https://cphdevfest.com/",
+          date: "2024-08-28",
+          recording: "https://youtu.be/mzznsq4jCHY?si=CC1PM_2ykQYA9TbJ",
+        },
+        {
           name: "NDC Porto 2022",
           url: "https://ndcporto.com/",
           date: "2022-04-28",
