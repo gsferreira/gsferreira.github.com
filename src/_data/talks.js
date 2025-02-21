@@ -13,10 +13,15 @@ module.exports = {
       Be prepared to be Test Infected. Beware, there's no cure!`,
       presentations: [
         {
+          name: "NDC Porto 2024",
+          url: "https://ndcporto.com/",
+          date: "2024-10-16"
+        },
+        {
           name: "NDC Oslo 2024",
           url: "https://ndcoslo.com/",
           date: "2024-06-13",
-          recording: "https://youtu.be/UkhZkK6f5Xw?si=mQ_BkVtzeyDFVa8U",
+          recording: "https://youtu.be/vXnTMjMe5Eg?si=NdPpNuxRqYEerFdn",
         },
         {
           name: "NDC London 2024",
