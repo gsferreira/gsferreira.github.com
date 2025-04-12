@@ -5,39 +5,51 @@ title: "From Zero to Hero: OpenTelemetry in .NET"
 description: "Learn how to instrument your .NET Applications with OpenTelemetry."
 ---
 
-<h1>"I wish we had a way to trace requests through all our microservices without drowning in logs."</h1>
+# "My microservices are a black box, and I'm drowning in logs!"
 
-That's a quote from a developer. I mean, it's a quote we can attribute to most developers.
+Sound familiar?
 
-Software has become increasingly complex. You went from a single application running on IIS to a distributed system.
-Even then, you are expected to deliver more with even more quality.
+I hear this from developers every day.
 
-You can't rely anymore on a single log file and your memory. You've got to make sure you know what is going on across your system.
+Your job has gotten WAY more complex. You've gone from simple apps on IIS to juggling distributed systems that span multiple services, clouds, and containers.
+
+And yet your boss expects you to deliver more features, faster, with fewer bugs. Good luck doing that when you can't even trace a request from start to finish!
 
 That's why you need Observability. Or, let's be specific, you need OpenTelemetry.
 
-<h2>How OpenTelemetry can help</h2>
+## Here's the deal with OpenTelemetry
 
-How much easier would your job be if:
+Imagine if you could:
 
-- you could see the end-to-end flow of a request
-- you could know which query is running slow
-- you could observe the performance impacts of a change
-- you could be alerted that a feature is causing an error spike
-- you could do more!
+- See exactly how a request travels through your entire system
+- Pinpoint that slow database query killing performance
+- Measure the impact of your code changes in real-time
+- Get alerts before your users notice problems
+- Actually sleep at night knowing your systems are visible
 
-Sounds amazing. Don't you agree?
+This isn't fantasy. This is what OpenTelemetry delivers.
 
-That's why you need OpenTelemetry.
+## What you'll learn in this course
 
-<h2>How to instrument .NET Applications with OpenTelemetry</h2>
+I'm going to take you from confused to confident with OpenTelemetry in .NET.
 
-In this course, I'll introduce you to OpenTelemetry.
+No fluff, no theory-only nonsense. We'll cover:
 
-I'll explain the principles, how it works, how to add it to your applications and how to customize it.
+- The fundamentals of observability
+- How to add automatic instrumentation
+- Manual instrumentation techniques (for when you need details)
+- Setting up traces, metrics and logs that actually make sense
+- Using the OpenTelemetry Collector properly
+- Advanced techniques like context propagation and sampling
 
-You'll see a ton of code, so then you can easily apply it to your projects.
+You'll see tons of real code examples you can copy into your projects tomorrow.
 
-At the end of this, you'll know your systems so much better.
+By the end, you'll have x-ray vision into your systems. Your colleagues will wonder how you suddenly got so good at debugging production issues.
 
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-open-telemetry-in-dotnet/?affcode=1115529_k5a22dj8?ref=gui-ferreira">Get the Course →</a></div>
+## Are you ready to stop guessing what's happening in your systems?
+
+<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-open-telemetry-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8">Get the Course →</a></div>
+
+<div class="mt-5 text-center">
+<p><strong>Lifetime access guaranteed</strong> - Learn at your own pace</p>
+</div>

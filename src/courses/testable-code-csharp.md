@@ -39,4 +39,4 @@ Learn how to write code that's not just testable now but stays testable as your 
 * Test-driven development that doesn't slow you down
 * Refactoring patterns to make legacy code testable
 
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-writing-testable-code-in-csharp/?affcode=1115529_k5a22dj8?ref=gui-ferreira">Get the Course →</a></div>
+<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-writing-testable-code-in-csharp/?affcode=1115529_k5a22dj8&ref=gui-ferreira">Get the Course →</a></div>
