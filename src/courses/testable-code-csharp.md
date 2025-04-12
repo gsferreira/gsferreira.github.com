@@ -7,36 +7,57 @@ description: "Learn how to easily write code with Testing in mind."
 
 # Write C# Code With Testing in Mind
 
-A no-BS guide to writing testable C# code that your team will actually want to maintain.
+If you're stuck in an endless loop of:
+- Writing code
+- Realising it's impossible to test
+- Refactoring everything from scratch
 
-### Fed up with these everyday testing nightmares?
+...then I've got news for you: there's a better way.
 
-* Wasting precious hours debugging issues that should've been caught in your test suite - only to find they weren't even covered
-* Getting that dreaded "this code is untestable" feedback in code reviews, forcing you to refactor everything from scratch
-* Wrestling with tightly coupled dependencies that make unit testing feel like solving a Rubik's cube blindfolded
+## The Hidden Cost of Untestable Code
 
-### This Course Changes Everything
+Most C# developers don't realise that every untestable line of code they write creates a time bomb.
 
-Transform how you write C# code with battle-tested patterns and practices that actually work in the real world. No theoretical fluff, no academic exercises - just practical techniques you can use in your next PR.
+That quick hack you used to meet a deadline? The tightly-coupled class that "just works"? The static method calls scattered throughout your codebase?
 
-### What Makes This Different?
+They're all silently draining your productivity, killing your confidence, and making every future change a nightmare waiting to happen.
 
-**Real-World Focus:**
-Every pattern and practice comes from actual production codebases. You'll see how to handle complex dependencies, database interactions, and third-party APIs in a testable way.
+## This Course is your escape plan
 
-**Immediate Application:**
-Start applying these techniques immediately. No more wondering how to implement testing patterns in your specific situation
+I'll show you exactly how to write C# code that:
 
-**Future-Proof Your Code:**
-Learn how to write code that's not just testable now but stays testable as your application grows. Save yourself and your team countless hours of future refactoring.
+* **Actually wants to be tested** - No more wrestling with your own code
+* **Makes bugs obvious** - Before they make it to production
+* **Stays maintainable for years** - Even when the original developers are long gone
 
-### What You'll Master
+In just 4 hours, you'll master the techniques that took me 15 years of painful trial-and-error to discover.
 
-* The SOLID principles reimagined for modern C# development
-* Dependency injection patterns that make testing a breeze
-* Advanced mocking techniques for complex scenarios
-* Integration testing strategies that actually work
-* Test-driven development that doesn't slow you down
-* Refactoring patterns to make legacy code testable
+## What makes this different from other Testing Courses?
 
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-writing-testable-code-in-csharp/?affcode=1115529_k5a22dj8&ref=gui-ferreira">Get the Course →</a></div>
+This isn't about testing theory or academic patterns. This is about writing real-world C# code that you can actually test without wanting to pull your hair out.
+
+You'll learn:
+
+* How to design code with explicit behaviours that practically test themselves
+* The art of creating narrow responsibilities that make unit tests easy
+* Bulletproof techniques for isolating stubborn dependencies
+* Simple ways to minimise side effects that sabotage your tests
+
+## Real solutions for real code
+
+We'll tackle the stuff that actually matters in your day-to-day work:
+
+* Making ASP.NET Core controllers that don't fight your test suite
+* Designing Entity Framework code you can test without a database
+* Creating time-dependent code that doesn't need time travel to test
+* Building authentication and authorisation that's actually verifiable
+
+By the end, you'll instinctively know how to write testable code from the start – saving you countless hours of frustration and rewrites.
+
+## Ready to write C# code that Loves Being Tested?
+
+<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-writing-testable-code-in-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8">Get the Course →</a></div>
+
+<div class="mt-5 text-center">
+<p><strong>Lifetime access guaranteed</strong> - Learn at your own pace</p>
+</div>
