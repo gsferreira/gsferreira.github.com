@@ -1,9 +1,9 @@
 ---
 layout: post
 tags: post
-date: 
+date:
 title: Building a C# Repository with Selective Caching and MongoDB Search Index
-description: 
+description:
 featured_image: /images/archive/highlight/
 ---
 
@@ -15,10 +15,10 @@ This post walks through a C# project that combines the Repository Pattern with s
 
 The Repository Pattern abstracts data access behind an interface. Instead of scattering database calls throughout your code, you centralize them in repository classes. This makes swapping ORMs or adding caching much easier.
 
-Our demo uses a simple `Item` entity. We want a repository that can get items by ID, search items, add new items, and update existing ones. Some operations will hit the database directly, others will use in-memory cache, and some will update a MongoDB search index. 
+Our demo uses a simple `Item` entity. We want a repository that can get items by ID, search items, add new items, and update existing ones. Some operations will hit the database directly, others will use in-memory cache, and some will update a MongoDB search index.
 
-We'll use MongoDB (running in a container) for data storage and as our search index (just in separate collections for clarity). 
-We'll use .NET’s built-in DI (dependency injection) container to wire things up, along with IMemoryCache for caching. Everything will be packaged so you can run it with Docker Compose. 
+We'll use MongoDB (running in a container) for data storage and as our search index (just in separate collections for clarity).
+We'll use .NET’s built-in DI (dependency injection) container to wire things up, along with IMemoryCache for caching. Everything will be packaged so you can run it with Docker Compose.
 
 Here's our basic interface:
 
@@ -98,7 +98,7 @@ The trade-off here is simplicity versus performance. Call `GetItemAsync(42)` a t
 
 Caching to the rescue! Let's add caching to avoid repeated database work. We'll use the Cache-Aside pattern: check cache first, if miss then fetch from database and store in cache.
 
-We'll use .NET's `IMemoryCache` - a thread-safe, in-process cache. We'll cache individual items when fetched by ID but keep `GetAllItemsAsync` uncached for simplicity. We also won't worry about clearing the cache just yet – this scenario is caching without any explicit invalidation. 
+We'll use .NET's `IMemoryCache` - a thread-safe, in-process cache. We'll cache individual items when fetched by ID but keep `GetAllItemsAsync` uncached for simplicity. We also won't worry about clearing the cache just yet – this scenario is caching without any explicit invalidation.
 
 Update the constructor to accept `IMemoryCache` through dependency injection:
 
@@ -143,7 +143,6 @@ What’s happening here is straightforward: we compose a cache key (e.g., "Item:
 
 But we've created a problem: our cache doesn't know when data changes. If someone updates an item in the database, our cache still holds the old value.
 
-
 Time to fix our stale data problem. The classic saying goes: "There are only two hard things in Computer Science: cache invalidation, naming things, and off-by-one errors." We can't avoid the challenge of cache invalidation if we want correct data.
 
 ## Cache Invalidation
@@ -163,13 +162,15 @@ public async Task UpdateItemAsync(Item item)
     _cache.Remove(cacheKey);
 }
 ```
-We added one important line in `UpdateItemAsync`: `_cache.Remove(cacheKey)`. 
+
+We added one important line in `UpdateItemAsync`: `_cache.Remove(cacheKey)`.
 
 After updating item 42, we evict "Item:42" from the cache. The next `GetItemAsync(42)` will hit the database and cache the fresh data.
 
 Problem solved! (Well, solved in a single-instance scenario. If you have multiple instances of your application, you'd need a distributed cache or some way to broadcast invalidation across instances — but that's beyond our demo's scope.)
 
 If we cached `GetAllItemsAsync` results (say we cached the list of all items), we'd also need to invalidate that cache entry whenever any item changes. This is why we kept it simple and didn't cache broad queries.
+
 In real life, caching broad queries (like "all items" or complex filtered lists) can be useful for read-heavy scenarios, but you have to carefully invalidate or update those caches whenever any underlying item changes.
 Otherwise, users might not see new items or might see outdated lists. This is a classic trade-off: more caching = more places to update when data changes.
 
@@ -246,7 +247,7 @@ public async Task<List<Item>> SearchItemsAsync(string name)
 {
     var filter = Builders<SearchEntry>.Filter.Regex(e => e.Name, new BsonRegularExpression(name, "i"));
     var matchedEntries = await _searchCollection.Find(filter).ToListAsync();
-    
+
     var results = new List<Item>();
     foreach (var entry in matchedEntries)
     {
@@ -267,7 +268,6 @@ Now, whenever we add or update an item, our search index stays up-to-date. If we
 
 
 The trade-off: we now have data duplication. Data for each item now lives in two places: the main collection and the search index collection. This speeds up searches (and potentially allows scaling the search index separately or using specialized indexing features), but we have to be very diligent in updating both places. A bug or crash that updates one and not the other could make search results inaccurate. In larger systems, it's common to handle this via events or background processing (to decouple the main write from the index update), but that introduces eventual consistency (search might temporarily be out-of-sync) and more complexity. Here we did it inline for simplicity, but that means our write operations now take a bit longer (they hit two collections). As always, it's a balancing act.
-
 
 ## Running it with Docker Compose
 
@@ -296,7 +296,7 @@ volumes:
 
 And the Dockerfile:
 
-```yaml
+```dockerfile
 FROM mcr.microsoft.com/dotnet/sdk:9.0 AS build
 WORKDIR /src
 
@@ -316,9 +316,10 @@ ENTRYPOINT ["dotnet", "CachingDemo.dll"]
 ## What We Built
 
 Our repository now handles:
-- Selective caching for frequently-accessed data
-- Cache invalidation to prevent stale data
-- A separate search index for fast queries
+
+* Selective caching for frequently-accessed data
+* Cache invalidation to prevent stale data
+* A separate search index for fast queries
 
 Each addition brings complexity but solves specific performance problems. The key is understanding when each optimization is worth the added complexity.
 
