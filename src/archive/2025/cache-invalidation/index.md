@@ -2,7 +2,7 @@
 layout: post
 tags: post
 date:
-title: Building a C# Repository with Selective Caching and MongoDB Search Index
+title: Building a C# Repository with Selective Caching and MongoDB Search Index (And Why It's Not as Simple as It Looks)
 description:
 featured_image: /images/archive/highlight/
 ---
