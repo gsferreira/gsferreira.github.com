@@ -18,7 +18,32 @@ The Repository Pattern abstracts data access behind an interface. Instead of sca
 Our demo uses a simple `Item` entity. We want a repository that can get items by ID, search items, add new items, and update existing ones. Some operations will hit the database directly, others will use in-memory cache, and some will update a MongoDB search index.
 
 We'll use MongoDB (running in a container) for data storage and as our search index (just in separate collections for clarity).
-We'll use .NET’s built-in DI (dependency injection) container to wire things up, along with IMemoryCache for caching. Everything will be packaged so you can run it with Docker Compose.
+We'll use .NET's built-in DI (dependency injection) container to wire things up, along with IMemoryCache for caching. Everything will be packaged so you can run it with Docker Compose.
+
+### A Note on Separation of Concerns
+
+Our repository will handle data access, caching, and search index maintenance all in one class. This works for a demo, but violates the Single Responsibility Principle. In production, consider using the Decorator pattern to separate these concerns:
+
+```csharp
+// Clean data access
+public class ItemRepository : IItemRepository { /* MongoDB operations only */ }
+
+// Caching decorator
+public class CachedItemRepository : IItemRepository 
+{
+    private readonly IItemRepository _inner;
+    private readonly IMemoryCache _cache;
+    // Wraps the base repository with caching logic
+}
+
+// Search handled separately
+public class ItemSearchService 
+{
+    // Dedicated search functionality
+}
+```
+
+This approach makes each component easier to test, modify, and reason about independently. For our demo, we'll keep everything in one class for simplicity.
 
 Here's our basic interface:
 
@@ -139,7 +164,7 @@ public async Task<Item?> GetItemAsync(int id)
 }
 ```
 
-What’s happening here is straightforward: we compose a cache key (e.g., "Item:42" for item ID 42). We ask the cache if it has this item; if yes, we avoid a DB call. If not, we query Mongo, then stash the result in the cache. The next time someone requests the same item, we'll serve it from memory.
+What's happening here is straightforward: we compose a cache key (e.g., "Item:42" for item ID 42). We ask the cache if it has this item; if yes, we avoid a DB call. If not, we query Mongo, then stash the result in the cache. The next time someone requests the same item, we'll serve it from memory.
 
 But we've created a problem: our cache doesn't know when data changes. If someone updates an item in the database, our cache still holds the old value.
 
@@ -240,6 +265,33 @@ public async Task UpdateItemAsync(Item item)
 
 We use `ReplaceOneAsync` with `IsUpsert = true` for the search index. This handles both updates (if the entry exists) and inserts (if it doesn't).
 
+### Transaction Handling Considerations
+
+Our current implementation has a potential data consistency problem. Look at this code:
+
+```csharp
+public async Task UpdateItemAsync(Item item)
+{
+    await _itemsCollection.ReplaceOneAsync(i => i.Id == item.Id, item);  // Step 1
+    await _searchCollection.ReplaceOneAsync(/*...*/);                    // Step 2
+    _cache.Remove($"Item:{item.Id}");                                    // Step 3
+}
+```
+
+What happens if Step 2 fails? You end up with the main collection updated but the search index unchanged. Users searching for the item by its new name won't find it, but direct ID lookups will return the updated data.
+
+You have several options, each with trade-offs:
+
+**MongoDB Transactions**: Wrap both database operations in a transaction. Ensures consistency but requires MongoDB replica set and adds complexity.
+
+**Event-Driven Updates**: Update the main collection, then publish an event for search index updates. This provides eventual consistency and better fault tolerance, but introduces temporary inconsistency and requires event infrastructure.
+
+**Compensating Actions**: If the search index update fails, attempt to revert the main collection change. Simple but can lead to complex error handling.
+
+**Accept Eventual Consistency**: Let the search index be temporarily out-of-sync and have a background process reconcile differences. This is often the most practical approach for non-critical search functionality.
+
+The right choice depends on your consistency requirements, infrastructure, and how critical search accuracy is to your application. For our demo, we'll accept the risk of inconsistency to keep things simple.
+
 Now implement search using the index:
 
 ```csharp
@@ -261,11 +313,23 @@ public async Task<List<Item>> SearchItemsAsync(string name)
 
 Instead of searching the large Items collection, we search the smaller ItemSearchIndex collection (which contains just Id and Name). After getting matching IDs, we fetch the full items from the main collection. This is relatively efficient especially if we add a proper index on the Name field in that collection (which we could do in MongoDB with a text index or a standard index if we were doing prefix searches, etc.).
 
+Once we get the matching SearchEntry docs, we loop through them and fetch the full Item from the main collection by Id. This is a second roundtrip to the DB per result, but for demonstration it's fine. In a real application with many results, you might instead project all needed fields into the search index to avoid that second fetch, or use a single query to fetch all items by IDs (e.g., an $in query to Mongo with all matched IDs, or use the cache to get items if they're already cached). There are many ways to optimize, but we'll keep it simple and clear.
 
-Once we get the matching SearchEntry docs, we loop through them and fetch the full Item from the main collection by Id. This is a second roundtrip to the DB per result, but for demonstration it's fine. In a real application with many results, you might instead project all needed fields into the search index to avoid that second fetch, or use a single query to fetch all items by IDs (e.g., an $in query to Mongo with all matched IDs, or use the cache to get items if they're already cached). There are many ways to optimize, but we'll keep it simple and clear. 
+### Watch Out for N+1 Queries
 
-Now, whenever we add or update an item, our search index stays up-to-date. If we run SearchItemsAsync("Widget"), we’ll get results based on the latest data. If an item’s name changes from "Widget" to "Gadget", our update logic ensures the search index now has "Gadget", so searching "Widget" won’t return it anymore.
+Our search implementation has a classic performance trap:
 
+```csharp
+foreach (var entry in matchedEntries)
+{
+    var item = await _itemsCollection.Find(i => i.Id == entry.Id).FirstOrDefaultAsync();
+    // This creates one database call per search result
+}
+```
+
+If your search returns 100 items, that's 101 database calls (1 search + 100 individual fetches). In production, batch these calls using MongoDB's `$in` operator to fetch all items in a single query, or store enough data in your search index to avoid the second fetch entirely.
+
+Now, whenever we add or update an item, our search index stays up-to-date. If we run SearchItemsAsync("Widget"), we'll get results based on the latest data. If an item's name changes from "Widget" to "Gadget", our update logic ensures the search index now has "Gadget", so searching "Widget" won't return it anymore.
 
 The trade-off: we now have data duplication. Data for each item now lives in two places: the main collection and the search index collection. This speeds up searches (and potentially allows scaling the search index separately or using specialized indexing features), but we have to be very diligent in updating both places. A bug or crash that updates one and not the other could make search results inaccurate. In larger systems, it's common to handle this via events or background processing (to decouple the main write from the index update), but that introduces eventual consistency (search might temporarily be out-of-sync) and more complexity. Here we did it inline for simplicity, but that means our write operations now take a bit longer (they hit two collections). As always, it's a balancing act.
 
