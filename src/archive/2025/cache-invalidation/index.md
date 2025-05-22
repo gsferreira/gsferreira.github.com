@@ -163,7 +163,7 @@ public async Task UpdateItemAsync(Item item)
     _cache.Remove(cacheKey);
 }
 ```
-We added one important line in `UpdateItemAsync`: `_cache.Remove(cacheKey)A. 
+We added one important line in `UpdateItemAsync`: `_cache.Remove(cacheKey)`. 
 
 After updating item 42, we evict "Item:42" from the cache. The next `GetItemAsync(42)` will hit the database and cache the fresh data.
 
