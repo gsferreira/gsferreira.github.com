@@ -20,6 +20,28 @@ Our demo uses a simple `Item` entity. We want a repository that can get items by
 We'll use MongoDB (running in a container) for data storage and as our search index (just in separate collections for clarity).
 We'll use .NET's built-in DI (dependency injection) container to wire things up, along with IMemoryCache for caching. Everything will be packaged so you can run it with Docker Compose.
 
+Here's our basic interface:
+
+```csharp
+public class Item 
+{
+    public int Id { get; set; }
+    public string Name { get; set; } = string.Empty;
+    public string Description { get; set; } = string.Empty;
+}
+
+public interface IItemRepository 
+{
+    Task<Item?> GetItemAsync(int id);
+    Task<List<Item>> GetAllItemsAsync();
+    Task<List<Item>> SearchItemsAsync(string name);
+    Task AddItemAsync(Item item);
+    Task UpdateItemAsync(Item item);
+}
+```
+
+This interface covers our basic CRUD operations plus search. Let's start with a simple implementation that hits the database directly.
+
 ### A Note on Separation of Concerns
 
 Our repository will handle data access, caching, and search index maintenance all in one class. This works for a demo, but violates the Single Responsibility Principle. In production, consider using the Decorator pattern to separate these concerns:
@@ -45,27 +67,6 @@ public class ItemSearchService
 
 This approach makes each component easier to test, modify, and reason about independently. For our demo, we'll keep everything in one class for simplicity.
 
-Here's our basic interface:
-
-```csharp
-public class Item 
-{
-    public int Id { get; set; }
-    public string Name { get; set; } = string.Empty;
-    public string Description { get; set; } = string.Empty;
-}
-
-public interface IItemRepository 
-{
-    Task<Item?> GetItemAsync(int id);
-    Task<List<Item>> GetAllItemsAsync();
-    Task<List<Item>> SearchItemsAsync(string name);
-    Task AddItemAsync(Item item);
-    Task UpdateItemAsync(Item item);
-}
-```
-
-This interface covers our basic CRUD operations plus search. Let's start with a simple implementation that hits the database directly.
 
 ## Direct Database Calls (No Cache, No Index)
 
@@ -168,7 +169,7 @@ What's happening here is straightforward: we compose a cache key (e.g., "Item:42
 
 But we've created a problem: our cache doesn't know when data changes. If someone updates an item in the database, our cache still holds the old value.
 
-Time to fix our stale data problem. The classic saying goes: "There are only two hard things in Computer Science: cache invalidation, naming things, and off-by-one errors." We can't avoid the challenge of cache invalidation if we want correct data.
+Time to fix our stale data problem. The classic saying goes: *"There are only two hard things in Computer Science: cache invalidation, naming things, and off-by-one errors."* We can't avoid the challenge of cache invalidation if we want correct data.
 
 ## Cache Invalidation
 
