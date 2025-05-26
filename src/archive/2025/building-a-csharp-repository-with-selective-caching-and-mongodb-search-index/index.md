@@ -1,10 +1,9 @@
 ---
 layout: post
 tags: post
-date:
+date: 2025-05-26
 title: Building a C# Repository with Selective Caching and MongoDB Search Index (And Why It's Not as Simple as It Looks)
-description:
-featured_image: /images/archive/highlight/
+description: Learn why caching in C# is harder than it looks. This deep dive covers selective caching, cache invalidation pitfalls, and practical patterns using IMemoryCache and the Repository Pattern.
 ---
 
 Developers love talking about performance. We also love debugging stale cache issues at 2 AM.
