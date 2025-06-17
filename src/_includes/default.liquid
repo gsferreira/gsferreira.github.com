@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html class="overflow-y-scroll bg-white text-gray-900 font-sans" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
+    <meta name="description" content="{% if description %}{{ description }}{% else %}Your site description{% endif %}" />
+    <meta name="generator" content="{{ eleventy.generator }}">
+    <title>{% if title %}{{ title }}{% else %}Your site title{% endif %}</title>
+    <link rel="stylesheet" href="/styles.css" />
+  </head>
+  <body class="bg-white text-gray-900">
+    <!-- Navigation -->
+    <nav class="w-full border-b border-gray-100 bg-white">
+      <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
+        <div class="text-lg font-semibold tracking-tight">Steve Jobs</div>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+          <a href="#about" class="hover:text-black/80 transition">About</a>
+          <a href="#courses" class="hover:text-black/80 transition">Courses</a>
+          <a href="#blog" class="hover:text-black/80 transition">Blog</a>
+          <a href="#contact" class="hover:text-black/80 transition">Contact</a>
+          <a href="#get-started" class="ml-2 px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-900 transition">Get Started</a>
+        </div>
+      </div>
+    </nav>
+    
+    {{ content }}
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-100 mt-24">
+      <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-gray-700">
+        <div>
+          <div class="font-semibold mb-2">Steve Jobs</div>
+          <p class="text-gray-500">Inspiring the next generation of innovators and leaders.</p>
+        </div>
+        <div>
+          <div class="font-semibold mb-2">Learn</div>
+          <ul class="space-y-1">
+            <li><a href="#courses" class="hover:underline">Courses</a></li>
+            <li><a href="#workshops" class="hover:underline">Workshops</a></li>
+            <li><a href="#resources" class="hover:underline">Resources</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold mb-2">Support</div>
+          <ul class="space-y-1">
+            <li><a href="#help" class="hover:underline">Help Center</a></li>
+            <li><a href="#contact" class="hover:underline">Contact</a></li>
+            <li><a href="#community" class="hover:underline">Community</a></li>
+          </ul>
+        </div>
+        <div>
+          <div class="font-semibold mb-2">Connect</div>
+          <ul class="space-y-1">
+            <li><a href="#" class="hover:underline">LinkedIn</a></li>
+            <li><a href="#" class="hover:underline">Twitter</a></li>
+            <li><a href="#" class="hover:underline">YouTube</a></li>
+          </ul>
+        </div>
+      </div>
+      <div class="border-t border-gray-100 py-6 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-400">
+        <div class="mb-2 md:mb-0">© 2024 Steve Jobs. All rights reserved.</div>
+        <div class="space-x-4">
+          <a href="#" class="hover:underline">Privacy</a>
+          <a href="#" class="hover:underline">Terms</a>
+        </div>
+      </div>
+    </footer>
+  </body>
+</html>
