@@ -7,26 +7,33 @@
     <meta name="generator" content="{{ eleventy.generator }}">
     <title>{% if title %}{{ title }}{% else %}Your site title{% endif %}</title>
     <link rel="stylesheet" href="/styles.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
+    <style>
+      body {
+        font-family: 'Inter', sans-serif;
+      }
+    </style>
   </head>
   <body class="bg-white dark:bg-black">
     <!-- Navigation -->
     <nav class="w-full border-b border-gray-100 bg-white dark:bg-black dark:border-gray-800">
       <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <div class="text-lg font-semibold tracking-tight text-gray-900 dark:text-white">Gui Ferreira</div>
-        <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+        <div class="text-lg font-bold tracking-tight text-gray-900 dark:text-white">Gui Ferreira</div>
+        <div class="hidden md:flex items-center space-x-8 text-sm font-light">
           <a href="#about" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">About</a>
           <a href="#courses" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Courses</a>
           <a href="#blog" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Blog</a>
           <a href="#contact" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Contact</a>
-          <a href="#get-started" class="ml-2 px-4 py-2 bg-black text-white rounded-full shadow hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition">Get Started</a>
+          <a href="#get-started" class="ml-2 px-6 py-2 bg-black text-white rounded-full shadow hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition">Get Started</a>
           <!-- Dark mode toggle -->
-          <div class="ml-6 relative">
-            <select id="theme-toggle" class="bg-gray-100 dark:bg-gray-800 text-gray-700 dark:text-gray-200 rounded-full px-3 py-1 text-xs focus:outline-none border border-gray-200 dark:border-gray-700">
-              <option value="system">System</option>
-              <option value="light">Light</option>
-              <option value="dark">Dark</option>
-            </select>
-          </div>
+          <button id="theme-toggle" class="w-10 h-10 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition text-gray-900 dark:text-white">
+            <svg class="w-6 h-6 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
+            </svg>
+            <svg class="w-6 h-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
+            </svg>
+          </button>
         </div>
       </div>
     </nav>
@@ -75,38 +82,36 @@
     </footer>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
-        const themeSelect = document.getElementById('theme-toggle');
+        const themeToggle = document.getElementById('theme-toggle');
         const root = document.documentElement;
-        function setTheme(mode) {
-          if (mode === 'dark') {
+        
+        function setTheme(isDark) {
+          if (isDark) {
             root.classList.add('dark');
             localStorage.setItem('theme', 'dark');
-          } else if (mode === 'light') {
+          } else {
             root.classList.remove('dark');
             localStorage.setItem('theme', 'light');
-          } else {
-            localStorage.removeItem('theme');
-            if (window.matchMedia('(prefers-color-scheme: dark)').matches) {
-              root.classList.add('dark');
-            } else {
-              root.classList.remove('dark');
-            }
           }
         }
-        if (themeSelect) {
-          const savedTheme = localStorage.getItem('theme');
-          if (savedTheme) {
-            themeSelect.value = savedTheme;
-            setTheme(savedTheme);
-          } else {
-            themeSelect.value = 'system';
-            setTheme('system');
-          }
-          themeSelect.addEventListener('change', (e) => setTheme(e.target.value));
-          window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
-            if (!localStorage.getItem('theme')) setTheme('system');
-          });
+
+        // Check initial theme
+        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
+          setTheme(true);
         }
+
+        // Toggle theme on click
+        themeToggle.addEventListener('click', () => {
+          const isDark = root.classList.contains('dark');
+          setTheme(!isDark);
+        });
+
+        // Listen for system theme changes
+        window.matchMedia('(prefers-color-scheme: dark)').addEventListener('change', e => {
+          if (!localStorage.getItem('theme')) {
+            setTheme(e.matches);
+          }
+        });
       });
     </script>
   </body>
