@@ -1,5 +1,8 @@
 import { DateTime } from "luxon";
 
+// Plugins
+import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
   eleventyConfig.setServerOptions({
@@ -23,6 +26,10 @@ export default function (eleventyConfig) {
     }).toFormat("y-MM-dd");
   });
 
+  // Plugins
+  eleventyConfig.addPlugin(syntaxHighlight);
+
+
   return {
     dir: {
       input: 'src',
@@ -32,6 +39,7 @@ export default function (eleventyConfig) {
     },
     markdownTemplateEngine: 'njk',
     dataTemplateEngine: 'njk',
+    templateFormats: ["njk", "md"],
     htmlTemplateEngine: 'njk',
     templateFormats: ['md', 'njk', 'html', 'liquid']
   };

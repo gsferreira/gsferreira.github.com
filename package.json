@@ -19,6 +19,7 @@
     "tailwindcss": "^3.4.1"
   },
   "dependencies": {
+    "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
     "luxon": "^3.6.1"
   }
 }

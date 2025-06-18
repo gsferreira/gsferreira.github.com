@@ -2,16 +2,42 @@
 layout: default
 ---
 
-<article class="prose lg:prose-xl mx-auto px-4 py-12">
-    <header class="mb-8">
-        <h1>{{ title }}</h1>
-        <time datetime="{{ page.date }}" class="text-gray-500">
-            {{ page.date | readableDate }}
-        </time>
-        {% if description %}
-        <p class="text-xl text-gray-500 mt-4">{{ description }}</p>
-        {% endif %}
+<div class="max-w-3xl mx-auto px-4 pt-16">
+  <div class="mb-8">
+    <a href="/blog" class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700">
+      ← Back to blog
+    </a>
+  </div>
+
+  <article class="prose prose-lg prose-headings:text-2xl prose-headings:font-medium prose-headings:mb-4 prose-p:text-[1.125rem] prose-p:leading-[1.8] prose-p:text-gray-600 prose-p:mb-8 max-w-none">
+    <header class="not-prose mb-16">
+      <div class="flex items-center gap-6 mb-4">
+        <span class="inline-flex items-center px-3 py-0.5 text-[13px] bg-black text-white rounded-full">
+          Product Design
+        </span>
+
+        <div class="text-[15px] text-gray-500">
+          {{ page.date | readableDate }} · 7 min read
+        </div>
+      </div>
+
+      <h1 class="text-[2.5rem] font-medium leading-tight mb-4">{{ title }}</h1>
     </header>
 
     {{ content | safe }}
-</article> 
+  </article>
+</div>
+
+<div class="mt-32 bg-black text-white px-8 py-12 text-center">
+  <div class="max-w-3xl mx-auto">
+    <h2 class="text-3xl font-medium mb-4">Think different</h2>
+    <p class="text-gray-300 text-lg mb-8">Weekly insights on innovation, design, and exploring different ways to get your inbox.</p>
+    
+    <form class="max-w-md mx-auto flex gap-2">
+      <input type="email" placeholder="Your email" class="flex-1 px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-400 border border-white/20 focus:outline-none focus:border-white/40">
+      <button type="submit" class="px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100">
+        Subscribe
+      </button>
+    </form>
+  </div>
+</div> 
