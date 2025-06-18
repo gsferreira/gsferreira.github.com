@@ -21,6 +21,7 @@
   },
   "dependencies": {
     "@11ty/eleventy-plugin-syntaxhighlight": "^5.0.1",
+    "eleventy-plugin-embed-everything": "^1.21.0",
     "luxon": "^3.6.1"
   }
 }

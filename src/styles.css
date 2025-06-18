@@ -45,8 +45,17 @@ pre[class*="language-"] {
 }
 
 .dark :not(pre) > code[class*="language-"] {
-  background: #374151;
+  background: #1a1e2d;
   color: #e5e7eb;
+}
+
+/* Dark mode list markers */
+.dark .prose ul li::marker {
+  color: #e5e7eb !important;
+}
+
+.dark .prose ol li::marker {
+  color: #e5e7eb !important;
 }
 
 /* Tokens */
@@ -116,7 +125,7 @@ pre[class*="language-"] {
 }
 
 .dark .token.punctuation {
-  color: #94a3b8;
+  color: #e5e7eb;
 }
 
 .dark .token.property,
@@ -158,7 +167,13 @@ pre[class*="language-"] {
 .dark .token.regex,
 .dark .token.important,
 .dark .token.variable {
-  color: #fbbf24;
+  color: #fde047;
+}
+
+/* Base text color for code in dark mode */
+.dark code[class*="language-"],
+.dark pre[class*="language-"] {
+  color: #e5e7eb;
 }
 
 .token.important,

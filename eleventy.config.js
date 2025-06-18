@@ -2,6 +2,8 @@ import { DateTime } from "luxon";
 
 // Plugins
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
+import embedEverything from "eleventy-plugin-embed-everything";
+
 
 export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
@@ -28,7 +30,9 @@ export default function (eleventyConfig) {
 
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);
-
+  eleventyConfig.addPlugin(embedEverything, {
+    add: ["youtube"],
+  });
 
   return {
     dir: {

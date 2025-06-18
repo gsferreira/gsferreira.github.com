@@ -127,7 +127,7 @@ module.exports = {
             '--tw-prose-underline-hover': '#93c5fd',
             '--tw-prose-bold': '#f3f4f6',
             '--tw-prose-counters': '#9ca3af',
-            '--tw-prose-bullets': '#4b5563',
+            '--tw-prose-bullets': '#e5e7eb',
             '--tw-prose-hr': '#374151',
             '--tw-prose-quote-borders': '#374151',
             '--tw-prose-captions': '#9ca3af',
@@ -169,6 +169,12 @@ module.exports = {
               color: '#9ca3af',
             },
             blockquote: {
+              color: '#e5e7eb',
+            },
+            'ul > li::marker': {
+              color: '#e5e7eb',
+            },
+            'ol > li::marker': {
               color: '#e5e7eb',
             },
           },
