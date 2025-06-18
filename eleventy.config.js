@@ -16,6 +16,12 @@ export default function (eleventyConfig) {
     return collectionApi.getFilteredByGlob("src/archive/**/*.md");
   });
 
+  // Add courses collection
+  eleventyConfig.addCollection("courses", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/courses/*.md")
+      .sort((a, b) => b.date - a.date);
+  });
+
   // Date helpers
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, {
