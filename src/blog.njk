@@ -1,0 +1,32 @@
+---
+layout: default
+permalink: /blog/
+eleventyNavigation:
+  key: Blog
+  order: 2
+---
+
+<div class="max-w-6xl mx-auto text-center py-16">
+  <h1 class="text-4xl font-light mb-2 text-gray-900 dark:text-white">Insights</h1>
+  <p class="text-lg text-gray-500 dark:text-gray-400 mb-8">Thoughts on innovation, design, leadership, and building products that change the world.</p>
+</div>
+
+{% set featured = collections.post | selectattr('data.featured', 'equalto', true) | first %}
+{% if not featured %}
+  {% set featured = collections.post | last %}
+{% endif %}
+
+<div class="max-w-6xl mx-auto px-4">
+  {% set post = featured %}
+  {% include "components/blog-featured.njk" %}
+</div>
+
+<div class="max-w-6xl mx-auto px-4">
+  <h2 class="text-xl font-medium text-gray-900 dark:text-white mb-4">All Posts</h2>
+  {% set posts = collections.post | reverse %}
+  {% include "components/blog-list.njk" %}
+</div>
+
+<div class="mt-24 -mx-4 sm:-mx-6 lg:-mx-8">
+  {% include "components/newsletter.liquid" %}
+</div> 
