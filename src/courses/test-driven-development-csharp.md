@@ -7,6 +7,7 @@ rating: 4.8
 reviewCount: "2.4K+"
 level: "Intermediate"
 featured: false
+highlight: true
 image: /assets/courses/innovation-mastery.png
 learningPoints:
   - Master the Red-Green-Refactor cycle and TDD fundamentals

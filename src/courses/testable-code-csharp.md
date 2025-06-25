@@ -7,6 +7,7 @@ rating:
 reviewCount: 
 level: Beginner
 featured: false
+highlight: true
 image: /assets/courses/innovation-mastery.png
 learningPoints:
   - Define explicit behaviors with clear inputs and outputs

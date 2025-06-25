@@ -7,6 +7,7 @@ rating:
 reviewCount: 
 level: Intermediate
 featured: false
+highlight: true
 image: /assets/courses/innovation-mastery.png
 learningPoints:
   - Master system design and architecture for scalable applications
