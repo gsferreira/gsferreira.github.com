@@ -28,16 +28,6 @@ layout: default
   </article>
 </div>
 
-<div class="mt-32 bg-black text-white px-8 py-12 text-center dark:bg-gray-900">
-  <div class="max-w-3xl mx-auto">
-    <h2 class="text-3xl font-medium mb-4">Think different</h2>
-    <p class="text-gray-300 text-lg mb-8">Weekly insights on innovation, design, and exploring different ways to get your inbox.</p>
-    
-    <form class="max-w-md mx-auto flex gap-2">
-      <input type="email" placeholder="Your email" class="flex-1 px-4 py-3 rounded-lg bg-white/10 text-white placeholder-gray-400 border border-white/20 focus:outline-none focus:border-white/40">
-      <button type="submit" class="px-6 py-3 bg-white text-black font-medium rounded-lg hover:bg-gray-100 dark:bg-gray-800 dark:text-white dark:hover:bg-gray-700">
-        Subscribe
-      </button>
-    </form>
-  </div>
+<div class="mt-32">
+  {% include "components/newsletter.liquid" %}
 </div> 
