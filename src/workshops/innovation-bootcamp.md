@@ -1,22 +1,108 @@
 ---
-title: "Innovation Bootcamp"
-description: "Intensive 3-day program that transforms how teams approach innovation. Learn to identify breakthrough opportunities and build systematic innovation processes."
-duration: "3 days"
-participants: "12-25 people"
-format: "Innovation"
-formatType: "3-Day Intensive"
-level: "All levels"
-featured: true
-keyTakeaways:
+layout: workshop.njk
+title: Innovation Bootcamp
+description: Intensive 3-day program that transforms how teams approach innovation. Learn to identify breakthrough opportunities and build systematic innovation processes.
+image: /assets/workshops/innovation-bootcamp.jpg
+category: Innovation
+format: 3-Day Intensive
+duration: 3 days
+participants: 12-25 people
+level: All levels
+rating: 4.9
+reviews: 127
+achievements:
   - Master systematic innovation frameworks
   - Identify breakthrough market opportunities
   - Build innovation culture in your organization
-upcomingSessions:
-  - date: "March 15-17, 2024"
-    location: "San Francisco, CA"
-    venue: "Design Museum"
-    spotsLeft: 8
-    available: true
+  - Develop rapid prototyping skills
+  - Create sustainable innovation processes
+  - Learn to think like a disruptor
+prerequisites:
+  - No specific technical background required
+  - Basic understanding of business concepts helpful
+  - Willingness to challenge conventional thinking
+  - Commitment to applying learnings in your organization
+instructor:
+  name: Steve Jobs
+  title: Founder, Apple • Innovation Expert
+  image: /assets/headshot.png
+curriculum:
+  description: A carefully structured learning journey designed to maximize impact and ensure practical application.
+  modules:
+    - title: The Innovation Mindset
+      duration: 4 hours
+      description: Develop the mental frameworks that drive breakthrough thinking and challenge conventional wisdom.
+      topics:
+        - Principles of disruptive innovation
+        - Identifying market blind spots
+        - The art of thinking different
+        - Overcoming innovation barriers
+    - title: Opportunity Recognition
+      duration: 4 hours
+      description: Learn systematic approaches to identifying and evaluating breakthrough opportunities.
+      topics:
+        - Market analysis techniques
+        - Customer pain point identification
+        - Technology trend analysis
+        - Competitive landscape mapping
+    - title: Rapid Prototyping
+      duration: 6 hours
+      description: Master the art of quickly testing and iterating on innovative ideas.
+      topics:
+        - Design thinking methodology
+        - Minimum viable product concepts
+        - User feedback integration
+        - Iteration strategies
+    - title: Innovation Systems
+      duration: 4 hours
+      description: Build sustainable innovation processes within your organization.
+      topics:
+        - Innovation culture development
+        - Team structure for innovation
+        - Resource allocation strategies
+        - Measuring innovation success
+testimonials:
+  - quote: "This bootcamp completely transformed how our team approaches innovation. We've launched three breakthrough products since attending."
+    author: Sarah Chen
+    title: VP of Innovation
+    company: TechCorp
+    image: /assets/testimonials/sarah-chen.jpg
+  - quote: "The systematic approach to innovation is game-changing. We now have a repeatable process for generating breakthrough ideas."
+    author: Marcus Johnson
+    title: Product Director
+    company: StartupXYZ
+    image: /assets/testimonials/marcus-johnson.jpg
+  - quote: "Steve's innovation principles helped us pivot our entire business model. The results have been extraordinary."
+    author: Elena Rodriguez
+    title: CEO
+    company: InnovateLab
+    image: /assets/testimonials/elena-rodriguez.jpg
+faqs:
+  - question: What makes this workshop different from other innovation programs?
+    answer: Our workshop combines proven innovation frameworks with hands-on practice, focusing on real-world application. You'll learn not just theory, but practical tools and techniques that you can implement immediately.
+  - question: Do I need any technical background to attend?
+    answer: No technical background is required. The workshop is designed for professionals from any industry who want to drive innovation in their organizations.
+  - question: What materials will I receive?
+    answer: You'll receive comprehensive workshop materials, including digital workbooks, templates, frameworks, and access to our online resource library for continued learning.
+  - question: Can I bring my team?
+    answer: Yes! We encourage team participation and offer special group rates. Team attendance often leads to better implementation of the concepts learned.
+related_workshops:
+  - title: Design Thinking Masterclass
+    category: Design
+    format: 2-Day Workshop
+    description: Deep dive into user-centered design principles. Learn how to create products that customers don't just use, but love.
+    duration: 2 days
+    participants: 8-20 people
+    level: Intermediate
+    url: /workshops/design-thinking-masterclass
+  - title: Leadership Transformation
+    category: Leadership
+    format: 2-Day Program
+    description: Transform your leadership approach with principles that built Apple. Learn to inspire teams and drive organizational change.
+    duration: 2 days
+    participants: 10-30 people
+    level: Advanced
+    url: /workshops/leadership-transformation
 ---
 
 # Transform Your Innovation Approach
