@@ -1,0 +1,134 @@
+---
+layout: default.liquid
+---
+
+<main class="min-h-screen bg-white dark:bg-black">
+    <article class="relative bg-white dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="space-y-8">
+                <div class="flex items-center gap-4 text-sm">
+                    <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-medium transition-colors">{{ format }}</span>
+                    <span class="text-gray-500 dark:text-gray-400 transition-colors">{{ formatType }}</span>
+                </div>
+
+                <div class="space-y-6">
+                    <h1 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white leading-tight tracking-tight transition-colors">{{ title }}</h1>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-2xl transition-colors">{{ description }}</p>
+                </div>
+
+                <div class="grid grid-cols-3 gap-4 text-sm max-w-lg">
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-4 w-4">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <polyline points="12 6 12 12 16 14"></polyline>
+                        </svg>
+                        <span>{{ duration }}</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4">
+                            <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                            <circle cx="9" cy="7" r="4"></circle>
+                            <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                            <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                        </svg>
+                        <span>{{ participants }}</span>
+                    </div>
+                    <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 transition-colors">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target h-4 w-4">
+                            <circle cx="12" cy="12" r="10"></circle>
+                            <circle cx="12" cy="12" r="6"></circle>
+                            <circle cx="12" cy="12" r="2"></circle>
+                        </svg>
+                        <span>{{ level }}</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </article>
+
+    <article class="py-24 lg:py-32 bg-white dark:bg-black transition-colors">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="prose dark:prose-invert max-w-none">
+                {{ content | safe }}
+            </div>
+        </div>
+    </article>
+
+    {% if upcomingSessions and upcomingSessions.length > 0 %}
+    <section id="upcoming" class="py-24 lg:py-32 bg-gray-50 dark:bg-black transition-colors">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="space-y-16">
+                <div class="text-center space-y-6">
+                    <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Upcoming Sessions</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">Join our next available sessions. Limited seats available.</p>
+                </div>
+
+                <div class="grid gap-6">
+                    {% for session in upcomingSessions %}
+                    <article class="bg-white dark:bg-gray-900 rounded-2xl p-6 lg:p-8 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300">
+                        <div class="grid lg:grid-cols-4 gap-6 items-center">
+                            <div class="space-y-2">
+                                <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">{{ title }}</h3>
+                                <p class="text-gray-600 dark:text-gray-300 font-light text-sm transition-colors">{{ formatType }}</p>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-calendar h-4 w-4">
+                                        <path d="M8 2v4"></path>
+                                        <path d="M16 2v4"></path>
+                                        <rect width="18" height="18" x="3" y="4" rx="2"></rect>
+                                        <path d="M3 10h18"></path>
+                                    </svg>
+                                    <span>{{ session.date }}</span>
+                                </div>
+                                <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-map-pin h-4 w-4">
+                                        <path d="M20 10c0 6-8 12-8 12s-8-6-8-12a8 8 0 0 1 16 0Z"></path>
+                                        <circle cx="12" cy="10" r="3"></circle>
+                                    </svg>
+                                    <span>{{ session.location }}</span>
+                                </div>
+                            </div>
+                            <div class="space-y-2">
+                                <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 transition-colors">
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4">
+                                        <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                                        <circle cx="9" cy="7" r="4"></circle>
+                                        <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                                        <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                                    </svg>
+                                    <span>{{ session.spotsLeft }} spots left</span>
+                                </div>
+                                <div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">{{ session.venue }}</div>
+                            </div>
+                            <div class="flex gap-3 lg:justify-end">
+                                {% if session.available %}
+                                <a href="mailto:workshops@gsferreira.com" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-6 py-2 text-sm font-medium transition-colors">Register</a>
+                                {% else %}
+                                <span class="inline-block px-4 py-2 bg-gray-200 text-gray-600 rounded">Full</span>
+                                {% endif %}
+                            </div>
+                        </div>
+                    </article>
+                    {% endfor %}
+                </div>
+            </div>
+        </div>
+    </section>
+    {% endif %}
+
+    <section class="py-24 lg:py-32 bg-white dark:bg-black transition-colors">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="text-center space-y-8">
+                <div class="space-y-6">
+                    <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Ready to Transform Your Team?</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">Get in touch to register for an upcoming session or discuss a custom workshop for your organization.</p>
+                </div>
+                <div class="flex gap-4 justify-center">
+                    <a href="mailto:workshops@gsferreira.com" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-6 py-2 font-medium transition-colors">Get in Touch</a>
+                    <a href="/workshops" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full px-6 py-2 font-medium transition-colors">View All Workshops</a>
+                </div>
+            </div>
+        </div>
+    </section>
+</main> 

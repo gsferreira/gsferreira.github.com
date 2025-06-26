@@ -22,6 +22,11 @@ export default function (eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
+  // Add workshops collection
+  eleventyConfig.addCollection("workshops", function(collectionApi) {
+    return collectionApi.getFilteredByGlob("src/workshops/*.md");
+  });
+
   // Date helpers
   eleventyConfig.addFilter("readableDate", (dateObj) => {
     return DateTime.fromJSDate(dateObj, {
