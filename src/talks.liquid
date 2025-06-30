@@ -1,11 +1,12 @@
 ---
 layout: default
 title: Talks
+description: Talks I've given. Ideas worth sharing.
 ---
 
 <div class="max-w-4xl mx-auto px-4 py-16">
     <h1 class="text-4xl font-bold text-center mb-4 text-gray-900 dark:text-white">Talks</h1>
-    <p class="text-center text-gray-600 dark:text-gray-400 mb-8">Exercises, presentations, and conversations that shaped the future of technology, design, and innovation.</p>
+    <p class="text-center text-gray-600 dark:text-gray-400 mb-8">{{description}}</p>
     <p class="text-center text-gray-600 dark:text-gray-400 mb-16">Want me to speak at your event? <a href="mailto:mail@guiferreira.me" class="text-black dark:text-white hover:underline">Get in touch!</a></p>
 
     {% for talk in talks.all %}
@@ -49,14 +50,6 @@ title: Talks
         </div>
     </div>
     {% endfor %}
-</div>
-
-<div class="bg-black dark:bg-gray-900 text-white py-16">
-    <div class="max-w-4xl mx-auto px-4 text-center">
-        <h2 class="text-2xl font-bold mb-4">Think different</h2>
-        <p class="text-gray-400 mb-8">Want to invite me to share my thoughts at your event? Let's make something happen.</p>
-        <a href="mailto:mail@guiferreira.me" class="inline-block bg-white text-black px-6 py-3 rounded-md font-medium hover:bg-gray-100 transition">Get in touch</a>
-    </div>
 </div>
 
 {% include "components/newsletter.liquid" %} 
