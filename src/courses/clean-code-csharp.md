@@ -13,6 +13,9 @@ courseUrl: https://dometrain.com/course/from-zero-to-hero-clean-code-with-csharp
 callToActionTitle: "Ready to Write Code That Everyone Can Understand?"
 callToActionSubtitle: "Join 5000+ developers who have transformed their code from confusing to crystal clear."
 date: 2024-03-23
+relatedCourses:
+  - test-driven-development-csharp
+  - testable-code-csharp
 ---
 
 # "I wrote this code 6 months ago, and now I have no idea what it does!"

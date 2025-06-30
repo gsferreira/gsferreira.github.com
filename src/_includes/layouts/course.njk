@@ -128,3 +128,50 @@ layout: default
     </div>
   </div>
 </section> 
+
+{% if relatedCourses %}
+<section class="py-24 lg:py-32 bg-gray-50 dark:bg-black border-t border-gray-100 dark:border-gray-900 transition-colors">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="space-y-16">
+      <h2 class="text-3xl font-medium text-gray-900 dark:text-white transition-colors">Students also enrolled in</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {% for relatedCourse in relatedCourses %}
+        {% for entry in collections.all %}
+          {% if entry.filePathStem == "/courses/" + relatedCourse %}
+          <article class="bg-white dark:bg-gray-900 rounded-2xl p-8 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300">
+            <div class="space-y-6">
+              <div class="space-y-4">
+                <div class="flex items-center gap-4 text-sm">
+                  <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-medium transition-colors">{{ entry.data.category }}</span>
+                  {% if entry.data.rating %}
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-gray-900 dark:text-white">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span class="font-medium text-gray-900 dark:text-white transition-colors">{{ entry.data.rating }}</span>
+                  </div>
+                  {% endif %}
+                </div>
+                <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">{{ entry.data.title }}</h3>
+                <p class="text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ entry.data.description }}</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-4 w-4">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>{{ entry.data.duration }}</span>
+                </div>
+              </div>
+              <a href="/courses/{{ relatedCourse }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full py-2 font-medium transition-colors">View Course</a>
+            </div>
+          </article>
+          {% endif %}
+        {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %} 
