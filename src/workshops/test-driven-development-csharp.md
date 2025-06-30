@@ -92,6 +92,12 @@ faqs:
 #     participants: 8-20 people
 #     level: Intermediate
 #     url: /workshops/design-thinking-masterclass
+upcomingSessions:
+  - date: "May 10, 2024"
+    location: "San Francisco, CA"
+    venue: "Strategy Hub"
+    spotsLeft: 20
+    available: true
 ---
 
 # _"Test-Driven Development changed the way I write code."_
