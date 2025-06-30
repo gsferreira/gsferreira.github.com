@@ -5,6 +5,7 @@ layout: default
 <article class="max-w-3xl mx-auto px-6 py-12">
   <div class="mb-6 flex items-center justify-between">
     <span class="px-3 py-1 text-xs font-medium bg-black text-white dark:bg-white dark:text-black rounded-full">{{ level }}</span>
+    {% if rating %}
     <div class="flex items-center gap-1">
       <div class="flex">
         {% for i in range(1, 6) %}
@@ -18,6 +19,7 @@ layout: default
         <span class="text-sm text-gray-500 ml-1">({{ reviewCount }} reviews)</span>
       {% endif %}
     </div>
+    {% endif %}
   </div>
 
   <h1 class="text-3xl font-semibold mb-3 text-gray-900 dark:text-white leading-tight tracking-tight transition-colors">{{ title }}</h1>

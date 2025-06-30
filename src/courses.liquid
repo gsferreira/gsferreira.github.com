@@ -1,26 +1,14 @@
 ---
 layout: default
 title: Courses
-description: Transform your approach to innovation, design, and leadership with these carefully crafted learning experiences based on three decades of revolutionary thinking.
+description: Learn to code like an artist. Ship like a pro.
 ---
 
 <section class="relative bg-white dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="text-center space-y-8">
       <h1 class="text-5xl lg:text-6xl font-light text-gray-900 dark:text-white leading-tight tracking-tight transition-colors">Courses</h1>
-      <p class="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-2xl mx-auto transition-colors">Transform your approach to innovation, design, and leadership with these carefully crafted learning experiences based on three decades of revolutionary thinking.</p>
-      <div class="pt-4">
-        <div class="grid grid-cols-2 gap-8 max-w-sm mx-auto">
-          <div class="text-center">
-            <div class="text-3xl font-light text-gray-900 dark:text-white transition-colors">5.0</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1 transition-colors">Average Rating</div>
-          </div>
-          <div class="text-center">
-            <div class="text-3xl font-light text-gray-900 dark:text-white transition-colors">{{ collections.courses.length }}</div>
-            <div class="text-sm text-gray-500 dark:text-gray-400 font-medium mt-1 transition-colors">Courses</div>
-          </div>
-        </div>
-      </div>
+      <p class="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-2xl mx-auto transition-colors">Learn to code like an artist. Ship like a pro.</p>
     </div>
   </div>
 </section>
@@ -42,6 +30,7 @@ description: Transform your approach to innovation, design, and leadership with 
                 <div class="space-y-4">
                   <div class="flex items-center gap-4 text-sm">
                     <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-medium transition-colors">{{ course.data.level }}</span>
+                    {% if course.data.rating %}
                     <div class="flex items-center gap-1">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-gray-900 dark:text-white">
                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -49,6 +38,7 @@ description: Transform your approach to innovation, design, and leadership with 
                       <span class="font-medium text-gray-900 dark:text-white transition-colors">{{ course.data.rating }}</span>
                       <span class="text-gray-500 dark:text-gray-400 transition-colors">({{ course.data.reviewCount }} reviews)</span>
                     </div>
+                    {% endif %}
                   </div>
                   <h2 class="text-3xl lg:text-4xl font-medium text-gray-900 dark:text-white transition-colors">{{ course.data.title }}</h2>
                   <p class="text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ course.data.description }}</p>
@@ -64,7 +54,6 @@ description: Transform your approach to innovation, design, and leadership with 
                   <span class="text-gray-500 dark:text-gray-400 transition-colors">{{ course.data.category }}</span>
                 </div>
                 <div class="space-y-4">
-                  <h3 class="font-medium text-gray-900 dark:text-white transition-colors">What you'll learn:</h3>
                   <ul class="space-y-2">
                     {% for point in course.data.learningPoints %}
                       <li class="flex items-start gap-3">
@@ -79,7 +68,6 @@ description: Transform your approach to innovation, design, and leadership with 
                 </div>
                 <div class="flex gap-4">
                   <a href="{{ course.url }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">Learn More</a>
-                  <button class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full px-8 py-3 font-medium transition-colors">Preview</button>
                 </div>
               </div>
             </div>
@@ -94,6 +82,7 @@ description: Transform your approach to innovation, design, and leadership with 
                 <div class="space-y-4">
                   <div class="flex items-center gap-4 text-sm">
                     <span class="text-gray-500 dark:text-gray-400 font-medium uppercase tracking-wide transition-colors">{{ course.data.level }}</span>
+                    {% if course.data.rating %}
                     <div class="flex items-center gap-1">
                       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-gray-900 dark:text-white">
                         <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
@@ -101,6 +90,7 @@ description: Transform your approach to innovation, design, and leadership with 
                       <span class="font-medium text-gray-900 dark:text-white transition-colors">{{ course.data.rating }}</span>
                       <span class="text-gray-500 dark:text-gray-400 transition-colors">({{ course.data.reviewCount }})</span>
                     </div>
+                    {% endif %}
                   </div>
                   <h2 class="text-2xl lg:text-3xl font-medium text-gray-900 dark:text-white transition-colors">{{ course.data.title }}</h2>
                   <p class="text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ course.data.description }}</p>
@@ -117,7 +107,6 @@ description: Transform your approach to innovation, design, and leadership with 
                     <span>{{ course.data.category }}</span>
                   </div>
                   <div class="flex items-center gap-3">
-                    <a href="{{ course.url }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full px-4 py-2 text-sm font-medium transition-colors">Details</a>
                     <a href="{{ course.url }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-6 py-2 font-medium transition-colors">Learn More</a>
                   </div>
                 </div>

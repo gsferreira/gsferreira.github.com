@@ -7,7 +7,7 @@ category: Let's Build It
 rating: 
 reviewCount: 
 level: Intermediate
-featured: false
+featured: true
 highlight: true
 image: /assets/courses/innovation-mastery.png
 courseUrl: https://dometrain.com/course/lets-build-it-url-shortener-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8
