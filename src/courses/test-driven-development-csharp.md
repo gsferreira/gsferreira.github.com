@@ -10,8 +10,13 @@ level: "Intermediate"
 featured: false
 highlight: true
 image: /assets/courses/innovation-mastery.png
-courseUrl: https://dometrain.com/course/from-zero-to-hero-test-driven-development-tdd-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8
+courseUrl: https://dometrain.com/course/from-zero-to-hero-test-driven-development-tdd-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
+callToActionTitle: "Master Test-Driven Development"
+callToActionSubtitle: "Write better code, ship with confidence"
 date: 2023-10-02
+relatedCourses:
+  - testable-code-csharp
+  - clean-code-csharp
 ---
 
 # Test-Driven Development in C#: Write Better Code, Ship Fewer Bugs
@@ -77,11 +82,6 @@ That's why this course focuses on real coding examples. You'll see TDD applied t
 
 By the end, you'll have both the mindset and practical skills to make TDD part of your development workflow.
 
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-test-driven-development-tdd-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8">Start Learning TDD →</a></div>
-
-<div class="mt-5 text-center">
-<p><strong>Lifetime access guaranteed</strong> - Learn at your own pace</p>
-</div>
 
 ## Frequently Asked Questions
 

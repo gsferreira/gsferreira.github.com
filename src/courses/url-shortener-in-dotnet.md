@@ -10,8 +10,13 @@ level: Intermediate
 featured: true
 highlight: true
 image: /assets/courses/innovation-mastery.png
-courseUrl: https://dometrain.com/course/lets-build-it-url-shortener-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8
+courseUrl: https://dometrain.com/course/lets-build-it-url-shortener-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
+callToActionTitle: "Ready to stop building toy apps and create something real?"
+callToActionSubtitle: "Build Production-Ready Applications. From local development to cloud deployment."
 date: 2024-11-22
+relatedCourses:
+  - test-driven-development-csharp
+  - opentelemetry-dotnet
 ---
 
 # From Code to Production: The Missing Playbook
@@ -68,13 +73,6 @@ By the end, you'll have built a production-grade URL shortener with a web fronte
 
 You'll have the skills to confidently lead projects from conception to production, making you more valuable to your team and organization. No more being just "the code person" - you'll be the engineer who can deliver complete solutions.
 
-## Ready to stop building toy apps and create something real?
-
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/lets-build-it-url-shortener-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8">Get the Course →</a></div>
-
-<div class="mt-5 text-center">
-<p><strong>Lifetime access guaranteed</strong> - Learn at your own pace</p>
-</div>
 
 ## Frequently Asked Questions
 

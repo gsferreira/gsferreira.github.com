@@ -4,13 +4,17 @@ title: "From Zero to Hero: OpenTelemetry in .NET"
 description: "Learn how to instrument your .NET Applications with OpenTelemetry."
 duration: "4h 22m"
 category: "Observability"
-rating: 5
+rating: 4.5
 reviewCount: "1.7K+"
 level: "Beginner"
 featured: false
 image: /assets/courses/innovation-mastery.png
-courseUrl: https://dometrain.com/course/from-zero-to-hero-open-telemetry-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8
+courseUrl: https://dometrain.com/course/from-zero-to-hero-open-telemetry-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
+callToActionTitle: "Are you ready to stop guessing what's happening in your systems?"
+callToActionSubtitle: "Master OpenTelemetry in .NET"
 date: 2024-07-10
+relatedCourses:
+  - url-shortener-in-dotnet
 ---
 
 # "My microservices are a black box, and I'm drowning in logs!"
@@ -46,13 +50,6 @@ Imagine if you could:
 
 This isn't fantasy. This is what OpenTelemetry delivers.
 
-## Are you ready to stop guessing what's happening in your systems?
-
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-open-telemetry-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8">Get the Course →</a></div>
-
-<div class="mt-5 text-center">
-<p><strong>Lifetime access guaranteed</strong> - Learn at your own pace</p>
-</div>
 
 ## Frequently Asked Questions
 
