@@ -100,7 +100,7 @@ We'll use modern .NET technologies including ASP.NET Core, Azure services (Front
 Do I need Azure experience?
 </summary>
 <div class="pb-6 text-gray-600 dark:text-gray-300">
-No prior Azure experience is required. We'll cover everything from basics to advanced topics. However, you will need an Azure subscription (free tier is fine) to follow along with the deployments.
+No prior Azure experience is required. We'll cover everything from basics to advanced topics. You will need an Azure subscription to follow along with the deployments. While there will be some costs involved in running the services, the course's GitHub repository includes detailed recommendations on how to keep costs under control and which services to turn off when not in use.
 </div>
 </details>
 
@@ -109,7 +109,7 @@ No prior Azure experience is required. We'll cover everything from basics to adv
 Will this work for non-Azure cloud providers?
 </summary>
 <div class="pb-6 text-gray-600 dark:text-gray-300">
-While we use Azure in the course, the principles and patterns we teach are applicable to any cloud provider. You'll learn universal concepts about scalability, security, and monitoring.
+While we use Azure in the course, the principles and patterns we teach are applicable to any cloud provider. You'll learn universal concepts about system design and scalability.
 </div>
 </details>
 
@@ -128,6 +128,16 @@ Is the code available on GitHub?
 </summary>
 <div class="pb-6 text-gray-600 dark:text-gray-300">
 Yes! You get access to the complete source code, including all infrastructure templates and deployment scripts. Perfect for reference as you build your own projects.
+</div>
+</details>
+</div>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+What if I get stuck or have questions?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>
 </div>

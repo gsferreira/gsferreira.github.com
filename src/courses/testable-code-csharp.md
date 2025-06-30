@@ -109,28 +109,20 @@ Basic understanding of unit testing is helpful but not required. We'll cover the
 
 <details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
 <summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
-What frameworks and tools will we use?
-</summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
-We'll use common .NET testing tools (xUnit, Moq) but focus more on universal design principles. You'll learn patterns that work with any testing framework or mocking library.
-</div>
-</details>
-
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
-Will this help with ASP.NET Core and Entity Framework testing?
-</summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
-Yes! We have dedicated sections on making ASP.NET Core controllers and Entity Framework code testable, including handling authentication and database dependencies.
-</div>
-</details>
-
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
 Can I apply these principles to existing code?
 </summary>
 <div class="pb-6 text-gray-600 dark:text-gray-300">
 Absolutely! You'll learn strategies for gradually improving testability in existing codebases, identifying common anti-patterns, and refactoring them into testable designs.
+</div>
+</details>
+</div>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+What if I get stuck or have questions?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>
 </div>

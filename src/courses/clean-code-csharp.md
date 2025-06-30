@@ -98,10 +98,10 @@ You get lifetime access to the course and all future updates. This includes any 
 
 <details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
 <summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
-Is there a money-back guarantee?
+What if I get stuck or have questions?
 </summary>
 <div class="pb-6 text-gray-600 dark:text-gray-300">
-Yes! If you're not satisfied with the course within 30 days of purchase, we'll give you a full refund, no questions asked.
+The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>
 </div>

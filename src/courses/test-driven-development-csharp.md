@@ -106,19 +106,10 @@ You should have intermediate-level C# experience and basic understanding of unit
 
 <details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
 <summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
-Will TDD slow down my development process?
-</summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
-Initially, yes - there's a learning curve. But once you master TDD, you'll likely find yourself moving faster overall. You'll spend less time debugging, have fewer regressions, and be more confident in your code changes.
-</div>
-</details>
-
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
 What testing frameworks will we use?
 </summary>
 <div class="pb-6 text-gray-600 dark:text-gray-300">
-We'll primarily use xUnit.NET, along with popular tools like Moq and FluentAssertions. However, the principles you'll learn can be applied with any testing framework.
+We'll primarily use xUnit.NET, along with popular tools like NSubstitute, Testcontainers and FluentAssertions. However, the principles you'll learn can be applied with any testing framework.
 </div>
 </details>
 
@@ -136,7 +127,7 @@ Yes! We have a dedicated section on applying TDD to existing codebases. You'll l
 What if I get stuck or have questions?
 </summary>
 <div class="pb-6 text-gray-600 dark:text-gray-300">
-The course includes detailed explanations and troubleshooting guides. Plus, you get access to our community where you can ask questions and share experiences with other learners.
+The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>
 </div>

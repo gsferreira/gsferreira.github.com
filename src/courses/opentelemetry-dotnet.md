@@ -59,7 +59,7 @@ This isn't fantasy. This is what OpenTelemetry delivers.
 What is the target audience for this course?
 </summary>
 <div class="pb-6 text-gray-600 dark:text-gray-300">
-This course is designed for .NET developers who want to implement proper observability in their applications. It's perfect for developers and DevOps engineers working with distributed systems or microservices.
+This course is designed for .NET developers who want to implement proper observability in their applications. It's perfect for developers and DevOps engineers working with distributed systems or microservices. It's specifically designed for those who are just starting with OpenTelemetry
 </div>
 </details>
 
@@ -105,6 +105,16 @@ What if my team uses different observability tools?
 </summary>
 <div class="pb-6 text-gray-600 dark:text-gray-300">
 OpenTelemetry is vendor-neutral and supports multiple backends. The concepts you learn will apply regardless of your chosen observability backend, and you can easily export data to different systems.
+</div>
+</details>
+</div>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+What if I get stuck or have questions?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>
 </div>
