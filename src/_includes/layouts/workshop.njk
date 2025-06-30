@@ -101,7 +101,15 @@ layout: default.liquid
   </div>
 </section>
 
-<section class="py-24 lg:py-32 bg-gray-50 dark:bg-black transition-colors">
+<section class="py-12 lg:py-16 bg-white dark:bg-black transition-colors">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="prose dark:prose-invert dark:text-gray-200 prose-headings:dark:text-white prose-strong:dark:text-white prose-ul:dark:text-gray-200 max-w-none">
+      {{ content | safe }}
+    </div>
+  </div>
+</section>
+
+<section class="py-12 lg:py-16 bg-gray-50 dark:bg-black transition-colors">
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="space-y-16">
       <div class="text-center space-y-6">
