@@ -1,4 +1,5 @@
 ---
+layout: course.njk
 title: "From Zero to Hero: Writing Testable Code in C#"
 description: "Learn how to easily write code with Testing in mind."
 duration: "4h 30m"
@@ -9,13 +10,7 @@ level: Beginner
 featured: false
 highlight: true
 image: /assets/courses/innovation-mastery.png
-learningPoints:
-  - Define explicit behaviors with clear inputs and outputs
-  - Create narrow responsibilities and effective injection points
-  - Master dependency isolation and break dependency chains
-  - Minimize side effects and avoid test interference
-  - Write testable ASP.NET Core Controllers and Entity Framework code
-  - Implement testable authentication and time-dependent code
+courseUrl: https://dometrain.com/course/from-zero-to-hero-writing-testable-code-in-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8
 date: 2025-03-31
 ---
 
@@ -27,6 +22,15 @@ If you're stuck in an endless loop of:
 - Refactoring everything from scratch
 
 ...then I've got news for you: there's a better way.
+
+## What you'll learn
+
+- Define explicit behaviors with clear inputs and outputs
+- Create narrow responsibilities and effective injection points
+- Master dependency isolation and break dependency chains
+- Minimize side effects and avoid test interference
+- Write testable ASP.NET Core Controllers and Entity Framework code
+- Implement testable authentication and time-dependent code
 
 ## The Hidden Cost of Untestable Code
 
@@ -74,4 +78,62 @@ By the end, you'll instinctively know how to write testable code from the start 
 
 <div class="mt-5 text-center">
 <p><strong>Lifetime access guaranteed</strong> - Learn at your own pace</p>
+</div>
+
+## Frequently Asked Questions
+
+<div class="space-y-4">
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+What is the target audience for this course?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+This course is for C# developers who want to write code that's easier to test. Whether you're struggling with testing your current code or want to learn how to write more testable code from the start, this course is for you.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+How is this different from a TDD course?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+While TDD is about the process of writing tests first, this course focuses on the design principles that make code testable. You'll learn how to structure your code so it's easy to test, regardless of whether you practice TDD or not.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+Do I need testing experience?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+Basic understanding of unit testing is helpful but not required. We'll cover the fundamentals of testing as needed, focusing more on how to design testable code.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+What frameworks and tools will we use?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+We'll use common .NET testing tools (xUnit, Moq) but focus more on universal design principles. You'll learn patterns that work with any testing framework or mocking library.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+Will this help with ASP.NET Core and Entity Framework testing?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+Yes! We have dedicated sections on making ASP.NET Core controllers and Entity Framework code testable, including handling authentication and database dependencies.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+Can I apply these principles to existing code?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+Absolutely! You'll learn strategies for gradually improving testability in existing codebases, identifying common anti-patterns, and refactoring them into testable designs.
+</div>
+</details>
 </div>
