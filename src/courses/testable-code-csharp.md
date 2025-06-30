@@ -10,8 +10,13 @@ level: Beginner
 featured: false
 highlight: true
 image: /assets/courses/innovation-mastery.png
-courseUrl: https://dometrain.com/course/from-zero-to-hero-writing-testable-code-in-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8
+courseUrl: https://dometrain.com/course/from-zero-to-hero-writing-testable-code-in-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
+callToActionTitle: "Ready to write C# code that Loves Being Tested?"
+callToActionSubtitle: "Practical course for developers who want to write better, simpler, more maintainable code."
 date: 2025-03-31
+relatedCourses:
+  - test-driven-development-csharp
+  - clean-code-csharp
 ---
 
 # Write C# Code With Testing in Mind
@@ -71,14 +76,6 @@ We'll tackle the stuff that actually matters in your day-to-day work:
 * Building authentication and authorisation that's actually verifiable
 
 By the end, you'll instinctively know how to write testable code from the start – saving you countless hours of frustration and rewrites.
-
-## Ready to write C# code that Loves Being Tested?
-
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-writing-testable-code-in-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8">Get the Course →</a></div>
-
-<div class="mt-5 text-center">
-<p><strong>Lifetime access guaranteed</strong> - Learn at your own pace</p>
-</div>
 
 ## Frequently Asked Questions
 
