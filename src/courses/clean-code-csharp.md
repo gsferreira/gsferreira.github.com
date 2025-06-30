@@ -11,7 +11,6 @@ featured: false
 image: /assets/courses/innovation-mastery.png
 courseUrl: https://dometrain.com/course/from-zero-to-hero-clean-code-with-csharp/?affcode=1115529_k5a22dj8?ref=gui-ferreira
 callToActionTitle: "Ready to Write Code That Everyone Can Understand?"
-callToActionSubtitle: "Join 5000+ developers who have transformed their code from confusing to crystal clear."
 date: 2024-03-23
 relatedCourses:
   - test-driven-development-csharp
@@ -48,14 +47,6 @@ Imagine if you could:
 - Feel proud when others read your code (instead of embarrassed)
 
 This isn't fantasy. This is what Clean Code delivers.
-
-## Are you ready to stop writing code that the "future-you" will hate?
-
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/from-zero-to-hero-clean-code-with-csharp/?affcode=1115529_k5a22dj8?ref=gui-ferreira">Get the Course →</a></div>
-
-<div class="mt-5 text-center">
-<p><strong>Lifetime access guaranteed</strong> - Learn at your own pace</p>
-</div>
 
 ## Frequently Asked Questions
 
