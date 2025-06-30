@@ -26,6 +26,10 @@ instructor:
   name: Steve Jobs
   title: Founder, Apple • Innovation Expert
   image: /assets/headshot.png
+keyTakeaways:
+  - Master user-centered design methodology
+  - Develop empathy-driven product thinking
+  - Learn rapid prototyping techniques
 curriculum:
   description: A carefully structured learning journey designed to maximize impact and ensure practical application.
   modules:
@@ -152,7 +156,7 @@ This workshop is perfect for:
 4. **Culture Building**: Methods for fostering an innovative mindset across your organization
 
 <div class="flex flex-row justify-center mt-10">
-<a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="mailto:workshops@gsferreira.com">Book This Workshop →</a>
+<a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="mailto:workshops@guiferreira.me">Book This Workshop →</a>
 </div>
 
 <div class="mt-5 text-center">
