@@ -9,7 +9,7 @@ reviewCount:
 level: Intermediate
 featured: true
 highlight: true
-image: /assets/courses/innovation-mastery.png
+image: /assets/courses/url-shortener-in-dotnet.png
 courseUrl: https://dometrain.com/course/lets-build-it-url-shortener-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
 callToActionTitle: "Ready to stop building toy apps and create something real?"
 callToActionSubtitle: "Build Production-Ready Applications. From local development to cloud deployment."

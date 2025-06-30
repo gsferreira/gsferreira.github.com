@@ -9,7 +9,7 @@ reviewCount:
 level: Beginner
 featured: false
 highlight: true
-image: /assets/courses/innovation-mastery.png
+image: /assets/courses/testable-code-csharp.png
 courseUrl: https://dometrain.com/course/from-zero-to-hero-writing-testable-code-in-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
 callToActionTitle: "Ready to write C# code that Loves Being Tested?"
 callToActionSubtitle: "Practical course for developers who want to write better, simpler, more maintainable code."

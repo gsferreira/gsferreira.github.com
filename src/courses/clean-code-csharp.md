@@ -8,7 +8,7 @@ rating:
 reviewCount: 
 level: Beginner
 featured: false
-image: /assets/courses/innovation-mastery.png
+image: /assets/courses/clean-code-csharp.png
 courseUrl: https://dometrain.com/course/from-zero-to-hero-clean-code-with-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
 callToActionTitle: "Ready to Write Code That Everyone Can Understand?"
 date: 2024-03-23

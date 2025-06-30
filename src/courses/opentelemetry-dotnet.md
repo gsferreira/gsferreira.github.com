@@ -8,7 +8,7 @@ rating: 4.5
 reviewCount: "1.7K+"
 level: "Beginner"
 featured: false
-image: /assets/courses/innovation-mastery.png
+image: /assets/courses/opentelemetry-dotnet.png
 courseUrl: https://dometrain.com/course/from-zero-to-hero-open-telemetry-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
 callToActionTitle: "Are you ready to stop guessing what's happening in your systems?"
 callToActionSubtitle: "Master OpenTelemetry in .NET"
