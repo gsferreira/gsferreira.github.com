@@ -1,0 +1,19 @@
+---
+layout: default
+---
+
+<article class="max-w-6xl mx-auto px-6 py-12">
+  <div class="prose dark:prose-invert dark:text-gray-200 prose-headings:dark:text-white prose-strong:dark:text-white prose-ul:dark:text-gray-200 max-w-none">
+    {% if description %}
+    <p class="text-xl text-gray-600 dark:text-gray-400 mb-12">{{ description }}</p>
+    {% endif %}
+
+    <div class="mt-6 text-xl text-gray-600 dark:text-gray-400">
+      {{ teaser | safe }}
+    </div>
+    
+    <div class="mt-12">
+      {{ content | safe }}
+    </div>
+  </div>
+</article>
