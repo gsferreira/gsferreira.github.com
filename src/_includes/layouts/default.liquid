@@ -29,6 +29,16 @@
     <nav class="w-full border-b border-gray-100 bg-white dark:bg-black dark:border-gray-800">
       <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
         <a href="/" class="text-lg font-medium tracking-tight text-gray-900 dark:text-white">Gui Ferreira</a>
+        
+        <!-- Mobile menu button -->
+        <button id="mobile-menu-button" class="md:hidden text-gray-900 dark:text-white">
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+            <path class="mobile-menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
+            <path class="mobile-menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
+          </svg>
+        </button>
+
+        <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8 text-sm font-light">
           <a href="/about" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">About</a>
           <a href="/blog" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Blog</a>
@@ -45,6 +55,18 @@
             </svg>
           </button>
           <a href="/newsletter" class="ml-2 px-6 py-2 bg-black text-white rounded-full shadow hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition">Join 1k+ Subscribers</a>
+        </div>
+      </div>
+
+      <!-- Mobile Navigation Menu -->
+      <div id="mobile-menu" class="hidden md:hidden">
+        <div class="px-4 py-2 space-y-3">
+          <a href="/about" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">About</a>
+          <a href="/blog" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Blog</a>
+          <a href="/talks" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Talks</a>
+          <a href="/courses" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Courses</a>
+          <a href="/workshops" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Workshops</a>
+          <a href="/newsletter" class="block px-6 py-2 bg-black text-white text-center rounded-full shadow hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition">Join 1k+ Subscribers</a>
         </div>
       </div>
     </nav>
@@ -92,6 +114,7 @@
     </footer>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const root = document.documentElement;
         
@@ -121,6 +144,18 @@
           if (!localStorage.getItem('theme')) {
             setTheme(e.matches);
           }
+        });
+
+        // Mobile menu functionality
+        const mobileMenuButton = document.getElementById('mobile-menu-button');
+        const mobileMenu = document.getElementById('mobile-menu');
+        const menuIcon = document.querySelector('.mobile-menu-icon');
+        const closeIcon = document.querySelector('.mobile-menu-close');
+
+        mobileMenuButton.addEventListener('click', () => {
+          mobileMenu.classList.toggle('hidden');
+          menuIcon.classList.toggle('hidden');
+          closeIcon.classList.toggle('hidden');
         });
       });
     </script>
