@@ -5,7 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     <meta name="description" content="{% if description %}{{ description }}{% else %}Your site description{% endif %}" />
     <meta name="generator" content="{{ eleventy.generator }}">
+    <base href="{{ page.url }}">
+    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+
     <title>{% if title %}{{ title }}{% else %}Your site title{% endif %}</title>
+
+    <link rel="shortcut icon" href="/images/favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16.png">
+    <link rel="manifest" href="/images/site.webmanifest">
+
     <link rel="stylesheet" href="/styles.css" />
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap">
     <style>
