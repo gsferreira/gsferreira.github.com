@@ -1,0 +1,43 @@
+---json
+{
+  "permalink": "feed.xml",
+  "eleventyExcludeFromCollections": true,
+  "metadata": {
+    "title": "Gui Ferreira",
+    "subtitle": "Software Architect and a minimalist aspirant. passionate by product development and a continuous improvement enthusiast.",
+    "url": "https://guiferreira.me/",
+    "feedUrl": "https://guiferreira.me/feed.xml",
+    "author": {
+      "name": "Gui Ferreira",
+      "email": "gui@guiferreira.me"
+    }
+  }
+}
+---
+<?xml version="1.0" encoding="utf-8"?>
+<?xml-stylesheet type="text/css" href="/assets/feed.css"?>
+<feed xmlns="http://www.w3.org/2005/Atom"
+      xmlns:xhtml="http://www.w3.org/1999/xhtml">
+  <title>{{ metadata.title }}</title>
+  <subtitle>{{ metadata.subtitle }}</subtitle>
+  <link href="{{ metadata.feedUrl }}" rel="self"/>
+  <link href="{{ metadata.url }}"/>
+  <updated>{{ collections.post | getNewestCollectionItemDate | dateToRfc3339 }}</updated>
+  <id>{{ metadata.url }}</id>
+  <author>
+    <name>{{ metadata.author.name }}</name>
+    <email>{{ metadata.author.email }}</email>
+  </author>
+  {%- for post in collections.post | reverse %}
+    {% set absolutePostUrl %}{{ post.url | url | absoluteUrl(metadata.url) }}{% endset %}
+    <entry>
+      <title type="xhtml"><xhtml:div><xhtml:a href="{{ absolutePostUrl }}">{{ post.data.title }}</xhtml:a></xhtml:div></title>
+      <link href="{{ absolutePostUrl }}"/>
+      <updated>{{ post.date | dateToRfc3339 }}</updated>
+      <id>{{ absolutePostUrl }}</id>
+      <content type="xhtml">
+        <xhtml:div>{{ post.templateContent | htmlToAbsoluteUrls(absolutePostUrl) }}</xhtml:div>
+      </content>
+    </entry>
+  {%- endfor %}
+</feed>

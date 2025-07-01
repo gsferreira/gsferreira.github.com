@@ -1,9 +1,8 @@
-# Hella Simple Eleventy + Tailwind CSS Starter
+# Repository for guiferreira.me
 
-Just 2 dependencies, 2 npm scripts, and 1 Tailwind UI freebie to get you started.
+This repository contains the code being used [here](https://guiferreira.me). Previously gsferreira.com.
 
-## Preview
-https://hella-simple-eleventy-tailwindcss.netlify.app/
+This website was created with [Eleventy](https://11ty.dev) and [Tailwindcss](https://tailwindcss.com). It's based on [Hella Simple Eleventy + Tailwind CSS Starter](https://hella-simple-eleventy-tailwindcss.netlify.app/).
 
 ## Usage
 - Clone this repo

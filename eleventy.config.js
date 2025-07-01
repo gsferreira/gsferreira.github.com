@@ -3,10 +3,17 @@ import { DateTime } from "luxon";
 // Plugins
 import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import embedEverything from "eleventy-plugin-embed-everything";
-
+import pluginRss from "@11ty/eleventy-plugin-rss";
 
 export default function (eleventyConfig) {
+
+  // Static assets to pass through
   eleventyConfig.addPassthroughCopy({ "src/assets": "assets" });
+  eleventyConfig.addPassthroughCopy("src/images");
+  eleventyConfig.addPassthroughCopy("src/CNAME");
+  eleventyConfig.addPassthroughCopy("src/robots.txt");
+  eleventyConfig.addPassthroughCopy("src/netlify.toml");
+  
   eleventyConfig.setServerOptions({
     watch: ['_site/**/*.css'],
   });
@@ -41,6 +48,7 @@ export default function (eleventyConfig) {
 
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);
+  eleventyConfig.addPlugin(pluginRss);
   eleventyConfig.addPlugin(embedEverything, {
     add: ["youtube"],
   });
