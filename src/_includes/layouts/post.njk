@@ -2,19 +2,32 @@
 layout: default
 ---
 
-<section>
-  <article class="mx-auto measure markdown">
-    <time value="{{ date }}" class="text-sm text-gray-600">Last updated: {{ date | readableDate }}</time>
-    <h1 class="mt-6">{{ title }}</h1>
-    <div class="mt-6 text-2xl text-gray-500 flow">
-      {{ teaser | safe }}
-    </div>
-    <div class="mt-8 flow">
-      {{ content | safe }}
-    </div>
-    <nav class="mx-auto mt-16 measure">
-      <a href="{{ '/blog/' | url }}">← Blog index</a>
-    </nav>
-    {% include "components/newsletter.njk" %}
+<div class="max-w-3xl mx-auto px-4 pt-16">
+  <div class="mb-8">
+    <a href="/blog" class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+      ← Back to blog
+    </a>
+  </div>
+
+  <article class="prose prose-lg prose-headings:text-2xl prose-headings:font-medium prose-headings:mb-4 prose-p:text-[1.125rem] prose-p:leading-[1.8] max-w-none dark:prose-p:text-gray-300 dark:prose-li:text-gray-300 dark:prose-ul:text-gray-300 dark:prose-ol:text-gray-300 dark:prose-headings:text-white dark:prose-strong:text-white dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300">
+    <header class="not-prose mb-16">
+      <div class="flex items-center gap-6 mb-4">
+        <span class="inline-flex items-center px-3 py-0.5 text-[13px] bg-black text-white rounded-full dark:bg-white dark:text-black">
+          {{category}}
+        </span>
+
+        <div class="text-[15px] text-gray-500 dark:text-gray-400">
+          {{ page.date | readableDate }} · 7 min read
+        </div>
+      </div>
+
+      <h1 class="text-[2.5rem] font-medium leading-tight mb-4 text-gray-900 dark:text-white">{{ title }}</h1>
+    </header>
+
+    {{ content | safe }}
   </article>
-</section>
+</div>
+
+<div class="mt-32">
+  {% include "components/newsletter.liquid" %}
+</div> 

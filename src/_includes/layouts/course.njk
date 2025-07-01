@@ -1,0 +1,179 @@
+---
+layout: default
+---
+
+<article class="max-w-6xl mx-auto px-6 py-12">
+  <div class="mb-6 flex items-center justify-between">
+    <span class="px-3 py-1 text-xs font-medium bg-black text-white dark:bg-white dark:text-black rounded-full">{{ level }}</span>
+    {% if rating %}
+    <div class="flex items-center gap-1">
+      <div class="flex">
+        {% for i in range(1, 6) %}
+          <svg class="w-4 h-4 {% if i <= rating %}text-yellow-400{% else %}text-gray-200 dark:text-gray-700{% endif %}" fill="currentColor" viewBox="0 0 20 20">
+            <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
+          </svg>
+        {% endfor %}
+      </div>
+      <span class="text-sm font-medium ml-1">{{ rating }}</span>
+      {% if reviewCount %}
+        <span class="text-sm text-gray-500 ml-1">({{ reviewCount }} reviews)</span>
+      {% endif %}
+    </div>
+    {% endif %}
+  </div>
+
+  <h1 class="text-3xl font-semibold mb-3 text-gray-900 dark:text-white leading-tight tracking-tight transition-colors">{{ title }}</h1>
+  <p class="text-gray-600 dark:text-gray-400 mb-8">{{ description }}</p>
+
+  <div class="flex items-center gap-2 text-sm text-gray-500 mb-8">
+    <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"/>
+    </svg>
+    {{ duration }}
+    <span class="mx-2">•</span>
+    {{ category }}
+  </div>
+
+  {% if featured %}
+    <div class="mb-8">
+      <span class="px-3 py-1 text-xs font-medium bg-black text-white dark:bg-white dark:text-black rounded-full">Featured</span>
+    </div>
+  {% endif %}
+
+  <div class="prose dark:prose-invert dark:text-gray-200 prose-headings:dark:text-white prose-strong:dark:text-white prose-ul:dark:text-gray-200 max-w-none">
+    {{ content | safe }}
+  </div>
+</article>
+
+<section class="py-12">
+  <div class="text-center space-y-12">
+    {% if callToActionTitle %}
+      <div class="space-y-6">
+        <h2 class="text-4xl lg:text-5xl text-gray-900 dark:text-white tracking-tight">{{ callToActionTitle }}</h2>
+        {% if callToActionSubtitle %}
+          <p class="text-xl text-gray-600 dark:text-gray-400 max-w-2xl mx-auto">{{ callToActionSubtitle }}</p>
+        {% endif %}
+      </div>
+    {% endif %}
+
+    <div class="bg-gray-50 dark:bg-gray-900 rounded-3xl p-8 lg:p-12 max-w-2xl mx-auto transition-colors">
+      <div class="space-y-8">
+        <div class="text-center space-y-4">
+          <div class="flex items-baseline justify-center gap-3"></div>
+          <p class="text-gray-600 dark:text-gray-300 transition-colors">One-time payment • Lifetime access</p>
+        </div>
+        <div class="space-y-4">
+          <h3 class="font-medium text-gray-900 dark:text-white text-center transition-colors">Everything you need to succeed:</h3>
+          <div class="grid grid-cols-1 gap-3">
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <path d="m9 11 3 3L22 4"></path>
+              </svg>
+              <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">{{ duration }} of video content</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <path d="m9 11 3 3L22 4"></path>
+              </svg>
+              <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">Downloadable resources</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <path d="m9 11 3 3L22 4"></path>
+              </svg>
+              <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">Certificate of completion</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <path d="m9 11 3 3L22 4"></path>
+              </svg>
+              <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">Lifetime access to all updates</span>
+            </div>
+            <div class="flex items-center gap-3">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+                <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                <path d="m9 11 3 3L22 4"></path>
+              </svg>
+              <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">Powered by Dometrain</span>
+            </div>
+          </div>
+        </div>
+        <div class="grid grid-cols-2 gap-4 py-6 border-t border-gray-100 dark:border-gray-800">
+          <div class="text-center space-y-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-6 w-6 mx-auto text-gray-600 dark:text-gray-300">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div class="text-xs text-gray-500 dark:text-gray-400 transition-colors">Lifetime Access</div>
+          </div>
+          <div class="text-center space-y-3">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-award h-6 w-6 mx-auto text-gray-600 dark:text-gray-300">
+              <path d="m15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"></path>
+              <circle cx="12" cy="8" r="6"></circle>
+            </svg>
+            <div class="text-xs text-gray-500 dark:text-gray-400 transition-colors">Certificate</div>
+          </div>
+        </div>
+        <div class="space-y-3">
+          <a href="{{ courseUrl }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full py-4 text-lg font-medium transition-colors">
+            Enroll Now - Start Learning Today
+          </a>
+        </div>
+        <div class="text-center">
+          <p class="text-xs text-gray-500 dark:text-gray-400 transition-colors">Secure payment • Instant access</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section> 
+
+{% if relatedCourses %}
+<section class="py-24 lg:py-32 bg-gray-50 dark:bg-black border-t border-gray-100 dark:border-gray-900 transition-colors">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="space-y-16">
+      <h2 class="text-3xl font-medium text-gray-900 dark:text-white transition-colors">Students also enrolled in</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {% for relatedCourse in relatedCourses %}
+        {% for entry in collections.all %}
+          {% if entry.filePathStem == "/courses/" + relatedCourse %}
+          <article class="bg-white dark:bg-gray-900 rounded-2xl p-8 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300">
+            <div class="space-y-6">
+              <div class="space-y-4">
+                <div class="flex items-center gap-4 text-sm">
+                  <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-medium transition-colors">{{ entry.data.category }}</span>
+                  {% if entry.data.rating %}
+                  <div class="flex items-center gap-1">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-gray-900 dark:text-white">
+                      <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                    </svg>
+                    <span class="font-medium text-gray-900 dark:text-white transition-colors">{{ entry.data.rating }}</span>
+                  </div>
+                  {% endif %}
+                </div>
+                <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">{{ entry.data.title }}</h3>
+                <p class="text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ entry.data.description }}</p>
+              </div>
+              <div class="flex items-center justify-between">
+                <div class="flex items-center gap-2 text-sm text-gray-600 dark:text-gray-300 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-4 w-4">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>{{ entry.data.duration }}</span>
+                </div>
+              </div>
+              <a href="/courses/{{ relatedCourse }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full py-2 font-medium transition-colors">View Course</a>
+            </div>
+          </article>
+          {% endif %}
+        {% endfor %}
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %} 

@@ -1,47 +1,32 @@
 ---
 layout: default
-title: The Gui Ferreira Blog
-description: "The Gui Ferreira Blog"
-pagination:
-  data: collections.post
-  size: 30
-  alias: posts
-  reverse: true
+permalink: /blog/
+eleventyNavigation:
+  key: Blog
+  order: 2
 ---
 
-<section class="my-auto">
-  <div class="mx-auto flow">
-    <h1>Blog posts</h1>
-    <ul>
-      {%- for item in posts -%}
-        <li class="mt-6">
-          <time value="{{ item.date }}" class="text-sm text-gray-500">{{ item.date | readableDate }}</time>
-          <h3 class="mt-1 font-semibold">
-            <a class="text-primary hover:text-secondary" href="{{ item.url }}">{{ item.data.title }}</a>
-          </h3>
-          <div class="mt-2">
-            {% if item.data.description %}
-              {{ item.data.description }}
-            {% endif %}
-            <a class="text-primary hover:text-secondary" href="{{ item.url }}">Read →</a>
-          </div>
-        </li>
-      {%- endfor -%}
-    </ul>
-    {% if pagination.previousPageHref or pagination.nextPageHref %}
-      <nav class="flex flex-row justify-center" role="pagination">
-        {% if page.permalink != pagination.previousPageHref %}
-          <a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4 rounded-full" href="{{ pagination.previousPageHref }}">&lt; Previous page</a>
-        {% else %}
-          <span class="bg-gray-500 text-white font-bold mx-4 py-2 px-4 rounded-full opacity-50 cursor-not-allowed">&lt; Previous
-            page</span>
-        {% endif %}
-        {% if page.permalink != pagination.nextPageHref %}
-          <a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4 rounded-full" href="{{ pagination.nextPageHref }}">Next page &gt;</a>
-        {% else %}
-          <span class="bg-gray-500 text-white font-bold mx-4 py-2 px-4 rounded-full opacity-50 cursor-not-allowed">Next page &gt;</span>
-        {% endif %}
-      </nav>
-    {% endif %}
-  </div>
-</section>
+<div class="max-w-6xl mx-auto text-center py-16">
+  <h1 class="text-4xl [font-size:2.25rem] font-light mb-2 text-gray-900 dark:text-white">Insights</h1>
+  <p class="text-lg text-gray-500 dark:text-gray-400 mb-8">Thoughts on innovation, design, leadership, and building products that change the world.</p>
+</div>
+
+{% set featured = collections.post | selectattr('data.featured', 'equalto', true) | first %}
+{% if not featured %}
+  {% set featured = collections.post | last %}
+{% endif %}
+
+<div class="max-w-6xl mx-auto px-4">
+  {% set post = featured %}
+  {% include "components/blog-featured.njk" %}
+</div>
+
+<div class="max-w-6xl mx-auto px-4">
+  <h2 class="text-xl font-medium text-gray-900 dark:text-white mb-4">All Posts</h2>
+  {% set posts = collections.post | reverse %}
+  {% include "components/blog-list.njk" %}
+</div>
+
+<div class="mt-24 -mx-4 sm:-mx-6 lg:-mx-8">
+  {% include "components/newsletter.liquid" %}
+</div> 

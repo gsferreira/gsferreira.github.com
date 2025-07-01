@@ -1,0 +1,24 @@
+{% if post %}
+<div class="mb-16">
+  <h2 class="text-xl font-medium text-gray-900 dark:text-white mb-8">Featured</h2>
+  <div class="bg-light-hover dark:bg-dark-blue text-gray-900 dark:text-white rounded-[2rem] px-8 py-12 hover:bg-gray-100 dark:hover:bg-dark-blue-hover transition-all duration-300">
+    <div class="flex flex-col gap-4">
+      <div class="flex items-center gap-3 text-sm">
+        {% if post.data.category %}
+          <span class="inline-block text-sm uppercase tracking-wide text-gray-900 dark:text-white font-medium bg-white dark:bg-gray-800 rounded-full px-4 py-1">{{ post.data.category }}</span>
+          <span class="text-gray-400 dark:text-gray-500 transition-colors">•</span>
+        {% endif %}
+        <time datetime="{{ post.date | readableDate }}" class="text-gray-500 dark:text-gray-400">{{ post.date | readableDate }}</time>
+        {% if post.data.readingTime %}
+          <span class="text-gray-500 dark:text-gray-400">• {{ post.data.readingTime }} min read</span>
+        {% endif %}
+      </div>
+      <h3 class="text-4xl font-medium"><a href="{{ post.url }}" class="hover:underline">{{ post.data.title }}</a></h3>
+      {% if post.data.description %}
+        <p class="text-gray-500 dark:text-gray-300 text-lg mb-4">{{ post.data.description }}</p>
+      {% endif %}
+      <a href="{{ post.url }}" class="inline-block text-base text-gray-900 dark:text-white font-medium hover:underline">Read more →</a>
+    </div>
+  </div>
+</div>
+{% endif %} 

@@ -1,8 +1,22 @@
 ---
-layout: resource
-tags: course
+layout: course.njk
 title: "Let's Build It: URL Shortener in .NET"
 description: "Learn how to build a production-ready URL Shortener from conception to deployment."
+duration: 16h 46m
+category: Let's Build It
+rating: 
+reviewCount: 
+level: Intermediate
+featured: true
+highlight: true
+image: /assets/courses/url-shortener-in-dotnet.png
+courseUrl: https://dometrain.com/course/lets-build-it-url-shortener-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
+callToActionTitle: "Ready to stop building toy apps and create something real?"
+callToActionSubtitle: "Build Production-Ready Applications. From local development to cloud deployment."
+date: 2024-11-22
+relatedCourses:
+  - test-driven-development-csharp
+  - opentelemetry-dotnet
 ---
 
 # From Code to Production: The Missing Playbook
@@ -16,6 +30,16 @@ I've seen countless talented coders who can build amazing features but freeze wh
 You're comfortable with coding features, but when it comes to the full delivery pipeline - from infrastructure to deployment to production monitoring - there's a big knowledge gap.
 
 This gap is holding you back from shipping complete solutions and taking ownership of entire projects at work.
+
+## What you'll learn
+
+- Master system design and architecture for scalable applications
+- Implement CI/CD pipelines with GitHub Actions
+- Deploy infrastructure as code using Azure Bicep
+- Build secure authentication with Microsoft Entra ID
+- Optimize performance with Redis caching and CosmosDB
+- Monitor applications using OpenTelemetry and Health Checks
+- Secure your network with Azure Front Door and WAF
 
 ## Here's the deal with building real production apps
 
@@ -49,10 +73,71 @@ By the end, you'll have built a production-grade URL shortener with a web fronte
 
 You'll have the skills to confidently lead projects from conception to production, making you more valuable to your team and organization. No more being just "the code person" - you'll be the engineer who can deliver complete solutions.
 
-## Ready to stop building toy apps and create something real?
 
-<div class="flex flex-row justify-center mt-10"><a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://dometrain.com/course/lets-build-it-url-shortener-in-dotnet/?ref=gui-ferreira&affcode=1115529_k5a22dj8">Get the Course →</a></div>
+## Frequently Asked Questions
 
-<div class="mt-5 text-center">
-<p><strong>Lifetime access guaranteed</strong> - Learn at your own pace</p>
+<div class="space-y-4">
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+What is the target audience for this course?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+This course is perfect for .NET developers who want to learn how to build and deploy production-ready applications. It's ideal for developers who are comfortable with coding but want to master the full deployment pipeline.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+What technologies will we use?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+We'll use modern .NET technologies including ASP.NET Core, Azure services (Front Door, CosmosDB, Redis), GitHub Actions for CI/CD, and Azure Bicep for infrastructure as code. Everything is chosen to reflect real-world production requirements.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+Do I need Azure experience?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+No prior Azure experience is required. We'll cover everything from basics to advanced topics. You will need an Azure subscription to follow along with the deployments. While there will be some costs involved in running the services, the course's GitHub repository includes detailed recommendations on how to keep costs under control and which services to turn off when not in use.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+Will this work for non-Azure cloud providers?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+While we use Azure in the course, the principles and patterns we teach are applicable to any cloud provider. You'll learn universal concepts about system design and scalability.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+How is this different from other .NET courses?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+Most courses focus only on coding. This course covers the entire software lifecycle - from initial coding to production deployment, including security, monitoring, and maintenance.
+</div>
+</details>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+Is the code available on GitHub?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+Yes! You get access to the complete source code, including all infrastructure templates and deployment scripts. Perfect for reference as you build your own projects.
+</div>
+</details>
+</div>
+
+<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+What if I get stuck or have questions?
+</summary>
+<div class="pb-6 text-gray-600 dark:text-gray-300">
+The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
+</div>
+</details>
 </div>

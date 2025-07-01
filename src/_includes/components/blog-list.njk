@@ -1,0 +1,34 @@
+{% if posts.length > 0 %}
+<div class="py-12">
+    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div>
+            <ul class="divide-y divide-gray-100 dark:divide-dark-blue">
+                {% for post in posts %}
+                    {% if not featured or post.url != featured.url %}
+                    <li class="group">
+                        <div class="flex flex-col gap-3 py-12 -mx-8 px-8 rounded-[2rem] transition-all duration-300 hover:bg-light-hover dark:hover:bg-dark-blue">
+                            <div class="flex items-center gap-3 text-sm">
+                                {% if post.data.category %}
+                                    <span class="uppercase font-medium text-gray-500 dark:text-gray-400">{{ post.data.category }}</span>
+                                    <span class="text-gray-400 dark:text-gray-500 transition-colors">•</span>
+                                {% endif %}
+                                <span class="text-gray-500 dark:text-gray-400">{{ post.date | readableDate }}</span>
+                                {% if post.data.readingTime %}
+                                    <span class="text-gray-500 dark:text-gray-400">• {{ post.data.readingTime }} min read</span>
+                                {% endif %}
+                            </div>
+                            <h3 class="text-2xl font-medium text-gray-900 dark:text-white leading-tight">
+                                <a href="{{ post.url }}" class="hover:underline">{{ post.data.title }}</a>
+                            </h3>
+                            {% if post.data.description %}
+                                <p class="text-gray-500 dark:text-gray-400 text-base">{{ post.data.description }}</p>
+                            {% endif %}
+                        </div>
+                    </li>
+                    {% endif %}
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</div>
+{% endif %} 

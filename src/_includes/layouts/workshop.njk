@@ -1,0 +1,292 @@
+---
+layout: default.liquid
+---
+
+<section class="relative bg-white dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="grid lg:grid-cols-2 gap-16 items-start">
+      <div class="space-y-6">
+        <div class="aspect-[4/3] relative rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-900">
+          <img alt="{{ title }}" decoding="async" data-nimg="fill" class="object-cover" src="{{ image }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+          <div class="absolute top-6 left-6">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-black dark:bg-white text-white dark:text-black font-medium">{{ category }}</div>
+          </div>
+        </div>
+        <div class="grid grid-cols-3 gap-4">
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-4 text-center transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-6 w-6 mx-auto mb-2 text-gray-600 dark:text-gray-300">
+              <circle cx="12" cy="12" r="10"></circle>
+              <polyline points="12 6 12 12 16 14"></polyline>
+            </svg>
+            <div class="text-sm font-medium text-gray-900 dark:text-white transition-colors">{{ duration }}</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 transition-colors">Duration</div>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-4 text-center transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-6 w-6 mx-auto mb-2 text-gray-600 dark:text-gray-300">
+              <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+              <circle cx="9" cy="7" r="4"></circle>
+              <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+              <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+            </svg>
+            <div class="text-sm font-medium text-gray-900 dark:text-white transition-colors">{{ participants }}</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 transition-colors">Group Size</div>
+          </div>
+          <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-4 text-center transition-colors">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target h-6 w-6 mx-auto mb-2 text-gray-600 dark:text-gray-300">
+              <circle cx="12" cy="12" r="10"></circle>
+              <circle cx="12" cy="12" r="6"></circle>
+              <circle cx="12" cy="12" r="2"></circle>
+            </svg>
+            <div class="text-sm font-medium text-gray-900 dark:text-white transition-colors">{{ level }}</div>
+            <div class="text-xs text-gray-500 dark:text-gray-400 transition-colors">Level</div>
+          </div>
+        </div>
+      </div>
+      <div class="space-y-8">
+        <div class="space-y-6">
+          <div class="flex items-center gap-4">
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-gray-800 dark:text-gray-400 border-gray-300 dark:border-gray-600">{{ format }}</div>
+            <div class="flex items-center gap-1">
+              {% for i in range(0, 5) %}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-gray-900 dark:text-white">
+                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+              </svg>
+              {% endfor %}
+              <span class="text-sm font-medium text-gray-900 dark:text-white transition-colors">{{ rating }}</span>
+              <span class="text-sm text-gray-500 dark:text-gray-400 transition-colors">({{ reviews }} reviews)</span>
+            </div>
+          </div>
+          <h1 class="text-4xl lg:text-5xl font-medium text-gray-900 dark:text-white leading-tight tracking-tight transition-colors">{{ title }}</h1>
+          <p class="text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ description }}</p>
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">What you'll achieve:</h3>
+          <ul class="space-y-3">
+            {% for achievement in achievements %}
+            <li class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0 transition-colors"></div>
+              <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">{{ achievement }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="space-y-4">
+          <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">Prerequisites:</h3>
+          <ul class="space-y-2">
+            {% for prerequisite in prerequisites %}
+            <li class="flex items-start gap-3">
+              <div class="w-2 h-2 bg-gray-400 dark:bg-gray-500 rounded-full mt-2 flex-shrink-0 transition-colors"></div>
+              <span class="text-gray-600 dark:text-gray-300 font-light text-sm transition-colors">{{ prerequisite }}</span>
+            </li>
+            {% endfor %}
+          </ul>
+        </div>
+        <div class="flex flex-col sm:flex-row gap-4 pt-4">
+          <a href="#upcoming" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">View Upcoming Sessions</a>
+          <a href="mailto:workshops@guiferreira.me" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full px-8 py-3 font-medium transition-colors">Request Custom Workshop</a>
+        </div>
+        <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 transition-colors">
+          <div class="flex items-center gap-4">
+            <div class="w-12 h-12 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
+              <img alt="Instructor" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" src="{{ instructor.image }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+            </div>
+            <div>
+              <div class="font-medium text-gray-900 dark:text-white transition-colors">{{ instructor.name }}</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">{{ instructor.title }}</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-12 lg:py-16 bg-white dark:bg-black transition-colors">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="prose dark:prose-invert dark:text-gray-200 prose-headings:dark:text-white prose-strong:dark:text-white prose-ul:dark:text-gray-200 max-w-none">
+      {{ content | safe }}
+    </div>
+  </div>
+</section>
+
+<section class="py-12 lg:py-16 bg-gray-50 dark:bg-black transition-colors">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="space-y-16">
+      <div class="text-center space-y-6">
+        <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Curriculum</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">{{ curriculum.description }}</p>
+      </div>
+      <div class="space-y-8">
+        {% for module in curriculum.modules %}
+        <div class="bg-white dark:bg-gray-900 rounded-2xl p-8 hover:bg-gray-50 dark:hover:bg-gray-800 transition-colors duration-300">
+          <div class="flex gap-6">
+            <div class="flex-shrink-0">
+              <div class="w-12 h-12 bg-black dark:bg-white rounded-full flex items-center justify-center transition-colors">
+                <span class="text-white dark:text-black font-medium text-sm transition-colors">{{ loop.index }}</span>
+              </div>
+            </div>
+            <div class="space-y-4 flex-1">
+              <div class="flex items-center justify-between">
+                <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">{{ module.title }}</h3>
+                <div class="flex items-center gap-2 text-sm text-gray-500 dark:text-gray-400 transition-colors">
+                  <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-4 w-4">
+                    <circle cx="12" cy="12" r="10"></circle>
+                    <polyline points="12 6 12 12 16 14"></polyline>
+                  </svg>
+                  <span>{{ module.duration }}</span>
+                </div>
+              </div>
+              <p class="text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ module.description }}</p>
+              <div class="space-y-2">
+                <h4 class="font-medium text-gray-900 dark:text-white text-sm transition-colors">Key Topics:</h4>
+                <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
+                  {% for topic in module.topics %}
+                  <li class="flex items-center gap-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-4 w-4 text-gray-400 dark:text-gray-500 flex-shrink-0">
+                      <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
+                      <path d="m9 11 3 3L22 4"></path>
+                    </svg>
+                    <span class="text-gray-600 dark:text-gray-300 font-light text-sm transition-colors">{{ topic }}</span>
+                  </li>
+                  {% endfor %}
+                </ul>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+
+<section id="upcoming" class="py-24 lg:py-32 bg-gray-50 dark:bg-black transition-colors">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="space-y-16">
+      <div class="text-center space-y-6">
+        <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Upcoming Sessions</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">Join our next available sessions. Limited seats available.</p>
+      </div>
+
+      {% set sessions = upcomingSessions %}
+      {% set workshopTitle = title %}
+      {% set workshopFormat = format %}
+      {% include "components/upcoming-sessions.njk" %}
+    </div>
+  </div>
+</section>
+
+<section class="py-12 lg:py-16 bg-white dark:bg-black transition-colors">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="space-y-16">
+      <div class="text-center space-y-6">
+        <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">What participants say</h2>
+      </div>
+      <div class="grid lg:grid-cols-3 gap-8">
+        {% for testimonial in testimonials %}
+        <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 space-y-6 transition-colors">
+          <div class="flex gap-1">
+            {% for i in range(0, 5) %}
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-gray-900 dark:text-white">
+              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+            </svg>
+            {% endfor %}
+          </div>
+          <blockquote class="text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ testimonial.quote }}</blockquote>
+          <div class="flex items-center gap-4">
+            <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
+              <img alt="{{ testimonial.author }}" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" src="{{ testimonial.image }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
+            </div>
+            <div>
+              <div class="font-medium text-gray-900 dark:text-white transition-colors">{{ testimonial.author }}</div>
+              <div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">{{ testimonial.title }}</div>
+              <div class="text-sm text-gray-600 dark:text-gray-300 font-medium transition-colors">{{ testimonial.company }}</div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="py-24 lg:py-32 bg-gray-50 dark:bg-black transition-colors">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="space-y-16">
+      <div class="text-center space-y-6">
+        <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Frequently Asked Questions</h2>
+      </div>
+      <div class="space-y-4" data-orientation="vertical">
+        {% for faq in faqs %}
+        <div data-state="closed" data-orientation="vertical" class="border-b bg-white dark:bg-gray-900 rounded-2xl px-8 border-none transition-colors">
+          <h3 data-orientation="vertical" data-state="closed" class="flex">
+            <button type="button" class="flex flex-1 items-center justify-between [&[data-state=open]>svg]:rotate-180 text-left font-medium text-gray-900 dark:text-white hover:no-underline py-6 transition-colors">
+              {{ faq.question }}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
+                <path d="m6 9 6 6 6-6"></path>
+              </svg>
+            </button>
+          </h3>
+          <div class="pb-6 text-gray-600 dark:text-gray-300 font-light">
+            {{ faq.answer }}
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+
+{% if related_workshops %}
+<section class="py-24 lg:py-32 bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900 transition-colors">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="space-y-16">
+      <h2 class="text-3xl font-medium text-gray-900 dark:text-white transition-colors">Related workshops</h2>
+      <div class="grid md:grid-cols-2 gap-8">
+        {% for workshop in related_workshops %}
+        <article class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
+          <div class="space-y-6">
+            <div class="space-y-4">
+              <div class="flex items-center gap-4 text-sm">
+                <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-medium transition-colors">{{ workshop.category }}</span>
+                <span class="text-gray-500 dark:text-gray-400 transition-colors">{{ workshop.format }}</span>
+              </div>
+              <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">{{ workshop.title }}</h3>
+              <p class="text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ workshop.description }}</p>
+            </div>
+            <div class="grid grid-cols-3 gap-4 text-sm">
+              <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-4 w-4">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <polyline points="12 6 12 12 16 14"></polyline>
+                </svg>
+                <span>{{ workshop.duration }}</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-users h-4 w-4">
+                  <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"></path>
+                  <circle cx="9" cy="7" r="4"></circle>
+                  <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
+                  <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
+                </svg>
+                <span>{{ workshop.participants }}</span>
+              </div>
+              <div class="flex items-center gap-2 text-gray-600 dark:text-gray-300 transition-colors">
+                <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-target h-4 w-4">
+                  <circle cx="12" cy="12" r="10"></circle>
+                  <circle cx="12" cy="12" r="6"></circle>
+                  <circle cx="12" cy="12" r="2"></circle>
+                </svg>
+                <span>{{ workshop.level }}</span>
+              </div>
+            </div>
+            <a href="{{ workshop.url }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full py-2 font-medium transition-colors">Learn More</a>
+          </div>
+        </article>
+        {% endfor %}
+      </div>
+    </div>
+  </div>
+</section>
+{% endif %} 
