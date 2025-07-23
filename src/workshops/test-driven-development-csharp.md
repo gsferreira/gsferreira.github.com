@@ -24,7 +24,7 @@ prerequisites:
 instructor:
   name: Gui Ferreira
   title: Software Developer Educator
-  image: /assets/headshot.png
+  image: /assets/headshot.avif
 keyTakeaways:
   - Master the TDD Red-Green-Refactor cycle for consistent, high-quality development
   - Learn to write tests that drive design decisions and improve code architecture
