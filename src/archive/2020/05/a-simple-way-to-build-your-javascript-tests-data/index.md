@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-05-07
 title: A simple way to build your JavaScript tests data
-description: The builder pattern is an elegant solution to the problem and I really like it. But, is it a simple solution for JavaScript?
+description: Build JavaScript test data simply with spread operator - elegant alternative to complex builder pattern for object creation.
 featured_image: /images/a-simple-way-to-build-your-javascript-tests-data-spread.png
 ---
 

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-02-11
 title: Embedding dotnet format in your development cycle
-description: How to use dotnet format in your Team development cycle with pre-commit and GitHub Actions.
+description: Embed dotnet format in CI/CD pipelines - automate C# code formatting, enforce standards, and reduce code review friction.
 featured_image: /images/archive/dotnet/dotnet-format-result.png
 ---
 

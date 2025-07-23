@@ -4,6 +4,7 @@ tags: post
 date: 2015-02-16
 
 title: How to Encrypt in Node.js and Decrypt in C#
+description: Cross-platform encryption - encrypt data in Node.js with AES256 and decrypt in C# using RijndaelManaged for secure messaging.
 category: Node.js, .NET
 ---
 

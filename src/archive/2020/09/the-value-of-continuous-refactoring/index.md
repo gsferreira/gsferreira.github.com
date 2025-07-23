@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-09-24
 title: The value of Continuous Refactoring
-description: Refactoring is a key development tool that we don't learn while learning to program. Why should we learn the practices and make them part of our flow?
+description: Make refactoring a continuous practice - TDD cycle integration, daily habits, and avoiding technical debt accumulation.
 featured_image: /images/archive/continous-refactoring.png
 ---
 

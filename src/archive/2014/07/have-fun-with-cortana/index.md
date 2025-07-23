@@ -4,6 +4,7 @@ tags: post
 date: 2014-07-31
 
 title: Have fun with Cortana
+description: Discover fun and useful Windows Phone Cortana voice commands - jokes, reminders, calendar, music, weather, and entertaining interactions.
 category: Windows Phone
 ---
 

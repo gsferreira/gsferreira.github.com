@@ -4,6 +4,7 @@ tags: post
 date: 2014-08-29
 
 title: Automate NuGet package creation using Grunt
+description: Automate NuGet package creation with Grunt for metro-bootstrap - streamline builds, eliminate manual packaging, and integrate with CI/CD workflows.
 ---
 
 Probably you are already using Grunt, to automate the tasks to build your application or library. In [metro-bootstrap](https://github.com/TalksLab/metro-bootstrap) we are using Grunt to automate the build process, but until now there's a last step that we are doing manually: **create the NuGet package** for new releases, until today.

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2023-05-05
 title: DTOs - The Good, The Bad, and The Tradeoff
-description: Using Data Transfer Objects (DTOs) is not all good or bad. Above all, it's a tradeoff.
+description: DTOs analysis - when to use Data Transfer Objects, benefits vs drawbacks, and the tradeoffs between boundaries and complexity.
 featured_image: /images/archive/highlight/dtos-the-good-the-bad-and-the-tradeoff.png
 ---
 

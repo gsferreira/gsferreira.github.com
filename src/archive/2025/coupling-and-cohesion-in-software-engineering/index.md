@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2025-03-03
 title: Coupling and Cohesion in Software Engineering
-description: Master the art of coupling and cohesion in software engineering. Learn practical code examples and techniques to write cleaner, more maintainable applications with real-world principles that improve code flexibility, testability, and long-term project success.
+description: Software engineering coupling and cohesion fundamentals - build maintainable code with low coupling and high cohesion principles.
 featured_image: /images/archive/highlight/coupling-and-cohesion-in-software-engineering.png
 ---
 

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2019-09-05
 title: You should start working remotely once a week
-description: If you are in an environment with resistance to Remote Working, the best way is to propose a small experiment.
+description: Start remote work gradually - 5 reasons to work from home once weekly, productivity benefits, and convincing management strategies.
 category: Remote Work, Improvement, Team
 featured_image: /images/you-should-start-working-remotely-once-a-week-head.png
 ---

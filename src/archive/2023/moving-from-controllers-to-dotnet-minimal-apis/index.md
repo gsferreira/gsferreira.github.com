@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2023-04-28
 title: Moving from Controllers to .NET Minimal APIs
-description: If you are wondering how to move your .NET MVC API Controllers to Minimal APIs, this blog post is for you.
+description: Migrate ASP.NET Controllers to Minimal APIs - refactoring guide with feature-driven organization and practical examples.
 featured_image: /images/archive/highlight/moving-from-controllers-to-dotnet-minimal-apis.png
 ---
 

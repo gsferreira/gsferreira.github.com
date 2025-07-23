@@ -4,6 +4,7 @@ tags: post
 date: 2016-09-19
 
 title: NetPonto - Como construir software altamente eficiente com CQRS
+description: NetPonto Portuguese talk - building efficient software with CQRS. Includes video, slides, and comprehensive CQRS references.
 ---
 
 Esta semana tive a oportunidade de falar um pouco sobre a minha experiência com CQRS na Comunidade NetPonto.

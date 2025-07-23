@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-02-23
 title: Quick Wins for .NET build pipelines
-description: Small tips to optimize your .NET build pipelines with .NET CLI.
+description: Optimize .NET build pipelines - CLI configuration options, Release mode, --no-restore, --no-build flags for faster CI/CD cycles.
 featured_image: /images/archive/dotnet/dotnet-cli-build-optimizations.png
 ---
 

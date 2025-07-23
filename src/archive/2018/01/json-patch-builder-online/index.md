@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2018-01-08
 title: JSON Patch Builder Online
-description: Do you know the JSON Patch format? The RFC6902 defines the structure to express a list of operations to apply over a JSON Document.
+description: JSON Patch Builder Online tool - create RFC6902-compliant patches for HTTP PATCH operations with visual JSON transformation.
 ---
 
 Do you know the JSON Patch format? The [RFC6902](https://tools.ietf.org/html/rfc6902) defines the structure to express a list of operations to apply over a JSON Document.

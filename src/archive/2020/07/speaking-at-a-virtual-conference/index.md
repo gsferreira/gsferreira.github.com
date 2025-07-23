@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-07-08
 title: Speaking at a Virtual Conference
-description: Lessons learn from preparing and speaking for the first time at a Virtual Conference.
+description: Virtual conference speaking guide - NDC Oslo 2020 experience, setup requirements, camera positioning, and online presentation tips.
 category: Speaking
 featured_image: /images/speaking-at-a-virtual-conference-setup-macro.jpg
 ---

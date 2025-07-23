@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-12-07
 title: 3 Fluent Assertions Features You Should be Using
-description: Fluent Assertions is a must-have tool for .NET Testing. It's so rich and extensive that some features aren't used enough. In this post, I will show you 3 of them.
+description: Master 3 Fluent Assertions features - assertion scopes for multiple checks, HttpResponseMessage testing, and advanced assertion techniques.
 ---
 
 I love [Fluent Assertions](https://fluentassertions.com/) 💖. And you should too.

@@ -4,6 +4,7 @@ tags: post
 date: 2014-08-07
 
 title: metro-bootstrap 3.2.0.1 released
+description: Metro-bootstrap 3.2.0.1 release notes - Bootstrap 3.2.0 update, Bower main configuration, and new tile font size variables.
 category: metro-bootstrap
 ---
 

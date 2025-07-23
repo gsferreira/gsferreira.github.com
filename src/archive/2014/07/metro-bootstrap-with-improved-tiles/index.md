@@ -4,6 +4,7 @@ tags: post
 date: 2014-07-04
 
 title: metro-bootstrap with improved tiles
+description: Metro-bootstrap 3.1.1.2 release - improved tiles with flexible positioning, new colors, dashboard template, and Bootstrap grid integration.
 category: metro-bootstrap
 ---
 

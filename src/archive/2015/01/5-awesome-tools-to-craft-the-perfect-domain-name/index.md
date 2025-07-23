@@ -4,6 +4,7 @@ tags: post
 date: 2015-01-14
 
 title: 5 awesome tools to craft the perfect Domain Name
+description: Discover 5 tools for perfect domain names - WORDOID, Name Mesh, Panabee, Impossibility, and DomainsBot for finding available .com domains.
 ---
 
 One of the common tips to pick the perfect domain name is to choose one dot-com domain, but a good domain name is a needle in a haystack.

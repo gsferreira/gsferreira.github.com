@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2023-12-19
 title: 3 KafkaFlow Features Hard to Ignore
-description: Let's explore 3 KafkaFlow features that are game-changing for .NET developers working with Apache Kafka.
+description: 3 compelling KafkaFlow features - multi-threaded consumers, message ordering, and .NET dependency injection for Apache Kafka.
 featured_image: /images/archive/highlight/3-kafkaflow-features-hard-to-ignore.png
 ---
 

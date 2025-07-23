@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2021-10-27
 title: Azure Storage Integration Testing with Azurite
-description: If you depend on Azure Storage, you need a solution to Integration Test in a local development environment.
+description: Azure Storage local testing with Azurite emulator - Docker container setup, integration tests, and offline development benefits.
 featured_image: /images/archive/azure/azurite.png
 ---
 

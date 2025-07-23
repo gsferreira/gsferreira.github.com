@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2023-04-06
 title: Why I Don't Use Loops on My Tests
-description: I don't iterate on tests. You also don't need.
+description: Eliminate loops from test code - apply Zero, One, or Many testing principle for clearer, more maintainable unit test cases.
 featured_image: /images/archive/highlight/dont-use-loops-on.png
 ---
 

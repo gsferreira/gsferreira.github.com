@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2025-01-03
 title: Building Serverless APIs with AWS Lambda and DynamoDB in .NET
-description: Let's build scalable and cost-effective serverless APIs with AWS Lambda and DynamoDB using .NET. This step-by-step guide covers everything from setting up DynamoDB to deploying a .NET Lambda function, helping you quickly create a production-ready API.
+description: Build serverless .NET APIs with AWS Lambda and DynamoDB - infrastructure-free development, automatic scaling, and pay-as-you-go pricing.
 featured_image: /images/archive/highlight/building-serverless-apis-with-aws-lambda-and-dynamodb-in-dotnet.png
 ---
 

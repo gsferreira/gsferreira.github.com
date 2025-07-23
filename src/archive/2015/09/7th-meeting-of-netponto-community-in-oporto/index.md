@@ -4,6 +4,7 @@ tags: post
 date: 2015-09-18
 
 title: 7th Meeting of NetPonto Community in Oporto
+description: NetPonto Community 7th meeting in Porto - SOLR in .NET search solutions and ECMAScript vNext talks at ISEP, free registration.
 category: NetPonto
 ---
 

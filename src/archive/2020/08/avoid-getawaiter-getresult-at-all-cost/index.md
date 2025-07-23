@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-08-26
 title: Avoid GetAwaiter().GetResult() at all cost
-description: GetAwaiter().GetResult() should be used carefully. Otherwise, you may experience several problems when your system is under stress.
+description: Avoid GetAwaiter().GetResult() in C# at all costs - prevents deadlocks, thread pool starvation, and ensures proper async/await usage.
 featured_image: /images/archive/dotnet/getawaiter-getresult.png
 ---
 

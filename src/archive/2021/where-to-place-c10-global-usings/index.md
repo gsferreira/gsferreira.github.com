@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2021-12-11
 title: Where to place C#10 Global Usings
-description: Global Usings are a new possibility and there are no guidelines on where to declare them. This is my take on how I will be declaring them and how.
+description: Organize C# 10 Global Usings effectively - central placement strategies, project-level declarations, and tidier source code management.
 featured_image: /images/archive/highlight/where-to-place-c10-global-usings.png
 ---
 

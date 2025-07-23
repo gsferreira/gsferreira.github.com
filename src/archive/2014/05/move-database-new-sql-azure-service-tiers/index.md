@@ -4,6 +4,7 @@ tags: post
 date: 2014-05-03
 
 title: Move your database to new SQL Azure Service Tiers
+description: Step-by-step guide to migrate SQL databases to new Azure Basic and Standard tiers with bacpac export/import and troubleshooting tips.
 category: Azure
 ---
 

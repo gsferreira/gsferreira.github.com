@@ -4,6 +4,7 @@ tags: post
 date: 2014-10-02
 
 title: "Azure SQL Database: Automatic Backups"
+description: Configure automatic Azure SQL Database backups - set up scheduled exports to storage accounts without PowerShell scripts or custom code.
 category: Azure
 ---
 

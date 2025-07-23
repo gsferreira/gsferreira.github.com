@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-08-22
 title: C# 11 Auto Default Structs in depth
-description: Why C# 11 is bring Auto Default Structs and how it will work.
+description: C# 11 Auto Default Structs eliminate field initialization requirements - improved maintainability and Class-Struct consistency.
 featured_image: /images/archive/csharp/auto-default-structs.png
 ---
 

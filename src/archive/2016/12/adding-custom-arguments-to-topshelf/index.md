@@ -4,6 +4,7 @@ tags: post
 date: 2016-12-07
 
 title: Adding Custom Arguments to Topshelf
+description: Add custom command-line arguments to Topshelf Windows services using AddCommandLineDefinition with practical examples.
 category: .NET
 ---
 

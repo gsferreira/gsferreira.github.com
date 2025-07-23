@@ -4,6 +4,7 @@ tags: post
 date: 2014-05-24
 
 title: AngularJS - Smart Float Directive
+description: Build an improved AngularJS smart-float directive for number validation with comma/dot decimal separators and thousands separators support.
 category: AngularJS
 ---
 

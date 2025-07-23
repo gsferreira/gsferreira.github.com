@@ -4,6 +4,7 @@ tags: post
 date: 2014-05-08
 
 title: The dark side of dynamic typing
+description: Discover C# dynamic typing performance costs vs static typing with benchmarks. Learn when to avoid dynamic for better .NET application speed.
 category: .NET
 ---
 

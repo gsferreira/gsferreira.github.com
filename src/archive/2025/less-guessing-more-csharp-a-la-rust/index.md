@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2025-01-20
 title: Less guessing, more C# à la Rust
-description: The Result Pattern makes coding easier! Instead of guessing if something worked or broke, your function says, "Here's the result" or "Here's what went wrong." Rust does this automatically, but you can do it in C# too with a Result<T> type. It's simple, clear, and takes the guesswork out of your code.
+description: C# Result pattern inspired by Rust - implement explicit error handling, reduce guesswork, and improve function clarity and safety.
 featured_image: /images/archive/highlight/less-guessing-more-c-a-la-rust.png
 ---
 

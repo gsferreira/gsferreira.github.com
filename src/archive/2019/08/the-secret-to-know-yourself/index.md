@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2019-08-27
 title: The secret to know Yourself
-description: Have you ever heard a recording of your voice? You don’t sound like that, am I right?! Even if I think that taking the time to reflect is important, I don’t think that is enough.
+description: Discover self-awareness secrets - why voice recordings reveal truth about ourselves and how observation beats introspection.
 category: Improvement, Feedback
 featured_image: /images/the-secret-to-know-yourself-head.png
 ---

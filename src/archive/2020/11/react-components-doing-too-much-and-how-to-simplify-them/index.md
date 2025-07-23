@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-11-16
 title: React components doing too much (and how to simplify them)
-description: Do you have the feeling that some of your components are doing too much? Do you have too many boolean props? Find here how to simplify them.
+description: Simplify complex React components - recognize boolean prop warnings, component contracts, and Single Responsibility violations.
 featured_image: /images/archive/react/bool-props.png
 ---
 

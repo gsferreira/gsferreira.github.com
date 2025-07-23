@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2023-04-18
 title: My Simple Testing Stack (for .NET developers) [2023]
-description: This is the list of tools that I used on my Test projects during 2022. But also the ones I'm planning to give a chance.
+description: Comprehensive .NET testing stack 2023 - xUnit framework, Fluent Assertions, Moq mocking, FluentDocker containers, and K6 load testing.
 featured_image: /images/archive/highlight/my-simple-testing-stack-for-dotnet-developers-2023.png
 ---
 

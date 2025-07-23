@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2023-03-31
 title: 3 TDD Techniques Most People Don’t Know
-description: There are 3 techniques to get you from Red to Green on Test Driven Development (TDD). In this article, I apply all of them to the same problem, so you can see how to use them.
+description: Master 3 TDD techniques most developers ignore - Fake It, Obvious Implementation, and Triangulation for effective test-driven development.
 featured_image: /images/archive/highlight/3-tdd-techniques.png
 ---
 

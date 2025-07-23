@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2025-05-22
 title: Why Vertical Slice Architecture Makes Your Team Faster (and Happier)
-description: Discover Vertical Slice Architecture – a powerful alternative to layered architecture that helps reduce merge conflicts, simplify onboarding, and improve code organisation by structuring your application around features, not layers. Perfect for CQRS and modern API development.
+description: Vertical Slice Architecture benefits - faster teams, reduced coupling, feature-focused development over layered approaches.
 featured_image: /images/archive/highlight/why-vertical-slice-architecture-makes-your-team-faster-and-happier.jpg
 ---
 

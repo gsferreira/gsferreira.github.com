@@ -3,6 +3,7 @@ layout: post
 tags: post
 date: 2016-11-04
 title: Create a Web Deployment Package with Cake Build
+description: Create ASP.NET Web Deployment Packages with Cake Build - MSBuild integration, configuration settings, and packaging automation.
 category: Cake
 ---
 

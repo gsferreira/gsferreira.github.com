@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2018-06-27
 title: Versioning .net Core applications using Cake
-description: Versioning .net Core applications using Cake and Directory.Build.props file.
+description: Version .NET Core applications with Cake Build - Directory.Build.props integration, automated versioning, and build strategies.
 category: Cake, .net, .net Core
 ---
 

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2019-04-10
 title: Logging gRPC requests using Serilog
-description: Using a gRPC c# interceptor to log gRPC requests.
+description: Log gRPC requests with Serilog using interceptors - correlation IDs, response times, request tracking, and unary call monitoring.
 category: .net, .net Core, gRPC, Serilog
 ---
 

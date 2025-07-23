@@ -4,6 +4,7 @@ tags: post
 date: 2014-12-15
 
 title: Overcome the DEPTH_ZERO_SELF_SIGNED_CERT on Node.js
+description: Resolve Node.js DEPTH_ZERO_SELF_SIGNED_CERT errors - handle self-signed certificates in development with NODE_TLS_REJECT_UNAUTHORIZED.
 category: Node.js
 ---
 

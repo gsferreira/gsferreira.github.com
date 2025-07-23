@@ -4,6 +4,7 @@ tags: post
 date: 2017-05-23
 
 title: Tuga IT - Build Automation? It's a piece of Cake
+description: Tuga IT conference talk - Cake Build automation presentation with slides, demos, references, and practical build examples.
 ---
 
 It was a huge privilege to share my experience with [Cake Build](http://cakebuild.net) at [Tuga IT](http://tugait.pt/2017/).

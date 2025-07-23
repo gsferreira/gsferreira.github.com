@@ -4,6 +4,7 @@ tags: post
 date: 2017-09-12
 
 title: Please don't name it "Utils"!
+description: Stop naming classes 'Utils' - improve code readability, discoverability, and maintainability with meaningful class names like Logger.
 ---
 
 Imagine that you are working on a code base that you are really proud of. Everything is building up together with great quality and you reach the moment where you need to send a mail. Simple task to you for sure.

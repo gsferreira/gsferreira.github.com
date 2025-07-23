@@ -3,6 +3,7 @@ layout: post
 tags: post
 date: 2015-05-12
 title: Azure App Service API Apps - Microsoft Rest HttpOperationException
+description: Troubleshoot Azure App Service API Apps Microsoft.Rest.HttpOperationException errors with debugging techniques and solutions.
 category: Azure
 ---
 

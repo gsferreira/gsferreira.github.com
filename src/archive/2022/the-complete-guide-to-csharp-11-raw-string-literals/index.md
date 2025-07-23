@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-06-03
 title: The Complete Guide to C# 11 Raw String Literals
-description: Wouldn't be lovely if we could copy text into and from a string without thinking about escaping?
+description: Complete C# 11 Raw String Literals guide - escape-free JSON, SQL, XML strings with triple quotes and indentation handling.
 featured_image: /images/archive/csharp/raw-string-literals-json.png
 ---
 

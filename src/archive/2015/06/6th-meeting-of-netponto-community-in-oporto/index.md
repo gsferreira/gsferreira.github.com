@@ -4,6 +4,7 @@ tags: post
 date: 2015-06-29
 
 title: 6th Meeting of NetPonto Community in Oporto
+description: NetPonto Community 6th meeting in Porto - ASP.NET VNext on Mac and Xamarin Forms talks at ISEP, free registration required.
 category: NetPonto
 ---
 

@@ -4,6 +4,7 @@ tags: post
 date: 2014-12-05
 
 title: Disable your html cache
+description: Control browser caching behavior in ASP.NET - disable HTML cache while enabling resource file caching through web.config settings.
 category: ASP.NET MVC
 ---
 

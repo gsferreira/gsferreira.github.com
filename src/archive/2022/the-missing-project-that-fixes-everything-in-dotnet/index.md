@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-09-27
 title: The missing Project that fixes everything in .NET
-description: Most Clean Architecture implementations have this error. The error of missing the Main Component, or Composition Root. Here we will see how to implement it in a .NET Solution.
+description: The missing Composition Root project in .NET - organize Clean Architecture dependencies and avoid coupling to frameworks.
 featured_image: /images/archive/hexagonal-architecture/after-startup-project.png
 ---
 

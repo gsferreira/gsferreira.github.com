@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-09-05
 title: 5 things Microsoft needs to do to make Central Package Management widely used
-description: Microsoft can change the way we manage packages in .NET forever. With a bit of effort, Central Package Management can be the default way of doing it in .NET.
+description: 5 improvements needed for .NET Central Package Management adoption - tooling enhancements, IDE support, and developer experience.
 featured_image: /images/archive/dotnet/directory-packages-props-file.png
 ---
 

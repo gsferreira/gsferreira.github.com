@@ -4,6 +4,7 @@ tags: post
 date: 2015-07-09
 
 title: Reduce the path length of a Node.js project
+description: Solve Windows path length limitations in Node.js projects - tips for npm dependencies, Visual Studio development, and Azure deployment.
 category: Node.js
 ---
 

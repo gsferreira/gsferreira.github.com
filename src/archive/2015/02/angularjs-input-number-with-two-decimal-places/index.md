@@ -4,6 +4,7 @@ tags: post
 date: 2015-02-25
 
 title: AngularJS - Input number with 2 decimal places
+description: Create AngularJS number inputs with 2 decimal validation - HTML5 step attribute, ng-pattern regex, and mobile keyboard support.
 category: AngularJS
 ---
 

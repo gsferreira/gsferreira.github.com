@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-08-28
 title: C# 11 Required Members, the imperfectly awesome feature
-description: Finally, Required Members are landing on C#. It's a highly expected feature, but not everything is perfect. In this post we will see why.
+description: C# 11 Required Members replace constructor brittleness - object initializers with mandatory fields and improved instantiation.
 featured_image: /images/archive/csharp/required-members.png
 ---
 

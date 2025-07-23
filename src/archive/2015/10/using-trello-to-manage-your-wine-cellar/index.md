@@ -4,6 +4,7 @@ tags: post
 date: 2015-10-09
 
 title: Using Trello to manage your Wine Cellar
+description: Organize your wine cellar with Trello - track bottles by location, manage inventory, and choose wines using stickers and boards.
 ---
 
 Do you have a wine cellar at home?!

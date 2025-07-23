@@ -4,6 +4,7 @@ tags: post
 date: 2015-01-29
 
 title: "T-SQL: Which schema is consuming more space?"
+description: T-SQL query to identify which database schemas consume most space in multi-tenant architectures using sys.dm_db_partition_stats.
 category: SQL
 ---
 

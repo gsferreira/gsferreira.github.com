@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2025-05-27
 title: A Small but Powerful Feature in xUnit v3 You’ll Use Everywhere
-description: Discover what's new in xUnit v3 for .NET testing, including powerful test-aware cancellation tokens. Learn how this simple yet impactful feature boosts test reliability, resource management, and async integration testing.
+description: xUnit v3 game-changing feature - test-aware cancellation tokens for better async test management and automatic resource cleanup.
 ---
 
 https://youtu.be/XwW0SbNU-2o?si=MdXJN08cG55suPHI

@@ -4,6 +4,7 @@ tags: post
 date: 2016-08-08
 
 title: Azure WebJobs dependency injection with Unity
+description: Implement dependency injection in Azure WebJobs using Unity container - IJobActivator interface, UnityJobActivator, and configuration setup.
 category: Azure
 ---
 

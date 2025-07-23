@@ -4,6 +4,7 @@ tags: post
 date: 2016-02-03
 
 title: The shining new C# Scripting API
+description: C# Scripting API with Roslyn - runtime code evaluation, expression parsing, and scripting capabilities for .NET applications.
 category: .NET
 ---
 

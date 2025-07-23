@@ -4,6 +4,7 @@ tags: post
 date: 2014-04-28
 
 title: Let's blog
+description: Meet Portuguese .NET developer Guilherme Ferreira sharing software development lessons, entrepreneurship tips, and productivity insights from Porto.
 ---
 
 Hi! My name is Guilherme Ferreira. I'm a [Portuguese](https://www.pinterest.com/igori/portugal/) software developer, mostly connected to the web development and to the .net Framework, living in the beautiful city of [Porto](https://www.pinterest.com/turismportugal/porto-portugal/). Go check the pictures, I will be right here waiting for you.

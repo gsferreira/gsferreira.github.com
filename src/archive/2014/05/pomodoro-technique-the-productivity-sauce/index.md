@@ -4,6 +4,7 @@ tags: post
 date: 2014-05-19
 
 title: Pomodoro Technique, the productivity sauce
+description: Master the Pomodoro Technique for developers - 25-minute focused work sessions with breaks to boost productivity and eliminate distractions.
 category: Productivity
 ---
 

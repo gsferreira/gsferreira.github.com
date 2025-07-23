@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2021-12-20
 title: Expressive C# code with Property Patterns
-description: Property Patterns are a different way to write c#, but that can lead to expressive and clear code. See how.
+description: Learn expressive c# code with property patterns techniques and best practices for C# development for software developers and engineers.
 featured_image: /images/archive/csharp/property-pattern.png
 ---
 

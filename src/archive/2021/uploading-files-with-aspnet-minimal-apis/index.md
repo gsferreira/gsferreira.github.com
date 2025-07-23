@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2021-11-24
 title: Uploading files with ASP.NET Minimal APIs
-description: How to map an endpoint to upload files with ASP.NET Minimal APIs.
+description: File uploads in ASP.NET Minimal APIs - migration from Controllers, IFormFile handling, and 415 Unsupported Media Type fixes.
 featured_image: /images/archive/highlight/uploading-files-with-aspnet-minimal-apis.png
 ---
 

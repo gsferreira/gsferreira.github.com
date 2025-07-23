@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-10-18
 title: How the DRY Principle can damage your tests (C# Developers)
-description: How the DRY principle can damage the readability of your C# tests, and what you can do instead.
+description: Why DRY principle damages C# test readability - avoid over-abstraction, maintain test clarity, and embrace necessary duplication.
 featured_image: /images/archive/testing/dry-tests-bad-result.png
 ---
 

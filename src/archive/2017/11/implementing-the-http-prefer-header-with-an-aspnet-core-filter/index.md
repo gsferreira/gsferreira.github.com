@@ -4,6 +4,7 @@ tags: post
 date: 2017-11-15
 
 title: Implementing the HTTP Prefer Header with an ASP.NET Core Filter
+description: Implement HTTP Prefer Header in ASP.NET Core - RFC-7240 compliance for return=representation and return=minimal preferences.
 category: ASP.NET Core
 ---
 

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2025-03-07
 title: How to Debug .NET Code in Cursor AI (Even on M1/M2 Macs)
-description: Unlock .NET debugging in Cursor AI even on M1/M2 Macs with this simple workaround using Samsung's open-source debugger. No more Microsoft VS Code restrictions!
+description: Debug .NET code in Cursor AI on M1/M2 Macs - comprehensive setup guide using Samsung's open-source debugger alternative.
 ---
 
 https://youtu.be/AV5fYL0GYkk?si=8sI3cGnc5xyOnmYX

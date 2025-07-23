@@ -4,6 +4,7 @@ tags: post
 date: 2015-11-09
 
 title: Is CQRS too complicated? No!
+description: CQRS simplified - Command Query Responsibility Segregation isn't complicated, just separate read and write models effectively.
 ---
 
 How do you feel after reading a few articles about CQRS (Command Query Responsibility Segregation)? Confused?!

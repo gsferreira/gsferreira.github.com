@@ -4,6 +4,7 @@ tags: post
 date: 2015-05-28
 
 title: Lessons learned from Agile Portugal 2015
+description: Key lessons from Agile Portugal 2015 - visual management importance, user story writing, and building transparent team culture with physical boards.
 ---
 
 In the last week I attended to the [Agile Portugal 2015](http://2015.agilept.org/), an amazing event that gathers the agile community.

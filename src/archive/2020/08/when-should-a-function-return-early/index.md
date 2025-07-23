@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-08-03
 title: When should a function return? Return Early
-description: Return early is a simple principle that improves the code readability and reduces the cognitive load to understand it.
+description: Embrace early return pattern - reduce cyclomatic complexity, improve readability, and eliminate nested conditions in functions.
 ---
 
 *"A method should return once at the end of the method".*

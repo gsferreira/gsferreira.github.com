@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-02-03
 title: Looking into C# Property Patterns Performance
-description: How performant are C# Property Patterns?
+description: C# Property Patterns performance analysis - benchmark comparisons with traditional approaches and guard clause optimization tips.
 featured_image: /images/archive/csharp/property-patterns-guard-benchmark.png
 ---
 

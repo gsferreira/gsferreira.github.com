@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-10-26
 title: Avoiding Booleans in React Components with a State Enum
-description: Did you notice that your React Components tend to have a ton of booleans** (isLoading, hasErrors, ...) that you use to control the state of your component?
+description: Replace React boolean flags with state enums for cleaner component management - finite state machines, XState library, and better state control.
 featured_image: /images/archive/react/state-enum.png
 ---
 

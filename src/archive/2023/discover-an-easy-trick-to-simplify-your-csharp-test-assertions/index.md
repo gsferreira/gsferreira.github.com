@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2023-05-19
 title: Discover an Easy Trick to Simplify Your C# Test Assertions!
-description: Crafting Elegant Test Assertions with Domain-Specific Concepts and Fluent Assertions
+description: Simplify C# test assertions with domain-specific extensions - create readable, expressive Fluent Assertions for complex objects.
 featured_image: /images/archive/highlight/discover-an-easy-trick-to-simplify-your-csharp-test-assertions.png
 ---
 

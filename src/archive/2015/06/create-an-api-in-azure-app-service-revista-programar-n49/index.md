@@ -4,6 +4,7 @@ tags: post
 date: 2015-06-18
 
 title: Create an API in Azure App Service - Revista PROGRAMAR Nº 49
+description: Azure App Service API Apps tutorial published in Portuguese Revista PROGRAMAR magazine - features, benefits, and implementation guide.
 category: Azure, Revista PROGRAMAR
 ---
 

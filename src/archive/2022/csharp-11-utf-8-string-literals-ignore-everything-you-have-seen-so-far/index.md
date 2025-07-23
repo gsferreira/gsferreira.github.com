@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-08-08
 title: C# 11 UTF-8 String Literals - Ignore everything you have seen so far
-description: UTF-8 String Literals is coming to C# but has changed during C# 11 Preview. In this blog post, I will show what UTF-8 String Literals are trying to solve, what is changing and why it's changing.
+description: C# 11 UTF-8 String Literals evolution - design changes, community feedback, and performance-readability balance in web scenarios.
 featured_image: /images/archive/csharp/utf-8-string-literals-evolution.png
 ---
 

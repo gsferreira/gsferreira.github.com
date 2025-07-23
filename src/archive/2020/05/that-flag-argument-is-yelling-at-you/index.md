@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-05-28
 title: That flag argument is yelling at you
-description: Flag arguments are a good indicator that something is wrong. Use them as Refactoring warning.
+description: Avoid boolean flag arguments that violate Single Responsibility Principle - refactor into separate, focused methods for cleaner code.
 category: Refactoring, Improvement
 featured_image: /images/that-flag-argument-is-yelling-at-you-flag-argument.png
 ---

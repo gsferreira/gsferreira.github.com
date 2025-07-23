@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-12-02
 title: How to Organize your .NET Dependency Injection Configuration
-description: How many times you need to scroll to go through your Dependency Injection configuration? Too many? Do you configure your Dependency Injection on the Startup.cs? Or in the Program.cs? In this post we will see a proven organization method for maintainable Dependency Injection configuration.
+description: Organize .NET Dependency Injection by features - move beyond technical grouping to feature-based DI configuration patterns.
 featured_image: /images/archive/architecture/dependency-configuration-by-feature.png
 ---
 

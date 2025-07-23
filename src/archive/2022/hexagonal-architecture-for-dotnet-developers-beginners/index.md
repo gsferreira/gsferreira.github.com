@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-09-12
 title: Hexagonal Architecture for .NET Developers (Beginners)
-description: A beginner's introduction to Hexagonal Architecture (AKA Ports & Adapters), where it explained the .NET concepts that you can use to bring Hexagonal Architecture to life.
+description: Hexagonal Architecture guide for .NET developers - Ports & Adapters pattern, testability, and swappable dependencies explained.
 featured_image: /images/archive/hexagonal-architecture/hexagonal-architecture-title.png
 ---
 

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-05-22
 title: Don't comment what your code is doing, comment the Why
-description: Code Comments are a good idea. But we use a lot of comments that don't help. This explains the Comments bad reputation nowadays.
+description: Write meaningful code comments - explain the 'why' not the 'what', avoid obvious statements, and improve code documentation.
 ---
 
 Code comments are a common topic of love/hate discussions.

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2023-03-21
 title: Why I Always Avoid InternalsVisibleTo in .NET, Unless...
-description: I don't fall in love with InternalsVisibleTo, especially in the context of facilitating Testing. But I admit that there's at least one extremely useful use case.
+description: Avoid InternalsVisibleTo in .NET testing - explore alternatives, maintain proper encapsulation, and design better APIs.
 featured_image:
 ---
 

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-08-16
 title: Finding .NET Transitive Dependencies and Tidying Up Your Project
-description: In this post will will look into Snitch, an Open Source tool to find transitive dependencies that can be removed from .NET projects.
+description: Clean up .NET transitive dependencies with Snitch tool - identify unnecessary references, reduce package conflicts, and optimize projects.
 featured_image: /images/archive/csharp/snitch/snitch-result.png
 ---
 

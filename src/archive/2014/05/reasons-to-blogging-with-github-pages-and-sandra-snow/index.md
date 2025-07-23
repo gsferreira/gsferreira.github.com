@@ -4,6 +4,7 @@ tags: post
 date: 2014-05-31
 
 title: Reasons to blogging with GitHub Pages and Sandra.Snow
+description: Why choose GitHub Pages and Sandra.Snow over WordPress for .NET developers - markdown writing, no database, version control, and zero maintenance.
 ---
 
 This is my second try to create a personal blog and the third blog where I'm writing. The first two experiences were in WordPress.

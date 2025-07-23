@@ -4,6 +4,7 @@ tags: post
 date: 2014-06-27
 
 title: Add documentation to your Web API in 5 steps
+description: Auto-generate ASP.NET Web API documentation in 5 steps using HelpPage package. Create XML comments and interactive API docs effortlessly.
 category: .NET, ASP.NET
 ---
 

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-06-20
 title: A Gentle Introduction to C# 11 List Patterns
-description: What are List Patterns, and how can you use them.
+description: C# 11 List Patterns introduction - pattern matching with collections, array shapes, and F#-inspired syntax for elegant code.
 featured_image: /images/archive/csharp/list-patterns.png
 ---
 

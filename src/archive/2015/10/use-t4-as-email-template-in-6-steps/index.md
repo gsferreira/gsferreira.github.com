@@ -4,6 +4,7 @@ tags: post
 date: 2015-10-23
 
 title: Use T4 as email template in 6 steps
+description: Create email templates in .NET using T4 text templates - 6-step guide for HTML emails with dynamic content and formatting.
 ---
 
 When you want to send emails from .net applications how do you do it?

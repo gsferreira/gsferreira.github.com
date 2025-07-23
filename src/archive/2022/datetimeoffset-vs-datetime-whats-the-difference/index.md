@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-10-25
 title: DateTimeOffset vs DateTime - What's the difference?
-description: Do you know that even Microsoft doesn't recommend using DateTime by default? They recommend using DateTimeOffset instead. Let's see why.
+description: DateTimeOffset vs DateTime differences - Microsoft recommendations, timezone handling, and avoiding UTC conversion pitfalls.
 featured_image: /images/archive/highlight/datetimeoffset-vs-datetime.png
 ---
 

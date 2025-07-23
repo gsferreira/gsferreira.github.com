@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-12-22
 title: 3 Types of Unit Tests (for C# Developers)
-description: Tests can be of one of these types. Knowing them shapes how to approach testing and how you decide on your assertions. In this video, we will use C# to find those 3 types of Unit Tests.
+description: Learn 3 types of C# unit tests - Result-based, State-based, and Component Interaction testing patterns for maintainable test suites.
 ---
 
 You can group your unit tests into 3 types. Knowing those 3 types will guide you to simple and maintainable tests.

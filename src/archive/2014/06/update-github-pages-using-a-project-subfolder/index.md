@@ -4,6 +4,7 @@ tags: post
 date: 2014-06-21
 
 title: Update GitHub Pages using a project subfolder
+description: Automate GitHub Pages deployment using git subtree - push project subfolders to gh-pages branch without manual branch management.
 ---
 
 Do you have a project in GitHub and you are tired of manage the _gh-pages_ branch manually?! If so, stay tuned because that can be pretty simple.

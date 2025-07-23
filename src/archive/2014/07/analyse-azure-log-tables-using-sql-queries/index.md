@@ -4,6 +4,7 @@ tags: post
 date: 2014-07-15
 
 title: Analyse Azure Log Tables using SQL Queries
+description: Query Azure diagnostic logs with SQL using AzureLogSpelunker tool. Escape slow Azure Storage Explorer with fast, local SQLite analysis.
 category: Azure
 ---
 

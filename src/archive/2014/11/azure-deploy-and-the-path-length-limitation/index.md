@@ -4,6 +4,7 @@ tags: post
 date: 2014-11-27
 
 title: Azure deploy and the path length limitation
+description: Fix Windows path length limitation in Azure Cloud Service deployments by configuring ServiceOutputDirectory in .ccproj files.
 category: Azure
 ---
 

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-09-19
 title: How to apply Hexagonal Architecture with .NET
-description: A guide on how to apply Hexagonal Architecture (also known as Ports & Adapters) as a .NET Developer. By the end, you should be able to follow the same ideas and build upon this opinionated project structure.
+description: Implement Hexagonal Architecture in .NET - project structure, dependency inversion, and practical Ports & Adapters examples.
 featured_image: /images/archive/hexagonal-architecture/project-structure-sample.png
 ---
 

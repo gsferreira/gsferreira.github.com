@@ -4,6 +4,7 @@ tags: post
 date: 2014-06-05
 
 title: Bringing Grunt and Bower to metro-bootstrap
+description: Add Grunt and Bower to metro-bootstrap open source project - automate builds, manage dependencies, and structure frontend workflows.
 category: metro-bootstrap
 ---
 

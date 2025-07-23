@@ -3,6 +3,7 @@ layout: post
 tags: post
 date: 2014-07-23
 title: Your product needs an identity
+description: Build products with strong identity using Seth Godin's philosophy. Learn why targeting everyone means targeting no one in product development.
 category: Entrepreneurship
 ---
 

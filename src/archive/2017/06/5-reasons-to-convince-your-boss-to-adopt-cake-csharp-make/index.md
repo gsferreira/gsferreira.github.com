@@ -4,6 +4,7 @@ tags: post
 date: 2017-06-26
 
 title: 5 reasons to convince your boss to adopt Cake (C# Make)
+description: 5 compelling reasons to convince your boss to adopt Cake Build - C# familiarity, living documentation, and automation benefits.
 category: Cake
 ---
 

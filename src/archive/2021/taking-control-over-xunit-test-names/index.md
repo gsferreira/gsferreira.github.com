@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-01-24
 title: Taking control over xUnit test names
-description: What if we could take our xUnit test names a step further? Here we will see how.
+description: Customize xUnit test names with configuration files - DisplayName attributes, naming conventions, and test readability improvements.
 featured_image: /images/archive/xunit/xunit-configuration-method-name-after.png
 ---
 

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-05-15
 title: Manage your code as a successful restaurant
-description: Have you ever noticed that a successful restaurant has a shorter menu? Especially when compared to those who are struggling. Why?! Simplicity!
+description: Avoid boolean flag arguments that violate Single Responsibility Principle - refactor into separate, focused methods for cleaner code.
 category: Refactoring, Improvement
 featured_image: /images/manage-your-code-as-a-successful-restaurant-complex-menu.jpeg
 ---

@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-02-21
 title: Providing a better experience for .NET developers with Caller Argument Expressions
-description: How to use .net 6 Caller Argument Expressions to improve the Developer Experience of your consumers.
+description: Improve .NET developer experience with CallerArgumentExpression - better error messages, guard clauses, and API usability.
 featured_image: /images/archive/csharp/caller-argument-expression.png
 ---
 

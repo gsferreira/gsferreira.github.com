@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2023-04-21
 title: .NET Integration Testing with Docker Compose
-description: Testcontainers is an awesome technology, but often docker-compose is just better.
+description: .NET integration testing with Docker Compose - reuse existing compose files, avoid duplicate infrastructure definitions, TestContainers alternative.
 featured_image: /images/archive/highlight/dotnet-integration-testing-with-docker-compose.png
 ---
 

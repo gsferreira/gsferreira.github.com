@@ -4,6 +4,7 @@ tags: post
 date: 2014-09-08
 
 title: How to implement Getting Things Done with Trello
+description: Implement Getting Things Done (GTD) methodology with Trello - combine David Allen's productivity system with Kanban boards for workflow.
 category: Productivity
 ---
 

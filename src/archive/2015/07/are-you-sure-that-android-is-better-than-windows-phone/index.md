@@ -4,6 +4,7 @@ tags: post
 date: 2015-07-23
 
 title: Are you sure that Android is better than Windows Phone?
+description: Honest comparison - Android vs Windows Phone from a long-time WP user's perspective after switching for one month testing period.
 category: Windows Phone, Android
 ---
 

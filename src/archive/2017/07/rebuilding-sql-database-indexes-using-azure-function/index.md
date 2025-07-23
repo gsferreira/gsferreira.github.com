@@ -4,6 +4,7 @@ tags: post
 date: 2017-07-20
 
 title: Rebuilding SQL Database indexes using Azure Function
+description: Automate SQL Database index maintenance with Azure Functions - rebuild fragmented indexes, reorganize thresholds, multi-database support.
 category: Azure
 ---
 

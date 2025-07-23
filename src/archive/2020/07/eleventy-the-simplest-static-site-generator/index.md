@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2020-07-24
 title: Eleventy - The Simplest Static Site Generator
-description: Finding Eleventy, a simple static site generator for a blog, after trying Gatsby and NextJS.
+description: Migrate to Eleventy static site generator - simplest 11ty setup, GitHub Pages hosting, markdown support, and Gatsby comparison.
 featured_image: /images/archive/eleventy/logo.jpg
 ---
 

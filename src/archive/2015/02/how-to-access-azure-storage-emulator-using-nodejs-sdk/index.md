@@ -4,6 +4,7 @@ tags: post
 date: 2015-02-06
 
 title: How to access Azure storage emulator using Node.js SDK
+description: Connect to Azure Storage Emulator with Node.js SDK using generateDevelopmentStorageCredentials() for local development testing.
 category: Azure, Node.js
 ---
 

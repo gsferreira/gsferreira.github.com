@@ -3,6 +3,7 @@ layout: post
 tags: post
 date: 2019-10-24
 title: A simple tip to improve your code maintainability - Decompose IF statements into methods
+description: Improve code maintainability by extracting complex IF statements into well-named methods - reduce cognitive load and enhance readability.
 category: Refactoring, Improvement, C#, .net
 featured_image: /images/a-simple-tip-to-improve-your-code-maintainability-decompose-if-statements-into-methods.png
 ---

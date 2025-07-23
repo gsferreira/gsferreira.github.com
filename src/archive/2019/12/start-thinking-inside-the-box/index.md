@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2019-12-02
 title: Start thinking inside the box
-description: Don't you freeze when you are asked to be creative and think outside the box? These leads us to frustration, disappointment and lack of confidence in our creative skills.
+description: Think inside the box for better creativity - how constraints like iPhone design limitations drive innovation more than limitless freedom.
 category: Creativity, Improvement
 featured_image: /images/start-thinking-inside-the-box.png
 ---

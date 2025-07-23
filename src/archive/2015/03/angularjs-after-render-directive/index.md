@@ -4,6 +4,7 @@ tags: post
 date: 2015-03-28
 
 title: AngularJS - After Render Directive
+description: Create AngularJS after-render directive - execute code after template rendering completes using \ and custom attributes.
 category: AngularJS
 ---
 

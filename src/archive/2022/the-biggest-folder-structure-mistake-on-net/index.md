@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-11-17
 title: The Biggest Folder Structure Mistake on .NET
-description: This is the most common mistake when organizing Projects and Solutions in .NET. It is a real onboarding nightmare for newcomers. In this post, I will show you how to use Feature Folders towards a Screaming Architecture (Clean Architecture).
+description: Avoid the librarian folder structure mistake - organize .NET projects by features, not technical concerns, for better navigation.
 featured_image: /images/archive/architecture/mvc-folder-structure.png
 ---
 

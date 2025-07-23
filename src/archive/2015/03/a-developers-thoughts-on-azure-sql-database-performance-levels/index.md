@@ -4,6 +4,7 @@ tags: post
 date: 2015-03-14
 
 title: A developer's thoughts on Azure SQL Database performance levels
+description: Azure SQL Database performance tiers analysis - comparing Web/Business models to new Basic/Standard/Premium pricing and performance.
 category: Azure
 ---
 

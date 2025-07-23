@@ -3,7 +3,7 @@ layout: post
 tags: post
 date: 2022-06-30
 title: C# 11 Generic Attributes More Than Syntax Sugar
-description: Generic Attributes were missing for a long time in C#. Since they are arriving, let's see what that means.
+description: C# 11 Generic Attributes beyond syntax sugar - compile-time constraints, type safety, and framework quality-of-life improvements.
 featured_image: /images/archive/csharp/generic-attribute.png
 ---
 
