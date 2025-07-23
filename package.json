@@ -8,7 +8,8 @@
   },
   "scripts": {
     "serve": "rm -rf _site && npx @11ty/eleventy --serve --quiet & npx tailwindcss -i ./src/styles.css -o ./_site/styles.css --watch",
-    "build": "rm -rf _site && ELEVENTY_ENV=production npx @11ty/eleventy && npx tailwindcss -i ./src/styles.css -o ./_site/styles.css --minify"
+    "build": "rm -rf _site && ELEVENTY_ENV=production npx @11ty/eleventy && npx tailwindcss -i ./src/styles.css -o ./_site/styles.css --minify",
+    "optimize-images": "node scripts/optimize-images.js"
   },
   "keywords": [
     "eleventy",
@@ -22,7 +23,8 @@
   "devDependencies": {
     "@11ty/eleventy": "^3.1.1",
     "@tailwindcss/typography": "^0.5.16",
-    "tailwindcss": "^3.4.1"
+    "tailwindcss": "^3.4.1",
+    "sharp": "^0.33.0"
   },
   "dependencies": {
     "@11ty/eleventy-plugin-rss": "^2.0.4",
