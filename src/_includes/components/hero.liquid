@@ -1,4 +1,4 @@
-<!-- Hero Section -->
+<!-- Enhanced Hero Section with Fully Responsive Images -->
 <section class="bg-white pt-16 pb-20 dark:bg-black">
   <div class="max-w-7xl mx-auto flex flex-col lg:flex-row items-center justify-between px-6 gap-12">
     <!-- Left: Headline & CTA -->
@@ -27,9 +27,30 @@
         </div>
       </div>
     </div>
-    <!-- Right: Image -->
+    <!-- Right: Fully Responsive Optimized Image -->
     <div class="flex-1">
-      <img src="/assets/headshot.avif" alt="Gui Ferreira" class="w-full h-auto max-w-2xl rounded-3xl" width="720" height="1080" loading="lazy">
+      <picture class="block w-full h-auto max-w-2xl rounded-3xl overflow-hidden">
+        <!-- AVIF - Modern browsers -->
+        <source 
+          srcset="/assets/headshot.avif" 
+          type="image/avif">
+        
+        <!-- WebP - Broad browser support -->
+        <source 
+          srcset="/assets/headshot.webp" 
+          type="image/webp">
+        
+        <!-- PNG fallback for older browsers -->
+        <img 
+          src="/assets/headshot.png" 
+          alt="Gui Ferreira - Software craftsman and tech mentor" 
+          class="w-full h-auto max-w-2xl rounded-3xl" 
+          width="720" 
+          height="1080" 
+          loading="eager" 
+          fetchpriority="high"
+          decoding="async">
+      </picture>
     </div>
   </div>
 </section> 

@@ -20,6 +20,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 
+    <!-- Preload critical hero image - only best format -->
+    {% if page.url == "/" %}
+    <link rel="preload" as="image" href="/assets/headshot.avif" type="image/avif" fetchpriority="high">
+    {% endif %}
+
     <link rel="stylesheet" href="/styles.css" />
     
     <!-- Load Google Fonts asynchronously to prevent render blocking -->
