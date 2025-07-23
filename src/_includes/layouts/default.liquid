@@ -22,17 +22,51 @@
       body {
         font-family: 'Inter', sans-serif;
       }
+      /* Skip link styles */
+      .skip-link {
+        position: absolute;
+        top: -40px;
+        left: 6px;
+        background: #000;
+        color: #fff;
+        padding: 8px;
+        text-decoration: none;
+        border-radius: 4px;
+        z-index: 9999;
+        font-size: 14px;
+      }
+      .skip-link:focus {
+        top: 6px;
+      }
+      /* Improved focus styles */
+      :focus-visible {
+        outline: 2px solid #2563eb;
+        outline-offset: 2px;
+      }
+      .dark :focus-visible {
+        outline-color: #60a5fa;
+      }
     </style>
   </head>
   <body class="bg-white dark:bg-black">
+    <!-- Skip Navigation Links -->
+    <a href="#main-content" class="skip-link">Skip to main content</a>
+    <a href="#navigation" class="skip-link">Skip to navigation</a>
+    
     <!-- Navigation -->
-    <nav class="w-full border-b border-gray-100 bg-white dark:bg-black dark:border-gray-800">
+    <nav id="navigation" class="w-full border-b border-gray-100 bg-white dark:bg-black dark:border-gray-800" role="navigation" aria-label="Main navigation">
       <div class="max-w-7xl mx-auto flex items-center justify-between px-6 py-4">
-        <a href="/" class="text-lg font-medium tracking-tight text-gray-900 dark:text-white">Gui Ferreira</a>
+        <a href="/" class="text-lg font-medium tracking-tight text-gray-900 dark:text-white" aria-label="Gui Ferreira - Home">Gui Ferreira</a>
         
         <!-- Mobile menu button -->
-        <button id="mobile-menu-button" class="md:hidden text-gray-900 dark:text-white">
-          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+        <button 
+          id="mobile-menu-button" 
+          class="md:hidden text-gray-900 dark:text-white" 
+          aria-expanded="false" 
+          aria-controls="mobile-menu"
+          aria-label="Toggle mobile menu"
+        >
+          <svg class="w-6 h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
             <path class="mobile-menu-icon" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16M4 18h16" />
             <path class="mobile-menu-close hidden" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M6 18L18 6M6 6l12 12" />
           </svg>
@@ -40,17 +74,24 @@
 
         <!-- Desktop Navigation -->
         <div class="hidden md:flex items-center space-x-8 text-sm font-light">
-          <a href="/about" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">About</a>
-          <a href="/blog" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Blog</a>
-          <a href="/talks" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Talks</a>
-          <a href="/courses" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Courses</a>
-          <a href="/workshops" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Workshops</a>
+          <ul class="flex items-center space-x-8" role="list">
+            <li><a href="/about" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">About</a></li>
+            <li><a href="/blog" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Blog</a></li>
+            <li><a href="/talks" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Talks</a></li>
+            <li><a href="/courses" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Courses</a></li>
+            <li><a href="/workshops" class="text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Workshops</a></li>
+          </ul>
           <!-- Dark mode toggle -->
-          <button id="theme-toggle" class="w-10 h-10 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition text-gray-900 dark:text-white">
-            <svg class="w-6 h-6 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <button 
+            id="theme-toggle" 
+            class="w-10 h-10 p-2 rounded-full hover:bg-gray-100 dark:hover:bg-gray-800 transition text-gray-900 dark:text-white" 
+            aria-label="Toggle dark mode"
+            type="button"
+          >
+            <svg class="w-6 h-6 dark:hidden" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 3v1m0 16v1m9-9h-1M4 12H3m15.364 6.364l-.707-.707M6.343 6.343l-.707-.707m12.728 0l-.707.707M6.343 17.657l-.707.707M16 12a4 4 0 11-8 0 4 4 0 018 0z" />
             </svg>
-            <svg class="w-6 h-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+            <svg class="w-6 h-6 hidden dark:block" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
               <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M20.354 15.354A9 9 0 018.646 3.646 9.003 9.003 0 0012 21a9.003 9.003 0 008.354-5.646z" />
             </svg>
           </button>
@@ -59,26 +100,29 @@
       </div>
 
       <!-- Mobile Navigation Menu -->
-      <div id="mobile-menu" class="hidden md:hidden">
+      <div id="mobile-menu" class="hidden md:hidden" role="menu" aria-labelledby="mobile-menu-button">
         <div class="px-4 py-2 space-y-3">
-          <a href="/about" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">About</a>
-          <a href="/blog" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Blog</a>
-          <a href="/talks" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Talks</a>
-          <a href="/courses" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Courses</a>
-          <a href="/workshops" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition">Workshops</a>
-          <a href="/newsletter" class="block px-6 py-2 bg-black text-white text-center rounded-full shadow hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition">Join 1k+ Subscribers</a>
+          <a href="/about" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition" role="menuitem">About</a>
+          <a href="/blog" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition" role="menuitem">Blog</a>
+          <a href="/talks" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition" role="menuitem">Talks</a>
+          <a href="/courses" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition" role="menuitem">Courses</a>
+          <a href="/workshops" class="block text-gray-900 dark:text-white hover:text-black/80 dark:hover:text-white/80 transition" role="menuitem">Workshops</a>
+          <a href="/newsletter" class="block px-6 py-2 bg-black text-white text-center rounded-full shadow hover:bg-gray-900 dark:bg-white dark:text-black dark:hover:bg-gray-200 transition" role="menuitem">Join 1k+ Subscribers</a>
         </div>
       </div>
     </nav>
     
-    {{ content }}
+    <!-- Main Content -->
+    <main id="main-content" role="main">
+      {{ content }}
+    </main>
 
     <!-- Footer -->
-    <footer class="bg-white border-t border-gray-100 mt-24 dark:bg-black dark:border-gray-800">
+    <footer class="bg-white border-t border-gray-100 mt-24 dark:bg-black dark:border-gray-800" role="contentinfo">
       <div class="max-w-7xl mx-auto px-6 py-16 grid grid-cols-1 md:grid-cols-4 gap-12 text-sm text-gray-700 dark:text-gray-300">
         <div>
           <div class="font-semibold mb-2">Gui Ferreira</div>
-          <p class="text-gray-500 dark:text-gray-400">Inspiring developers.</p>
+          <p class="text-gray-600 dark:text-gray-300">Inspiring developers.</p>
         </div>
         <div>
           <div class="font-semibold mb-2">Learn</div>
@@ -91,9 +135,9 @@
         <div>
           <div class="font-semibold mb-2">Connect</div>
           <ul class="space-y-1">
-            <li><a href="https://www.linkedin.com/in/gferreira" class="hover:underline">LinkedIn</a></li>
-            <li><a href="https://twitter.com/gsferreira" class="hover:underline">Twitter</a></li>
-            <li><a href="https://www.youtube.com/@gui.ferreira" class="hover:underline">YouTube</a></li>
+            <li><a href="https://www.linkedin.com/in/gferreira" class="hover:underline" aria-label="LinkedIn profile">LinkedIn</a></li>
+            <li><a href="https://twitter.com/gsferreira" class="hover:underline" aria-label="Twitter profile">Twitter</a></li>
+            <li><a href="https://www.youtube.com/@gui.ferreira" class="hover:underline" aria-label="YouTube channel">YouTube</a></li>
           </ul>
         </div>
         <div>
@@ -104,7 +148,7 @@
           </ul>
         </div>
       </div>
-      <div class="border-t border-gray-100 dark:border-gray-800 py-6 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-400 dark:text-gray-500">
+      <div class="border-t border-gray-100 dark:border-gray-800 py-6 px-6 max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between text-xs text-gray-600 dark:text-gray-300">
         <div class="mb-2 md:mb-0">© 2025 Gui Ferreira. All rights reserved.</div>
         <div class="space-x-4">
           <a href="/privacy" class="hover:underline">Privacy</a>
@@ -122,15 +166,19 @@
           if (isDark) {
             root.classList.add('dark');
             localStorage.setItem('theme', 'dark');
+            themeToggle.setAttribute('aria-label', 'Switch to light mode');
           } else {
             root.classList.remove('dark');
             localStorage.setItem('theme', 'light');
+            themeToggle.setAttribute('aria-label', 'Switch to dark mode');
           }
         }
 
         // Check initial theme
         if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
           setTheme(true);
+        } else {
+          setTheme(false);
         }
 
         // Toggle theme on click
@@ -153,9 +201,40 @@
         const closeIcon = document.querySelector('.mobile-menu-close');
 
         mobileMenuButton.addEventListener('click', () => {
+          const isExpanded = mobileMenuButton.getAttribute('aria-expanded') === 'true';
+          const newExpanded = !isExpanded;
+          
           mobileMenu.classList.toggle('hidden');
           menuIcon.classList.toggle('hidden');
           closeIcon.classList.toggle('hidden');
+          
+          mobileMenuButton.setAttribute('aria-expanded', newExpanded);
+          mobileMenuButton.setAttribute('aria-label', newExpanded ? 'Close mobile menu' : 'Open mobile menu');
+        });
+
+        // Close mobile menu when clicking outside
+        document.addEventListener('click', (e) => {
+          if (!mobileMenuButton.contains(e.target) && !mobileMenu.contains(e.target)) {
+            if (!mobileMenu.classList.contains('hidden')) {
+              mobileMenu.classList.add('hidden');
+              menuIcon.classList.remove('hidden');
+              closeIcon.classList.add('hidden');
+              mobileMenuButton.setAttribute('aria-expanded', 'false');
+              mobileMenuButton.setAttribute('aria-label', 'Open mobile menu');
+            }
+          }
+        });
+
+        // Close mobile menu on escape key
+        document.addEventListener('keydown', (e) => {
+          if (e.key === 'Escape' && !mobileMenu.classList.contains('hidden')) {
+            mobileMenu.classList.add('hidden');
+            menuIcon.classList.remove('hidden');
+            closeIcon.classList.add('hidden');
+            mobileMenuButton.setAttribute('aria-expanded', 'false');
+            mobileMenuButton.setAttribute('aria-label', 'Open mobile menu');
+            mobileMenuButton.focus();
+          }
         });
       });
     </script>
