@@ -13,7 +13,7 @@ I had the opportunity to listen excellent speakers as:
 - [Lachlan Heasman](https://au.linkedin.com/pub/lachlan-heasman/1/920/777)
 - [Kiro Harada](https://twitter.com/haradakiro)
 - [Pedro Gustavo Torres](https://twitter.com/_pedro_torres)
-- [Neil Harrison](https://www.uvu.edu/profpages/profiles/show/user_id/1923)
+- [Neil Harrison](https://www.uvu.edu/cet/i-etc/schedule/bio-neil-harrison.html)
 - [Ricardo Fiel](https://twitter.com/theplastictoy)
 - [Carlton Nettleton](https://twitter.com/carlton858)
 

@@ -18,7 +18,7 @@ Yesterday we released metro-bootstrap 3.2.0.1. The new version brings the update
 
 ### Bower configuration - Add "main"
 
-Has been added the "main" option to the bower.json file. Thanks to [@fumito_ito](https://github.com/fumitoito).
+Has been added the "main" option to the bower.json file. 
 
 ### New variables
 

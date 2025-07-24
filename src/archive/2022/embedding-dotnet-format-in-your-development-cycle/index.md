@@ -96,7 +96,7 @@ So, how can I prevent commits if I forget to format the code?
 The answer to that is [Git Hooks](https://githooks.com/).
 Git gives you a way to hook in some git steps. So, you can run your code on pre-commit.
 
-You can do that in many ways (see [here](https://github.com/dotnet/format/blob/main/docs/integrations.md)), but I prefer to use ["pre-commit"](https://pre-commit.com/). Pre-commit simplifies your process and offers you an easy way to adopt new hooks. Go take a look. It's pretty cool!
+You can do that in many ways (see [here](https://github.com/dotnet/format/blob/release/9.0-preview1/docs/integrations.md)), but I prefer to use ["pre-commit"](https://pre-commit.com/). Pre-commit simplifies your process and offers you an easy way to adopt new hooks. Go take a look. It's pretty cool!
 
 ### How to configure pre-commit
 

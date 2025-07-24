@@ -35,8 +35,8 @@ During the process, I created [_letsnow_](https://github.com/gsferreira/letsnow)
 
 Well, I could describe here how I did it, but since there's already a lot of good articles of it, I leave you here some to guide you. You will see that it's a piece of cake.
 
-- ["Introducing Sandra.Snow"](https://www.philliphaydon.com/2013/10/introducing-sandra-snow/) by Phillip Haydon
-- ["Hello Sandra Snow"](https://www.macsdickinson.com/SandraSnow/hello-sandra-snow/#.U4j33_ldXN1) by Macs Dickinson
+- ["Introducing Sandra.Snow"](https://www.philliphaydon.com/2013/10/01/introducing-sandra-snow/) by Phillip Haydon
+- ["Hello Sandra Snow"](https://www.macsdickinson.com/blog/2013-12-12-Hello-Sandra-Snow/) by Macs Dickinson
 - ["Blogging with Markdown & Deploying via Git - Introducing Sandra.Snow"](https://blog.jonathanchannon.com/2013/10/01/blogging-with-markdown-and-git/) by Jonathan Channon
 
 ![Feel like a superhero](/images/reasons-to-blogging-using-github-pages-and-sandra-snow-feel-like-superhero.png)

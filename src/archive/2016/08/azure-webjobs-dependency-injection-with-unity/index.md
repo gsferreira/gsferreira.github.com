@@ -16,7 +16,7 @@ In this blog post I will show how you can use **[Unity](https://github.com/unity
 
 ## Setup dependency injection
 
-_In this post I'm assuming you already know how to set up a [WebJob](https://azure.microsoft.com/en-gb/documentation/articles/websites-dotnet-webjobs-sdk-get-started/)._
+_In this post I'm assuming you already know how to set up a [WebJob](https://learn.microsoft.com/en-us/azure/app-service/webjobs-sdk-get-started/)._
 
 The first step is to install the Unity Package in your project.
 

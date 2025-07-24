@@ -39,7 +39,7 @@ Adding a new language feature is a balance of art, science and future prediction
 
 ## 2️⃣ The fix with a suffix
 
-Based on that concern, the [proposal](https://github.com/dotnet/csharplang/blob/main/proposals/utf8-string-literals.md) was reviewed. Now, it stands on a version where the **string must be suffixed with `u8`**, which stands for UTF-8.
+Based on that concern, the [proposal](https://github.com/dotnet/csharplang/blob/main/proposals/csharp-11.0/utf8-string-literals.md) was reviewed. Now, it stands on a version where the **string must be suffixed with `u8`**, which stands for UTF-8.
 
 That approach was approved at a [Language Design meeting](https://github.com/dotnet/csharplang/blob/main/meetings/2022/LDM-2022-04-18.md#issues-with-utf8-string-literals) on the premise that the .NET ecosystem is standardizing on `ReadOnlySpan<byte>` as the UTF-8 string type.
 What's that mean?

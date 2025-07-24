@@ -35,7 +35,7 @@ I was tired of fighting with Gatsby and NextJS. Something simpler was needed. I 
 
 After reading a few things, I start feeling excited. Eleventy seems simple and quick to learn. The learning curve doesn't seem to steep. It feels natural to create pages with it. I see it as Templating Language on steroids.
 
-So, I start working to move my blog into Eleventy. I started with the [MF Blog Starter Template](https://github.com/marcfilleul/mf-blogstarter). After a few hours, I had most of the job done. Without tricks and without needing to search the web to find what I want. The [Eleventy documentation](https://www.11ty.dev/docs/) was just enough.
+So, I start working to move my blog into Eleventy. I started with the [MF Blog Starter Template](https://web.archive.org/web/20240301000000*/https://github.com/marcfilleul/mf-blogstarter). After a few hours, I had most of the job done. Without tricks and without needing to search the web to find what I want. The [Eleventy documentation](https://www.11ty.dev/docs/) was just enough.
 
 I can't recommend it more. If you are planning to use a Static Site Generator, give Eleventy a try. Probably something simple is enough.
 

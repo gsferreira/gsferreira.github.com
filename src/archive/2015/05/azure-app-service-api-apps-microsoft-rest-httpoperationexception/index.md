@@ -42,7 +42,7 @@ I struggled a bit until I figured why.
 
 Well, let me explain you how I got there and what I have done to solve it.
 
-I access to the new [Portal](http://portal.azure.com) and I created a new API App, then I've followed the Microsoft tutorial of how to [Create an ASP.NET API app in Azure App Service](http://azure.microsoft.com/en-us/documentation/articles/app-service-dotnet-create-api-app/).
+I access to the new [Portal](http://portal.azure.com) and I created a new API App, then I've followed the Microsoft tutorial of how to [Create an ASP.NET API app in Azure App Service](https://web.archive.org/web/20151001111834/https://azure.microsoft.com/en-us/documentation/articles/app-service-dotnet-create-api-app/).
 
 Everything was going fine and in a few minutes I published the API. Quick and easy.
 

@@ -33,8 +33,6 @@ The world around us has a lot of good examples of this, for example:
 People feel attracted to strong identities and tend to create a relation with a brand or a product that has some characteristics that they like. As [Amy Hoy](https://stackingthebricks.com/how-do-you-market-a-product-thats-for-everyone/) said _"Nobody wants to be everybody"_.
 Your friends are amazing because of their unique personality or because they are likable people?! I bet that you like them because they are awesome.
 
-<iframe src="//giphy.com/embed/ly12YiQjsvupi" width="500" height="233" frameBorder="0" webkitAllowFullScreen mozallowfullscreen allowFullScreen></iframe>
-
 So, if you are creating a product, you should try to find your identity and remember that, your target market should see in your identity a personality that they love. Then, just keep in mind "who you are" and you will see people falling in love with your product.
 
 <!--[![shut-up-and-take-my-money](/images/00-global-shut-up-and-take-my-money.gif)](http://knowyourmeme.com/photos/264241-shut-up-and-take-my-money)-->

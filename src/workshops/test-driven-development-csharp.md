@@ -63,17 +63,17 @@ testimonials:
     author: 
     title: Senior Software Engineer
     company: 
-    image: /assets/testimonials/
+    image: 
   - quote: "Gui's hands-on approach made TDD click for me. Two months later, our team's code quality has improved dramatically and we're shipping features faster than ever."
     author: 
     title: Lead Developer
     company: 
-    image: /assets/testimonials/
+    image: 
   - quote: "I was skeptical about TDD slowing down development, but this workshop proved the opposite. We're now more productive and confident in our releases."
     author: 
     title: Engineering Manager
     company: 
-    image: /assets/testimonials/
+    image: 
 faqs:
   - question: Will TDD slow down my development process?
     answer: This is the most common concern, and the workshop directly addresses it. While there's an initial learning curve, TDD typically increases development speed by reducing debugging time, preventing regressions, and making refactoring safer. You'll see this firsthand during the exercises.

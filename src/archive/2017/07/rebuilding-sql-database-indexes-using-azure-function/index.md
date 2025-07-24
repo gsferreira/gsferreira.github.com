@@ -47,4 +47,3 @@ _In that case, you probably want to move to an App Service plan or decompose the
 - [https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/](https://blog.sqlauthority.com/2010/01/12/sql-server-fragmentation-detect-fragmentation-and-eliminate-fragmentation/)
 - [https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/](https://geeks.ms/davidjrh/2015/10/08/rebuilding-sql-database-indexes-using-azure-automation/)
 - [https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/](https://alexandrebrisebois.wordpress.com/2013/02/06/dont-forget-about-index-maintenance-on-windows-azure-sql-database/)
-- [https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/](https://www.red-gate.com/simple-talk/cloud/cloud-data/azure-sql-database-maintenance/)

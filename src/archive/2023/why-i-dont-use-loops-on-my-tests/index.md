@@ -88,7 +88,7 @@ Using [Striker.NET](https://stryker-mutator.io/docs/stryker-net/introduction/) t
 dotnet stryker
 ```
 
-For those unfamiliar with [Striker.NET](https://stryker-mutator.io/docs/stryker-net/introduction/), it's an impressive [mutation testing](https://en.wikipedia.org/wiki/Mutation_testing) tool for .NET. You can find a [video here](https://www.youtube.com/watch?v=sGwfwtkaDfk) by [Nick Chapsas](https://nickchapsas.com/courses/), which thoroughly explains its capabilities.
+For those unfamiliar with [Striker.NET](https://stryker-mutator.io/docs/stryker-net/introduction/), it's an impressive [mutation testing](https://en.wikipedia.org/wiki/Mutation_testing) tool for .NET. You can find a [video here](https://www.youtube.com/watch?v=sGwfwtkaDfk) by [Nick Chapsas](https://dometrain.com/author/nick-chapsas/), which thoroughly explains its capabilities.
 
 After running Striker, the results indicate a final mutation score of 100, which means the tests are performing exactly as intended, ensuring nothing has been overlooked in the testing process.
 
