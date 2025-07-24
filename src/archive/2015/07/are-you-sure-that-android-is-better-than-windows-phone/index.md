@@ -70,7 +70,7 @@ The most annoying thing in Android notification system is open a notification...
 I installed more a less 8 applications, all them popular (Trello, Sunrise, Pocket, Feedly...) and the phone is constantly blocking.
 The system simply doesn't react in a fashion time.
 When a user touch to go to the main screen and nothing happens during 1 or 2 seconds the expirience is ruined.
-**NOTE**: I know that my Android phone isn't a powerfull machine, so I'm [comparing him with the humble Nokia Lumia 630](http://smartphones.specout.com/compare/968-3120/Nokia-Lumia-630-vs-Vodafone-Smart-Prime-6).
+**NOTE**: I know that my Android phone isn't a powerfull machine, so I'm [comparing him with the humble Nokia Lumia 630](https://phonesdata.com/pt/smartphones/vodafone/smart-prime-6-3246/lumia-630-2121/).
 **4. Updates**
 I simply can't get it. I'm not able to figure out the updates that are available and how can I run them.
 Sometimes I got a notification to update the app "X", another times I need to go to Play Store to do it...

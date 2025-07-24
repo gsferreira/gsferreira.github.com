@@ -21,7 +21,7 @@ So, I'm sharing here how I've done it:
 5.  Update your project (\*.csproj file) to Load Symbols: `<DebugSymbols>true</DebugSymbols><DebugType>pdbonly</DebugType>`.
 6.  Build your project using Release configuration: `dotnet build -c Release`.
 7.  Launch with WinDbg attached to your project: `windbg dotnet [YOUR DLL PATH].dll`.
-8.  [Load SOS](https://bret.codes/net-core-and-windbg/#loadsos) using `.load C:\Users\[USERNAME]\.dotnet\sos\sos.dll .`.
+8.  [Load SOS](https://web.archive.org/web/20200810085924/https://bret.codes/net-core-and-windbg/#loadsos) using `.load C:\Users\[USERNAME]\.dotnet\sos\sos.dll .`.
 
 ![windbg - load sos](/images/windbg-a-net-core-31-app-memory-leak-load-sos.png)
 

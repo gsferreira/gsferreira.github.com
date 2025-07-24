@@ -76,7 +76,7 @@ CQRS enables the segregation of the Load, with the possibility of use a differen
 
 > The largest possible benefit though is that it recognizes that their are different architectural properties when dealing with commands and queries … for example it allows us to host the two services differently eg: we can host the read service on 25 servers and the write service on two
 >
-> _[Greg Young](http://codebetter.com/gregyoung/2010/02/16/cqrs-task-based-uis-event-sourcing-agh/)_
+> _[Greg Young](https://gist.github.com/meigwilym/025f08208b5640ad26bc410c8a83b10f/)_
 
 ## Challenges
 

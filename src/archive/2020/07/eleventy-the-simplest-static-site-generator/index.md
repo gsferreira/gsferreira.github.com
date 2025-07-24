@@ -25,7 +25,7 @@ My first attempt was with Gatsby. I installed the [starter blog](https://www.gat
 
 Gatsby was taking so much time that I decided to take a bet on NextJS. I knew beforehand that I didn't have so many starters/templates as in the Gatsby ecosystem. Even so, I was expecting to have results faster.
 
-I picked [Telmo blog](https://telmo.im/writings/open-sourcing-blog) as a starting point and I tried to move my content. The results show up faster!
+I picked [Telmo blog](https://web.archive.org/web/20200725231939/https://telmo.im/writings/open-sourcing-blog) as a starting point and I tried to move my content. The results show up faster!
 
 But, there was something that I didn't like and I didn't find a way to overcome. Even with the [static HTML export](https://nextjs.org/docs/advanced-features/static-html-export) build, I needed JavaScript enabled to display the content. Probably was because of my lack of knowledge, but after a few hours, I didn't have a clue of what should I do.
 

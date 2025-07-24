@@ -14,7 +14,7 @@ Using the [.NET client library by Confluent](https://github.com/confluentinc/con
 
 There are many patterns in this type of application and I want to show you a framework that will help you build your event-driven applications on top of Apache Kafka in a simple and maintainable way.
 
-The framework that I want to show you is [KafkaFlow](https://github.com/farfetch/kafkaflow) which is an Open-Source project developed by [FARFETCH](https://farfetchtechblog.com/).
+The framework that I want to show you is [KafkaFlow](https://github.com/farfetch/kafkaflow) which is an Open-Source project developed by [FARFETCH](https://farfetch.com/).
 
 KafkaFlow will help us simplify the process of building event-driven applications on Apache Kafka in a straightforward and maintainable manner.
 

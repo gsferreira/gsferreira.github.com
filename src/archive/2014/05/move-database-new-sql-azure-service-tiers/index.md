@@ -18,7 +18,7 @@ First of all you should take your web site or any client of your database offlin
 
 Open a connection to your SQL Server using SQL Management Studio. Right click on your database. Choose _"Tasks > Export Data-tier Application"_. Make sure that you store the bacpac file in your Windows Azure Storage. You can find a good example [here](https://blogs.msdn.com/b/brunoterkaly/archive/2013/09/26/how-to-export-an-on-premises-sql-server-database-to-windows-azure-storage.aspx?Redirected=true).
 
-**Now you need to create a SQL Server before create the database**, by some reason (probably a "preview version bug") if you try to import the database before create the server you will get an error. So, go to [Azure Manage web site](https://manage.windowsazure.com) and create a new SQL Server. Make sure that you set the "Supported Database Editions" to "Basic, Standard, Premium".
+**Now you need to create a SQL Server before create the database**, by some reason (probably a "preview version bug") if you try to import the database before create the server you will get an error. So, go to Azure Manage web site and create a new SQL Server. Make sure that you set the "Supported Database Editions" to "Basic, Standard, Premium".
 
 ![alt text](/images/move-database-new-sql-azure-service-tiers-create-server.png "Create a new server")
 
