@@ -17,7 +17,7 @@ Here, you will find five awesome tools to help you craft an incredible (and avai
 
 WORDOID generates words and show the availability in .com and .net domains. You can search using parameters like length or language.
 
-### 2. [Name Mesh](http://www.namemesh.com/)
+### 2. [Name Mesh](https://namemesh.pro/)
 
 [![Name Mesh](/images/5-awesome-tools-to-craft-the-perfect-domain-name-namemesh.jpg)](http://www.namemesh.com/)
 

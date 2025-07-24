@@ -37,8 +37,8 @@ Now you are able to start adding comments to your Web API methods, as you can se
 
 Build your application and you are done! Now, if you want to do some advanced stuff, I recommend that you take a look into the following posts:
 
-- [Creating Help Pages for ASP.NET Web API](http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages)
-- [Advanced Help Page customizations](http://blogs.msdn.com/b/yaohuang1/archive/2012/12/10/asp-net-web-api-help-page-part-3-advanced-help-page-customizations.aspx)
-- [Introducing the ASP.NET Web API Help Page](http://blogs.msdn.com/b/yaohuang1/archive/2012/08/15/introducing-the-asp-net-web-api-help-page-preview.aspx)
+- [Creating Help Pages for ASP.NET Web API](https://web.archive.org/web/20141008092348/http://www.asp.net/web-api/overview/creating-web-apis/creating-api-help-pages)
+- [Advanced Help Page customizations](https://web.archive.org/web/20151107163209/http://blogs.msdn.com/b/yaohuang1/archive/2012/12/10/asp-net-web-api-help-page-part-3-advanced-help-page-customizations.aspx)
+- [Introducing the ASP.NET Web API Help Page](https://web.archive.org/web/20151107163209/http://blogs.msdn.com/b/yaohuang1/archive/2012/08/15/introducing-the-asp-net-web-api-help-page-preview.aspx)
 
 I hope this helps you.

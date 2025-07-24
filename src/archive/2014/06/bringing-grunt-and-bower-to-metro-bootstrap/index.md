@@ -16,7 +16,7 @@ This project has grown up with a lack of structure in my opinion, so, this week 
 
 We have adopted bower for dependency management, so we can manage the dependencies in a declarative way. Now you can know the current dependencies looking at the bower.json file.
 
-Since the metro-bootstrap release, we always work on .less files, but we also release the css file and a minified version of it. To do this, we used some tools like [SimpLESS](http://wearekiss.com/simpless) or [WinLess](http://winless.org/). This is over, now we leave this responsibility to Grunt. Grunt is the tool to compile the less files, minify the css files and release our page for GitHub Pages.
+Since the metro-bootstrap release, we always work on .less files, but we also release the css file and a minified version of it. To do this, we used some tools like [SimpLESS](https://github.com/Paratron/SimpLESS) or [WinLess](http://winless.org/). This is over, now we leave this responsibility to Grunt. Grunt is the tool to compile the less files, minify the css files and release our page for GitHub Pages.
 
 What have changed? Take a look.
 
