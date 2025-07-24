@@ -19,7 +19,7 @@ relatedCourses:
   - clean-code-csharp
 ---
 
-# Write C# Code With Testing in Mind
+## Write C# Code With Testing in Mind
 
 If you're stuck in an endless loop of:
 - Writing code

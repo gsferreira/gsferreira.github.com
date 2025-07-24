@@ -17,7 +17,7 @@ relatedCourses:
   - url-shortener-in-dotnet
 ---
 
-# "My microservices are a black box, and I'm drowning in logs!"
+## _"My microservices are a black box, and I'm drowning in logs!"_
 
 Sound familiar?
 

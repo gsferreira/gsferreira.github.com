@@ -19,7 +19,7 @@ relatedCourses:
   - opentelemetry-dotnet
 ---
 
-# From Code to Production: The Missing Playbook
+## From Code to Production: The Missing Playbook
 
 Let's be honest - writing code is the easy part.
 
