@@ -17,6 +17,14 @@ date: 2023-10-02
 relatedCourses:
   - testable-code-csharp
   - clean-code-csharp
+heroVideo:
+  mp4: "/assets/courses/videos/test-driven-development-csharp-hero.mp4"
+  webm: "/assets/courses/videos/test-driven-development-csharp-hero.webm"
+  poster: "/assets/courses/videos/test-driven-development-csharp-hero-poster.png"
+  duration: "PT0M56S"
+  title: "From Zero to Hero: Test-Driven Development in C#"
+  description: "See what you'll learn"
+  autoplay: false
 ---
 
 ## Test-Driven Development in C#: Write Better Code, Ship Fewer Bugs
