@@ -1,10 +1,12 @@
 import fs from 'fs';
 import path from 'path';
 import { spawn } from 'child_process';
+import sharp from 'sharp';
 
 /**
  * Video optimization script for course hero videos
  * Requires FFmpeg to be installed: https://ffmpeg.org/download.html
+ * Requires Sharp for image optimization: npm install sharp
  */
 
 const CONFIG = {
@@ -110,13 +112,54 @@ async function generatePoster(inputPath, outputPath) {
     '-ss', CONFIG.poster.timeOffset,
     '-vframes', '1',
     '-vf', `scale='min(${CONFIG.poster.maxWidth},iw)':min'(${CONFIG.poster.maxHeight},ih)':force_original_aspect_ratio=decrease`,
-    '-q:v', CONFIG.poster.quality.toString(),
+    '-q:v', '2', // High quality for temporary image
     '-y',
     outputPath
   ];
   
   console.log(`Generating poster: ${path.basename(outputPath)}`);
   await runFFmpeg(args);
+}
+
+async function generateOptimizedPosters(tempPosterPath, baseName) {
+  const webpOutput = path.join(CONFIG.posterDir, `${baseName}-poster.webp`);
+  const avifOutput = path.join(CONFIG.posterDir, `${baseName}-poster.avif`);
+  const pngOutput = path.join(CONFIG.posterDir, `${baseName}-poster.png`);
+  
+  try {
+    const image = sharp(tempPosterPath);
+    
+    // Generate WebP version (best compression/quality balance)
+    await image
+      .webp({ quality: 85, effort: 6 })
+      .toFile(webpOutput);
+    console.log(`Generated WebP poster: ${path.basename(webpOutput)}`);
+    
+    // Generate AVIF version (best compression)
+    await image
+      .avif({ quality: 75, effort: 9 })
+      .toFile(avifOutput);
+    console.log(`Generated AVIF poster: ${path.basename(avifOutput)}`);
+    
+    // Generate PNG fallback (for older browsers)
+    await image
+      .png({ quality: 85, compressionLevel: 9 })
+      .toFile(pngOutput);
+    console.log(`Generated PNG fallback: ${path.basename(pngOutput)}`);
+    
+    // Clean up temporary file
+    fs.unlinkSync(tempPosterPath);
+    
+    return {
+      webp: webpOutput,
+      avif: avifOutput,
+      png: pngOutput
+    };
+    
+  } catch (error) {
+    console.error('Error generating optimized posters:', error);
+    throw error;
+  }
 }
 
 async function getVideoDuration(inputPath) {
@@ -150,7 +193,7 @@ async function processVideo(inputPath) {
   const baseName = path.basename(inputPath, path.extname(inputPath));
   const mp4Output = path.join(CONFIG.outputDir, `${baseName}.mp4`);
   const webmOutput = path.join(CONFIG.outputDir, `${baseName}.webm`);
-  const posterOutput = path.join(CONFIG.posterDir, `${baseName}-poster.jpg`);
+  const tempPosterOutput = path.join(CONFIG.posterDir, `${baseName}-poster-temp.jpg`);
   
   try {
     console.log(`\nProcessing: ${inputPath}`);
@@ -163,16 +206,22 @@ async function processVideo(inputPath) {
     await optimizeVideoToMP4(inputPath, mp4Output);
     await optimizeVideoToWebM(inputPath, webmOutput);
     
-    // Generate poster frame
-    await generatePoster(inputPath, posterOutput);
+    // Generate temporary poster frame
+    await generatePoster(inputPath, tempPosterOutput);
+    
+    // Generate optimized poster formats
+    const posterPaths = await generateOptimizedPosters(tempPosterOutput, baseName);
     
     // Output configuration for frontmatter
     console.log('\n📋 Add this to your course frontmatter:');
     console.log('```yaml');
     console.log('heroVideo:');
-    console.log(`  mp4: "/assets/videos/${baseName}.mp4"`);
-    console.log(`  webm: "/assets/videos/${baseName}.webm"`);
-    console.log(`  poster: "/assets/videos/${baseName}-poster.jpg"`);
+    console.log(`  mp4: "/assets/courses/videos/${baseName}.mp4"`);
+    console.log(`  webm: "/assets/courses/videos/${baseName}.webm"`);
+    console.log(`  poster:`);
+    console.log(`    avif: "/assets/courses/videos/${baseName}-poster.avif"`);
+    console.log(`    webp: "/assets/courses/videos/${baseName}-poster.webp"`);
+    console.log(`    png: "/assets/courses/videos/${baseName}-poster.png"`);
     console.log(`  duration: "${duration}"`);
     console.log('  title: "Course Preview" # Customize this');
     console.log('  description: "See what you\'ll learn" # Customize this');
@@ -182,6 +231,16 @@ async function processVideo(inputPath) {
     console.log('```\n');
     
     console.log('✅ Video optimization complete!');
+    console.log(`📊 Poster sizes:`);
+    const stats = {
+      avif: fs.statSync(posterPaths.avif).size,
+      webp: fs.statSync(posterPaths.webp).size, 
+      png: fs.statSync(posterPaths.png).size
+    };
+    console.log(`  AVIF: ${Math.round(stats.avif / 1024)}KB`);
+    console.log(`  WebP: ${Math.round(stats.webp / 1024)}KB`);
+    console.log(`  PNG:  ${Math.round(stats.png / 1024)}KB`);
+    console.log(`  Savings: ${Math.round((stats.png - stats.avif) / 1024)}KB (${Math.round((1 - stats.avif / stats.png) * 100)}% with AVIF)`);
     
   } catch (error) {
     console.error(`❌ Error processing ${inputPath}:`, error.message);

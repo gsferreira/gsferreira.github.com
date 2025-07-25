@@ -20,10 +20,13 @@ relatedCourses:
 heroVideo:
   mp4: "/assets/courses/videos/test-driven-development-csharp-hero.mp4"
   webm: "/assets/courses/videos/test-driven-development-csharp-hero.webm"
-  poster: "/assets/courses/videos/test-driven-development-csharp-hero-poster.png"
+  poster:
+    avif: "/assets/courses/videos/test-driven-development-csharp-hero-poster.avif"
+    webp: "/assets/courses/videos/test-driven-development-csharp-hero-poster.webp"
+    png: "/assets/courses/videos/test-driven-development-csharp-hero-poster.png"
   duration: "PT0M56S"
   title: "From Zero to Hero: Test-Driven Development in C#"
-  description: "See what you'll learn"
+  description: "See what's all about"
   autoplay: false
 ---
 
