@@ -15,6 +15,17 @@ callToActionSubtitle: "Master OpenTelemetry in .NET"
 date: 2024-07-10
 relatedCourses:
   - url-shortener-in-dotnet
+heroVideo:
+  mp4: "/assets/courses/videos/opentelemetry-dotnet.mp4"
+  webm: "/assets/courses/videos/opentelemetry-dotnet.webm"
+  poster:
+    avif: "/assets/courses/videos/opentelemetry-dotnet-poster.avif"
+    webp: "/assets/courses/videos/opentelemetry-dotnet-poster.webp"
+    png: "/assets/courses/videos/opentelemetry-dotnet-poster.png"
+  duration: "PT0M33S"
+  title: "From Zero to Hero: OpenTelemetry in .NET"
+  description: "See what's all about" 
+  autoplay: false
 ---
 
 ## _"My microservices are a black box, and I'm drowning in logs!"_

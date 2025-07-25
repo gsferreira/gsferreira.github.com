@@ -17,6 +17,17 @@ date: 2025-03-31
 relatedCourses:
   - test-driven-development-csharp
   - clean-code-csharp
+heroVideo:
+  mp4: "/assets/courses/videos/testable-code-csharp.mp4"
+  webm: "/assets/courses/videos/testable-code-csharp.webm"
+  poster:
+    avif: "/assets/courses/videos/testable-code-csharp-poster.avif"
+    webp: "/assets/courses/videos/testable-code-csharp-poster.webp"
+    png: "/assets/courses/videos/testable-code-csharp-poster.png"
+  duration: "PT0M36S"
+  title: "From Zero to Hero: Writing Testable Code in C#"
+  description: "See what's all about"
+  autoplay: false
 ---
 
 ## Write C# Code With Testing in Mind
