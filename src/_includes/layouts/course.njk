@@ -40,6 +40,81 @@ layout: default
     </div>
   {% endif %}
 
+  {% if heroVideo %}
+  <div class="mb-8">
+    <div class="relative w-full rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-2xl">
+      <div class="aspect-video">
+        <video 
+          class="w-full h-full object-cover"
+          controls
+          preload="metadata"
+          poster="{{ heroVideo.poster }}"
+          {% if heroVideo.autoplay %}muted loop autoplay{% endif %}
+          aria-label="Course preview video for {{ title }}"
+        >
+          {% if heroVideo.webm %}
+          <source src="{{ heroVideo.webm }}" type="video/webm">
+          {% endif %}
+          <source src="{{ heroVideo.mp4 }}" type="video/mp4">
+          <p class="text-gray-600 dark:text-gray-400 p-8">
+            Your browser doesn't support video. 
+            <a href="{{ heroVideo.mp4 }}" class="text-blue-600 dark:text-blue-400 underline">
+              Download the course preview video
+            </a>
+          </p>
+        </video>
+      </div>
+      {% if heroVideo.caption %}
+      <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
+        <p class="text-white text-sm">{{ heroVideo.caption }}</p>
+      </div>
+      {% endif %}
+    </div>
+  
+    
+    {% if heroVideo.transcript %}
+    <details class="mt-4">
+      <summary class="cursor-pointer text-sm text-gray-600 dark:text-gray-400 hover:text-gray-900 dark:hover:text-white transition-colors">
+        View video transcript
+      </summary>
+      <div class="mt-2 p-4 bg-gray-50 dark:bg-gray-900 rounded-lg text-sm text-gray-700 dark:text-gray-300 transition-colors">
+        {{ heroVideo.transcript }}
+      </div>
+    </details>
+    {% endif %}
+  </div>
+
+  {% if heroVideo %}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "VideoObject",
+    "name": "{{ heroVideo.title or title }} - Course Preview",
+    "description": "{{ heroVideo.description or description }}",
+    "thumbnailUrl": "{{ heroVideo.poster }}",
+    "uploadDate": "{{ heroVideo.uploadDate or page.date | htmlDate }}",
+    "duration": "{{ heroVideo.duration or 'PT30S' }}",
+    "contentUrl": "{{ heroVideo.mp4 }}",
+    "embedUrl": "{{ site.url }}{{ page.url }}",
+    "publisher": {
+      "@type": "Organization",
+      "name": "{{ site.title }}",
+      "url": "{{ site.url }}"
+    },
+    "isPartOf": {
+      "@type": "Course",
+      "name": "{{ title }}",
+      "description": "{{ description }}",
+      "provider": {
+        "@type": "Organization",
+        "name": "{{ site.title }}"
+      }
+    }
+  }
+  </script>
+  {% endif %}
+  {% endif %}
+
   <div class="prose dark:prose-invert dark:text-gray-200 prose-headings:dark:text-white prose-strong:dark:text-white prose-ul:dark:text-gray-200 max-w-none">
     {{ content | safe }}
   </div>
