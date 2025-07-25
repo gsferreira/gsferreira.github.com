@@ -11,8 +11,8 @@ import sharp from 'sharp';
 
 const CONFIG = {
   inputDir: 'src/assets/raw-videos',
-  outputDir: 'src/assets/videos',
-  posterDir: 'src/assets/videos',
+  outputDir: 'src/assets/courses/videos',
+  posterDir: 'src/assets/courses/videos',
   
   // Video optimization settings
   video: {
