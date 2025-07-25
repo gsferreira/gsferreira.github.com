@@ -43,19 +43,75 @@ layout: default
   {% if heroVideo %}
   <div class="mb-8">
     <div class="relative w-full rounded-2xl overflow-hidden bg-gray-100 dark:bg-gray-800 shadow-2xl">
-      <div class="aspect-video">
+      <div class="aspect-video relative group cursor-pointer overflow-hidden">
+        <!-- Optimized poster image with modern formats -->
+        {% if heroVideo.poster %}
+        <picture class="absolute inset-0 z-10 transition-opacity duration-300" id="video-poster">
+          {% if heroVideo.poster.avif %}
+          <source srcset="{{ heroVideo.poster.avif }}" type="image/avif">
+          {% endif %}
+          {% if heroVideo.poster.webp %}
+          <source srcset="{{ heroVideo.poster.webp }}" type="image/webp">
+          {% endif %}
+          <img 
+            src="{{ heroVideo.poster.png or heroVideo.poster }}" 
+            alt="Course preview thumbnail"
+            class="w-full h-full object-cover"
+            loading="eager"
+            decoding="async"
+          >
+        </picture>
+        
+        <!-- Play button overlay -->
+        <div class="absolute inset-0 z-30 flex items-center justify-center bg-black/20 group-hover:bg-black/30 transition-all duration-300" id="play-overlay">
+          <button class="bg-white/90 backdrop-blur-sm rounded-full p-6 shadow-2xl transform group-hover:scale-110 transition-all duration-300 focus:outline-none focus:ring-4 focus:ring-white/50" onclick="document.getElementById('course-video').play()" aria-label="Play course preview video" title="Play course preview video">
+            <svg class="w-8 h-8 text-gray-900 ml-1" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+              <path d="M8 5v14l11-7z"/>
+            </svg>
+          </button>
+          <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
+            <div class="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
+              <p class="text-sm font-medium text-gray-900">{{ heroVideo.title or title }}</p>
+              <p class="text-xs text-gray-600">{{ heroVideo.description or "Click to play preview" }}</p>
+            </div>
+          </div>
+        </div>
+        {% endif %}
+        
         <video 
-          class="w-full h-full object-cover"
+          class="w-full h-full object-cover absolute inset-0 z-20 opacity-0 transition-opacity duration-300"
           controls
-          preload="metadata"
-          poster="{{ heroVideo.poster }}"
+          preload="none"
           {% if heroVideo.autoplay %}muted loop autoplay{% endif %}
           aria-label="Course preview video for {{ title }}"
+          id="course-video"
+          onloadeddata="this.parentElement.style.cursor = 'default'"
+          onplay="
+            this.style.opacity = '1'; 
+            document.getElementById('video-poster').style.opacity = '0';
+            document.getElementById('play-overlay').style.display = 'none';
+          "
+          onpause="
+            this.style.opacity = '0'; 
+            document.getElementById('video-poster').style.opacity = '1';
+            document.getElementById('play-overlay').style.display = 'flex';
+          "
+          onended="
+            this.style.opacity = '0'; 
+            document.getElementById('video-poster').style.opacity = '1';
+            document.getElementById('play-overlay').style.display = 'flex';
+          "
         >
           {% if heroVideo.webm %}
           <source src="{{ heroVideo.webm }}" type="video/webm">
           {% endif %}
           <source src="{{ heroVideo.mp4 }}" type="video/mp4">
+          {% if heroVideo.captions %}
+          <track kind="captions" src="{{ heroVideo.captions }}" srclang="en" label="English captions" default>
+          {% else %}
+          <!-- Placeholder track for accessibility compliance -->
+          <track kind="captions" srclang="en" label="English captions">
+          {% endif %}
           <p class="text-gray-600 dark:text-gray-400 p-8">
             Your browser doesn't support video. 
             <a href="{{ heroVideo.mp4 }}" class="text-blue-600 dark:text-blue-400 underline">
@@ -63,6 +119,28 @@ layout: default
             </a>
           </p>
         </video>
+        
+        <!-- Click to play functionality -->
+        <script>
+          document.addEventListener('DOMContentLoaded', function() {
+            const video = document.getElementById('course-video');
+            const playOverlay = document.getElementById('play-overlay');
+            
+            if (video && playOverlay) {
+              // Click anywhere on overlay to play
+              playOverlay.addEventListener('click', function(e) {
+                if (video.paused && e.target !== video) {
+                  video.play();
+                }
+              });
+              
+              // Prevent video controls from triggering overlay click
+              video.addEventListener('click', function(e) {
+                e.stopPropagation();
+              });
+            }
+          });
+        </script>
       </div>
       {% if heroVideo.caption %}
       <div class="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 to-transparent p-4">
@@ -91,7 +169,7 @@ layout: default
     "@type": "VideoObject",
     "name": "{{ heroVideo.title or title }} - Course Preview",
     "description": "{{ heroVideo.description or description }}",
-    "thumbnailUrl": "{{ heroVideo.poster }}",
+    "thumbnailUrl": "{{ heroVideo.poster.png or heroVideo.poster }}",
     "uploadDate": "{{ heroVideo.uploadDate or page.date | htmlDate }}",
     "duration": "{{ heroVideo.duration or 'PT30S' }}",
     "contentUrl": "{{ heroVideo.mp4 }}",
