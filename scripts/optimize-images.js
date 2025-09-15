@@ -74,7 +74,7 @@ async function main() {
     await fs.mkdir('scripts', { recursive: true });
     
     // Process headshot image
-    const headshotPath = path.join(INPUT_DIR, 'headshot.png');
+    const headshotPath = path.join(INPUT_DIR);
     
     // Check if file exists
     try {
@@ -87,7 +87,7 @@ async function main() {
       process.exit(1);
     }
     
-    await optimizeImage(headshotPath, 'headshot.png');
+    await optimizeImage(headshotPath);
     
     console.log('\n✨ Image optimization complete!');
     console.log('\n📝 Generated files:');
