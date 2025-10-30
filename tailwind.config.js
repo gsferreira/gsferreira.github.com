@@ -141,7 +141,7 @@ module.exports = {
             '--tw-prose-pre-border': '#2d3748',
             '--tw-prose-th-borders': '#4a5568',
             '--tw-prose-td-borders': '#2d3748',
-            
+
             // Override nested elements
             'h1, h2, h3, h4, h5, h6': {
               color: '#f3f4f6',
@@ -179,6 +179,18 @@ module.exports = {
             },
             'ol > li::marker': {
               color: '#e5e7eb',
+            },
+            'thead th': {
+              color: '#f3f4f6',
+            },
+            'tbody td': {
+              color: '#e5e7eb',
+            },
+            'tbody tr': {
+              borderBottomColor: '#2d3748',
+            },
+            'thead': {
+              borderBottomColor: '#4a5568',
             },
           },
         },
