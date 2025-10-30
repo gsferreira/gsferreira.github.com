@@ -237,7 +237,7 @@ Avoid *set-once-never-restore* patterns. They create cross-test leaks when paral
 
 ### Final thoughts 💬
 
-If you've ever shipped a test that only fails on someone else's machine, culture probably did you in.
+If you've ever shipped a test that only fails on someone else's machine, culture probably did you in. 
 With xUnit v3, it's now trivial to **lock down culture** and kill that class of flakiness.
 
 My move:
