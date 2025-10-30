@@ -170,7 +170,7 @@ layout: default
     "name": "{{ heroVideo.title or title }} - Course Preview",
     "description": "{{ heroVideo.description or description }}",
     "thumbnailUrl": "{{ heroVideo.poster.png or heroVideo.poster }}",
-    "uploadDate": "{{ heroVideo.uploadDate or page.date | htmlDate }}",
+    "uploadDate": "{{ heroVideo.uploadDate or page.date | isoDate }}",
     "duration": "{{ heroVideo.duration or 'PT30S' }}",
     "contentUrl": "{{ heroVideo.mp4 }}",
     "embedUrl": "{{ site.url }}{{ page.url }}",
