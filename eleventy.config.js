@@ -140,6 +140,11 @@ export default function (eleventyConfig) {
       zone: "utc",
     }).toFormat("y-MM-dd");
   });
+  eleventyConfig.addFilter("isoDate", (dateObj) => {
+    return DateTime.fromJSDate(dateObj, {
+      zone: "utc",
+    }).toISO();
+  });
 
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);
