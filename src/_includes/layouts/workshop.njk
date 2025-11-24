@@ -46,6 +46,7 @@ layout: default.liquid
         <div class="space-y-6">
           <div class="flex items-center gap-4">
             <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-gray-800 dark:text-gray-400 border-gray-300 dark:border-gray-600">{{ format }}</div>
+            {% if rating and reviews %}
             <div class="flex items-center gap-1">
               {% for i in range(0, 5) %}
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-gray-900 dark:text-white">
@@ -55,6 +56,7 @@ layout: default.liquid
               <span class="text-sm font-medium text-gray-900 dark:text-white transition-colors">{{ rating }}</span>
               <span class="text-sm text-gray-500 dark:text-gray-400 transition-colors">({{ reviews }} reviews)</span>
             </div>
+            {% endif %}
           </div>
           <h1 class="text-4xl lg:text-5xl font-medium text-gray-900 dark:text-white leading-tight tracking-tight transition-colors">{{ title }}</h1>
           <p class="text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ description }}</p>
@@ -195,9 +197,11 @@ layout: default.liquid
           </div>
           <blockquote class="text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ testimonial.quote }}</blockquote>
           <div class="flex items-center gap-4">
+            {% if testimonial.image %}
             <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
               <img alt="{{ testimonial.author }}" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" src="{{ testimonial.image }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
             </div>
+            {% endif %}
             <div>
               <div class="font-medium text-gray-900 dark:text-white transition-colors">{{ testimonial.author }}</div>
               <div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">{{ testimonial.title }}</div>

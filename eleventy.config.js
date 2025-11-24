@@ -155,6 +155,11 @@ export default function (eleventyConfig) {
     }).toISO();
   });
 
+  // String helpers
+  eleventyConfig.addFilter("lower", (str) => {
+    return str ? str.toLowerCase() : "";
+  });
+
   // Plugins
   eleventyConfig.addPlugin(syntaxHighlight);
   eleventyConfig.addPlugin(pluginRss);
