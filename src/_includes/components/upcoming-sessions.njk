@@ -39,7 +39,7 @@
             </div>
             <div class="flex gap-3 lg:justify-end">
                 {% if session.available %}
-                <a href="mailto:workshops@guiferreira.me" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-6 py-2 text-sm font-medium transition-colors">Register</a>
+                <a href="{{ session.registrationUrl if session.registrationUrl else 'mailto:workshops@guiferreira.me' }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-6 py-2 text-sm font-medium transition-colors"{% if session.registrationUrl %} target="_blank" rel="noopener"{% endif %}>Register</a>
                 {% else %}
                 <span class="inline-block px-4 py-2 bg-gray-200 text-gray-600 rounded">Full</span>
                 {% endif %}

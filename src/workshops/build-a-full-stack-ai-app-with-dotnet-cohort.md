@@ -99,6 +99,7 @@ upcomingSessions:
     venue: "Live sessions Thursdays 5-6pm WET (all recorded)"
     spotsLeft: "Limited"
     available: true
+    registrationUrl: "https://aipowereddotnet.school/"
     pricing:
       blackWeek: "€299"
       regular: "€749"
