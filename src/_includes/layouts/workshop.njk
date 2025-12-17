@@ -179,6 +179,7 @@ layout: default.liquid
   </div>
 </section>
 
+{% if testimonials %}
 <section class="py-12 lg:py-16 bg-white dark:bg-black transition-colors">
   <div class="container mx-auto px-6 max-w-6xl">
     <div class="space-y-16">
@@ -214,25 +215,27 @@ layout: default.liquid
     </div>
   </div>
 </section>
+{% endif %}
 
+{% if faqs %}
 <section class="py-24 lg:py-32 bg-gray-50 dark:bg-black transition-colors">
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="space-y-16">
       <div class="text-center space-y-6">
         <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Frequently Asked Questions</h2>
       </div>
-      <div class="space-y-4" data-orientation="vertical">
+      <div class="space-y-4" data-orientation="vertical" id="faq-accordion">
         {% for faq in faqs %}
-        <div data-state="closed" data-orientation="vertical" class="border-b bg-white dark:bg-gray-900 rounded-2xl px-8 border-none transition-colors">
+        <div data-state="closed" data-orientation="vertical" class="faq-item border-b bg-white dark:bg-gray-900 rounded-2xl px-8 border-none transition-colors">
           <h3 data-orientation="vertical" data-state="closed" class="flex">
-            <button type="button" class="flex flex-1 items-center justify-between [&[data-state=open]>svg]:rotate-180 text-left font-medium text-gray-900 dark:text-white hover:no-underline py-6 transition-colors">
+            <button type="button" class="faq-button flex flex-1 items-center justify-between text-left font-medium text-gray-900 dark:text-white hover:no-underline py-6 transition-colors" aria-expanded="false">
               {{ faq.question }}
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
             </button>
           </h3>
-          <div class="pb-6 text-gray-600 dark:text-gray-300 font-light">
+          <div class="faq-answer hidden pb-6 text-gray-600 dark:text-gray-300 font-light">
             {{ faq.answer }}
           </div>
         </div>
@@ -241,6 +244,24 @@ layout: default.liquid
     </div>
   </div>
 </section>
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    const faqButtons = document.querySelectorAll('.faq-button');
+    faqButtons.forEach(button => {
+      button.addEventListener('click', function() {
+        const faqItem = this.closest('.faq-item');
+        const answer = faqItem.querySelector('.faq-answer');
+        const isOpen = this.getAttribute('aria-expanded') === 'true';
+
+        this.setAttribute('aria-expanded', !isOpen);
+        faqItem.setAttribute('data-state', isOpen ? 'closed' : 'open');
+        answer.classList.toggle('hidden');
+        this.querySelector('svg').classList.toggle('rotate-180');
+      });
+    });
+  });
+</script>
+{% endif %}
 
 {% if related_workshops %}
 <section class="py-24 lg:py-32 bg-white dark:bg-black border-t border-gray-100 dark:border-gray-900 transition-colors">
