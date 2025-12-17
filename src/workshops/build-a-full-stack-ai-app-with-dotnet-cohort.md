@@ -100,11 +100,6 @@ upcomingSessions:
     spotsLeft: "Limited"
     available: true
     registrationUrl: "https://aipowereddotnet.school/"
-    pricing:
-      blackWeek: "€299"
-      regular: "€749"
-      couponCode: "BLACK60"
-      expiryDate: "November 30, 2025"
 
 testimonials:
   - quote: "This workshop was exactly what I needed to move from ideas to action. It equipped me with knowledge and tools to start implementing AI solutions for real problems in my team."
@@ -184,23 +179,17 @@ Come prepared with:
 * Azure account (minimal costs)
 * 3-6 hours per week for lessons and practice
 
-**Special Black Week Offer**
-
-🎉 **Save 60% - €299** instead of €749 with code **BLACK60**
-
-Enroll by November 30 and get:
+**What's included:**
 * 7 weeks of lessons (starts January 5, 2026)
-* **Bonus:** Extra month of office hours
 * Complete GitHub repository
 * Private developer community
 * All recordings and materials
 * Money-back guarantee after Week 1
 
 <div class="flex flex-row justify-center mt-10">
-<a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://www.aipowereddotnet.school/" target="_blank" rel="noopener">Secure My Spot - Save 60% →</a>
+<a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://www.aipowereddotnet.school/" target="_blank" rel="noopener">Secure My Spot →</a>
 </div>
 
 <div class="mt-5 text-center">
 <p><strong>Questions?</strong> - Email <a href="mailto:gui@guiferreira.me">gui@guiferreira.me</a></p>
-<p class="text-sm mt-2">Black Week offer expires November 30, 2025. Cohort starts January 5, 2026.</p>
 </div>
