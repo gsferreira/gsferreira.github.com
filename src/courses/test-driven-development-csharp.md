@@ -55,7 +55,7 @@ I've worked with hundreds of C# developers, and almost everyone starts in the sa
 
 "I'll write tests after I finish the code... if I have time."
 
-That time never comes. Or worse, you write tests that just confirm your code does what it already does—not what it *should* do.
+That time never comes. Or worse, you write tests that just confirm your code does what it already does. Not what it *should* do.
 
 The result? Codebases that are brittle. Teams that move slower over time. Features that take increasingly longer to ship.
 
@@ -73,7 +73,7 @@ My students consistently report:
 
 ## This course goes beyond the basics
 
-This isn't just theory—it's battle-tested approaches that work on real projects.
+This isn't just theory. It's battle-tested approaches that work on real projects.
 
 Through practical examples and hands-on exercises, you'll learn:
 

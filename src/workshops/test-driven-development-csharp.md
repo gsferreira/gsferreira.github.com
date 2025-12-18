@@ -141,7 +141,7 @@ Want better tests and better code? Then yes, this Workshop is for you.
 
 If you've built C# .NET applications and written some unit tests before, you have all the prerequisites needed.
 
-This won't be a passive experience. I believe in learning by doing, so prepare for two days of hands-on work and collaborative problem-solving. Warning: This is not a lecture-type workshop—come ready to participate actively.
+This won't be a passive experience. I believe in learning by doing, so prepare for two days of hands-on work and collaborative problem-solving. Warning: This is not a lecture-type workshop. Come ready to participate actively.
 
 **What will you need?**
 

@@ -44,7 +44,7 @@ Let’s say you’re onboarding a new dev. They open your project, see the rigid
 
 And honestly? If it’s a simple DB query… maybe that’s fine.
 
-According to Clean Architecture, this might be “wrong” — but if it works, and it’s fast, devs will take the shortcut.
+According to Clean Architecture, this might be “wrong”, but if it works, and it’s fast, devs will take the shortcut.
 
 Now add in **CQRS** (Command Query Responsibility Segregation), where commands and queries are separated. Suddenly, layering feels less like organisation and more like friction.
 After a while, as your app keeps growing with more features, you'll notice your team often works on the same files (grouped by repositories or services). This creates extra headaches when merging code, and since you're modifying existing files to add features, the risk of breaking things is high if you don't have proper testing.
@@ -62,7 +62,7 @@ Vertical Slice Architecture applies to an application, not a system as a whole, 
 - An approach to organising your files
 - An approach to handling your requests
 
-📦 Each *slice* (feature) represents a vertical cut through your app: it contains everything needed for a specific feature — the endpoint, the handler, the model and maybe the infrastructure too.
+📦 Each *slice* (feature) represents a vertical cut through your app: it contains everything needed for a specific feature. The endpoint, the handler, the model and maybe the infrastructure too.
 
 No layering constraints. No jumping across folders. Just one place to look.
 
@@ -187,7 +187,7 @@ Here's when vertical slices start looking *very* attractive:
 - ✅ You want to mix different patterns (Clean, Hexagonal, etc.)  
 - ✅ You're building APIs with isolated endpoints
 
-Oh, and are you trying to implement CQRS? This plays *beautifully* with it. Commands and queries can live and evolve separately — as they should.
+Oh, and are you trying to implement CQRS? This plays *beautifully* with it. Commands and queries can live and evolve separately (as they should).
 
 ---
 
@@ -206,7 +206,7 @@ Oh, and are you trying to implement CQRS? This plays *beautifully* with it. Comm
 
 Check out [Jimmy Bogard's talk on Vertical Slice Architecture](https://youtu.be/SUiWfhAhgQw?si=luFEEiJgkKSVM5Op). He introduced it, and he nails the explanation.
 
-Or better yet — try slicing your next feature and see how it feels.
+Or better yet, try slicing your next feature and see how it feels.
 
 Next time you're adding a feature, don't dive into Services, Repos, and Validators. Just create a slice. One folder. One feature. Done.
 You might never go back.

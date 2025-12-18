@@ -130,7 +130,7 @@ Pick your fighter based on:
 
 ## The AI Plot Twist
 
-Here's something wild: These tools are getting AI superpowers. Take Eraser—you can literally tell it, "Build me a microservice payment system with fraud detection on AWS," and BOOM, it spits out a decent diagram.
+Here's something wild: These tools are getting AI superpowers. Take Eraser. You can literally tell it, "Build me a microservice payment system with fraud detection on AWS," and BOOM, it spits out a decent diagram.
 
 Wanna see it with your own eyes? Check the video 👇
 

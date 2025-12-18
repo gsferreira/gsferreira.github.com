@@ -2,7 +2,7 @@
 layout: post
 tags: post
 date: 2022-11-10
-title: I Built the Netflix Intro on a .NET Console, and this is how I've done it
+title: Building the Netflix Intro Animation in a .NET Console App
 description: Recreate Netflix intro in .NET Console - Spectre.Console animations, SkiaSharp GIF processing, and terminal graphics programming.
 featured_image: /images/archive/dotnet/netflix-intro-dotnet-console.png
 ---

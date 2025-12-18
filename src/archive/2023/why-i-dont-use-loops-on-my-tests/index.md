@@ -43,7 +43,7 @@ Our example involves an object containing a list of lines.
 
 The Order Lines possess certain functions (`MostExpensive` and `Cheapest`) that allow us to extract data from them, and it's these functions that we'll be testing.
 
-In the example, we have a basic collection—a list of order lines. An order line is a simple object consisting of a name and an amount.
+In the example, we have a basic collection. A list of order lines. An order line is a simple object consisting of a name and an amount.
 
 Our goal is to implement two functions: one to return the most expensive item in the order and another to return the least expensive item in the same order.
 

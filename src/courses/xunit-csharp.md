@@ -35,7 +35,7 @@ Stop overthinking it.
 MSTest, NUnit, xUnit… they all work.  
 But when you look at the industry, one framework stands out.  
 
-Look at serious .NET job postings. What do they expect you to know? More often than not—xUnit.
+Look at serious .NET job postings. What do they expect you to know? More often than not, xUnit.
 
 You’re a junior or mid-level developer. You know testing matters for your career. But you’re stuck reading old blog posts and second-guessing every choice.  
 
@@ -61,7 +61,7 @@ By the end you’ll be confident in:
 - Generating reports and integrating with CI/CD pipelines  
 - Extending xUnit with your own attributes and reusable test libraries  
 
-No fluff, no theory for theory’s sake—just the skills that separate juniors from seniors when it comes to testing in .NET.
+No fluff, no theory for theory’s sake. Just the skills that separate juniors from seniors when it comes to testing in .NET.
 
 
 ## Frequently Asked Questions

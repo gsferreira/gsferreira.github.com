@@ -19,13 +19,13 @@ In C#, you might initially rely on exceptions or null checks, but that style oft
 
 An exception might bubble up from who-knows-where, or you might find yourself spreading `if (thing == null)` checks across your code. 
 
-The Result Pattern makes things better. It lets your function clearly show success or errors, making it easy for your teammates (and future you) to understand. In [Rust](https://www.rust-lang.org), this isn't just a pattern—it's the normal way to write code.
+The Result Pattern makes things better. It lets your function clearly show success or errors, making it easy for your teammates (and future you) to understand. In [Rust](https://www.rust-lang.org), this isn't just a pattern, it's the normal way to write code.
 
 ## The Rust way
 
 Rust's built-in `Result<T, E>` type integrates error handling into normal control flow. This reduces confusion and encourages a consistent coding mindset. Rust developers don't guess or rely on try-catch. They know every function that might fail will return a clear "Result". That clarity becomes contagious, making it feel strange to ever return to bare values without context again. 
 
-In .NET, we don't get that out-of-the-box. Still, we can mimic it ourselves. Let's say we create a `Result<T>` type that holds either a value or an Error—another type we define. With C# 10 and above, a read-only record struct is perfect for this. It gives us immutable data structures that are easy to work with, pattern match against, and reason about. 
+In .NET, we don't get that out-of-the-box. Still, we can mimic it ourselves. Let's say we create a `Result<T>` type that holds either a value or an Error, another type we define. With C# 10 and above, a read-only record struct is perfect for this. It gives us immutable data structures that are easy to work with, pattern match against, and reason about. 
 
 ## The Result Pattern in C#
 
@@ -85,7 +85,7 @@ Console.WriteLine(message);
 
 Without leaning on exceptions or null checking, the code's intention is right there. By reading the signature and the handling code, you see that the function might fail, and it will tell you exactly how it failed. This style may feel foreign at first, but once you adopt it, there's a sense of calm that comes with writing code. Each branch is explicit, and each outcome feels deliberate.
 
-The Result Pattern speaks strongly to developers who want a more intentional coding style. In C#, we might need to build the model ourselves, but the end result is just as compelling as using it in Rust. You don't need to search for documentation or comments. Just look at the function, and you'll know if you need to handle success or an error—simple and clear! It's a pattern that fosters clarity and helps ensure that code stays honest and predictable as projects grow.
+The Result Pattern speaks strongly to developers who want a more intentional coding style. In C#, we might need to build the model ourselves, but the end result is just as compelling as using it in Rust. You don't need to search for documentation or comments. Just look at the function, and you'll know if you need to handle success or an error, simple and clear! It's a pattern that fosters clarity and helps ensure that code stays honest and predictable as projects grow.
 
 If you want to go deeper into this, watch this video, where I talk about how to avoid throwing exceptions by applying this pattern. 👇
 

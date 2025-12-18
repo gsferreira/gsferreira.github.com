@@ -192,7 +192,7 @@ We added one important line in `UpdateItemAsync`: `_cache.Remove(cacheKey)`.
 
 After updating item 42, we evict "Item:42" from the cache. The next `GetItemAsync(42)` will hit the database and cache the fresh data.
 
-Problem solved! (Well, solved in a single-instance scenario. If you have multiple instances of your application, you'd need a distributed cache or some way to broadcast invalidation across instances — but that's beyond our demo's scope.)
+Problem solved! (Well, solved in a single-instance scenario. If you have multiple instances of your application, you'd need a distributed cache or some way to broadcast invalidation across instances. But that's beyond our demo's scope.)
 
 If we cached `GetAllItemsAsync` results (say we cached the list of all items), we'd also need to invalidate that cache entry whenever any item changes. This is why we kept it simple and didn't cache broad queries.
 

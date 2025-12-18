@@ -2,7 +2,7 @@
 layout: post
 tags: post
 date: 2021-12-11
-title: Where to place C#10 Global Usings
+title: C# 10 Global Usings - Best Practices for File Organization
 description: Organize C# 10 Global Usings effectively - central placement strategies, project-level declarations, and tidier source code management.
 featured_image: /images/archive/highlight/where-to-place-c10-global-usings.png
 ---

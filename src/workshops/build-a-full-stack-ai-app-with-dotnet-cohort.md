@@ -123,7 +123,7 @@ faqs:
   - question: What's included in the cohort?
     answer: You get weekly recorded lessons, office hours, a private developer community, complete GitHub repository with pre-built branches for each week, and a bonus extra month of office hours with the Black Week discount.
   - question: What if I'm not satisfied after the first week?
-    answer: We offer a full money-back guarantee after Week 1. If you're not satisfied, you'll get a complete refund—no questions asked.
+    answer: We offer a full money-back guarantee after Week 1. If you're not satisfied, you'll get a complete refund. No questions asked.
   - question: What are the Azure costs?
     answer: Azure costs are expected to be minimal during the cohort. We'll cover cost management and optimization strategies to keep your expenses low while learning.
 ---
@@ -165,7 +165,7 @@ All using C# .NET 9, Azure OpenAI, and modern development practices.
 
 Want to build AI features in production? Then yes, this cohort is for you.
 
-If you've built C# .NET applications and APIs, you're ready to start. No AI or ML background needed—we'll teach you everything from scratch.
+If you've built C# .NET applications and APIs, you're ready to start. No AI or ML background needed. We'll teach you everything from scratch.
 
 This is hands-on learning. Expect to code every week, push to GitHub, and build real features. If you prefer passive video watching, this isn't for you.
 

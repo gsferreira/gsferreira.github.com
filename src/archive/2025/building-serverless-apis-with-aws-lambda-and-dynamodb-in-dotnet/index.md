@@ -32,7 +32,7 @@ Key benefits of serverless:
 
 Imagine you have a friendly genie who lives in a magic lamp. This genie only comes out when you rub the lamp and ask it to do something specific, like fetch you a glass of water, fix a bug, or make your bed.
 
-That genie is like the serverless API, and rubbing the lamp is like making a request. When you ask for something, the genie appears, does precisely what you asked and then poof—he goes back into the lamp until you need him again. He doesn't sit around waiting for you all day. He only shows up when you need him, does the job, and disappears.
+That genie is like the serverless API, and rubbing the lamp is like making a request. When you ask for something, the genie appears, does precisely what you asked and then poof, he goes back into the lamp until you need him again. He doesn't sit around waiting for you all day. He only shows up when you need him, does the job, and disappears.
 
 
 ## What is AWS Lambda?
