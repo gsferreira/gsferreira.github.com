@@ -27,10 +27,9 @@ We do not directly collect or store personal information on our Website. However
 
 When you visit our Website, certain information is automatically collected:
 
-- **Analytics Data**: We use Google Analytics to understand how visitors use our Website. This may include your IP address, browser type, device information, pages visited, time spent on pages, and referring website.
-- **Cookies and Similar Technologies**: Our Website uses cookies and browser storage to enhance your experience. These may include:
+- **Analytics Data**: We use Simple Analytics, a privacy-friendly analytics service, to understand how visitors use our Website. Simple Analytics does not use cookies, does not collect personal data, and does not track visitors across websites. It only collects aggregated data such as page views, referrers, and browser type.
+- **Cookies and Similar Technologies**: Our Website may use cookies and browser storage to enhance your experience. These may include:
   - Essential cookies for website functionality
-  - Analytics cookies to understand website usage
   - Preference cookies to remember your choices
 
 ## How We Use Your Information
@@ -49,8 +48,8 @@ We use the following third-party services:
 ### Kit.com
 If you subscribe to our newsletter, your email address is stored and managed by Kit. Please refer to [Kit's Privacy Policy](https://kit.com/privacy) for information on how they handle your data.
 
-### Google Analytics
-We use Google Analytics to analyze Website traffic. Google Analytics uses cookies and collects information such as your IP address and browsing behavior. You can learn more about how Google uses this information by visiting [Google's Privacy Policy](https://policies.google.com/privacy).
+### Simple Analytics
+We use Simple Analytics to analyze Website traffic. Simple Analytics is a privacy-first analytics service that does not use cookies, does not collect personal data, and is fully GDPR compliant. You can learn more about how Simple Analytics handles data by visiting [Simple Analytics' Privacy Policy](https://simpleanalytics.com/privacy-policy).
 
 ## Data Sharing and Disclosure
 
@@ -99,11 +98,12 @@ We implement appropriate technical and organizational measures to protect your i
 
 ## Cookies Policy
 
-Our Website uses cookies to enhance your experience. You can control cookies through your browser settings:
+Our Website may use cookies to enhance your experience. You can control cookies through your browser settings:
 
 - **Essential Cookies**: Required for the Website to function properly
-- **Analytics Cookies**: Help us understand how visitors interact with our Website
 - **Preference Cookies**: Remember your choices and preferences
+
+Note: Our analytics service (Simple Analytics) does not use cookies.
 
 Most browsers allow you to refuse cookies or alert you when cookies are being sent. However, some parts of our Website may not function properly if cookies are disabled.
 
