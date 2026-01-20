@@ -2,6 +2,40 @@
 layout: default
 ---
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Article",
+  "headline": "{{ title }}",
+  "description": "{{ description }}",
+  "datePublished": "{{ page.date | htmlDate }}",
+  "dateModified": "{{ page.date | htmlDate }}",
+  "author": {
+    "@type": "Person",
+    "name": "Gui Ferreira",
+    "givenName": "Guilherme",
+    "familyName": "Ferreira",
+    "alternateName": "Guilherme Ferreira",
+    "url": "https://guiferreira.me/about",
+    "sameAs": [
+      "https://twitter.com/gsferreira",
+      "https://linkedin.com/in/gferreira",
+      "https://github.com/gsferreira",
+      "https://youtube.com/@gui.ferreira"
+    ]
+  },
+  "publisher": {
+    "@type": "Person",
+    "name": "Gui Ferreira",
+    "url": "https://guiferreira.me"
+  },
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "https://guiferreira.me{{ page.url }}"
+  }
+}
+</script>
+
 <div class="max-w-3xl mx-auto px-4 pt-16">
   <nav aria-label="Breadcrumb" class="mb-8">
     <a href="/blog" class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">

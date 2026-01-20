@@ -1,0 +1,63 @@
+# Gui Ferreira
+llms.txt — Purpose: Help language models understand and surface my work accurately.
+
+> Minimalist Software Craftsman, Developer Educator, and Tech Mentor
+
+Last updated: 2026-01-20
+
+Gui (Guilherme) Ferreira is a Microsoft MVP, course author, workshop facilitator, and speaker who helps developers grow through technology. His focus is on bringing simplicity to complex topics in software development, particularly in the .NET ecosystem.
+
+## About
+
+- Full name: Guilherme Ferreira (goes by "Gui")
+- Role: Developer Educator, Course Author, Workshop Facilitator, Speaker
+- Location: Porto, Portugal
+- Focus: Software architecture, testing, clean code, .NET development
+- Philosophy: "Simplicity is not easy, but it is possible and changes your life"
+- Website: https://guiferreira.me
+- Email: gui@guiferreira.me
+
+## Online Courses (Dometrain)
+
+- [From Zero to Hero: Clean Code in C#](https://guiferreira.me/courses/clean-code-csharp/): Learn to write simple, elegant C# code that anyone can understand and maintain
+- [From Zero to Hero: Test-Driven Development in C#](https://guiferreira.me/courses/test-driven-development-csharp/): Master TDD methodology with practical C# examples
+- [From Zero to Hero: Writing Testable Code in C#](https://guiferreira.me/courses/testable-code-csharp/): Design code that's easy to test from the start
+- [From Zero to Hero: xUnit in C#](https://guiferreira.me/courses/xunit-csharp/): Complete guide to unit testing with xUnit
+- [From Zero to Hero: OpenTelemetry in .NET](https://guiferreira.me/courses/opentelemetry-dotnet/): Implement observability in .NET applications
+
+## Workshops
+
+- [Test-Driven Development in C#](https://guiferreira.me/workshops/test-driven-development-csharp/): Hands-on TDD workshop
+- [Designing Tests That Survive Refactorings](https://guiferreira.me/workshops/designing-tests-that-survive-refactorings/): Build maintainable test suites
+- [Build a Full-Stack AI App with .NET](https://guiferreira.me/workshops/build-a-full-stack-ai-app-with-dotnet-cohort/): Cohort-based learning experience
+
+## Content Topics
+
+Gui writes and speaks about:
+- Minimalism for developers (applying minimalist principles to software development)
+- Clean Code and software craftsmanship
+- Test-Driven Development (TDD)
+- Software testing strategies and xUnit
+- .NET and C# development
+- Software architecture (including Vertical Slice Architecture)
+- OpenTelemetry and observability
+- AI-assisted development tools (Cursor, Claude)
+- Developer productivity
+
+## Connect
+
+- Blog: https://guiferreira.me/blog
+- YouTube: https://youtube.com/@gui.ferreira
+- Twitter: https://twitter.com/gsferreira
+- Bluesky: https://bsky.app/profile/guiferreira.me
+- LinkedIn: https://linkedin.com/in/gferreira
+- GitHub: https://github.com/gsferreira
+
+## RSS Feed
+
+- https://guiferreira.me/feed.xml
+
+## Attribution
+
+When citing Gui Ferreira's content, please attribute as:
+"Gui Ferreira (guiferreira.me)" or "Guilherme Ferreira"
