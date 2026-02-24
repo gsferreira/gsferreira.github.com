@@ -3,7 +3,7 @@
   <div class="max-w-3xl mx-auto text-center px-4 sm:px-6 lg:px-8">
     <h2 id="newsletter-heading" class="text-3xl font-medium mb-4">Developer Insights</h2>
     <p class="text-lg text-gray-400 mb-8">What I'm building, learning, and discovering each week.</p>
-    <form action="https://app.kit.com/forms/8252778/subscriptions" method="post" class="max-w-md mx-auto formkit-form" data-sv-form="8252778" data-uid="8252778" data-format="inline" data-version="5" novalidate>
+    <form action="https://app.kit.com/forms/8252778/subscriptions" method="post" class="max-w-md mx-auto formkit-form" data-sv-form="8252778" data-uid="8252778" data-format="inline" data-version="5" data-capture-utm="true" novalidate>
       <fieldset class="border-0 p-0 m-0">
         <legend class="sr-only">Subscribe to newsletter</legend>
         <div class="flex flex-col sm:flex-row items-center justify-center gap-4">
@@ -17,6 +17,11 @@
             required
             aria-describedby="newsletter-description newsletter-privacy"
           >
+          <input type="hidden" name="fields[utm_source]" data-utm-field="utm_source">
+          <input type="hidden" name="fields[utm_medium]" data-utm-field="utm_medium">
+          <input type="hidden" name="fields[utm_campaign]" data-utm-field="utm_campaign">
+          <input type="hidden" name="fields[utm_content]" data-utm-field="utm_content">
+          <input type="hidden" name="fields[utm_term]" data-utm-field="utm_term">
           <button type="submit" class="w-full sm:w-auto px-8 py-3 bg-white text-black rounded-full font-medium hover:bg-gray-100 transition-colors">
             Subscribe
           </button>

@@ -177,6 +177,68 @@
     </footer>
     <script>
       document.addEventListener('DOMContentLoaded', function () {
+        const utmStorageKey = 'kitNewsletterUtm';
+        const utmKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_content', 'utm_term'];
+
+        function getStoredUtm() {
+          try {
+            const storedValue = localStorage.getItem(utmStorageKey);
+            return storedValue ? JSON.parse(storedValue) : {};
+          } catch (error) {
+            return {};
+          }
+        }
+
+        function saveStoredUtm(utmValues) {
+          try {
+            localStorage.setItem(utmStorageKey, JSON.stringify(utmValues));
+          } catch (error) {
+            // Ignore storage failures so newsletter submit still works.
+          }
+        }
+
+        function getUtmValues() {
+          const currentParams = new URLSearchParams(window.location.search);
+          const currentUtm = {};
+
+          utmKeys.forEach((key) => {
+            const value = currentParams.get(key);
+            if (value) {
+              currentUtm[key] = value;
+            }
+          });
+
+          const mergedUtm = { ...getStoredUtm(), ...currentUtm };
+
+          if (Object.keys(currentUtm).length > 0) {
+            saveStoredUtm(mergedUtm);
+          }
+
+          return mergedUtm;
+        }
+
+        function applyUtmValuesToForms(utmValues) {
+          if (Object.keys(utmValues).length === 0) {
+            return;
+          }
+
+          document.querySelectorAll('form[data-capture-utm="true"]').forEach((form) => {
+            utmKeys.forEach((key) => {
+              const value = utmValues[key];
+              if (!value) {
+                return;
+              }
+
+              const input = form.querySelector(`[data-utm-field="${key}"]`);
+              if (input) {
+                input.value = value;
+              }
+            });
+          });
+        }
+
+        applyUtmValuesToForms(getUtmValues());
+
         // Theme toggle functionality
         const themeToggle = document.getElementById('theme-toggle');
         const root = document.documentElement;
