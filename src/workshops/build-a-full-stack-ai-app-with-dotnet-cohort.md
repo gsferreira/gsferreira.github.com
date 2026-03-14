@@ -94,14 +94,29 @@ curriculum:
         - Production deployment considerations
 
 upcomingSessions:
-  - date: "January 5, 2026"
+  - date: "April 6, 2026"
     location: "Online"
-    venue: "Live sessions Thursdays 5-6pm WET (all recorded)"
+    venue: "Live sessions Thursdays 5-6pm WET (recorded within 24 hours)"
     spotsLeft: "Limited"
     available: true
     registrationUrl: "https://aipowereddotnet.school/"
 
 testimonials:
+  - quote: "If you are a .NET developer building APIs or backend systems, this will help you integrate AI into real-world applications with confidence because it provides practical, end-to-end guidance using modern .NET, proper architecture, and production-ready patterns."
+    author: Hasan Javed
+    title: Consultant Senior Software Developer
+    company: Asian Development Bank
+    image:
+  - quote: "If you develop business applications like ERP and CRM systems, this will help you achieve to create AI assisted workflows because Gui explains the concepts so well and provides real world examples. During the cohort I got idea after idea to improve our systems using the tools and concepts that were presented."
+    author: Daniel F.
+    title: Technical Lead
+    company:
+    image:
+  - quote: "If you are a .NET developer, this course will help you start AI the right way because it replaces fragmented learning with clarity, structure, and confidence."
+    author: Navneet Hegde
+    title: Software Engineering Lead
+    company:
+    image:
   - quote: "This workshop was exactly what I needed to move from ideas to action. It equipped me with knowledge and tools to start implementing AI solutions for real problems in my team."
     author: Ricardo Cristino
     title: Lead Software Engineer
@@ -180,7 +195,7 @@ Come prepared with:
 * 3-6 hours per week for lessons and practice
 
 **What's included:**
-* 7 weeks of lessons (starts January 5, 2026)
+* 7 weeks of lessons (starts April 6, 2026)
 * Complete GitHub repository
 * Private developer community
 * All recordings and materials
