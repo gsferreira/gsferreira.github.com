@@ -155,7 +155,7 @@ I strongly believe you should learn using your day-to-day tools. For this Worksh
 
 
 <div class="flex flex-row justify-center mt-10">
-<a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="mailto:workshops@guiferreira.me">Book This Workshop →</a>
+<a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="mailto:gui@guiferreira.me">Book This Workshop →</a>
 </div>
 
 <div class="mt-5 text-center">
