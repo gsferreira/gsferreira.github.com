@@ -1,6 +1,25 @@
 export default {
   all: [
     {
+      title: "What Claude Code Can Do That You Haven't Tried",
+      description: `You've installed Claude Code. You've asked it to write some code. You may have even let it refactor a file or two. But there's a good chance you're only scratching the surface.
+
+In this session, I'll share what I've learned from using Claude Code daily and teaching it to developers in workshops. We'll go into the features that change how you work. Things like shaping Claude's behaviour through CLAUDE.md, building your own commands and skills, automating feedback loops, and understanding the small configuration details that most people overlook.
+
+We'll also look at use cases beyond software development. We'll use Claude Code as an actual AI-assistant, not only a code-assistant.
+
+This isn't a getting-started guide. It's a tour of the parts of Claude Code that only become visible once you stop treating it like an autocomplete tool.
+
+If you use Claude Code but feel you're not getting the most out of it, this session will help you see what it can really do.`,
+      presentations: [
+        {
+          name: "NDC AI 2026",
+          url: "https://ndc-ai.com/",
+          date: new Date("2026-06-10"),
+        },
+      ],
+    },
+    {
       title: "Imagine If We Made It Simple",
       description: `When was the last time you paused at work and thought: "How did this get so complicated?"
 
@@ -15,6 +34,11 @@ We'll explore why we tend to overcomplicate things and how to practice simplicit
 The next big shift in software won't come from AI or the next shiny tool.
 It will come from how we use them, and it starts with the next decision you make.`,
       presentations: [
+        {
+          name: "NDC Copenhagen 2026",
+          url: "https://ndccopenhagen.com/",
+          date: new Date("2026-06-03"),
+        },
         {
           name: "NDC Porto 2025",
           url: "https://ndcporto.com/",
