@@ -1,5 +1,6 @@
 ---
 layout: workshop.njk
+date: 2024-03-25
 title: Mastering Test-Driven Development in C#
 description: "A workshop to learn the transformational practice that will lead you to simple code, high quality and peace of mind."
 image: /assets/workshops/presenting-01.jpeg

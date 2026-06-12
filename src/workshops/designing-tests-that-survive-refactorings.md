@@ -1,5 +1,6 @@
 ---
 layout: workshop.njk
+date: 2025-12-17
 title: Designing Tests That Survive Refactorings
 description: "Learn how to design tests that remain stable, even as your code changes. Discover how architecture and testing strategy work together to give you confidence without brittleness."
 image: /assets/workshops/presenting-01.jpeg

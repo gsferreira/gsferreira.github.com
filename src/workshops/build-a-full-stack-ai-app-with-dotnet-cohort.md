@@ -1,5 +1,6 @@
 ---
 layout: workshop.njk
+date: 2025-11-24
 title: Build a Full-Stack AI App with .NET
 description: "A 7-week intensive cohort to build AI features using .NET. Ship your first AI feature, not just learn theory."
 image: /assets/workshops/aipowereddotnet-cohort.png

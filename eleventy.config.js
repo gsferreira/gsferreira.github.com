@@ -134,9 +134,10 @@ export default function (eleventyConfig) {
       .sort((a, b) => b.date - a.date);
   });
 
-  // Add workshops collection
+  // Add workshops collection (most recent first)
   eleventyConfig.addCollection("workshops", function (collectionApi) {
-    return collectionApi.getFilteredByGlob("src/workshops/*.md");
+    return collectionApi.getFilteredByGlob("src/workshops/*.md")
+      .sort((a, b) => b.date - a.date);
   });
 
   // Date helpers
