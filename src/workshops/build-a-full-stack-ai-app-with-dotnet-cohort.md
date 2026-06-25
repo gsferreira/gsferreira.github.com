@@ -128,6 +128,16 @@ testimonials:
     title: Lead Frontend Engineer
     company:
     image:
+  - quote: "If you are a .NET developer who has used AI only as a development assistant, this course is for you. I did not know anything about concepts such as Agents, RAG, embeddings, tokens and other AI buzzwords before, but after this course I have a clear distinction of \"what is what\" and have a solid grasp of how I can embed AI functionalities into product itself."
+    author: Tomov Nenad
+    title: Software Engineer
+    company: Paycor
+    image:
+  - quote: "If you are a developer who is cautious, this will help you get a good grounding and understanding of AI and how you can use it, what to watch out for and how you might build it into an application you are working on without it feeling overwhelming."
+    author: Alex Wood
+    title: Software Developer
+    company: Dynamic Planner
+    image:
 
 faqs:
   - question: What makes this different from other AI courses?
