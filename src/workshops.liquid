@@ -227,4 +227,41 @@ description: Better code starts with better thinking. Transform your team with w
             </div>
         </div>
     </section>
-</main> 
+
+    <section class="py-24 lg:py-32 bg-white dark:bg-black transition-colors" aria-labelledby="workshops-testimonials-heading">
+        <div class="container mx-auto px-6 max-w-4xl">
+            <div class="space-y-12">
+                <div class="text-center space-y-6">
+                    <h2 id="workshops-testimonials-heading" class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">What organizations say</h2>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">Trusted by engineering teams to build a practical testing culture at scale.</p>
+                </div>
+
+                <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-8 lg:p-10 space-y-6 transition-colors">
+                    <div class="flex gap-1">
+                        {% for i in (1..5) %}
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-gray-900 dark:text-white">
+                            <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
+                        </svg>
+                        {% endfor %}
+                    </div>
+                    <blockquote class="space-y-4 text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed transition-colors">
+                        <p>"Before the workshops, our teams needed a more consistent and more effective approach to writing testable, reliable, and maintainable code, along with a clearer understanding of different testing strategies such as unit, integration, and end-to-end tests.</p>
+                        <p>The training stood out for its strong hands-on component and structured approach. Complex topics were made practical and directly applicable to daily work. Participant feedback was consistently very positive, with comments such as 'one of the best trainings I've had' and 'great training and very useful.' Guilherme demonstrated a high level of professionalism, with strong preparation, close alignment with our context, and well-designed practical exercises. The training was successfully delivered to around 180 software engineers across multiple geographies, maintaining strong engagement and consistency.</p>
+                        <p>I would recommend this training to organizations looking to improve code quality and build a practical testing culture across teams."</p>
+                    </blockquote>
+                    <div class="flex items-center gap-4">
+                        <div>
+                            <div class="font-medium text-gray-900 dark:text-white transition-colors">
+                                <a href="https://www.linkedin.com/in/ricardobessa/" target="_blank" rel="noopener" class="underline decoration-1 underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-current transition-colors">Ricardo Bessa</a>
+                            </div>
+                            <div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">Industrial Equipment Area Manager</div>
+                            <div class="text-sm text-gray-600 dark:text-gray-300 font-medium transition-colors">
+                                <a href="https://www.criticalmanufacturing.com/" target="_blank" rel="noopener" class="underline decoration-1 underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-current transition-colors">Critical Manufacturing</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
