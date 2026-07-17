@@ -16,6 +16,7 @@ If you use Claude Code but feel you're not getting the most out of it, this sess
           name: "NDC AI 2026",
           url: "https://ndc-ai.com/",
           date: new Date("2026-06-10"),
+          recording: "https://www.youtube.com/watch?v=zaDbZt40kRg",
         },
       ],
     },
