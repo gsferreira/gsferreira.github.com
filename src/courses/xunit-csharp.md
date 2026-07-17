@@ -9,7 +9,7 @@ reviewCount:
 level: Beginner
 featured: false
 highlight: false
-image: /assets/courses/xunit-csharp.png
+image: /assets/courses/xunit-csharp.webp
 courseUrl: https://dometrain.com/course/from-zero-to-hero-testing-with-xunit-in-csharp/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
 callToActionTitle: "Ready to cut through the noise?"
 callToActionSubtitle: "Stop overthinking testing frameworks and master the industry standard."

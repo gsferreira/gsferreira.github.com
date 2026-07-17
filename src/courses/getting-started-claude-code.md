@@ -9,7 +9,7 @@ reviewCount:
 level: Beginner
 featured: false
 highlight: true
-image: /assets/courses/getting-started-claude-code.png
+image: /assets/courses/getting-started-claude-code.webp
 courseUrl: https://dometrain.com/course/getting-started-claude-code/?ref=gui-ferreira&affcode=1115529_k5a22dj8&&promo=website&promotion=website
 callToActionTitle: "Ready to stop guessing and start shipping?"
 callToActionSubtitle: "Learn the workflows that turn Claude Code into a tool you trust."
