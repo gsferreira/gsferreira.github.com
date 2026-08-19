@@ -81,7 +81,10 @@ module.exports = {
         DEFAULT: {
           css: {
             maxWidth: 'none',
-            color: '#484848',            // Charcoal 80%, 8.33:1 on Off White
+            // Set the variable, not a literal `color`. A literal here would win
+            // over the invert block, which only redefines the variable, and
+            // anything inheriting from the root (list items) would stay dark.
+            '--tw-prose-body': '#484848', // Charcoal 80%, 8.33:1 on Off White
             fontSize: '1.125rem',
             lineHeight: '1.75rem',
             h1: { color: '#1A1A1A', fontSize: '2.5rem',   lineHeight: '3rem',     letterSpacing: '-0.01em', fontWeight: '600' },
@@ -174,8 +177,10 @@ module.exports = {
             '--tw-prose-pre-bg': '#484848',
             '--tw-prose-th-borders': '#757575',
             '--tw-prose-td-borders': '#484848',
+            color: '#D1D1D1',
             'h1, h2, h3, h4, h5, h6': { color: '#FFFFFF' },
             p: { color: '#D1D1D1' },
+            li: { color: '#D1D1D1' },
             strong: { color: '#FFFFFF' },
             a: {
               color: '#FFFFFF',
