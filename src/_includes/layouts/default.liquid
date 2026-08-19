@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
-    <meta name="description" content="{% if description %}{{ description }}{% else %}Your site description{% endif %}" />
+    <meta name="description" content="{% if description %}{{ description }}{% else %}{{ site.description }}{% endif %}" />
     <meta name="generator" content="{{ eleventy.generator }}">
     <meta name="theme-color" content="#F6F4F1" media="(prefers-color-scheme: light)">
     <meta name="theme-color" content="#1A1A1A" media="(prefers-color-scheme: dark)">
@@ -22,7 +22,25 @@
     <base href="{{ page.url }}">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
-    <title>{% if title %}{{ title }}{% else %}Your site title{% endif %}</title>
+    <title>{% if title %}{{ title }}{% else %}{{ site.title }}{% endif %}</title>
+
+    {%- assign og_title = title | default: site.title -%}
+    {%- assign og_description = description | default: site.description -%}
+    <meta property="og:type" content="{% if layout == 'post' %}article{% else %}website{% endif %}">
+    <meta property="og:site_name" content="{{ site.title }}">
+    <meta property="og:title" content="{{ og_title }}">
+    <meta property="og:description" content="{{ og_description }}">
+    <meta property="og:url" content="{{ site.url }}{{ page.url }}">
+    <meta property="og:image" content="{{ site.url }}{{ page.url | ogImagePath }}">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:image:alt" content="{{ og_title }}">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gsferreira">
+    <meta name="twitter:creator" content="@gsferreira">
+    <meta name="twitter:title" content="{{ og_title }}">
+    <meta name="twitter:description" content="{{ og_description }}">
+    <meta name="twitter:image" content="{{ site.url }}{{ page.url | ogImagePath }}">
 
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">

@@ -11,6 +11,8 @@ import syntaxHighlight from "@11ty/eleventy-plugin-syntaxhighlight";
 import embedEverything from "eleventy-plugin-embed-everything";
 import pluginRss from "@11ty/eleventy-plugin-rss";
 import markdownIt from "markdown-it";
+import fs from "node:fs";
+import { renderOgImage, ogImagePath } from "./lib/og-image.js";
 
 export default function (eleventyConfig) {
 
@@ -160,6 +162,51 @@ export default function (eleventyConfig) {
   // String helpers
   eleventyConfig.addFilter("lower", (str) => {
     return str ? str.toLowerCase() : "";
+  });
+
+
+  // Open Graph cards, one per page, rendered at build time.
+  // Fonts are vendored under lib/fonts so this works on CI, where Inter is
+  // not installed. Title and section are read back out of the built HTML.
+  eleventyConfig.addFilter("ogImagePath", ogImagePath);
+
+  const SECTION_LABELS = {
+    blog: "Blog", archive: "Blog", courses: "Course", workshops: "Workshop",
+    talks: "Talks", about: "About", newsletter: "Newsletter", resources: "Resource",
+  };
+
+  eleventyConfig.on("eleventy.after", async ({ dir, results, runMode }) => {
+    // Rendering 150 cards costs about 25s, which is fine for a deploy but not
+    // for a dev loop. The tags still point at the right URLs either way.
+    if (runMode !== "build") {
+      console.log("[og] skipped in " + runMode + " mode (run `npm run build` to render cards)");
+      return;
+    }
+    const pages = results.filter((r) => r.outputPath && r.outputPath.endsWith(".html"));
+    if (!pages.length) return;
+    const outDir = path.join(dir.output, "og");
+    fs.mkdirSync(outDir, { recursive: true });
+
+    let written = 0;
+    for (const page of pages) {
+      const titleMatch = page.content.match(/<title[^>]*>([\s\S]*?)<\/title>/i);
+      if (!titleMatch) continue;
+      const title = titleMatch[1]
+        .replace(/&amp;/g, "&").replace(/&lt;/g, "<").replace(/&gt;/g, ">")
+        .replace(/&#(\d+);/g, (_, d) => String.fromCharCode(d))
+        .replace(/&[a-z]+;/gi, " ")
+        .replace(/\s+/g, " ").trim();
+      const segment = String(page.url).split("/").filter(Boolean)[0];
+      const eyebrow = SECTION_LABELS[segment] || "Gui Ferreira";
+      try {
+        const png = await renderOgImage({ title, eyebrow });
+        fs.writeFileSync(path.join(dir.output, ogImagePath(page.url).replace(/^\//, "")), png);
+        written++;
+      } catch (error) {
+        console.warn(`[og] could not render card for ${page.url}: ${error.message}`);
+      }
+    }
+    console.log(`[og] wrote ${written} social cards`);
   });
 
   // Plugins
