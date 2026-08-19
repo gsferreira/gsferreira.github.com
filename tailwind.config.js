@@ -6,6 +6,7 @@ module.exports = {
     './src/**/*.js',
     './src/**/*.css',
     './src/**/*.njk',
+    './src/**/*.md',
   ],
   theme: {
     extend: {
