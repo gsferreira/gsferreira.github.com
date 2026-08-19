@@ -8,7 +8,7 @@ eleventyNavigation:
   order: 2
 ---
 
-<div class="max-w-6xl mx-auto text-center py-16">
+<div class="mx-auto w-full max-w-6xl px-6 lg:px-16 text-center py-16">
   <h1 class="text-h3 lg:text-h2 mb-2 text-charcoal dark:text-white">Insights</h1>
   <p class="text-lg text-charcoal-80 dark:text-charcoal-40 mb-8">Thoughts on innovation, design, leadership, and building products that change the world.</p>
 </div>
@@ -18,12 +18,12 @@ eleventyNavigation:
   {% set featured = collections.post | last %}
 {% endif %}
 
-<div class="max-w-6xl mx-auto px-4">
+<div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
   {% set post = featured %}
   {% include "components/blog-featured.njk" %}
 </div>
 
-<div class="max-w-6xl mx-auto px-4">
+<div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
   <h2 class="text-h3 text-charcoal dark:text-white mb-4">All Posts</h2>
   {% set posts = collections.post | reverse %}
   {% include "components/blog-list.njk" %}

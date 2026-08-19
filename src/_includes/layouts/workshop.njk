@@ -3,10 +3,10 @@ layout: default.liquid
 ---
 
 <section class="relative bg-offwhite dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
-  <div class="container mx-auto px-6 max-w-6xl">
+  <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="grid lg:grid-cols-2 gap-16 items-start">
       <div class="space-y-6">
-        <div class="aspect-[4/3] relative rounded-3xl overflow-hidden bg-charcoal-20 dark:bg-charcoal-80">
+        <div class="aspect-[4/3] relative rounded-card overflow-hidden bg-charcoal-20 dark:bg-charcoal-80">
           <img alt="{{ title }}" decoding="async" data-nimg="fill" class="object-cover" src="{{ image }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
           <div class="absolute top-6 left-6">
             <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-black dark:bg-white text-white dark:text-black font-semibold">{{ category }}</div>
@@ -104,7 +104,7 @@ layout: default.liquid
 </section>
 
 <section class="py-12 lg:py-16 bg-offwhite dark:bg-black transition-colors">
-  <div class="container mx-auto px-6 max-w-4xl">
+  <div class="mx-auto w-full max-w-3xl px-6 lg:px-16">
     <div class="prose max-w-none dark:prose-invert">
       {{ content | safe }}
     </div>
@@ -112,7 +112,7 @@ layout: default.liquid
 </section>
 
 <section class="border-t border-charcoal-20 dark:border-charcoal-80 py-12 lg:py-16 dark:bg-black transition-colors">
-  <div class="container mx-auto px-6 max-w-4xl">
+  <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="space-y-16">
       <div class="text-center space-y-6">
         <h2 class="text-h3 lg:text-h2 text-charcoal dark:text-white transition-colors">Curriculum</h2>
@@ -164,7 +164,7 @@ layout: default.liquid
 
 
 <section id="upcoming" class="border-t border-charcoal-20 dark:border-charcoal-80 py-24 lg:py-32 dark:bg-black transition-colors">
-  <div class="container mx-auto px-6 max-w-4xl">
+  <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="space-y-16">
       <div class="text-center space-y-6">
         <h2 class="text-h3 lg:text-h2 text-charcoal dark:text-white transition-colors">Upcoming Sessions</h2>
@@ -181,7 +181,7 @@ layout: default.liquid
 
 {% if testimonials %}
 <section class="py-12 lg:py-16 bg-offwhite dark:bg-black transition-colors">
-  <div class="container mx-auto px-6 max-w-6xl">
+  <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="space-y-16">
       <div class="text-center space-y-6">
         <h2 class="text-h3 lg:text-h2 text-charcoal dark:text-white transition-colors">What participants say</h2>
@@ -219,7 +219,7 @@ layout: default.liquid
 
 {% if faqs %}
 <section class="border-t border-charcoal-20 dark:border-charcoal-80 py-24 lg:py-32 dark:bg-black transition-colors">
-  <div class="container mx-auto px-6 max-w-4xl">
+  <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="space-y-16">
       <div class="text-center space-y-6">
         <h2 class="text-h3 lg:text-h2 text-charcoal dark:text-white transition-colors">Frequently Asked Questions</h2>
@@ -265,7 +265,7 @@ layout: default.liquid
 
 {% if related_workshops %}
 <section class="py-24 lg:py-32 bg-offwhite dark:bg-black border-t border-charcoal-20 dark:border-charcoal-80 transition-colors">
-  <div class="container mx-auto px-6 max-w-6xl">
+  <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="space-y-16">
       <h2 class="text-h3 text-charcoal dark:text-white transition-colors">Related workshops</h2>
       <div class="grid md:grid-cols-2 gap-8">

@@ -2,7 +2,7 @@
 layout: default
 ---
 
-<article class="max-w-6xl mx-auto px-6 py-12">
+<article class="mx-auto w-full max-w-6xl px-6 lg:px-16 py-12">
   <div class="mb-6 flex items-center justify-between">
     <span class="px-3 py-1 text-xs font-semibold bg-black text-white dark:bg-white dark:text-black rounded-full">{{ level }}</span>
     {% if rating %}
@@ -70,7 +70,7 @@ layout: default
             </svg>
           </button>
           <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
-            <div class="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
+            <div class="bg-white/90 backdrop-blur-sm rounded-chip px-3 py-2 shadow-lg">
               <p class="text-sm font-semibold text-charcoal">{{ heroVideo.title or title }}</p>
               <p class="text-xs text-charcoal-80">{{ heroVideo.description or "Click to play preview" }}</p>
             </div>
@@ -155,7 +155,7 @@ layout: default
       <summary class="cursor-pointer text-sm text-charcoal-80 dark:text-charcoal-40 hover:text-charcoal dark:hover:text-white transition-colors">
         View video transcript
       </summary>
-      <div class="mt-2 p-4 bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-lg text-sm text-charcoal-80 dark:text-charcoal-20 transition-colors">
+      <div class="mt-2 p-4 bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-card text-sm text-charcoal-80 dark:text-charcoal-20 transition-colors">
         {{ heroVideo.transcript }}
       </div>
     </details>
@@ -209,7 +209,7 @@ layout: default
       </div>
     {% endif %}
 
-    <div class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-3xl p-8 lg:p-12 max-w-2xl mx-auto transition-colors">
+    <div class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-card p-8 lg:p-12 max-w-2xl mx-auto transition-colors">
       <div class="space-y-8">
         <div class="text-center space-y-4">
           <div class="flex items-baseline justify-center gap-3"></div>
@@ -286,7 +286,7 @@ layout: default
 
 {% if relatedCourses %}
 <section class="py-24 lg:py-32 dark:bg-black border-t border-charcoal-20 dark:border-charcoal-80 transition-colors">
-  <div class="container mx-auto px-6 max-w-6xl">
+  <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="space-y-16">
       <h2 class="text-h3 text-charcoal dark:text-white transition-colors">Students also enrolled in</h2>
       <div class="grid md:grid-cols-2 gap-8">

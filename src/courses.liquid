@@ -5,7 +5,7 @@ description: Learn to code like an artist. Ship like a pro.
 ---
 
 <section class="relative bg-offwhite dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
-  <div class="container mx-auto px-6 max-w-4xl">
+  <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="text-center space-y-8">
       <h1 class="text-h2 lg:text-h1 text-charcoal dark:text-white transition-colors">
       <p class="text-xl lg:text-2xl text-charcoal-80 dark:text-charcoal-20 leading-relaxed max-w-2xl mx-auto transition-colors">{{ description }}</p>
@@ -14,11 +14,11 @@ description: Learn to code like an artist. Ship like a pro.
 </section>
 
 <section class="py-12 lg:py-16 bg-offwhite dark:bg-black transition-colors">
-  <div class="container mx-auto px-6 max-w-6xl">
+  <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="grid gap-12">
       {% for course in collections.courses %}
         {% if course.data.featured %}
-          <article class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-3xl p-8 lg:p-12 transition-colors">
+          <article class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-card p-8 lg:p-12 transition-colors">
             <div class="grid lg:grid-cols-2 gap-12 items-center">
               <div class="aspect-video relative rounded-2xl overflow-hidden bg-charcoal-20 dark:bg-charcoal-80">
                 <img src="{{ course.data.image }}" alt="{{ course.data.title }}" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
@@ -73,7 +73,7 @@ description: Learn to code like an artist. Ship like a pro.
             </div>
           </article>
         {% else %}
-          <article class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-3xl p-8 lg:p-10 hover:shadow-md dark:hover:ring-1 dark:hover:ring-charcoal-20 transition-shadow duration-300">
+          <article class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-card p-8 lg:p-10 hover:shadow-md dark:hover:ring-1 dark:hover:ring-charcoal-20 transition-shadow duration-300">
             <div class="grid lg:grid-cols-3 gap-8 items-center">
               <div class="aspect-video relative rounded-2xl overflow-hidden bg-charcoal-20 dark:bg-charcoal-80">
                 <img src="{{ course.data.image }}" alt="{{ course.data.title }}" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
@@ -120,7 +120,7 @@ description: Learn to code like an artist. Ship like a pro.
 </section>
 
 <!-- Testimonials Section -->
-<div class="max-w-7xl mx-auto px-6 py-24">
+<div class="mx-auto w-full max-w-6xl px-6 lg:px-16 py-24">
   <h2 class="text-h3 lg:text-h2 text-center mb-12 text-charcoal dark:text-white">What students say</h2>
   
   <div class="grid grid-cols-1 md:grid-cols-3 gap-8">

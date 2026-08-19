@@ -1,12 +1,12 @@
 {% if posts.length > 0 %}
 <div class="py-12">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+    <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
         <div>
             <ul class="divide-y divide-charcoal-20 dark:divide-charcoal-80">
                 {% for post in posts %}
                     {% if not featured or post.url != featured.url %}
                     <li class="group">
-                        <article class="flex flex-col gap-3 py-12 -mx-8 px-8 rounded-[2rem] transition-all duration-300 hover:bg-white dark:hover:bg-charcoal-80">
+                        <article class="flex flex-col gap-3 py-12 -mx-8 px-8 rounded-card transition-all duration-300 hover:bg-white dark:hover:bg-charcoal-80">
                             <div class="flex items-center gap-3 text-sm">
                                 {% if post.data.category %}
                                     <span class="uppercase font-semibold text-charcoal-80 dark:text-charcoal-20">{{ post.data.category }}</span>

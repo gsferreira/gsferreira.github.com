@@ -4,7 +4,7 @@ title: Talks by Gui Ferreira
 description: Talks I've given. Ideas worth sharing.
 ---
 
-<div class="max-w-4xl mx-auto px-4 py-16">
+<div class="mx-auto w-full max-w-6xl px-6 lg:px-16 py-16">
     <h1 class="text-h3 lg:text-h2 text-center mb-4 text-charcoal dark:text-white">Talks</h1>
     <p class="text-center text-charcoal-80 dark:text-charcoal-40 mb-8">{{description}}</p>
     <p class="text-center text-charcoal-80 dark:text-charcoal-40 mb-16">Want me to speak at your event? <a href="mailto:gui@guiferreira.me" class="text-black dark:text-white hover:underline">Get in touch!</a></p>
@@ -17,7 +17,7 @@ description: Talks I've given. Ideas worth sharing.
         <div class="mb-4 text-base font-semibold text-charcoal dark:text-white">Presented at</div>
         <div class="space-y-4">
             {% for presentation in talk.presentations %}
-            <div class="bg-white border border-charcoal-20 dark:bg-charcoal-80 p-6 rounded-lg flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
+            <div class="bg-white border border-charcoal-20 dark:bg-charcoal-80 p-6 rounded-card flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <div class="flex items-center gap-2">
                         <h3 class="text-card text-charcoal dark:text-white">{{ presentation.name }}</h3>
