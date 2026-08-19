@@ -10,13 +10,69 @@ module.exports = {
   ],
   theme: {
     extend: {
+      // ---------------------------------------------------------------
+      // Black Lab Studios design tokens (V3) as applied to the
+      // Gui Ferreira sub-brand: foundation colours only, no accent.
+      // ---------------------------------------------------------------
       fontFamily: {
-        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'sans-serif'],
+        'sans': ['Inter', '-apple-system', 'BlinkMacSystemFont', 'Segoe UI', 'Roboto', 'Helvetica', 'Arial', 'sans-serif'],
       },
       colors: {
-        'dark-blue': '#121722',
-        'dark-blue-hover': '#1D252F',
-        'light-hover': '#F8F9FB',
+        // Brand black is Charcoal, not #000000. Overriding `black` migrates
+        // every bg-black / text-black / dark:bg-black and all their opacity
+        // variants without touching a template.
+        black: '#1A1A1A',
+        // `white` stays #FFFFFF. It is the brand's raised light surface.
+
+        charcoal: {
+          DEFAULT: '#1A1A1A', // text primary on light, page surface on dark
+          80: '#484848',      // text secondary on light, raised surface on dark
+          60: '#757575',      // large text and headings only (4.20:1 on Off White)
+          40: '#A3A3A3',      // decorative; as text only on the dark page base
+          20: '#D1D1D1',      // rules, borders; text secondary on dark
+        },
+        offwhite: '#F6F4F1',  // light page surface
+
+        // Safety net. Tailwind's default gray is blue-cast, and
+        // theme.extend.colors.gray deep-merges per shade, so every shade has
+        // to be listed or the omitted ones stay cool. Exact brand values sit
+        // on 200/400/500/700/900; the rest are neutral interpolations.
+        gray: {
+          50: '#F6F4F1',  // Off White
+          100: '#EDEBE7',
+          200: '#D1D1D1', // Charcoal 20%
+          300: '#BDBDBD',
+          400: '#A3A3A3', // Charcoal 40%
+          500: '#757575', // Charcoal 60%. Below AA on Off White by design; see notes.
+          600: '#5E5E5E',
+          700: '#484848', // Charcoal 80%
+          800: '#333333',
+          900: '#1A1A1A', // Charcoal 100%
+          950: '#1A1A1A',
+        },
+      },
+      // Brand type scale. Each tuple carries its own weight, so `text-h1`
+      // needs no `font-semibold` beside it.
+      fontSize: {
+        'h1':      ['3.5rem',   { lineHeight: '4rem',     letterSpacing: '-0.02em', fontWeight: '600' }],
+        'h2':      ['2.5rem',   { lineHeight: '3rem',     letterSpacing: '-0.01em', fontWeight: '600' }],
+        'h3':      ['1.75rem',  { lineHeight: '2.25rem',  letterSpacing: '0',       fontWeight: '600' }],
+        'body':    ['1rem',     { lineHeight: '1.75rem',  fontWeight: '400' }],
+        'caption': ['0.875rem', { lineHeight: '1.25rem',  fontWeight: '400' }],
+        'accent':  ['1rem',     { lineHeight: '1.75rem',  fontWeight: '300' }], // pair with `italic`
+        // Interface steps. Sub-brand extension: the parent scale jumps from
+        // H3 28px straight to Body 16px, which is a marketing scale.
+        'eyebrow': ['0.75rem',  { lineHeight: '1.125rem', letterSpacing: '0.06em', fontWeight: '600' }],
+        'meta':    ['0.875rem', { lineHeight: '1.25rem',  fontWeight: '400' }],
+        'card':    ['1.125rem', { lineHeight: '1.75rem',  fontWeight: '600' }],
+        'lead':    ['1.25rem',  { lineHeight: '1.875rem', fontWeight: '400' }],
+      },
+      // Sub-brand extension. `card` is the same 16px as Tailwind's
+      // `rounded-2xl`; prefer `rounded-card` in new code.
+      borderRadius: {
+        'chip': '4px',
+        'card': '16px',
+        'pill': '9999px',
       },
       typography: {
         DEFAULT: {
