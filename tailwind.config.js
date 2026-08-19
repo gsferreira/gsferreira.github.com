@@ -74,181 +74,125 @@ module.exports = {
         'card': '16px',
         'pill': '9999px',
       },
+      // Editorial prose. Body sits at the sub-brand's 18px `card` step rather
+      // than the parent's 16px Body: 16px across 140 long technical posts is a
+      // real readability regression, and 18/28 is still a documented step.
       typography: {
         DEFAULT: {
           css: {
-            'max-width': 'none',
-            color: '#374151',
-            h2: {
-              color: '#111827',
-              fontWeight: '600',
-              marginTop: '2em',
-              marginBottom: '1em',
-            },
-            h3: {
-              color: '#111827',
-              fontWeight: '600',
-              marginTop: '1.6em',
-              marginBottom: '0.6em',
-            },
-            p: {
-              marginTop: '1.25em',
-              marginBottom: '1.25em',
-            },
+            maxWidth: 'none',
+            color: '#484848',            // Charcoal 80%, 8.33:1 on Off White
+            fontSize: '1.125rem',
+            lineHeight: '1.75rem',
+            h1: { color: '#1A1A1A', fontSize: '2.5rem',   lineHeight: '3rem',     letterSpacing: '-0.01em', fontWeight: '600' },
+            h2: { color: '#1A1A1A', fontSize: '1.75rem',  lineHeight: '2.25rem',  fontWeight: '600', marginTop: '2em',   marginBottom: '0.75em' },
+            h3: { color: '#1A1A1A', fontSize: '1.25rem',  lineHeight: '1.875rem', fontWeight: '600', marginTop: '1.6em', marginBottom: '0.5em' },
+            h4: { color: '#1A1A1A', fontSize: '1.125rem', lineHeight: '1.75rem',  fontWeight: '600', marginTop: '1.4em', marginBottom: '0.5em' },
+            p: { marginTop: '1.25em', marginBottom: '1.25em' },
+            strong: { color: '#1A1A1A', fontWeight: '600' },
+            // No accent colour exists on this site, so links carry their
+            // meaning with an underline instead.
             a: {
-              color: '#2563eb',
-              '&:hover': {
-                color: '#1d4ed8',
-              },
+              color: '#1A1A1A',
+              fontWeight: '400',
+              textDecoration: 'underline',
+              textDecorationColor: '#757575',
+              textDecorationThickness: '1px',
+              textUnderlineOffset: '2px',
+              '&:hover': { color: '#1A1A1A', textDecorationColor: '#1A1A1A' },
             },
+            blockquote: {
+              color: '#484848',
+              fontWeight: '300',
+              fontStyle: 'italic',
+              fontSize: '1.25rem',
+              lineHeight: '1.875rem',
+              borderLeftColor: '#D1D1D1',
+              borderLeftWidth: '2px',
+              quotes: 'none',
+            },
+            hr: { borderColor: '#D1D1D1' },
+            'ul > li::marker': { color: '#757575' },
+            'ol > li::marker': { color: '#757575' },
+            thead: { borderBottomColor: '#A3A3A3' },
+            'thead th': { color: '#1A1A1A' },
+            'tbody tr': { borderBottomColor: '#D1D1D1' },
+            figcaption: { color: '#484848', fontSize: '0.875rem', lineHeight: '1.25rem' },
+            // Code is a raised surface: White on the Off White page, with a
+            // Charcoal 20% hairline.
             pre: {
-              backgroundColor: '#f8fafc',
-              color: '#334155',
-              padding: '1.25rem',
-              borderRadius: '0.5rem',
-              border: '1px solid #e2e8f0',
-              marginTop: '1.25em',
-              marginBottom: '1.25em',
+              backgroundColor: '#FFFFFF',
+              color: '#1A1A1A',
+              padding: '1.5rem',
+              borderRadius: '16px',
+              border: '1px solid #D1D1D1',
+              marginTop: '1.5em',
+              marginBottom: '1.5em',
             },
             'pre code': {
               backgroundColor: 'transparent',
               borderWidth: '0',
               borderRadius: '0',
               padding: '0',
-              color: '#334155',
+              color: '#1A1A1A',
               fontSize: '0.875em',
+              fontWeight: '400',
               fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-              '&::before': {
-                content: 'none',
-              },
-              '&::after': {
-                content: 'none',
-              },
+              '&::before': { content: 'none' },
+              '&::after': { content: 'none' },
             },
             code: {
-              color: '#4b5563',
-              backgroundColor: '#f3f4f6',
+              color: '#1A1A1A',
+              backgroundColor: '#FFFFFF',
+              border: '1px solid #D1D1D1',
+              borderRadius: '4px',
               paddingLeft: '0.375rem',
               paddingRight: '0.375rem',
               paddingTop: '0.125rem',
               paddingBottom: '0.125rem',
-              borderRadius: '0.25rem',
               fontWeight: '400',
               fontSize: '0.875em',
               fontFamily: 'ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace',
-              '&::before': {
-                content: '""',
-              },
-              '&::after': {
-                content: '""',
-              },
             },
-            'code::before': {
-              content: '""',
-            },
-            'code::after': {
-              content: '""',
-            },
-            // Syntax highlighting colors
-            '.hljs-keyword': {
-              color: '#8b5cf6', // Purple for keywords
-            },
-            '.hljs-string': {
-              color: '#059669', // Green for strings
-            },
-            '.hljs-comment': {
-              color: '#6b7280', // Gray for comments
-            },
-            '.hljs-type': {
-              color: '#2563eb', // Blue for types
-            },
-            '.hljs-number': {
-              color: '#db2777', // Pink for numbers
-            },
-            '.hljs-function': {
-              color: '#4b5563', // Gray for functions
-            },
-            '.hljs-title': {
-              color: '#4b5563', // Gray for titles
-            },
-            '.hljs-params': {
-              color: '#4b5563', // Gray for parameters
-            },
+            'code::before': { content: '""' },
+            'code::after': { content: '""' },
           },
         },
-        // Add dark mode styles
-        'invert': {
+        invert: {
           css: {
-            '--tw-prose-body': '#e5e7eb',
-            '--tw-prose-headings': '#f3f4f6',
-            '--tw-prose-links': '#60a5fa',
-            '--tw-prose-links-hover': '#93c5fd',
-            '--tw-prose-underline': '#60a5fa',
-            '--tw-prose-underline-hover': '#93c5fd',
-            '--tw-prose-bold': '#f3f4f6',
-            '--tw-prose-counters': '#9ca3af',
-            '--tw-prose-bullets': '#e5e7eb',
-            '--tw-prose-hr': '#374151',
-            '--tw-prose-quote-borders': '#374151',
-            '--tw-prose-captions': '#9ca3af',
-            '--tw-prose-code': '#f3f4f6',
-            '--tw-prose-code-bg': '#1a1e2d',
-            '--tw-prose-pre-code': '#e5e7eb',
-            '--tw-prose-pre-bg': '#1a1e2d',
-            '--tw-prose-pre-border': '#2d3748',
-            '--tw-prose-th-borders': '#4a5568',
-            '--tw-prose-td-borders': '#2d3748',
-
-            // Override nested elements
-            'h1, h2, h3, h4, h5, h6': {
-              color: '#f3f4f6',
-            },
-            p: {
-              color: '#e5e7eb',
-            },
+            '--tw-prose-body': '#D1D1D1',
+            '--tw-prose-headings': '#FFFFFF',
+            '--tw-prose-links': '#FFFFFF',
+            '--tw-prose-bold': '#FFFFFF',
+            '--tw-prose-counters': '#A3A3A3',
+            '--tw-prose-bullets': '#757575',
+            '--tw-prose-hr': '#484848',
+            '--tw-prose-quote-borders': '#484848',
+            '--tw-prose-captions': '#A3A3A3',
+            '--tw-prose-code': '#FFFFFF',
+            '--tw-prose-pre-code': '#FFFFFF',
+            '--tw-prose-pre-bg': '#484848',
+            '--tw-prose-th-borders': '#757575',
+            '--tw-prose-td-borders': '#484848',
+            'h1, h2, h3, h4, h5, h6': { color: '#FFFFFF' },
+            p: { color: '#D1D1D1' },
+            strong: { color: '#FFFFFF' },
             a: {
-              color: '#60a5fa',
-              '&:hover': {
-                color: '#93c5fd',
-              },
+              color: '#FFFFFF',
+              textDecorationColor: '#A3A3A3',
+              '&:hover': { color: '#FFFFFF', textDecorationColor: '#FFFFFF' },
             },
-            strong: {
-              color: '#f3f4f6',
-            },
-            code: {
-              color: '#f3f4f6',
-              backgroundColor: '#1a1e2d',
-            },
-            'code::before': {
-              content: '""',
-            },
-            'code::after': {
-              content: '""',
-            },
-            figcaption: {
-              color: '#9ca3af',
-            },
-            blockquote: {
-              color: '#e5e7eb',
-            },
-            'ul > li::marker': {
-              color: '#e5e7eb',
-            },
-            'ol > li::marker': {
-              color: '#e5e7eb',
-            },
-            'thead th': {
-              color: '#f3f4f6',
-            },
-            'tbody td': {
-              color: '#e5e7eb',
-            },
-            'tbody tr': {
-              borderBottomColor: '#2d3748',
-            },
-            'thead': {
-              borderBottomColor: '#4a5568',
-            },
+            blockquote: { color: '#D1D1D1', borderLeftColor: '#484848' },
+            hr: { borderColor: '#484848' },
+            pre: { backgroundColor: '#484848', color: '#FFFFFF', borderColor: '#484848' },
+            'pre code': { color: '#FFFFFF' },
+            code: { color: '#FFFFFF', backgroundColor: '#484848', borderColor: '#484848' },
+            'ul > li::marker': { color: '#A3A3A3' },
+            'ol > li::marker': { color: '#A3A3A3' },
+            figcaption: { color: '#A3A3A3' },
+            'thead th': { color: '#FFFFFF' },
+            'tbody td': { color: '#D1D1D1' },
+            'tbody tr': { borderBottomColor: '#484848' },
           },
         },
       },

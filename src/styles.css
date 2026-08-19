@@ -2,10 +2,22 @@
 @tailwind components;
 @tailwind utilities;
 
-/* PrismJS Syntax Highlighting */
+/* ---------------------------------------------------------------------------
+   PrismJS syntax highlighting.
+
+   Syntax colour is functional colour, chosen deliberately OUTSIDE the brand
+   palette. The Gui Ferreira sub-brand runs on the neutral foundation and
+   excludes the four extension colours, so none of them appear here; the
+   precedent is the sibling sub-brand's "neutral system colours, chosen
+   outside the brand palette" for semantic states.
+
+   Code is a raised surface: White on the Off White page, Charcoal 80% on the
+   Charcoal page. Every token below is >= 4.5:1 against its own background.
+   --------------------------------------------------------------------------- */
+
 pre[class*="language-"],
 code[class*="language-"] {
-  color: #374151; /* Dark gray for default text */
+  color: #1A1A1A;
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   direction: ltr;
   text-align: left;
@@ -19,55 +31,50 @@ code[class*="language-"] {
   font-size: 0.875em;
 }
 
-/* Code blocks */
 pre[class*="language-"] {
-  padding: 1.25rem;
-  margin: 1.25em 0;
+  padding: 1.5rem;
+  margin: 1.5em 0;
   overflow: auto;
-  border: 1px solid #e2e8f0;
-  border-radius: 0.5rem;
-  background: #f8fafc;
+  border: 1px solid #D1D1D1;
+  border-radius: 16px;
+  background: #FFFFFF;
 }
 
-/* Inline code */
 :not(pre) > code[class*="language-"] {
   padding: 0.125rem 0.375rem;
-  border-radius: 0.25rem;
-  background: #f3f4f6;
-  color: #4b5563;
+  border: 1px solid #D1D1D1;
+  border-radius: 4px;
+  background: #FFFFFF;
+  color: #1A1A1A;
 }
 
-/* Dark theme overrides */
 .dark pre[class*="language-"] {
-  background: #1a1e2d;
-  border-color: #2d3748;
-  color: #e5e7eb;
+  background: #484848;
+  border-color: #484848;
+  color: #FFFFFF;
 }
 
 .dark :not(pre) > code[class*="language-"] {
-  background: #1a1e2d;
-  color: #e5e7eb;
+  background: #484848;
+  border-color: #484848;
+  color: #FFFFFF;
 }
 
-/* Dark mode list markers */
-.dark .prose ul li::marker {
-  color: #e5e7eb !important;
+.dark code[class*="language-"],
+.dark pre[class*="language-"] {
+  color: #FFFFFF;
 }
 
-.dark .prose ol li::marker {
-  color: #e5e7eb !important;
-}
-
-/* Tokens */
+/* Tokens, light. Ratios are against #FFFFFF. */
 .token.comment,
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #6b7280; /* Gray for comments */
+  color: #5F5F5F; /* 6.39:1 */
 }
 
 .token.punctuation {
-  color: #64748b;
+  color: #484848; /* 9.15:1 */
 }
 
 .token.namespace {
@@ -80,7 +87,7 @@ pre[class*="language-"] {
 .token.number,
 .token.constant,
 .token.symbol {
-  color: #db2777; /* Pink for numbers and constants */
+  color: #8C4A2B; /* 6.71:1 */
 }
 
 .token.selector,
@@ -88,7 +95,7 @@ pre[class*="language-"] {
 .token.string,
 .token.char,
 .token.builtin {
-  color: #059669; /* Green for strings */
+  color: #35664A; /* 6.66:1 */
 }
 
 .token.operator,
@@ -96,36 +103,37 @@ pre[class*="language-"] {
 .token.url,
 .language-css .token.string,
 .style .token.string {
-  color: #9333ea; /* Purple for operators */
+  color: #6B5B2E; /* 6.64:1 */
 }
 
 .token.atrule,
 .token.attr-value,
 .token.keyword {
-  color: #8b5cf6; /* Purple for keywords */
+  color: #5D4E8C; /* 7.16:1 */
 }
 
 .token.function,
 .token.class-name {
-  color: #2563eb; /* Blue for functions and classes */
+  color: #37587F; /* 7.33:1 */
 }
 
 .token.regex,
 .token.important,
 .token.variable {
-  color: #f59e0b; /* Yellow for variables */
+  color: #2C6360; /* 6.86:1 */
 }
 
-/* Dark theme token overrides */
+/* Tokens, dark. Ratios are against the raised #484848 code surface, which
+   caps the available headroom at 9.15:1 and is why this set is pastel. */
 .dark .token.comment,
 .dark .token.prolog,
 .dark .token.doctype,
 .dark .token.cdata {
-  color: #9ca3af;
+  color: #D1D1D1; /* 5.99:1 */
 }
 
 .dark .token.punctuation {
-  color: #e5e7eb;
+  color: #E3E3E3; /* 7.13:1 */
 }
 
 .dark .token.property,
@@ -134,7 +142,7 @@ pre[class*="language-"] {
 .dark .token.number,
 .dark .token.constant,
 .dark .token.symbol {
-  color: #f472b6;
+  color: #F0C3A8; /* 5.70:1 */
 }
 
 .dark .token.selector,
@@ -142,7 +150,7 @@ pre[class*="language-"] {
 .dark .token.string,
 .dark .token.char,
 .dark .token.builtin {
-  color: #34d399;
+  color: #BEDFC4; /* 6.33:1 */
 }
 
 .dark .token.operator,
@@ -150,30 +158,24 @@ pre[class*="language-"] {
 .dark .token.url,
 .dark .language-css .token.string,
 .dark .style .token.string {
-  color: #c084fc;
+  color: #E2D3A6; /* 6.14:1 */
 }
 
 .dark .token.atrule,
 .dark .token.attr-value,
 .dark .token.keyword {
-  color: #a78bfa;
+  color: #D3C4F2; /* 5.64:1 */
 }
 
 .dark .token.function,
 .dark .token.class-name {
-  color: #60a5fa;
+  color: #BBD4EE; /* 6.00:1 */
 }
 
 .dark .token.regex,
 .dark .token.important,
 .dark .token.variable {
-  color: #fde047;
-}
-
-/* Base text color for code in dark mode */
-.dark code[class*="language-"],
-.dark pre[class*="language-"] {
-  color: #e5e7eb;
+  color: #ACDCD4; /* 6.07:1 */
 }
 
 .token.important,
