@@ -9,7 +9,7 @@ layout: default.liquid
         <div class="aspect-[4/3] relative rounded-3xl overflow-hidden bg-charcoal-20 dark:bg-charcoal-80">
           <img alt="{{ title }}" decoding="async" data-nimg="fill" class="object-cover" src="{{ image }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
           <div class="absolute top-6 left-6">
-            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-black dark:bg-white text-white dark:text-black font-medium">{{ category }}</div>
+            <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 border-transparent hover:bg-primary/80 bg-black dark:bg-white text-white dark:text-black font-semibold">{{ category }}</div>
           </div>
         </div>
         <div class="grid grid-cols-3 gap-4">
@@ -18,7 +18,7 @@ layout: default.liquid
               <circle cx="12" cy="12" r="10"></circle>
               <polyline points="12 6 12 12 16 14"></polyline>
             </svg>
-            <div class="text-sm font-medium text-charcoal dark:text-white transition-colors">{{ duration }}</div>
+            <div class="text-sm font-semibold text-charcoal dark:text-white transition-colors">{{ duration }}</div>
             <div class="text-xs text-charcoal-80 dark:text-charcoal-20 transition-colors">Duration</div>
           </div>
           <div class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl p-4 text-center transition-colors">
@@ -28,7 +28,7 @@ layout: default.liquid
               <path d="M22 21v-2a4 4 0 0 0-3-3.87"></path>
               <path d="M16 3.13a4 4 0 0 1 0 7.75"></path>
             </svg>
-            <div class="text-sm font-medium text-charcoal dark:text-white transition-colors">{{ participants }}</div>
+            <div class="text-sm font-semibold text-charcoal dark:text-white transition-colors">{{ participants }}</div>
             <div class="text-xs text-charcoal-80 dark:text-charcoal-20 transition-colors">Group Size</div>
           </div>
           <div class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl p-4 text-center transition-colors">
@@ -37,7 +37,7 @@ layout: default.liquid
               <circle cx="12" cy="12" r="6"></circle>
               <circle cx="12" cy="12" r="2"></circle>
             </svg>
-            <div class="text-sm font-medium text-charcoal dark:text-white transition-colors">{{ level }}</div>
+            <div class="text-sm font-semibold text-charcoal dark:text-white transition-colors">{{ level }}</div>
             <div class="text-xs text-charcoal-80 dark:text-charcoal-20 transition-colors">Level</div>
           </div>
         </div>
@@ -53,39 +53,39 @@ layout: default.liquid
                 <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
               </svg>
               {% endfor %}
-              <span class="text-sm font-medium text-charcoal dark:text-white transition-colors">{{ rating }}</span>
+              <span class="text-sm font-semibold text-charcoal dark:text-white transition-colors">{{ rating }}</span>
               <span class="text-sm text-charcoal-80 dark:text-charcoal-40 transition-colors">({{ reviews }} reviews)</span>
             </div>
             {% endif %}
           </div>
-          <h1 class="text-4xl lg:text-5xl font-medium text-charcoal dark:text-white leading-tight tracking-tight transition-colors">{{ title }}</h1>
-          <p class="text-xl text-charcoal-80 dark:text-charcoal-20 font-light leading-relaxed transition-colors">{{ description }}</p>
+          <h1 class="text-h3 lg:text-h2 text-charcoal dark:text-white transition-colors">{{ title }}</h1>
+          <p class="text-xl text-charcoal-80 dark:text-charcoal-20 leading-relaxed transition-colors">{{ description }}</p>
         </div>
         <div class="space-y-4">
-          <h3 class="text-xl font-medium text-charcoal dark:text-white transition-colors">What you'll achieve:</h3>
+          <h3 class="text-card text-charcoal dark:text-white transition-colors">What you'll achieve:</h3>
           <ul class="space-y-3">
             {% for achievement in achievements %}
             <li class="flex items-start gap-3">
               <div class="w-2 h-2 bg-black dark:bg-white rounded-full mt-2 flex-shrink-0 transition-colors"></div>
-              <span class="text-charcoal-80 dark:text-charcoal-20 font-light transition-colors">{{ achievement }}</span>
+              <span class="text-charcoal-80 dark:text-charcoal-20 transition-colors">{{ achievement }}</span>
             </li>
             {% endfor %}
           </ul>
         </div>
         <div class="space-y-4">
-          <h3 class="text-xl font-medium text-charcoal dark:text-white transition-colors">Prerequisites:</h3>
+          <h3 class="text-card text-charcoal dark:text-white transition-colors">Prerequisites:</h3>
           <ul class="space-y-2">
             {% for prerequisite in prerequisites %}
             <li class="flex items-start gap-3">
               <div class="w-2 h-2 bg-charcoal-40 dark:bg-charcoal-40 rounded-full mt-2 flex-shrink-0 transition-colors"></div>
-              <span class="text-charcoal-80 dark:text-charcoal-20 font-light text-sm transition-colors">{{ prerequisite }}</span>
+              <span class="text-charcoal-80 dark:text-charcoal-20 text-sm transition-colors">{{ prerequisite }}</span>
             </li>
             {% endfor %}
           </ul>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <a href="#upcoming" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">View Upcoming Sessions</a>
-          <a href="mailto:gui@guiferreira.me" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 border-charcoal-20 dark:border-charcoal-80 text-charcoal dark:text-white hover:bg-white dark:hover:bg-charcoal-60 rounded-full px-8 py-3 font-medium transition-colors">Request Custom Workshop</a>
+          <a href="#upcoming" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full px-8 py-3 font-semibold transition-colors">View Upcoming Sessions</a>
+          <a href="mailto:gui@guiferreira.me" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 border-charcoal-20 dark:border-charcoal-80 text-charcoal dark:text-white hover:bg-white dark:hover:bg-charcoal-60 rounded-full px-8 py-3 font-semibold transition-colors">Request Custom Workshop</a>
         </div>
         <div class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl p-6 transition-colors">
           <div class="flex items-center gap-4">
@@ -93,7 +93,7 @@ layout: default.liquid
               <img alt="Instructor" loading="lazy" decoding="async" data-nimg="fill" class="object-cover" src="{{ instructor.image }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
             </div>
             <div>
-              <div class="font-medium text-charcoal dark:text-white transition-colors">{{ instructor.name }}</div>
+              <div class="font-semibold text-charcoal dark:text-white transition-colors">{{ instructor.name }}</div>
               <div class="text-sm text-charcoal-80 dark:text-charcoal-20 transition-colors">{{ instructor.title }}</div>
             </div>
           </div>
@@ -115,8 +115,8 @@ layout: default.liquid
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="space-y-16">
       <div class="text-center space-y-6">
-        <h2 class="text-4xl lg:text-5xl font-light text-charcoal dark:text-white tracking-tight transition-colors">Curriculum</h2>
-        <p class="text-xl text-charcoal-80 dark:text-charcoal-20 font-light max-w-2xl mx-auto transition-colors">{{ curriculum.description }}</p>
+        <h2 class="text-h3 lg:text-h2 text-charcoal dark:text-white transition-colors">Curriculum</h2>
+        <p class="text-xl text-charcoal-80 dark:text-charcoal-20 max-w-2xl mx-auto transition-colors">{{ curriculum.description }}</p>
       </div>
       <div class="space-y-8">
         {% for module in curriculum.modules %}
@@ -124,12 +124,12 @@ layout: default.liquid
           <div class="flex gap-6">
             <div class="flex-shrink-0">
               <div class="w-12 h-12 bg-black dark:bg-white rounded-full flex items-center justify-center transition-colors">
-                <span class="text-white dark:text-black font-medium text-sm transition-colors">{{ loop.index }}</span>
+                <span class="text-white dark:text-black font-semibold text-sm transition-colors">{{ loop.index }}</span>
               </div>
             </div>
             <div class="space-y-4 flex-1">
               <div class="flex items-center justify-between">
-                <h3 class="text-xl font-medium text-charcoal dark:text-white transition-colors">{{ module.title }}</h3>
+                <h3 class="text-card text-charcoal dark:text-white transition-colors">{{ module.title }}</h3>
                 <div class="flex items-center gap-2 text-sm text-charcoal-80 dark:text-charcoal-20 transition-colors">
                   <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-clock h-4 w-4">
                     <circle cx="12" cy="12" r="10"></circle>
@@ -138,9 +138,9 @@ layout: default.liquid
                   <span>{{ module.duration }}</span>
                 </div>
               </div>
-              <p class="text-charcoal-80 dark:text-charcoal-20 font-light leading-relaxed transition-colors">{{ module.description }}</p>
+              <p class="text-charcoal-80 dark:text-charcoal-20 leading-relaxed transition-colors">{{ module.description }}</p>
               <div class="space-y-2">
-                <h4 class="font-medium text-charcoal dark:text-white text-sm transition-colors">Key Topics:</h4>
+                <h4 class="font-semibold text-charcoal dark:text-white text-sm transition-colors">Key Topics:</h4>
                 <ul class="grid grid-cols-1 md:grid-cols-2 gap-2">
                   {% for topic in module.topics %}
                   <li class="flex items-center gap-2">
@@ -148,7 +148,7 @@ layout: default.liquid
                       <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                       <path d="m9 11 3 3L22 4"></path>
                     </svg>
-                    <span class="text-charcoal-80 dark:text-charcoal-20 font-light text-sm transition-colors">{{ topic }}</span>
+                    <span class="text-charcoal-80 dark:text-charcoal-20 text-sm transition-colors">{{ topic }}</span>
                   </li>
                   {% endfor %}
                 </ul>
@@ -167,8 +167,8 @@ layout: default.liquid
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="space-y-16">
       <div class="text-center space-y-6">
-        <h2 class="text-4xl lg:text-5xl font-light text-charcoal dark:text-white tracking-tight transition-colors">Upcoming Sessions</h2>
-        <p class="text-xl text-charcoal-80 dark:text-charcoal-20 font-light max-w-2xl mx-auto transition-colors">Join our next available sessions. Limited seats available.</p>
+        <h2 class="text-h3 lg:text-h2 text-charcoal dark:text-white transition-colors">Upcoming Sessions</h2>
+        <p class="text-xl text-charcoal-80 dark:text-charcoal-20 max-w-2xl mx-auto transition-colors">Join our next available sessions. Limited seats available.</p>
       </div>
 
       {% set sessions = upcomingSessions %}
@@ -184,7 +184,7 @@ layout: default.liquid
   <div class="container mx-auto px-6 max-w-6xl">
     <div class="space-y-16">
       <div class="text-center space-y-6">
-        <h2 class="text-4xl lg:text-5xl font-light text-charcoal dark:text-white tracking-tight transition-colors">What participants say</h2>
+        <h2 class="text-h3 lg:text-h2 text-charcoal dark:text-white transition-colors">What participants say</h2>
       </div>
       <div class="grid lg:grid-cols-3 gap-8">
         {% for testimonial in testimonials %}
@@ -196,7 +196,7 @@ layout: default.liquid
             </svg>
             {% endfor %}
           </div>
-          <blockquote class="text-lg text-charcoal-80 dark:text-charcoal-20 font-light leading-relaxed transition-colors">{{ testimonial.quote }}</blockquote>
+          <blockquote class="text-lg text-charcoal-80 dark:text-charcoal-20 leading-relaxed transition-colors">{{ testimonial.quote }}</blockquote>
           <div class="flex items-center gap-4">
             {% if testimonial.image %}
             <div class="w-10 h-10 rounded-full bg-charcoal-20 dark:bg-charcoal-80 overflow-hidden relative">
@@ -204,9 +204,9 @@ layout: default.liquid
             </div>
             {% endif %}
             <div>
-              <div class="font-medium text-charcoal dark:text-white transition-colors">{{ testimonial.author }}</div>
+              <div class="font-semibold text-charcoal dark:text-white transition-colors">{{ testimonial.author }}</div>
               <div class="text-sm text-charcoal-80 dark:text-charcoal-20 transition-colors">{{ testimonial.title }}</div>
-              <div class="text-sm text-charcoal-80 dark:text-charcoal-20 font-medium transition-colors">{{ testimonial.company }}</div>
+              <div class="text-sm text-charcoal-80 dark:text-charcoal-20 font-semibold transition-colors">{{ testimonial.company }}</div>
             </div>
           </div>
         </div>
@@ -222,20 +222,20 @@ layout: default.liquid
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="space-y-16">
       <div class="text-center space-y-6">
-        <h2 class="text-4xl lg:text-5xl font-light text-charcoal dark:text-white tracking-tight transition-colors">Frequently Asked Questions</h2>
+        <h2 class="text-h3 lg:text-h2 text-charcoal dark:text-white transition-colors">Frequently Asked Questions</h2>
       </div>
       <div class="space-y-4" data-orientation="vertical" id="faq-accordion">
         {% for faq in faqs %}
         <div data-state="closed" data-orientation="vertical" class="faq-item border-b bg-white dark:bg-charcoal-80 rounded-2xl px-8 border-none transition-colors">
           <h3 data-orientation="vertical" data-state="closed" class="flex">
-            <button type="button" class="faq-button flex flex-1 items-center justify-between text-left font-medium text-charcoal dark:text-white hover:no-underline py-6 transition-colors" aria-expanded="false">
+            <button type="button" class="faq-button flex flex-1 items-center justify-between text-left font-semibold text-charcoal dark:text-white hover:no-underline py-6 transition-colors" aria-expanded="false">
               {{ faq.question }}
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-chevron-down h-4 w-4 shrink-0 transition-transform duration-200">
                 <path d="m6 9 6 6 6-6"></path>
               </svg>
             </button>
           </h3>
-          <div class="faq-answer hidden pb-6 text-charcoal-80 dark:text-charcoal-20 font-light">
+          <div class="faq-answer hidden pb-6 text-charcoal-80 dark:text-charcoal-20 ">
             {{ faq.answer }}
           </div>
         </div>
@@ -267,18 +267,18 @@ layout: default.liquid
 <section class="py-24 lg:py-32 bg-offwhite dark:bg-black border-t border-charcoal-20 dark:border-charcoal-80 transition-colors">
   <div class="container mx-auto px-6 max-w-6xl">
     <div class="space-y-16">
-      <h2 class="text-3xl font-medium text-charcoal dark:text-white transition-colors">Related workshops</h2>
+      <h2 class="text-h3 text-charcoal dark:text-white transition-colors">Related workshops</h2>
       <div class="grid md:grid-cols-2 gap-8">
         {% for workshop in related_workshops %}
         <article class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl p-8 hover:shadow-md dark:hover:ring-1 dark:hover:ring-charcoal-20 transition-shadow duration-300">
           <div class="space-y-6">
             <div class="space-y-4">
               <div class="flex items-center gap-4 text-sm">
-                <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-medium transition-colors">{{ workshop.category }}</span>
+                <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-semibold transition-colors">{{ workshop.category }}</span>
                 <span class="text-charcoal-80 dark:text-charcoal-20 transition-colors">{{ workshop.format }}</span>
               </div>
-              <h3 class="text-xl font-medium text-charcoal dark:text-white transition-colors">{{ workshop.title }}</h3>
-              <p class="text-charcoal-80 dark:text-charcoal-20 font-light leading-relaxed transition-colors">{{ workshop.description }}</p>
+              <h3 class="text-card text-charcoal dark:text-white transition-colors">{{ workshop.title }}</h3>
+              <p class="text-charcoal-80 dark:text-charcoal-20 leading-relaxed transition-colors">{{ workshop.description }}</p>
             </div>
             <div class="grid grid-cols-3 gap-4 text-sm">
               <div class="flex items-center gap-2 text-charcoal-80 dark:text-charcoal-20 transition-colors">
@@ -306,7 +306,7 @@ layout: default.liquid
                 <span>{{ workshop.level }}</span>
               </div>
             </div>
-            <a href="{{ workshop.url }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full py-2 font-medium transition-colors">Learn more about the Workshop</a>
+            <a href="{{ workshop.url }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full py-2 font-semibold transition-colors">Learn more about the Workshop</a>
           </div>
         </article>
         {% endfor %}

@@ -66,7 +66,7 @@ This isn't fantasy. This is what OpenTelemetry delivers.
 
 <div class="space-y-4">
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -75,7 +75,7 @@ This course is designed for .NET developers who want to implement proper observa
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need prior observability experience?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -84,7 +84,7 @@ No prior observability experience is needed. We'll start with the basics and pro
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What observability tools will we use?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -93,7 +93,7 @@ We'll use OpenTelemetry with popular backends like Jaeger for traces, Prometheus
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Will this work with my existing applications?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -102,7 +102,7 @@ Yes! You'll learn both how to add OpenTelemetry to existing applications and how
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Does this cover cloud-native applications?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -111,7 +111,7 @@ Absolutely! We'll cover observability in cloud environments, including container
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What if my team uses different observability tools?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -121,7 +121,7 @@ OpenTelemetry is vendor-neutral and supports multiple backends. The concepts you
 </div>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">

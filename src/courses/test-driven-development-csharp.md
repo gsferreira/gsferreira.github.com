@@ -98,7 +98,7 @@ By the end, you'll have both the mindset and practical skills to make TDD part o
 
 <div class="space-y-4">
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -107,7 +107,7 @@ This course is designed for C# developers who want to master Test-Driven Develop
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need any prior experience to take this course?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -116,7 +116,7 @@ You should have intermediate-level C# experience and basic understanding of unit
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What testing frameworks will we use?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -125,7 +125,7 @@ We'll primarily use xUnit.NET, along with popular tools like NSubstitute, Testco
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Can I apply TDD to legacy code?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -134,7 +134,7 @@ Yes! We have a dedicated section on applying TDD to existing codebases. You'll l
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">

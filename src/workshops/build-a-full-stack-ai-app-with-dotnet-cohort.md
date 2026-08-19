@@ -213,7 +213,7 @@ Come prepared with:
 * Money-back guarantee after Week 1
 
 <div class="flex flex-row justify-center mt-10">
-<a class="bg-primary hover:bg-secondary text-white font-bold mx-4 py-2 px-4" href="https://www.aipowereddotnet.school/" target="_blank" rel="noopener">Secure My Spot →</a>
+<a class="bg-primary hover:bg-secondary text-white font-semibold mx-4 py-2 px-4" href="https://www.aipowereddotnet.school/" target="_blank" rel="noopener">Secure My Spot →</a>
 </div>
 
 <div class="mt-5 text-center">

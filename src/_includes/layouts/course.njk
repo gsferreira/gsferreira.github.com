@@ -4,7 +4,7 @@ layout: default
 
 <article class="max-w-6xl mx-auto px-6 py-12">
   <div class="mb-6 flex items-center justify-between">
-    <span class="px-3 py-1 text-xs font-medium bg-black text-white dark:bg-white dark:text-black rounded-full">{{ level }}</span>
+    <span class="px-3 py-1 text-xs font-semibold bg-black text-white dark:bg-white dark:text-black rounded-full">{{ level }}</span>
     {% if rating %}
     <div class="flex items-center gap-1" role="img" aria-label="Rating: {{ rating }} out of 5 stars">
       <div class="flex">
@@ -14,7 +14,7 @@ layout: default
           </svg>
         {% endfor %}
       </div>
-      <span class="text-sm font-medium ml-1" aria-hidden="true">{{ rating }}</span>
+      <span class="text-sm font-semibold ml-1" aria-hidden="true">{{ rating }}</span>
       {% if reviewCount %}
         <span class="text-sm text-charcoal-80 ml-1" aria-hidden="true">({{ reviewCount }} reviews)</span>
       {% endif %}
@@ -22,7 +22,7 @@ layout: default
     {% endif %}
   </div>
 
-  <h1 class="text-3xl font-semibold mb-3 text-charcoal dark:text-white leading-tight tracking-tight transition-colors">{{ title }}</h1>
+  <h1 class="text-h3 lg:text-h2 mb-3 text-charcoal dark:text-white transition-colors">{{ title }}</h1>
   <p class="text-charcoal-80 dark:text-charcoal-40 mb-8">{{ description }}</p>
 
   <div class="flex items-center gap-2 text-sm text-charcoal-80 mb-8">
@@ -36,7 +36,7 @@ layout: default
 
   {% if featured %}
     <div class="mb-8">
-      <span class="px-3 py-1 text-xs font-medium bg-black text-white dark:bg-white dark:text-black rounded-full" aria-label="Featured course">Featured</span>
+      <span class="px-3 py-1 text-xs font-semibold bg-black text-white dark:bg-white dark:text-black rounded-full" aria-label="Featured course">Featured</span>
     </div>
   {% endif %}
 
@@ -71,7 +71,7 @@ layout: default
           </button>
           <div class="absolute bottom-4 left-4 right-4 pointer-events-none">
             <div class="bg-white/90 backdrop-blur-sm rounded-lg px-3 py-2 shadow-lg">
-              <p class="text-sm font-medium text-charcoal">{{ heroVideo.title or title }}</p>
+              <p class="text-sm font-semibold text-charcoal">{{ heroVideo.title or title }}</p>
               <p class="text-xs text-charcoal-80">{{ heroVideo.description or "Click to play preview" }}</p>
             </div>
           </div>
@@ -202,7 +202,7 @@ layout: default
   <div class="text-center space-y-12">
     {% if callToActionTitle %}
       <div class="space-y-6">
-        <h2 id="cta-heading" class="text-4xl lg:text-5xl text-charcoal dark:text-white tracking-tight">{{ callToActionTitle }}</h2>
+        <h2 id="cta-heading" class="text-h3 lg:text-h2 text-charcoal dark:text-white">{{ callToActionTitle }}</h2>
         {% if callToActionSubtitle %}
           <p class="text-xl text-charcoal-80 dark:text-charcoal-40 max-w-2xl mx-auto">{{ callToActionSubtitle }}</p>
         {% endif %}
@@ -216,42 +216,42 @@ layout: default
           <p class="text-charcoal-80 dark:text-charcoal-20 transition-colors">One-time payment • Lifetime access</p>
         </div>
         <div class="space-y-4">
-          <h3 class="font-medium text-charcoal dark:text-white text-center transition-colors">Everything you need to succeed:</h3>
+          <h3 class="text-card text-charcoal dark:text-white text-center transition-colors">Everything you need to succeed:</h3>
           <div class="grid grid-cols-1 gap-3">
             <div class="flex items-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-charcoal dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
-              <span class="text-charcoal-80 dark:text-charcoal-20 font-light transition-colors">{{ duration }} of video content</span>
+              <span class="text-charcoal-80 dark:text-charcoal-20 transition-colors">{{ duration }} of video content</span>
             </div>
             <div class="flex items-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-charcoal dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
-              <span class="text-charcoal-80 dark:text-charcoal-20 font-light transition-colors">Downloadable resources</span>
+              <span class="text-charcoal-80 dark:text-charcoal-20 transition-colors">Downloadable resources</span>
             </div>
             <div class="flex items-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-charcoal dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
-              <span class="text-charcoal-80 dark:text-charcoal-20 font-light transition-colors">Certificate of completion</span>
+              <span class="text-charcoal-80 dark:text-charcoal-20 transition-colors">Certificate of completion</span>
             </div>
             <div class="flex items-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-charcoal dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
-              <span class="text-charcoal-80 dark:text-charcoal-20 font-light transition-colors">Lifetime access to all updates</span>
+              <span class="text-charcoal-80 dark:text-charcoal-20 transition-colors">Lifetime access to all updates</span>
             </div>
             <div class="flex items-center gap-3">
               <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-charcoal dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
-              <span class="text-charcoal-80 dark:text-charcoal-20 font-light transition-colors">Powered by Dometrain</span>
+              <span class="text-charcoal-80 dark:text-charcoal-20 transition-colors">Powered by Dometrain</span>
             </div>
           </div>
         </div>
@@ -272,7 +272,7 @@ layout: default
           </div>
         </div>
         <div class="space-y-3">
-          <a href="{{ courseUrl }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full py-4 text-lg font-medium transition-colors">
+          <a href="{{ courseUrl }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full py-4 text-lg font-semibold transition-colors">
             Enroll Now - Start Learning Today
           </a>
         </div>
@@ -288,7 +288,7 @@ layout: default
 <section class="py-24 lg:py-32 dark:bg-black border-t border-charcoal-20 dark:border-charcoal-80 transition-colors">
   <div class="container mx-auto px-6 max-w-6xl">
     <div class="space-y-16">
-      <h2 class="text-3xl font-medium text-charcoal dark:text-white transition-colors">Students also enrolled in</h2>
+      <h2 class="text-h3 text-charcoal dark:text-white transition-colors">Students also enrolled in</h2>
       <div class="grid md:grid-cols-2 gap-8">
         {% for relatedCourse in relatedCourses %}
         {% for entry in collections.all %}
@@ -297,18 +297,18 @@ layout: default
             <div class="space-y-6">
               <div class="space-y-4">
                 <div class="flex items-center gap-4 text-sm">
-                  <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-medium transition-colors">{{ entry.data.category }}</span>
+                  <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-semibold transition-colors">{{ entry.data.category }}</span>
                   {% if entry.data.rating %}
                   <div class="flex items-center gap-1">
                     <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-charcoal dark:text-white">
                       <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
                     </svg>
-                    <span class="font-medium text-charcoal dark:text-white transition-colors">{{ entry.data.rating }}</span>
+                    <span class="font-semibold text-charcoal dark:text-white transition-colors">{{ entry.data.rating }}</span>
                   </div>
                   {% endif %}
                 </div>
-                <h3 class="text-xl font-medium text-charcoal dark:text-white transition-colors">{{ entry.data.title }}</h3>
-                <p class="text-charcoal-80 dark:text-charcoal-20 font-light leading-relaxed transition-colors">{{ entry.data.description }}</p>
+                <h3 class="text-card text-charcoal dark:text-white transition-colors">{{ entry.data.title }}</h3>
+                <p class="text-charcoal-80 dark:text-charcoal-20 leading-relaxed transition-colors">{{ entry.data.description }}</p>
               </div>
               <div class="flex items-center justify-between">
                 <div class="flex items-center gap-2 text-sm text-charcoal-80 dark:text-charcoal-20 transition-colors">
@@ -319,7 +319,7 @@ layout: default
                   <span>{{ entry.data.duration }}</span>
                 </div>
               </div>
-              <a href="/courses/{{ relatedCourse }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full py-2 font-medium transition-colors">View Course</a>
+              <a href="/courses/{{ relatedCourse }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full py-2 font-semibold transition-colors">View Course</a>
             </div>
           </article>
           {% endif %}

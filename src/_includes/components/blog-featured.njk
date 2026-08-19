@@ -1,11 +1,11 @@
 {% if post %}
 <div class="mb-16">
-  <h2 class="text-xl font-medium text-charcoal dark:text-white mb-8">Featured</h2>
+  <h2 class="text-h3 text-charcoal dark:text-white mb-8">Featured</h2>
   <article class="bg-white dark:bg-charcoal-80 border border-charcoal-20 dark:border-transparent text-charcoal dark:text-white rounded-[2rem] px-8 py-12 hover:shadow-md transition-shadow duration-300">
     <div class="flex flex-col gap-4">
       <div class="flex items-center gap-3 text-sm">
         {% if post.data.category %}
-          <span class="inline-block text-sm uppercase tracking-wide text-charcoal dark:text-white font-medium bg-white dark:bg-charcoal-80 rounded-full px-4 py-1">{{ post.data.category }}</span>
+          <span class="inline-block text-sm uppercase tracking-wide text-charcoal dark:text-white font-semibold bg-white dark:bg-charcoal-80 rounded-full px-4 py-1">{{ post.data.category }}</span>
           <span class="text-charcoal-60 dark:text-charcoal-60 transition-colors" aria-hidden="true">•</span>
         {% endif %}
         <time datetime="{{ post.date | htmlDate }}" class="text-charcoal-80 dark:text-charcoal-20">{{ post.date | readableDate }}</time>
@@ -13,13 +13,13 @@
           <span class="text-charcoal-80 dark:text-charcoal-20" aria-hidden="true">• {{ post.data.readingTime }} min read</span>
         {% endif %}
       </div>
-      <h3 class="text-4xl font-medium">
+      <h3 class="text-h3">
         <a href="{{ post.url }}" class="hover:underline" aria-label="Read featured post: {{ post.data.title }}">{{ post.data.title }}</a>
       </h3>
       {% if post.data.description %}
         <p class="text-charcoal-80 dark:text-charcoal-20 text-lg mb-4">{{ post.data.description }}</p>
       {% endif %}
-      <a href="{{ post.url }}" class="inline-block text-base text-charcoal dark:text-white font-medium hover:underline" aria-label="Continue reading {{ post.data.title }}">Read more →</a>
+      <a href="{{ post.url }}" class="inline-block text-base text-charcoal dark:text-white font-semibold hover:underline" aria-label="Continue reading {{ post.data.title }}">Read more →</a>
     </div>
   </article>
 </div>

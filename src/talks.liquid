@@ -5,22 +5,22 @@ description: Talks I've given. Ideas worth sharing.
 ---
 
 <div class="max-w-4xl mx-auto px-4 py-16">
-    <h1 class="text-4xl [font-size:2.25rem] font-bold text-center mb-4 text-charcoal dark:text-white">Talks</h1>
+    <h1 class="text-h3 lg:text-h2 text-center mb-4 text-charcoal dark:text-white">Talks</h1>
     <p class="text-center text-charcoal-80 dark:text-charcoal-40 mb-8">{{description}}</p>
     <p class="text-center text-charcoal-80 dark:text-charcoal-40 mb-16">Want me to speak at your event? <a href="mailto:gui@guiferreira.me" class="text-black dark:text-white hover:underline">Get in touch!</a></p>
 
     {% for talk in talks.all %}
     <div class="mb-24">
-        <h2 class="text-2xl font-bold mb-4 text-charcoal dark:text-white">{{ talk.title }}</h2>
+        <h2 class="text-h3 mb-4 text-charcoal dark:text-white">{{ talk.title }}</h2>
         <div class="text-charcoal-80 dark:text-charcoal-40 mb-8 whitespace-pre-wrap">{{ talk.description }}</div>
 
-        <div class="mb-4 text-base font-bold text-charcoal dark:text-white">Presented at</div>
+        <div class="mb-4 text-base font-semibold text-charcoal dark:text-white">Presented at</div>
         <div class="space-y-4">
             {% for presentation in talk.presentations %}
             <div class="bg-white border border-charcoal-20 dark:bg-charcoal-80 p-6 rounded-lg flex flex-col sm:flex-row justify-between items-start sm:items-center gap-4">
                 <div>
                     <div class="flex items-center gap-2">
-                        <h3 class="font-medium text-charcoal dark:text-white">{{ presentation.name }}</h3>
+                        <h3 class="text-card text-charcoal dark:text-white">{{ presentation.name }}</h3>
                         <a href="{{ presentation.url }}" target="_blank" rel="noopener" class="text-charcoal-60 hover:text-charcoal-80 dark:hover:text-white">
                             <svg class="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 6H6a2 2 0 00-2 2v10a2 2 0 002 2h10a2 2 0 002-2v-4M14 4h6m0 0v6m0-6L10 14"></path>

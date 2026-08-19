@@ -92,7 +92,7 @@ By the end, you'll instinctively know how to write testable code from the start 
 
 <div class="space-y-4">
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -101,7 +101,7 @@ This course is for C# developers who want to write code that's easier to test. W
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 How is this different from a TDD course?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -110,7 +110,7 @@ While TDD is about the process of writing tests first, this course focuses on th
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need testing experience?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -119,7 +119,7 @@ Basic understanding of unit testing is helpful but not required. We'll cover the
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Can I apply these principles to existing code?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -129,7 +129,7 @@ Absolutely! You'll learn strategies for gradually improving testability in exist
 </div>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">

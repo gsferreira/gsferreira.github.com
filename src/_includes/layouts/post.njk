@@ -47,17 +47,17 @@ layout: default
     <header class="not-prose mb-16">
       <div class="flex items-center gap-6 mb-4">
         {% if category %}
-        <span class="inline-flex items-center px-3 py-0.5 text-[13px] bg-black text-white rounded-full dark:bg-white dark:text-black">
+        <span class="inline-flex items-center px-3 py-0.5 text-eyebrow bg-black text-white rounded-full dark:bg-white dark:text-black">
           {{category}}
         </span>
         {% endif %}
 
-        <div class="text-[15px] text-charcoal-80 dark:text-charcoal-40">
+        <div class="text-meta text-charcoal-80 dark:text-charcoal-40">
           <time datetime="{{ page.date | htmlDate }}">{{ page.date | readableDate }}</time> · <span aria-hidden="true">7 min read</span>
         </div>
       </div>
 
-      <h1 class="text-[2.5rem] font-medium leading-tight mb-4 text-charcoal dark:text-white">{{ title }}</h1>
+      <h1 class="text-h3 lg:text-h2 mb-4 text-charcoal dark:text-white">{{ title }}</h1>
     </header>
 
     {{ content | safe }}

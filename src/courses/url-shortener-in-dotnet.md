@@ -78,7 +78,7 @@ You'll have the skills to confidently lead projects from conception to productio
 
 <div class="space-y-4">
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -87,7 +87,7 @@ This course is perfect for .NET developers who want to learn how to build and de
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What technologies will we use?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -96,7 +96,7 @@ We'll use modern .NET technologies including ASP.NET Core, Azure services (Front
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need Azure experience?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -105,7 +105,7 @@ No prior Azure experience is required. We'll cover everything from basics to adv
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Will this work for non-Azure cloud providers?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -114,7 +114,7 @@ While we use Azure in the course, the principles and patterns we teach are appli
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 How is this different from other .NET courses?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -123,7 +123,7 @@ Most courses focus only on coding. This course covers the entire software lifecy
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Is the code available on GitHub?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -133,7 +133,7 @@ Yes! You get access to the complete source code, including all infrastructure te
 </div>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">

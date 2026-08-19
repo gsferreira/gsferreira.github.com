@@ -47,7 +47,7 @@ You still do the engineering. This is about the tool getting out of your way.
 
 <div class="space-y-4">
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -56,7 +56,7 @@ Developers who want to use Claude Code properly. Whether you've never opened it,
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need to know C# to take this course?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -65,7 +65,7 @@ No. Claude Code doesn't care about your language, and neither does this course. 
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Will this still be relevant as Claude Code changes?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -74,7 +74,7 @@ The tool moves fast. That's why the course focuses on how context, cost, and wor
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need a paid Claude subscription?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
@@ -83,7 +83,7 @@ You'll need access to Claude Code to follow along on your own machine. The cours
 </details>
 
 <details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-semibold text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
 <div class="pb-6 text-charcoal-80 dark:text-charcoal-20">

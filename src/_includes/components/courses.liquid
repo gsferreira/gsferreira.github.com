@@ -1,7 +1,7 @@
 <!-- Courses Section -->
 <section id="courses" class="bg-offwhite py-20 dark:bg-black" aria-labelledby="courses-heading">
   <div class="max-w-3xl mx-auto text-center mb-12">
-    <h2 id="courses-heading" class="text-3xl font-semibold mb-4 dark:text-white">Courses</h2>
+    <h2 id="courses-heading" class="text-h3 lg:text-h2 mb-4 dark:text-white">Courses</h2>
     <p class="text-lg text-charcoal-80 dark:text-charcoal-20">Level up your coding, design, and leadership skills with these hands-on, real-world learning experiences.</p>
   </div>
   <div class="max-w-5xl mx-auto grid gap-8 sm:grid-cols-2 lg:grid-cols-3">
@@ -14,7 +14,7 @@
             <span class="bg-black text-white dark:bg-white dark:text-black px-2 py-1 rounded-full text-xs" aria-label="Featured course">Featured</span>
           {% endif %}
         </div>
-        <h3 class="text-lg font-semibold mb-2 dark:text-white">{{ course.data.title }}</h3>
+        <h3 class="text-card mb-2 dark:text-white">{{ course.data.title }}</h3>
         <p class="text-charcoal-80 mb-4 dark:text-charcoal-20">{{ course.data.description }}</p>
         <div class="flex items-center gap-2 text-xs text-charcoal-80 mb-6 dark:text-charcoal-20">
           <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="h-4 w-4" aria-hidden="true">
@@ -36,12 +36,12 @@
           <span class="text-sm text-charcoal-80 dark:text-charcoal-20" aria-hidden="true">({{ course.data.reviewCount }})</span>
         </div>
         {% endif %}
-        <a href="{{ course.url }}" class="mt-auto inline-block w-full px-0 py-3 bg-black text-white rounded-full font-medium text-center shadow hover:bg-charcoal-80 dark:bg-white dark:text-black dark:hover:bg-offwhite transition">Learn more about the Course</a>
+        <a href="{{ course.url }}" class="mt-auto inline-block w-full px-0 py-3 bg-black text-white rounded-full font-semibold text-center shadow hover:bg-charcoal-80 dark:bg-white dark:text-black dark:hover:bg-offwhite transition">Learn more about the Course</a>
       </article>
     {% endfor %}
   </div>
   <div class="text-center mt-12">
-    <a href="/courses" class="inline-flex items-center px-6 py-3 text-sm font-medium text-charcoal-80 bg-white border border-charcoal-20 rounded-full hover:bg-white dark:bg-charcoal-80 dark:border-charcoal-80 dark:text-white dark:hover:bg-charcoal-60 transition">
+    <a href="/courses" class="inline-flex items-center px-6 py-3 text-sm font-semibold text-charcoal-80 bg-white border border-charcoal-20 rounded-full hover:bg-white dark:bg-charcoal-80 dark:border-charcoal-80 dark:text-white dark:hover:bg-charcoal-60 transition">
       View All Courses
       <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="w-4 h-4 ml-2" aria-hidden="true">
         <path d="M5 12h14"></path>
