@@ -51,56 +51,56 @@ This isn't fantasy. This is what Clean Code delivers.
 ## Frequently Asked Questions
 
 <div class="space-y-4">
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 This course is perfect for C# developers at any level who want to write more maintainable code. Whether you're a junior developer looking to build good habits early, or a seasoned programmer wanting to level up your code quality, you'll find valuable insights here.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need any prior experience to take this course?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 Basic C# knowledge is required. You should be comfortable with fundamental concepts like classes, methods, and basic syntax. However, you don't need any prior experience with clean code principles.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 How is this different from other Clean Code courses?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 While many courses focus on theory, this course is hands-on and practical. You'll see real C# code examples, common mistakes, and step-by-step refactoring. Plus, all examples are in modern C#, not Java or other languages.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Will this work with my existing codebase?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 Absolutely! The principles you'll learn can be applied gradually to any codebase. You'll learn strategies for improving existing code without having to rewrite everything from scratch.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 How long do I have access to the course?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 You get lifetime access to the course and all future updates. This includes any new content we add or improvements we make to existing lessons.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>

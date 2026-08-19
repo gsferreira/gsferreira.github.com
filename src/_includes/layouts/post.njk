@@ -38,7 +38,7 @@ layout: default
 
 <div class="max-w-3xl mx-auto px-4 pt-16">
   <nav aria-label="Breadcrumb" class="mb-8">
-    <a href="/blog" class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
+    <a href="/blog" class="inline-flex items-center text-sm text-charcoal-80 hover:text-charcoal dark:text-charcoal-40 dark:hover:text-white">
       ← Back to blog
     </a>
   </nav>
@@ -52,12 +52,12 @@ layout: default
         </span>
         {% endif %}
 
-        <div class="text-[15px] text-gray-500 dark:text-gray-400">
+        <div class="text-[15px] text-charcoal-80 dark:text-charcoal-40">
           <time datetime="{{ page.date | htmlDate }}">{{ page.date | readableDate }}</time> · <span aria-hidden="true">7 min read</span>
         </div>
       </div>
 
-      <h1 class="text-[2.5rem] font-medium leading-tight mb-4 text-gray-900 dark:text-white">{{ title }}</h1>
+      <h1 class="text-[2.5rem] font-medium leading-tight mb-4 text-charcoal dark:text-white">{{ title }}</h1>
     </header>
 
     {{ content | safe }}

@@ -65,66 +65,66 @@ This isn't fantasy. This is what OpenTelemetry delivers.
 ## Frequently Asked Questions
 
 <div class="space-y-4">
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 This course is designed for .NET developers who want to implement proper observability in their applications. It's perfect for developers and DevOps engineers working with distributed systems or microservices. It's specifically designed for those who are just starting with OpenTelemetry
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need prior observability experience?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 No prior observability experience is needed. We'll start with the basics and progressively move to advanced topics. Basic .NET knowledge is required though.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What observability tools will we use?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 We'll use OpenTelemetry with popular backends like Jaeger for traces, Prometheus for metrics, and Loki for logs. However, the principles you learn will work with any observability backend.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Will this work with my existing applications?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 Yes! You'll learn both how to add OpenTelemetry to existing applications and how to design new applications with observability in mind. We cover both automatic and manual instrumentation.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Does this cover cloud-native applications?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 Absolutely! We'll cover observability in cloud environments, including containerized applications and Kubernetes deployments. You'll learn best practices for cloud-native observability.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What if my team uses different observability tools?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 OpenTelemetry is vendor-neutral and supports multiple backends. The concepts you learn will apply regardless of your chosen observability backend, and you can easily export data to different systems.
 </div>
 </details>
 </div>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>

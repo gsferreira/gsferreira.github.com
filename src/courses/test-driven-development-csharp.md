@@ -97,47 +97,47 @@ By the end, you'll have both the mindset and practical skills to make TDD part o
 ## Frequently Asked Questions
 
 <div class="space-y-4">
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 This course is designed for C# developers who want to master Test-Driven Development. It's ideal for developers who are either new to TDD or have tried it before but struggled to make it work in real projects.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need any prior experience to take this course?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 You should have intermediate-level C# experience and basic understanding of unit testing concepts. You don't need prior TDD experience, but familiarity with writing basic unit tests will help.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What testing frameworks will we use?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 We'll primarily use xUnit.NET, along with popular tools like NSubstitute, Testcontainers and FluentAssertions. However, the principles you'll learn can be applied with any testing framework.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Can I apply TDD to legacy code?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 Yes! We have a dedicated section on applying TDD to existing codebases. You'll learn techniques for gradually introducing tests to legacy code without having to rewrite everything.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>

@@ -91,48 +91,48 @@ By the end, you'll instinctively know how to write testable code from the start 
 ## Frequently Asked Questions
 
 <div class="space-y-4">
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 This course is for C# developers who want to write code that's easier to test. Whether you're struggling with testing your current code or want to learn how to write more testable code from the start, this course is for you.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 How is this different from a TDD course?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 While TDD is about the process of writing tests first, this course focuses on the design principles that make code testable. You'll learn how to structure your code so it's easy to test, regardless of whether you practice TDD or not.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need testing experience?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 Basic understanding of unit testing is helpful but not required. We'll cover the fundamentals of testing as needed, focusing more on how to design testable code.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Can I apply these principles to existing code?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 Absolutely! You'll learn strategies for gradually improving testability in existing codebases, identifying common anti-patterns, and refactoring them into testable designs.
 </div>
 </details>
 </div>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>

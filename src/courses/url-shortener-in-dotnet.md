@@ -77,66 +77,66 @@ You'll have the skills to confidently lead projects from conception to productio
 ## Frequently Asked Questions
 
 <div class="space-y-4">
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What is the target audience for this course?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 This course is perfect for .NET developers who want to learn how to build and deploy production-ready applications. It's ideal for developers who are comfortable with coding but want to master the full deployment pipeline.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What technologies will we use?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 We'll use modern .NET technologies including ASP.NET Core, Azure services (Front Door, CosmosDB, Redis), GitHub Actions for CI/CD, and Azure Bicep for infrastructure as code. Everything is chosen to reflect real-world production requirements.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Do I need Azure experience?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 No prior Azure experience is required. We'll cover everything from basics to advanced topics. You will need an Azure subscription to follow along with the deployments. While there will be some costs involved in running the services, the course's GitHub repository includes detailed recommendations on how to keep costs under control and which services to turn off when not in use.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Will this work for non-Azure cloud providers?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 While we use Azure in the course, the principles and patterns we teach are applicable to any cloud provider. You'll learn universal concepts about system design and scalability.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 How is this different from other .NET courses?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 Most courses focus only on coding. This course covers the entire software lifecycle - from initial coding to production deployment, including security, monitoring, and maintenance.
 </div>
 </details>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 Is the code available on GitHub?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 Yes! You get access to the complete source code, including all infrastructure templates and deployment scripts. Perfect for reference as you build your own projects.
 </div>
 </details>
 </div>
 
-<details class="bg-gray-50 dark:bg-gray-900 rounded-2xl px-8 transition-colors">
-<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-gray-900 dark:text-white hover:no-underline transition-colors">
+<details class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl px-8 transition-colors">
+<summary class="flex flex-1 items-center justify-between py-6 text-left font-medium text-charcoal dark:text-white hover:no-underline transition-colors">
 What if I get stuck or have questions?
 </summary>
-<div class="pb-6 text-gray-600 dark:text-gray-300">
+<div class="pb-6 text-charcoal-80 dark:text-charcoal-20">
 The course includes detailed explanations. Plus, you get access to our community, where you can ask questions and share experiences with other students. In any case, you can always reach out to me.
 </div>
 </details>
