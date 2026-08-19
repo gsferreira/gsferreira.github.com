@@ -5,6 +5,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     <meta name="description" content="{% if description %}{{ description }}{% else %}Your site description{% endif %}" />
     <meta name="generator" content="{{ eleventy.generator }}">
+    <meta name="theme-color" content="#F6F4F1" media="(prefers-color-scheme: light)">
+    <meta name="theme-color" content="#1A1A1A" media="(prefers-color-scheme: dark)">
+    <script>
+      // Must stay blocking and ahead of the stylesheet to avoid a flash of the
+      // light surface for visitors who prefer dark.
+      (function () {
+        try {
+          var t = localStorage.getItem('theme');
+          if (t === 'dark' || (!t && matchMedia('(prefers-color-scheme: dark)').matches)) {
+            document.documentElement.classList.add('dark');
+          }
+        } catch (e) {}
+      })();
+    </script>
     <base href="{{ page.url }}">
     <link rel="canonical" href="{{ site.url }}{{ page.url }}">
 
@@ -36,24 +50,27 @@
         position: absolute;
         top: -40px;
         left: 6px;
-        background: #000;
-        color: #fff;
-        padding: 8px;
+        background: #1A1A1A;
+        color: #FFFFFF;
+        padding: 8px 16px;
         text-decoration: none;
-        border-radius: 4px;
+        border-radius: 9999px;
         z-index: 9999;
+        font-family: inherit;
         font-size: 14px;
+        line-height: 20px;
+        font-weight: 600;
       }
       .skip-link:focus {
         top: 6px;
       }
       /* Improved focus styles */
       :focus-visible {
-        outline: 2px solid #2563eb;
+        outline: 2px solid #1A1A1A;
         outline-offset: 2px;
       }
       .dark :focus-visible {
-        outline-color: #60a5fa;
+        outline-color: #FFFFFF;
       }
     </style>
   </head>
@@ -245,12 +262,10 @@
           }
         }
 
-        // Check initial theme
-        if (localStorage.getItem('theme') === 'dark' || (!localStorage.getItem('theme') && window.matchMedia('(prefers-color-scheme: dark)').matches)) {
-          setTheme(true);
-        } else {
-          setTheme(false);
-        }
+        // Initial state is set by the blocking script in <head>. Only sync the
+        // toggle's label here, so localStorage is written on explicit choice only.
+        themeToggle.setAttribute('aria-label',
+          root.classList.contains('dark') ? 'Switch to light mode' : 'Switch to dark mode');
 
         // Toggle theme on click
         themeToggle.addEventListener('click', () => {

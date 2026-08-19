@@ -1,25 +1,25 @@
 feed {
     max-width: 65ch;
     margin: 0 auto;
-    font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+    font-family: Inter, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     line-height: 1.6;
     padding: 4rem 1.5rem;
-    color: #1a1a1a;
-    background: #fff;
+    color: #1A1A1A;
+    background: #F6F4F1;
   }
   
   title {
     display: block;
     font-size: 2.5rem;
-    font-weight: 700;
+    font-weight: 600;
     margin-bottom: 1rem;
-    color: #000;
+    color: #1A1A1A;
   }
   
   subtitle {
     display: block;
     font-size: 1.25rem;
-    color: #666;
+    color: #484848;
     margin-bottom: 3rem;
     line-height: 1.5;
   }
@@ -27,7 +27,7 @@ feed {
   author {
     display: block;
     margin: 2rem 0;
-    color: #666;
+    color: #484848;
     font-size: 0.9rem;
   }
   
@@ -35,7 +35,7 @@ feed {
     display: block;
     margin: 3rem 0;
     padding-bottom: 1rem;
-    border-bottom: 1px solid #eee;
+    border-bottom: 1px solid #D1D1D1;
   }
   
   entry:last-child {
@@ -48,13 +48,13 @@ feed {
   }
   
   entry title a {
-    color: #000;
+    color: #1A1A1A;
     text-decoration: none;
     transition: color 0.2s ease;
   }
   
   entry title a:hover {
-    color: #666;
+    color: #484848;
   }
   
   content {
