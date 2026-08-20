@@ -27,23 +27,24 @@ module.exports = {
         charcoal: {
           DEFAULT: '#1A1A1A', // text primary on light, page surface on dark
           80: '#484848',      // text secondary on light, raised surface on dark
-          60: '#757575',      // large text and headings only (4.20:1 on Off White)
+          60: '#757575',      // large text and headings only (4.61:1 on White)
           40: '#A3A3A3',      // decorative; as text only on the dark page base
           20: '#D1D1D1',      // rules, borders; text secondary on dark
+          10: '#E8E8E8',      // light hover fill
+          5: '#F4F4F4',       // subtle light band
         },
-        offwhite: '#F6F4F1',  // light page surface
 
         // Safety net. Tailwind's default gray is blue-cast, and
         // theme.extend.colors.gray deep-merges per shade, so every shade has
         // to be listed or the omitted ones stay cool. Exact brand values sit
         // on 200/400/500/700/900; the rest are neutral interpolations.
         gray: {
-          50: '#F6F4F1',  // Off White
-          100: '#EDEBE7',
+          50: '#F4F4F4',  // Charcoal 5%
+          100: '#E8E8E8', // Charcoal 10%
           200: '#D1D1D1', // Charcoal 20%
           300: '#BDBDBD',
           400: '#A3A3A3', // Charcoal 40%
-          500: '#757575', // Charcoal 60%. Below AA on Off White by design; see notes.
+          500: '#757575', // Charcoal 60%. 4.61:1 on White; large text only.
           600: '#5E5E5E',
           700: '#484848', // Charcoal 80%
           800: '#333333',
@@ -84,7 +85,7 @@ module.exports = {
             // Set the variable, not a literal `color`. A literal here would win
             // over the invert block, which only redefines the variable, and
             // anything inheriting from the root (list items) would stay dark.
-            '--tw-prose-body': '#484848', // Charcoal 80%, 8.33:1 on Off White
+            '--tw-prose-body': '#484848', // Charcoal 80%, 9.15:1 on White
             fontSize: '1.125rem',
             lineHeight: '1.75rem',
             h1: { color: '#1A1A1A', fontSize: '2.5rem',   lineHeight: '3rem',     letterSpacing: '-0.01em', fontWeight: '600' },
@@ -121,10 +122,10 @@ module.exports = {
             'thead th': { color: '#1A1A1A' },
             'tbody tr': { borderBottomColor: '#D1D1D1' },
             figcaption: { color: '#484848', fontSize: '0.875rem', lineHeight: '1.25rem' },
-            // Code is a raised surface: White on the Off White page, with a
-            // Charcoal 20% hairline.
+            // Code is an inset surface: Charcoal 5% on the White page, with a
+            // Charcoal 20% hairline. White would vanish against White.
             pre: {
-              backgroundColor: '#FFFFFF',
+              backgroundColor: '#F4F4F4',
               color: '#1A1A1A',
               padding: '1.5rem',
               borderRadius: '16px',
@@ -146,7 +147,7 @@ module.exports = {
             },
             code: {
               color: '#1A1A1A',
-              backgroundColor: '#FFFFFF',
+              backgroundColor: '#F4F4F4',
               border: '1px solid #D1D1D1',
               borderRadius: '4px',
               paddingLeft: '0.375rem',

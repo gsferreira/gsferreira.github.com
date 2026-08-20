@@ -2,7 +2,7 @@
 layout: default.liquid
 ---
 
-<section class="relative bg-offwhite dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
+<section class="relative bg-white dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
   <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="grid lg:grid-cols-2 gap-16 items-start">
       <div class="space-y-6">
@@ -84,7 +84,7 @@ layout: default.liquid
           </ul>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <a href="#upcoming" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full px-8 py-3 font-semibold transition-colors">View Upcoming Sessions</a>
+          <a href="#upcoming" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-charcoal-10 text-white dark:text-black rounded-full px-8 py-3 font-semibold transition-colors">View Upcoming Sessions</a>
           <a href="mailto:gui@guiferreira.me" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 border-charcoal-20 dark:border-charcoal-80 text-charcoal dark:text-white hover:bg-white dark:hover:bg-charcoal-60 rounded-full px-8 py-3 font-semibold transition-colors">Request Custom Workshop</a>
         </div>
         <div class="bg-white border border-charcoal-20 dark:bg-charcoal-80 rounded-2xl p-6 transition-colors">
@@ -103,7 +103,7 @@ layout: default.liquid
   </div>
 </section>
 
-<section class="py-12 lg:py-16 bg-offwhite dark:bg-black transition-colors">
+<section class="py-12 lg:py-16 bg-white dark:bg-black transition-colors">
   <div class="mx-auto w-full max-w-3xl px-6 lg:px-16">
     <div class="prose max-w-none dark:prose-invert">
       {{ content | safe }}
@@ -180,7 +180,7 @@ layout: default.liquid
 </section>
 
 {% if testimonials %}
-<section class="py-12 lg:py-16 bg-offwhite dark:bg-black transition-colors">
+<section class="py-12 lg:py-16 bg-white dark:bg-black transition-colors">
   <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="space-y-16">
       <div class="text-center space-y-6">
@@ -264,7 +264,7 @@ layout: default.liquid
 {% endif %}
 
 {% if related_workshops %}
-<section class="py-24 lg:py-32 bg-offwhite dark:bg-black border-t border-charcoal-20 dark:border-charcoal-80 transition-colors">
+<section class="py-24 lg:py-32 bg-white dark:bg-black border-t border-charcoal-20 dark:border-charcoal-80 transition-colors">
   <div class="mx-auto w-full max-w-6xl px-6 lg:px-16">
     <div class="space-y-16">
       <h2 class="text-h3 text-charcoal dark:text-white transition-colors">Related workshops</h2>
@@ -306,7 +306,7 @@ layout: default.liquid
                 <span>{{ workshop.level }}</span>
               </div>
             </div>
-            <a href="{{ workshop.url }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-offwhite text-white dark:text-black rounded-full py-2 font-semibold transition-colors">Learn more about the Workshop</a>
+            <a href="{{ workshop.url }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 px-4 w-full bg-black dark:bg-white hover:bg-charcoal-80 dark:hover:bg-charcoal-10 text-white dark:text-black rounded-full py-2 font-semibold transition-colors">Learn more about the Workshop</a>
           </div>
         </article>
         {% endfor %}
