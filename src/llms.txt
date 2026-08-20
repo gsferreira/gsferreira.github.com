@@ -27,9 +27,12 @@ Gui (Guilherme) Ferreira is a Microsoft MVP, course author, workshop facilitator
 
 ## Workshops
 
-- [Test-Driven Development in C#](https://guiferreira.me/workshops/test-driven-development-csharp/): Hands-on TDD workshop
-- [Designing Tests That Survive Refactorings](https://guiferreira.me/workshops/designing-tests-that-survive-refactorings/): Build maintainable test suites
-- [Build a Full-Stack AI App with .NET](https://guiferreira.me/workshops/build-a-full-stack-ai-app-with-dotnet-cohort/): Cohort-based learning experience
+Workshops run through Black Lab Studios. Full outlines and booking live there. guiferreira.me carries the public calendar at https://guiferreira.me/workshops/.
+
+- [Build Your First AI Agent in .NET](https://blacklabstudios.com/workshops/build-your-first-ai-agent-in-dotnet/): Build a working AI agent in .NET with tool calling and memory
+- [Designing Tests That Survive Refactorings](https://blacklabstudios.com/workshops/designing-tests-that-survive-refactorings/): Build maintainable test suites
+- [Mastering Test-Driven Development in C#](https://blacklabstudios.com/workshops/mastering-tdd-in-csharp/): Hands-on TDD workshop
+- [Build a Full-Stack AI App with .NET](https://www.aipowereddotnet.school/): Cohort-based learning experience
 
 ## Content Topics
 
