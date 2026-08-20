@@ -6,11 +6,11 @@ description: Privacy policy for Gui Ferreira's website
 
 # Privacy Policy
 
-**Last updated: 01-07-2025**
+**Last updated: 20-08-2026**
 
 ## Introduction
 
-This Privacy Policy describes how Guilherme Ferreira ("Gui Ferreira", "we", "us", or "our") collects, uses, and shares information when you visit our website guiferreira.me (the "Website").
+This Privacy Policy describes how Black Lab Studios, Lda ("Black Lab Studios", "we", "us", or "our"), a company registered in Portugal under NIF 519267532, collects, uses, and shares information when you visit our website guiferreira.me (the "Website"). Black Lab Studios is the data controller for the purposes of this policy. The Website is published under the Gui Ferreira brand.
 
 We are committed to protecting your privacy and ensuring transparency about any data processing that occurs when you interact with our Website.
 
@@ -82,7 +82,7 @@ Depending on your location, you may have certain rights regarding your personal 
 - Right to opt-out of the sale of personal information (we do not sell personal information)
 - Right to non-discrimination
 
-To exercise any of these rights, please contact us at gui@guiferreira.me.
+To exercise any of these rights, please contact us at hello@blacklabstudios.com.
 
 ## International Data Transfers
 
@@ -115,8 +115,9 @@ We may update this Privacy Policy from time to time. We will notify you of any c
 
 If you have any questions or concerns about this Privacy Policy or our data practices, please contact us at:
 
-**Guilherme Ferreira**  
-Email: gui@guiferreira.me  
+**Black Lab Studios, Lda**  
+NIF: 519267532  
+Email: hello@blacklabstudios.com  
 Website: guiferreira.me
 
 ---

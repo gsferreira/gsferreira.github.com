@@ -5,11 +5,11 @@ description: Terms of use for Gui Ferreira's website
 ---
 # Terms of Use
 
-**Last updated: 01-07-2025**
+**Last updated: 20-08-2026**
 
 ## 1. Agreement to Terms
 
-These Terms of Use ("Terms") govern your use of the website guiferreira.me (the "Website") operated by Guilherme Ferreira ("Gui Ferreira", "we", "us", or "our").
+These Terms of Use ("Terms") govern your use of the website guiferreira.me (the "Website"), operated by Black Lab Studios, Lda ("Black Lab Studios", "we", "us", or "our"), a company registered in Portugal under NIF 519267532. The Website is published under the Gui Ferreira brand.
 
 By accessing or using our Website, you agree to be bound by these Terms. If you do not agree with any part of these Terms, you should not use our Website.
 
@@ -39,7 +39,7 @@ Through our Website, we offer information about our professional services, inclu
 The Website serves as an informational platform and point of contact for potential clients interested in engaging our services.
 
 ### 3.2 Service Engagement
-To engage our services, interested parties must contact us via email at gui@guiferreira.me. All service agreements are subject to separate contractual arrangements made directly between the client and Guilherme Ferreira.
+To engage our services, interested parties must contact us via email at hello@blacklabstudios.com. All service agreements are subject to separate contractual arrangements made directly between the client and Black Lab Studios, Lda.
 
 ### 3.3 No Refunds
 All services are provided on a no-refund basis. Once services are contracted and payment is made, no refunds will be issued.
@@ -64,7 +64,7 @@ Our Website features a blog containing articles and insights. While you may read
 
 ## 6. Privacy
 
-Your use of our Website is also governed by our Privacy Policy, which can be found at [Privacy Policy URL]. By using the Website, you consent to the practices described in the Privacy Policy.
+Your use of our Website is also governed by our Privacy Policy, which can be found at [/privacy](/privacy). By using the Website, you consent to the practices described in the Privacy Policy.
 
 ## 7. Disclaimers
 
@@ -79,7 +79,7 @@ Our Website may contain links to third-party websites. These links are provided 
 
 ## 8. Limitation of Liability
 
-To the fullest extent permitted by applicable law, Guilherme Ferreira shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:
+To the fullest extent permitted by applicable law, Black Lab Studios, Lda shall not be liable for any indirect, incidental, special, consequential, or punitive damages, or any loss of profits or revenues, whether incurred directly or indirectly, or any loss of data, use, goodwill, or other intangible losses resulting from:
 
 - Your use of or inability to use the Website
 - Any unauthorized access to or use of our servers and/or any personal information stored therein
@@ -89,7 +89,7 @@ To the fullest extent permitted by applicable law, Guilherme Ferreira shall not 
 
 ## 9. Indemnification
 
-You agree to indemnify, defend, and hold harmless Guilherme Ferreira from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorney's fees and costs, arising out of or in any way connected with your access to or use of the Website or your violation of these Terms.
+You agree to indemnify, defend, and hold harmless Black Lab Studios, Lda from and against any claims, liabilities, damages, losses, and expenses, including reasonable attorney's fees and costs, arising out of or in any way connected with your access to or use of the Website or your violation of these Terms.
 
 ## 10. Governing Law
 
@@ -109,14 +109,15 @@ If any provision of these Terms is held to be invalid or unenforceable, the rema
 
 ## 14. Entire Agreement
 
-These Terms, together with our Privacy Policy, constitute the entire agreement between you and Guilherme Ferreira regarding the use of the Website.
+These Terms, together with our Privacy Policy, constitute the entire agreement between you and Black Lab Studios, Lda regarding the use of the Website.
 
 ## 15. Contact Information
 
 If you have any questions about these Terms, please contact us at:
 
-**Guilherme Ferreira**  
-Email: gui@guiferreira.me  
+**Black Lab Studios, Lda**  
+NIF: 519267532  
+Email: hello@blacklabstudios.com  
 Website: guiferreira.me
 
 ---

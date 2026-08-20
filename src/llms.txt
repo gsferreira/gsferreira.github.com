@@ -1,16 +1,16 @@
 # Gui Ferreira
 llms.txt — Purpose: Help language models understand and surface my work accurately.
 
-> Minimalist Software Craftsman, Developer Educator, and Tech Mentor
+> Software engineer educator, speaker, Microsoft MVP
 
-Last updated: 2026-01-20
+Last updated: 2026-08-20
 
-Gui (Guilherme) Ferreira is a Microsoft MVP, course author, workshop facilitator, and speaker who helps developers grow through technology. His focus is on bringing simplicity to complex topics in software development, particularly in the .NET ecosystem.
+Guilherme "Gui" Ferreira is a Microsoft MVP and the founder of Black Lab Studios. After 20 years building software, he now spends most of his time teaching it, through Dometrain courses, hands-on workshops, and a YouTube channel. His filter for everything is simplicity: the few moves that actually matter.
 
 ## About
 
 - Full name: Guilherme Ferreira (goes by "Gui")
-- Role: Developer Educator, Course Author, Workshop Facilitator, Speaker
+- Role: Founder of Black Lab Studios, Software Engineer Educator, Course Author, Workshop Facilitator, Speaker
 - Location: Porto, Portugal
 - Focus: Software architecture, testing, clean code, .NET development
 - Philosophy: "Simplicity is not easy, but it is possible and changes your life"
@@ -27,14 +27,17 @@ Gui (Guilherme) Ferreira is a Microsoft MVP, course author, workshop facilitator
 
 ## Workshops
 
-- [Test-Driven Development in C#](https://guiferreira.me/workshops/test-driven-development-csharp/): Hands-on TDD workshop
-- [Designing Tests That Survive Refactorings](https://guiferreira.me/workshops/designing-tests-that-survive-refactorings/): Build maintainable test suites
-- [Build a Full-Stack AI App with .NET](https://guiferreira.me/workshops/build-a-full-stack-ai-app-with-dotnet-cohort/): Cohort-based learning experience
+Workshops run through Black Lab Studios. Full outlines and booking live there. guiferreira.me carries the public calendar at https://guiferreira.me/workshops/.
+
+- [Build Your First AI Agent in .NET](https://blacklabstudios.com/workshops/build-your-first-ai-agent-in-dotnet/): Build a working AI agent in .NET with tool calling and memory
+- [Designing Tests That Survive Refactorings](https://blacklabstudios.com/workshops/designing-tests-that-survive-refactorings/): Build maintainable test suites
+- [Mastering Test-Driven Development in C#](https://blacklabstudios.com/workshops/mastering-tdd-in-csharp/): Hands-on TDD workshop
+- [Build a Full-Stack AI App with .NET](https://www.aipowereddotnet.school/): Cohort-based learning experience
 
 ## Content Topics
 
 Gui writes and speaks about:
-- Minimalism for developers (applying minimalist principles to software development)
+- Simplicity in software (cutting complexity, doing less)
 - Clean Code and software craftsmanship
 - Test-Driven Development (TDD)
 - Software testing strategies and xUnit
