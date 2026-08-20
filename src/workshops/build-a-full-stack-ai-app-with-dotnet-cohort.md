@@ -94,14 +94,6 @@ curriculum:
         - Integration with AI applications
         - Production deployment considerations
 
-upcomingSessions:
-  - date: "April 6, 2026"
-    location: "Online"
-    venue: "Live sessions Thursdays 5-6pm WET (recorded within 24 hours)"
-    spotsLeft: "Limited"
-    available: true
-    registrationUrl: "https://aipowereddotnet.school/"
-
 testimonials:
   - quote: "If you are a .NET developer building APIs or backend systems, this will help you integrate AI into real-world applications with confidence because it provides practical, end-to-end guidance using modern .NET, proper architecture, and production-ready patterns."
     author: Hasan Javed
