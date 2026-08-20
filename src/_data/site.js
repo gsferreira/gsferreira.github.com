@@ -1,5 +1,5 @@
 export default {
   url: "https://guiferreira.me",
   title: "Gui Ferreira",
-  description: "Minimalist Software Craftsman"
+  description: "Software engineer educator, speaker, Microsoft MVP"
 }; 
