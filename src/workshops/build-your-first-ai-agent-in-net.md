@@ -94,6 +94,12 @@ upcomingSessions:
     spotsLeft: "Available"
     available: true
     registrationUrl: "https://ndcporto.com/agenda/build-your-first-ai-agent-in-net/81f59dbbf411"
+  - date: "January 25-26, 2027"
+    location: "London, United Kingdom"
+    venue: "NDC London"
+    spotsLeft: "Available"
+    available: true
+    registrationUrl: "https://ndclondon.com/workshops/build-your-first-ai-agent-in-net/78960409ea5f"
 ---
 
 Companies are now deploying agents that book meetings, process invoices, answer support tickets, and make decisions. So it's time to learn how to build these systems.
