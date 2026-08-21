@@ -157,6 +157,20 @@ export default function (eleventyConfig) {
     }).toISO();
   });
 
+  // Reading time from the rendered post. Prose runs at 220 wpm. Code blocks are
+  // pulled out of the word count first, because tokenising source as prose
+  // wildly overcounts, and charged a flat 15 seconds each instead.
+  eleventyConfig.addFilter("readingTime", (html) => {
+    const source = String(html || "");
+    const codeBlocks = (source.match(/<pre[\s\S]*?<\/pre>/g) || []).length;
+    const prose = source
+      .replace(/<pre[\s\S]*?<\/pre>/g, " ")
+      .replace(/<[^>]+>/g, " ")
+      .replace(/&[a-z#0-9]+;/gi, " ");
+    const words = prose.split(/\s+/).filter(Boolean).length;
+    return Math.max(1, Math.round(words / 220 + codeBlocks * 0.25));
+  });
+
   // Related posts.
   //
   // Scored from URL slugs rather than titles: slugs are already lowercased and

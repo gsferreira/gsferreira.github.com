@@ -57,7 +57,7 @@ layout: default
         {% endif %}
 
         <div class="text-[15px] text-gray-500 dark:text-gray-400">
-          <time datetime="{{ page.date | htmlDate }}">{{ page.date | readableDate }}</time> · <span aria-hidden="true">7 min read</span>
+          <time datetime="{{ page.date | htmlDate }}">{{ page.date | readableDate }}</time> · <span>{{ content | readingTime }} min read</span>
         </div>
       </div>
 
