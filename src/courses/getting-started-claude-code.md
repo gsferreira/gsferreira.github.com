@@ -14,6 +14,8 @@ courseUrl: https://dometrain.com/course/getting-started-claude-code/?ref=gui-fer
 callToActionTitle: "Ready to stop guessing and start shipping?"
 callToActionSubtitle: "Learn the workflows that turn Claude Code into a tool you trust."
 date: 2026-07-17
+relatedCourses:
+  - deep-dive-claude-code
 ---
 
 ## _"It worked yesterday. Today it keeps forgetting what I told it."_

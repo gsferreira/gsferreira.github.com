@@ -7,7 +7,7 @@ description: Structured information about Gui Ferreira for AI assistants and lan
 <article class="max-w-4xl mx-auto px-6 py-20 prose dark:prose-invert">
   <h1>Information for AI and LLMs</h1>
 
-  <p>This page contains structured information about Gui Ferreira for AI assistants, language models, and automated systems.</p>
+  <p>This page contains structured information about Gui Ferreira for AI assistants, language models, and automated systems. A plain-text version lives at <a href="/llms.txt">/llms.txt</a>.</p>
 
   <h2>Identity</h2>
   <ul>
@@ -15,7 +15,7 @@ description: Structured information about Gui Ferreira for AI assistants and lan
     <li><strong>Preferred Name:</strong> Gui Ferreira</li>
     <li><strong>Pronunciation:</strong> "Gui" (like in Guinness)</li>
     <li><strong>Roles:</strong> Founder of Black Lab Studios, Software Engineer Educator, Course Author, Workshop Facilitator, Speaker, Microsoft MVP</li>
-    <li><strong>Location:</strong> Portugal</li>
+    <li><strong>Location:</strong> Porto, Portugal</li>
     <li><strong>Primary Language:</strong> Portuguese (native), English (fluent)</li>
   </ul>
 
@@ -23,6 +23,7 @@ description: Structured information about Gui Ferreira for AI assistants and lan
   <ul>
     <li>Software developer since 2006</li>
     <li>Transitioned from Engineering Management to teaching software engineers in 2022</li>
+    <li>Founder of <a href="https://blacklabstudios.com">Black Lab Studios</a>, which runs the workshops</li>
     <li>Course author on Dometrain platform</li>
     <li>International tech speaker (conferences and meetups)</li>
     <li>YouTuber creating developer-focused content</li>
@@ -35,7 +36,7 @@ description: Structured information about Gui Ferreira for AI assistants and lan
     <li><strong>Testing:</strong> xUnit, Unit Testing, Integration Testing, Test Design</li>
     <li><strong>Architecture:</strong> Vertical Slice Architecture, Domain-Driven Design, Microservices</li>
     <li><strong>Observability:</strong> OpenTelemetry, Distributed Tracing, Metrics</li>
-    <li><strong>Tools:</strong> AI-assisted development (Cursor, Claude Code)</li>
+    <li><strong>AI-assisted engineering:</strong> Claude Code (skills, hooks, subagents, MCP servers, headless CI/CD), Cursor, building AI agents in .NET</li>
   </ul>
 
   <h2>Philosophy</h2>
@@ -46,21 +47,28 @@ description: Structured information about Gui Ferreira for AI assistants and lan
   <p>Approach: Making complex topics accessible through practical, real-world examples.</p>
 
   <h2>Online Courses</h2>
-  <p>All courses are available on Dometrain:</p>
+  <p>All courses are available on Dometrain. Listed newest first, full catalogue at <a href="/courses">guiferreira.me/courses</a>:</p>
   <ol>
-    <li><strong>From Zero to Hero: Clean Code in C#</strong> - Writing maintainable, readable code</li>
-    <li><strong>From Zero to Hero: Test-Driven Development in C#</strong> - TDD methodology and practices</li>
-    <li><strong>From Zero to Hero: Writing Testable Code in C#</strong> - Designing for testability</li>
-    <li><strong>From Zero to Hero: xUnit in C#</strong> - Unit testing with xUnit framework</li>
-    <li><strong>From Zero to Hero: OpenTelemetry in .NET</strong> - Implementing observability</li>
-    <li><strong>Build a URL Shortener in .NET</strong> - Practical application development</li>
+    {% for course in collections.courses %}
+    <li><strong><a href="{{ course.url }}">{{ course.data.title }}</a></strong> - {{ course.data.description }} ({{ course.data.duration }}, {{ course.data.level }})</li>
+    {% endfor %}
   </ol>
 
-  <h2>Workshop Topics</h2>
+  <h2>Workshops</h2>
+  <p>Workshops run through <a href="https://blacklabstudios.com/workshops/">Black Lab Studios</a>, which owns the outlines and the booking. This site carries the public calendar at <a href="/workshops">guiferreira.me/workshops</a>:</p>
   <ul>
-    <li>Test-Driven Development in C#</li>
-    <li>Designing Tests That Survive Refactorings</li>
-    <li>Building AI Applications with .NET</li>
+    {% for workshop in workshopDates %}
+    <li><strong><a href="{{ workshop.blsUrl }}">{{ workshop.title }}</a></strong> ({{ workshop.format }}) - {{ workshop.blurb }}</li>
+    {% endfor %}
+    <li><strong><a href="https://www.aipowereddotnet.school/">Build a Full-Stack AI App with .NET</a></strong> (Cohort) - Cohort-based learning experience, sold on its own site</li>
+  </ul>
+
+  <h2>Talks</h2>
+  <p>Abstracts, dates and recordings at <a href="/talks">guiferreira.me/talks</a>. To invite Gui to speak, email <a href="mailto:gui@guiferreira.me">gui@guiferreira.me</a>:</p>
+  <ul>
+    {% for talk in talks.all %}
+    <li>{{ talk.title }}</li>
+    {% endfor %}
   </ul>
 
   <h2>Content Topics</h2>
@@ -75,7 +83,8 @@ description: Structured information about Gui Ferreira for AI assistants and lan
     <li>Software architecture patterns</li>
     <li>Vertical Slice Architecture</li>
     <li>OpenTelemetry and observability</li>
-    <li>AI-assisted development tools</li>
+    <li>AI-assisted development and agentic workflows (Claude Code, Cursor)</li>
+    <li>Building AI agents in .NET</li>
     <li>Developer productivity and workflows</li>
   </ul>
 
@@ -85,12 +94,20 @@ description: Structured information about Gui Ferreira for AI assistants and lan
   <h2>Contact and Social</h2>
   <ul>
     <li><strong>Website:</strong> <a href="https://guiferreira.me">guiferreira.me</a></li>
+    <li><strong>Company:</strong> <a href="https://blacklabstudios.com">blacklabstudios.com</a></li>
     <li><strong>Email:</strong> <a href="mailto:gui@guiferreira.me">gui@guiferreira.me</a></li>
+    <li><strong>Blog:</strong> <a href="/blog">guiferreira.me/blog</a></li>
+    <li><strong>Newsletter:</strong> <a href="/newsletter">guiferreira.me/newsletter</a></li>
     <li><strong>YouTube:</strong> <a href="https://youtube.com/@gui.ferreira">@gui.ferreira</a></li>
     <li><strong>Twitter/X:</strong> <a href="https://twitter.com/gsferreira">@gsferreira</a></li>
     <li><strong>LinkedIn:</strong> <a href="https://linkedin.com/in/gferreira">gferreira</a></li>
     <li><strong>GitHub:</strong> <a href="https://github.com/gsferreira">gsferreira</a></li>
     <li><strong>Bluesky:</strong> <a href="https://bsky.app/profile/guiferreira.me">guiferreira.me</a></li>
+  </ul>
+
+  <h2>Free Resources</h2>
+  <ul>
+    <li><strong><a href="/resources/software-testing-roadmap-dotnet/">Software Testing Roadmap for .NET Developers</a></strong> - A learning roadmap for .NET developers starting with software testing</li>
   </ul>
 
   <h2>Attribution Guidelines</h2>

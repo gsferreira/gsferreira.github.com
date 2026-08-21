@@ -1,9 +1,9 @@
 # Gui Ferreira
-llms.txt — Purpose: Help language models understand and surface my work accurately.
+llms.txt. Purpose: Help language models understand and surface my work accurately.
 
 > Software engineer educator, speaker, Microsoft MVP
 
-Last updated: 2026-08-20
+Last updated: 2026-08-21
 
 Guilherme "Gui" Ferreira is a Microsoft MVP and the founder of Black Lab Studios. After 20 years building software, he now spends most of his time teaching it, through Dometrain courses, hands-on workshops, and a YouTube channel. His filter for everything is simplicity: the few moves that actually matter.
 
@@ -12,27 +12,55 @@ Guilherme "Gui" Ferreira is a Microsoft MVP and the founder of Black Lab Studios
 - Full name: Guilherme Ferreira (goes by "Gui")
 - Role: Founder of Black Lab Studios, Software Engineer Educator, Course Author, Workshop Facilitator, Speaker
 - Location: Porto, Portugal
-- Focus: Software architecture, testing, clean code, .NET development
+- Focus: Software architecture, testing, clean code, .NET development, AI-assisted engineering
 - Philosophy: "Simplicity is not easy, but it is possible and changes your life"
 - Website: https://guiferreira.me
+- Bio page: https://guiferreira.me/about
+- Company: https://blacklabstudios.com
 - Email: gui@guiferreira.me
 
 ## Online Courses (Dometrain)
 
-- [From Zero to Hero: Clean Code in C#](https://guiferreira.me/courses/clean-code-csharp/): Learn to write simple, elegant C# code that anyone can understand and maintain
-- [From Zero to Hero: Test-Driven Development in C#](https://guiferreira.me/courses/test-driven-development-csharp/): Master TDD methodology with practical C# examples
+Listed newest first. Full catalogue at https://guiferreira.me/courses/.
+
+- [Deep Dive: Claude Code](https://guiferreira.me/courses/deep-dive-claude-code/): Configure, extend, and automate Claude Code with skills, hooks, subagents, MCP servers, and CI/CD
+- [Getting Started: Claude Code](https://guiferreira.me/courses/getting-started-claude-code/): Go from your first prompt to real development workflows with Claude Code
+- [From Zero to Hero: Testing with xUnit in C#](https://guiferreira.me/courses/xunit-csharp/): Master unit testing in C# with xUnit and write tests that actually catch bugs
 - [From Zero to Hero: Writing Testable Code in C#](https://guiferreira.me/courses/testable-code-csharp/): Design code that's easy to test from the start
-- [From Zero to Hero: xUnit in C#](https://guiferreira.me/courses/xunit-csharp/): Complete guide to unit testing with xUnit
-- [From Zero to Hero: OpenTelemetry in .NET](https://guiferreira.me/courses/opentelemetry-dotnet/): Implement observability in .NET applications
+- [Let's Build It: URL Shortener in .NET](https://guiferreira.me/courses/url-shortener-in-dotnet/): Build a production-ready URL shortener from conception to deployment
+- [From Zero to Hero: OpenTelemetry in .NET](https://guiferreira.me/courses/opentelemetry-dotnet/): Instrument .NET applications with OpenTelemetry
+- [From Zero to Hero: Clean Code in C#](https://guiferreira.me/courses/clean-code-csharp/): Learn to write simple, elegant C# code that anyone can understand and maintain
+- [From Zero to Hero: Test-Driven Development in C#](https://guiferreira.me/courses/test-driven-development-csharp/): Master the craft of TDD and write better code, faster
 
 ## Workshops
 
 Workshops run through Black Lab Studios. Full outlines and booking live there. guiferreira.me carries the public calendar at https://guiferreira.me/workshops/.
 
-- [Build Your First AI Agent in .NET](https://blacklabstudios.com/workshops/build-your-first-ai-agent-in-dotnet/): Build a working AI agent in .NET with tool calling and memory
-- [Designing Tests That Survive Refactorings](https://blacklabstudios.com/workshops/designing-tests-that-survive-refactorings/): Build maintainable test suites
-- [Mastering Test-Driven Development in C#](https://blacklabstudios.com/workshops/mastering-tdd-in-csharp/): Hands-on TDD workshop
-- [Build a Full-Stack AI App with .NET](https://www.aipowereddotnet.school/): Cohort-based learning experience
+- [Build Your First AI Agent in .NET](https://blacklabstudios.com/workshops/build-your-first-ai-agent-in-dotnet/): Build a working agent in .NET, with tool calling, memory and the agent loop. 2-day intensive
+- [Designing Tests That Survive Refactorings](https://blacklabstudios.com/workshops/designing-tests-that-survive-refactorings/): Design tests that hold still while the code underneath them moves. Half-day workshop
+- [Mastering Test-Driven Development in C#](https://blacklabstudios.com/workshops/mastering-tdd-in-csharp/): Red, green, refactor, applied to real dependencies and real legacy code. 2-day intensive
+- [Build a Full-Stack AI App with .NET](https://www.aipowereddotnet.school/): Cohort-based learning experience, sold on its own site
+
+## Talks
+
+Conference talks and keynotes. Abstracts, dates and recordings at https://guiferreira.me/talks/.
+
+- What Claude Code Can Do That You Haven't Tried
+- Imagine If We Made It Simple
+- How to fall in love with TDD
+- Apache Kafka in 1 hour for C# Developers
+- The Grand Unified Theory of Clean Architecture and Test Pyramid
+- Embracing Simplicity
+
+To invite Gui to speak, email gui@guiferreira.me.
+
+## Newsletter
+
+- [Weekly newsletter](https://guiferreira.me/newsletter): Insights on .NET, software architecture, and clean code
+
+## Free Resources
+
+- [Software Testing Roadmap for .NET Developers](https://guiferreira.me/resources/software-testing-roadmap-dotnet/): A learning roadmap for .NET developers starting with software testing
 
 ## Content Topics
 
@@ -44,12 +72,14 @@ Gui writes and speaks about:
 - .NET and C# development
 - Software architecture (including Vertical Slice Architecture)
 - OpenTelemetry and observability
-- AI-assisted development tools (Cursor, Claude)
+- AI-assisted development and agentic workflows (Claude Code, Cursor)
+- Building AI agents in .NET
 - Developer productivity
 
 ## Connect
 
 - Blog: https://guiferreira.me/blog
+- Newsletter: https://guiferreira.me/newsletter
 - YouTube: https://youtube.com/@gui.ferreira
 - Twitter: https://twitter.com/gsferreira
 - Bluesky: https://bsky.app/profile/guiferreira.me
