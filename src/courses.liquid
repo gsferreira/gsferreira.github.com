@@ -3,6 +3,32 @@ layout: default
 title: Courses by Gui Ferreira
 description: Learn to code like an artist. Ship like a pro.
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "CollectionPage",
+  "@id": "{{ site.url }}/courses/#collection",
+  "name": {{ title | jsonify }},
+  "description": {{ description | jsonify }},
+  "url": "{{ site.url }}/courses/",
+  "isPartOf": { "@id": "{{ site.url }}/#website" },
+  "about": { "@id": "{{ site.url }}/#person" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {%- for course in collections.courses %}
+      {% unless forloop.first %},{% endunless %}{
+        "@type": "ListItem",
+        "position": {{ forloop.index }},
+        "url": "{{ site.url }}{{ course.url }}",
+        "name": {{ course.data.title | jsonify }}
+      }
+      {%- endfor %}
+    ]
+  }
+}
+</script>
+
 
 <section class="relative bg-white dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
   <div class="container mx-auto px-6 max-w-4xl">

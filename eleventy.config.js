@@ -157,6 +157,31 @@ export default function (eleventyConfig) {
     }).toISO();
   });
 
+  // JSON.stringify for template use. Liquid has no autoescape and no json
+  // filter, so any text interpolated into JSON-LD must go through this or a
+  // stray quote breaks the block. Emits the surrounding quotes itself.
+  eleventyConfig.addFilter("jsonify", (value) => {
+    return JSON.stringify(value === undefined || value === null ? "" : value);
+  });
+
+  // "September 14-15, 2026" -> { start: "2026-09-14", end: "2026-09-15" }
+  const MONTHS = ["january","february","march","april","may","june","july",
+    "august","september","october","november","december"];
+  function parseSessionDate(str) {
+    const match = String(str || "").match(/^(\w+)\s+(\d{1,2})(?:\s*-\s*(\d{1,2}))?,\s*(\d{4})$/);
+    if (!match) return null;
+    const month = MONTHS.indexOf(match[1].toLowerCase());
+    if (month < 0) return null;
+    const pad = (n) => String(n).padStart(2, "0");
+    const year = match[4];
+    return {
+      start: `${year}-${pad(month + 1)}-${pad(match[2])}`,
+      end: `${year}-${pad(month + 1)}-${pad(match[3] || match[2])}`,
+    };
+  }
+  eleventyConfig.addFilter("sessionStart", (str) => (parseSessionDate(str) || {}).start || "");
+  eleventyConfig.addFilter("sessionEnd", (str) => (parseSessionDate(str) || {}).end || "");
+
   // "5h 59m" -> "PT5H59M" for schema.org durations
   eleventyConfig.addFilter("isoDuration", (str) => {
     if (!str) return "";

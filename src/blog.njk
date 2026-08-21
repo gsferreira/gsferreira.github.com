@@ -7,6 +7,30 @@ eleventyNavigation:
   key: Blog
   order: 2
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "{{ site.url }}/blog/#blog",
+  "name": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "url": "{{ site.url }}/blog/",
+  "inLanguage": "en",
+  "author": { "@id": "{{ site.url }}/#person" },
+  "publisher": { "@id": "{{ site.url }}/#person" },
+  "blogPost": [
+    {%- for post in collections.post | reverse %}{% if loop.index <= 10 %}{% if loop.index > 1 %},{% endif %}
+    {
+      "@type": "BlogPosting",
+      "headline": {{ post.data.title | dump | safe }},
+      "url": "{{ site.url }}{{ post.url }}",
+      "datePublished": "{{ post.date | htmlDate }}",
+      "author": { "@id": "{{ site.url }}/#person" }
+    }{% endif %}{%- endfor %}
+  ]
+}
+</script>
+
 
 <div class="max-w-6xl mx-auto text-center py-16">
   <h1 class="text-4xl [font-size:2.25rem] font-light mb-2 text-gray-900 dark:text-white">Insights</h1>

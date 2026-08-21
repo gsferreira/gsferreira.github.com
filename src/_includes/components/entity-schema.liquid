@@ -1,8 +1,11 @@
 {%- comment -%}
-  Site-wide entity graph. Included on the homepage and the about page only.
+  Site-wide entity graph, emitted on every page from default.liquid.
   The bio is the official one and is kept verbatim in sync with
   src/about.liquid, src/for-llms.liquid and src/llms.txt.
 {%- endcomment -%}
+{%- assign pgTitle = title | default: site.title -%}
+{%- assign pgDescription = description | default: site.description -%}
+{%- assign pgUrl = site.url | append: page.url -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -57,11 +60,21 @@
       "@type": "WebSite",
       "@id": "{{ site.url }}/#website",
       "url": "{{ site.url }}/",
-      "name": "{{ site.title }}",
-      "description": "{{ site.description }}",
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | jsonify }},
       "inLanguage": "en",
       "publisher": { "@id": "{{ site.url }}/#person" },
       "author": { "@id": "{{ site.url }}/#person" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ pgUrl }}",
+      "url": "{{ pgUrl }}",
+      "name": {{ pgTitle | jsonify }},
+      "description": {{ pgDescription | jsonify }},
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "about": { "@id": "{{ site.url }}/#person" },
+      "inLanguage": "en"
     }
   ]
 }
