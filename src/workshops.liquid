@@ -3,6 +3,49 @@ layout: default.liquid
 title: Workshops with Gui Ferreira
 description: Where to catch me running a workshop in public, and how to book one for your team. The workshops themselves run through Black Lab Studios.
 ---
+{%- assign availableCount = 0 -%}
+{%- for workshop in workshopDates -%}{%- for session in workshop.sessions -%}{%- if session.available -%}{%- assign availableCount = availableCount | plus: 1 -%}{%- endif -%}{%- endfor -%}{%- endfor -%}
+{%- if availableCount > 0 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Upcoming public workshop sessions with Gui Ferreira",
+  "itemListElement": [
+    {%- assign position = 0 -%}
+    {%- for workshop in workshopDates -%}
+    {%- for session in workshop.sessions -%}
+    {%- if session.available -%}
+    {%- assign position = position | plus: 1 -%}
+    {% if position > 1 %},{% endif %}{
+      "@type": "ListItem",
+      "position": {{ position }},
+      "item": {
+        "@type": "Event",
+        "name": {{ workshop.title | jsonify }},
+        "description": {{ workshop.blurb | jsonify }},
+        "startDate": "{{ session.date | sessionStart }}",
+        "endDate": "{{ session.date | sessionEnd }}",
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": {
+          "@type": "Place",
+          "name": {{ session.venue | jsonify }},
+          "address": {{ session.location | jsonify }}
+        },
+        "performer": { "@id": "{{ site.url }}/#person" },
+        "organizer": { "@type": "Organization", "name": {{ session.venue | jsonify }} },
+        "url": {{ session.registrationUrl | jsonify }}
+      }
+    }
+    {%- endif -%}
+    {%- endfor -%}
+    {%- endfor %}
+  ]
+}
+</script>
+{%- endif -%}
+
 
 <main class="min-h-screen bg-white dark:bg-black">
     <section class="relative bg-white dark:bg-black py-24 lg:py-32 mt-16 transition-colors">

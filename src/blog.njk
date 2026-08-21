@@ -7,10 +7,34 @@ eleventyNavigation:
   key: Blog
   order: 2
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Blog",
+  "@id": "{{ site.url }}/blog/#blog",
+  "name": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "url": "{{ site.url }}/blog/",
+  "inLanguage": "en",
+  "author": { "@id": "{{ site.url }}/#person" },
+  "publisher": { "@id": "{{ site.url }}/#person" },
+  "blogPost": [
+    {%- for post in collections.post | reverse %}{% if loop.index <= 10 %}{% if loop.index > 1 %},{% endif %}
+    {
+      "@type": "BlogPosting",
+      "headline": {{ post.data.title | dump | safe }},
+      "url": "{{ site.url }}{{ post.url }}",
+      "datePublished": "{{ post.date | htmlDate }}",
+      "author": { "@id": "{{ site.url }}/#person" }
+    }{% endif %}{%- endfor %}
+  ]
+}
+</script>
+
 
 <div class="max-w-6xl mx-auto text-center py-16">
-  <h1 class="text-4xl [font-size:2.25rem] font-light mb-2 text-gray-900 dark:text-white">Insights</h1>
-  <p class="text-lg text-gray-500 dark:text-gray-400 mb-8">Thoughts on innovation, design, leadership, and building products that change the world.</p>
+  <h1 class="text-4xl [font-size:2.25rem] font-light mb-2 text-gray-900 dark:text-white">Notes on .NET, testing, and simpler code</h1>
+  <p class="text-lg text-gray-500 dark:text-gray-400 mb-8">Everything here comes from something I've built or broken. Mostly C# and .NET, mostly about testing, architecture, and cutting what you don't need.</p>
 </div>
 
 {% set featured = collections.post | selectattr('data.featured', 'equalto', true) | first %}

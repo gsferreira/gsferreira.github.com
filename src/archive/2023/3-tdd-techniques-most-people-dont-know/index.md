@@ -5,6 +5,11 @@ date: 2023-03-31
 title: 3 TDD Techniques Most People Don’t Know
 description: Master 3 TDD techniques most developers ignore - Fake It, Obvious Implementation, and Triangulation for effective test-driven development.
 featured_image: /images/archive/highlight/3-tdd-techniques.png
+# TDD is the only slug on the site using that abbreviation, so scoring finds nothing. Its real siblings all say tests or testing.
+related:
+  - why-i-dont-use-loops-on-my-tests
+  - how-structure-sensitive-tests-make-refactorings-fail
+  - my-simple-testing-stack-for-dotnet-developers-2023
 ---
 
 https://www.youtube.com/watch?v=ga6i2i_ynYE

@@ -5,6 +5,9 @@ date: 2023-12-13
 title: A BETTER Way to Kafka Event-Driven Applications with C#
 description: Build better C# Kafka event-driven applications with KafkaFlow - simplified patterns, middleware, and maintainable architecture.
 featured_image: /images/archive/highlight/a-better-way-to-kafka-event-driven-applications-with-csharp.png
+# kafka and kafkaflow stem differently, so the pair has to be stated.
+related:
+  - 3-kafkaflow-features-hard-to-ignore
 ---
 
 https://youtu.be/4e18DZkf-m0?si=QMgwWgQFKFZqRbD3

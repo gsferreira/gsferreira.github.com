@@ -1,3 +1,2 @@
-User-agent: * 
-Disallow: /assets/
+User-agent: *
 Sitemap: https://guiferreira.me/sitemap.xml

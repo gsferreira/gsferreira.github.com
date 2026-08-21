@@ -3,12 +3,62 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
-    <meta name="description" content="{% if description %}{{ description }}{% else %}Your site description{% endif %}" />
+    {%- assign metaTitle = title | default: site.title -%}
+    {%- comment -%}
+      Brand suffix, but only where it fits. Appending to an already-long title
+      just moves the truncation point and the brand gets cut anyway.
+    {%- endcomment -%}
+    {%- assign titleLength = metaTitle | size -%}
+    {%- if page.url == "/" or metaTitle contains "Gui Ferreira" or titleLength > 45 -%}
+      {%- assign documentTitle = metaTitle -%}
+    {%- else -%}
+      {%- assign documentTitle = metaTitle | append: " | Gui Ferreira" -%}
+    {%- endif -%}
+    {%- assign metaDescription = description | default: site.description -%}
+    {%- assign metaUrl = site.url | append: page.url -%}
+    {%- if socialImage -%}
+      {%- assign metaImage = site.url | append: socialImage -%}
+    {%- else -%}
+      {%- assign metaImage = site.url | append: "/assets/headshot-1024x1024.png" -%}
+    {%- endif -%}
+    {%- if ogType -%}
+      {%- assign metaType = ogType -%}
+    {%- elsif page.url contains "/archive/" -%}
+      {%- assign metaType = "article" -%}
+    {%- else -%}
+      {%- assign metaType = "website" -%}
+    {%- endif -%}
+
+    <meta name="description" content="{{ metaDescription | escape }}" />
     <meta name="generator" content="{{ eleventy.generator }}">
     <base href="{{ page.url }}">
-    <link rel="canonical" href="{{ site.url }}{{ page.url }}">
+    <link rel="canonical" href="{{ metaUrl }}">
 
-    <title>{% if title %}{{ title }}{% else %}Your site title{% endif %}</title>
+    <title>{{ documentTitle | escape }}</title>
+
+    <!-- Open Graph -->
+    <meta property="og:type" content="{{ metaType }}">
+    <meta property="og:site_name" content="{{ site.title | escape }}">
+    <meta property="og:title" content="{{ metaTitle | escape }}">
+    <meta property="og:description" content="{{ metaDescription | escape }}">
+    <meta property="og:url" content="{{ metaUrl }}">
+    <meta property="og:image" content="{{ metaImage }}">
+    <meta property="og:image:alt" content="Gui Ferreira, software engineer educator, speaker and Microsoft MVP">
+    <meta property="og:locale" content="en_US">
+    {%- if metaType == "article" %}
+    <meta property="article:published_time" content="{{ page.date | isoDate }}">
+    <meta property="article:author" content="{{ site.url }}/about/">
+    {%- endif %}
+
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="@gsferreira">
+    <meta name="twitter:creator" content="@gsferreira">
+    <meta name="twitter:title" content="{{ metaTitle | escape }}">
+    <meta name="twitter:description" content="{{ metaDescription | escape }}">
+    <meta name="twitter:image" content="{{ metaImage }}">
+
+    {% include 'components/entity-schema.liquid' %}
 
     <link rel="shortcut icon" href="/images/favicon.ico">
     <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon.png">

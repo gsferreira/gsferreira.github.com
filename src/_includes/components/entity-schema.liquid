@@ -1,0 +1,81 @@
+{%- comment -%}
+  Site-wide entity graph, emitted on every page from default.liquid.
+  The bio is the official one and is kept verbatim in sync with
+  src/about.liquid, src/for-llms.liquid and src/llms.txt.
+{%- endcomment -%}
+{%- assign pgTitle = title | default: site.title -%}
+{%- assign pgDescription = description | default: site.description -%}
+{%- assign pgUrl = site.url | append: page.url -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#person",
+      "name": "Gui Ferreira",
+      "givenName": "Guilherme",
+      "familyName": "Ferreira",
+      "alternateName": "Guilherme Ferreira",
+      "description": "Guilherme \"Gui\" Ferreira is a Microsoft MVP and the founder of Black Lab Studios. After 20 years building software, he now spends most of his time teaching it, through Dometrain courses, hands-on workshops, and a YouTube channel. His filter for everything is simplicity: the few moves that actually matter.",
+      "url": "{{ site.url }}/about/",
+      "mainEntityOfPage": "{{ site.url }}/about/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "{{ site.url }}/assets/headshot-1024x1024.png",
+        "width": 1024,
+        "height": 1024
+      },
+      "jobTitle": [
+        "Software Engineer Educator",
+        "Course Author",
+        "Workshop Facilitator",
+        "Speaker"
+      ],
+      "award": "Microsoft MVP",
+      "knowsAbout": [
+        ".NET",
+        "C#",
+        "Clean Code",
+        "Software Testing",
+        "Test-Driven Development",
+        "Software Architecture",
+        "xUnit",
+        "OpenTelemetry"
+      ],
+      "worksFor": {
+        "@type": "Organization",
+        "name": "Black Lab Studios",
+        "url": "https://blacklabstudios.com",
+        "founder": { "@id": "{{ site.url }}/#person" }
+      },
+      "sameAs": [
+        "https://twitter.com/gsferreira",
+        "https://www.linkedin.com/in/gferreira",
+        "https://github.com/gsferreira",
+        "https://www.youtube.com/@gui.ferreira"
+      ]
+    },
+    {
+      "@type": "WebSite",
+      "@id": "{{ site.url }}/#website",
+      "url": "{{ site.url }}/",
+      "name": {{ site.title | jsonify }},
+      "description": {{ site.description | jsonify }},
+      "inLanguage": "en",
+      "publisher": { "@id": "{{ site.url }}/#person" },
+      "author": { "@id": "{{ site.url }}/#person" }
+    },
+    {
+      "@type": "WebPage",
+      "@id": "{{ pgUrl }}",
+      "url": "{{ pgUrl }}",
+      "name": {{ pgTitle | jsonify }},
+      "description": {{ pgDescription | jsonify }},
+      "isPartOf": { "@id": "{{ site.url }}/#website" },
+      "about": { "@id": "{{ site.url }}/#person" },
+      "inLanguage": "en"
+    }
+  ]
+}
+</script>

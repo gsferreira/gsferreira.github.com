@@ -1,0 +1,33 @@
+{#
+  Related posts. Scoring lives in the relatedPosts filter in eleventy.config.js.
+  A `related` front matter list of slugs on the post overrides it.
+#}
+{% set relatedList = collections.post | relatedPosts(page.url, category, related, 3) %}
+{% if relatedList.length %}
+<aside class="max-w-3xl mx-auto px-4 mt-28" aria-labelledby="related-heading">
+  <h2 id="related-heading" class="text-xs uppercase tracking-[0.14em] font-medium text-gray-500 dark:text-gray-400 pb-4 border-b border-gray-200 dark:border-gray-800">
+    Keep reading
+  </h2>
+  <ul class="divide-y divide-gray-100 dark:divide-gray-800" role="list">
+    {% for item in relatedList %}
+    <li>
+      <article class="py-7">
+        <div class="flex items-center gap-3 text-[13px] mb-2">
+          {% if item.data.category %}
+          <span class="uppercase font-medium text-gray-500 dark:text-gray-400">{{ item.data.category }}</span>
+          <span class="text-gray-300 dark:text-gray-600" aria-hidden="true">&bull;</span>
+          {% endif %}
+          <time datetime="{{ item.date | htmlDate }}" class="text-gray-500 dark:text-gray-400">{{ item.date | readableDate }}</time>
+        </div>
+        <h3 class="text-xl font-medium text-gray-900 dark:text-white leading-snug mb-2">
+          <a href="{{ item.url }}" class="hover:underline">{{ item.data.title }}</a>
+        </h3>
+        {% if item.data.description %}
+        <p class="text-gray-500 dark:text-gray-400 text-[15px] leading-relaxed">{{ item.data.description }}</p>
+        {% endif %}
+      </article>
+    </li>
+    {% endfor %}
+  </ul>
+</aside>
+{% endif %}

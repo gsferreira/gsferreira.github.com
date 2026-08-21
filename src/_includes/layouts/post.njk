@@ -6,32 +6,36 @@ layout: default
 {
   "@context": "https://schema.org",
   "@type": "Article",
-  "headline": "{{ title }}",
-  "description": "{{ description }}",
+  "headline": {{ title | dump | safe }},
+  "description": {{ description | dump | safe }},
+  "image": "{{ site.url }}{{ image or '/assets/headshot-1024x1024.png' }}",
   "datePublished": "{{ page.date | htmlDate }}",
-  "dateModified": "{{ page.date | htmlDate }}",
+  "dateModified": "{{ (updated or page.date) | htmlDate }}",
+  "inLanguage": "en",
   "author": {
     "@type": "Person",
+    "@id": "{{ site.url }}/#person",
     "name": "Gui Ferreira",
     "givenName": "Guilherme",
     "familyName": "Ferreira",
     "alternateName": "Guilherme Ferreira",
-    "url": "https://guiferreira.me/about",
+    "url": "{{ site.url }}/about/",
     "sameAs": [
       "https://twitter.com/gsferreira",
-      "https://linkedin.com/in/gferreira",
+      "https://www.linkedin.com/in/gferreira",
       "https://github.com/gsferreira",
-      "https://youtube.com/@gui.ferreira"
+      "https://www.youtube.com/@gui.ferreira"
     ]
   },
   "publisher": {
     "@type": "Person",
+    "@id": "{{ site.url }}/#person",
     "name": "Gui Ferreira",
-    "url": "https://guiferreira.me"
+    "url": "{{ site.url }}"
   },
   "mainEntityOfPage": {
     "@type": "WebPage",
-    "@id": "https://guiferreira.me{{ page.url }}"
+    "@id": "{{ site.url }}{{ page.url }}"
   }
 }
 </script>
@@ -53,7 +57,7 @@ layout: default
         {% endif %}
 
         <div class="text-[15px] text-gray-500 dark:text-gray-400">
-          <time datetime="{{ page.date | htmlDate }}">{{ page.date | readableDate }}</time> · <span aria-hidden="true">7 min read</span>
+          <time datetime="{{ page.date | htmlDate }}">{{ page.date | readableDate }}</time> · <span>{{ content | readingTime }} min read</span>
         </div>
       </div>
 
@@ -63,6 +67,8 @@ layout: default
     {{ content | safe }}
   </article>
 </div>
+
+{% include "components/related-posts.njk" %}
 
 <div class="mt-32">
   {% include "components/newsletter.liquid" %}

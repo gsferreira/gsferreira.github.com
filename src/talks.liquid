@@ -3,6 +3,29 @@ layout: default
 title: Talks by Gui Ferreira
 description: Talks I've given. Ideas worth sharing.
 ---
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "ItemList",
+  "name": "Talks by Gui Ferreira",
+  "itemListElement": [
+    {%- for talk in talks.all %}
+    {% unless forloop.first %},{% endunless %}{
+      "@type": "ListItem",
+      "position": {{ forloop.index }},
+      "item": {
+        "@type": "CreativeWork",
+        "name": {{ talk.title | jsonify }},
+        "abstract": {{ talk.description | jsonify }},
+        "author": { "@id": "{{ site.url }}/#person" },
+        "inLanguage": "en"
+      }
+    }
+    {%- endfor %}
+  ]
+}
+</script>
+
 
 <div class="max-w-4xl mx-auto px-4 py-16">
     <h1 class="text-4xl [font-size:2.25rem] font-bold text-center mb-4 text-gray-900 dark:text-white">Talks</h1>
