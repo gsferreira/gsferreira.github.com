@@ -24,7 +24,7 @@ eleventyNavigation:
       "@type": "BlogPosting",
       "headline": {{ post.data.title | dump | safe }},
       "url": "{{ site.url }}{{ post.url }}",
-      "datePublished": "{{ post.date | htmlDate }}",
+      "datePublished": "{{ post.date | isoDate }}",
       "author": { "@id": "{{ site.url }}/#person" }
     }{% endif %}{%- endfor %}
   ]
