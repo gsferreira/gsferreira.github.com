@@ -4,7 +4,6 @@ tags: post
 date: 2022-08-16
 title: Finding .NET Transitive Dependencies and Tidying Up Your Project
 description: Clean up .NET transitive dependencies with Snitch tool - identify unnecessary references, reduce package conflicts, and optimize projects.
-featured_image: /images/archive/csharp/snitch/snitch-result.png
 ---
 
 Do you remember DLL Hell? 😈 Yes, me too.

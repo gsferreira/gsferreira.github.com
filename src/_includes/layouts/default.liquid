@@ -16,11 +16,14 @@
     {%- endif -%}
     {%- assign metaDescription = description | default: site.description -%}
     {%- assign metaUrl = site.url | append: page.url -%}
-    {%- if socialImage -%}
-      {%- assign metaImage = site.url | append: socialImage -%}
-    {%- else -%}
-      {%- assign metaImage = site.url | append: "/assets/headshot-1024x1024.png" -%}
-    {%- endif -%}
+    {%- comment -%}
+      socialImage overrides, then the post's own featured_image, then the
+      headshot. This is a filter chain rather than {% if %} on purpose: Liquid
+      treats an empty string as truthy, and one post carries an empty
+      featured_image, so an if would resolve og:image to the site root.
+    {%- endcomment -%}
+    {%- assign resolvedImage = socialImage | default: featured_image | default: "/assets/headshot-1024x1024.png" -%}
+    {%- assign metaImage = site.url | append: resolvedImage -%}
     {%- if ogType -%}
       {%- assign metaType = ogType -%}
     {%- elsif page.url contains "/archive/" -%}

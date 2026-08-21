@@ -4,7 +4,6 @@ tags: post
 date: 2020-09-24
 title: Continuous Refactoring - Why Small Code Improvements Beat Big Rewrites 
 description: Make refactoring a continuous practice - TDD cycle integration, daily habits, and avoiding technical debt accumulation.
-featured_image: /images/archive/continous-refactoring.png
 ---
 
 ![Continuous Refactoring](/images/archive/clean-code/continous-refactoring.png)
