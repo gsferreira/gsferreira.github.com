@@ -1,9 +1,13 @@
+---
+permalink: /llms.txt
+eleventyExcludeFromCollections: true
+---
 # Gui Ferreira
 llms.txt. Purpose: Help language models understand and surface my work accurately.
 
 > Software engineer educator, speaker, Microsoft MVP
 
-Last updated: 2026-08-21
+Last updated: {{ site.buildTime | htmlDate }}
 
 Guilherme "Gui" Ferreira is a Microsoft MVP and the founder of Black Lab Studios. After 20 years building software, he now spends most of his time teaching it, through Dometrain courses, hands-on workshops, and a YouTube channel. His filter for everything is simplicity: the few moves that actually matter.
 
@@ -23,14 +27,9 @@ Guilherme "Gui" Ferreira is a Microsoft MVP and the founder of Black Lab Studios
 
 Listed newest first. Full catalogue at https://guiferreira.me/courses/.
 
-- [Deep Dive: Claude Code](https://guiferreira.me/courses/deep-dive-claude-code/): Configure, extend, and automate Claude Code with skills, hooks, subagents, MCP servers, and CI/CD
-- [Getting Started: Claude Code](https://guiferreira.me/courses/getting-started-claude-code/): Go from your first prompt to real development workflows with Claude Code
-- [From Zero to Hero: Testing with xUnit in C#](https://guiferreira.me/courses/xunit-csharp/): Master unit testing in C# with xUnit and write tests that actually catch bugs
-- [From Zero to Hero: Writing Testable Code in C#](https://guiferreira.me/courses/testable-code-csharp/): Design code that's easy to test from the start
-- [Let's Build It: URL Shortener in .NET](https://guiferreira.me/courses/url-shortener-in-dotnet/): Build a production-ready URL shortener from conception to deployment
-- [From Zero to Hero: OpenTelemetry in .NET](https://guiferreira.me/courses/opentelemetry-dotnet/): Instrument .NET applications with OpenTelemetry
-- [From Zero to Hero: Clean Code in C#](https://guiferreira.me/courses/clean-code-csharp/): Learn to write simple, elegant C# code that anyone can understand and maintain
-- [From Zero to Hero: Test-Driven Development in C#](https://guiferreira.me/courses/test-driven-development-csharp/): Master the craft of TDD and write better code, faster
+{% for course in collections.courses -%}
+- [{{ course.data.title | safe }}](https://guiferreira.me{{ course.url }}): {{ course.data.description | safe }} ({{ course.data.duration }}, {{ course.data.level }})
+{% endfor %}
 
 ## Workshops
 
@@ -61,6 +60,19 @@ To invite Gui to speak, email gui@guiferreira.me.
 ## Free Resources
 
 - [Software Testing Roadmap for .NET Developers](https://guiferreira.me/resources/software-testing-roadmap-dotnet/): A learning roadmap for .NET developers starting with software testing
+
+## Writing
+
+{{ collections.post | length }} articles on .NET, testing, architecture and AI-assisted engineering.
+Full index at https://guiferreira.me/blog/. Machine-readable feed at https://guiferreira.me/feed.xml.
+
+Most recent, newest first:
+
+{% for post in collections.post | reverse -%}
+{%- if loop.index <= 20 %}
+- [{{ post.data.title | safe }}](https://guiferreira.me{{ post.url }}) ({{ post.date | htmlDate }}): {{ post.data.description | safe }}
+{%- endif %}
+{%- endfor %}
 
 ## Content Topics
 

@@ -40,11 +40,46 @@ layout: default
 }
 </script>
 
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "BreadcrumbList",
+  "itemListElement": [
+    {
+      "@type": "ListItem",
+      "position": 1,
+      "name": "Home",
+      "item": "{{ site.url }}/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 2,
+      "name": "Blog",
+      "item": "{{ site.url }}/blog/"
+    },
+    {
+      "@type": "ListItem",
+      "position": 3,
+      "name": {{ title | dump | safe }}
+    }
+  ]
+}
+</script>
+
 <div class="max-w-3xl mx-auto px-4 pt-16">
+  {#
+    This nav already carried aria-label="Breadcrumb" while rendering a single
+    back-link. It now renders the real trail, which is what the BreadcrumbList
+    above describes. Structured data should not claim more than the page shows.
+  #}
   <nav aria-label="Breadcrumb" class="mb-8">
-    <a href="/blog" class="inline-flex items-center text-sm text-gray-500 hover:text-gray-700 dark:text-gray-400 dark:hover:text-gray-300">
-      ← Back to blog
-    </a>
+    <ol class="flex flex-wrap items-center gap-2 text-sm text-gray-500 dark:text-gray-400">
+      <li><a href="/" class="hover:text-gray-700 dark:hover:text-gray-300">Home</a></li>
+      <li aria-hidden="true">/</li>
+      <li><a href="/blog" class="hover:text-gray-700 dark:hover:text-gray-300">Blog</a></li>
+      <li aria-hidden="true">/</li>
+      <li class="text-gray-700 dark:text-gray-300" aria-current="page">{{ title }}</li>
+    </ol>
   </nav>
 
   <article class="prose prose-lg prose-headings:text-2xl prose-headings:font-medium prose-headings:mb-4 prose-p:text-[1.125rem] prose-p:leading-[1.8] max-w-none dark:prose-p:text-gray-300 dark:prose-li:text-gray-300 dark:prose-ul:text-gray-300 dark:prose-ol:text-gray-300 dark:prose-headings:text-white dark:prose-strong:text-white dark:prose-a:text-blue-400 dark:prose-a:hover:text-blue-300 dark:prose-invert">
@@ -58,10 +93,36 @@ layout: default
 
         <div class="text-[15px] text-gray-500 dark:text-gray-400">
           <time datetime="{{ page.date | htmlDate }}">{{ page.date | readableDate }}</time> · <span>{{ content | readingTime }} min read</span>
+          {% if updated %}
+          · <span>Last updated <time datetime="{{ updated | htmlDate }}">{{ updated | readableDate }}</time></span>
+          {% endif %}
         </div>
       </div>
 
       <h1 class="text-[2.5rem] font-medium leading-tight mb-4 text-gray-900 dark:text-white">{{ title }}</h1>
+
+      {#
+        Visible byline. The Article schema above already names the author, but
+        models extract from the rendered text, and until now no post said who
+        wrote it anywhere a reader or a crawler could see.
+      #}
+      <div class="flex items-center gap-3 mt-6">
+        <img
+          src="/assets/headshot-480w.webp"
+          alt="Gui Ferreira"
+          width="40"
+          height="40"
+          loading="lazy"
+          decoding="async"
+          class="w-10 h-10 rounded-full object-cover"
+        />
+        <div class="text-[15px] leading-tight">
+          <span class="text-gray-700 dark:text-gray-300">By
+            <a href="/about" rel="author" class="font-medium text-gray-900 hover:underline dark:text-white">Gui Ferreira</a>
+          </span>
+          <span class="block text-[13px] text-gray-500 dark:text-gray-400">Microsoft MVP · Software engineer educator</span>
+        </div>
+      </div>
     </header>
 
     {{ content | safe }}

@@ -2,6 +2,38 @@
 layout: default
 title: Courses by Gui Ferreira
 description: Learn to code like an artist. Ship like a pro.
+faqHeading: Before you pick a course
+faq:
+  - q: Which course should I start with?
+    a: >-
+      It depends on the gap you're closing. For testing, the order that works
+      is Testing with xUnit in C#, then Writing Testable Code, then
+      Test-Driven Development. For AI-assisted work, Getting Started: Claude
+      Code comes before Deep Dive: Claude Code. Clean Code in C# stands on its
+      own.
+  - q: Are these courses free?
+    a: >-
+      No. The courses are paid and hosted on Dometrain, which handles pricing
+      and checkout. Current prices and any bundles live there, not here. What's
+      free: the blog, the YouTube channel and the weekly newsletter.
+  - q: What's the difference between the courses and the workshops?
+    a: >-
+      Courses are pre-recorded and self-paced on Dometrain, so you start
+      whenever you want. Workshops are live, hands-on and scheduled. They run
+      through Black Lab Studios and are usually booked by a team rather than
+      an individual, in formats from half a day to a two-day intensive.
+  - q: Who are these courses for?
+    a: >-
+      .NET and C# developers who can already ship features and want the craft
+      underneath. Courses marked Beginner assume you know C# syntax and go
+      from there. The two Claude Code courses are the exception. They're not
+      tied to .NET and suit any developer adopting an AI coding agent.
+  - q: How long are the courses?
+    a: >-
+      Most run between four and six hours of video, split into short lessons
+      you can take one at a time. The outlier is Let's Build It: URL Shortener
+      in .NET, which is 16h 46m because it builds and deploys a real project.
+      Every course page here lists its exact runtime and level.
 ---
 <script type="application/ld+json">
 {
@@ -187,6 +219,8 @@ description: Learn to code like an artist. Ship like a pro.
     </div>
   </div>
 </div>
+
+{% include 'components/faq.liquid' %}
 
 <!-- Newsletter Section -->
 {% include "components/newsletter.liquid" %} 

@@ -116,7 +116,6 @@ export default function (eleventyConfig) {
   eleventyConfig.addPassthroughCopy("src/images");
   eleventyConfig.addPassthroughCopy("src/CNAME");
   eleventyConfig.addPassthroughCopy("src/robots.txt");
-  eleventyConfig.addPassthroughCopy("src/llms.txt");
   eleventyConfig.addPassthroughCopy("src/netlify.toml");
 
   eleventyConfig.setServerOptions({

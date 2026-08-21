@@ -1,0 +1,62 @@
+{%- comment -%}
+  FAQ block plus FAQPage schema, driven by a `faq` array in page front matter:
+
+    faq:
+      - q: "Question in the words someone would actually type"
+        a: "Answer. Keep it self-contained, 40 to 60 words, no pronouns pointing
+            back at the question. Answer engines lift these one at a time."
+
+  The visible list and the schema are generated from the same source, so they
+  cannot drift. Google requires FAQPage markup to match on-page content, and a
+  block that renders nothing while claiming answers in JSON-LD is a violation.
+
+  Collapsed by default, using the same <details> pattern as the conference
+  organizer section on /about. A closed accordion still counts as visible:
+  the answers are in the served HTML and the reader can open them. Only
+  content injected after the fact, or hidden with no way to reveal it, fails.
+
+  `a` may contain inline HTML. It is jsonify'd for the schema, which escapes it
+  correctly, and printed raw in the markup.
+{%- endcomment -%}
+{%- if faq and faq.size > 0 -%}
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  "@id": "{{ site.url }}{{ page.url }}#faq",
+  "isPartOf": { "@id": "{{ site.url }}/#website" },
+  "mainEntity": [
+    {%- for item in faq %}
+    {% unless forloop.first %},{% endunless %}{
+      "@type": "Question",
+      "name": {{ item.q | jsonify }},
+      "acceptedAnswer": {
+        "@type": "Answer",
+        "text": {{ item.a | jsonify }}
+      }
+    }
+    {%- endfor %}
+  ]
+}
+</script>
+
+<section id="faq" class="max-w-4xl mx-auto px-6 py-16">
+  <details class="group">
+    <summary class="cursor-pointer list-none flex items-center gap-2">
+      <h2 class="text-3xl font-bold dark:text-white">{{ faqHeading | default: "Common questions" }}</h2>
+      <svg class="w-6 h-6 transform transition-transform group-open:rotate-180 dark:text-white" fill="none" stroke="currentColor" viewBox="0 0 24 24" aria-hidden="true">
+        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+      </svg>
+    </summary>
+
+    <div class="space-y-8 mt-8">
+      {%- for item in faq %}
+      <div>
+        <h3 class="text-lg font-semibold mb-2 dark:text-white">{{ item.q }}</h3>
+        <p class="text-gray-600 dark:text-gray-300 leading-relaxed">{{ item.a }}</p>
+      </div>
+      {%- endfor %}
+    </div>
+  </details>
+</section>
+{%- endif -%}
