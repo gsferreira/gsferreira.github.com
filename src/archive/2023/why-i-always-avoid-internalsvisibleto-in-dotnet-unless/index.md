@@ -4,7 +4,6 @@ tags: post
 date: 2023-03-21
 title: Why I Always Avoid InternalsVisibleTo in .NET, Unless...
 description: Avoid InternalsVisibleTo in .NET testing - explore alternatives, maintain proper encapsulation, and design better APIs.
-featured_image:
 ---
 
 https://www.youtube.com/watch?v=O9GiOIw5XYc

@@ -8,7 +8,7 @@ layout: default
   "@type": "Article",
   "headline": {{ title | dump | safe }},
   "description": {{ description | dump | safe }},
-  "image": "{{ site.url }}{{ image or '/assets/headshot-1024x1024.png' }}",
+  "image": "{{ site.url }}{{ socialImage or featured_image or '/assets/headshot-1024x1024.png' }}",
   "datePublished": "{{ page.date | isoDate }}",
   "dateModified": "{{ (updated or page.date) | isoDate }}",
   "inLanguage": "en",
