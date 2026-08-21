@@ -167,31 +167,63 @@ layout: default
   {
     "@context": "https://schema.org",
     "@type": "VideoObject",
-    "name": "{{ heroVideo.title or title }} - Course Preview",
-    "description": "{{ heroVideo.description or description }}",
-    "thumbnailUrl": "{{ heroVideo.poster.png or heroVideo.poster }}",
+    "name": {{ ((heroVideo.title or title) + " - Course Preview") | dump | safe }},
+    "description": {{ (heroVideo.description or description) | dump | safe }},
+    "thumbnailUrl": "{{ site.url }}{{ heroVideo.poster.png or heroVideo.poster }}",
     "uploadDate": "{{ heroVideo.uploadDate or page.date | isoDate }}",
     "duration": "{{ heroVideo.duration or 'PT30S' }}",
-    "contentUrl": "{{ heroVideo.mp4 }}",
+    "contentUrl": "{{ site.url }}{{ heroVideo.mp4 }}",
     "embedUrl": "{{ site.url }}{{ page.url }}",
     "publisher": {
-      "@type": "Organization",
-      "name": "{{ site.title }}",
-      "url": "{{ site.url }}"
+      "@type": "Person",
+      "@id": "{{ site.url }}/#person",
+      "name": "Gui Ferreira",
+      "url": "{{ site.url }}/about/"
     },
-    "isPartOf": {
-      "@type": "Course",
-      "name": "{{ title }}",
-      "description": "{{ description }}",
-      "provider": {
-        "@type": "Organization",
-        "name": "{{ site.title }}"
-      }
-    }
+    "isPartOf": { "@id": "{{ site.url }}{{ page.url }}#course" }
   }
   </script>
   {% endif %}
   {% endif %}
+
+  {# Course schema is emitted for every course, with or without a preview video. #}
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Course",
+    "@id": "{{ site.url }}{{ page.url }}#course",
+    "name": {{ title | dump | safe }},
+    "description": {{ description | dump | safe }},
+    "url": "{{ site.url }}{{ page.url }}",
+    "inLanguage": "en",
+    {% if image %}"image": "{{ site.url }}{{ image }}",
+    {% endif %}{% if level %}"educationalLevel": {{ level | dump | safe }},
+    {% endif %}{% if category %}"about": {{ category | dump | safe }},
+    {% endif %}"provider": {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#person",
+      "name": "Gui Ferreira",
+      "url": "{{ site.url }}/about/"
+    },
+    "author": {
+      "@type": "Person",
+      "@id": "{{ site.url }}/#person",
+      "name": "Gui Ferreira",
+      "url": "{{ site.url }}/about/"
+    },
+    "hasCourseInstance": {
+      "@type": "CourseInstance",
+      "courseMode": "online",
+      {% if duration %}"courseWorkload": "{{ duration | isoDuration }}",
+      {% endif %}"instructor": {
+        "@type": "Person",
+        "@id": "{{ site.url }}/#person",
+        "name": "Gui Ferreira",
+        "url": "{{ site.url }}/about/"
+      }
+    }
+  }
+  </script>
 
   <div class="prose dark:prose-invert dark:text-gray-200 prose-headings:dark:text-white prose-strong:dark:text-white prose-ul:dark:text-gray-200 max-w-none">
     {{ content | safe }}

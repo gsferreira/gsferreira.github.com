@@ -4,6 +4,16 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, viewport-fit=cover" />
     {%- assign metaTitle = title | default: site.title -%}
+    {%- comment -%}
+      Brand suffix, but only where it fits. Appending to an already-long title
+      just moves the truncation point and the brand gets cut anyway.
+    {%- endcomment -%}
+    {%- assign titleLength = metaTitle | size -%}
+    {%- if page.url == "/" or metaTitle contains "Gui Ferreira" or titleLength > 45 -%}
+      {%- assign documentTitle = metaTitle -%}
+    {%- else -%}
+      {%- assign documentTitle = metaTitle | append: " | Gui Ferreira" -%}
+    {%- endif -%}
     {%- assign metaDescription = description | default: site.description -%}
     {%- assign metaUrl = site.url | append: page.url -%}
     {%- if socialImage -%}
@@ -24,7 +34,7 @@
     <base href="{{ page.url }}">
     <link rel="canonical" href="{{ metaUrl }}">
 
-    <title>{{ metaTitle | escape }}</title>
+    <title>{{ documentTitle | escape }}</title>
 
     <!-- Open Graph -->
     <meta property="og:type" content="{{ metaType }}">

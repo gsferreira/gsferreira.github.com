@@ -157,6 +157,17 @@ export default function (eleventyConfig) {
     }).toISO();
   });
 
+  // "5h 59m" -> "PT5H59M" for schema.org durations
+  eleventyConfig.addFilter("isoDuration", (str) => {
+    if (!str) return "";
+    const match = String(str).match(/(?:(\d+)\s*h)?\s*(?:(\d+)\s*m)?/i);
+    if (!match) return "";
+    const hours = parseInt(match[1] || 0, 10);
+    const minutes = parseInt(match[2] || 0, 10);
+    if (!hours && !minutes) return "";
+    return `PT${hours ? hours + "H" : ""}${minutes ? minutes + "M" : ""}`;
+  });
+
   // String helpers
   eleventyConfig.addFilter("lower", (str) => {
     return str ? str.toLowerCase() : "";
