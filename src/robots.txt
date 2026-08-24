@@ -1,2 +1,58 @@
+# guiferreira.me
+#
+# Everything here is open to crawlers, including the AI ones. That is
+# deliberate: /llms.txt and /for-llms/ exist to help models describe this work
+# accurately, and a blocked crawler is a model that cannot cite you.
+#
+# The named groups below grant nothing that "User-agent: *" does not already
+# grant. They are here so the intent is legible to a human reading the file,
+# and so a future Disallow added to the wildcard group does not silently take
+# the answer engines down with it.
+
 User-agent: *
+Allow: /
+
+# Answer engines and AI search
+User-agent: GPTBot
+Allow: /
+
+User-agent: OAI-SearchBot
+Allow: /
+
+User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: anthropic-ai
+Allow: /
+
+User-agent: PerplexityBot
+Allow: /
+
+User-agent: Perplexity-User
+Allow: /
+
+User-agent: Google-Extended
+Allow: /
+
+User-agent: Applebot-Extended
+Allow: /
+
+User-agent: DuckAssistBot
+Allow: /
+
+User-agent: cohere-ai
+Allow: /
+
+User-agent: MistralAI-User
+Allow: /
+
 Sitemap: https://guiferreira.me/sitemap.xml
