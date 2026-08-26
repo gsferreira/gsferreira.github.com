@@ -11,34 +11,20 @@
   status = 301
   force = true
 # ---------------------------------------------------------------------------
-# Workshops moved to Black Lab Studios.
+# The workshop pages live here again.
 #
-# BLS is canonical for descriptions, curriculum and booking. The source pages
-# are deleted from src/, so /workshops/ is now a calendar that points out.
+# They were handed to Black Lab Studios in Aug 2026 and 301'd away. That split
+# has been reversed: guiferreira.me carries the outlines and the public dates,
+# because those sell a seat to a person. Black Lab Studios keeps private and
+# team bookings, because those sell an engagement to a company.
 #
-# Explicit rules only. No /workshops/* splat: it would swallow /workshops/
-# itself and anything added here later. Rules match top-down, first wins.
+# The cohort is the exception. It is a course with its own site and its own
+# checkout, not a workshop that gets run for a team, so it keeps redirecting.
+#
+# Explicit rules only. No /workshops/* splat: it would swallow the real pages.
+# Rules match top-down, first wins.
 # ---------------------------------------------------------------------------
 
-[[redirects]]
-  from = "/workshops/build-your-first-ai-agent-in-net/"
-  to = "https://blacklabstudios.com/workshops/build-your-first-ai-agent-in-dotnet/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/workshops/designing-tests-that-survive-refactorings/"
-  to = "https://blacklabstudios.com/workshops/designing-tests-that-survive-refactorings/"
-  status = 301
-  force = true
-
-[[redirects]]
-  from = "/workshops/test-driven-development-csharp/"
-  to = "https://blacklabstudios.com/workshops/mastering-tdd-in-csharp/"
-  status = 301
-  force = true
-
-# The cohort has no Black Lab Studios equivalent. It sells on its own site.
 [[redirects]]
   from = "/workshops/build-a-full-stack-ai-app-with-dotnet-cohort/"
   to = "https://www.aipowereddotnet.school/"

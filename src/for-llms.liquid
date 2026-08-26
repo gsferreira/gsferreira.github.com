@@ -55,10 +55,10 @@ description: Structured information about Gui Ferreira for AI assistants and lan
   </ol>
 
   <h2>Workshops</h2>
-  <p>Workshops run through <a href="https://blacklabstudios.com/workshops/">Black Lab Studios</a>, which owns the outlines and the booking. This site carries the public calendar at <a href="/workshops">guiferreira.me/workshops</a>:</p>
+  <p>Outlines and public dates live at <a href="/workshops">guiferreira.me/workshops</a>. Public sessions run at conferences, and the conference sells the seat. Private and team bookings go through <a href="https://blacklabstudios.com/workshops/">Black Lab Studios</a>:</p>
   <ul>
-    {% for workshop in workshopDates %}
-    <li><strong><a href="{{ workshop.blsUrl }}">{{ workshop.title }}</a></strong> ({{ workshop.format }}) - {{ workshop.blurb }}</li>
+    {% for workshop in collections.workshops %}
+    <li><strong><a href="{{ workshop.url }}">{{ workshop.data.title }}</a></strong> ({{ workshop.data.format }}) - {{ workshop.data.description }}</li>
     {% endfor %}
     <li><strong><a href="https://www.aipowereddotnet.school/">Build a Full-Stack AI App with .NET</a></strong> (Cohort) - Cohort-based learning experience, sold on its own site</li>
   </ul>
