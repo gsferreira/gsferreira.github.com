@@ -19,6 +19,7 @@ Create a new workshop page for guiferreira.me.
    - **Duration**: Length (e.g., "4 hours", "8 hours")
    - **Participants**: Recommended group size (e.g., "12-25 people")
    - **Level**: Beginner, Intermediate, or Advanced
+   - **Black Lab Studios URL**: the matching page at blacklabstudios.com/workshops/, where private and team bookings go
    - **Key achievements**: What participants will gain (3-5 items)
    - **Prerequisites**: Who should attend (3-5 items)
    - **Key takeaways**: Main learning outcomes (4-6 items)
@@ -42,6 +43,7 @@ Create a new workshop page for guiferreira.me.
    duration: [Duration]
    participants: [Participants]
    level: [Level]
+   blsUrl: https://blacklabstudios.com/workshops/[bls-slug]/
    achievements:
      - [Achievement 1]
      - [Achievement 2]
@@ -52,14 +54,8 @@ Create a new workshop page for guiferreira.me.
      - [Prerequisite 3]
    instructor:
      name: Gui Ferreira
-     title: Software Developer Educator
+     title: Microsoft MVP and Software Engineer Educator
      image: /assets/headshot.avif
-   keyTakeaways:
-     - [Takeaway 1]
-     - [Takeaway 2]
-     - [Takeaway 3]
-     - [Takeaway 4]
-
    curriculum:
      description: [Curriculum description]
      modules:
@@ -76,18 +72,47 @@ Create a new workshop page for guiferreira.me.
        answer: [Answer 1]
      - question: [Question 2]
        answer: [Answer 2]
+   upcomingSessions: []
    ---
    ```
 
-5. Create the workshop content body with:
-   - Opening hook (italicized pain point quote)
-   - Problem description (2-3 paragraphs)
-   - "**This workshop will change that.**" transition
-   - "**By the end of this Workshop you will have:**" bullet list
-   - "**Is this Workshop for you?**" section
-   - "**What will you need?**" section
+   `upcomingSessions` is the public calendar. Leave it empty until a date is
+   booked, then add one entry per session. `date` must stay in the
+   `"September 14-15, 2026"` shape, because the `sessionStart` and `sessionEnd`
+   filters parse it into the Event markup:
 
-6. After creating the file, remind the user to:
+   ```yaml
+   upcomingSessions:
+     - date: "September 14-15, 2026"
+       location: "Oslo, Norway"
+       venue: "NDC Oslo"
+       spotsLeft: "Seats available"
+       available: true
+       registrationUrl: "https://ndcoslo.com/agenda/..."
+   ```
+
+   `registrationUrl` points at the conference, never at Black Lab Studios. The
+   conference sells the public seat. Black Lab Studios sells the private booking,
+   which is what `blsUrl` is for.
+
+5. Before writing any copy, read
+   `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/second-brain/VOICE.md`.
+   The "Sales and landing copy" section applies here. No em dashes, British-leaning
+   spelling, contractions in prose, and no anonymous testimonials.
+
+6. Create the workshop content body with:
+   - An opening that drops the reader into the situation, not an abstraction
+   - What gets built or covered, in concrete terms
+   - A "what this isn't" section naming what the workshop does not do
+   - "**Is this for you?**"
+   - A close on something the reader can act on, not on pressure to book
+
+7. Check the copy against the matching Black Lab Studios page before finishing.
+   Both sites carry these workshops on purpose: this one sells a seat to a person,
+   blacklabstudios.com sells an engagement to a company. Same facts are fine.
+   Shared sentences are not, and will cost both pages in search.
+
+8. After creating the file, remind the user to:
    - Add a custom workshop image if desired (or use the default)
    - Review and customize the FAQs
    - Add additional curriculum modules if needed

@@ -1,6 +1,37 @@
 ---
 layout: default.liquid
 ---
+{#- Public sessions are the one thing this site carries that blacklabstudios.com does
+    not. The Event markup lives here, on the page that describes the workshop, so no
+    two URLs claim the same Event. The organizer is the conference, because that is
+    who sells the seat. -#}
+{%- set eventItems = [] -%}
+{%- for session in upcomingSessions -%}
+  {%- if session.available -%}
+    {%- set _ = eventItems.push({
+      "@type": "ListItem",
+      "position": eventItems.length + 1,
+      "item": {
+        "@type": "Event",
+        "name": title,
+        "description": description,
+        "startDate": session.date | sessionStart,
+        "endDate": session.date | sessionEnd,
+        "eventStatus": "https://schema.org/EventScheduled",
+        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
+        "location": { "@type": "Place", "name": session.venue, "address": session.location },
+        "performer": { "@id": site.url + "/#person" },
+        "organizer": { "@type": "Organization", "name": session.venue },
+        "url": session.registrationUrl
+      }
+    }) -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- if eventItems.length > 0 %}
+<script type="application/ld+json">
+{{ { "@context": "https://schema.org", "@type": "ItemList", "name": "Upcoming public sessions of " + title, "itemListElement": eventItems } | dump | safe }}
+</script>
+{%- endif %}
 
 <section class="relative bg-white dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
   <div class="container mx-auto px-6 max-w-6xl">
@@ -46,17 +77,6 @@ layout: default.liquid
         <div class="space-y-6">
           <div class="flex items-center gap-4">
             <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-gray-800 dark:text-gray-400 border-gray-300 dark:border-gray-600">{{ format }}</div>
-            {% if rating and reviews %}
-            <div class="flex items-center gap-1">
-              {% for i in range(0, 5) %}
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-star h-4 w-4 fill-current text-gray-900 dark:text-white">
-                <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"></polygon>
-              </svg>
-              {% endfor %}
-              <span class="text-sm font-medium text-gray-900 dark:text-white transition-colors">{{ rating }}</span>
-              <span class="text-sm text-gray-500 dark:text-gray-400 transition-colors">({{ reviews }} reviews)</span>
-            </div>
-            {% endif %}
           </div>
           <h1 class="text-4xl lg:text-5xl font-medium text-gray-900 dark:text-white leading-tight tracking-tight transition-colors">{{ title }}</h1>
           <p class="text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ description }}</p>
@@ -84,8 +104,10 @@ layout: default.liquid
           </ul>
         </div>
         <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          <a href="#upcoming" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">View Upcoming Sessions</a>
-          <a href="mailto:gui@guiferreira.me" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border bg-background hover:text-accent-foreground h-10 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full px-8 py-3 font-medium transition-colors">Request Custom Workshop</a>
+          {% if upcomingSessions and upcomingSessions.length > 0 %}
+          <a href="#upcoming" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">See the public dates</a>
+          {% endif %}
+          <a href="{% if blsUrl %}{{ blsUrl }}#enquiry{% else %}https://blacklabstudios.com/workshops/#enquiry{% endif %}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 {% if upcomingSessions and upcomingSessions.length > 0 %}border bg-background hover:text-accent-foreground h-10 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800{% else %}h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black{% endif %} rounded-full px-8 py-3 font-medium transition-colors">Run this for your team</a>
         </div>
         <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 transition-colors">
           <div class="flex items-center gap-4">
@@ -167,13 +189,14 @@ layout: default.liquid
   <div class="container mx-auto px-6 max-w-4xl">
     <div class="space-y-16">
       <div class="text-center space-y-6">
-        <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Upcoming Sessions</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">Join our next available sessions. Limited seats available.</p>
+        <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Catch it in public</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">When this runs in public it runs at a conference, and the conference sells the seat. Registration goes to them, not to me.</p>
       </div>
 
       {% set sessions = upcomingSessions %}
       {% set workshopTitle = title %}
       {% set workshopFormat = format %}
+      {% set hideWorkshopTitle = true %}
       {% include "components/upcoming-sessions.njk" %}
     </div>
   </div>
@@ -204,9 +227,9 @@ layout: default.liquid
             </div>
             {% endif %}
             <div>
-              <div class="font-medium text-gray-900 dark:text-white transition-colors">{{ testimonial.author }}</div>
-              <div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">{{ testimonial.title }}</div>
-              <div class="text-sm text-gray-600 dark:text-gray-300 font-medium transition-colors">{{ testimonial.company }}</div>
+              {% if testimonial.author %}<div class="font-medium text-gray-900 dark:text-white transition-colors">{{ testimonial.author }}</div>{% endif %}
+              {% if testimonial.title %}<div class="text-sm {% if testimonial.author %}text-gray-500 dark:text-gray-400{% else %}font-medium text-gray-900 dark:text-white{% endif %} transition-colors">{{ testimonial.title }}</div>{% endif %}
+              {% if testimonial.company %}<div class="text-sm text-gray-600 dark:text-gray-300 font-medium transition-colors">{{ testimonial.company }}</div>{% endif %}
             </div>
           </div>
         </div>
@@ -315,3 +338,20 @@ layout: default.liquid
   </div>
 </section>
 {% endif %} 
+<section class="py-24 lg:py-32 bg-gray-50 dark:bg-black transition-colors">
+  <div class="container mx-auto px-6 max-w-6xl">
+    <div class="max-w-2xl mx-auto text-center space-y-8">
+      <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Want this for your team?</h2>
+      <p class="text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">Private sessions run on-site or remote, against the codebase your team actually works in. Black Lab Studios, the company I founded, handles the scoping and the contract. I run the room.</p>
+      <div class="flex justify-center">
+        <a href="{% if blsUrl %}{{ blsUrl }}#enquiry{% else %}https://blacklabstudios.com/workshops/#enquiry{% endif %}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">
+          Talk to Black Lab Studios
+          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right h-4 w-4" aria-hidden="true">
+            <path d="M7 7h10v10"></path>
+            <path d="M7 17 17 7"></path>
+          </svg>
+        </a>
+      </div>
+    </div>
+  </div>
+</section>

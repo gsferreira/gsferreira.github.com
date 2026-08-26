@@ -1,58 +1,46 @@
 ---
 layout: default.liquid
 title: Workshops with Gui Ferreira
-description: Where to catch me running a workshop in public, and how to book one for your team. The workshops themselves run through Black Lab Studios.
+description: Hands-on workshops on testing, TDD and building AI agents in .NET. Read the outlines here, catch a public session at a conference, or have one run for your team.
 ---
-{%- assign availableCount = 0 -%}
-{%- for workshop in workshopDates -%}{%- for session in workshop.sessions -%}{%- if session.available -%}{%- assign availableCount = availableCount | plus: 1 -%}{%- endif -%}{%- endfor -%}{%- endfor -%}
-{%- if availableCount > 0 -%}
+{%- comment -%}
+  This page is both the index and the public calendar. The detail pages carry the
+  Event markup for their own sessions, so this one lists the workshops themselves
+  and stays out of the way. Public seats are sold by the conference. Private and
+  team bookings go to Black Lab Studios.
+{%- endcomment -%}
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "ItemList",
-  "name": "Upcoming public workshop sessions with Gui Ferreira",
-  "itemListElement": [
-    {%- assign position = 0 -%}
-    {%- for workshop in workshopDates -%}
-    {%- for session in workshop.sessions -%}
-    {%- if session.available -%}
-    {%- assign position = position | plus: 1 -%}
-    {% if position > 1 %},{% endif %}{
-      "@type": "ListItem",
-      "position": {{ position }},
-      "item": {
-        "@type": "Event",
-        "name": {{ workshop.title | jsonify }},
-        "description": {{ workshop.blurb | jsonify }},
-        "startDate": "{{ session.date | sessionStart }}",
-        "endDate": "{{ session.date | sessionEnd }}",
-        "eventStatus": "https://schema.org/EventScheduled",
-        "eventAttendanceMode": "https://schema.org/OfflineEventAttendanceMode",
-        "location": {
-          "@type": "Place",
-          "name": {{ session.venue | jsonify }},
-          "address": {{ session.location | jsonify }}
-        },
-        "performer": { "@id": "{{ site.url }}/#person" },
-        "organizer": { "@type": "Organization", "name": {{ session.venue | jsonify }} },
-        "url": {{ session.registrationUrl | jsonify }}
+  "@type": "CollectionPage",
+  "@id": "{{ site.url }}/workshops/#collection",
+  "name": {{ title | jsonify }},
+  "description": {{ description | jsonify }},
+  "url": "{{ site.url }}/workshops/",
+  "isPartOf": { "@id": "{{ site.url }}/#website" },
+  "about": { "@id": "{{ site.url }}/#person" },
+  "mainEntity": {
+    "@type": "ItemList",
+    "itemListElement": [
+      {%- for workshop in collections.workshops %}
+      {% unless forloop.first %},{% endunless %}{
+        "@type": "ListItem",
+        "position": {{ forloop.index }},
+        "url": "{{ site.url }}{{ workshop.url }}",
+        "name": {{ workshop.data.title | jsonify }}
       }
-    }
-    {%- endif -%}
-    {%- endfor -%}
-    {%- endfor %}
-  ]
+      {%- endfor %}
+    ]
+  }
 }
 </script>
-{%- endif -%}
-
 
 <main class="min-h-screen bg-white dark:bg-black">
     <section class="relative bg-white dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
         <div class="container mx-auto px-6 max-w-6xl">
             <div class="text-center space-y-8">
                 <h1 class="text-5xl lg:text-6xl [font-size:3rem] lg:[font-size:3.75rem] font-light text-gray-900 dark:text-white leading-tight tracking-tight transition-colors">Workshops</h1>
-                <p class="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-2xl mx-auto transition-colors">I run these through <a href="https://blacklabstudios.com/workshops/" class="underline decoration-1 underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-current transition-colors">Black Lab Studios</a>. This page is the calendar. If you want one run for your team, the studio takes it from there.</p>
+                <p class="text-xl lg:text-2xl text-gray-600 dark:text-gray-300 font-light leading-relaxed max-w-2xl mx-auto transition-colors">Three things I teach in a room, from half a day to a two-day intensive. The outlines are below. Public dates run at conferences, and private ones go through <a href="https://blacklabstudios.com/workshops/" class="underline decoration-1 underline-offset-2 decoration-gray-300 dark:decoration-gray-600 hover:decoration-current transition-colors">Black Lab Studios</a>.</p>
             </div>
         </div>
     </section>
@@ -62,14 +50,14 @@ description: Where to catch me running a workshop in public, and how to book one
             <div class="space-y-16">
                 <div class="text-center space-y-6">
                     <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Upcoming sessions</h2>
-                    <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">Public sessions are run by the conference hosting them. Registration goes through the event.</p>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">Every public session runs at a conference, and the conference sells the seat. Registration goes to them, not to me.</p>
                 </div>
 
                 {% assign hasUpcomingSessions = false %}
-                {% for workshop in workshopDates %}
-                    {% if workshop.sessions.size > 0 %}
+                {% for workshop in collections.workshops %}
+                    {% if workshop.data.upcomingSessions.size > 0 %}
                         {% assign hasUpcomingSessions = true %}
-                        {% include 'components/upcoming-sessions.njk', sessions: workshop.sessions, workshopTitle: workshop.title, workshopFormat: workshop.format %}
+                        {% include 'components/upcoming-sessions.njk', sessions: workshop.data.upcomingSessions, workshopTitle: workshop.data.title, workshopFormat: workshop.data.format %}
                     {% endif %}
                 {% endfor %}
 
@@ -101,26 +89,27 @@ description: Where to catch me running a workshop in public, and how to book one
             <div class="space-y-16">
                 <div class="text-center space-y-6">
                     <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">What I run</h2>
-                    <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">Full outlines, formats and booking live at Black Lab Studios.</p>
+                    <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">Each one has its own page with the full outline, what you need to bring, and where to catch it next.</p>
                 </div>
 
                 <div class="grid gap-6">
-                    {% for workshop in workshopDates %}
+                    {% for workshop in collections.workshops %}
                     <article class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 lg:p-8 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
                         <div class="flex flex-col lg:flex-row lg:items-center gap-4 lg:gap-8">
                             <div class="flex-1 space-y-2">
                                 <div class="flex items-center gap-4 text-sm">
-                                    <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-medium transition-colors">{{ workshop.format }}</span>
+                                    <span class="bg-black dark:bg-white text-white dark:text-black px-3 py-1 rounded-full font-medium transition-colors">{{ workshop.data.format }}</span>
+                                    <span class="text-gray-500 dark:text-gray-400 transition-colors">{{ workshop.data.level }}</span>
                                 </div>
-                                <h3 class="text-2xl font-medium text-gray-900 dark:text-white transition-colors">{{ workshop.title }}</h3>
-                                <p class="text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ workshop.blurb }}</p>
+                                <h3 class="text-2xl font-medium text-gray-900 dark:text-white transition-colors">{{ workshop.data.title }}</h3>
+                                <p class="text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ workshop.data.description }}</p>
                             </div>
                             <div class="lg:justify-end">
-                                <a href="{{ workshop.blsUrl }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border h-10 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full px-6 py-2 font-medium transition-colors">
-                                    See the full outline
-                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right h-4 w-4" aria-hidden="true">
-                                        <path d="M7 7h10v10"></path>
-                                        <path d="M7 17 17 7"></path>
+                                <a href="{{ workshop.url }}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 border h-10 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full px-6 py-2 font-medium transition-colors">
+                                    Read the outline
+                                    <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-right h-4 w-4" aria-hidden="true">
+                                        <path d="M5 12h14"></path>
+                                        <path d="m12 5 7 7-7 7"></path>
                                     </svg>
                                 </a>
                             </div>

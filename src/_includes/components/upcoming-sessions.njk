@@ -4,7 +4,7 @@
     <article class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 lg:p-8 hover:bg-gray-100 dark:hover:bg-gray-800 transition-colors duration-300">
         <div class="grid lg:grid-cols-4 gap-6 items-center">
             <div class="space-y-2">
-                <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">{{ workshopTitle }}</h3>
+                <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">{% if hideWorkshopTitle %}{{ session.venue }}{% else %}{{ workshopTitle }}{% endif %}</h3>
                 <p class="text-gray-600 dark:text-gray-300 font-light text-sm transition-colors">{{ workshopFormat }}</p>
             </div>
             <div class="space-y-2">
@@ -35,7 +35,7 @@
                     </svg>
                     <span>{{ session.spotsLeft }}</span>
                 </div>
-                <div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">{{ session.venue }}</div>
+                {% if not hideWorkshopTitle %}<div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">{{ session.venue }}</div>{% endif %}
             </div>
             <div class="flex gap-3 lg:justify-end">
                 {% if session.available %}
