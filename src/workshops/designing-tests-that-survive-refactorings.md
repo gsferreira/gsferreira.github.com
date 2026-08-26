@@ -21,7 +21,7 @@ prerequisites:
   - No laptop. Bring a pen.
 instructor:
   name: Gui Ferreira
-  title: Microsoft MVP and Software Engineer Educator
+  title: Software Engineer Educator | Microsoft MVP
   image: /assets/headshot.avif
 curriculum:
   description: "One session, four hours, run as a conversation. I bring the problems, you bring the codebase you actually work in, and we argue about it in the open."

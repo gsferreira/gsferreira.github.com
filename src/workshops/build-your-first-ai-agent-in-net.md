@@ -22,7 +22,7 @@ prerequisites:
   - Create a GitHub account and an Azure account. Expect 5 to 10 euros of Azure usage.
 instructor:
   name: Gui Ferreira
-  title: Microsoft MVP and Software Engineer Educator
+  title: Software Engineer Educator | Microsoft MVP
   image: /assets/headshot.avif
 curriculum:
   description: "You build one thing across the two days: a personal finance assistant that reads natural language, pulls real transaction data, remembers what you told it earlier, and gives you an answer you can check. We use Azure AI services, and the code moves to OpenAI, Anthropic or Google by changing a line."

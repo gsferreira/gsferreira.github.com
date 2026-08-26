@@ -23,7 +23,7 @@ prerequisites:
   - Bring a GitHub account and whichever AI assistant you already use
 instructor:
   name: Gui Ferreira
-  title: Microsoft MVP and Software Engineer Educator
+  title: Software Engineer Educator | Microsoft MVP
   image: /assets/headshot.avif
 curriculum:
   description: "Two days at the keyboard, most of it pairing and mobbing. Day one is the cycle itself, practised until your hands know it. Day two is everything the katas leave out."

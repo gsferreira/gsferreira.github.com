@@ -54,7 +54,7 @@ Create a new workshop page for guiferreira.me.
      - [Prerequisite 3]
    instructor:
      name: Gui Ferreira
-     title: Microsoft MVP and Software Engineer Educator
+     title: Software Engineer Educator | Microsoft MVP
      image: /assets/headshot.avif
    curriculum:
      description: [Curriculum description]
