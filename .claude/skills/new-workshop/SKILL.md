@@ -88,12 +88,14 @@ Create a new workshop page for guiferreira.me.
        venue: "NDC Oslo"
        spotsLeft: "Seats available"
        available: true
-       registrationUrl: "https://ndcoslo.com/agenda/..."
+       registrationUrl: "https://ndcoslo.com/workshops/..."
    ```
 
    `registrationUrl` points at the conference, never at Black Lab Studios. The
    conference sells the public seat. Black Lab Studios sells the private booking,
-   which is what `blsUrl` is for.
+   which is what `blsUrl` is for. The URL shape is not the same on every NDC
+   site, so open the conference page and copy the real link instead of guessing
+   the path.
 
 5. Before writing any copy, read
    `~/Library/Mobile Documents/iCloud~md~obsidian/Documents/second-brain/VOICE.md`.
