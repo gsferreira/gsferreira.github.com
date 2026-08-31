@@ -73,14 +73,11 @@ curriculum:
         - "Putting an MCP server in front of what you built"
         - "Where the Microsoft Agent Framework picks up"
         - "When a second agent helps, and when it is one agent too many"
-testimonialsNote: "NDC Copenhagen, June 2026. All 20 people who filled in the feedback form rated both the instructor and the content \"Very Good\". NDC runs those forms anonymously, so the quotes below carry no names."
+testimonialsNote: "The last time this ran in Oslo, at NDC AI in June 2026, all 20 people who filled in the feedback form rated both the instructor and the content \"Very Good\". The forms are anonymous, so the quotes below carry no names."
 testimonials:
   - quote: "Gui was an excellent instructor, fantastic pace, good explanations and analogies. Covered each topic in depth."
-    title: NDC Copenhagen attendee, June 2026
   - quote: "Top notch workshop! The content was relevant and easy to follow, even without prior knowledge about the topic."
-    title: NDC Copenhagen attendee, June 2026
   - quote: "The instructor teaches abstract concepts by using hands-on techniques in an efficient way... his teaching style which is engaged, inspiring and honest."
-    title: NDC Copenhagen attendee, June 2026
 faqs:
   - question: Do I need to have built anything with AI before?
     answer: No. If you can write a C# API and you have seen a prompt and a completion, that is the bar. We start with a raw HTTP call and build up from there, so nothing is assumed.

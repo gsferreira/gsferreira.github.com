@@ -223,6 +223,7 @@ layout: default.liquid
             {% endfor %}
           </div>
           <blockquote class="text-lg text-gray-700 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ testimonial.quote }}</blockquote>
+          {% if testimonial.author or testimonial.title or testimonial.company %}
           <div class="flex items-center gap-4">
             {% if testimonial.image %}
             <div class="w-10 h-10 rounded-full bg-gray-200 dark:bg-gray-800 overflow-hidden relative">
@@ -235,6 +236,7 @@ layout: default.liquid
               {% if testimonial.company %}<div class="text-sm text-gray-600 dark:text-gray-300 font-medium transition-colors">{{ testimonial.company }}</div>{% endif %}
             </div>
           </div>
+          {% endif %}
         </div>
         {% endfor %}
       </div>
