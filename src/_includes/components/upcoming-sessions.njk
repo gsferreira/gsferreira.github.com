@@ -49,6 +49,9 @@
                 {% endif %}
             </div>
         </div>
+        {% if session.note %}
+        <p class="mt-4 pt-4 border-t border-gray-200 dark:border-gray-800 text-sm text-gray-500 dark:text-gray-400 font-light transition-colors">{{ session.note }}</p>
+        {% endif %}
     </article>
     {% endfor %}
 </div>
