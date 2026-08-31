@@ -7,7 +7,7 @@ image: /assets/workshops/presenting-02.jpg
 category: AI & .NET
 format: 2-Day Intensive
 duration: 2 days
-participants: 15-40 people
+participants: 10-40 people
 level: Intermediate
 blsUrl: https://blacklabstudios.com/workshops/build-your-first-ai-agent-in-dotnet/
 achievements:
@@ -73,6 +73,14 @@ curriculum:
         - "Putting an MCP server in front of what you built"
         - "Where the Microsoft Agent Framework picks up"
         - "When a second agent helps, and when it is one agent too many"
+testimonialsNote: "NDC Copenhagen, June 2026. All 20 people who filled in the feedback form rated both the instructor and the content \"Very Good\". NDC runs those forms anonymously, so the quotes below carry no names."
+testimonials:
+  - quote: "Gui was an excellent instructor, fantastic pace, good explanations and analogies. Covered each topic in depth."
+    title: NDC Copenhagen attendee, June 2026
+  - quote: "Top notch workshop! The content was relevant and easy to follow, even without prior knowledge about the topic."
+    title: NDC Copenhagen attendee, June 2026
+  - quote: "The instructor teaches abstract concepts by using hands-on techniques in an efficient way... his teaching style which is engaged, inspiring and honest."
+    title: NDC Copenhagen attendee, June 2026
 faqs:
   - question: Do I need to have built anything with AI before?
     answer: No. If you can write a C# API and you have seen a prompt and a completion, that is the bar. We start with a raw HTTP call and build up from there, so nothing is assumed.
@@ -91,18 +99,21 @@ upcomingSessions:
     spotsLeft: "Seats available"
     available: true
     registrationUrl: "https://ndcoslo.com/agenda/build-your-first-ai-agent-in-net/3c1768c8344e"
+    note: "Already going? It runs the Monday and Tuesday before the talks start."
   - date: "November 17-18, 2026"
     location: "Porto, Portugal"
     venue: "NDC Porto"
     spotsLeft: "Seats available"
     available: true
     registrationUrl: "https://ndcporto.com/agenda/build-your-first-ai-agent-in-net/81f59dbbf411"
+    note: "Already going? It runs the Tuesday and Wednesday before the talks start."
   - date: "January 25-26, 2027"
     location: "London, United Kingdom"
     venue: "NDC London"
     spotsLeft: "Seats available"
     available: true
     registrationUrl: "https://ndclondon.com/workshops/build-your-first-ai-agent-in-net"
+    note: "Already going? It runs the Monday and Tuesday before the talks start."
 ---
 
 Somebody at your company has already shipped an agent. It books meetings, or it triages support tickets, or it reads invoices and decides something about them. You've seen the demo. What you haven't seen is the code, and you have a suspicion that the demo and the code are quite far apart.
