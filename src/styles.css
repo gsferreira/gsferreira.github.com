@@ -2,10 +2,17 @@
 @tailwind components;
 @tailwind utilities;
 
+/* Black Lab Studios: body is 16/28. */
+@layer base {
+  body {
+    line-height: 1.75;
+  }
+}
+
 /* PrismJS Syntax Highlighting */
 pre[class*="language-"],
 code[class*="language-"] {
-  color: #374151; /* Dark gray for default text */
+  color: #484848; /* Dark gray for default text */
   font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
   direction: ltr;
   text-align: left;
@@ -24,38 +31,38 @@ pre[class*="language-"] {
   padding: 1.25rem;
   margin: 1.25em 0;
   overflow: auto;
-  border: 1px solid #e2e8f0;
+  border: 1px solid #D1D1D1;
   border-radius: 0.5rem;
-  background: #f8fafc;
+  background: #EDEAE5;
 }
 
 /* Inline code */
 :not(pre) > code[class*="language-"] {
   padding: 0.125rem 0.375rem;
   border-radius: 0.25rem;
-  background: #f3f4f6;
-  color: #4b5563;
+  background: #EDEAE5;
+  color: #484848;
 }
 
 /* Dark theme overrides */
 .dark pre[class*="language-"] {
-  background: #1a1e2d;
-  border-color: #2d3748;
-  color: #e5e7eb;
+  background: #242424;
+  border-color: #3A3A3A;
+  color: #D1D1D1;
 }
 
 .dark :not(pre) > code[class*="language-"] {
-  background: #1a1e2d;
-  color: #e5e7eb;
+  background: #242424;
+  color: #D1D1D1;
 }
 
 /* Dark mode list markers */
 .dark .prose ul li::marker {
-  color: #e5e7eb !important;
+  color: #D1D1D1 !important;
 }
 
 .dark .prose ol li::marker {
-  color: #e5e7eb !important;
+  color: #D1D1D1 !important;
 }
 
 /* Tokens */
@@ -63,11 +70,11 @@ pre[class*="language-"] {
 .token.prolog,
 .token.doctype,
 .token.cdata {
-  color: #6b7280; /* Gray for comments */
+  color: #6B6B6B; /* Charcoal 60 for comments */
 }
 
 .token.punctuation {
-  color: #64748b;
+  color: #6B6B6B;
 }
 
 .token.namespace {
@@ -121,11 +128,11 @@ pre[class*="language-"] {
 .dark .token.prolog,
 .dark .token.doctype,
 .dark .token.cdata {
-  color: #9ca3af;
+  color: #A3A3A3;
 }
 
 .dark .token.punctuation {
-  color: #e5e7eb;
+  color: #D1D1D1;
 }
 
 .dark .token.property,
@@ -173,7 +180,7 @@ pre[class*="language-"] {
 /* Base text color for code in dark mode */
 .dark code[class*="language-"],
 .dark pre[class*="language-"] {
-  color: #e5e7eb;
+  color: #D1D1D1;
 }
 
 .token.important,

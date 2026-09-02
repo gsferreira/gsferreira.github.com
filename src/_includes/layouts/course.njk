@@ -9,7 +9,7 @@ layout: default
     <div class="flex items-center gap-1" role="img" aria-label="Rating: {{ rating }} out of 5 stars">
       <div class="flex">
         {% for i in range(1, 6) %}
-          <svg class="w-4 h-4 {% if i <= rating %}text-yellow-400{% else %}text-gray-200 dark:text-gray-700{% endif %}" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
+          <svg class="w-4 h-4 {% if i <= rating %}text-gray-900 dark:text-white{% else %}text-gray-200 dark:text-gray-700{% endif %}" fill="currentColor" viewBox="0 0 20 20" aria-hidden="true">
             <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z"/>
           </svg>
         {% endfor %}
@@ -114,7 +114,7 @@ layout: default
           {% endif %}
           <p class="text-gray-600 dark:text-gray-400 p-8">
             Your browser doesn't support video. 
-            <a href="{{ heroVideo.mp4 }}" class="text-blue-600 dark:text-blue-400 underline">
+            <a href="{{ heroVideo.mp4 }}" class="text-gray-900 dark:text-white underline">
               Download the course preview video
             </a>
           </p>
@@ -251,35 +251,35 @@ layout: default
           <h3 class="font-medium text-gray-900 dark:text-white text-center transition-colors">Everything you need to succeed:</h3>
           <div class="grid grid-cols-1 gap-3">
             <div class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-gray-900 dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
               <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">{{ duration }} of video content</span>
             </div>
             <div class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-gray-900 dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
               <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">Downloadable resources</span>
             </div>
             <div class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-gray-900 dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
               <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">Certificate of completion</span>
             </div>
             <div class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-gray-900 dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
               <span class="text-gray-600 dark:text-gray-300 font-light transition-colors">Lifetime access to all updates</span>
             </div>
             <div class="flex items-center gap-3">
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-green-600 dark:text-green-400 flex-shrink-0">
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-circle-check-big h-5 w-5 text-gray-900 dark:text-white flex-shrink-0">
                 <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"></path>
                 <path d="m9 11 3 3L22 4"></path>
               </svg>
@@ -317,7 +317,7 @@ layout: default
 </section> 
 
 {% if relatedCourses %}
-<section class="py-24 lg:py-32 bg-gray-50 dark:bg-black border-t border-gray-100 dark:border-gray-900 transition-colors">
+<section class="py-24 lg:py-32 bg-surface dark:bg-black border-t border-gray-100 dark:border-gray-900 transition-colors">
   <div class="container mx-auto px-6 max-w-6xl">
     <div class="space-y-16">
       <h2 class="text-3xl font-medium text-gray-900 dark:text-white transition-colors">Students also enrolled in</h2>

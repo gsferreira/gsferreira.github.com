@@ -2,11 +2,11 @@
 <div class="py-12">
     <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div>
-            <ul class="divide-y divide-gray-100 dark:divide-dark-blue">
+            <ul class="divide-y divide-gray-100 dark:divide-gray-800">
                 {% for post in posts %}
                     {% if not featured or post.url != featured.url %}
                     <li class="group">
-                        <article class="flex flex-col gap-3 py-12 -mx-8 px-8 rounded-[2rem] transition-all duration-300 hover:bg-light-hover dark:hover:bg-dark-blue">
+                        <article class="flex flex-col gap-3 py-12 -mx-8 px-8 rounded-lg transition-all duration-300 hover:bg-gray-100 dark:hover:bg-gray-800">
                             <div class="flex items-center gap-3 text-sm">
                                 {% if post.data.category %}
                                     <span class="uppercase font-medium text-gray-500 dark:text-gray-400">{{ post.data.category }}</span>
