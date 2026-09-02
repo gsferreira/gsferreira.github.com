@@ -95,7 +95,7 @@ upcomingSessions:
     venue: "NDC Oslo"
     spotsLeft: "Seats available"
     available: true
-    registrationUrl: "https://ndcoslo.com/workshops/build-your-first-ai-agent-in-net"
+    registrationUrl: "https://ndcoslo.com/tickets"
     note: "Already going? It runs the Monday and Tuesday before the talks start."
   - date: "November 17-18, 2026"
     location: "Porto, Portugal"
