@@ -6,7 +6,7 @@ description: Privacy policy for Gui Ferreira's website
 
 # Privacy Policy
 
-**Last updated: 20-08-2026**
+**Last updated: 03-09-2026**
 
 ## Introduction
 
@@ -27,7 +27,7 @@ We do not directly collect or store personal information on our Website. However
 
 When you visit our Website, certain information is automatically collected:
 
-- **Analytics Data**: We use Simple Analytics, a privacy-friendly analytics service, to understand how visitors use our Website. Simple Analytics does not use cookies, does not collect personal data, and does not track visitors across websites. It only collects aggregated data such as page views, referrers, and browser type.
+- **Analytics Data**: We use Simple Analytics, a privacy-friendly analytics service, to understand how visitors use our Website. Simple Analytics does not use cookies, does not collect personal data, and does not track visitors across websites. It only collects aggregated data such as page views, referrers, browser type, and anonymous interaction events such as clicks on outbound links and form submissions.
 - **Cookies and Similar Technologies**: Our Website may use cookies and browser storage to enhance your experience. These may include:
   - Essential cookies for website functionality
   - Preference cookies to remember your choices
