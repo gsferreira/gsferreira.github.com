@@ -27,16 +27,26 @@ layout: default.liquid
     }) -%}
   {%- endif -%}
 {%- endfor -%}
+{#- The next bookable session. The hero and the sticky bar both point at it, so an ad
+    visitor never has to scroll to the table to find out how to buy. -#}
+{%- set nextList = [] -%}
+{%- for session in upcomingSessions -%}
+  {%- if session.available and session.registrationUrl and nextList.length == 0 -%}
+    {%- set _ = nextList.push(session) -%}
+  {%- endif -%}
+{%- endfor -%}
+{%- set nextSession = nextList[0] -%}
+
 {%- if eventItems.length > 0 %}
 <script type="application/ld+json">
 {{ { "@context": "https://schema.org", "@type": "ItemList", "name": "Upcoming public sessions of " + title, "itemListElement": eventItems } | dump | safe }}
 </script>
 {%- endif %}
 
-<section class="relative bg-white dark:bg-black py-24 lg:py-32 mt-16 transition-colors">
+<section class="relative bg-white dark:bg-black pt-8 pb-16 lg:pt-20 lg:pb-24 mt-16 transition-colors">
   <div class="container mx-auto px-6 max-w-6xl">
-    <div class="grid lg:grid-cols-2 gap-16 items-start">
-      <div class="space-y-6">
+    <div class="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
+      <div class="space-y-6 order-2 lg:order-1">
         <div class="aspect-[4/3] relative rounded-3xl overflow-hidden bg-gray-100 dark:bg-gray-900">
           <img alt="{{ title }}" decoding="async" data-nimg="fill" class="object-cover" src="{{ image }}" style="position: absolute; height: 100%; width: 100%; inset: 0px; color: transparent;">
           <div class="absolute top-6 left-6">
@@ -73,13 +83,42 @@ layout: default.liquid
           </div>
         </div>
       </div>
-      <div class="space-y-8">
+      <div class="space-y-8 order-1 lg:order-2">
         <div class="space-y-6">
           <div class="flex items-center gap-4">
             <div class="inline-flex items-center rounded-full border px-2.5 py-0.5 text-xs font-semibold transition-colors focus:outline-none focus:ring-2 focus:ring-ring focus:ring-offset-2 text-gray-800 dark:text-gray-400 border-gray-300 dark:border-gray-600">{{ format }}</div>
           </div>
           <h1 class="text-4xl lg:text-5xl font-medium text-gray-900 dark:text-white leading-tight tracking-tight transition-colors">{{ title }}</h1>
           <p class="text-xl text-gray-600 dark:text-gray-300 font-light leading-relaxed transition-colors">{{ description }}</p>
+        </div>
+        <div id="hero-cta" class="space-y-4 pt-4">
+          {% if nextSession %}
+          <div class="flex flex-col sm:flex-row gap-4">
+            <a href="{{ nextSession.registrationUrl }}" target="_blank" rel="noopener" data-sa-event="hero_register" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">
+              Register for {{ nextSession.venue }}
+              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-arrow-up-right h-4 w-4" aria-hidden="true"><path d="M7 7h10v10"></path><path d="M7 17 17 7"></path></svg>
+            </a>
+            {% if upcomingSessions.length > 1 %}
+            <a href="#upcoming" data-sa-event="hero_see_all_dates" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 border bg-background hover:text-accent-foreground border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800 rounded-full px-8 py-3 font-medium transition-colors">See all dates</a>
+            {% endif %}
+          </div>
+          <p class="text-sm text-gray-600 dark:text-gray-300 font-light transition-colors">
+            {{ nextSession.date }}, {{ nextSession.location }}.{% if nextSession.price %} {{ nextSession.price }}.{% endif %} {{ nextSession.venue }} sells the seat and handles the booking.
+          </p>
+          {% elif upcomingSessions and upcomingSessions.length > 0 %}
+          <a href="#upcoming" data-sa-event="hero_see_all_dates" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">See the public dates</a>
+          {% else %}
+          <a href="{% if blsUrl %}{{ blsUrl }}#enquiry{% else %}https://blacklabstudios.com/workshops/#enquiry{% endif %}" data-sa-event="hero_team_enquiry" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">Run this for your team</a>
+          {% endif %}
+          {% if heroProof %}
+          <p class="text-sm text-gray-500 dark:text-gray-400 font-light leading-relaxed transition-colors">{{ heroProof }} <a href="#feedback" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">Read the feedback</a>.</p>
+          {% endif %}
+          {% if upcomingSessions and upcomingSessions.length > 0 %}
+          <p class="text-sm text-gray-500 dark:text-gray-400 font-light transition-colors">
+            Want it for your team instead?
+            <a href="{% if blsUrl %}{{ blsUrl }}#enquiry{% else %}https://blacklabstudios.com/workshops/#enquiry{% endif %}" data-sa-event="hero_team_enquiry" class="underline underline-offset-2 hover:text-gray-900 dark:hover:text-white">Black Lab Studios runs it privately</a>.
+          </p>
+          {% endif %}
         </div>
         <div class="space-y-4">
           <h3 class="text-xl font-medium text-gray-900 dark:text-white transition-colors">What you'll achieve:</h3>
@@ -102,12 +141,6 @@ layout: default.liquid
             </li>
             {% endfor %}
           </ul>
-        </div>
-        <div class="flex flex-col sm:flex-row gap-4 pt-4">
-          {% if upcomingSessions and upcomingSessions.length > 0 %}
-          <a href="#upcoming" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">See the public dates</a>
-          {% endif %}
-          <a href="{% if blsUrl %}{{ blsUrl }}#enquiry{% else %}https://blacklabstudios.com/workshops/#enquiry{% endif %}" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 {% if upcomingSessions and upcomingSessions.length > 0 %}border bg-background hover:text-accent-foreground h-10 border-gray-300 dark:border-gray-600 text-gray-900 dark:text-white hover:bg-gray-50 dark:hover:bg-gray-800{% else %}h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black{% endif %} rounded-full px-8 py-3 font-medium transition-colors">Run this for your team</a>
         </div>
         <div class="bg-gray-50 dark:bg-gray-900 rounded-2xl p-6 transition-colors">
           <div class="flex items-center gap-4">
@@ -185,23 +218,6 @@ layout: default.liquid
 </section>
 
 
-<section id="upcoming" class="py-24 lg:py-32 bg-gray-50 dark:bg-black transition-colors">
-  <div class="container mx-auto px-6 max-w-4xl">
-    <div class="space-y-16">
-      <div class="text-center space-y-6">
-        <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Catch it in public</h2>
-        <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">When this runs in public it runs at a conference, and the conference sells the seat. Registration goes to them, not to me.</p>
-      </div>
-
-      {% set sessions = upcomingSessions %}
-      {% set workshopTitle = title %}
-      {% set workshopFormat = format %}
-      {% set hideWorkshopTitle = true %}
-      {% include "components/upcoming-sessions.njk" %}
-    </div>
-  </div>
-</section>
-
 {% if testimonials %}
 <section id="feedback" class="py-12 lg:py-16 bg-white dark:bg-black transition-colors">
   <div class="container mx-auto px-6 max-w-6xl">
@@ -244,6 +260,23 @@ layout: default.liquid
   </div>
 </section>
 {% endif %}
+
+<section id="upcoming" class="py-24 lg:py-32 bg-gray-50 dark:bg-black transition-colors">
+  <div class="container mx-auto px-6 max-w-4xl">
+    <div class="space-y-16">
+      <div class="text-center space-y-6">
+        <h2 class="text-4xl lg:text-5xl font-light text-gray-900 dark:text-white tracking-tight transition-colors">Catch it in public</h2>
+        <p class="text-xl text-gray-600 dark:text-gray-300 font-light max-w-2xl mx-auto transition-colors">When this runs in public it runs at a conference, and the conference sells the seat. Registration goes to them, not to me.</p>
+      </div>
+
+      {% set sessions = upcomingSessions %}
+      {% set workshopTitle = title %}
+      {% set workshopFormat = format %}
+      {% set hideWorkshopTitle = true %}
+      {% include "components/upcoming-sessions.njk" %}
+    </div>
+  </div>
+</section>
 
 {% if faqs %}
 <section class="py-24 lg:py-32 bg-gray-50 dark:bg-black transition-colors">
@@ -360,3 +393,45 @@ layout: default.liquid
     </div>
   </div>
 </section>
+
+{% if nextSession %}
+{#- Revealed once the hero CTA scrolls away, so it never competes with the button above it. -#}
+<div id="sticky-cta" class="lg:hidden fixed inset-x-0 bottom-0 z-40 translate-y-full transition-transform duration-300 bg-white/95 dark:bg-black/95 backdrop-blur border-t border-gray-200 dark:border-gray-800">
+  <div class="px-4 py-3 flex items-center gap-4">
+    <div class="min-w-0 flex-1">
+      <div class="text-sm font-medium text-gray-900 dark:text-white truncate">{{ nextSession.venue }}</div>
+      <div class="text-xs text-gray-500 dark:text-gray-400 truncate">{{ nextSession.date }}</div>
+    </div>
+    <a href="{{ nextSession.registrationUrl }}" target="_blank" rel="noopener" data-sa-event="sticky_register" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-6 py-2 text-sm font-medium transition-colors shrink-0">Register</a>
+  </div>
+</div>
+{% endif %}
+
+<script>
+  // Simple Analytics auto-events only records outbound clicks, so the internal CTAs were
+  // invisible. This names every CTA, which is what tells us where the funnel actually breaks.
+  window.sa_event = window.sa_event || function () {
+    var a = [].slice.call(arguments);
+    window.sa_event.q ? window.sa_event.q.push(a) : (window.sa_event.q = [a]);
+  };
+  document.addEventListener('click', function (event) {
+    var trigger = event.target.closest('[data-sa-event]');
+    if (trigger) window.sa_event(trigger.getAttribute('data-sa-event'));
+  });
+
+  (function () {
+    var bar = document.getElementById('sticky-cta');
+    var heroCta = document.getElementById('hero-cta');
+    if (!bar || !heroCta) return;
+    var hidden = null;
+    function update() {
+      var heroStillVisible = heroCta.getBoundingClientRect().bottom > 0;
+      if (heroStillVisible === hidden) return;
+      hidden = heroStillVisible;
+      bar.classList.toggle('translate-y-full', heroStillVisible);
+    }
+    addEventListener('scroll', update, { passive: true });
+    addEventListener('resize', update, { passive: true });
+    update();
+  })();
+</script>

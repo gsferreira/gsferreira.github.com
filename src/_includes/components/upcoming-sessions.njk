@@ -35,12 +35,13 @@
                     </svg>
                     <span>{{ session.spotsLeft }}</span>
                 </div>
+                {% if session.price %}<div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">{{ session.price }}</div>{% endif %}
                 {% if not hideWorkshopTitle %}<div class="text-sm text-gray-500 dark:text-gray-400 transition-colors">{{ session.venue }}</div>{% endif %}
             </div>
             <div class="flex gap-3 lg:justify-end">
                 {% if session.available %}
                 {% if session.registrationUrl %}
-                <a href="{{ session.registrationUrl }}" target="_blank" rel="noopener" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-6 py-2 text-sm font-medium transition-colors">Register</a>
+                <a href="{{ session.registrationUrl }}" target="_blank" rel="noopener" data-sa-event="sessions_table_register" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-6 py-2 text-sm font-medium transition-colors">Register</a>
                 {% else %}
                 <a href="https://blacklabstudios.com/workshops/#enquiry" class="inline-flex items-center justify-center gap-2 whitespace-nowrap ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-6 py-2 text-sm font-medium transition-colors">Enquire</a>
                 {% endif %}

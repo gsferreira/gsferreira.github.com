@@ -18,8 +18,9 @@ achievements:
 prerequisites:
   - You build APIs in C# and are comfortable in the language
   - You have met prompts and completions before, at least in passing
-  - Install the .NET 10 SDK and Git before you arrive
+  - Install the .NET 10 SDK, Docker and Git before you arrive
   - Create a GitHub account and an Azure account. Expect 5 to 10 euros of Azure usage.
+heroProof: "At NDC AI Oslo in June 2026, all 20 people who filled in the feedback form rated both the instructor and the content Very Good."
 instructor:
   name: Gui Ferreira
   title: Software Engineer Educator | Microsoft MVP
@@ -95,7 +96,8 @@ upcomingSessions:
     venue: "NDC Oslo"
     spotsLeft: "Seats available"
     available: true
-    registrationUrl: "https://ndcoslo.com/tickets"
+    registrationUrl: "https://ndcoslo.com/workshops/build-your-first-ai-agent-in-net"
+    price: "16,990 NOK plus VAT, 2-day workshop pass"
     note: "Already going? It runs the Monday and Tuesday before the talks start."
   - date: "November 17-18, 2026"
     location: "Porto, Portugal"
@@ -103,6 +105,7 @@ upcomingSessions:
     spotsLeft: "Seats available"
     available: true
     registrationUrl: "https://ndcporto.com/agenda/build-your-first-ai-agent-in-net/81f59dbbf411"
+    price: "1,390 EUR, 2-day workshop pass"
     note: "Already going? It runs the Tuesday and Wednesday before the talks start."
   - date: "January 25-26, 2027"
     location: "London, United Kingdom"
@@ -110,6 +113,7 @@ upcomingSessions:
     spotsLeft: "Seats available"
     available: true
     registrationUrl: "https://ndclondon.com/workshops/build-your-first-ai-agent-in-net"
+    price: "1,650 GBP plus VAT, 2-day workshop pass (1,450 GBP early bird until 2 October)"
     note: "Already going? It runs the Monday and Tuesday before the talks start."
 ---
 
