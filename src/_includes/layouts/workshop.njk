@@ -105,6 +105,12 @@ layout: default.liquid
           <p class="text-sm text-gray-600 dark:text-gray-300 font-light transition-colors">
             {{ nextSession.date }}, {{ nextSession.location }}.{% if nextSession.price %} {{ nextSession.price }}.{% endif %} {{ nextSession.venue }} sells the seat and handles the booking.
           </p>
+          {#- Almost everyone who lands here searched for the conference, not the workshop. This
+              tells them it fits their trip before they scroll away. Same string as the session
+              card in #upcoming, because the day pair differs per city. -#}
+          {% if nextSession.note %}
+          <p class="text-sm text-gray-600 dark:text-gray-300 font-light transition-colors">{{ nextSession.note }}</p>
+          {% endif %}
           {% elif upcomingSessions and upcomingSessions.length > 0 %}
           <a href="#upcoming" data-sa-event="hero_see_all_dates" class="inline-flex items-center justify-center gap-2 whitespace-nowrap text-sm ring-offset-background focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:pointer-events-none disabled:opacity-50 [&_svg]:pointer-events-none [&_svg]:size-4 [&_svg]:shrink-0 h-10 bg-black dark:bg-white hover:bg-gray-900 dark:hover:bg-gray-100 text-white dark:text-black rounded-full px-8 py-3 font-medium transition-colors">See the public dates</a>
           {% else %}
