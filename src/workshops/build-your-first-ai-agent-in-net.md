@@ -7,7 +7,7 @@ image: /assets/workshops/presenting-02.jpg
 category: AI & .NET
 format: 2-Day Intensive
 duration: 2 days
-participants: 10-40 people
+participants: 12-25 people
 level: Intermediate
 blsUrl: https://blacklabstudios.com/workshops/build-your-first-ai-agent-in-dotnet/
 achievements:
@@ -91,20 +91,12 @@ faqs:
   - question: Will frameworks make this obsolete in six months?
     answer: The frameworks will change, and the reason we build the loop by hand first is so that you can read one when it does. Once you have written tool calling and memory yourself, any framework is just someone else's version of code you already understand.
 upcomingSessions:
-  - date: "September 14-15, 2026"
-    location: "Oslo, Norway"
-    venue: "NDC Oslo"
-    spotsLeft: "Seats available"
-    available: true
-    registrationUrl: "https://ndcoslo.com/workshops/build-your-first-ai-agent-in-net"
-    price: "16,990 NOK plus VAT, 2-day workshop pass"
-    note: "Already going? It runs the Monday and Tuesday before the talks start."
   - date: "November 17-18, 2026"
     location: "Porto, Portugal"
     venue: "NDC Porto"
     spotsLeft: "Seats available"
     available: true
-    registrationUrl: "https://ndcporto.com/agenda/build-your-first-ai-agent-in-net/81f59dbbf411"
+    registrationUrl: "https://ndcporto.com/tickets"
     price: "1,390 EUR, 2-day workshop pass"
     note: "Already going? It runs the Tuesday and Wednesday before the talks start."
   - date: "January 25-26, 2027"

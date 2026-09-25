@@ -297,6 +297,17 @@ export default function (eleventyConfig) {
   eleventyConfig.addFilter("sessionStart", (str) => (parseSessionDate(str) || {}).start || "");
   eleventyConfig.addFilter("sessionEnd", (str) => (parseSessionDate(str) || {}).end || "");
 
+  // Drop public sessions that have already ended, so the hero and the dates never
+  // sell a past edition. Runs at build time: a finished session disappears on the
+  // next deploy after its last day.
+  eleventyConfig.addFilter("futureSessions", (sessions) => {
+    const today = new Date().toISOString().slice(0, 10);
+    return (sessions || []).filter((session) => {
+      const end = (parseSessionDate(session.date) || {}).end;
+      return !end || end >= today;
+    });
+  });
+
   // "5h 59m" -> "PT5H59M" for schema.org durations
   eleventyConfig.addFilter("isoDuration", (str) => {
     if (!str) return "";

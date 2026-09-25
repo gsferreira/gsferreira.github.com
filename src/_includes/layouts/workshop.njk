@@ -5,6 +5,7 @@ layout: default.liquid
     not. The Event markup lives here, on the page that describes the workshop, so no
     two URLs claim the same Event. The organizer is the conference, because that is
     who sells the seat. -#}
+{%- set upcomingSessions = upcomingSessions | futureSessions -%}
 {%- set eventItems = [] -%}
 {%- for session in upcomingSessions -%}
   {%- if session.available -%}
