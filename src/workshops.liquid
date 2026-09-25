@@ -55,9 +55,10 @@ description: Hands-on workshops on testing, TDD and building AI agents in .NET. 
 
                 {% assign hasUpcomingSessions = false %}
                 {% for workshop in collections.workshops %}
-                    {% if workshop.data.upcomingSessions.size > 0 %}
+                    {% assign futureSessions = workshop.data.upcomingSessions | futureSessions %}
+                    {% if futureSessions.size > 0 %}
                         {% assign hasUpcomingSessions = true %}
-                        {% include 'components/upcoming-sessions.njk', sessions: workshop.data.upcomingSessions, workshopTitle: workshop.data.title, workshopFormat: workshop.data.format %}
+                        {% include 'components/upcoming-sessions.njk', sessions: futureSessions, workshopTitle: workshop.data.title, workshopFormat: workshop.data.format %}
                     {% endif %}
                 {% endfor %}
 
