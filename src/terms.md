@@ -64,7 +64,7 @@ Our Website features a blog containing articles and insights. While you may read
 
 ## 6. Privacy
 
-Your use of our Website is also governed by our Privacy Policy, which can be found at [/privacy](/privacy). By using the Website, you consent to the practices described in the Privacy Policy.
+Your use of our Website is also governed by our Privacy Policy, which can be found at [/privacy](/privacy/). By using the Website, you consent to the practices described in the Privacy Policy.
 
 ## 7. Disclaimers
 
