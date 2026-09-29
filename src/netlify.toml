@@ -10,6 +10,14 @@
   to = "/feed.xml"
   status = 301
   force = true
+
+# A truncated link to the Cursor debugging post is out there and Google keeps
+# crawling it as a 404. Send it to the real post.
+[[redirects]]
+  from = "/archive/2025/how-to-deb"
+  to = "/archive/2025/how-to-debug-dotnet-code-in-cursor-ai/"
+  status = 301
+  force = true
 # ---------------------------------------------------------------------------
 # The workshop pages live here again.
 #
